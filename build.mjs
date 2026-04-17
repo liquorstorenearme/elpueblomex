@@ -590,7 +590,7 @@ ${ticker("ticker--terracotta")}
   ];
   return layout({
     title: `Mexican Food in North County San Diego | ${site.brand.name} — 5 Locations`,
-    description: "Fresh Mexican food in North San Diego County since 2010. Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening soon. Voted #1 on Yelp. Fish tacos, full bars, open late.",
+    description: "Fresh Mexican food in North San Diego County. Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening soon. Voted #1 on Yelp. Fish tacos, full bars, open late.",
     canonicalPath: "/",
     body,
     ogImage: "/og/home.jpg",
@@ -1113,7 +1113,7 @@ ${ticker("ticker--terracotta")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Gives Back", url: "/gives-back/" }]);
   return layout({
     title: `Gives Back — ${site.brand.name} | Community Fundraisers`,
-    description: "El Pueblo has given back to the community since 2010. We donate 20% of net proceeds to schools, youth programs, and 501(c)(3) organizations. Apply for a fundraiser partnership.",
+    description: "El Pueblo gives back to the community. We donate 20% of net proceeds to schools, youth programs, and 501(c)(3) organizations. Apply for a fundraiser partnership.",
     canonicalPath: "/gives-back/",
     body,
     ogImage: "/og/gives-back.jpg",

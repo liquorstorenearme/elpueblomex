@@ -31,7 +31,7 @@
       "eyebrow": "The best Mexican food in North County San Diego",
       "headline": "Fresh Mexican food.",
       "headlineAccent": "Five locations.",
-      "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla (opening soon) — family-owned since 2010, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
+      "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla (opening soon) — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
       "primaryCta": { "label": "Find a Location", "href": "/locations/" },
       "secondaryCta": { "label": "See the Menu", "href": "/menu/" },
       "image": "/images/home/combo-plate-hero.jpg"
@@ -75,9 +75,9 @@
     "note": "Note: reservations are not available for tables inside the restaurant — private patios and catering only."
   },
   "givesBack": {
-    "heroEyebrow": "Giving back since 2010",
+    "heroEyebrow": "Giving back to our community",
     "heroHeadline": "El Pueblo Gives Back.",
-    "heroSub": "El Pueblo Mexican Food, founded in 2010, has consistently supported and contributed to the community. We're excited to partner with you through our fundraiser program — a simple, delicious way to raise funds. We donate 20% of net proceeds from your event to make a meaningful impact.",
+    "heroSub": "El Pueblo Mexican Food has consistently supported and contributed to the community. We're excited to partner with you through our fundraiser program — a simple, delicious way to raise funds. We donate 20% of net proceeds from your event to make a meaningful impact.",
     "applyNote": "To ensure everything runs smoothly, please submit your fundraiser application at least one month before your desired event date.",
     "eligible": [
       "K-12 Schools",
