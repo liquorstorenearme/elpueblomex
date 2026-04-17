@@ -1,0 +1,13 @@
+{
+  "name": "elpueblomex",
+  "version": "1.0.0",
+  "private": true,
+  "description": "El Pueblo Mexican Food — static Vercel site",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && vercel dev"
+  },
+  "dependencies": {
+    "@vercel/edge": "^1.2.1"
+  }
+}

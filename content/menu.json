@@ -1,0 +1,434 @@
+{
+  "categories": [
+    {
+      "name": "Breakfast Burritos",
+      "items": [
+        {
+          "name": "Super Breakfast Burrito",
+          "description": "Eggs, Beans, Cheese, Potato, and Choice of Ham or Bacon",
+          "image": "/images/menu/super-breakfast-burrito.jpg"
+        },
+        {
+          "name": "Steak and Eggs Burrito",
+          "description": "Steak, Scrambled Eggs, and Cheese",
+          "image": "/images/menu/steak-and-eggs-burrito.jpg"
+        },
+        {
+          "name": "Machaca Burrito",
+          "description": "Shredded Beef, Bell Peppers, Onion, Tomato, Scrambled with Eggs",
+          "image": "/images/menu/machaca-burrito.jpg"
+        },
+        {
+          "name": "Breakfast Burrito",
+          "description": "Eggs, Beans and Cheese",
+          "image": "/images/menu/breakfast-burrito.jpg"
+        },
+        {
+          "name": "Chorizo Burrito",
+          "description": "Eggs and Chorizo",
+          "image": "/images/menu/chorizo-burrito.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Breakfast Plates",
+      "items": [
+        {
+          "name": "Huevos a la Mexicana",
+          "description": "Scrambled Eggs, Bell Pepper, Onion, Tomato, and Cheese",
+          "image": "/images/menu/huevos-a-la-mexicana.jpg"
+        },
+        {
+          "name": "Huevos con Jamon",
+          "description": "Scrambled Eggs, Ham, and Cheese",
+          "image": "/images/menu/huevos-con-jamon.jpg"
+        },
+        {
+          "name": "Huevos Rancheros",
+          "description": "Fried eggs over a Fried Tortilla, with Salsa Ranchera and Cheese",
+          "image": "/images/menu/huevos-rancheros.jpg"
+        },
+        {
+          "name": "Chilaquiles Rojos Or Verdes",
+          "description": "Choice of Rojos or Verdes, Tortilla Chips, Scrambled Eggs, Onions, Cilantro, Sour Cream, and Cheese",
+          "image": "/images/menu/chilaquiles.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Burritos",
+      "items": [
+        {
+          "name": "Fish Burrito",
+          "description": "Chipotle Sauce, Fried Fish, Cabbage, and Pico de Gallo",
+          "image": "/images/menu/fish-burrito.jpg"
+        },
+        {
+          "name": "Carne Asada",
+          "description": "Carne Asada with Pico de Gallo and Guacamole",
+          "image": "/images/menu/carne-asada.jpg"
+        },
+        {
+          "name": "Supreme Veggie Burrito",
+          "description": "Beans, Rice, Pico de Gallo, Sour Cream, and Cheese",
+          "image": "/images/menu/supreme-veggie-burrito.jpg"
+        },
+        {
+          "name": "Bean and Cheese Burrito",
+          "description": "Beans and Cheese in a Fresh, Warm Tortilla"
+        },
+        {
+          "name": "Shredded Chicken Burrito",
+          "description": "Shredded Chicken with Rice or Beans"
+        },
+        {
+          "name": "Mixed Burrito",
+          "description": "Shredded Beef, with Ranchera Sauce and Beans"
+        },
+        {
+          "name": "Chile Relleno Burrito",
+          "description": "Stuffed Chile Pepper, Beans, Sour Cream, and Cheese",
+          "image": "/images/menu/chile-relleno-burrito.avif"
+        },
+        {
+          "name": "Pollo Asado Burrito",
+          "description": "Pollo Asado, Guacamole, and Pico de Gallo",
+          "image": "/images/menu/pollo-asado-burrito.jpg"
+        },
+        {
+          "name": "Conga Burrito",
+          "description": "Choice of Any Meat, with Rice and Beans",
+          "image": "/images/menu/conga-burrito.jpg"
+        },
+        {
+          "name": "Carnitas Burrito",
+          "description": "Carnitas, Guacamole, and Pico de Gallo",
+          "image": "/images/menu/carnitas-burrito.jpg"
+        },
+        {
+          "name": "California Burrito",
+          "description": "Choice of Any Meat, French Fries, Pico de Gallo, and Cheese"
+        },
+        {
+          "name": "Fajitas Burrito",
+          "description": "Clients Choice of Any Meat, Tomato, Onion, Bell Pepper, and Guacamole",
+          "image": "/images/menu/fajitas-burrito.avif"
+        },
+        {
+          "name": "Surf and Turf Burrito",
+          "description": "Carne Asada, Shrimp, Guacamole, Sour Cream, and Rice",
+          "image": "/images/menu/surf-and-turf-burrito.jpg"
+        },
+        {
+          "name": "Adobada Burrito",
+          "description": "Adobada, Guacamole, Onion, Cilantro, and Cheese",
+          "image": "/images/menu/adobada-burrito.jpg"
+        },
+        {
+          "name": "Shrimp Burrito",
+          "description": "Ranchera Sauce, Shrimp, Rice, and Sour Cream",
+          "image": "/images/menu/shrimp-burrito.jpg"
+        },
+        {
+          "name": "Chimichanga",
+          "description": "Deep-Fried Burrito on a Bed of Lettuce, with Choice of Shredded Chicken or Beef. Comes with Guacamole, Sour Cream, Pico de Gallo, and Cheese",
+          "image": "/images/menu/chimichanga.jpg"
+        },
+        {
+          "name": "Lengua Burrito",
+          "description": "Lengua, Guacamole, Onion, and Cilantro",
+          "image": "/images/menu/lengua-burrito.jpg"
+        },
+        {
+          "name": "Shredded Beef Burrito",
+          "description": "Shredded Beef and Ranchera Sauce"
+        }
+      ]
+    },
+    {
+      "name": "Bowls",
+      "items": [
+        {
+          "name": "Breakfast Bowl",
+          "description": "Eggs, Beans, Potatoes, Rice, Cheese and Cilantro",
+          "image": "/images/menu/breakfast-bowl.jpg"
+        },
+        {
+          "name": "Surf and Turf Bowl",
+          "description": "Carne Asada, Shrimp, Guacamole, Rice and Sour Cream",
+          "image": "/images/menu/surf-and-turf-bowl.jpg"
+        },
+        {
+          "name": "Protein Bowl",
+          "description": "Beans, Rice, Lettuce, Pico de Gallo, Guacamole, and Choice of Meat",
+          "image": "/images/menu/protein-bowl.jpg"
+        },
+        {
+          "name": "Super Breakfast Bowl",
+          "description": "Eggs, Beans , Cheese, Potatoes, & Choice of Breakfast Meat",
+          "image": "/images/menu/super-breakfast-bowl.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Tacos",
+      "items": [
+        {
+          "name": "Carne Asada Taco",
+          "description": "Carne Asada, Pico de Gallo, and Guacamole",
+          "image": "/images/menu/carne-asada-taco.jpg"
+        },
+        {
+          "name": "Carnitas Taco",
+          "description": "Carnitas, Pico de Gallo, and Guacamole",
+          "image": "/images/menu/carnitas-taco.jpg"
+        },
+        {
+          "name": "Shrimp Taco",
+          "description": "Shrimp, Rice, Sour Cream, and Salsa Ranchera"
+        },
+        {
+          "name": "Lengua Taco",
+          "description": "Lengua, Guacamole, Onion, and Cilantro"
+        },
+        {
+          "name": "Adobada Taco",
+          "description": "Adobada, Onion, Cilantro, and Guacamole",
+          "image": "/images/menu/adobada-taco.jpg"
+        },
+        {
+          "name": "Flautas (3)",
+          "description": "Choice of Chicken or Beef, Flour Tortillas, Guacamole, Lettuce, Pico de Gallo, Sour Cream, and Cheese",
+          "image": "/images/menu/flautas-3.jpg"
+        },
+        {
+          "name": "Hardshell Shredded Beef Taco",
+          "description": "Beef, Lettuce, and Cheese"
+        },
+        {
+          "name": "Rolled Tacos (5)",
+          "description": "Topped with Guac or Sour Cream. Choice of Chicken or Beef",
+          "image": "/images/menu/rolled-tacos-5.jpg"
+        },
+        {
+          "name": "Hardshell Shredded Chicken Taco",
+          "description": "Chicken, Lettuce, and Cheese"
+        },
+        {
+          "name": "Rolled Tacos (3)",
+          "description": "Topped with Guac or Sour Cream. Choice of Chicken or Beef",
+          "image": "/images/menu/rolled-tacos-3.jpg"
+        },
+        {
+          "name": "El Pueblo Fish Taco",
+          "description": "Chipotle Sauce, Cabbage, and Pico de Gallo",
+          "featured": true,
+          "image": "/images/menu/el-pueblo-fish-taco.jpg"
+        },
+        {
+          "name": "Pollo Asado Taco",
+          "description": "Pollo Asado, Guacamole, and Pico de Gallo",
+          "image": "/images/menu/pollo-asado-taco.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Enchiladas",
+      "items": [
+        {
+          "name": "Beef Enchiladas (2)",
+          "description": "Beef, Enchilada Sauce, Lettuce, and Cheese",
+          "image": "/images/menu/beef-enchiladas.jpg"
+        },
+        {
+          "name": "Shredded Chicken Enchiladas (2)",
+          "description": "Shredded Chicken, Enchilada Sauce, Lettuce, and Cheese"
+        },
+        {
+          "name": "Cheese Enchiladas (2)",
+          "description": "Beans and Cheese in a Fresh, Warm Tortilla"
+        }
+      ]
+    },
+    {
+      "name": "Quesadillas",
+      "items": [
+        {
+          "name": "Veggie Quesadilla",
+          "description": "Pico de Gallo, Lettuce, and Sour Cream",
+          "image": "/images/menu/veggie-quesadilla.jpg"
+        },
+        {
+          "name": "Carne Asada Quesadilla",
+          "description": "Buttery, flaky goodness, stuffed with everyone’s favorite, Carne Asada",
+          "image": "/images/menu/carne-asada-quesadilla.jpg"
+        },
+        {
+          "name": "Shrimp Quesadilla",
+          "description": "Fresh Shrimp and Cheese in a Warm Tortilla",
+          "image": "/images/menu/shrimp-quesadilla.jpg"
+        },
+        {
+          "name": "Cheese Quesadilla",
+          "description": "Tortilla and Cheese, with an El Pueblo Touch"
+        },
+        {
+          "name": "Shredded Chicken Quesadilla",
+          "description": "Shredded Chicken and Mexican Cheese in a Warm Tortilla",
+          "image": "/images/menu/shredded-chicken-quesadilla.jpg"
+        },
+        {
+          "name": "Pollo Asado Quesadilla",
+          "description": "Pollo Asado and Cheese in a Warm Tortilla",
+          "image": "/images/menu/pollo-asado-quesadilla.jpg"
+        },
+        {
+          "name": "Adobada Quesadilla",
+          "description": "Adobada and Cheese in a Warm Tortilla",
+          "image": "/images/menu/adobada-quesadilla.jpg"
+        },
+        {
+          "name": "Carnitas Quesadilla",
+          "description": "Carnitas and Mexican Cheese in a Fresh, Warm Tortilla",
+          "image": "/images/menu/carnitas-quesadilla.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Tortas",
+      "items": [
+        {
+          "name": "Build Your Own",
+          "description": "Select a Meat: Chorizo Machacha Pollo Asado Carne Asada Carnitas Ham & Cheese Adobada Beef Chicken",
+          "image": "/images/menu/build-your-own.jpg"
+        },
+        {
+          "name": "Chef Special: El Pueblo Torta",
+          "description": "Carnitas, Avocado, Lettuce, Tomato, and Enchilada Sauce. Served with Fries",
+          "image": "/images/menu/chef-special-el-pueblo-torta.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Fan Favorites",
+      "items": [
+        {
+          "name": "Chicken Tortilla Soup",
+          "description": "Chicken Tortilla Soup for the Soul",
+          "image": "/images/menu/chicken-tortilla-soup.jpg"
+        },
+        {
+          "name": "Nachos Supreme",
+          "description": "Choice of Meat, Served with Beans, Guacamole, and Lettuce",
+          "image": "/images/menu/nachos-supreme.jpg"
+        },
+        {
+          "name": "Carne Asada Fries",
+          "description": "Choice of Meat, Sour Cream, Guacamole, and Cheese",
+          "image": "/images/menu/carne-asada-fries.jpg"
+        },
+        {
+          "name": "Menudo",
+          "description": "Saturdays and Sundays Only"
+        },
+        {
+          "name": "Chile Relleno",
+          "description": "Chile Stuffed to the Brim with Shredded Cheese",
+          "image": "/images/menu/chile-relleno.avif"
+        }
+      ]
+    },
+    {
+      "name": "Dinner Combos",
+      "items": [
+        {
+          "name": "Chile Relleno Plate",
+          "description": "Cheese Stuffed Chilles Served with Rice, Beans, Lettuce, Guac, Salsa Fresca, and Tortillas",
+          "image": "/images/menu/chile-relleno-plate.avif"
+        },
+        {
+          "name": "Carne Asada Plate",
+          "description": "Perfectly Seasoned Carne Asada Served with Rice, Beans, Lettuce, Guac, Salsa Fresca, and Tortillas",
+          "image": "/images/menu/carne-asada-plate.avif"
+        },
+        {
+          "name": "Fajitas Plate",
+          "description": "Fajitas, but Combo Style! Option of Chicken Or Beef Served with Rice, Beans, Lettuce, Guac, Salsa Fresca, and Tortillas",
+          "image": "/images/menu/fajitas-plate.avif"
+        },
+        {
+          "name": "Machaca Plate",
+          "description": "Served with Rice, Beans, Lettuce, Guac, Salsa Fresca, and Tortillas",
+          "image": "/images/menu/machaca-plate.jpg"
+        },
+        {
+          "name": "Chorizo Plate",
+          "description": "Served with Rice, Beans, Lettuce, Guac, Salsa Fresca, and Tortillas",
+          "image": "/images/menu/chorizo-plate.jpg"
+        },
+        {
+          "name": "Carnitas Plate",
+          "description": "Served with Rice, Beans, Lettuce, Guac, Salsa Fresca, and Tortillas",
+          "image": "/images/menu/carnitas-plate.jpg"
+        },
+        {
+          "name": "Carne Asada Plate",
+          "description": "Served with Rice, Beans, Lettuce, Guac, Salsa Fresca, and Tortillas",
+          "image": "/images/menu/carne-asada-plate.avif"
+        }
+      ]
+    },
+    {
+      "name": "Kids Menu",
+      "items": [
+        {
+          "name": "Kids Quesadilla",
+          "description": "",
+          "image": "/images/menu/kids-quesadilla.jpg"
+        },
+        {
+          "name": "Kids Bean and Cheese Burrito",
+          "description": "",
+          "image": "/images/menu/kids-bean-and-cheese.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Sides & Drinks",
+      "items": [
+        {
+          "name": "Beans (8oz)",
+          "description": ""
+        },
+        {
+          "name": "Rice (8oz)",
+          "description": ""
+        },
+        {
+          "name": "Sour Cream (4oz)",
+          "description": ""
+        },
+        {
+          "name": "Guacamole (4oz)",
+          "description": ""
+        },
+        {
+          "name": "Chips and Salsa",
+          "description": ""
+        },
+        {
+          "name": "Chips with Guacamole",
+          "description": ""
+        },
+        {
+          "name": "Horchata & Jamaica",
+          "description": ""
+        },
+        {
+          "name": "Fountain Drinks",
+          "description": "© El Pueblo Mexican Food · All Rights Reserved"
+        }
+      ]
+    }
+  ]
+}

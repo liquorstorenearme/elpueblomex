@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /edit/
+Disallow: /api/
+Disallow: /404/
+
+Sitemap: https://elpueblomex.com/sitemap.xml
