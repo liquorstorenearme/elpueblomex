@@ -28,6 +28,23 @@
     });
   }
 
+  const banner = document.getElementById('cookie-banner');
+  if (banner) {
+    const KEY = 'ep_cookie_consent';
+    let consent = null;
+    try { consent = localStorage.getItem(KEY); } catch (e) {}
+    if (!consent) {
+      banner.removeAttribute('hidden');
+    }
+    banner.addEventListener('click', (e) => {
+      const accept = e.target.closest('[data-cookie-accept]');
+      const decline = e.target.closest('[data-cookie-decline]');
+      if (!accept && !decline) return;
+      try { localStorage.setItem(KEY, accept ? 'accept' : 'decline'); } catch (err) {}
+      banner.setAttribute('hidden', '');
+    });
+  }
+
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
       if (e.isIntersecting) {

@@ -1947,8 +1947,86 @@ button:focus-visible {
   .home-scroller__head { padding: 0 20px; }
 }
 
+/* ---------- Cookie banner ---------- */
+.cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 150;
+  background: var(--ink);
+  color: var(--cream);
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35), 6px 6px 0 var(--terracotta);
+  max-width: 760px;
+  margin: 0 auto;
+  animation: cookie-rise .35s ease-out;
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner__inner {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.cookie-banner__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  flex: 1 1 280px;
+  color: var(--cream);
+}
+.cookie-banner__text a {
+  color: var(--marigold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-banner__text a:hover { color: var(--cream); }
+.cookie-banner__actions {
+  display: flex;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+.cookie-banner__btn {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 2px solid var(--cream);
+  line-height: 1;
+  white-space: nowrap;
+}
+.cookie-banner__btn--ghost {
+  background: transparent;
+  color: var(--cream);
+}
+.cookie-banner__btn--ghost:hover { background: rgba(250,243,228,0.12); }
+.cookie-banner__btn--primary {
+  background: var(--terracotta);
+  color: var(--cream);
+  border-color: var(--terracotta);
+}
+.cookie-banner__btn--primary:hover { filter: brightness(1.08); }
+@keyframes cookie-rise {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@media (max-width: 640px) {
+  .cookie-banner { left: 10px; right: 10px; bottom: 10px; border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.35), 4px 4px 0 var(--terracotta); }
+  .cookie-banner__inner { padding: 14px 14px; gap: 12px; }
+  .cookie-banner__text { font-size: 13px; }
+  .cookie-banner__actions { width: 100%; justify-content: stretch; }
+  .cookie-banner__btn { flex: 1; padding: 11px 10px; font-size: 11px; letter-spacing: 0.06em; }
+}
+
 /* ---------- Print ---------- */
 @media print {
-  .ticker, .site-footer, .stack-form, .mobile-nav, .nav-toggle { display: none !important; }
+  .ticker, .site-footer, .stack-form, .mobile-nav, .nav-toggle, .cookie-banner { display: none !important; }
   body { background: white; color: black; }
 }

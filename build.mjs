@@ -438,6 +438,15 @@ const footer = () => `
     </nav>
   </div>
 </footer>
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie notice" hidden>
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">This site uses cookies to run properly and to help us understand how visitors use it. See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a>. You can accept all cookies, decline non-essential, or adjust in your browser.</p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--ghost" data-cookie-decline>Decline non-essential</button>
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-accept>Accept all</button>
+    </div>
+  </div>
+</div>
 <script src="/scripts/app.js" defer></script>`;
 
 const layout = ({ title, description, canonicalPath, body, ogImage, lcpImage, bodyClass = "", schema = [] }) => `<!doctype html>
@@ -1587,123 +1596,389 @@ const legalPages = [
   {
     slug: "privacy-policy",
     title: "Privacy Policy",
-    description: "How El Pueblo Mexican Food collects, uses, and protects your personal information.",
+    description: "Comprehensive privacy policy covering how El Pueblo Mexican Food collects, uses, shares, and protects your personal information.",
     sections: [
-      { p: [`This Privacy Policy explains how ${site.brand.name} ("we", "us", "our") collects, uses, and shares information about you when you use our website at elpueblomex.com or interact with us at our locations.`] },
+      { p: [
+        `This Privacy Policy explains how ${site.brand.name} ("El Pueblo," "we," "us," or "our") collects, uses, shares, and protects information about you when you visit elpueblomex.com (the "Site"), interact with us at any of our locations, or communicate with us through email, phone, or our web forms.`,
+        "By using the Site or submitting information to us, you acknowledge the practices described in this Policy. If you do not agree, please do not use the Site.",
+        "This Policy applies to all visitors, customers, job applicants, event inquirers, catering clients, fundraiser applicants, and anyone else who interacts with El Pueblo. If you are a California resident, please also see our California Consumer Privacy Act notice for rights specific to you."
+      ]},
       { h: "Information we collect", p: [
-        "Contact details you provide through our forms: name, email, phone, organization, location preference, message content.",
-        "Order information processed through our ordering partners (order.online) — handled under their respective privacy policies.",
-        "Employment application information submitted through our careers forms.",
-        "Website analytics data: pages visited, referring URL, general device and browser info, approximate location from IP address."
+        "We collect the following categories of information, depending on how you interact with us:",
+        "Information you provide directly: name, email address, phone number, organization or school (for catering and fundraisers), preferred location, event date and size, job history, resume content, message content, and any other information you choose to submit via our contact, catering, fundraiser, event, or careers forms.",
+        "Order information: when you place an online order we direct you to order.online (or a similar ordering partner); payment data, cart contents, and delivery details are handled under their privacy policies, not ours. We may receive confirmation information (order number, location, timestamp) to service your order.",
+        "In-restaurant interactions: when you dine in, order at a counter, or pay at one of our locations, point-of-sale systems may capture limited transaction information (order total, payment method type, timestamp). We do not store full payment card numbers.",
+        "Automatically collected information: when you visit the Site, we and our service providers automatically collect technical information including IP address, approximate location derived from IP, browser type and version, operating system, device identifiers, referring URL, pages viewed, time spent, and actions taken (such as button clicks and form submissions).",
+        "Cookies and similar technologies: we use first-party and third-party cookies, pixels, local storage, and related technologies as described in our Cookie Policy.",
+        "Information from third parties: we may receive information about you from analytics providers (Google Analytics), form-handling providers, and social media platforms if you engage with our profiles or tagged posts.",
+        "Sensitive information: we do not intentionally collect Social Security numbers, driver's license numbers, financial account credentials, genetic or biometric data, precise geolocation, or information about race, religion, or sexual orientation. If you choose to include such information in a resume or message, please redact it before submission."
+      ]},
+      { h: "Sources of information", p: [
+        "Directly from you through web forms, email, phone calls, and in-person interactions.",
+        "Automatically from your browser or device when you visit the Site.",
+        "From service providers and analytics tools that help us operate the Site and understand audience behavior.",
+        "From social media platforms if you publicly interact with our accounts."
       ]},
       { h: "How we use information", p: [
-        "To respond to your inquiries, catering requests, event bookings, and fundraiser applications.",
-        "To process job applications and communicate with candidates.",
-        "To improve our website, menu, and customer service.",
-        "To comply with legal obligations and resolve disputes."
+        "To respond to inquiries, catering requests, event bookings, fundraiser applications, and general messages.",
+        "To review, process, and communicate about job applications; to schedule interviews; to verify information you supply.",
+        "To coordinate with ordering and catering partners so your order is prepared and delivered.",
+        "To operate, maintain, secure, and improve the Site — including debugging, preventing abuse, and analyzing which pages and features are useful.",
+        "To understand aggregate audience behavior through analytics tools so we can improve our menu presentation, location pages, and customer service.",
+        "To send transactional messages (responding to your inquiry, confirming receipt of an application) and, with your consent, occasional updates about openings, events, or promotions.",
+        "To comply with legal obligations (tax, employment, health-code reporting) and to enforce our Terms of Service.",
+        "To protect the rights, property, or safety of El Pueblo, our staff, customers, or the public — for example, by investigating suspected fraud or responding to a subpoena."
       ]},
-      { h: "Sharing", p: [
-        "We do not sell your personal information. We share information only with service providers (form processing, email delivery) bound by confidentiality, with our ordering partners when you place an order, and when required by law."
+      { h: "Legal bases for processing", p: [
+        "Where required by law (for example, if you are in a jurisdiction with data-protection rules such as the EU GDPR), our lawful bases for processing are: your consent (which you can withdraw); performance of a contract with you (processing your order or application); our legitimate interests (running a safe, useful Site and communicating with customers) balanced against your rights; and compliance with legal obligations.",
+        "Most of our users are based in the United States; we process information primarily in the United States."
       ]},
-      { h: "Your rights", p: [
-        "California residents: see our California Consumer Privacy Act notice for your specific rights.",
-        `You may request access, correction, or deletion of your information by emailing ${site.brand.email}.`
+      { h: "How and with whom we share information", p: [
+        "We do not sell your personal information for money, and we do not share your personal information for cross-context behavioral advertising.",
+        "We share information only with the following categories of recipients, and only to the extent needed:",
+        "Service providers and processors that help us operate the Site or business — for example: web hosting (Vercel), content delivery and security (Cloudflare), domain services, email delivery, analytics (Google), form-handling services, and ordering partners (order.online). These parties are bound by contract to use the information only for the purpose we engaged them and to protect it.",
+        "Legal and regulatory recipients when we are required to disclose information by law, court order, subpoena, or other legal process, or to protect rights, safety, or property.",
+        "Business transfer recipients in the event of a merger, acquisition, financing, reorganization, bankruptcy, or sale of assets — in which case we will continue to ensure the confidentiality of your personal information and will give affected users notice before personal information becomes subject to a different privacy policy.",
+        "With your consent or at your direction, for any purpose you authorize."
       ]},
-      { h: "Contact", p: [`Questions about this policy? Email ${site.brand.email}.`] }
-    ]
-  },
-  {
-    slug: "terms",
-    title: "Terms of Service",
-    description: "Terms governing your use of the El Pueblo Mexican Food website and services.",
-    sections: [
-      { p: [`By accessing elpueblomex.com or using any service offered by ${site.brand.name}, you agree to these Terms of Service.`] },
-      { h: "Use of the site", p: [
-        "You agree to use this site lawfully and not to attempt to disrupt its operation or access restricted areas.",
-        "Content on this site is provided for information about our menu, locations, and services. Menu items, pricing, and hours are subject to change."
+      { h: "Third-party services", p: [
+        "Key third-party services that may process your data include: Google Analytics (site usage measurement; see Google's Privacy Policy), Vercel (hosting), Cloudflare (content delivery and DDoS protection), order.online (online ordering), and Gmail/Google Workspace (email for info@elpueblomex.com).",
+        "We do not control the privacy practices of these services. Please review their policies for details about how they handle your information."
       ]},
-      { h: "Orders and payments", p: [
-        "Online orders are processed through third-party partners (order.online). Their terms and conditions apply to the transaction.",
-        "Pricing at the restaurant may differ from online promotions."
+      { h: "Cookies and tracking technologies", p: [
+        "See our Cookie Policy for details on the specific cookies, local-storage items, and tracking technologies used on this Site, the categories they belong to, and how to manage them.",
+        "We honor recognized opt-out signals, including the Global Privacy Control (GPC), as described in the Cookie Policy."
       ]},
-      { h: "Intellectual property", p: [
-        `All content on this site — text, images, logos, trademarks — is owned by ${site.brand.name} or used with permission. You may not reproduce, distribute, or create derivative works without written consent.`
+      { h: "Data retention", p: [
+        "We retain personal information only as long as necessary for the purpose it was collected, to comply with legal, accounting, or reporting obligations, or to resolve disputes and enforce agreements.",
+        "General guidelines we follow: contact-form submissions and inquiries — up to 24 months after the last interaction; catering and event records — up to 4 years for tax and business-record purposes; job applications — up to 24 months (or longer if applicable law requires); analytics data — aggregated indefinitely, but individual-level data typically rotates out within 26 months (the default Google Analytics retention window).",
+        "When retention is no longer required, we delete, anonymize, or securely dispose of the information."
       ]},
-      { h: "Disclaimers", p: [
-        "This site and its content are provided \"as is\" without warranty of any kind. We make reasonable efforts to keep information accurate but do not guarantee completeness.",
-        "We are not liable for indirect, incidental, or consequential damages arising from your use of the site."
+      { h: "Data security", p: [
+        "We apply reasonable administrative, technical, and physical safeguards designed to protect personal information — including HTTPS on the Site, access controls on internal tools, encryption at rest where supported by our vendors, and staff training on handling customer information.",
+        "No system is perfectly secure. If you believe the security of your interaction with us has been compromised, contact us immediately at " + site.brand.email + "."
       ]},
-      { h: "Governing law", p: ["These terms are governed by the laws of the State of California."] },
-      { h: "Contact", p: [`Questions? Email ${site.brand.email}.`] }
-    ]
-  },
-  {
-    slug: "accessibility-statement",
-    title: "Accessibility Statement",
-    description: "El Pueblo Mexican Food's commitment to web accessibility and WCAG 2.1 AA standards.",
-    sections: [
-      { p: [`${site.brand.name} is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.`] },
-      { h: "Conformance status", p: [
-        "This website aims to conform to Web Content Accessibility Guidelines (WCAG) 2.1 level AA. Conformance means the content fully meets the accessibility standard."
+      { h: "Children's privacy", p: [
+        "The Site is intended for a general audience and is not directed to children under 13. We do not knowingly collect personal information from children under 13.",
+        "If you believe a child has provided us with personal information in violation of this Policy, please contact us and we will delete the information."
       ]},
-      { h: "Features", p: [
-        "Semantic HTML markup for assistive technology compatibility.",
-        "Descriptive alt text on informational images.",
-        "Keyboard-accessible navigation throughout the site.",
-        "Sufficient color contrast on text and interactive elements.",
-        "Text resizing up to 200% without loss of content or functionality."
+      { h: "Your choices and rights", p: [
+        "Regardless of where you live, you may: ask us what information we have about you; ask us to delete it; ask us to correct it; unsubscribe from any marketing messages; decline to provide information (though this may limit our ability to respond).",
+        "Depending on where you live (including California, Colorado, Connecticut, Virginia, Utah, and many other states and countries), you may have additional rights such as the right to receive a portable copy of your information, to opt out of targeted advertising (we do not engage in this), or to appeal a decision we make. California residents should see the California Consumer Privacy notice for state-specific rights.",
+        `To exercise these rights, email ${site.brand.email} with the subject "Privacy Request" and describe what you are asking for. We will verify your identity (typically by confirming information we already have on file) and respond within 45 days (extendable by another 45 days if reasonably necessary).`
       ]},
-      { h: "Feedback", p: [
-        `We welcome feedback on the accessibility of this site. If you encounter barriers, please contact us at ${site.brand.email} and we will work to address them promptly.`
+      { h: "Do Not Track and Global Privacy Control", p: [
+        "Most browsers offer a Do Not Track (\"DNT\") setting. There is no uniform industry standard for interpreting DNT, so we do not currently respond to DNT signals.",
+        "We do, however, recognize the Global Privacy Control (GPC). Visitors whose browser sends a GPC signal will be treated as having opted out of any \"sale\" or \"sharing\" of personal information (as those terms are defined under California law), to the extent applicable."
+      ]},
+      { h: "California Shine the Light", p: [
+        `California Civil Code § 1798.83 entitles California residents to request information about disclosures of personal information to third parties for the third parties' direct marketing purposes. We do not disclose personal information to third parties for their direct marketing. To request confirmation, email ${site.brand.email} with "Shine the Light" in the subject line.`
+      ]},
+      { h: "International data transfers", p: [
+        "El Pueblo is based in the United States, and our service providers are primarily located in the United States. If you access the Site from outside the United States, your information will be transferred to, stored, and processed in the United States, where data-protection laws may differ from those in your home jurisdiction. By using the Site you consent to this transfer."
+      ]},
+      { h: "Links to other sites", p: [
+        "The Site may contain links to websites operated by third parties (such as our ordering partners, social networks, or news outlets). We are not responsible for the privacy practices of those sites. We encourage you to review the privacy policies of every site you visit."
+      ]},
+      { h: "Changes to this policy", p: [
+        "We may update this Policy from time to time. When we do, we will revise the \"Last updated\" date at the top of this page. If the changes are material, we will provide additional notice (such as a banner on the Site or an email to subscribers).",
+        "Continued use of the Site after changes take effect constitutes acceptance of the revised Policy."
+      ]},
+      { h: "How to contact us", p: [
+        `El Pueblo Mexican Food — Privacy`,
+        `Email: ${site.brand.email}`,
+        `Postal: 820 Birmingham Drive, Cardiff, CA 92007 (Attn: Privacy)`,
+        "We aim to respond to privacy inquiries within 10 business days."
       ]}
     ]
   },
   {
     slug: "cookie-policy",
     title: "Cookie Policy",
-    description: "How El Pueblo Mexican Food uses cookies and similar tracking technologies.",
+    description: "Comprehensive explanation of the cookies, local storage, and tracking technologies used on elpueblomex.com, and your choices for managing them.",
     sections: [
-      { p: ["This Cookie Policy explains what cookies are, how we use them, and your choices for managing them."] },
-      { h: "What are cookies?", p: [
-        "Cookies are small text files placed on your device when you visit a website. They help the site recognize your device and remember certain information about your visit."
+      { p: [
+        `This Cookie Policy explains what cookies and similar technologies are, how ${site.brand.name} uses them on elpueblomex.com, and the choices available to you.`,
+        "This Policy supplements our Privacy Policy. Please read both together."
       ]},
-      { h: "How we use cookies", p: [
-        "Essential cookies: required for site functionality like form submissions.",
-        "Analytics cookies: help us understand how visitors use the site so we can improve it. We use Google Analytics for this purpose when enabled.",
-        "We do not use advertising cookies or sell cookie data to third parties."
+      { h: "What are cookies and similar technologies?", p: [
+        "Cookies are small text files placed on your device (computer, phone, tablet) by a website you visit. They allow the site to recognize your device on return visits and to remember preferences or actions.",
+        "Similar technologies include: local storage (browser-based storage for small pieces of data, such as your cookie-banner preference), session storage (cleared when you close the tab), pixels or tags (tiny image files that record page views), and server logs (records of requests to our servers).",
+        "Cookies can be \"first-party\" (set by this Site) or \"third-party\" (set by another domain we load content from, such as Google Analytics)."
       ]},
-      { h: "Your choices", p: [
-        "Most browsers let you block or delete cookies through their settings. Blocking essential cookies may prevent forms or some features from working."
+      { h: "Categories of cookies we use", ul: [
+        "Strictly necessary — required for the Site to work (for example, remembering that you've dismissed the cookie banner, keeping form state between pages, protecting against abuse). These cannot be switched off from within the Site.",
+        "Analytics / performance — help us understand which pages people visit, where they come from, and how the Site performs. Data is aggregated and used to improve the Site.",
+        "Functional — remember preferences like selected location or previously viewed menu section to improve your experience.",
+        "Targeting / advertising — we do not currently use advertising cookies on this Site and do not share personal information with advertising networks for cross-context behavioral advertising."
       ]},
-      { h: "Contact", p: [`Questions? Email ${site.brand.email}.`] }
+      { h: "Specific cookies and storage items", p: [
+        "Below is a best-effort list of the cookies, local-storage items, and third-party trackers that may be set when you visit the Site. Third-party cookies may change without notice; consult the provider for an authoritative list.",
+        "ep_cookie_consent (local storage; strictly necessary) — remembers whether you accepted or declined the cookie banner so it doesn't reappear. Stored on your device; no personal information is sent to us.",
+        "_ga, _ga_* (first-party cookies from Google Analytics; analytics) — distinguish unique visitors and sessions. See Google's documentation. Typical retention: 2 years (rotated).",
+        "__cf_bm, cf_clearance (set by Cloudflare; strictly necessary) — bot-mitigation and security cookies used to distinguish humans from automated traffic. Typical retention: 30 minutes to 30 days.",
+        "vercel / _vercel_* (set by Vercel hosting infrastructure; strictly necessary) — routing and caching cookies used to serve the correct version of the Site."
+      ]},
+      { h: "Third parties that may set cookies", p: [
+        "Google Analytics (analytics) — see Google's Privacy & Terms and the Google Analytics opt-out browser add-on at tools.google.com/dlpage/gaoptout.",
+        "Cloudflare (security / performance) — see cloudflare.com/privacypolicy.",
+        "Vercel (hosting) — see vercel.com/legal/privacy-policy.",
+        "If you place an order, you may be redirected to order.online, which sets its own cookies under its own privacy policy."
+      ]},
+      { h: "Your cookie choices", p: [
+        "When you first visit the Site, a cookie banner lets you Accept all cookies or Decline non-essential cookies. Declining instructs us not to load analytics cookies for your session (strictly necessary cookies are still required for the Site to function).",
+        "You can change or withdraw your choice at any time by clearing your browser's site data for elpueblomex.com, which removes the ep_cookie_consent value and causes the banner to reappear on your next visit.",
+        "Most browsers allow you to refuse or delete cookies. Check your browser's documentation: Chrome (support.google.com/chrome), Firefox (support.mozilla.org), Safari (support.apple.com), Edge (support.microsoft.com). Blocking strictly necessary cookies may break parts of the Site.",
+        "You can opt out of Google Analytics specifically with the browser add-on linked above."
+      ]},
+      { h: "Do Not Track and Global Privacy Control", p: [
+        "The Site does not currently respond to Do Not Track (DNT) signals because there is no agreed industry standard for interpreting them.",
+        "We do recognize the Global Privacy Control (GPC) signal. If your browser transmits a GPC signal, we will treat it as a request to opt out of any \"sale\" or \"sharing\" of personal information under California law — even though we do not engage in sales or cross-context behavioral advertising."
+      ]},
+      { h: "Minors", p: [
+        "We do not knowingly set non-essential cookies on devices we believe are used primarily by children under 13."
+      ]},
+      { h: "Changes to this Cookie Policy", p: [
+        "We may update this Policy from time to time. When we do, we will revise the \"Last updated\" date at the top of this page. Material changes will be announced in the cookie banner or elsewhere on the Site."
+      ]},
+      { h: "Contact", p: [
+        `Questions about cookies? Email ${site.brand.email} with "Cookie Policy" in the subject line.`
+      ]}
+    ]
+  },
+  {
+    slug: "terms",
+    title: "Terms of Service",
+    description: "Terms and conditions governing your use of the El Pueblo Mexican Food website, services, and properties.",
+    sections: [
+      { p: [
+        `These Terms of Service ("Terms") form a binding agreement between you and ${site.brand.name} ("El Pueblo," "we," "us," or "our") governing your access to and use of elpueblomex.com, our restaurants, and any related services (collectively, the "Services").`,
+        "Please read these Terms carefully. By accessing or using the Services, you accept these Terms. If you do not agree, do not use the Services."
+      ]},
+      { h: "Eligibility", p: [
+        "You must be at least 13 years old to use the Site. If you are between 13 and 17, you may use the Site only with the involvement of a parent or guardian. You must be 18 or older to submit a job application, sign a catering contract, or enter into any payment transaction.",
+        "You are responsible for complying with all laws that apply to you in your location."
+      ]},
+      { h: "Account and use of the Site", p: [
+        "We do not currently require an account to use the Site. If we introduce accounts in the future, you will be responsible for maintaining the confidentiality of your credentials and for all activity under your account.",
+        "You agree to use the Site only for lawful purposes and in accordance with these Terms. You will not: (a) use the Site in a way that violates any applicable law; (b) use the Site to harass, abuse, defame, or harm another person; (c) attempt to gain unauthorized access to any portion of the Site or related systems; (d) interfere with the operation of the Site (denial-of-service, introducing viruses, scraping at a rate that burdens our infrastructure, etc.); (e) reverse-engineer, decompile, or attempt to extract source code; (f) use automated systems (bots, scrapers) except for public search-engine crawlers; (g) impersonate any person or entity; (h) use the Site to send spam or advertising; (i) commit any other act we reasonably consider harmful.",
+        "We may suspend or restrict access to the Site (in whole or for specific users) at any time if we reasonably believe these Terms are being violated or the Site's security or integrity is at risk."
+      ]},
+      { h: "Menu, pricing, and availability", p: [
+        "Menu items, ingredients, prices, and hours are subject to change without notice. We make reasonable efforts to keep Site information accurate, but the final authoritative source is the menu posted at each restaurant on the day of your visit.",
+        "Pricing shown on the Site may differ from in-store pricing and from pricing on third-party ordering platforms. If a price listed is obviously an error (for example, a typographical mistake), we reserve the right to cancel or refuse the order and correct the price.",
+        "Special offers and promotions may be limited to specific locations, days, or supplies on hand and may be ended at any time."
+      ]},
+      { h: "Food allergens and dietary information", p: [
+        "Our kitchens prepare and serve foods that contain common allergens including wheat, soy, dairy, eggs, shellfish, fish, peanuts, and tree nuts. Cross-contact between ingredients is possible.",
+        "While we do our best to accommodate dietary needs, we cannot guarantee that any menu item is free of a particular allergen or ingredient. If you have a food allergy or dietary restriction, please speak with a manager before ordering."
+      ]},
+      { h: "Orders and payments", p: [
+        "Orders placed through the Site are typically routed to third-party ordering partners (such as order.online). Those partners process payment and handle fulfillment under their own terms and privacy policies. We are not responsible for issues with third-party platforms; however, we will make good-faith efforts to help resolve problems when you contact us.",
+        "Tips, taxes, and delivery fees (where applicable) are shown before checkout on the ordering platform. All transactions are in U.S. dollars.",
+        "We are not responsible for damages, delays, or losses caused by third-party payment processors or delivery providers."
+      ]},
+      { h: "Gift cards", p: [
+        "Any gift cards we issue are redeemable only at El Pueblo locations or through our designated ordering partners, subject to the terms printed on the card or accompanying materials. Gift cards are not refundable, not redeemable for cash (except where required by law), and are not replaceable if lost or stolen."
+      ]},
+      { h: "Intellectual property", p: [
+        `All text, graphics, photographs, videos, logos, marks, menu descriptions, page layouts, and other content on the Site are owned by ${site.brand.name}, its licensors, or its contributors, and are protected by U.S. and international copyright, trademark, and other intellectual-property laws.`,
+        `The names "El Pueblo Mexican Food," "El Pueblo," the $1.29 Fish Taco offering, and related logos are trademarks of ${site.brand.name}. You may not use them without our prior written permission.`,
+        "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to access the Site for your personal, non-commercial use. You may not reproduce, modify, distribute, publicly display, republish, sell, or create derivative works from any portion of the Site without prior written permission."
+      ]},
+      { h: "User submissions", p: [
+        "If you submit content to us — for example, via a catering form, fundraiser application, job application, review, or social post tagging El Pueblo — you represent that you have the right to share the content and that it is accurate, not misleading, and does not infringe anyone else's rights.",
+        "You grant us a non-exclusive, royalty-free, worldwide, perpetual license to use, copy, modify, and display the content for purposes of responding to your submission, operating our business, and (for permitted marketing content such as tagged social posts) promoting El Pueblo with credit where appropriate.",
+        "Do not send us confidential or proprietary information we have not requested."
+      ]},
+      { h: "Third-party links and services", p: [
+        "The Site may link to, or redirect you to, third-party websites and services (for example, order.online, social networks, news sites, map providers). We do not endorse or control third-party sites and are not responsible for their content, terms, or privacy practices. Your interactions with third parties are subject to their terms."
+      ]},
+      { h: "Disclaimers", p: [
+        "THE SITE AND ALL CONTENT ARE PROVIDED \"AS IS\" AND \"AS AVAILABLE,\" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, OR NON-INFRINGEMENT.",
+        "WE DO NOT WARRANT THAT THE SITE WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.",
+        "WE MAKE NO WARRANTY REGARDING THE ACCURACY, COMPLETENESS, OR TIMELINESS OF ANY INFORMATION ON THE SITE, INCLUDING HOURS, MENU CONTENT, PRICES, OR AVAILABILITY."
+      ]},
+      { h: "Limitation of liability", p: [
+        "TO THE MAXIMUM EXTENT PERMITTED BY LAW, EL PUEBLO, ITS AFFILIATES, AND ITS AGENTS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUES, DATA, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) YOUR USE OF OR INABILITY TO USE THE SITE; (B) ANY CONTENT OBTAINED FROM THE SITE; OR (C) UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR SUBMISSIONS.",
+        "OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THE SITE OR THESE TERMS WILL NOT EXCEED ONE HUNDRED U.S. DOLLARS ($100).",
+        "Some jurisdictions do not allow the exclusion of certain warranties or the limitation of liability. The above limits apply only to the extent permitted by law."
+      ]},
+      { h: "Indemnification", p: [
+        "You agree to indemnify, defend, and hold harmless El Pueblo and its officers, employees, agents, and affiliates from and against any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising from (a) your use of the Site; (b) your violation of these Terms; (c) your violation of any law or the rights of a third party; or (d) any content you submit."
+      ]},
+      { h: "Dispute resolution", p: [
+        `Informal resolution: Before filing a claim, you agree to first try to resolve the dispute informally by contacting us at ${site.brand.email} with a description of the issue. We will do the same.`,
+        "Governing law: These Terms, and any dispute arising out of or related to the Site or these Terms, are governed by the laws of the State of California, without regard to its conflict-of-laws principles.",
+        "Venue: Except for claims that may be filed in small-claims court, any action arising under these Terms will be brought exclusively in the state or federal courts located in San Diego County, California, and you consent to the personal jurisdiction of those courts.",
+        "Class-action waiver: To the maximum extent permitted by law, any dispute will be resolved on an individual basis. You waive any right to bring or participate in a class, collective, or representative action against El Pueblo."
+      ]},
+      { h: "Termination", p: [
+        "We may suspend or terminate your access to the Site at any time, with or without notice, for any reason — including suspected violation of these Terms. Upon termination, the provisions that by their nature should survive will survive (including intellectual property, disclaimers, limitation of liability, indemnification, and dispute resolution)."
+      ]},
+      { h: "Modifications to these Terms", p: [
+        "We may update these Terms at any time. When we do, we will revise the \"Last updated\" date above. Material changes will be flagged on the Site. Continued use of the Site after changes take effect constitutes acceptance of the new Terms."
+      ]},
+      { h: "Miscellaneous", p: [
+        "Entire agreement: These Terms, together with the Privacy Policy, Cookie Policy, and any posted notices, constitute the entire agreement between you and El Pueblo regarding the Site.",
+        "Severability: If any provision of these Terms is found unenforceable, the remaining provisions remain in full force.",
+        "No waiver: Our failure to enforce any provision is not a waiver of our right to enforce it later.",
+        "Assignment: You may not assign these Terms without our prior written consent. We may assign these Terms freely.",
+        "Notices: We may provide notice to you by email (to the address you have given us) or by posting on the Site."
+      ]},
+      { h: "Contact", p: [
+        `Questions about these Terms? Email ${site.brand.email} with "Terms of Service" in the subject line.`,
+        "Postal: 820 Birmingham Drive, Cardiff, CA 92007 (Attn: Legal)"
+      ]}
+    ]
+  },
+  {
+    slug: "accessibility-statement",
+    title: "Accessibility Statement",
+    description: "El Pueblo Mexican Food's commitment to digital accessibility: standards, measures taken, known limitations, and how to submit feedback.",
+    sections: [
+      { p: [
+        `${site.brand.name} is committed to making our restaurants, website, and digital services accessible to people of all abilities, including individuals with disabilities. We believe technology should work for everyone, and we continually work to improve the accessibility of elpueblomex.com for our customers, applicants, and partners.`
+      ]},
+      { h: "Standards we aim to meet", p: [
+        "elpueblomex.com is designed to conform to the World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG) 2.1, Level AA — the accessibility standard most commonly referenced in U.S. regulations and court decisions, including the Americans with Disabilities Act (ADA).",
+        "We design and build with the broader WCAG principles — Perceivable, Operable, Understandable, and Robust — as guiding goals."
+      ]},
+      { h: "Measures we take", p: [
+        "Semantic HTML: we use headings, lists, landmarks, and form labels consistently so assistive technology can interpret page structure.",
+        "Keyboard operability: all interactive elements are reachable and operable from a keyboard. Focus styles are visible.",
+        "Alternative text: informational images have descriptive alt text; decorative images are hidden from assistive technology.",
+        "Color and contrast: primary text and UI elements meet or exceed WCAG 2.1 AA contrast ratios. Color is never the sole means of conveying information.",
+        "Responsive and scalable layout: the site is usable at text-zoom up to 200% and across mobile, tablet, and desktop sizes.",
+        "Motion: animated elements (ticker, reveal-on-scroll) are decorative and can be overridden by users who set prefers-reduced-motion in their operating system.",
+        "Forms: inputs have visible labels, clear error messages, and logical tab order.",
+        "Language and structure: the document language is declared; links are descriptive rather than \"click here\"; page titles are unique."
+      ]},
+      { h: "Compatibility", p: [
+        "The Site is designed to be compatible with recent versions of popular assistive technologies including VoiceOver (macOS, iOS), TalkBack (Android), NVDA and JAWS (Windows), Dragon NaturallySpeaking, and the built-in screen-magnification tools on major operating systems.",
+        "The Site works best with the latest versions of Google Chrome, Apple Safari, Mozilla Firefox, and Microsoft Edge. Some older browsers may not render all features correctly."
+      ]},
+      { h: "Known limitations", p: [
+        "Accessibility is a continuous process and there may be portions of the Site that do not yet fully meet our target standard. Areas we are actively improving include:",
+        "Third-party embedded content (such as the ordering partner pages at order.online, map embeds, and certain social-media widgets) is outside our direct control; we work with vendors where possible to encourage accessibility but cannot guarantee their conformance.",
+        "Older news and blog posts may contain images with incomplete alternative text or documents that predate our current standard.",
+        "Video content and user-submitted photography (for example, tagged social posts displayed in galleries) may lack captions or descriptive text.",
+        "If you encounter any barrier, please let us know — see Feedback, below."
+      ]},
+      { h: "Ongoing assessment", p: [
+        "We routinely review the Site using a combination of automated accessibility checkers (such as axe-core and Lighthouse), manual review by our team, and testing with assistive technology.",
+        "We aim to include accessibility checks in every significant update to the Site."
+      ]},
+      { h: "Accessibility at our restaurants", p: [
+        "Our physical locations are designed to welcome guests of all abilities. Every dining location offers counter-service ordering with staff available to assist, ADA-compliant parking where available, and accessible routes from the parking area to the dining area. Our Cardiff, Del Mar, and Carmel Valley locations have accessible restrooms.",
+        "If you plan to visit and have a specific accessibility concern, please call the location in advance — our teams are happy to prepare."
+      ]},
+      { h: "Feedback and assistance", p: [
+        `We welcome feedback. If you find an accessibility barrier on elpueblomex.com, or if you need assistance accessing information on the Site in an alternate format, please contact us at ${site.brand.email} with the subject "Accessibility."`,
+        "Please include: the URL of the page where you encountered the barrier, a description of the issue, and the assistive technology and browser you are using. We aim to acknowledge your message within 2 business days and resolve most issues within 10 business days.",
+        "If you need immediate help, you may call any of our restaurants directly; phone numbers and hours are listed on the Locations page."
+      ]},
+      { h: "Formal complaints", p: [
+        "If your feedback is not addressed to your satisfaction, you may file a complaint under the Americans with Disabilities Act with the U.S. Department of Justice Civil Rights Division (www.ada.gov) or, for California residents, with the California Department of Fair Employment and Housing."
+      ]},
+      { h: "Changes to this Statement", p: [
+        "We may update this Accessibility Statement as our practices evolve. The \"Last updated\" date above reflects the most recent revision."
+      ]}
     ]
   },
   {
     slug: "californiaconsumerprivacy",
-    title: "California Consumer Privacy",
-    description: "Your rights under the California Consumer Privacy Act (CCPA/CPRA).",
+    title: "California Consumer Privacy Notice",
+    description: "Detailed notice of California residents' rights under the CCPA, as amended by the CPRA — including how to exercise rights, verification, authorized agents, and appeals.",
     sections: [
-      { p: [`If you are a California resident, the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA), gives you specific rights regarding your personal information collected by ${site.brand.name}.`] },
-      { h: "Information we collect", p: [
-        "Identifiers (name, email, phone) you submit through our forms.",
-        "Employment-related information submitted through our careers forms.",
-        "Commercial information related to orders placed through our ordering partners.",
-        "Internet or electronic network activity: pages you visit, referring URLs, approximate location from IP, device/browser info."
+      { p: [
+        `This notice applies to California residents and supplements our general Privacy Policy. It is provided pursuant to the California Consumer Privacy Act of 2018 ("CCPA"), as amended by the California Privacy Rights Act of 2020 ("CPRA"). Terms used in this notice have the meanings given to them in those laws.`
       ]},
-      { h: "Your rights", ul: [
-        "Right to know what personal information we collect, use, and share.",
-        "Right to request deletion of personal information we've collected from you.",
-        "Right to correct inaccurate personal information.",
-        "Right to opt-out of the sale or sharing of personal information (we do not sell).",
-        "Right to limit use of sensitive personal information.",
-        "Right to non-discrimination for exercising your CCPA rights."
+      { h: "Personal information we collect", p: [
+        "In the preceding 12 months, we have collected the following categories of personal information from California consumers. For each category, the examples below are not exhaustive.",
+        "Identifiers: name, email, phone number, postal address (when supplied), IP address, online identifiers from cookies and similar technologies.",
+        "Customer records (Cal. Civ. Code § 1798.80(e)): contact information submitted through our forms, such as catering and event requests.",
+        "Protected classification characteristics: limited employment-related information voluntarily supplied on job applications (for EEO compliance), where you choose to provide it.",
+        "Commercial information: order history processed through our ordering partners.",
+        "Internet or electronic network activity: browsing history on the Site, interaction with emails, and referring URLs.",
+        "Geolocation data: approximate location derived from IP address only (not precise GPS).",
+        "Professional or employment-related information: resumes, cover letters, and prior work history submitted through the careers forms.",
+        "Inferences drawn from the above to create a basic profile reflecting a consumer's preferences (for example, which location they tend to visit).",
+        "Sensitive personal information: we do not intentionally collect categories of sensitive personal information as defined by CPRA (such as Social Security numbers, precise geolocation, or racial or ethnic origin). If you include any such information voluntarily (for example, in a resume), we process it only for the purpose you supplied it."
       ]},
-      { h: "How to exercise your rights", p: [
-        `Email ${site.brand.email} with the subject line "CCPA Request" and tell us which right you are exercising. We may need to verify your identity before we can respond.`,
-        "We will respond within 45 days."
+      { h: "Sources of personal information", ul: [
+        "Directly from you (forms, email, phone calls, in-restaurant interactions).",
+        "Automatically from your device or browser when you visit the Site.",
+        "From service providers — for example, analytics platforms, form handlers, and ordering partners.",
+        "From publicly available sources or social media platforms where you have interacted with us."
       ]},
-      { h: "Do Not Sell or Share", p: [
-        "We do not sell your personal information and do not share it for cross-context behavioral advertising."
+      { h: "Business and commercial purposes for collection", ul: [
+        "Performing the services you request (answering inquiries, processing catering and event bookings, fulfilling orders via our partners, reviewing job applications).",
+        "Operating, maintaining, and securing the Site.",
+        "Debugging and error resolution.",
+        "Analytics and Site improvement.",
+        "Marketing our own products and services to people who have expressed interest.",
+        "Compliance with legal obligations and protection of rights, property, and safety."
+      ]},
+      { h: "Categories disclosed to third parties", p: [
+        "In the preceding 12 months, we have disclosed the following categories to the following types of recipients for business purposes:",
+        "Identifiers and Internet activity — disclosed to our hosting, security, and analytics service providers (e.g., Vercel, Cloudflare, Google Analytics) for the purpose of operating and measuring the Site.",
+        "Commercial information — disclosed to our ordering partner (order.online) to fulfill orders you choose to place.",
+        "Professional or employment-related information — disclosed to our email provider (Google Workspace) so that we can receive and review job applications.",
+        "Identifiers and customer records — disclosed in response to legal process when we are required to do so."
+      ]},
+      { h: "Sale or sharing of personal information", p: [
+        "We do not sell personal information for monetary or other valuable consideration, and we do not share personal information for cross-context behavioral advertising, as those terms are defined under the CCPA/CPRA.",
+        "We do not have actual knowledge of selling or sharing personal information of consumers under 16."
+      ]},
+      { h: "Retention", p: [
+        "We retain each category of personal information only as long as necessary for the purpose it was collected and any lawful recordkeeping requirement. See the Data Retention section of our Privacy Policy for representative time frames."
+      ]},
+      { h: "Your California privacy rights", p: [
+        "Subject to certain exceptions, California residents have the following rights:",
+        "Right to know — request that we disclose (1) the categories of personal information we have collected about you; (2) the categories of sources; (3) the business or commercial purposes; (4) the categories of third parties to whom we disclosed it; and (5) the specific pieces of personal information we have collected about you.",
+        "Right to delete — request that we delete personal information we have collected from you, subject to exceptions (for example, we may retain information needed to complete a transaction, detect security incidents, comply with a legal obligation, or exercise a legal right).",
+        "Right to correct — request that we correct inaccurate personal information we maintain about you.",
+        "Right to opt out of sale or sharing — we do not sell or share personal information for cross-context behavioral advertising, so there is nothing to opt out of; we honor Global Privacy Control signals as a precaution.",
+        "Right to limit use of sensitive personal information — because we do not use sensitive personal information for purposes beyond those permitted by default, no additional limitation is necessary.",
+        "Right to data portability — receive the personal information you have provided to us in a readily usable format.",
+        "Right to non-discrimination — we will not deny goods or services, charge different prices, or provide a different level of service because you exercised your rights. We are permitted to offer financial incentives tied to personal information, but we do not currently do so."
+      ]},
+      { h: "How to submit a request", p: [
+        `Email: ${site.brand.email} with the subject "California Privacy Request" and describe the right you are exercising.`,
+        "By mail: El Pueblo Mexican Food — Privacy, 820 Birmingham Drive, Cardiff, CA 92007.",
+        "You may also contact any El Pueblo location by phone and ask to be directed to the Privacy contact."
+      ]},
+      { h: "Verification", p: [
+        "To protect your information, we must verify your identity before responding to most requests. Verification generally requires that you provide information we can match against what we already have — for example, the email address you used to submit a form, the approximate date of your interaction, or the contents of a specific message.",
+        "For deletion and correction requests, we may require a signed declaration under penalty of perjury.",
+        "We do not use your verification information for any purpose other than verifying your request."
+      ]},
+      { h: "Authorized agents", p: [
+        "You may designate an authorized agent to submit a request on your behalf. The agent must provide written proof of their authority (for example, a signed permission or a valid power of attorney). We may still contact you directly to verify your identity or to confirm the request.",
+        "Businesses that provide consumer-privacy-request services must be registered with the California Secretary of State where required by law."
+      ]},
+      { h: "Response timing", p: [
+        "We confirm receipt of your request within 10 business days and will respond substantively within 45 calendar days of receipt. If we need more time (up to an additional 45 days), we will tell you the reason and the extension period in writing."
+      ]},
+      { h: "Appeals", p: [
+        `If you are dissatisfied with our response, you may appeal by replying to our decision email within 30 days, or by writing to ${site.brand.email} with "Privacy Appeal" in the subject line. We will respond to appeals within 45 days and, if we deny the appeal, will inform you of your right to contact the California Privacy Protection Agency or the California Attorney General's office.`
+      ]},
+      { h: "Shine the Light", p: [
+        `California Civil Code § 1798.83 allows California residents to request a notice disclosing categories of personal information we shared with third parties for their direct marketing in the preceding year. We do not share personal information for third-party direct marketing. To confirm, email ${site.brand.email} with "Shine the Light" in the subject line.`
+      ]},
+      { h: "Minors", p: [
+        "We do not knowingly collect personal information from children under 13 and do not sell or share the personal information of consumers we know to be under 16. If you are under 18 and have posted content you want removed, contact us and we will remove it."
+      ]},
+      { h: "Global Privacy Control", p: [
+        "We recognize the Global Privacy Control (GPC) browser signal. Although we do not sell or share personal information for cross-context behavioral advertising, a GPC signal is treated as a valid opt-out request to the fullest extent applicable."
+      ]},
+      { h: "Changes to this notice", p: [
+        "We will update this California Consumer Privacy Notice as our practices change or the law evolves. Material updates will be flagged on the Site. The \"Last updated\" date above reflects the current version."
+      ]},
+      { h: "Contact", p: [
+        `Email: ${site.brand.email} (subject: "California Privacy")`,
+        "Postal: 820 Birmingham Drive, Cardiff, CA 92007 (Attn: Privacy)"
       ]}
     ]
   }
