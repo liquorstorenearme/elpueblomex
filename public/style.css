@@ -2013,6 +2013,7 @@ button:focus-visible {
   border-color: var(--terracotta);
 }
 .cookie-banner__btn--primary:hover { filter: brightness(1.08); }
+.cookie-banner__btn-short { display: none; }
 @keyframes cookie-rise {
   from { transform: translateY(30px); opacity: 0; }
   to   { transform: translateY(0);    opacity: 1; }
@@ -2022,7 +2023,9 @@ button:focus-visible {
   .cookie-banner__inner { padding: 14px 14px; gap: 12px; }
   .cookie-banner__text { font-size: 13px; }
   .cookie-banner__actions { width: 100%; justify-content: stretch; }
-  .cookie-banner__btn { flex: 1; padding: 11px 10px; font-size: 11px; letter-spacing: 0.06em; }
+  .cookie-banner__btn { flex: 1; padding: 12px 14px; font-size: 12px; letter-spacing: 0.08em; }
+  .cookie-banner__btn-long { display: none; }
+  .cookie-banner__btn-short { display: inline; }
 }
 
 /* ---------- Print ---------- */
