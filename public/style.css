@@ -1693,8 +1693,11 @@ section { position: relative; }
   .feature-fish__price strong { font-size: 26px; margin-bottom: 2px; }
   .feature-fish__price em { font-size: 8px; }
   .site-footer__cols { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .award-band__text { font-size: 18px; }
+  .award-band { padding: 24px 20px; }
+  .award-band__inner { flex-direction: column; gap: 12px; text-align: center; }
+  .award-band__text { font-size: 18px; max-width: 100%; text-align: center; }
   .award-band__star { width: 40px; height: 40px; }
+  .award-band__star:last-of-type { display: none; }
   .ticker__track { font-size: 14px; }
   .site-header__bar { padding: 12px 20px; gap: 14px; }
   .logo img { width: 44px; height: 44px; }
