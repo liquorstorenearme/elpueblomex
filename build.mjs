@@ -2064,9 +2064,9 @@ function wrapImagesWithWebp(html) {
     .map((chunk) => {
       if (chunk.startsWith("<picture")) return chunk;
       return chunk.replace(
-        /<img\b([^>]*?)\ssrc="(\/images\/[^"]+?\.jpg)"([^>]*)>/g,
+        /<img\b([^>]*?)\ssrc="(\/images\/[^"]+?\.(?:jpg|png))"([^>]*)>/g,
         (match, pre, src, post) => {
-          const webpSrc = src.replace(/\.jpg$/, ".webp");
+          const webpSrc = src.replace(/\.(?:jpg|png)$/, ".webp");
           const webpAbs = path.join(outDir, webpSrc);
           if (!fs.existsSync(webpAbs)) return match;
           if (/\bsrcset=/.test(match)) return match;
@@ -2096,10 +2096,16 @@ function minifyCss(css) {
 function build() {
   fs.mkdirSync(outDir, { recursive: true });
 
-  // Minify CSS in place (idempotent: re-minifying a minified file is still minified)
+  // Minify CSS in place (idempotent) + swap large PNG backgrounds to WebP with PNG fallback
   const cssPath = path.join(outDir, "style.css");
   if (fs.existsSync(cssPath)) {
-    const css = fs.readFileSync(cssPath, "utf8");
+    let css = fs.readFileSync(cssPath, "utf8");
+    css = css.replace(/url\(['"]?(\/images\/[^'")]+?\.(?:jpg|png))['"]?\)/g, (m, src) => {
+      const webpSrc = src.replace(/\.(?:jpg|png)$/, ".webp");
+      const webpAbs = path.join(outDir, webpSrc);
+      if (!fs.existsSync(webpAbs)) return m;
+      return `image-set(url('${webpSrc}') type('image/webp'), url('${src}') type('image/${src.endsWith('.png') ? 'png' : 'jpeg'}'))`;
+    });
     const min = minifyCss(css);
     if (min.length < css.length) fs.writeFileSync(cssPath, min);
   }
