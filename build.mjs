@@ -2098,10 +2098,15 @@ function build() {
   const cssPath = path.join(outDir, "style.css");
   if (fs.existsSync(cssPath)) {
     let css = fs.readFileSync(cssPath, "utf8");
-    css = css.replace(/url\(['"]?(\/images\/[^'")]+?\.(?:jpg|png))['"]?\)/g, (m, src) => {
+    css = css.replace(/url\(['"]?(\/images\/[^'")]+?\.(?:jpg|png))['"]?\)/g, (m, src, offset, full) => {
       const webpSrc = src.replace(/\.(?:jpg|png)$/, ".webp");
       const webpAbs = path.join(outDir, webpSrc);
       if (!fs.existsSync(webpAbs)) return m;
+      // Skip if already wrapped inside image-set(...) — idempotent re-builds
+      const before = full.slice(Math.max(0, offset - 120), offset);
+      const opens = (before.match(/image-set\s*\(/g) || []).length;
+      const closes = (before.match(/\)/g) || []).length;
+      if (opens > closes) return m;
       return `image-set(url('${webpSrc}') type('image/webp'), url('${src}') type('image/${src.endsWith('.png') ? 'png' : 'jpeg'}'))`;
     });
     const min = minifyCss(css);
