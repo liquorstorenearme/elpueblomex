@@ -30,7 +30,7 @@
 <meta name="twitter:title" content="Mexican Food in North County San Diego | El Pueblo Mexican Food — 5 Locations">
 <meta name="twitter:description" content="Fresh Mexican food in North San Diego County. Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening soon. Voted #1 on Yelp. Fish tacos, full bars, open late.">
 <meta name="twitter:image" content="https://elpueblomex.com/og/home.jpg">
-<link rel="preload" as="image" href="/images/home/combo-plate-hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="/images/home/combo-plate-hero.jpg" imagesrcset="/images/home/combo-plate-hero-m.jpg 900w, /images/home/combo-plate-hero.jpg 1600w" imagesizes="(max-width: 700px) 100vw, 50vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -109,7 +109,10 @@
       </div>
     </div>
     <div class="hero__media">
-      <img src="/images/home/combo-plate-hero.jpg" alt="Fresh Mexican food at El Pueblo — fish tacos from Cardiff, Carlsbad, Carmel Valley, and Del Mar" loading="eager">
+      <picture>
+        <source media="(max-width: 700px)" srcset="/images/home/combo-plate-hero-m.jpg" width="900" height="692">
+        <img src="/images/home/combo-plate-hero.jpg" width="1600" height="1230" alt="Fresh Mexican food at El Pueblo — fish tacos from Cardiff, Carlsbad, Carmel Valley, and Del Mar" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
     </div>
   </div>
 </section>

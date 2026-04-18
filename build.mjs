@@ -299,7 +299,7 @@ ${site.verifications?.bing ? `<meta name="msvalidate.01" content="${h(site.verif
 <meta name="twitter:title" content="${h(title)}">
 <meta name="twitter:description" content="${h(description)}">
 <meta name="twitter:image" content="${BASE_URL}${ogImage}">
-${lcpImage ? `<link rel="preload" as="image" href="${lcpImage}" fetchpriority="high">` : ""}
+${lcpImage ? `<link rel="preload" as="image" href="${lcpImage}" imagesrcset="${lcpImage === "/images/home/combo-plate-hero.jpg" ? "/images/home/combo-plate-hero-m.jpg 900w, /images/home/combo-plate-hero.jpg 1600w" : lcpImage}" imagesizes="${lcpImage === "/images/home/combo-plate-hero.jpg" ? "(max-width: 700px) 100vw, 50vw" : "100vw"}" fetchpriority="high">` : ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -481,7 +481,10 @@ function renderHome() {
       </div>
     </div>
     <div class="hero__media">
-      <img src="${h(hero.image)}" alt="Fresh Mexican food at El Pueblo — fish tacos from Cardiff, Carlsbad, Carmel Valley, and Del Mar" loading="eager">
+      <picture>
+        <source media="(max-width: 700px)" srcset="/images/home/combo-plate-hero-m.jpg" width="900" height="692">
+        <img src="${h(hero.image)}" width="1600" height="1230" alt="Fresh Mexican food at El Pueblo — fish tacos from Cardiff, Carlsbad, Carmel Valley, and Del Mar" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
     </div>
   </div>
 </section>
