@@ -2055,16 +2055,24 @@ Sitemap: ${BASE_URL}/sitemap.xml
 
 // ---------- Write ----------
 function wrapImagesWithWebp(html) {
-  return html.replace(
-    /<img\b([^>]*?)\ssrc="(\/images\/[^"]+?\.jpg)"([^>]*)>/g,
-    (match, pre, src, post) => {
-      const webpSrc = src.replace(/\.jpg$/, ".webp");
-      const webpAbs = path.join(outDir, webpSrc);
-      if (!fs.existsSync(webpAbs)) return match;
-      if (match.includes("<picture") || /\bsrcset=/.test(match)) return match;
-      return `<picture><source type="image/webp" srcset="${webpSrc}"><img${pre} src="${src}"${post}></picture>`;
-    }
-  );
+  // Split HTML into existing <picture>...</picture> blocks (left untouched)
+  // and everything else (where standalone <img> tags get wrapped).
+  const parts = html.split(/(<picture[\s\S]*?<\/picture>)/g);
+  return parts
+    .map((chunk) => {
+      if (chunk.startsWith("<picture")) return chunk;
+      return chunk.replace(
+        /<img\b([^>]*?)\ssrc="(\/images\/[^"]+?\.jpg)"([^>]*)>/g,
+        (match, pre, src, post) => {
+          const webpSrc = src.replace(/\.jpg$/, ".webp");
+          const webpAbs = path.join(outDir, webpSrc);
+          if (!fs.existsSync(webpAbs)) return match;
+          if (/\bsrcset=/.test(match)) return match;
+          return `<picture><source type="image/webp" srcset="${webpSrc}"><img${pre} src="${src}"${post}></picture>`;
+        }
+      );
+    })
+    .join("");
 }
 
 function write(relPath, contents) {
