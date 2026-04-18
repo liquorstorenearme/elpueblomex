@@ -299,7 +299,7 @@ ${site.verifications?.bing ? `<meta name="msvalidate.01" content="${h(site.verif
 <meta name="twitter:title" content="${h(title)}">
 <meta name="twitter:description" content="${h(description)}">
 <meta name="twitter:image" content="${BASE_URL}${ogImage}">
-${lcpImage ? `<link rel="preload" as="image" href="${lcpImage}" imagesrcset="${lcpImage === "/images/home/combo-plate-hero.jpg" ? "/images/home/combo-plate-hero-m.jpg 900w, /images/home/combo-plate-hero.jpg 1600w" : lcpImage}" imagesizes="${lcpImage === "/images/home/combo-plate-hero.jpg" ? "(max-width: 700px) 100vw, 50vw" : "100vw"}" fetchpriority="high">` : ""}
+${lcpImage === "/images/home/combo-plate-hero.jpg" ? `<link rel="preload" as="image" type="image/webp" href="/images/home/combo-plate-hero.webp" imagesrcset="/images/home/combo-plate-hero-m.webp 900w, /images/home/combo-plate-hero.webp 1600w" imagesizes="(max-width: 700px) 100vw, 50vw" fetchpriority="high">` : lcpImage ? `<link rel="preload" as="image" href="${lcpImage}" fetchpriority="high">` : ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -482,7 +482,9 @@ function renderHome() {
     </div>
     <div class="hero__media">
       <picture>
-        <source media="(max-width: 700px)" srcset="/images/home/combo-plate-hero-m.jpg" width="900" height="692">
+        <source media="(max-width: 700px)" type="image/webp" srcset="/images/home/combo-plate-hero-m.webp">
+        <source media="(max-width: 700px)" srcset="/images/home/combo-plate-hero-m.jpg">
+        <source type="image/webp" srcset="/images/home/combo-plate-hero.webp">
         <img src="${h(hero.image)}" width="1600" height="1230" alt="Fresh Mexican food at El Pueblo — fish tacos from Cardiff, Carlsbad, Carmel Valley, and Del Mar" loading="eager" fetchpriority="high" decoding="async">
       </picture>
     </div>
@@ -2052,14 +2054,45 @@ Sitemap: ${BASE_URL}/sitemap.xml
 }
 
 // ---------- Write ----------
+function wrapImagesWithWebp(html) {
+  return html.replace(
+    /<img\b([^>]*?)\ssrc="(\/images\/[^"]+?\.jpg)"([^>]*)>/g,
+    (match, pre, src, post) => {
+      const webpSrc = src.replace(/\.jpg$/, ".webp");
+      const webpAbs = path.join(outDir, webpSrc);
+      if (!fs.existsSync(webpAbs)) return match;
+      if (match.includes("<picture") || /\bsrcset=/.test(match)) return match;
+      return `<picture><source type="image/webp" srcset="${webpSrc}"><img${pre} src="${src}"${post}></picture>`;
+    }
+  );
+}
+
 function write(relPath, contents) {
   const full = path.join(outDir, relPath);
   fs.mkdirSync(path.dirname(full), { recursive: true });
-  fs.writeFileSync(full, contents);
+  const out = relPath.endsWith(".html") ? wrapImagesWithWebp(contents) : contents;
+  fs.writeFileSync(full, out);
+}
+
+function minifyCss(css) {
+  return css
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/\s+/g, " ")
+    .replace(/\s*([{}:;,>+~])\s*/g, "$1")
+    .replace(/;}/g, "}")
+    .trim();
 }
 
 function build() {
   fs.mkdirSync(outDir, { recursive: true });
+
+  // Minify CSS in place (idempotent: re-minifying a minified file is still minified)
+  const cssPath = path.join(outDir, "style.css");
+  if (fs.existsSync(cssPath)) {
+    const css = fs.readFileSync(cssPath, "utf8");
+    const min = minifyCss(css);
+    if (min.length < css.length) fs.writeFileSync(cssPath, min);
+  }
 
   // Home
   write("index.html", renderHome());
