@@ -55,16 +55,16 @@
   }, { rootMargin: '0px 0px -10% 0px' });
   document.querySelectorAll('.fade-in').forEach((el) => io.observe(el));
 
-  var params = new URLSearchParams(location.search);
-  var sent = params.get('sent');
-  var err = params.get('err');
+  const params = new URLSearchParams(location.search);
+  const sent = params.get('sent');
+  const err = params.get('err');
   if (sent || err) {
-    var form = document.querySelector('.stack-form') || document.querySelector('.newsletter-form');
-    var target = form ? form.parentElement : document.querySelector('main');
+    const form = document.querySelector('.stack-form') || document.querySelector('.newsletter-form');
+    const target = form ? form.parentElement : document.querySelector('main');
     if (target) {
-      var banner = document.createElement('div');
-      banner.className = 'form-status ' + (sent ? 'form-status--ok' : 'form-status--err');
-      var messages = {
+      const status = document.createElement('div');
+      status.className = 'form-status ' + (sent ? 'form-status--ok' : 'form-status--err');
+      const messages = {
         config: 'Our form service is not configured yet. Please email info@elpueblomex.com.',
         rate: 'Too many submissions — try again in a few minutes.',
         parse: 'We could not read that submission. Please try again.',
@@ -75,16 +75,16 @@
         type: 'Resume must be a PDF, DOC, DOCX, or TXT file.'
       };
       if (sent === 'newsletter') {
-        banner.textContent = 'Thanks — you are on the list. We will email you the moment we open the doors.';
+        status.textContent = 'Thanks — you are on the list. We will email you the moment we open the doors.';
       } else if (sent) {
-        banner.textContent = 'Thanks — we got your message and will be in touch shortly.';
+        status.textContent = 'Thanks — we got your message and will be in touch shortly.';
       } else {
-        banner.textContent = messages[err] || 'Something went wrong. Please try again.';
+        status.textContent = messages[err] || 'Something went wrong. Please try again.';
       }
-      target.insertBefore(banner, form || target.firstChild);
-      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.insertBefore(status, form || target.firstChild);
+      status.scrollIntoView({ behavior: 'smooth', block: 'center' });
       try {
-        var url = new URL(location.href);
+        const url = new URL(location.href);
         url.searchParams.delete('sent');
         url.searchParams.delete('err');
         history.replaceState(null, '', url.toString());

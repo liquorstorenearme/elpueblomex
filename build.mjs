@@ -29,16 +29,21 @@ function reviewStars(rating) {
   return "★".repeat(full) + "☆".repeat(5 - full);
 }
 
+function formatCount(n) {
+  return Number(n || 0).toLocaleString("en-US");
+}
+
 function reviewChip(slug) {
   const r = reviewsData.locations?.[slug];
   if (!r || !r.rating) return "";
-  return `<span class="review-chip" aria-label="Google rating ${r.rating} out of 5, ${r.total} reviews"><span class="review-chip__stars" aria-hidden="true">${reviewStars(r.rating)}</span> <strong>${r.rating.toFixed(1)}</strong> <span class="review-chip__count">· ${r.total} Google reviews</span></span>`;
+  return `<a class="review-chip" href="${h(r.googleUrl || "#")}" target="_blank" rel="noopener" aria-label="Google rating ${r.rating} out of 5, ${r.total} reviews"><span class="review-chip__stars" aria-hidden="true">${reviewStars(r.rating)}</span><strong>${r.rating.toFixed(1)}</strong><span class="review-chip__count">${formatCount(r.total)} reviews</span></a>`;
 }
 
 function reviewsSection(slug) {
   const r = reviewsData.locations?.[slug];
-  if (!r || !r.reviews?.length) return "";
-  const cards = r.reviews.slice(0, 5).map(rv => `
+  const fiveStars = (r?.reviews || []).filter(rv => rv.rating === 5);
+  if (!r || !fiveStars.length) return "";
+  const cards = fiveStars.slice(0, 5).map(rv => `
     <figure class="review-card">
       <div class="review-card__head">
         ${rv.profilePhoto ? `<img class="review-card__avatar" src="${h(rv.profilePhoto)}" alt="" loading="lazy" width="40" height="40" referrerpolicy="no-referrer">` : `<span class="review-card__avatar review-card__avatar--fallback" aria-hidden="true">${h((rv.author||"?")[0].toUpperCase())}</span>`}
@@ -60,7 +65,7 @@ function reviewsSection(slug) {
       <div class="reviews-head__aggregate">
         <span class="reviews-head__rating">${r.rating ? r.rating.toFixed(1) : "—"}</span>
         <span class="reviews-head__stars" aria-hidden="true">${reviewStars(r.rating)}</span>
-        <span class="reviews-head__count">${r.total} reviews</span>
+        <span class="reviews-head__count">${formatCount(r.total)} reviews</span>
         ${r.googleUrl ? `<a class="reviews-head__link" href="${h(r.googleUrl)}" target="_blank" rel="noopener">See all on Google →</a>` : ""}
       </div>
     </header>
