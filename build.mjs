@@ -852,6 +852,7 @@ ${ticker("ticker--agave")}
     <p>Pickup from the El Pueblo closest to you. Orders placed directly with our kitchens — no third-party fees.</p>
     <div class="cta-row">
       ${orderLinks.map(o => `<a class="btn btn--primary" href="${h(o.href)}" target="_blank" rel="noopener">${h(o.name)}</a>`).join("")}
+      ${locations.some(l => l.comingSoon) ? `<span class="btn btn--coming-soon" aria-disabled="true">La Jolla — Coming Soon</span>` : ""}
     </div>
   </div>
 </section>
