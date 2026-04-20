@@ -13,11 +13,61 @@ const menu = JSON.parse(fs.readFileSync(path.join(root, "content/menu.json"), "u
 const { locations } = JSON.parse(fs.readFileSync(path.join(root, "content/locations.json"), "utf8"));
 const { posts } = JSON.parse(fs.readFileSync(path.join(root, "content/posts.json"), "utf8"));
 const { jobs } = JSON.parse(fs.readFileSync(path.join(root, "content/jobs.json"), "utf8"));
+const reviewsPath = path.join(root, "content/reviews.json");
+const reviewsData = fs.existsSync(reviewsPath)
+  ? JSON.parse(fs.readFileSync(reviewsPath, "utf8"))
+  : { locations: {} };
 
 const BASE_URL = site.seo?.siteUrl || "https://elpueblomex.com";
 const h = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const slugify = (s) => String(s).toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 const locBySlug = Object.fromEntries(locations.map(l => [l.slug, l]));
+
+function reviewStars(rating) {
+  if (!rating) return "";
+  const full = Math.round(rating);
+  return "★".repeat(full) + "☆".repeat(5 - full);
+}
+
+function reviewChip(slug) {
+  const r = reviewsData.locations?.[slug];
+  if (!r || !r.rating) return "";
+  return `<span class="review-chip" aria-label="Google rating ${r.rating} out of 5, ${r.total} reviews"><span class="review-chip__stars" aria-hidden="true">${reviewStars(r.rating)}</span> <strong>${r.rating.toFixed(1)}</strong> <span class="review-chip__count">· ${r.total} Google reviews</span></span>`;
+}
+
+function reviewsSection(slug) {
+  const r = reviewsData.locations?.[slug];
+  if (!r || !r.reviews?.length) return "";
+  const cards = r.reviews.slice(0, 5).map(rv => `
+    <figure class="review-card">
+      <div class="review-card__head">
+        ${rv.profilePhoto ? `<img class="review-card__avatar" src="${h(rv.profilePhoto)}" alt="" loading="lazy" width="40" height="40" referrerpolicy="no-referrer">` : `<span class="review-card__avatar review-card__avatar--fallback" aria-hidden="true">${h((rv.author||"?")[0].toUpperCase())}</span>`}
+        <div>
+          <p class="review-card__author">${h(rv.author)}</p>
+          <p class="review-card__meta"><span class="review-card__stars" aria-label="${rv.rating} out of 5">${reviewStars(rv.rating)}</span> <span>${h(rv.relativeTime || "")}</span></p>
+        </div>
+      </div>
+      <blockquote class="review-card__text">${h(rv.text).replace(/\n+/g, "<br>")}</blockquote>
+    </figure>`).join("");
+  return `
+<section class="section section--cream reviews-section" aria-labelledby="reviews-${h(slug)}">
+  <div class="section__inner">
+    <header class="reviews-head">
+      <div>
+        <p class="eyebrow">From Google</p>
+        <h2 id="reviews-${h(slug)}" class="display-sm">What people are <span class="serif" style="color:var(--terracotta)">saying.</span></h2>
+      </div>
+      <div class="reviews-head__aggregate">
+        <span class="reviews-head__rating">${r.rating ? r.rating.toFixed(1) : "—"}</span>
+        <span class="reviews-head__stars" aria-hidden="true">${reviewStars(r.rating)}</span>
+        <span class="reviews-head__count">${r.total} reviews</span>
+        ${r.googleUrl ? `<a class="reviews-head__link" href="${h(r.googleUrl)}" target="_blank" rel="noopener">See all on Google →</a>` : ""}
+      </div>
+    </header>
+    <div class="reviews-grid">${cards}</div>
+  </div>
+</section>`;
+}
 
 function fileExists(webPath) {
   if (!webPath || !webPath.startsWith("/")) return false;
@@ -123,6 +173,16 @@ function parseHoursToSpec(hours) {
 
 function restaurantSchema(loc) {
   const hoursSpec = loc.comingSoon ? [] : parseHoursToSpec(loc.hours);
+  const reviews = reviewsData.locations?.[loc.slug];
+  const aggregateRating = reviews?.rating && reviews?.total
+    ? {
+        "@type": "AggregateRating",
+        ratingValue: reviews.rating,
+        reviewCount: reviews.total,
+        bestRating: 5,
+        worstRating: 1,
+      }
+    : undefined;
   return {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -138,6 +198,7 @@ function restaurantSchema(loc) {
     paymentAccepted: "Cash, Credit Card, Debit Card, Apple Pay, Google Pay",
     currenciesAccepted: "USD",
     hasMenu: `${BASE_URL}/menu/`,
+    aggregateRating,
     address: {
       "@type": "PostalAddress",
       streetAddress: loc.address.street,
@@ -558,6 +619,7 @@ ${ticker("ticker--agave")}
             <h3>${h(l.name)}</h3>
             <p class="loc-card__addr">${h(l.address.street)}<br>${h(l.address.city)}, ${h(l.address.region)}</p>
             <p class="loc-card__hours">${h(l.hours.summary)}</p>
+            ${reviewChip(l.slug)}
           </div>
         </a>`).join("")}
       </div>
@@ -726,6 +788,25 @@ ${loc.body?.sections?.length ? `
     </article>`).join("")}
   </div>
 </section>` : ""}
+
+${loc.comingSoon ? `
+<section class="section section--cream-2" id="opening-alerts">
+  <div class="section__inner" style="max-width:720px;text-align:center">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Opening alerts</p>
+      <h2 class="display-sm">Be the first to <span class="serif" style="color:var(--terracotta)">know.</span></h2>
+      <p class="lede">Drop your email and we'll send a single note the moment ${h(loc.short)} opens — no spam, no marketing blasts.</p>
+    </header>
+    <form class="newsletter-form" action="/api/newsletter" method="post">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source" value="${h(loc.slug)}">
+      <input type="email" name="email" required placeholder="you@example.com" aria-label="Your email">
+      <button class="btn btn--primary" type="submit">Notify me</button>
+    </form>
+  </div>
+</section>` : ""}
+
+${reviewsSection(loc.slug)}
 
 ${loc.body?.faq?.length ? `
 <section class="location-faq">
@@ -913,6 +994,7 @@ ${ticker("ticker--marigold")}
       <p class="lede">Tell us what you need. We'll confirm availability and pricing at your closest El Pueblo.</p>
     </header>
     <form class="stack-form" action="/api/catering" method="post">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
         <label>Name<input name="name" required></label>
         <label>Email<input type="email" name="email" required></label>
@@ -1019,6 +1101,7 @@ ${ticker("ticker--agave")}
       <p class="lede">Tell us a little about your event — we'll reach out with availability and a menu proposal.</p>
     </header>
     <form class="stack-form" action="/api/event" method="post">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
         <label>Name<input name="name" required></label>
         <label>Email<input type="email" name="email" required></label>
@@ -1099,6 +1182,7 @@ ${ticker("ticker--marigold")}
       <h2 class="display-sm">Submit a <span class="serif" style="color:var(--terracotta)">fundraiser application.</span></h2>
     </header>
     <form class="stack-form" action="/api/fundraiser" method="post">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
         <label>Contact name<input name="name" required></label>
         <label>Email<input type="email" name="email" required></label>
@@ -1178,6 +1262,7 @@ ${ticker("ticker--agave")}
       <h2 class="display-sm">We'd love to <span class="serif" style="color:var(--terracotta)">hear from you.</span></h2>
     </header>
     <form class="stack-form" action="/api/contact" method="post">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
         <label>Name<input name="name" required></label>
         <label>Email<input type="email" name="email" required></label>
@@ -1409,6 +1494,7 @@ ${ticker("ticker--agave")}
       <p class="lede">El Pueblo is an Equal Opportunity Employer. Applications considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law.</p>
     </header>
     <form class="stack-form" action="/api/employment" method="post" enctype="multipart/form-data">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="job_slug" value="${h(job.slug)}">
       <input type="hidden" name="job_title" value="${h(job.title)}">
       <div class="stack-form__row">

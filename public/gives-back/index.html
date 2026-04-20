@@ -116,6 +116,7 @@
       <h2 class="display-sm">Submit a <span class="serif" style="color:var(--terracotta)">fundraiser application.</span></h2>
     </header>
     <form class="stack-form" action="/api/fundraiser" method="post">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
         <label>Contact name<input name="name" required></label>
         <label>Email<input type="email" name="email" required></label>

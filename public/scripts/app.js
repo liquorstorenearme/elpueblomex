@@ -54,4 +54,41 @@
     }
   }, { rootMargin: '0px 0px -10% 0px' });
   document.querySelectorAll('.fade-in').forEach((el) => io.observe(el));
+
+  var params = new URLSearchParams(location.search);
+  var sent = params.get('sent');
+  var err = params.get('err');
+  if (sent || err) {
+    var form = document.querySelector('.stack-form') || document.querySelector('.newsletter-form');
+    var target = form ? form.parentElement : document.querySelector('main');
+    if (target) {
+      var banner = document.createElement('div');
+      banner.className = 'form-status ' + (sent ? 'form-status--ok' : 'form-status--err');
+      var messages = {
+        config: 'Our form service is not configured yet. Please email info@elpueblomex.com.',
+        rate: 'Too many submissions — try again in a few minutes.',
+        parse: 'We could not read that submission. Please try again.',
+        missing: 'Please fill in the required fields.',
+        email: 'That email address looks invalid.',
+        send: 'We could not send your message. Please try again or email info@elpueblomex.com.',
+        size: 'Resume file is too large (10MB max).',
+        type: 'Resume must be a PDF, DOC, DOCX, or TXT file.'
+      };
+      if (sent === 'newsletter') {
+        banner.textContent = 'Thanks — you are on the list. We will email you the moment we open the doors.';
+      } else if (sent) {
+        banner.textContent = 'Thanks — we got your message and will be in touch shortly.';
+      } else {
+        banner.textContent = messages[err] || 'Something went wrong. Please try again.';
+      }
+      target.insertBefore(banner, form || target.firstChild);
+      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      try {
+        var url = new URL(location.href);
+        url.searchParams.delete('sent');
+        url.searchParams.delete('err');
+        history.replaceState(null, '', url.toString());
+      } catch (e) {}
+    }
+  }
 })();

@@ -2,6 +2,7 @@
   "locations": [
     {
       "slug": "cardiff-by-the-sea",
+      "googlePlaceId": "",
       "name": "Cardiff-by-the-Sea",
       "short": "Cardiff",
       "tag": "Open 24 hours",
@@ -65,6 +66,7 @@
     },
     {
       "slug": "carlsbad",
+      "googlePlaceId": "",
       "name": "Carlsbad",
       "short": "Carlsbad",
       "tag": "La Costa Town Square",
@@ -128,6 +130,7 @@
     },
     {
       "slug": "carmel-valley",
+      "googlePlaceId": "",
       "name": "Carmel Valley",
       "short": "Carmel Valley",
       "tag": "Full bar · heated patio",
@@ -191,6 +194,7 @@
     },
     {
       "slug": "del-mar",
+      "googlePlaceId": "",
       "name": "Del Mar",
       "short": "Del Mar",
       "tag": "Full bar · beers on tap",
