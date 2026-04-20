@@ -706,6 +706,7 @@ ${ticker("ticker--terracotta")}
             <p class="loc-card__addr">${h(l.address.street)}<br>${h(l.address.city)}, ${h(l.address.region)} ${h(l.address.zip)}</p>
             ${l.phone ? `<p class="loc-card__phone">${h(l.phone)}</p>` : ""}
             <p class="loc-card__hours">${h(l.hours.summary)}</p>
+            ${reviewChip(l.slug)}
           </div>
         </a>`).join("")}
       </div>

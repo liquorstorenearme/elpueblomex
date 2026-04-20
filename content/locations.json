@@ -2,7 +2,7 @@
   "locations": [
     {
       "slug": "cardiff-by-the-sea",
-      "googlePlaceId": "",
+      "googlePlaceId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "Cardiff-by-the-Sea",
       "short": "Cardiff",
       "tag": "Open 24 hours",
@@ -26,8 +26,15 @@
       },
       "orderOnlineUrl": "https://order.online/store/el-pueblo-mexican-food-encinitas-21762",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=820+Birmingham+Drive+Cardiff+CA+92007",
-      "geo": { "lat": 33.0155, "lon": -117.2797 },
-      "features": ["Open 24 hours", "7 days a week", "Shared address with Cardiff Valero"],
+      "geo": {
+        "lat": 33.0155,
+        "lon": -117.2797
+      },
+      "features": [
+        "Open 24 hours",
+        "7 days a week",
+        "Shared address with Cardiff Valero"
+      ],
       "description": "A Cardiff-by-the-Sea institution serving authentic Mexican food around the clock — breakfast burritos at dawn, late-night tacos, always fresh.",
       "hero": "/images/locations/cardiff-by-the-sea-hero.jpg",
       "seoTitle": "Mexican Food in Cardiff-by-the-Sea — Open 24 Hours | El Pueblo",
@@ -56,17 +63,32 @@
           }
         ],
         "faq": [
-          { "q": "Are you really open 24 hours?", "a": "Yes. El Pueblo Cardiff-by-the-Sea is open 24 hours, 7 days a week — the only 24-hour Mexican food in Cardiff. The full menu is available all night, including fish tacos, burritos, and carne asada plates." },
-          { "q": "Where is El Pueblo Cardiff located?", "a": "820 Birmingham Drive, Cardiff, CA 92007 — just off the 5 freeway at the Birmingham exit. We share a parking lot with Cardiff Valero gas station." },
-          { "q": "Where do I park?", "a": "820 Birmingham Drive shares its lot with Cardiff Valero gas station — plenty of parking, easy in and out. We're a counter-service location; most orders are takeout or eaten in the lot." },
-          { "q": "How much are your fish tacos?", "a": "$1.39 each, with no limit on how many you can order. Our signature fish taco — crispy fried-to-order fillet, chipotle sauce, fresh pico, cabbage on a warm corn tortilla — and we've never raised the price." },
-          { "q": "Do you serve breakfast at night?", "a": "Yes. Breakfast burritos, huevos rancheros, chilaquiles, and every other breakfast item on our menu are available 24 hours at the Cardiff location." }
+          {
+            "q": "Are you really open 24 hours?",
+            "a": "Yes. El Pueblo Cardiff-by-the-Sea is open 24 hours, 7 days a week — the only 24-hour Mexican food in Cardiff. The full menu is available all night, including fish tacos, burritos, and carne asada plates."
+          },
+          {
+            "q": "Where is El Pueblo Cardiff located?",
+            "a": "820 Birmingham Drive, Cardiff, CA 92007 — just off the 5 freeway at the Birmingham exit. We share a parking lot with Cardiff Valero gas station."
+          },
+          {
+            "q": "Where do I park?",
+            "a": "820 Birmingham Drive shares its lot with Cardiff Valero gas station — plenty of parking, easy in and out. We're a counter-service location; most orders are takeout or eaten in the lot."
+          },
+          {
+            "q": "How much are your fish tacos?",
+            "a": "$1.39 each, with no limit on how many you can order. Our signature fish taco — crispy fried-to-order fillet, chipotle sauce, fresh pico, cabbage on a warm corn tortilla — and we've never raised the price."
+          },
+          {
+            "q": "Do you serve breakfast at night?",
+            "a": "Yes. Breakfast burritos, huevos rancheros, chilaquiles, and every other breakfast item on our menu are available 24 hours at the Cardiff location."
+          }
         ]
       }
     },
     {
       "slug": "carlsbad",
-      "googlePlaceId": "",
+      "googlePlaceId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "Carlsbad",
       "short": "Carlsbad",
       "tag": "La Costa Town Square",
@@ -90,8 +112,16 @@
       },
       "orderOnlineUrl": "https://order.online/store/el-pueblo-mexican-food-carlsbad-171613",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=7720+Rancho+Santa+Fe+Road+Carlsbad+CA+92009",
-      "geo": { "lat": 33.0867, "lon": -117.2537 },
-      "features": ["La Costa Town Square", "Beer & wine", "Family-friendly", "Open late Fri/Sat"],
+      "geo": {
+        "lat": 33.0867,
+        "lon": -117.2537
+      },
+      "features": [
+        "La Costa Town Square",
+        "Beer & wine",
+        "Family-friendly",
+        "Open late Fri/Sat"
+      ],
       "description": "Our La Costa Town Square location — easy to find after errands or a beach day, with the same fresh Mexican menu you know from El Pueblo.",
       "hero": "/images/locations/carlsbad-hero.jpg",
       "seoTitle": "Mexican Food in Carlsbad — La Costa Town Square | El Pueblo",
@@ -120,17 +150,32 @@
           }
         ],
         "faq": [
-          { "q": "Where is El Pueblo Carlsbad?", "a": "7720 Rancho Santa Fe Road, Carlsbad, CA 92009 — in La Costa Town Square, across from the shops and close to La Costa Resort." },
-          { "q": "What are El Pueblo Carlsbad's hours?", "a": "Sunday through Thursday we're open 6am to 10pm. Friday and Saturday we stay open until midnight. Breakfast menu starts at 6am daily." },
-          { "q": "Do you have a kids menu?", "a": "Yes. The Carlsbad location has a kids menu with kids quesadilla, bean and cheese burrito, and sides. Horchata and jamaica are on the drink menu." },
-          { "q": "Is there parking at La Costa Town Square?", "a": "Yes. La Costa Town Square has a large shared parking lot — no meters, easy access right off Rancho Santa Fe Road." },
-          { "q": "Do you cater in Carlsbad?", "a": "Yes. Our Carlsbad kitchen fulfills the full El Pueblo catering and party-pack menu — make-your-own taco packs, rolled tacos, enchilada trays, quesadilla trays, and chips-and-salsa trays. Call the store or submit a catering request online." }
+          {
+            "q": "Where is El Pueblo Carlsbad?",
+            "a": "7720 Rancho Santa Fe Road, Carlsbad, CA 92009 — in La Costa Town Square, across from the shops and close to La Costa Resort."
+          },
+          {
+            "q": "What are El Pueblo Carlsbad's hours?",
+            "a": "Sunday through Thursday we're open 6am to 10pm. Friday and Saturday we stay open until midnight. Breakfast menu starts at 6am daily."
+          },
+          {
+            "q": "Do you have a kids menu?",
+            "a": "Yes. The Carlsbad location has a kids menu with kids quesadilla, bean and cheese burrito, and sides. Horchata and jamaica are on the drink menu."
+          },
+          {
+            "q": "Is there parking at La Costa Town Square?",
+            "a": "Yes. La Costa Town Square has a large shared parking lot — no meters, easy access right off Rancho Santa Fe Road."
+          },
+          {
+            "q": "Do you cater in Carlsbad?",
+            "a": "Yes. Our Carlsbad kitchen fulfills the full El Pueblo catering and party-pack menu — make-your-own taco packs, rolled tacos, enchilada trays, quesadilla trays, and chips-and-salsa trays. Call the store or submit a catering request online."
+          }
         ]
       }
     },
     {
       "slug": "carmel-valley",
-      "googlePlaceId": "",
+      "googlePlaceId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "Carmel Valley",
       "short": "Carmel Valley",
       "tag": "Full bar · heated patio",
@@ -154,8 +199,17 @@
       },
       "orderOnlineUrl": "https://order.online/store/el-pueblo-mexican-food-san-diego-25899061",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=5965+Village+Way+San+Diego+CA+92130",
-      "geo": { "lat": 32.9595, "lon": -117.2453 },
-      "features": ["Full bar", "Heated patio", "Premium tequila & mezcal", "Craft margaritas", "Private events"],
+      "geo": {
+        "lat": 32.9595,
+        "lon": -117.2453
+      },
+      "features": [
+        "Full bar",
+        "Heated patio",
+        "Premium tequila & mezcal",
+        "Craft margaritas",
+        "Private events"
+      ],
       "description": "Carmel Valley's full-bar location — premium tequila, mezcal, craft margaritas, and a heated patio that's open year-round for dinner or private events.",
       "hero": "/images/locations/carmel-valley-hero.jpg",
       "seoTitle": "Mexican Food in Carmel Valley, San Diego | El Pueblo — Full Bar",
@@ -184,17 +238,32 @@
           }
         ],
         "faq": [
-          { "q": "Where is El Pueblo Carmel Valley?", "a": "5965 Village Way, Suite E107, San Diego, CA 92130 — in the Village Walk shops, near the Del Mar Heights / Carmel Valley Road junction off the 56." },
-          { "q": "Do you have a full bar?", "a": "Yes. El Pueblo Carmel Valley has a full bar with premium tequila, mezcal, and craft margaritas. Tequila flights available on request." },
-          { "q": "Is the patio heated?", "a": "Yes. Our heated patio is open year-round and is where most evening dining happens. It also doubles as private-event space for parties of 8 or more." },
-          { "q": "Can I reserve a table?", "a": "Reservations are only available for private events on the patio (8+ guests). Inside dining is first-come, first-served — weekends fill up fast around 6pm." },
-          { "q": "Are kids welcome?", "a": "Yes. Carmel Valley is family-friendly — we have a kids menu, high chairs, and the dining room is open to all ages until close. The bar area is 21+." }
+          {
+            "q": "Where is El Pueblo Carmel Valley?",
+            "a": "5965 Village Way, Suite E107, San Diego, CA 92130 — in the Village Walk shops, near the Del Mar Heights / Carmel Valley Road junction off the 56."
+          },
+          {
+            "q": "Do you have a full bar?",
+            "a": "Yes. El Pueblo Carmel Valley has a full bar with premium tequila, mezcal, and craft margaritas. Tequila flights available on request."
+          },
+          {
+            "q": "Is the patio heated?",
+            "a": "Yes. Our heated patio is open year-round and is where most evening dining happens. It also doubles as private-event space for parties of 8 or more."
+          },
+          {
+            "q": "Can I reserve a table?",
+            "a": "Reservations are only available for private events on the patio (8+ guests). Inside dining is first-come, first-served — weekends fill up fast around 6pm."
+          },
+          {
+            "q": "Are kids welcome?",
+            "a": "Yes. Carmel Valley is family-friendly — we have a kids menu, high chairs, and the dining room is open to all ages until close. The bar area is 21+."
+          }
         ]
       }
     },
     {
       "slug": "del-mar",
-      "googlePlaceId": "",
+      "googlePlaceId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "Del Mar",
       "short": "Del Mar",
       "tag": "Full bar · beers on tap",
@@ -218,8 +287,17 @@
       },
       "orderOnlineUrl": "https://order.online/store/el-pueblo-mexican-food-del-mar-824268",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=2673+Via+De+La+Valle+Del+Mar+CA+92014",
-      "geo": { "lat": 32.9871, "lon": -117.2378 },
-      "features": ["Full bar", "beers on tap", "Outdoor patio", "Heated patio", "Private events"],
+      "geo": {
+        "lat": 32.9871,
+        "lon": -117.2378
+      },
+      "features": [
+        "Full bar",
+        "beers on tap",
+        "Outdoor patio",
+        "Heated patio",
+        "Private events"
+      ],
       "description": "Del Mar's flagship bar and dining location — beers on tap, a full bar, and coastal-inspired fish tacos just off Via De La Valle.",
       "hero": "/images/locations/del-mar-hero.jpg",
       "seoTitle": "Mexican Food in Del Mar — Full Bar & Heated Patio | El Pueblo",
@@ -248,11 +326,26 @@
           }
         ],
         "faq": [
-          { "q": "Where is El Pueblo Del Mar?", "a": "2673 Via De La Valle, Suite C, Del Mar, CA 92014 — just off the 5 freeway on Via De La Valle, minutes from Del Mar Beach and the racetrack." },
-          { "q": "Do you have beer on tap?", "a": "Yes. Our Del Mar location has a wide selection of beers on tap — a mix of Mexican classics, San Diego craft, and seasonal rotations. Ask for the current tap list at the bar." },
-          { "q": "Is the patio available for private events?", "a": "Yes. The heated outdoor patio at Del Mar is available for private events starting at 8 guests. We build catering menus around party size and run full bar service during events." },
-          { "q": "Do you take reservations for regular dining?", "a": "Indoor dining is first-come, first-served. Reservations are only taken for private patio events of 8 or more guests. Walk-ins fill up quickly on race days and summer weekends." },
-          { "q": "Can I watch UFC/PPV fights at El Pueblo Del Mar?", "a": "Yes. We stream UFC pay-per-views and major fights with no cover — check our News page for upcoming events. The bar opens early on fight nights." }
+          {
+            "q": "Where is El Pueblo Del Mar?",
+            "a": "2673 Via De La Valle, Suite C, Del Mar, CA 92014 — just off the 5 freeway on Via De La Valle, minutes from Del Mar Beach and the racetrack."
+          },
+          {
+            "q": "Do you have beer on tap?",
+            "a": "Yes. Our Del Mar location has a wide selection of beers on tap — a mix of Mexican classics, San Diego craft, and seasonal rotations. Ask for the current tap list at the bar."
+          },
+          {
+            "q": "Is the patio available for private events?",
+            "a": "Yes. The heated outdoor patio at Del Mar is available for private events starting at 8 guests. We build catering menus around party size and run full bar service during events."
+          },
+          {
+            "q": "Do you take reservations for regular dining?",
+            "a": "Indoor dining is first-come, first-served. Reservations are only taken for private patio events of 8 or more guests. Walk-ins fill up quickly on race days and summer weekends."
+          },
+          {
+            "q": "Can I watch UFC/PPV fights at El Pueblo Del Mar?",
+            "a": "Yes. We stream UFC pay-per-views and major fights with no cover — check our News page for upcoming events. The bar opens early on fight nights."
+          }
         ]
       }
     },
@@ -276,8 +369,14 @@
       },
       "orderOnlineUrl": "",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=564+Pearl+Street+La+Jolla+CA+92037",
-      "geo": { "lat": 32.8481, "lon": -117.2742 },
-      "features": ["Opening Spring 2026", "Beer & wine"],
+      "geo": {
+        "lat": 32.8481,
+        "lon": -117.2742
+      },
+      "features": [
+        "Opening Spring 2026",
+        "Beer & wine"
+      ],
       "description": "Our fifth location is coming to La Jolla's Pearl Street in Spring 2026. Sign up below to hear the moment we open the doors.",
       "hero": "/images/locations/la-jolla-hero.jpg",
       "seoTitle": "Mexican Food in La Jolla — Opening Spring 2026 | El Pueblo",
@@ -299,10 +398,22 @@
           }
         ],
         "faq": [
-          { "q": "When is El Pueblo La Jolla opening?", "a": "Spring 2026. Exact opening date will be announced on our News page and sent to email subscribers when we have final permitting and a firm launch date." },
-          { "q": "Where will El Pueblo La Jolla be located?", "a": "564 Pearl Street, La Jolla, CA 92037 — the former Jack in the Box site, a short walk from La Jolla Cove, Scripps Park, and the shops along Prospect Street." },
-          { "q": "Will the La Jolla menu match the other locations?", "a": "Yes. La Jolla will serve the full El Pueblo menu — including the $1.39 fish taco, breakfast burritos, carne asada plates, and the kids menu — same recipes, same fresh-every-day kitchen standard." },
-          { "q": "How do I hear when you open?", "a": "Sign up for our email list on the contact page. We'll send one announcement when La Jolla opens — no spam, no frequent emails." }
+          {
+            "q": "When is El Pueblo La Jolla opening?",
+            "a": "Spring 2026. Exact opening date will be announced on our News page and sent to email subscribers when we have final permitting and a firm launch date."
+          },
+          {
+            "q": "Where will El Pueblo La Jolla be located?",
+            "a": "564 Pearl Street, La Jolla, CA 92037 — the former Jack in the Box site, a short walk from La Jolla Cove, Scripps Park, and the shops along Prospect Street."
+          },
+          {
+            "q": "Will the La Jolla menu match the other locations?",
+            "a": "Yes. La Jolla will serve the full El Pueblo menu — including the $1.39 fish taco, breakfast burritos, carne asada plates, and the kids menu — same recipes, same fresh-every-day kitchen standard."
+          },
+          {
+            "q": "How do I hear when you open?",
+            "a": "Sign up for our email list on the contact page. We'll send one announcement when La Jolla opens — no spam, no frequent emails."
+          }
         ]
       }
     }

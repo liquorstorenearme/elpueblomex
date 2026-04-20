@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Fetch Google reviews for each location via Places API (legacy).
+// Fetch Google reviews via Places API (New).
 // Usage: GOOGLE_PLACES_API_KEY=xxx node scripts/fetch-reviews.mjs
-// Writes content/reviews.json. Auto-discovers googlePlaceId if missing.
+// Writes content/reviews.json. Auto-discovers googlePlaceId via text search if missing.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -19,31 +19,42 @@ const outPath = path.join(root, "content/reviews.json");
 const locFile = JSON.parse(fs.readFileSync(locPath, "utf8"));
 const locations = locFile.locations.filter(l => !l.comingSoon);
 
-async function findPlaceId(loc) {
-  const query = `${loc.name} ${loc.address.street} ${loc.address.city} ${loc.address.region}`;
-  const u = new URL("https://maps.googleapis.com/maps/api/place/findplacefromtext/json");
-  u.searchParams.set("input", query);
-  u.searchParams.set("inputtype", "textquery");
-  u.searchParams.set("fields", "place_id,name,formatted_address");
-  u.searchParams.set("key", key);
-  const r = await fetch(u);
-  const j = await r.json();
-  if (j.status !== "OK" || !j.candidates?.length) {
-    throw new Error(`findPlaceFromText ${j.status} for ${loc.slug}: ${j.error_message || ""}`);
-  }
-  return j.candidates[0].place_id;
+async function searchText(query, fieldMask) {
+  const r = await fetch("https://places.googleapis.com/v1/places:searchText", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Goog-Api-Key": key,
+      "X-Goog-FieldMask": fieldMask,
+    },
+    body: JSON.stringify({ textQuery: query }),
+  });
+  if (!r.ok) throw new Error(`searchText ${r.status}: ${await r.text()}`);
+  return r.json();
 }
 
-async function getDetails(placeId) {
-  const u = new URL("https://maps.googleapis.com/maps/api/place/details/json");
-  u.searchParams.set("place_id", placeId);
-  u.searchParams.set("fields", "name,rating,user_ratings_total,reviews,url");
-  u.searchParams.set("reviews_sort", "newest");
-  u.searchParams.set("key", key);
-  const r = await fetch(u);
-  const j = await r.json();
-  if (j.status !== "OK") throw new Error(`placeDetails ${j.status}: ${j.error_message || ""}`);
-  return j.result;
+async function placeDetails(placeId, fieldMask) {
+  const r = await fetch(`https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}`, {
+    headers: {
+      "X-Goog-Api-Key": key,
+      "X-Goog-FieldMask": fieldMask,
+    },
+  });
+  if (!r.ok) throw new Error(`placeDetails ${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+async function findPlaceId(loc) {
+  const query = `El Pueblo Mexican Food ${loc.short} ${loc.address.street} ${loc.address.city} ${loc.address.region}`;
+  const data = await searchText(query, "places.id,places.displayName,places.formattedAddress,places.primaryType");
+  if (!data.places?.length) throw new Error(`No match for ${loc.slug}`);
+  // Skip pure address results (no business type)
+  const biz = data.places.find(p => p.primaryType && p.primaryType !== "street_address" && p.primaryType !== "premise") || data.places[0];
+  return biz.id;
+}
+
+async function getReviews(placeId) {
+  return placeDetails(placeId, "id,displayName,rating,userRatingCount,reviews,googleMapsUri");
 }
 
 const out = { fetched_at: new Date().toISOString(), locations: {} };
@@ -58,23 +69,24 @@ for (const loc of locations) {
       updatedLocations = true;
       console.log(`Discovered ${loc.slug}: ${placeId}`);
     }
-    const details = await getDetails(placeId);
+    const d = await getReviews(placeId);
     out.locations[loc.slug] = {
       placeId,
-      name: details.name,
-      rating: details.rating ?? null,
-      total: details.user_ratings_total ?? 0,
-      googleUrl: details.url || `https://search.google.com/local/reviews?placeid=${placeId}`,
-      reviews: (details.reviews || []).map(rv => ({
-        author: rv.author_name,
-        profilePhoto: rv.profile_photo_url || null,
+      name: d.displayName?.text || loc.name,
+      rating: d.rating ?? null,
+      total: d.userRatingCount ?? 0,
+      googleUrl: d.googleMapsUri || `https://www.google.com/maps/place/?q=place_id:${placeId}`,
+      reviews: (d.reviews || []).map(rv => ({
+        author: rv.authorAttribution?.displayName || "Anonymous",
+        profilePhoto: rv.authorAttribution?.photoUri || null,
+        authorUrl: rv.authorAttribution?.uri || null,
         rating: rv.rating,
-        text: rv.text || "",
-        relativeTime: rv.relative_time_description,
-        timestamp: rv.time,
+        text: rv.text?.text || rv.originalText?.text || "",
+        relativeTime: rv.relativePublishTimeDescription || "",
+        publishTime: rv.publishTime || null,
       })),
     };
-    console.log(`${loc.slug}: ${details.rating} ★ · ${details.user_ratings_total} reviews`);
+    console.log(`${loc.slug}: ${d.rating} ★ · ${d.userRatingCount} reviews · ${d.reviews?.length || 0} cached`);
   } catch (err) {
     console.error(`Failed ${loc.slug}:`, err.message);
   }
