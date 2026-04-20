@@ -13,7 +13,7 @@
       ]
     },
     {
-      "source": "/(edit|api)(/.*)?",
+      "source": "/(edit|admin-login|api)(/.*)?",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
       ]

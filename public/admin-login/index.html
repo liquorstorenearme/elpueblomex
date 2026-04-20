@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>El Pueblo · Admin</title>
+<style>
+  :root {
+    --cream: #faf0d8;
+    --ink: #1b1008;
+    --terracotta: #d84a1e;
+    --hairline: rgba(27,16,8,0.12);
+    --muted: rgba(27,16,8,0.6);
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--ink); color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; margin: 0; padding: 20px;
+  }
+  .login-card {
+    width: 100%; max-width: 420px;
+    background: var(--cream); color: var(--ink);
+    border-radius: 12px; padding: 40px 32px 32px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    position: relative; overflow: hidden;
+  }
+  .login-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0;
+    height: 5px; background: var(--terracotta);
+  }
+  .login-title {
+    font-size: 28px; font-weight: 700; letter-spacing: -0.02em;
+    margin: 0 0 4px; text-align: center;
+  }
+  .login-sub {
+    text-align: center; font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+    margin: 0 0 28px; font-weight: 600;
+  }
+  .login-err {
+    background: rgba(216,74,30,0.12);
+    border-left: 3px solid var(--terracotta);
+    color: #7a2a18; padding: 10px 14px; font-size: 13px;
+    margin-bottom: 16px; border-radius: 4px;
+  }
+  .login-label {
+    display: block; font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 8px; font-weight: 700;
+  }
+  input[type="password"] {
+    width: 100%; padding: 13px 14px;
+    border: 1.5px solid var(--hairline); background: #fff;
+    font: inherit; font-size: 15px; border-radius: 6px;
+    min-height: 48px; color: var(--ink); margin-bottom: 16px;
+  }
+  input[type="password"]:focus { outline: 0; border-color: var(--ink); }
+  button {
+    width: 100%; padding: 14px; background: var(--ink); color: var(--cream);
+    border: 0; font: inherit; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border-radius: 6px; cursor: pointer; min-height: 50px;
+  }
+  button:hover { background: #000; }
+  .login-foot { text-align: center; font-size: 11px; color: var(--muted); margin-top: 22px; }
+</style>
+</head>
+<body>
+<main class="login-card">
+  <h1 class="login-title">El Pueblo</h1>
+  <div class="login-sub">Admin · Authorized Access</div>
+  <div id="err" class="login-err" hidden></div>
+  <form method="POST" action="/api/admin/login/" autocomplete="off">
+    <input type="hidden" name="from" id="from" value="/edit">
+    <label class="login-label" for="password">Password</label>
+    <input type="password" id="password" name="password" autofocus required>
+    <button type="submit">Sign In</button>
+  </form>
+  <div class="login-foot">Internal use only.</div>
+</main>
+<script>
+  var params = new URLSearchParams(location.search);
+  var from = params.get('from');
+  if (from && from.startsWith('/') && !from.startsWith('//')) document.getElementById('from').value = from;
+  var err = params.get('err');
+  var box = document.getElementById('err');
+  if (err === '1') { box.textContent = 'Incorrect password. Try again.'; box.hidden = false; }
+  else if (err === 'locked') { box.textContent = 'Too many attempts. Wait 15 minutes.'; box.hidden = false; }
+</script>
+</body>
+</html>

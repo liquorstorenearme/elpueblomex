@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>El Pueblo · Content Editor</title>
+<style>
+  :root {
+    --cream: #faf0d8;
+    --ink: #1b1008;
+    --paper: #fff;
+    --terracotta: #d84a1e;
+    --marigold: #f5b72b;
+    --agave: #356b3e;
+    --hairline: rgba(27,16,8,0.14);
+    --muted: rgba(27,16,8,0.6);
+    --ok: #2b6b3a;
+    --err: #b04220;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #f3e6c8; color: var(--ink);
+    margin: 0; padding: 0; min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--terracotta); }
+  input, textarea, select, button { font: inherit; color: inherit; }
+  textarea { resize: vertical; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+  header.admin-top {
+    background: var(--ink); color: var(--cream);
+    padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 10;
+  }
+  .admin-brand { display: flex; align-items: center; gap: 10px; }
+  .admin-brand strong { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+  .admin-brand span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,240,216,0.55); }
+  .admin-top-actions { display: flex; gap: 14px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+  .admin-top-actions a { color: var(--cream); text-decoration: none; opacity: 0.75; }
+  .admin-top-actions a:hover { opacity: 1; }
+
+  .tabs {
+    display: flex; gap: 2px;
+    background: var(--ink);
+    padding: 0 24px; border-bottom: 3px solid var(--terracotta);
+  }
+  .tab {
+    padding: 12px 20px; background: transparent; color: rgba(250,240,216,0.65);
+    border: 0; border-radius: 8px 8px 0 0; cursor: pointer;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .tab:hover { color: var(--cream); }
+  .tab.active { background: #f3e6c8; color: var(--ink); }
+
+  main.admin-shell { max-width: 960px; margin: 0 auto; padding: 28px 22px 160px; }
+
+  .panel {
+    background: var(--paper); border: 1px solid var(--hairline);
+    border-radius: 10px; margin-bottom: 14px; overflow: hidden;
+  }
+  .panel-head {
+    padding: 16px 22px; border-bottom: 1px solid var(--hairline);
+    display: flex; justify-content: space-between; align-items: center;
+    background: #fffdf6;
+  }
+  .panel-head h2 { font-size: 15px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+  .panel-head .hint { font-size: 12px; color: var(--muted); }
+  .panel-body { padding: 22px; display: grid; gap: 16px; }
+
+  .fld { display: flex; flex-direction: column; gap: 6px; }
+  .fld label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .fld input[type="text"],
+  .fld input[type="url"],
+  .fld input[type="email"],
+  .fld input[type="date"],
+  .fld select,
+  .fld textarea {
+    width: 100%; padding: 10px 12px;
+    border: 1.5px solid var(--hairline); background: #fff;
+    border-radius: 6px; font-size: 14.5px; min-height: 42px; line-height: 1.45;
+    font-family: inherit;
+  }
+  .fld textarea { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13.5px; min-height: 80px; }
+  .fld input:focus, .fld select:focus, .fld textarea:focus {
+    outline: 0; border-color: var(--terracotta);
+  }
+  .fld .help { font-size: 12px; color: var(--muted); }
+  .row-2 { display: grid; gap: 14px; }
+  @media (min-width: 640px) { .row-2 { grid-template-columns: 1fr 1fr; } }
+
+  .list-item {
+    background: #fffdf6; border: 1px solid var(--hairline); border-radius: 8px;
+    padding: 14px; display: grid; gap: 10px;
+  }
+  .list-item-head {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px;
+  }
+  .list-item-head h3 { font-size: 14px; margin: 0; font-weight: 700; }
+
+  .chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 10px; background: #f3e6c8; border-radius: 20px;
+    font-size: 13px; border: 1px solid var(--hairline);
+  }
+  .chip button {
+    background: transparent; border: 0; color: var(--muted);
+    cursor: pointer; font-size: 14px; line-height: 1; padding: 0;
+  }
+  .chip button:hover { color: var(--err); }
+  .chip-add { display: flex; gap: 6px; margin-top: 6px; }
+  .chip-add input { flex: 1; padding: 8px 10px; border: 1.5px solid var(--hairline); border-radius: 6px; font-size: 13.5px; background: #fff; }
+  .chip-add button { padding: 8px 14px; border: 1.5px solid var(--ink); background: #fff; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; }
+  .chip-add button:hover { background: var(--ink); color: var(--cream); }
+
+  button.btn-primary {
+    padding: 10px 18px; background: var(--terracotta); color: #fff;
+    border: 0; border-radius: 6px; cursor: pointer;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  button.btn-primary:hover { background: #b73d17; }
+  button.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+  button.btn-ghost {
+    padding: 8px 14px; background: transparent; color: var(--ink);
+    border: 1.5px solid var(--hairline); border-radius: 6px; cursor: pointer;
+    font-size: 13px; font-weight: 600;
+  }
+  button.btn-ghost:hover { border-color: var(--ink); background: #fffdf6; }
+  button.btn-ghost.danger { color: var(--err); border-color: rgba(176,66,32,0.3); }
+  button.btn-ghost.danger:hover { background: rgba(176,66,32,0.08); border-color: var(--err); }
+
+  .img-upload {
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .img-upload .preview {
+    width: 90px; height: 90px; background: #f3e6c8;
+    border: 1.5px solid var(--hairline); border-radius: 6px;
+    background-size: cover; background-position: center;
+    flex-shrink: 0;
+  }
+  .img-upload .ctrls { flex: 1; display: grid; gap: 6px; }
+  .img-upload input[type="text"] { flex: 1; }
+  .img-upload-row { display: flex; gap: 6px; }
+  .img-upload input[type="file"] { display: none; }
+  .img-upload label.pick {
+    display: inline-block; padding: 8px 12px;
+    background: var(--cream); border: 1.5px solid var(--hairline);
+    border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600;
+    text-align: center;
+  }
+  .img-upload label.pick:hover { background: #f3e6c8; border-color: var(--ink); }
+
+  .save-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--ink); color: var(--cream);
+    padding: 14px 24px;
+    display: flex; gap: 12px; align-items: center;
+    z-index: 20; box-shadow: 0 -6px 24px rgba(0,0,0,0.15);
+    transform: translateY(100%); transition: transform 0.2s ease;
+  }
+  .save-bar.show { transform: translateY(0); }
+  .save-bar input {
+    flex: 1; padding: 10px 14px; background: #000; color: var(--cream);
+    border: 1px solid rgba(250,240,216,0.2); border-radius: 6px;
+    font-size: 13.5px;
+  }
+  .save-bar input::placeholder { color: rgba(250,240,216,0.4); }
+  .save-bar .dirty-tag {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--marigold); font-weight: 700;
+  }
+
+  .toast {
+    position: fixed; top: 80px; right: 20px; z-index: 50;
+    padding: 12px 18px; background: var(--ok); color: #fff;
+    border-radius: 6px; font-size: 13.5px; font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transform: translateX(500px); transition: transform 0.22s ease;
+    max-width: 360px;
+  }
+  .toast.show { transform: translateX(0); }
+  .toast.err { background: var(--err); }
+
+  .loading { padding: 40px 22px; text-align: center; color: var(--muted); font-size: 13px; }
+  .loading::before { content: ""; display: inline-block; width: 14px; height: 14px; border: 2px solid var(--hairline); border-top-color: var(--ink); border-radius: 50%; margin-right: 10px; vertical-align: middle; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  details.advanced {
+    border: 1px dashed var(--hairline); border-radius: 6px;
+    padding: 10px 14px; background: #fffdf6;
+  }
+  details.advanced summary {
+    cursor: pointer; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+  }
+  details.advanced[open] summary { margin-bottom: 10px; }
+  details.advanced textarea { min-height: 240px; }
+
+  .post-preview-item {
+    display: flex; gap: 12px; padding: 12px; background: #fffdf6;
+    border: 1px solid var(--hairline); border-radius: 8px;
+    cursor: pointer; transition: border-color 0.12s;
+  }
+  .post-preview-item:hover { border-color: var(--ink); }
+  .post-preview-item .thumb {
+    width: 60px; height: 60px; background: #f3e6c8; flex-shrink: 0;
+    background-size: cover; background-position: center; border-radius: 4px;
+  }
+  .post-preview-item .meta { flex: 1; min-width: 0; }
+  .post-preview-item .meta strong { font-size: 14px; display: block; }
+  .post-preview-item .meta small { font-size: 12px; color: var(--muted); }
+
+  .panel-collapsed { background: #fffdf6; }
+  .panel-collapsed > .panel-head { cursor: pointer; }
+  .panel-collapsed > .panel-body { display: none; }
+  .panel-collapsed.open > .panel-body { display: grid; }
+  .panel-collapsed .chevron { transition: transform 0.15s; color: var(--muted); }
+  .panel-collapsed.open .chevron { transform: rotate(90deg); }
+</style>
+</head>
+<body>
+
+<header class="admin-top">
+  <div class="admin-brand">
+    <strong>El Pueblo</strong>
+    <span>Content Editor</span>
+  </div>
+  <div class="admin-top-actions">
+    <a href="/" target="_blank">View Site</a>
+    <a href="/api/admin/logout/">Log Out</a>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="site">Site</button>
+  <button class="tab" data-tab="locations">Locations</button>
+  <button class="tab" data-tab="posts">News</button>
+</nav>
+
+<main class="admin-shell">
+  <div id="tab-site" class="tab-panel">
+    <div id="site-content"><div class="loading">Loading…</div></div>
+  </div>
+  <div id="tab-locations" class="tab-panel" hidden>
+    <div id="locations-content"><div class="loading">Loading…</div></div>
+  </div>
+  <div id="tab-posts" class="tab-panel" hidden>
+    <div id="posts-content"><div class="loading">Loading…</div></div>
+  </div>
+</main>
+
+<div class="save-bar" id="save-bar">
+  <span class="dirty-tag">● Unsaved changes</span>
+  <input type="text" id="commit-msg" placeholder="Commit message (optional — e.g. 'Update hero copy')">
+  <button class="btn-ghost" id="discard-btn" style="color: var(--cream); border-color: rgba(250,240,216,0.3);">Discard</button>
+  <button class="btn-primary" id="save-btn">Save & Publish</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// -------- State --------
+const state = {
+  site:      { loaded: false, sha: null, content: null, original: null },
+  locations: { loaded: false, sha: null, content: null, original: null },
+  posts:     { loaded: false, sha: null, content: null, original: null },
+};
+let activeTab = 'site';
+
+// -------- Utilities --------
+const $ = (id) => document.getElementById(id);
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function slugify(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80); }
+function dirty(file) {
+  if (!state[file].loaded) return false;
+  return JSON.stringify(state[file].content) !== JSON.stringify(state[file].original);
+}
+function anyDirty() { return dirty('site') || dirty('locations') || dirty('posts'); }
+function refreshSaveBar() {
+  const show = anyDirty();
+  $('save-bar').classList.toggle('show', show);
+}
+
+function toast(msg, isErr = false) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.toggle('err', isErr);
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// -------- Load on tab switch --------
+async function loadFile(file) {
+  if (state[file].loaded) return;
+  const r = await fetch(`/api/admin/load?file=${file}`, { credentials: 'include' });
+  if (!r.ok) throw new Error(`Load failed: ${r.status}`);
+  const d = await r.json();
+  state[file].sha = d.sha;
+  state[file].content = d.content;
+  state[file].original = JSON.parse(JSON.stringify(d.content));
+  state[file].loaded = true;
+}
+
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const tab = btn.dataset.tab;
+    if (tab === activeTab) return;
+    document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.tab-panel').forEach(p => p.hidden = (p.id !== 'tab-' + tab));
+    activeTab = tab;
+    try {
+      await loadFile(tab);
+      render(tab);
+    } catch (e) {
+      $(tab + '-content').innerHTML = `<div class="panel"><div class="panel-body"><p style="color:var(--err)">Failed to load: ${esc(e.message)}</p></div></div>`;
+    }
+  });
+});
+
+// -------- Image upload helper --------
+async function uploadImage(file) {
+  const form = new FormData();
+  form.append('file', file);
+  const r = await fetch('/api/admin/upload/', { method: 'POST', body: form, credentials: 'include' });
+  if (!r.ok) {
+    const d = await r.json().catch(() => ({}));
+    throw new Error(d.error || `Upload failed (${r.status})`);
+  }
+  const d = await r.json();
+  return d.url;
+}
+
+function imageField(label, currentValue, onChange) {
+  const wrap = document.createElement('div');
+  wrap.className = 'fld';
+  wrap.innerHTML = `
+    <label>${esc(label)}</label>
+    <div class="img-upload">
+      <div class="preview" style="${currentValue ? `background-image:url(${esc(currentValue)})` : ''}"></div>
+      <div class="ctrls">
+        <input type="text" value="${esc(currentValue || '')}" placeholder="/images/…">
+        <div class="img-upload-row">
+          <label class="pick">Upload new…<input type="file" accept="image/*"></label>
+        </div>
+      </div>
+    </div>
+  `;
+  const urlInput = wrap.querySelector('input[type="text"]');
+  const fileInput = wrap.querySelector('input[type="file"]');
+  const preview = wrap.querySelector('.preview');
+  const pickLabel = wrap.querySelector('label.pick');
+
+  urlInput.addEventListener('input', () => {
+    preview.style.backgroundImage = urlInput.value ? `url(${urlInput.value})` : '';
+    onChange(urlInput.value);
+  });
+  fileInput.addEventListener('change', async () => {
+    const f = fileInput.files[0];
+    if (!f) return;
+    const origText = pickLabel.innerHTML;
+    pickLabel.innerHTML = 'Uploading…';
+    try {
+      const url = await uploadImage(f);
+      urlInput.value = url;
+      preview.style.backgroundImage = `url(${url})`;
+      onChange(url);
+      toast('Image uploaded');
+    } catch (e) {
+      toast(e.message || 'Upload failed', true);
+    } finally {
+      pickLabel.innerHTML = origText;
+      fileInput.value = '';
+    }
+  });
+  return wrap;
+}
+
+// -------- Render: SITE --------
+function renderSite() {
+  const s = state.site.content;
+  const root = $('site-content');
+  root.innerHTML = '';
+
+  // ---- Brand ----
+  root.appendChild(panel('Brand basics', 'The most-visible text across the site.', [
+    textField('Tagline', s.brand.tagline, v => { s.brand.tagline = v; refreshSaveBar(); }),
+    textField('Award line', s.brand.awardLine, v => { s.brand.awardLine = v; refreshSaveBar(); }, 'Appears on the home page award band and footer.'),
+    textField('Contact email', s.brand.email, v => { s.brand.email = v; refreshSaveBar(); }),
+  ]));
+
+  // ---- Ticker ----
+  const tickerPanel = panel('Ticker (scrolling strip)', 'Short lines that scroll between sections. Keep them punchy.', []);
+  const tickerBody = tickerPanel.querySelector('.panel-body');
+  const chipWrap = document.createElement('div');
+  function renderTicker() {
+    chipWrap.innerHTML = '';
+    const row = document.createElement('div'); row.className = 'chip-row';
+    s.ticker.forEach((txt, i) => {
+      const c = document.createElement('span'); c.className = 'chip';
+      c.innerHTML = `${esc(txt)} <button title="Remove">×</button>`;
+      c.querySelector('button').onclick = () => { s.ticker.splice(i, 1); renderTicker(); refreshSaveBar(); };
+      row.appendChild(c);
+    });
+    chipWrap.appendChild(row);
+    const add = document.createElement('div'); add.className = 'chip-add';
+    add.innerHTML = `<input type="text" placeholder="New ticker line…"><button>Add</button>`;
+    const inp = add.querySelector('input');
+    const btn = add.querySelector('button');
+    const doAdd = () => {
+      const v = inp.value.trim();
+      if (!v) return;
+      s.ticker.push(v); renderTicker(); refreshSaveBar();
+    };
+    btn.onclick = doAdd;
+    inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); doAdd(); } });
+    chipWrap.appendChild(add);
+  }
+  renderTicker();
+  tickerBody.appendChild(chipWrap);
+  root.appendChild(tickerPanel);
+
+  // ---- Home hero ----
+  const h = s.home.hero;
+  const heroFields = [
+    textField('Eyebrow (small text above)', h.eyebrow, v => { h.eyebrow = v; refreshSaveBar(); }),
+    textField('Headline', h.headline, v => { h.headline = v; refreshSaveBar(); }),
+    textField('Headline accent (italic part)', h.headlineAccent, v => { h.headlineAccent = v; refreshSaveBar(); }),
+    textField('Sub copy', h.sub, v => { h.sub = v; refreshSaveBar(); }, '', 'textarea'),
+  ];
+  const heroImg = imageField('Hero image', h.image, v => { h.image = v; refreshSaveBar(); });
+  heroFields.push(heroImg);
+  root.appendChild(panel('Home hero', 'The main top section on the home page.', heroFields));
+
+  // ---- Pillars (3 cards) ----
+  const pillarItems = s.home.pillars.map((p, i) => {
+    const item = document.createElement('div'); item.className = 'list-item';
+    item.innerHTML = `<div class="list-item-head"><h3>Pillar ${i + 1}</h3></div>`;
+    item.appendChild(textField('Title', p.title, v => { p.title = v; refreshSaveBar(); }));
+    item.appendChild(textField('Body', p.body, v => { p.body = v; refreshSaveBar(); }, '', 'textarea'));
+    return item;
+  });
+  root.appendChild(panel('Three pillars (home page cards)', 'The 3 highlighted boxes near the top of the home page.', pillarItems));
+
+  // ---- Social ----
+  root.appendChild(panel('Social links', 'Footer and social embed targets.', [
+    textField('Instagram URL', s.social.instagram, v => { s.social.instagram = v; refreshSaveBar(); }),
+    textField('Facebook URL', s.social.facebook, v => { s.social.facebook = v; refreshSaveBar(); }),
+    textField('Yelp URL', s.social.yelp, v => { s.social.yelp = v; refreshSaveBar(); }),
+  ]));
+
+  // ---- Advanced: raw JSON ----
+  const adv = document.createElement('details'); adv.className = 'advanced';
+  adv.innerHTML = `<summary>Advanced · edit raw JSON</summary>`;
+  const ta = document.createElement('textarea'); ta.style.width = '100%'; ta.style.fontSize = '12.5px';
+  ta.value = JSON.stringify(s, null, 2);
+  let rawErr = document.createElement('div'); rawErr.style.fontSize = '12px'; rawErr.style.color = 'var(--err)'; rawErr.style.marginTop = '6px';
+  ta.addEventListener('input', () => {
+    try {
+      const parsed = JSON.parse(ta.value);
+      state.site.content = parsed;
+      rawErr.textContent = '';
+      refreshSaveBar();
+    } catch (e) { rawErr.textContent = 'Invalid JSON: ' + e.message; }
+  });
+  adv.appendChild(ta);
+  adv.appendChild(rawErr);
+  root.appendChild(adv);
+}
+
+// -------- Render: LOCATIONS --------
+function renderLocations() {
+  const root = $('locations-content');
+  root.innerHTML = '';
+  const data = state.locations.content;
+
+  data.locations.forEach((loc, idx) => {
+    const p = document.createElement('section'); p.className = 'panel panel-collapsed';
+    p.innerHTML = `
+      <div class="panel-head">
+        <h2>${esc(loc.name)} <span class="hint" style="font-weight:400;margin-left:8px">${esc(loc.tag || '')}</span></h2>
+        <span class="chevron">▸</span>
+      </div>
+      <div class="panel-body"></div>
+    `;
+    p.querySelector('.panel-head').addEventListener('click', () => p.classList.toggle('open'));
+    const body = p.querySelector('.panel-body');
+
+    body.appendChild(row2(
+      textField('Name', loc.name, v => { loc.name = v; refreshSaveBar(); }),
+      textField('Short name', loc.short, v => { loc.short = v; refreshSaveBar(); }),
+    ));
+    body.appendChild(textField('Tag', loc.tag, v => { loc.tag = v; refreshSaveBar(); }, 'Shown under the name on the locations grid.'));
+    body.appendChild(row2(
+      textField('Phone', loc.phone, v => { loc.phone = v; refreshSaveBar(); }),
+      textField('Phone (E.164)', loc.phoneE164, v => { loc.phoneE164 = v; refreshSaveBar(); }, '+17602301771 format for tel: links'),
+    ));
+    body.appendChild(textField('Hours summary', loc.hours && loc.hours.summary || '', v => {
+      if (!loc.hours) loc.hours = {};
+      loc.hours.summary = v;
+      refreshSaveBar();
+    }, 'Free-form text for the locations grid (e.g. "Sun–Thu 6am–10pm · Fri–Sat 6am–midnight").'));
+    body.appendChild(textField('Order Online URL', loc.orderOnlineUrl || '', v => { loc.orderOnlineUrl = v; refreshSaveBar(); }, 'Full order.online store URL; leave blank to hide the button.'));
+    body.appendChild(imageField('Hero image', loc.hero || '', v => { loc.hero = v; refreshSaveBar(); }));
+    body.appendChild(textField('Description', loc.description || '', v => { loc.description = v; refreshSaveBar(); }, '', 'textarea'));
+
+    // Features chips
+    const featWrap = document.createElement('div'); featWrap.className = 'fld';
+    featWrap.innerHTML = '<label>Features</label>';
+    const featChips = document.createElement('div');
+    function renderFeat() {
+      featChips.innerHTML = '';
+      const row = document.createElement('div'); row.className = 'chip-row';
+      (loc.features || []).forEach((txt, i) => {
+        const c = document.createElement('span'); c.className = 'chip';
+        c.innerHTML = `${esc(txt)} <button title="Remove">×</button>`;
+        c.querySelector('button').onclick = () => { loc.features.splice(i, 1); renderFeat(); refreshSaveBar(); };
+        row.appendChild(c);
+      });
+      featChips.appendChild(row);
+      const add = document.createElement('div'); add.className = 'chip-add';
+      add.innerHTML = `<input type="text" placeholder="Add feature…"><button>Add</button>`;
+      const inp = add.querySelector('input');
+      const btn = add.querySelector('button');
+      const doAdd = () => {
+        const v = inp.value.trim();
+        if (!v) return;
+        if (!loc.features) loc.features = [];
+        loc.features.push(v); renderFeat(); refreshSaveBar();
+      };
+      btn.onclick = doAdd;
+      inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); doAdd(); } });
+      featChips.appendChild(add);
+    }
+    renderFeat();
+    featWrap.appendChild(featChips);
+    body.appendChild(featWrap);
+
+    root.appendChild(p);
+  });
+}
+
+// -------- Render: POSTS --------
+// Body is stored as an array of {type: 'h2'|'p', text: '...'}. In the UI we expose markdown-like:
+//   ## h2 headings
+//   plain paragraphs
+// separated by blank lines.
+function bodyToMd(arr) {
+  if (!Array.isArray(arr)) return '';
+  return arr.map(b => b.type === 'h2' ? `## ${b.text}` : b.text).join('\n\n');
+}
+function mdToBody(md) {
+  return String(md || '')
+    .split(/\n{2,}/)
+    .map(s => s.trim())
+    .filter(Boolean)
+    .map(block => block.startsWith('## ')
+      ? { type: 'h2', text: block.slice(3).trim() }
+      : { type: 'p', text: block.replace(/\n/g, ' ') });
+}
+
+function renderPosts() {
+  const root = $('posts-content');
+  root.innerHTML = '';
+  const data = state.posts.content;
+  if (!Array.isArray(data.posts)) data.posts = [];
+
+  const listPanel = panel('All posts', `${data.posts.length} post${data.posts.length === 1 ? '' : 's'}. Click one to edit, or add a new one below.`, []);
+  const listBody = listPanel.querySelector('.panel-body');
+
+  data.posts.forEach((post, idx) => {
+    const item = document.createElement('div'); item.className = 'post-preview-item';
+    item.innerHTML = `
+      <div class="thumb" style="${post.image ? `background-image:url(${esc(post.image)})` : ''}"></div>
+      <div class="meta">
+        <strong>${esc(post.title || '(untitled)')}</strong>
+        <small>${esc(post.date || '')} · /news/${esc(post.slug)}/</small>
+      </div>
+    `;
+    item.addEventListener('click', () => openPostEditor(idx));
+    listBody.appendChild(item);
+  });
+
+  const addBtn = document.createElement('button');
+  addBtn.className = 'btn-ghost';
+  addBtn.textContent = '+ New post';
+  addBtn.style.justifySelf = 'start';
+  addBtn.onclick = () => {
+    data.posts.unshift({
+      slug: 'new-post-' + Date.now().toString(36),
+      title: 'New post',
+      date: new Date().toISOString().slice(0, 10),
+      excerpt: '',
+      image: '',
+      imageAlt: '',
+      body: [{ type: 'p', text: '' }],
+    });
+    refreshSaveBar();
+    renderPosts();
+    openPostEditor(0);
+  };
+  listBody.appendChild(addBtn);
+
+  root.appendChild(listPanel);
+}
+
+function openPostEditor(idx) {
+  const data = state.posts.content;
+  const post = data.posts[idx];
+  if (!post) return;
+
+  const root = $('posts-content');
+  root.innerHTML = '';
+
+  const backBtn = document.createElement('button');
+  backBtn.className = 'btn-ghost';
+  backBtn.textContent = '← All posts';
+  backBtn.style.marginBottom = '14px';
+  backBtn.onclick = () => renderPosts();
+  root.appendChild(backBtn);
+
+  const p = panel(post.title || 'New post', `/news/${post.slug || ''}/`, []);
+  const body = p.querySelector('.panel-body');
+
+  body.appendChild(textField('Title', post.title, v => {
+    post.title = v;
+    if (!post._slugLocked) post.slug = slugify(v);
+    refreshSaveBar();
+    p.querySelector('.panel-head h2').textContent = v || 'New post';
+    p.querySelector('.panel-head .hint').textContent = `/news/${post.slug || ''}/`;
+  }));
+  body.appendChild(row2(
+    textField('Slug', post.slug || '', v => { post.slug = slugify(v); post._slugLocked = true; refreshSaveBar(); p.querySelector('.panel-head .hint').textContent = `/news/${post.slug || ''}/`; }, 'URL path — auto-generated from title until edited.'),
+    (() => {
+      const w = document.createElement('div'); w.className = 'fld';
+      w.innerHTML = `<label>Date</label><input type="date" value="${esc(post.date || '')}">`;
+      w.querySelector('input').addEventListener('input', e => { post.date = e.target.value; refreshSaveBar(); });
+      return w;
+    })(),
+  ));
+  body.appendChild(textField('Excerpt', post.excerpt || '', v => { post.excerpt = v; refreshSaveBar(); }, '1-2 sentences shown in the news index and social/meta previews.', 'textarea'));
+  body.appendChild(imageField('Hero image', post.image || '', v => { post.image = v; refreshSaveBar(); }));
+  body.appendChild(textField('Image alt text', post.imageAlt || '', v => { post.imageAlt = v; refreshSaveBar(); }, 'Describe the image for screen readers and SEO.'));
+
+  const bodyField = document.createElement('div'); bodyField.className = 'fld';
+  bodyField.innerHTML = `<label>Body</label>`;
+  const help = document.createElement('div'); help.className = 'help';
+  help.innerHTML = 'Use <code>## Heading</code> at the start of a line for a subheading. Separate paragraphs with a blank line.';
+  const ta = document.createElement('textarea');
+  ta.style.minHeight = '400px';
+  ta.value = bodyToMd(post.body);
+  ta.addEventListener('input', () => { post.body = mdToBody(ta.value); refreshSaveBar(); });
+  bodyField.appendChild(ta);
+  bodyField.appendChild(help);
+  body.appendChild(bodyField);
+
+  // Delete
+  const delRow = document.createElement('div');
+  delRow.style.marginTop = '10px'; delRow.style.paddingTop = '14px'; delRow.style.borderTop = '1px dashed var(--hairline)';
+  const del = document.createElement('button');
+  del.className = 'btn-ghost danger';
+  del.textContent = 'Delete this post';
+  del.onclick = () => {
+    if (!confirm(`Delete "${post.title}"? This will commit the removal on the next save.`)) return;
+    data.posts.splice(idx, 1);
+    refreshSaveBar();
+    renderPosts();
+  };
+  delRow.appendChild(del);
+  body.appendChild(delRow);
+
+  root.appendChild(p);
+}
+
+// -------- UI helpers --------
+function panel(title, hint, fields) {
+  const p = document.createElement('section'); p.className = 'panel';
+  p.innerHTML = `
+    <div class="panel-head">
+      <h2>${esc(title)}</h2>
+      ${hint ? `<span class="hint">${esc(hint)}</span>` : ''}
+    </div>
+    <div class="panel-body"></div>
+  `;
+  const body = p.querySelector('.panel-body');
+  (fields || []).forEach(f => body.appendChild(f));
+  return p;
+}
+
+function textField(label, value, onInput, help, kind) {
+  const w = document.createElement('div'); w.className = 'fld';
+  const tag = kind === 'textarea' ? 'textarea' : 'input';
+  const typeAttr = kind === 'textarea' ? '' : 'type="text"';
+  w.innerHTML = `<label>${esc(label)}</label><${tag} ${typeAttr}>${kind === 'textarea' ? esc(value || '') : ''}</${tag}>${help ? `<div class="help">${help}</div>` : ''}`;
+  const el = w.querySelector(tag);
+  if (kind !== 'textarea') el.value = value || '';
+  el.addEventListener('input', () => onInput(el.value));
+  return w;
+}
+
+function row2(a, b) {
+  const r = document.createElement('div'); r.className = 'row-2';
+  r.appendChild(a); r.appendChild(b);
+  return r;
+}
+
+function render(file) {
+  if (file === 'site') renderSite();
+  else if (file === 'locations') renderLocations();
+  else if (file === 'posts') renderPosts();
+  refreshSaveBar();
+}
+
+// -------- Save --------
+async function saveAll() {
+  const btn = $('save-btn');
+  btn.disabled = true;
+  const msg = $('commit-msg').value.trim();
+  const files = ['site', 'locations', 'posts'].filter(f => dirty(f));
+  let saved = 0;
+  try {
+    for (const file of files) {
+      const body = {
+        file,
+        content: state[file].content,
+        sha: state[file].sha,
+        message: msg || undefined,
+      };
+      const r = await fetch('/api/admin/save/', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (!r.ok) {
+        const d = await r.json().catch(() => ({}));
+        throw new Error(d.error || `Save ${file} failed (${r.status})`);
+      }
+      const d = await r.json();
+      state[file].sha = d.sha;
+      state[file].original = JSON.parse(JSON.stringify(state[file].content));
+      saved++;
+    }
+    $('commit-msg').value = '';
+    toast(`Saved ${saved} file${saved === 1 ? '' : 's'} — Vercel is rebuilding.`);
+    refreshSaveBar();
+  } catch (e) {
+    toast(e.message || 'Save failed', true);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+$('save-btn').addEventListener('click', saveAll);
+$('discard-btn').addEventListener('click', () => {
+  if (!confirm('Discard all unsaved changes?')) return;
+  ['site', 'locations', 'posts'].forEach(f => {
+    if (state[f].loaded) state[f].content = JSON.parse(JSON.stringify(state[f].original));
+  });
+  render(activeTab);
+  refreshSaveBar();
+});
+
+window.addEventListener('beforeunload', (e) => {
+  if (anyDirty()) { e.preventDefault(); e.returnValue = ''; }
+});
+
+// -------- Boot --------
+(async () => {
+  try {
+    await loadFile('site');
+    render('site');
+  } catch (e) {
+    $('site-content').innerHTML = `<div class="panel"><div class="panel-body"><p style="color:var(--err)">Failed to load: ${esc(e.message)}</p></div></div>`;
+  }
+})();
+</script>
+</body>
+</html>

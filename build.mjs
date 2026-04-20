@@ -2046,6 +2046,7 @@ function renderRobots() {
   return `User-agent: *
 Allow: /
 Disallow: /edit/
+Disallow: /admin-login/
 Disallow: /api/
 Disallow: /404/
 
