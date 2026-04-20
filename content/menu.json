@@ -146,10 +146,6 @@
           "name": "Flautas Chicken or Beef Tacos (3)",
           "description": "Choice of Chicken or Beef, Flour Tortillas, Guacamole, Lettuce, Pico de Gallo, Sour Cream, and Cheese",
           "image": "/images/menu/flautas-3.jpg"
-        },
-        {
-          "name": "Potato Taco",
-          "description": "Seasoned Potato in a Warm Corn Tortilla"
         }
       ]
     },
@@ -163,6 +159,10 @@
         {
           "name": "Shredded Beef Taco",
           "description": "Beef, Lettuce, and Cheese"
+        },
+        {
+          "name": "Potato Taco",
+          "description": "Seasoned Potato in a Crispy Hard Shell"
         },
         {
           "name": "Rolled with Guacamole (3)",
