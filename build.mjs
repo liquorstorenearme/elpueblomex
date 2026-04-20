@@ -389,7 +389,7 @@ const footer = () => `
   <div class="site-footer__top">
     <div class="site-footer__brand">
       <img class="footer-logo" src="/images/brand/logo-lockup.png" alt="${h(site.brand.name)}">
-      <p class="footer-tagline">Home of the <strong>$1.29</strong> Fish Taco.</p>
+      <p class="footer-tagline">Home of the <strong>$1.39</strong> Fish Taco.</p>
     </div>
     <div class="site-footer__cols">
       <div>
@@ -522,7 +522,7 @@ ${ticker("ticker--marigold")}
   <div class="feature-fish__inner">
     <div>
       <p class="eyebrow" style="color:var(--marigold)">The signature</p>
-      <h2>The famous <em>$1.29</em> Fish Taco.</h2>
+      <h2>The famous <em>$1.39</em> Fish Taco.</h2>
       <p>Crispy fried-to-order fillet, chipotle sauce, fresh pico, crisp cabbage on a warm corn tortilla. Order one. Order ten. There is no limit — and there never has been.</p>
       <div class="cta-row">
         <a class="btn btn--marigold" href="/menu/">See the full menu</a>
@@ -532,7 +532,7 @@ ${ticker("ticker--marigold")}
     <div class="feature-fish__media" style="background-image:url('/images/home/fish-taco.jpg')">
       <div class="feature-fish__price">
         <small>Fish Taco</small>
-        <strong>$1.29</strong>
+        <strong>$1.39</strong>
         <em>unlimited</em>
       </div>
     </div>
@@ -596,8 +596,8 @@ ${ticker("ticker--agave")}
 ${ticker("ticker--terracotta")}
 `;
   const faqs = [
-    { q: "Where is the $1.29 Fish Taco sold?", a: "At every El Pueblo location — Cardiff, Carlsbad, Carmel Valley, and Del Mar. La Jolla opens Spring 2026." },
-    { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.29 Fish Taco is unlimited. Order one. Order ten. Same price." },
+    { q: "Where is the $1.39 Fish Taco sold?", a: "At every El Pueblo location — Cardiff, Carlsbad, Carmel Valley, and Del Mar. La Jolla opens Spring 2026." },
+    { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.39 Fish Taco is unlimited. Order one. Order ten. Same price." },
     { q: "What time do you open?", a: "Cardiff is open 24 hours. Carmel Valley and Del Mar are open 6am to midnight daily. Carlsbad is 6am to 10pm (Sun-Thu) and 6am to midnight (Fri-Sat)." },
     { q: "Do you have a full bar?", a: "Yes — full bars at Del Mar and Carmel Valley, with beers on tap at Del Mar, premium tequila and mezcal, and house margaritas." },
     { q: "Do you cater?", a: "Yes. Same-day Party Packs (rolled tacos, enchiladas, quesadilla trays, make-your-own taco packs) and full-service catering with taco bars at all four open locations." }
@@ -784,7 +784,7 @@ function renderMenu() {
 <section class="page-head page-head--menu">
   <p class="eyebrow">The menu</p>
   <h1 class="display">Fresh&nbsp;food,<br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
-  <p class="lede">Breakfast burritos from 6am. Our famous $1.29 fish tacos all day. Full bar with beers on tap in Del Mar. Order pickup from your nearest location.</p>
+  <p class="lede">Breakfast burritos from 6am. Our famous $1.39 fish tacos all day. Full bar with beers on tap in Del Mar. Order pickup from your nearest location.</p>
   <p class="menu-stats"><strong>${totalItems}</strong> items · <strong>${menu.categories.length}</strong> categories · <strong>4</strong> kitchens open now</p>
 </section>
 
@@ -793,7 +793,7 @@ function renderMenu() {
     <div class="menu-featured__media" style="background-image:url('/images/home/fish-taco.jpg')"></div>
     <div class="menu-featured__copy">
       <p class="eyebrow" style="color:var(--marigold)">Home of the</p>
-      <h2>$1.29 <em>Fish Taco</em></h2>
+      <h2>$1.39 <em>Fish Taco</em></h2>
       <p>Crispy fried-to-order fillet, chipotle sauce, fresh pico, crisp cabbage on a warm corn tortilla. Our signature, unlimited, every day of the year.</p>
       <div class="cta-row">
         ${orderLinks.map(o => `<a class="btn btn--marigold btn--sm" href="${h(o.href)}" target="_blank" rel="noopener">Order ${h(o.name)}</a>`).join("")}
@@ -817,12 +817,13 @@ ${ticker("ticker--agave")}
       <header class="menu-cat__head">
         <p class="menu-cat__num">${String(i+1).padStart(2,"0")}</p>
         <h2>${h(c.name)}</h2>
+        ${c.note ? `<p class="menu-cat__note">${h(c.note)}</p>` : ""}
         <span class="menu-cat__count">${c.items.length} items</span>
       </header>
       <ul class="menu-items">
         ${c.items.map(it => `
         <li class="menu-item ${it.featured ? 'menu-item--featured' : ''}">
-          ${it.featured ? `<span class="menu-item__badge">Signature · $1.29</span>` : ''}
+          ${it.featured ? `<span class="menu-item__badge">Signature · $1.39</span>` : ''}
           <h3>${h(it.name)}</h3>
           ${it.description ? `<p>${h(it.description)}</p>` : ""}
         </li>`).join("")}
@@ -860,7 +861,7 @@ ${ticker("ticker--marigold")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Menu", url: "/menu/" }]);
   return layout({
     title: `Menu — ${site.brand.name} | Fish Tacos, Burritos, Plates`,
-    description: "The full El Pueblo menu — breakfast burritos, $1.29 fish tacos, bowls, enchiladas, quesadillas, plates, and drinks. Order pickup from Cardiff, Carlsbad, Carmel Valley, or Del Mar.",
+    description: "The full El Pueblo menu — breakfast burritos, $1.39 fish tacos, bowls, enchiladas, quesadillas, plates, and drinks. Order pickup from Cardiff, Carlsbad, Carmel Valley, or Del Mar.",
     canonicalPath: "/menu/",
     body,
     ogImage: "/og/menu.jpg",
@@ -1222,7 +1223,7 @@ function galleryPhotos() {
     seenHash.add(hash);
     out.push({ src, alt });
   };
-  push("/images/home/fish-taco.jpg", "The $1.29 fish taco at El Pueblo Mexican Food");
+  push("/images/home/fish-taco.jpg", "The $1.39 fish taco at El Pueblo Mexican Food");
   for (const cat of menu.categories) {
     for (const it of cat.items) {
       if (it.image) push(it.image, `${it.name} at El Pueblo Mexican Food`);
@@ -1256,7 +1257,7 @@ ${ticker("ticker--marigold")}
 
 <section class="section section--cream-2">
   <div class="cta-band">
-    <h2>See the <em>$1.29</em> fish taco?</h2>
+    <h2>See the <em>$1.39</em> fish taco?</h2>
     <p>Come taste it. Four locations open now, La Jolla opening Spring 2026.</p>
     <div class="cta-row">
       <a class="btn btn--primary" href="/locations/">Find a location</a>
@@ -1788,7 +1789,7 @@ const legalPages = [
       ]},
       { h: "Intellectual property", p: [
         `All text, graphics, photographs, videos, logos, marks, menu descriptions, page layouts, and other content on the Site are owned by ${site.brand.name}, its licensors, or its contributors, and are protected by U.S. and international copyright, trademark, and other intellectual-property laws.`,
-        `The names "El Pueblo Mexican Food," "El Pueblo," the $1.29 Fish Taco offering, and related logos are trademarks of ${site.brand.name}. You may not use them without our prior written permission.`,
+        `The names "El Pueblo Mexican Food," "El Pueblo," the $1.39 Fish Taco offering, and related logos are trademarks of ${site.brand.name}. You may not use them without our prior written permission.`,
         "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to access the Site for your personal, non-commercial use. You may not reproduce, modify, distribute, publicly display, republish, sell, or create derivative works from any portion of the Site without prior written permission."
       ]},
       { h: "User submissions", p: [

@@ -2,7 +2,7 @@
   "brand": {
     "name": "El Pueblo Mexican Food",
     "short": "El Pueblo",
-    "tagline": "Home of the $1.29 Fish Taco",
+    "tagline": "Home of the $1.39 Fish Taco",
     "email": "info@elpueblomex.com",
     "founded": "2010",
     "awardLine": "Voted #1 on Yelp's Top Ten Restaurants in North San Diego County."
@@ -17,7 +17,7 @@
     { "label": "Careers", "href": "/careers/" }
   ],
   "ticker": [
-    "$1.29 FISH TACOS — UNLIMITED",
+    "$1.39 FISH TACOS — UNLIMITED",
     "VOTED #1 ON YELP",
     "FRESH DAILY",
     "FIVE LOCATIONS",
@@ -37,7 +37,7 @@
       "image": "/images/home/combo-plate-hero.jpg"
     },
     "pillars": [
-      { "title": "$1.29 Fish Tacos", "body": "Crispy, fried-to-order, chipotle sauce, fresh cabbage and pico. Order as many as you want — there is no limit." },
+      { "title": "$1.39 Fish Tacos", "body": "Crispy, fried-to-order, chipotle sauce, fresh cabbage and pico. Order as many as you want — there is no limit." },
       { "title": "Fresh Every Day", "body": "Locally sourced vegetables delivered every morning. Nothing sits overnight. You can taste it in every bite." },
       { "title": "Cervezas & Margs", "body": "Full bars in Del Mar and Carmel Valley with beers on tap, premium tequila, and house margaritas." }
     ],
@@ -96,7 +96,7 @@
   "contact": {
     "heroEyebrow": "Get in touch",
     "heroHeadline": "Four open now. One on the way.",
-    "heroSub": "Five locations across the San Diego coast — all with full menus, all serving the signature $1.29 Fish Taco. Pick the closest and drop in, or send us a message."
+    "heroSub": "Five locations across the San Diego coast — all with full menus, all serving the signature $1.39 Fish Taco. Pick the closest and drop in, or send us a message."
   },
   "gallery": {
     "heroEyebrow": "The best Mex of the West",
