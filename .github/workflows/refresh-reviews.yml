@@ -1,0 +1,30 @@
+  name: Refresh Google reviews                                                                                          
+                                                            
+  on:                                                                                                                   
+    schedule:                                               
+      - cron: "0 17 * * 1"
+    workflow_dispatch: {}                                                                                               
+  
+  permissions:                                                                                                          
+    contents: write                                         
+
+  jobs:
+    refresh:
+      runs-on: ubuntu-latest                                                                                            
+      steps:
+        - uses: actions/checkout@v4                                                                                     
+        - uses: actions/setup-node@v4                       
+          with:
+            node-version: "20"
+        - name: Fetch reviews                                                                                           
+          env:
+            GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}                                                 
+          run: node scripts/fetch-reviews.mjs                                                                           
+        - name: Rebuild                                                                                                 
+          run: node build.mjs                                                                                           
+        - name: Commit                                                                                                  
+          run: |                                            
+            git config user.name "el-pueblo-bot"
+            git config user.email "noreply@elpueblomex.com"                                                             
+            git add content/reviews.json content/locations.json public/
+            git diff --staged --quiet || (git commit -m "Auto-refresh Google reviews" && git push)
