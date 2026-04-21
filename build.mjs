@@ -877,7 +877,7 @@ function renderMenu() {
 
 <section class="menu-featured">
   <div class="menu-featured__inner">
-    <div class="menu-featured__media" style="background-image:url('/images/home/fish-taco.jpg')"></div>
+    <div class="menu-featured__media"><picture><source type="image/webp" srcset="/images/home/fish-taco.webp"><img src="/images/home/fish-taco.jpg" alt="El Pueblo battered fish taco with cabbage, pico de gallo, and a wedge of lime" width="800" height="800" loading="lazy"></picture></div>
     <div class="menu-featured__copy">
       <p class="eyebrow" style="color:var(--marigold)">Home of the</p>
       <h2>$1.39 <em>Fish Taco</em></h2>
