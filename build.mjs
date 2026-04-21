@@ -36,7 +36,7 @@ function formatCount(n) {
 function reviewChip(slug) {
   const r = reviewsData.locations?.[slug];
   if (!r || !r.rating) return "";
-  return `<a class="review-chip" href="${h(r.googleUrl || "#")}" target="_blank" rel="noopener" aria-label="Google rating ${r.rating} out of 5, ${r.total} reviews"><span class="review-chip__stars" aria-hidden="true">${reviewStars(r.rating)}</span><strong>${r.rating.toFixed(1)}</strong><span class="review-chip__count">${formatCount(r.total)} reviews</span></a>`;
+  return `<span class="review-chip" aria-label="Google rating ${r.rating} out of 5, ${r.total} reviews"><span class="review-chip__stars" aria-hidden="true">${reviewStars(r.rating)}</span><strong>${r.rating.toFixed(1)}</strong><span class="review-chip__count">${formatCount(r.total)} reviews</span></span>`;
 }
 
 function reviewsSection(slug) {
