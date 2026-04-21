@@ -2177,6 +2177,40 @@ function write(relPath, contents) {
   fs.writeFileSync(full, out);
 }
 
+function collapseNestedImageSets(css) {
+  // Walk image-set(...) expressions; when the argument list contains another image-set(...),
+  // flatten to the first webp url + the innermost non-image-set url (the real fallback).
+  let out = "";
+  let i = 0;
+  while (i < css.length) {
+    const idx = css.indexOf("image-set(", i);
+    if (idx === -1) { out += css.slice(i); break; }
+    out += css.slice(i, idx);
+    // Find matching close paren for this image-set.
+    let depth = 0, j = idx;
+    for (; j < css.length; j++) {
+      const ch = css[j];
+      if (ch === "(") depth++;
+      else if (ch === ")") { depth--; if (depth === 0) { j++; break; } }
+    }
+    const block = css.slice(idx, j);
+    if ((block.match(/image-set\s*\(/g) || []).length > 1) {
+      // Nested. Extract the first url(...) (webp) and the last url(...) (fallback).
+      const urls = [...block.matchAll(/url\((['"]?)([^'")]+)\1\)\s*type\((['"]?)([^'")]+)\3\)/g)];
+      if (urls.length >= 2) {
+        const first = urls[0], last = urls[urls.length - 1];
+        out += `image-set(url('${first[2]}') type('${first[4]}'),url('${last[2]}') type('${last[4]}'))`;
+      } else {
+        out += block;
+      }
+    } else {
+      out += block;
+    }
+    i = j;
+  }
+  return out;
+}
+
 function minifyCss(css) {
   return css
     .replace(/\/\*[\s\S]*?\*\//g, "")
@@ -2204,6 +2238,10 @@ function build() {
       if (opens > closes) return m;
       return `image-set(url('${webpSrc}') type('image/webp'), url('${src}') type('image/${src.endsWith('.png') ? 'png' : 'jpeg'}'))`;
     });
+    // Safety net: collapse any nested image-set(...) into its canonical two-entry form.
+    // The wrap step above is idempotent, but if an earlier build left nested garbage behind
+    // (or the regex ever misses an edge case), this unwinds it so re-runs converge.
+    css = collapseNestedImageSets(css);
     const min = minifyCss(css);
     if (min.length < css.length) fs.writeFileSync(cssPath, min);
   }
