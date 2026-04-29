@@ -1476,7 +1476,13 @@ function galleryPhotos() {
   const seenUrl = new Set();
   const seenHash = new Set();
   const out = [];
+  const galleryExclude = new Set([
+    "/images/menu/shredded-chicken-quesadilla.jpg",
+    "/images/menu/chicken-tortilla-soup.jpg",
+    "/images/menu/kids-bean-and-cheese.jpg"
+  ]);
   const push = (src, alt) => {
+    if (galleryExclude.has(src)) return;
     if (seenUrl.has(src)) return;
     seenUrl.add(src);
     const fp = path.join(outDir, src.replace(/^\//, ""));
