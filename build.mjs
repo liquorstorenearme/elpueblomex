@@ -13,6 +13,14 @@ const menu = JSON.parse(fs.readFileSync(path.join(root, "content/menu.json"), "u
 const { locations } = JSON.parse(fs.readFileSync(path.join(root, "content/locations.json"), "utf8"));
 const { posts } = JSON.parse(fs.readFileSync(path.join(root, "content/posts.json"), "utf8"));
 const { jobs } = JSON.parse(fs.readFileSync(path.join(root, "content/jobs.json"), "utf8"));
+const pressPath = path.join(root, "content/press.json");
+const { press = [] } = fs.existsSync(pressPath)
+  ? JSON.parse(fs.readFileSync(pressPath, "utf8"))
+  : { press: [] };
+const instagramPath = path.join(root, "content/instagram.json");
+const instagram = fs.existsSync(instagramPath)
+  ? JSON.parse(fs.readFileSync(instagramPath, "utf8"))
+  : { handle: "", profileUrl: "", posts: [] };
 const reviewsPath = path.join(root, "content/reviews.json");
 const reviewsData = fs.existsSync(reviewsPath)
   ? JSON.parse(fs.readFileSync(reviewsPath, "utf8"))
@@ -607,11 +615,12 @@ ${ticker("ticker--marigold")}
 
 ${ticker("ticker--agave")}
 
-<section class="section section--cream-2">
+<section class="section section--cream-2" id="find-near-you">
   <div class="section__inner">
     <header class="section__head">
-      <p class="eyebrow">Five locations</p>
-      <h2 class="display-sm">Find us across the <span class="serif" style="color:var(--terracotta)">north coast</span></h2>
+      <p class="eyebrow">Find a location near you</p>
+      <h2 class="display-sm">Five locations across <span class="serif" style="color:var(--terracotta)">San Diego</span></h2>
+      <p class="section__lede">Five El Pueblo locations across North County San Diego — Cardiff, Carlsbad, Carmel Valley, Del Mar, and La Jolla (opening Spring 2026). Pick the one nearest you below.</p>
     </header>
     <div class="locations-grid">
       <div class="grid">
@@ -649,6 +658,47 @@ ${ticker("ticker--agave")}
   </div>
 </section>
 
+${press.length ? `
+<section class="press">
+  <div class="press__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">In the press</p>
+      <h2 class="display-sm">What <span class="serif" style="color:var(--terracotta)">they're</span> saying</h2>
+    </header>
+    <div class="press-grid">
+      ${press.slice(0, 4).map(p => `
+      <a class="press-card" href="${h(p.url)}" target="_blank" rel="noopener">
+        <p class="press-card__outlet">${h(p.outlet)}</p>
+        <p class="press-card__quote">&ldquo;${h(p.quote)}&rdquo;</p>
+        <p class="press-card__meta">${p.author ? `${h(p.author)} · ` : ""}${h(new Date(p.date).toLocaleDateString("en-US", { month: "short", year: "numeric" }))}</p>
+      </a>`).join("")}
+    </div>
+  </div>
+</section>
+` : ""}
+
+${posts.length ? `
+<section class="kitchen-news">
+  <div class="kitchen-news__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">From the kitchen</p>
+      <h2 class="display-sm">Latest <span class="serif" style="color:var(--terracotta)">stories</span></h2>
+    </header>
+    <div class="kitchen-news__grid">
+      ${[...posts].sort((a,b) => (b.date||"").localeCompare(a.date||"")).slice(0, 3).map(p => `
+      <a class="news-card" href="/news/${h(p.slug)}/">
+        ${p.image ? `<div class="news-card__media" role="img" aria-label="${h(p.imageAlt||p.title)}" style="background-image:url('${h(p.image)}')"></div>` : ""}
+        <div class="news-card__body">
+          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }))}</p>
+          <h3 class="news-card__title">${h(p.title)}</h3>
+          <p class="news-card__excerpt">${h(p.excerpt || "")}</p>
+        </div>
+      </a>`).join("")}
+    </div>
+  </div>
+</section>
+` : ""}
+
 <section class="section section--wall">
   <div class="cta-band">
     <h2>Planning a <em>big</em> party?</h2>
@@ -663,15 +713,15 @@ ${ticker("ticker--agave")}
 ${ticker("ticker--terracotta")}
 `;
   const faqs = [
-    { q: "Where is the $1.39 Fish Taco sold?", a: "At every El Pueblo location — Cardiff, Carlsbad, Carmel Valley, and Del Mar. La Jolla opens Spring 2026." },
-    { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.39 Fish Taco is unlimited. Order one. Order ten. Same price." },
+    { q: "Where is the nearest El Pueblo Mexican restaurant near me?", a: "El Pueblo Mexican Food has five locations across North County San Diego: Cardiff-by-the-Sea (open 24 hours), Carlsbad at La Costa Town Square, Carmel Valley, Del Mar, and La Jolla opening Spring 2026. Visit our Locations page to find the one nearest you." },
     { q: "What time do you open?", a: "Cardiff is open 24 hours. Carmel Valley and Del Mar are open 6am to midnight daily. Carlsbad is 6am to 10pm (Sun-Thu) and 6am to midnight (Fri-Sat)." },
+    { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.39 Fish Taco is unlimited. Order one. Order ten. Same price." },
     { q: "Do you have a full bar?", a: "Yes — full bars at Del Mar and Carmel Valley, with beers on tap at Del Mar, premium tequila and mezcal, and house margaritas." },
     { q: "Do you cater?", a: "Yes. Same-day Party Packs (rolled tacos, enchiladas, quesadilla trays, make-your-own taco packs) and full-service catering with taco bars at all four open locations." }
   ];
   return layout({
-    title: `Mexican Food in North County San Diego | ${site.brand.name} — 5 Locations`,
-    description: "Fresh Mexican food in North San Diego County. Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening soon. Voted #1 on Yelp. Fish tacos, full bars, open late.",
+    title: `Mexican Food Near Me in North County San Diego | ${site.brand.name} — 5 Locations`,
+    description: "Looking for Mexican food near you? El Pueblo Mexican Food has five locations across North San Diego County — Cardiff, Carlsbad, Carmel Valley, Del Mar, and La Jolla (opening soon). Voted #1 on Yelp. Fish tacos, full bars, open late.",
     canonicalPath: "/",
     body,
     ogImage: "/og/home.jpg",
@@ -1559,6 +1609,47 @@ ${ticker("ticker--terracotta")}
 
 // ---------- News (index + posts) ----------
 function renderNewsIndex() {
+  const pressSection = press.length ? `
+<section class="section" aria-labelledby="press-heading">
+  <div class="section__inner">
+    <header class="news-section__head">
+      <p class="eyebrow">In the press</p>
+      <h2 id="press-heading" class="display-sm">Covered by the <span class="serif" style="color:var(--terracotta)">press.</span></h2>
+      <p class="lede">Independent journalism about El Pueblo Mexican Food.</p>
+    </header>
+    <div class="press-grid">
+      ${press.map(a => `
+      <a class="press-card" href="${h(a.url)}" target="_blank" rel="noopener">
+        <div class="press-card__head">
+          <span class="press-card__outlet">${h(a.outlet)}</span>
+          ${a.outletNote ? `<span class="press-card__note">${h(a.outletNote)}</span>` : ""}
+          <time class="press-card__date">${h(a.date)}</time>
+        </div>
+        <h3 class="press-card__title">${h(a.title)}</h3>
+        ${a.quote ? `<blockquote class="press-card__quote">${h(a.quote)}</blockquote>` : ""}
+        <span class="press-card__cta">Read the article <span aria-hidden="true">↗</span></span>
+      </a>`).join("")}
+    </div>
+  </div>
+</section>
+
+<style>
+  .news-section__head{max-width:720px;margin:0 0 32px;}
+  .news-section__head .lede{margin-top:8px;}
+  .press-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+  .press-card{display:flex;flex-direction:column;gap:14px;padding:24px 26px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;text-decoration:none;color:inherit;transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;}
+  .press-card:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.08);border-color:var(--terracotta);}
+  .press-card__head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .press-card__outlet{font-weight:800;letter-spacing:0.04em;text-transform:uppercase;font-size:.82rem;color:var(--terracotta);}
+  .press-card__note{font-size:.72rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(0,0,0,.45);border:1px solid rgba(0,0,0,.12);padding:2px 6px;border-radius:4px;}
+  .press-card__date{margin-left:auto;font-size:.82rem;color:rgba(0,0,0,.55);font-variant-numeric:tabular-nums;}
+  .press-card__title{margin:0;font-size:1.18rem;line-height:1.3;font-weight:700;letter-spacing:-0.01em;}
+  .press-card__quote{margin:0;padding:12px 14px;border-left:3px solid var(--terracotta);background:rgba(0,0,0,.02);font-style:italic;color:rgba(0,0,0,.72);font-size:.98rem;line-height:1.5;}
+  .press-card__cta{margin-top:auto;font-weight:700;color:var(--terracotta);font-size:.95rem;}
+  @media (max-width:720px){.press-grid{grid-template-columns:1fr;}}
+</style>
+` : "";
+
   const body = `
 <section class="page-head">
   <p class="eyebrow">From the kitchen</p>
@@ -1567,9 +1658,14 @@ function renderNewsIndex() {
 </section>
 
 ${ticker("ticker--agave")}
+${pressSection}
 
 <section class="section section--cream">
   <div class="section__inner">
+    <header class="news-section__head">
+      <p class="eyebrow">From El Pueblo</p>
+      <h2 class="display-sm">Stories from the <span class="serif" style="color:var(--terracotta)">kitchen.</span></h2>
+    </header>
     <div class="post-grid">
       ${posts.map(p => `
       <a class="post-card" href="/news/${h(p.slug)}/">

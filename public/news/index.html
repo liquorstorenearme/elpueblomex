@@ -90,12 +90,106 @@
   </div>
 </div>
 
+<section class="section" aria-labelledby="press-heading">
+  <div class="section__inner">
+    <header class="news-section__head">
+      <p class="eyebrow">In the press</p>
+      <h2 id="press-heading" class="display-sm">Covered by the <span class="serif" style="color:var(--terracotta)">press.</span></h2>
+      <p class="lede">Independent journalism about El Pueblo Mexican Food.</p>
+    </header>
+    <div class="press-grid">
+      
+      <a class="press-card" href="https://www.marketplace.org/story/2023/09/13/fish-tacos-for-about-a-1" target="_blank" rel="noopener">
+        <div class="press-card__head">
+          <span class="press-card__outlet">Marketplace</span>
+          <span class="press-card__note">NPR / public radio</span>
+          <time class="press-card__date">2023-09-13</time>
+        </div>
+        <h3 class="press-card__title">This small chain is bucking price trends with fish tacos for about $1</h3>
+        <blockquote class="press-card__quote">El Pueblo Mexican Food, a family-owned chain in northern San Diego County, has kept the price of its signature fish tacos close to a dollar for more than a decade.</blockquote>
+        <span class="press-card__cta">Read the article <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="press-card" href="https://www.sandiegouniontribune.com/2023/09/26/el-pueblo-now-serving-up-authentic-mexican-in-pacific-highlands-ranch/" target="_blank" rel="noopener">
+        <div class="press-card__head">
+          <span class="press-card__outlet">San Diego Union-Tribune</span>
+          
+          <time class="press-card__date">2023-09-26</time>
+        </div>
+        <h3 class="press-card__title">El Pueblo now serving up authentic Mexican in Pacific Highlands Ranch</h3>
+        <blockquote class="press-card__quote">Fish taco specialists El Pueblo open a fourth restaurant at The Village at Pacific Highlands Ranch — fresh, family-owned Mexican food now serving Carmel Valley.</blockquote>
+        <span class="press-card__cta">Read the article <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="press-card" href="https://laist.com/news/food/cheap-fish-tacos-in-san-diego-we-investigate" target="_blank" rel="noopener">
+        <div class="press-card__head">
+          <span class="press-card__outlet">LAist</span>
+          <span class="press-card__note">NPR affiliate</span>
+          <time class="press-card__date">2023-09-04</time>
+        </div>
+        <h3 class="press-card__title">Fish Tacos For $1.19? A Veteran Journalist Launches A Tasty Investigation</h3>
+        <blockquote class="press-card__quote">El Pueblo Mexican Food, a family-owned chain in northern San Diego County, has kept its fish tacos at a remarkably low price despite rising food costs.</blockquote>
+        <span class="press-card__cta">Read the article <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="press-card" href="https://lajolla.ca/news/business/el-pueblo-mexican-restaurant-to-open-in-la-jolla/" target="_blank" rel="noopener">
+        <div class="press-card__head">
+          <span class="press-card__outlet">La Jolla Light</span>
+          
+          <time class="press-card__date">2026-01-30</time>
+        </div>
+        <h3 class="press-card__title">El Pueblo to open in La Jolla's former Jack in the Box space</h3>
+        <blockquote class="press-card__quote">El Pueblo will bring good food with great prices and customer service to La Jolla — premium ingredients and traditional recipes in a sit-down, fast-casual setting.</blockquote>
+        <span class="press-card__cta">Read the article <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="press-card" href="https://www.sandiegoville.com/2026/01/el-pueblo-mexican-restaurant-to-open-at.html" target="_blank" rel="noopener">
+        <div class="press-card__head">
+          <span class="press-card__outlet">SanDiegoVille</span>
+          
+          <time class="press-card__date">2026-01-23</time>
+        </div>
+        <h3 class="press-card__title">El Pueblo Mexican Restaurant To Open At Long-Vacant Former Jack In The Box Site In La Jolla</h3>
+        <blockquote class="press-card__quote">A locally-grown Mexican restaurant group known for its affordable fare and low-cost fish tacos expands to a fifth San Diego location.</blockquote>
+        <span class="press-card__cta">Read the article <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="press-card" href="https://whatnow.com/san-diego/restaurants/el-pueblo-mexican-food-opening-fourth-restaurant/" target="_blank" rel="noopener">
+        <div class="press-card__head">
+          <span class="press-card__outlet">What Now San Diego</span>
+          
+          <time class="press-card__date">2023-06-14</time>
+        </div>
+        <h3 class="press-card__title">El Pueblo Mexican Food Opening Fourth Restaurant</h3>
+        <blockquote class="press-card__quote">The family-owned establishment known for tacos and margaritas expands to Carmel Valley at The Village at Pacific Highlands Ranch.</blockquote>
+        <span class="press-card__cta">Read the article <span aria-hidden="true">↗</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .news-section__head{max-width:720px;margin:0 0 32px;}
+  .news-section__head .lede{margin-top:8px;}
+  .press-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+  .press-card{display:flex;flex-direction:column;gap:14px;padding:24px 26px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;text-decoration:none;color:inherit;transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;}
+  .press-card:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.08);border-color:var(--terracotta);}
+  .press-card__head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .press-card__outlet{font-weight:800;letter-spacing:0.04em;text-transform:uppercase;font-size:.82rem;color:var(--terracotta);}
+  .press-card__note{font-size:.72rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(0,0,0,.45);border:1px solid rgba(0,0,0,.12);padding:2px 6px;border-radius:4px;}
+  .press-card__date{margin-left:auto;font-size:.82rem;color:rgba(0,0,0,.55);font-variant-numeric:tabular-nums;}
+  .press-card__title{margin:0;font-size:1.18rem;line-height:1.3;font-weight:700;letter-spacing:-0.01em;}
+  .press-card__quote{margin:0;padding:12px 14px;border-left:3px solid var(--terracotta);background:rgba(0,0,0,.02);font-style:italic;color:rgba(0,0,0,.72);font-size:.98rem;line-height:1.5;}
+  .press-card__cta{margin-top:auto;font-weight:700;color:var(--terracotta);font-size:.95rem;}
+  @media (max-width:720px){.press-grid{grid-template-columns:1fr;}}
+</style>
+
+
 <section class="section section--cream">
   <div class="section__inner">
+    <header class="news-section__head">
+      <p class="eyebrow">From El Pueblo</p>
+      <h2 class="display-sm">Stories from the <span class="serif" style="color:var(--terracotta)">kitchen.</span></h2>
+    </header>
     <div class="post-grid">
       
       <a class="post-card" href="/news/anatomy-of-a-fish-taco/">
-        
+        <div class="post-card__media" style="background-image:url('/images/news/anatomy-of-a-fish-taco.jpg')"></div>
         <div class="post-card__body">
           <time>2023-09-06</time>
           <h2>Anatomy of a Fish Taco: A Perfect Fusion of Flavors</h2>
@@ -104,7 +198,7 @@
         </div>
       </a>
       <a class="post-card" href="/news/the-importance-of-fresh-ingredients-in-mexican-cuisine/">
-        
+        <div class="post-card__media" style="background-image:url('/images/news/fresh-ingredients.jpg')"></div>
         <div class="post-card__body">
           <time>2023-09-25</time>
           <h2>The Importance of Fresh Ingredients in Mexican Cuisine</h2>
@@ -113,7 +207,7 @@
         </div>
       </a>
       <a class="post-card" href="/news/bunuelos-a-crispy-and-sweet-treat/">
-        
+        <div class="post-card__media" style="background-image:url('/images/news/bunuelos.jpg')"></div>
         <div class="post-card__body">
           <time>2023-09-12</time>
           <h2>Buñuelos: A Crispy and Sweet Treat at El Pueblo</h2>
@@ -122,7 +216,7 @@
         </div>
       </a>
       <a class="post-card" href="/news/a-slice-of-mexico-in-la-costa/">
-        
+        <div class="post-card__media" style="background-image:url('/images/news/la-costa.jpg')"></div>
         <div class="post-card__body">
           <time>2024-04-02</time>
           <h2>El Pueblo in La Costa: A Slice of Mexico</h2>
@@ -131,7 +225,7 @@
         </div>
       </a>
       <a class="post-card" href="/news/fish-tacos-near-del-mar/">
-        
+        <div class="post-card__media" style="background-image:url('/images/news/fish-tacos-del-mar.jpg')"></div>
         <div class="post-card__body">
           <time>2023-06-29</time>
           <h2>Delicious Fish Tacos Near Del Mar</h2>
@@ -140,7 +234,7 @@
         </div>
       </a>
       <a class="post-card" href="/news/fresh-and-authentic-mexican-food/">
-        
+        <div class="post-card__media" style="background-image:url('/images/news/fresh-and-authentic.jpg')"></div>
         <div class="post-card__body">
           <time>2023-08-15</time>
           <h2>Fresh and Authentic Mexican Food at El Pueblo</h2>

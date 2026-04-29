@@ -1,0 +1,58 @@
+{
+  "press": [
+    {
+      "outlet": "Marketplace",
+      "outletNote": "NPR / public radio",
+      "title": "This small chain is bucking price trends with fish tacos for about $1",
+      "author": "Andie Corban",
+      "date": "2023-09-13",
+      "url": "https://www.marketplace.org/story/2023/09/13/fish-tacos-for-about-a-1",
+      "quote": "El Pueblo Mexican Food, a family-owned chain in northern San Diego County, has kept the price of its signature fish tacos close to a dollar for more than a decade."
+    },
+    {
+      "outlet": "San Diego Union-Tribune",
+      "outletNote": "",
+      "title": "El Pueblo now serving up authentic Mexican in Pacific Highlands Ranch",
+      "author": "",
+      "date": "2023-09-26",
+      "url": "https://www.sandiegouniontribune.com/2023/09/26/el-pueblo-now-serving-up-authentic-mexican-in-pacific-highlands-ranch/",
+      "quote": "Fish taco specialists El Pueblo open a fourth restaurant at The Village at Pacific Highlands Ranch — fresh, family-owned Mexican food now serving Carmel Valley."
+    },
+    {
+      "outlet": "LAist",
+      "outletNote": "NPR affiliate",
+      "title": "Fish Tacos For $1.19? A Veteran Journalist Launches A Tasty Investigation",
+      "author": "Jill Replogle",
+      "date": "2023-09-04",
+      "url": "https://laist.com/news/food/cheap-fish-tacos-in-san-diego-we-investigate",
+      "quote": "El Pueblo Mexican Food, a family-owned chain in northern San Diego County, has kept its fish tacos at a remarkably low price despite rising food costs."
+    },
+    {
+      "outlet": "La Jolla Light",
+      "outletNote": "",
+      "title": "El Pueblo to open in La Jolla's former Jack in the Box space",
+      "author": "Elisabeth Frausto",
+      "date": "2026-01-30",
+      "url": "https://lajolla.ca/news/business/el-pueblo-mexican-restaurant-to-open-in-la-jolla/",
+      "quote": "El Pueblo will bring good food with great prices and customer service to La Jolla — premium ingredients and traditional recipes in a sit-down, fast-casual setting."
+    },
+    {
+      "outlet": "SanDiegoVille",
+      "outletNote": "",
+      "title": "El Pueblo Mexican Restaurant To Open At Long-Vacant Former Jack In The Box Site In La Jolla",
+      "author": "",
+      "date": "2026-01-23",
+      "url": "https://www.sandiegoville.com/2026/01/el-pueblo-mexican-restaurant-to-open-at.html",
+      "quote": "A locally-grown Mexican restaurant group known for its affordable fare and low-cost fish tacos expands to a fifth San Diego location."
+    },
+    {
+      "outlet": "What Now San Diego",
+      "outletNote": "",
+      "title": "El Pueblo Mexican Food Opening Fourth Restaurant",
+      "author": "",
+      "date": "2023-06-14",
+      "url": "https://whatnow.com/san-diego/restaurants/el-pueblo-mexican-food-opening-fourth-restaurant/",
+      "quote": "The family-owned establishment known for tacos and margaritas expands to Carmel Valley at The Village at Pacific Highlands Ranch."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "handle": "elpueblomexicanfood",
+  "profileUrl": "https://www.instagram.com/elpueblomexicanfood/",
+  "note": "Placeholders using existing site photography. Replace image paths and captions with real Instagram posts when ready.",
+  "posts": [
+    {
+      "image": "/images/home/fish-taco.jpg",
+      "alt": "El Pueblo signature fish taco",
+      "caption": "The $1.39 fish taco that started it all."
+    },
+    {
+      "image": "/images/menu/carne-asada-fries.jpg",
+      "alt": "Carne asada fries piled high",
+      "caption": "Carne asada fries — loaded and ready."
+    },
+    {
+      "image": "/images/menu/adobada-taco.jpg",
+      "alt": "Adobada taco",
+      "caption": "Adobada, slow-marinated and char-grilled."
+    },
+    {
+      "image": "/images/home/combo-plate-hero.jpg",
+      "alt": "Combo plate with rice, beans, enchiladas",
+      "caption": "The classic combo. Always a good call."
+    },
+    {
+      "image": "/images/menu/beef-enchiladas.jpg",
+      "alt": "Beef enchiladas with red sauce",
+      "caption": "Enchiladas. Red sauce. Nothing else needed."
+    },
+    {
+      "image": "/images/menu/breakfast-burrito.jpg",
+      "alt": "Breakfast burrito cut in half",
+      "caption": "Breakfast burrito. Cardiff mornings hit different."
+    },
+    {
+      "image": "/images/menu/adobada-burrito.jpg",
+      "alt": "Adobada burrito",
+      "caption": "Adobada burrito. Handle with care."
+    },
+    {
+      "image": "/images/home/fish-tacos-chef.jpg",
+      "alt": "Chef plating fish tacos",
+      "caption": "Made to order. Every time."
+    },
+    {
+      "image": "/images/menu/adobada-quesadilla.jpg",
+      "alt": "Adobada quesadilla",
+      "caption": "Adobada quesadilla, melty and done right."
+    }
+  ]
+}
