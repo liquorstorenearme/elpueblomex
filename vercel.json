@@ -5,152 +5,519 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+        }
       ]
     },
     {
       "source": "/(edit|admin-login|api)(/.*)?",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
       ]
     },
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/og/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/fonts/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(favicon|apple-touch-icon)(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
       ]
     },
     {
       "source": "/(sitemap\\.xml|robots\\.txt)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.elpueblomex.com" }], "destination": "https://elpueblomex.com/:path*", "permanent": true },
-
-    { "source": "/locations/el-pueblo-mexican-food-in-cardiff-by-the-sea", "destination": "/locations/cardiff-by-the-sea/", "permanent": true },
-    { "source": "/locations/el-pueblo-mexican-food-in-carlsbad", "destination": "/locations/carlsbad/", "permanent": true },
-    { "source": "/locations/el-pueblo-mexican-food-in-carmel-valley", "destination": "/locations/carmel-valley/", "permanent": true },
-    { "source": "/locations/el-pueblo-mexican-food-in-del-mar", "destination": "/locations/del-mar/", "permanent": true },
-    { "source": "/locations/el-pueblo-mexican-food-in-la-jolla", "destination": "/locations/la-jolla/", "permanent": true },
-    { "source": "/restaurant-locator", "destination": "/locations/", "permanent": true },
-    { "source": "/locations", "destination": "/locations/", "permanent": true },
-    { "source": "/del-mar-bar", "destination": "/locations/del-mar/", "permanent": true },
-
-    { "source": "/menu", "destination": "/menu/", "permanent": true },
-    { "source": "/food-menu", "destination": "/menu/", "permanent": true },
-    { "source": "/drink-menu", "destination": "/menu/", "permanent": true },
-    { "source": "/order-online-selection", "destination": "/menu/", "permanent": true },
-
-    { "source": "/order-catering", "destination": "/catering/", "permanent": true },
-    { "source": "/catering-request", "destination": "/catering/", "permanent": true },
-
-    { "source": "/event-space-reservation", "destination": "/event-space/", "permanent": true },
-
-    { "source": "/el-pueblo-mex-gives-back", "destination": "/gives-back/", "permanent": true },
-
-    { "source": "/latest-news", "destination": "/news/", "permanent": true },
-    { "source": "/latest-news/page/:n*", "destination": "/news/", "permanent": true },
-    { "source": "/category/:slug*", "destination": "/news/", "permanent": true },
-
-    { "source": "/contact-us", "destination": "/contact/", "permanent": true },
-
-    { "source": "/job-openings", "destination": "/careers/", "permanent": true },
-    { "source": "/jobs", "destination": "/careers/", "permanent": true },
-    { "source": "/jobs/:slug", "destination": "/jobs/:slug/", "permanent": true },
-    { "source": "/job-type/:slug*", "destination": "/careers/", "permanent": true },
-    { "source": "/job-location/:slug*", "destination": "/careers/", "permanent": true },
-    { "source": "/application-for-employment", "destination": "/careers/", "permanent": true },
-
-    { "source": "/accessibility", "destination": "/accessibility-statement/", "permanent": true },
-    { "source": "/accessibility-statement", "destination": "/accessibility-statement/", "permanent": true },
-    { "source": "/terms", "destination": "/terms/", "permanent": true },
-    { "source": "/privacy-policy", "destination": "/privacy-policy/", "permanent": true },
-    { "source": "/cookie-policy", "destination": "/cookie-policy/", "permanent": true },
-    { "source": "/californiaconsumerprivacy", "destination": "/californiaconsumerprivacy/", "permanent": true },
-    { "source": "/covid-19", "destination": "/", "permanent": true },
-    { "source": "/development", "destination": "/", "permanent": true },
-    { "source": "/instagram-feed-test", "destination": "/", "permanent": true },
-
-    { "source": "/shop", "destination": "/catering/", "permanent": true },
-    { "source": "/shop/page/:n*", "destination": "/catering/", "permanent": true },
-    { "source": "/product/make-your-own-tacos-party-pack", "destination": "/catering/#party-packs", "permanent": true },
-    { "source": "/product/rolled-tacos-50", "destination": "/catering/#party-packs", "permanent": true },
-    { "source": "/product/enchiladas", "destination": "/catering/#party-packs", "permanent": true },
-    { "source": "/product/quesadilla-party-tray-serves-12", "destination": "/catering/#party-packs", "permanent": true },
-    { "source": "/product/chips-and-salsa-full-tray", "destination": "/catering/#party-packs", "permanent": true },
-    { "source": "/product/side-of-beans", "destination": "/menu/", "permanent": true },
-    { "source": "/product/side-of-rice-32oz", "destination": "/menu/", "permanent": true },
-    { "source": "/product/side-of-guacamole", "destination": "/menu/", "permanent": true },
-    { "source": "/product/side-of-sour-cream", "destination": "/menu/", "permanent": true },
-    { "source": "/product/test", "destination": "/menu/", "permanent": true },
-    { "source": "/product/:slug*", "destination": "/menu/", "permanent": true },
-    { "source": "/product-category/party-packs", "destination": "/catering/#party-packs", "permanent": true },
-    { "source": "/product-category/party-packs/page/:n*", "destination": "/catering/#party-packs", "permanent": true },
-    { "source": "/product-category/:slug*", "destination": "/catering/", "permanent": true },
-    { "source": "/cart", "destination": "/menu/", "permanent": true },
-    { "source": "/checkout", "destination": "/menu/", "permanent": true },
-    { "source": "/my-account", "destination": "/menu/", "permanent": true },
-    { "source": "/confirmation", "destination": "/menu/", "permanent": true },
-
-    { "source": "/2026/04/03/el-pueblo-mexican-food-opening-fifth-location-in-la-jolla", "destination": "/locations/la-jolla/", "permanent": true },
-    { "source": "/2025/04/01/voted-1-on-yelp-discover-the-best-mexican-food-in-north-san-diego-county", "destination": "/", "permanent": true },
-    { "source": "/2025/01/07/watch-ufc-311-makhachev-vs-tsarukyan-live", "destination": "/news/", "permanent": true },
-    { "source": "/2024/12/03/watch-ufc-310-live-at-el-pueblo-mex-no-cover", "destination": "/news/", "permanent": true },
-    { "source": "/2024/11/21/el-pueblo-mexican-food-gift-cards-share-authentic-mexican-flavors", "destination": "/menu/", "permanent": true },
-    { "source": "/2024/11/05/jones-vs-miocic-on-november-16-2024-at-el-pueblo-mex-no-cover", "destination": "/news/", "permanent": true },
-    { "source": "/2024/10/30/tyson-paul-fight-on-november-15-2024-at-el-pueblo-mex-no-cover", "destination": "/news/", "permanent": true },
-    { "source": "/2024/09/20/watch-ufc-307-live-at-el-pueblo-mexican-food", "destination": "/news/", "permanent": true },
-    { "source": "/2024/09/18/el-pueblo-mexican-food-gives-back", "destination": "/gives-back/", "permanent": true },
-    { "source": "/2024/08/26/2-for-10-tacos-amazing-deal-at-el-pueblo-mexican-food", "destination": "/menu/", "permanent": true },
-    { "source": "/2024/06/07/breakfast-burrito", "destination": "/menu/", "permanent": true },
-    { "source": "/2024/06/06/party-packs", "destination": "/catering/", "permanent": true },
-    { "source": "/2024/04/02/a-slice-of-mexico-in-la-costa", "destination": "/news/a-slice-of-mexico-in-la-costa/", "permanent": true },
-    { "source": "/2023/10/31/enjoy-a-free-12oz-orange-juice-with-any-breakfast-item", "destination": "/menu/", "permanent": true },
-    { "source": "/2023/09/25/the-importance-of-fresh-ingredients-in-mexican-cuisine", "destination": "/news/the-importance-of-fresh-ingredients-in-mexican-cuisine/", "permanent": true },
-    { "source": "/2023/09/12/bunuelos-a-crispy-and-sweet-treat-at-el-pueblo-mexican-food", "destination": "/news/bunuelos-a-crispy-and-sweet-treat/", "permanent": true },
-    { "source": "/2023/09/06/anatomy-of-a-fish-taco-a-perfect-fusion-of-flavors", "destination": "/news/anatomy-of-a-fish-taco/", "permanent": true },
-    { "source": "/2023/08/28/el-pueblo-mexican-food-bringing-authentic-flavors-to-carmel-valley", "destination": "/locations/carmel-valley/", "permanent": true },
-    { "source": "/2023/08/24/el-pueblo-mexican-food-taste-the-essence-of-quality", "destination": "/news/fresh-and-authentic-mexican-food/", "permanent": true },
-    { "source": "/2023/08/15/fresh-and-authentic-mexican-food-at-el-pueblo-mex", "destination": "/news/fresh-and-authentic-mexican-food/", "permanent": true },
-    { "source": "/2023/08/11/el-pueblo-mexican-food-with-a-full-bar-in-del-mar-california", "destination": "/locations/del-mar/", "permanent": true },
-    { "source": "/2023/08/09/el-pueblo-carmel-valley-location-opening-soon", "destination": "/locations/carmel-valley/", "permanent": true },
-    { "source": "/2023/06/29/delicious-fish-tacos-near-del-mar", "destination": "/news/fish-tacos-near-del-mar/", "permanent": true },
-
-    { "source": "/page/:n*", "destination": "/", "permanent": true },
-    { "source": "/wp-content/:path*", "destination": "/", "permanent": true },
-    { "source": "/wp-json/:path*", "destination": "/", "permanent": true },
-    { "source": "/wp-login.php", "destination": "/", "permanent": true },
-    { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
-    { "source": "/xmlrpc.php", "destination": "/", "permanent": true },
-    { "source": "/feed", "destination": "/news/", "permanent": true },
-    { "source": "/feed/:path*", "destination": "/news/", "permanent": true },
-    { "source": "/comments/feed", "destination": "/", "permanent": true },
-    { "source": "/author/:slug*", "destination": "/news/", "permanent": true },
-    { "source": "/tag/:slug*", "destination": "/news/", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.elpueblomex.com"
+        }
+      ],
+      "destination": "https://elpueblomex.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/locations/el-pueblo-mexican-food-in-cardiff-by-the-sea/",
+      "destination": "/locations/cardiff-by-the-sea/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/el-pueblo-mexican-food-in-carlsbad/",
+      "destination": "/locations/carlsbad/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/el-pueblo-mexican-food-in-carmel-valley/",
+      "destination": "/locations/carmel-valley/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/el-pueblo-mexican-food-in-del-mar/",
+      "destination": "/locations/del-mar/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/el-pueblo-mexican-food-in-la-jolla/",
+      "destination": "/locations/la-jolla/",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant-locator/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/del-mar-bar/",
+      "destination": "/locations/del-mar/",
+      "permanent": true
+    },
+    {
+      "source": "/food-menu/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/drink-menu/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/order-online-selection/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/order-catering/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/catering-request/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/event-space-reservation/",
+      "destination": "/event-space/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mex-gives-back/",
+      "destination": "/gives-back/",
+      "permanent": true
+    },
+    {
+      "source": "/latest-news/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/latest-news/page/:n*",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:slug*",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/job-openings/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/job-type/:slug*",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/job-location/:slug*",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/application-for-employment/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/accessibility/",
+      "destination": "/accessibility-statement/",
+      "permanent": true
+    },
+    {
+      "source": "/covid-19/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/development/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/instagram-feed-test/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/shop/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/shop/page/:n*",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/product/make-your-own-tacos-party-pack/",
+      "destination": "/catering/#party-packs",
+      "permanent": true
+    },
+    {
+      "source": "/product/rolled-tacos-50/",
+      "destination": "/catering/#party-packs",
+      "permanent": true
+    },
+    {
+      "source": "/product/enchiladas/",
+      "destination": "/catering/#party-packs",
+      "permanent": true
+    },
+    {
+      "source": "/product/quesadilla-party-tray-serves-12/",
+      "destination": "/catering/#party-packs",
+      "permanent": true
+    },
+    {
+      "source": "/product/chips-and-salsa-full-tray/",
+      "destination": "/catering/#party-packs",
+      "permanent": true
+    },
+    {
+      "source": "/product/side-of-beans/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/product/side-of-rice-32oz/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/product/side-of-guacamole/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/product/side-of-sour-cream/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/product/test/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/product/:slug*",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/party-packs/",
+      "destination": "/catering/#party-packs",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/party-packs/page/:n*",
+      "destination": "/catering/#party-packs",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/:slug*",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/cart/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/my-account/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/confirmation/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/2026/04/03/el-pueblo-mexican-food-opening-fifth-location-in-la-jolla/",
+      "destination": "/locations/la-jolla/",
+      "permanent": true
+    },
+    {
+      "source": "/2025/04/01/voted-1-on-yelp-discover-the-best-mexican-food-in-north-san-diego-county/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/2025/01/07/watch-ufc-311-makhachev-vs-tsarukyan-live/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/12/03/watch-ufc-310-live-at-el-pueblo-mex-no-cover/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/11/21/el-pueblo-mexican-food-gift-cards-share-authentic-mexican-flavors/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/11/05/jones-vs-miocic-on-november-16-2024-at-el-pueblo-mex-no-cover/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/10/30/tyson-paul-fight-on-november-15-2024-at-el-pueblo-mex-no-cover/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/09/20/watch-ufc-307-live-at-el-pueblo-mexican-food/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/09/18/el-pueblo-mexican-food-gives-back/",
+      "destination": "/gives-back/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/08/26/2-for-10-tacos-amazing-deal-at-el-pueblo-mexican-food/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/06/07/breakfast-burrito/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/06/06/party-packs/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/2024/04/02/a-slice-of-mexico-in-la-costa/",
+      "destination": "/news/a-slice-of-mexico-in-la-costa/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/10/31/enjoy-a-free-12oz-orange-juice-with-any-breakfast-item/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/09/25/the-importance-of-fresh-ingredients-in-mexican-cuisine/",
+      "destination": "/news/the-importance-of-fresh-ingredients-in-mexican-cuisine/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/09/12/bunuelos-a-crispy-and-sweet-treat-at-el-pueblo-mexican-food/",
+      "destination": "/news/bunuelos-a-crispy-and-sweet-treat/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/09/06/anatomy-of-a-fish-taco-a-perfect-fusion-of-flavors/",
+      "destination": "/news/anatomy-of-a-fish-taco/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/08/28/el-pueblo-mexican-food-bringing-authentic-flavors-to-carmel-valley/",
+      "destination": "/locations/carmel-valley/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/08/24/el-pueblo-mexican-food-taste-the-essence-of-quality/",
+      "destination": "/news/fresh-and-authentic-mexican-food/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/08/15/fresh-and-authentic-mexican-food-at-el-pueblo-mex/",
+      "destination": "/news/fresh-and-authentic-mexican-food/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/08/11/el-pueblo-mexican-food-with-a-full-bar-in-del-mar-california/",
+      "destination": "/locations/del-mar/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/08/09/el-pueblo-carmel-valley-location-opening-soon/",
+      "destination": "/locations/carmel-valley/",
+      "permanent": true
+    },
+    {
+      "source": "/2023/06/29/delicious-fish-tacos-near-del-mar/",
+      "destination": "/news/fish-tacos-near-del-mar/",
+      "permanent": true
+    },
+    {
+      "source": "/page/:n*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-json/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/:path*",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug*",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:slug*",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-story/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/order/",
+      "destination": "/menu/",
+      "permanent": true
+    }
   ]
 }
