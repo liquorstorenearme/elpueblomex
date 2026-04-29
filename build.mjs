@@ -1572,18 +1572,20 @@ ${ticker("ticker--marigold")}
     <header class="section__head">
       <p class="eyebrow">Open positions</p>
       <h2 class="display-sm">Current <span class="serif" style="color:var(--terracotta)">openings.</span></h2>
+      <p class="lede">Browse current openings and apply directly below — every position, every location, in one place.</p>
     </header>
-    <div class="jobs-grid">
-      ${jobs.map(j => `
-      <a class="job-card" href="/jobs/${h(j.slug)}/">
-        <div class="job-card__top">
-          <h3>${h(j.title)}</h3>
-          <span class="job-card__type">${h(j.type)}</span>
-        </div>
-        <p class="job-card__pay">${h(j.pay)}</p>
-        <p class="job-card__locs">${j.locations.map(s => h(locBySlug[s]?.short || s)).join(" · ")}</p>
-        <span class="job-card__cta">View job →</span>
-      </a>`).join("")}
+    <div class="careers-iframe-wrap">
+      <iframe
+        class="careers-iframe"
+        src="https://careers.elpueblomex.com/"
+        title="El Pueblo Mexican Food — current job openings"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="clipboard-write"
+      ></iframe>
+      <noscript>
+        <p>To browse and apply to openings, please enable JavaScript or visit <a href="https://careers.elpueblomex.com/">careers.elpueblomex.com</a>.</p>
+      </noscript>
     </div>
   </div>
 </section>
@@ -1792,15 +1794,14 @@ ${pressSection}
       <p class="eyebrow">From El Pueblo</p>
       <h2 class="display-sm">Stories from the <span class="serif" style="color:var(--terracotta)">kitchen.</span></h2>
     </header>
-    <div class="post-grid">
+    <div class="kitchen-news__grid">
       ${posts.map(p => `
-      <a class="post-card" href="/news/${h(p.slug)}/">
-        ${fileExists(p.image) ? `<div class="post-card__media" style="background-image:url('${h(p.image)}')"></div>` : ""}
-        <div class="post-card__body">
-          <time>${h(p.date)}</time>
-          <h2>${h(p.title)}</h2>
-          <p>${h(p.excerpt)}</p>
-          <span class="post-card__cta">Read more →</span>
+      <a class="news-card" href="/news/${h(p.slug)}/">
+        ${fileExists(p.image) ? `<div class="news-card__media" role="img" aria-label="${h(p.imageAlt || p.title)}" style="background-image:url('${h(p.image)}')"></div>` : ""}
+        <div class="news-card__body">
+          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }))}</p>
+          <h3 class="news-card__title">${h(p.title)}</h3>
+          <p class="news-card__excerpt">${h(p.excerpt || "")}</p>
         </div>
       </a>`).join("")}
     </div>
