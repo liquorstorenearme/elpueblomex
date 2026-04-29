@@ -820,8 +820,11 @@ ${ticker("ticker--agave")}
   <div class="info-block">
     <h2>Address</h2>
     <address>
-      ${h(loc.address.street)}<br>
-      ${h(loc.address.city)}, ${h(loc.address.region)} ${h(loc.address.zip)}
+      <a class="info-block__map-link" href="${h(loc.mapsUrl)}" target="_blank" rel="noopener" aria-label="Open ${h(loc.name)} address in Google Maps">
+        ${h(loc.address.street)}<br>
+        ${h(loc.address.city)}, ${h(loc.address.region)} ${h(loc.address.zip)}
+        <span class="info-block__map-cta" aria-hidden="true">Open in Maps ↗</span>
+      </a>
     </address>
   </div>
   <div class="info-block">
