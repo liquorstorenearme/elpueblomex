@@ -1301,8 +1301,8 @@ ${ticker("ticker--terracotta")}
     { name: "Bars", url: "/bars/" }
   ]);
   return layout({
-    title: `Bars — ${site.brand.name} | Tequila, Margaritas, Cervezas in San Diego`,
-    description: "El Pueblo Mexican Food has full bars at Del Mar and Carmel Valley — beers on tap, premium tequila and mezcal, fresh-squeezed margaritas. Daily happy hour, heated patios, open until midnight.",
+    title: `Bars — ${site.brand.name} | Full Bar in Del Mar & Carmel Valley`,
+    description: "Two real full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley. Whiskey, bourbon, cocktails, beers on tap, wine, fresh-pressed margaritas, premium tequila and mezcal. Daily happy hour, heated patios, open until midnight.",
     canonicalPath: "/bars/",
     body,
     ogImage: "/og/bars.jpg",

@@ -76,9 +76,9 @@
     "note": "Note: reservations are not available for tables inside the restaurant — private patios and catering only."
   },
   "bars": {
-    "heroEyebrow": "Cervezas · Tequila · Margaritas",
-    "heroHeadline": "Two full bars in North County.",
-    "heroSub": "Stop in for a cold beer, a fresh-pressed margarita, or a flight of premium tequila. El Pueblo runs full bars at Del Mar and Carmel Valley — beers on tap at Del Mar, mezcal flights, house-pressed margs, and the same kitchen serving fish tacos until midnight.",
+    "heroEyebrow": "Full bar · Cocktails · Beer · Spirits",
+    "heroHeadline": "Two real full bars in North County.",
+    "heroSub": "Whiskey, bourbon, vodka, gin, rum — every classic spirit you'd expect, plus the tequila and mezcal selection you'd hope for at a Mexican kitchen. Cocktails, wine, beers on tap, and the best margaritas in North County. The Del Mar and Carmel Valley bars pour everything, all served alongside the same kitchen that runs fish tacos until midnight.",
     "heroImage": "/images/bars/full-bar.jpg",
     "barLocations": [
       {
@@ -89,10 +89,10 @@
         "phone": "(858) 925-7595",
         "hours": "6am–midnight daily",
         "highlights": [
-          "Beers on tap (rotating local + Mexican imports)",
-          "Full bar — margaritas, mezcal, premium tequila",
-          "Heated outdoor patio",
-          "TVs streaming UFC, fútbol, and more"
+          "Full bar — whiskey, bourbon, vodka, gin, rum, tequila, mezcal",
+          "Beers on tap (rotating local craft + Mexican imports)",
+          "Classic cocktails, wine, and fresh-pressed margaritas",
+          "Heated outdoor patio · TVs streaming UFC, fútbol & more"
         ],
         "image": "/images/bars/del-mar-bar.jpg",
         "imageAlt": "Cold beers on tap at the El Pueblo Del Mar bar"
@@ -105,10 +105,10 @@
         "phone": "(858) 925-7595",
         "hours": "6am–midnight daily",
         "highlights": [
-          "Full bar with craft margaritas",
+          "Full bar — every liquor, classic cocktails, wine",
           "Premium tequila and mezcal selection",
-          "Heated patio at The Village at Pacific Highlands Ranch",
-          "Family-friendly daytime · lively bar at night"
+          "House margaritas, palomas, and seasonal cocktails",
+          "Heated patio at The Village at Pacific Highlands Ranch"
         ],
         "image": "/images/bars/carmel-valley-bar.jpg",
         "imageAlt": "The bar at El Pueblo Mexican Food Carmel Valley"
@@ -116,16 +116,16 @@
     ],
     "pillars": [
       {
-        "title": "Tequila & Mezcal",
-        "body": "Premium tequila and mezcal — sip neat, in a flight, or in a margarita built around it. Ask the bartender for the seasonal pour."
+        "title": "A Real Full Bar",
+        "body": "Whiskey, bourbon, vodka, gin, rum, tequila, mezcal — every classic spirit, plus wine by the glass. Order anything you'd order at a real bar."
       },
       {
-        "title": "Cervezas on Tap",
-        "body": "Cold beers on tap at Del Mar — rotating selection of local craft and Mexican imports. Bottles and cans at every location."
+        "title": "Cold Beer on Tap",
+        "body": "Beers on tap at Del Mar — rotating local craft and Mexican imports. Bottles and cans at every location, always cold."
       },
       {
-        "title": "House Margaritas",
-        "body": "Fresh-squeezed lime, premium tequila, hand-shaken — no syrupy mixes. Order classic, spicy, or build your own."
+        "title": "Cocktails & Margaritas",
+        "body": "House margaritas pressed fresh — no syrupy mixes. Plus every classic cocktail done right: old fashioneds, palomas, mojitos, martinis."
       }
     ],
     "happyHour": [],
