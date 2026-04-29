@@ -452,7 +452,6 @@ const header = () => `
     </div>
     <nav aria-label="Mobile">
       ${site.nav.map(n => `<a href="${h(n.href)}">${h(n.label)}</a>`).join("")}
-      <a class="btn btn--order" href="/menu/">Order online</a>
     </nav>
   </div>
 </header>`;
