@@ -126,7 +126,7 @@
     },
     {
       "source": "/del-mar-bar/",
-      "destination": "/locations/del-mar/",
+      "destination": "/bars/",
       "permanent": true
     },
     {

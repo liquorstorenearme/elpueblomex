@@ -1200,6 +1200,124 @@ ${ticker("ticker--terracotta")}
   });
 }
 
+// ---------- Bars ----------
+function renderBars() {
+  const b = site.bars;
+  const body = `
+<section class="page-head">
+  <p class="eyebrow">${h(b.heroEyebrow)}</p>
+  <h1 class="display">${h(b.heroHeadline)}</h1>
+  <p class="lede">${h(b.heroSub)}</p>
+</section>
+
+${ticker("ticker--agave")}
+
+<section class="section section--cream">
+  <div class="section__inner">
+    <header class="section__head">
+      <p class="eyebrow">Where to drink</p>
+      <h2 class="display-sm">Two bars, <span class="serif" style="color:var(--terracotta)">one menu.</span></h2>
+    </header>
+    <div class="bars-grid">
+      ${b.barLocations.map(loc => `
+      <article class="bar-card">
+        <div class="bar-card__media">
+          <picture>
+            ${fileExists(loc.image.replace(/\.(jpg|png)$/, '.webp')) ? `<source type="image/webp" srcset="${h(loc.image.replace(/\.(jpg|png)$/, '.webp'))}">` : ""}
+            <img src="${h(loc.image)}" alt="${h(loc.imageAlt || `Bar at El Pueblo ${loc.name}`)}" loading="lazy" width="800" height="600">
+          </picture>
+        </div>
+        <div class="bar-card__body">
+          <h3>${h(loc.name)}</h3>
+          <p class="bar-card__addr">${h(loc.address)}<br>${h(loc.city)}<br><a href="tel:${h(loc.phone.replace(/[^0-9+]/g,''))}">${h(loc.phone)}</a></p>
+          <p class="bar-card__hours"><strong>Hours:</strong> ${h(loc.hours)}</p>
+          <ul class="bar-card__highlights">
+            ${loc.highlights.map(hl => `<li>${h(hl)}</li>`).join("")}
+          </ul>
+          <a class="btn btn--ghost btn--sm" href="/locations/${h(loc.slug)}/">View location details</a>
+        </div>
+      </article>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream-2">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">On the bar</p>
+      <h2 class="display-sm">What's <span class="serif" style="color:var(--terracotta)">pouring.</span></h2>
+    </header>
+    <div class="pillars">
+      ${b.pillars.map(p => `
+      <article class="pillar">
+        <h3>${h(p.title)}</h3>
+        <p>${h(p.body)}</p>
+      </article>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section class="section section--wall" id="happy-hour">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Happy hour</p>
+      <h2 class="display-sm">Daily <span class="serif" style="color:var(--terracotta)">happy hour</span> at both bars.</h2>
+    </header>
+    ${b.happyHour && b.happyHour.length ? `
+    <div class="happy-hour-grid">
+      ${b.happyHour.map(hh => `
+      <div class="happy-hour-item">
+        <h3>${h(hh.name)}</h3>
+        <p class="happy-hour-item__price">${h(hh.price)}</p>
+        ${hh.description ? `<p class="happy-hour-item__desc">${h(hh.description)}</p>` : ""}
+      </div>`).join("")}
+    </div>` : `
+    <div class="happy-hour-placeholder">
+      <p>${h(b.happyHourPlaceholder)}</p>
+      <div class="cta-row">
+        <a class="btn btn--marigold" href="/locations/del-mar/">Del Mar location</a>
+        <a class="btn btn--ghost" href="/locations/carmel-valley/">Carmel Valley location</a>
+      </div>
+    </div>
+    `}
+  </div>
+</section>
+
+${ticker("ticker--terracotta")}
+
+<section class="section section--cream">
+  <div class="cta-band">
+    <h2>Find your <em>nearest</em> bar.</h2>
+    <p>${h(b.ctaLine)} Cardiff and Carlsbad are kitchen-only — for the full bar, head to Del Mar or Carmel Valley.</p>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="/locations/del-mar/">Del Mar bar</a>
+      <a class="btn btn--ghost" href="/locations/carmel-valley/">Carmel Valley bar</a>
+    </div>
+  </div>
+</section>
+`;
+  const crumbs = breadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Bars", url: "/bars/" }
+  ]);
+  return layout({
+    title: `Bars — ${site.brand.name} | Tequila, Margaritas, Cervezas in San Diego`,
+    description: "El Pueblo Mexican Food has full bars at Del Mar and Carmel Valley — beers on tap, premium tequila and mezcal, fresh-squeezed margaritas. Daily happy hour, heated patios, open until midnight.",
+    canonicalPath: "/bars/",
+    body,
+    ogImage: "/og/bars.jpg",
+    bodyClass: "page-bars",
+    schema: [
+      webPageSchema({
+        name: "Bars at El Pueblo Mexican Food",
+        description: "Full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley locations. Tequila, mezcal, margaritas, beers on tap, daily happy hour.",
+        canonical: "/bars/"
+      }),
+      crumbs
+    ]
+  });
+}
+
 // ---------- Gives Back ----------
 function renderGivesBack() {
   const g = site.givesBack;
@@ -2212,6 +2330,7 @@ function renderSitemap() {
     ...locations.map(l => ({ loc: `/locations/${l.slug}/`, priority: 0.9, changefreq: "monthly" })),
     { loc: "/catering/", priority: 0.8, changefreq: "monthly" },
     { loc: "/event-space/", priority: 0.7, changefreq: "monthly" },
+    { loc: "/bars/", priority: 0.8, changefreq: "monthly" },
     { loc: "/gives-back/", priority: 0.6, changefreq: "monthly" },
     { loc: "/gallery/", priority: 0.5, changefreq: "monthly" },
     { loc: "/contact/", priority: 0.7, changefreq: "monthly" },
@@ -2357,6 +2476,7 @@ function build() {
   // Info pages
   write("catering/index.html", renderCatering());
   write("event-space/index.html", renderEventSpace());
+  write("bars/index.html", renderBars());
   write("gives-back/index.html", renderGivesBack());
   write("contact/index.html", renderContact());
   write("gallery/index.html", renderGallery());

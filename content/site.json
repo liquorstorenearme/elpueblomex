@@ -10,6 +10,7 @@
   "nav": [
     { "label": "Menu", "href": "/menu/" },
     { "label": "Locations", "href": "/locations/" },
+    { "label": "Bars", "href": "/bars/" },
     { "label": "Catering", "href": "/catering/" },
     { "label": "Events", "href": "/event-space/" },
     { "label": "Gives Back", "href": "/gives-back/" },
@@ -73,6 +74,63 @@
       "Min. party size: 8 guests"
     ],
     "note": "Note: reservations are not available for tables inside the restaurant — private patios and catering only."
+  },
+  "bars": {
+    "heroEyebrow": "Cervezas · Tequila · Margaritas",
+    "heroHeadline": "Two full bars in North County.",
+    "heroSub": "Stop in for a cold beer, a fresh-pressed margarita, or a flight of premium tequila. El Pueblo runs full bars at Del Mar and Carmel Valley — beers on tap at Del Mar, mezcal flights, house-pressed margs, and the same kitchen serving fish tacos until midnight.",
+    "heroImage": "/images/bars/full-bar.jpg",
+    "barLocations": [
+      {
+        "slug": "del-mar",
+        "name": "Del Mar",
+        "address": "2673 Via De La Valle, Suite C",
+        "city": "Del Mar, CA 92014",
+        "phone": "(858) 925-7595",
+        "hours": "6am–midnight daily",
+        "highlights": [
+          "Beers on tap (rotating local + Mexican imports)",
+          "Full bar — margaritas, mezcal, premium tequila",
+          "Heated outdoor patio",
+          "TVs streaming UFC, fútbol, and more"
+        ],
+        "image": "/images/bars/del-mar-bar.jpg",
+        "imageAlt": "Cold beers on tap at the El Pueblo Del Mar bar"
+      },
+      {
+        "slug": "carmel-valley",
+        "name": "Carmel Valley",
+        "address": "5965 Village Way, Suite E107",
+        "city": "San Diego, CA 92130",
+        "phone": "(858) 925-7595",
+        "hours": "6am–midnight daily",
+        "highlights": [
+          "Full bar with craft margaritas",
+          "Premium tequila and mezcal selection",
+          "Heated patio at The Village at Pacific Highlands Ranch",
+          "Family-friendly daytime · lively bar at night"
+        ],
+        "image": "/images/bars/carmel-valley-bar.jpg",
+        "imageAlt": "The bar at El Pueblo Mexican Food Carmel Valley"
+      }
+    ],
+    "pillars": [
+      {
+        "title": "Tequila & Mezcal",
+        "body": "Premium tequila and mezcal — sip neat, in a flight, or in a margarita built around it. Ask the bartender for the seasonal pour."
+      },
+      {
+        "title": "Cervezas on Tap",
+        "body": "Cold beers on tap at Del Mar — rotating selection of local craft and Mexican imports. Bottles and cans at every location."
+      },
+      {
+        "title": "House Margaritas",
+        "body": "Fresh-squeezed lime, premium tequila, hand-shaken — no syrupy mixes. Order classic, spicy, or build your own."
+      }
+    ],
+    "happyHour": [],
+    "happyHourPlaceholder": "Happy hour menu coming soon. In the meantime — stop by Del Mar or Carmel Valley and ask the bartender what's pouring.",
+    "ctaLine": "Find your nearest bar."
   },
   "givesBack": {
     "heroEyebrow": "Giving back to our community",
