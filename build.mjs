@@ -470,14 +470,14 @@ const footer = () => `
     </div>
     <div class="site-footer__cols">
       <div>
-        <h4>Visit</h4>
+        <h3>Visit</h3>
         <ul>
           ${locations.filter(l=>!l.comingSoon).map(l => `<li><a href="/locations/${h(l.slug)}/">${h(l.name)}</a></li>`).join("")}
           <li><a href="/locations/la-jolla/">La Jolla <span class="tag">soon</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>Menu</h4>
+        <h3>Menu</h3>
         <ul>
           <li><a href="/menu/">Food &amp; drink</a></li>
           <li><a href="/catering/">Catering</a></li>
@@ -485,7 +485,7 @@ const footer = () => `
         </ul>
       </div>
       <div>
-        <h4>About</h4>
+        <h3>About</h3>
         <ul>
           <li><a href="/gives-back/">Gives back</a></li>
           <li><a href="/news/">News</a></li>
@@ -495,7 +495,7 @@ const footer = () => `
         </ul>
       </div>
       <div>
-        <h4>Follow</h4>
+        <h3>Follow</h3>
         <ul>
           <li><a href="${h(site.social.instagram)}" rel="noopener">Instagram</a></li>
           <li><a href="${h(site.social.facebook)}" rel="noopener">Facebook</a></li>
@@ -532,9 +532,10 @@ const layout = ({ title, description, canonicalPath, body, ogImage, lcpImage, bo
 ${schema.map(s => jsonLd(s)).join("\n")}
 </head>
 <body class="${h(bodyClass)}">
+<a class="skip-link" href="#main">Skip to main content</a>
 ${ticker()}
 ${header()}
-<main>${body}</main>
+<main id="main" tabindex="-1">${body}</main>
 ${footer()}
 </body>
 </html>`;
