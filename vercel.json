@@ -553,6 +553,11 @@
       "source": "/category/uncategorized/page/:n*",
       "destination": "/news/",
       "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/page/2/",
+      "destination": "/news/",
+      "permanent": true
     }
   ]
 }
