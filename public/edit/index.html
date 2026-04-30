@@ -243,7 +243,10 @@
 <nav class="tabs">
   <button class="tab active" data-tab="site">Site</button>
   <button class="tab" data-tab="locations">Locations</button>
+  <button class="tab" data-tab="menu">Menu</button>
   <button class="tab" data-tab="posts">News</button>
+  <button class="tab" data-tab="press">Press</button>
+  <button class="tab" data-tab="jobs">Jobs</button>
 </nav>
 
 <main class="admin-shell">
@@ -253,8 +256,17 @@
   <div id="tab-locations" class="tab-panel" hidden>
     <div id="locations-content"><div class="loading">Loading…</div></div>
   </div>
+  <div id="tab-menu" class="tab-panel" hidden>
+    <div id="menu-content"><div class="loading">Loading…</div></div>
+  </div>
   <div id="tab-posts" class="tab-panel" hidden>
     <div id="posts-content"><div class="loading">Loading…</div></div>
+  </div>
+  <div id="tab-press" class="tab-panel" hidden>
+    <div id="press-content"><div class="loading">Loading…</div></div>
+  </div>
+  <div id="tab-jobs" class="tab-panel" hidden>
+    <div id="jobs-content"><div class="loading">Loading…</div></div>
   </div>
 </main>
 
@@ -269,10 +281,14 @@
 
 <script>
 // -------- State --------
+const FILES = ['site', 'locations', 'menu', 'posts', 'press', 'jobs'];
 const state = {
   site:      { loaded: false, sha: null, content: null, original: null },
   locations: { loaded: false, sha: null, content: null, original: null },
+  menu:      { loaded: false, sha: null, content: null, original: null },
   posts:     { loaded: false, sha: null, content: null, original: null },
+  press:     { loaded: false, sha: null, content: null, original: null },
+  jobs:      { loaded: false, sha: null, content: null, original: null },
 };
 let activeTab = 'site';
 
@@ -284,7 +300,7 @@ function dirty(file) {
   if (!state[file].loaded) return false;
   return JSON.stringify(state[file].content) !== JSON.stringify(state[file].original);
 }
-function anyDirty() { return dirty('site') || dirty('locations') || dirty('posts'); }
+function anyDirty() { return FILES.some(f => dirty(f)); }
 function refreshSaveBar() {
   const show = anyDirty();
   $('save-bar').classList.toggle('show', show);
@@ -449,6 +465,157 @@ function renderSite() {
     return item;
   });
   root.appendChild(panel('Three pillars (home page cards)', 'The 3 highlighted boxes near the top of the home page.', pillarItems));
+
+  // ---- Bars page ----
+  if (s.bars) {
+    const b = s.bars;
+    const barFields = [
+      textField('Hero eyebrow', b.heroEyebrow, v => { b.heroEyebrow = v; refreshSaveBar(); }),
+      textField('Hero headline', b.heroHeadline, v => { b.heroHeadline = v; refreshSaveBar(); }),
+      textField('Hero sub copy', b.heroSub, v => { b.heroSub = v; refreshSaveBar(); }, '', 'textarea'),
+      imageField('Hero image', b.heroImage, v => { b.heroImage = v; refreshSaveBar(); }),
+    ];
+    // Bar locations (Del Mar / Carmel Valley)
+    const barLocs = b.barLocations || [];
+    barLocs.forEach((loc, i) => {
+      const wrap = document.createElement('div'); wrap.className = 'list-item';
+      wrap.innerHTML = `<div class="list-item-head"><h3>${esc(loc.name || `Bar ${i + 1}`)}</h3></div>`;
+      wrap.appendChild(row2(
+        textField('Address', loc.address, v => { loc.address = v; refreshSaveBar(); }),
+        textField('City', loc.city, v => { loc.city = v; refreshSaveBar(); }),
+      ));
+      wrap.appendChild(row2(
+        textField('Phone', loc.phone, v => { loc.phone = v; refreshSaveBar(); }),
+        textField('Hours', loc.hours, v => { loc.hours = v; refreshSaveBar(); }),
+      ));
+      const hl = document.createElement('div'); hl.className = 'fld';
+      hl.innerHTML = '<label>Highlights</label>';
+      hl.appendChild(chipArray(loc.highlights = loc.highlights || [], 'Add highlight…'));
+      wrap.appendChild(hl);
+      wrap.appendChild(imageField('Photo', loc.image, v => { loc.image = v; refreshSaveBar(); }));
+      barFields.push(wrap);
+    });
+    // Pillars on bars page
+    (b.pillars || []).forEach((p, i) => {
+      const w = document.createElement('div'); w.className = 'list-item';
+      w.innerHTML = `<div class="list-item-head"><h3>Bar pillar ${i + 1}</h3></div>`;
+      w.appendChild(textField('Title', p.title, v => { p.title = v; refreshSaveBar(); }));
+      w.appendChild(textField('Body', p.body, v => { p.body = v; refreshSaveBar(); }, '', 'textarea'));
+      barFields.push(w);
+    });
+    // Happy hour menu — the headline editor for this section
+    const hhWrap = document.createElement('div'); hhWrap.className = 'fld';
+    hhWrap.innerHTML = '<label>Happy hour menu</label><div class="help">Add items, prices, and descriptions. Empty list shows the placeholder copy below.</div>';
+    b.happyHour = b.happyHour || [];
+    hhWrap.appendChild(repeater(
+      b.happyHour,
+      (it, i) => {
+        const box = document.createElement('div'); box.style.display = 'grid'; box.style.gap = '10px';
+        box.appendChild(row2(
+          textField('Name', it.name, v => { it.name = v; refreshSaveBar(); }),
+          textField('Price', it.price, v => { it.price = v; refreshSaveBar(); }, 'e.g. $5 or 2-for-$10'),
+        ));
+        box.appendChild(textField('Description (optional)', it.description, v => { it.description = v; refreshSaveBar(); }));
+        return box;
+      },
+      () => ({ name: '', price: '', description: '' }),
+      '+ Add happy hour item'
+    ));
+    barFields.push(hhWrap);
+    barFields.push(textField('Placeholder copy (when happy hour list is empty)', b.happyHourPlaceholder, v => { b.happyHourPlaceholder = v; refreshSaveBar(); }, '', 'textarea'));
+    barFields.push(textField('CTA line', b.ctaLine, v => { b.ctaLine = v; refreshSaveBar(); }));
+    root.appendChild(panel('Bars page', 'Editor for /bars/ — including the happy hour menu.', barFields));
+  }
+
+  // ---- Catering page ----
+  if (s.catering) {
+    const c = s.catering;
+    const cateringFields = [
+      textField('Hero eyebrow', c.heroEyebrow, v => { c.heroEyebrow = v; refreshSaveBar(); }),
+      textField('Hero headline', c.heroHeadline, v => { c.heroHeadline = v; refreshSaveBar(); }),
+      textField('Hero sub copy', c.heroSub, v => { c.heroSub = v; refreshSaveBar(); }, '', 'textarea'),
+      imageField('Hero image', c.heroImage, v => { c.heroImage = v; refreshSaveBar(); }),
+    ];
+    if (Array.isArray(c.partyPacks)) {
+      const ppWrap = document.createElement('div'); ppWrap.className = 'fld';
+      ppWrap.innerHTML = '<label>Party packs</label>';
+      ppWrap.appendChild(repeater(
+        c.partyPacks,
+        (it) => {
+          const box = document.createElement('div'); box.style.display = 'grid'; box.style.gap = '10px';
+          box.appendChild(textField('Name', it.name, v => { it.name = v; refreshSaveBar(); }));
+          box.appendChild(textField('Serves / size', it.serves, v => { it.serves = v; refreshSaveBar(); }));
+          box.appendChild(textField('Description', it.description, v => { it.description = v; refreshSaveBar(); }, '', 'textarea'));
+          return box;
+        },
+        () => ({ name: '', serves: '', description: '' }),
+        '+ Add party pack'
+      ));
+      cateringFields.push(ppWrap);
+    }
+    root.appendChild(panel('Catering page', 'Editor for /catering/.', cateringFields));
+  }
+
+  // ---- Events page ----
+  if (s.events) {
+    const ev = s.events;
+    const eventFields = [
+      textField('Hero eyebrow', ev.heroEyebrow, v => { ev.heroEyebrow = v; refreshSaveBar(); }),
+      textField('Hero headline', ev.heroHeadline, v => { ev.heroHeadline = v; refreshSaveBar(); }),
+      textField('Hero sub copy', ev.heroSub, v => { ev.heroSub = v; refreshSaveBar(); }, '', 'textarea'),
+      imageField('Hero image', ev.heroImage, v => { ev.heroImage = v; refreshSaveBar(); }),
+    ];
+    if (Array.isArray(ev.bullets)) {
+      const bw = document.createElement('div'); bw.className = 'fld';
+      bw.innerHTML = '<label>What\'s included (bullet list)</label>';
+      bw.appendChild(chipArray(ev.bullets, 'Add bullet…'));
+      eventFields.push(bw);
+    }
+    eventFields.push(textField('Note', ev.note, v => { ev.note = v; refreshSaveBar(); }, 'Small print at the bottom of the section.', 'textarea'));
+    root.appendChild(panel('Events / private events page', 'Editor for /event-space/.', eventFields));
+  }
+
+  // ---- Gives Back page ----
+  if (s.givesBack) {
+    const g = s.givesBack;
+    const gFields = [
+      textField('Hero eyebrow', g.heroEyebrow, v => { g.heroEyebrow = v; refreshSaveBar(); }),
+      textField('Hero headline', g.heroHeadline, v => { g.heroHeadline = v; refreshSaveBar(); }),
+      textField('Hero sub copy', g.heroSub, v => { g.heroSub = v; refreshSaveBar(); }, '', 'textarea'),
+      textField('Apply note', g.applyNote, v => { g.applyNote = v; refreshSaveBar(); }, '', 'textarea'),
+    ];
+    if (Array.isArray(g.eligible)) {
+      const w = document.createElement('div'); w.className = 'fld';
+      w.innerHTML = '<label>Eligible organizations</label>';
+      w.appendChild(chipArray(g.eligible, 'Add eligible type…'));
+      gFields.push(w);
+    }
+    if (Array.isArray(g.ineligible)) {
+      const w = document.createElement('div'); w.className = 'fld';
+      w.innerHTML = '<label>Ineligible organizations</label>';
+      w.appendChild(chipArray(g.ineligible, 'Add ineligible type…'));
+      gFields.push(w);
+    }
+    root.appendChild(panel('Gives Back page', 'Editor for /gives-back/.', gFields));
+  }
+
+  // ---- Careers page ----
+  if (s.careers) {
+    const cr = s.careers;
+    const crFields = [
+      textField('Hero eyebrow', cr.heroEyebrow, v => { cr.heroEyebrow = v; refreshSaveBar(); }),
+      textField('Hero headline', cr.heroHeadline, v => { cr.heroHeadline = v; refreshSaveBar(); }),
+      textField('Hero sub copy', cr.heroSub, v => { cr.heroSub = v; refreshSaveBar(); }, '', 'textarea'),
+      textField('Benefits intro (small text above the benefits list)', cr.benefitsIntro, v => { cr.benefitsIntro = v; refreshSaveBar(); }),
+    ];
+    if (Array.isArray(cr.benefits)) {
+      const w = document.createElement('div'); w.className = 'fld';
+      w.innerHTML = '<label>Benefits list</label>';
+      w.appendChild(chipArray(cr.benefits, 'Add benefit…'));
+      crFields.push(w);
+    }
+    root.appendChild(panel('Careers page', 'Editor for /careers/.', crFields));
+  }
 
   // ---- Social ----
   root.appendChild(panel('Social links', 'Footer and social embed targets.', [
@@ -680,6 +847,216 @@ function openPostEditor(idx) {
   root.appendChild(p);
 }
 
+// -------- Render: PRESS --------
+function renderPress() {
+  const root = $('press-content');
+  root.innerHTML = '';
+  const data = state.press.content;
+  data.press = data.press || [];
+
+  const intro = document.createElement('div'); intro.className = 'panel';
+  intro.innerHTML = `<div class="panel-body"><h2 style="margin:0 0 6px;font-size:15px">Press articles</h2><p style="margin:0;color:var(--muted);font-size:13.5px">Articles, mentions, and features about El Pueblo. Top 4 surface on the homepage; all surface on /news/. Order matters — drag to reorder by editing the order in the array (or remove + re-add).</p></div>`;
+  root.appendChild(intro);
+
+  const wrap = document.createElement('section'); wrap.className = 'panel';
+  wrap.innerHTML = '<div class="panel-body"></div>';
+  const body = wrap.querySelector('.panel-body');
+
+  body.appendChild(repeater(
+    data.press,
+    (it) => {
+      const box = document.createElement('div'); box.style.display = 'grid'; box.style.gap = '10px';
+      box.appendChild(row2(
+        textField('Outlet', it.outlet, v => { it.outlet = v; refreshSaveBar(); }, 'e.g. "Marketplace", "LAist", "San Diego Union-Tribune"'),
+        textField('Outlet note (optional)', it.outletNote, v => { it.outletNote = v; refreshSaveBar(); }, 'e.g. "NPR / Public Radio"'),
+      ));
+      box.appendChild(textField('Article title', it.title, v => { it.title = v; refreshSaveBar(); }));
+      box.appendChild(row2(
+        textField('Author (optional)', it.author, v => { it.author = v; refreshSaveBar(); }),
+        (() => { const w = document.createElement('div'); w.className='fld'; w.innerHTML = '<label>Date</label><input type="date">'; const inp = w.querySelector('input'); inp.value = (it.date || '').slice(0,10); inp.addEventListener('input', () => { it.date = inp.value; refreshSaveBar(); }); return w; })(),
+      ));
+      box.appendChild(textField('URL', it.url, v => { it.url = v; refreshSaveBar(); }, 'Full URL to the published article'));
+      box.appendChild(textField('Pull quote', it.quote, v => { it.quote = v; refreshSaveBar(); }, 'A 1-2 sentence quote from the article — appears on the press cards.', 'textarea'));
+      return box;
+    },
+    () => ({ outlet: '', outletNote: '', title: '', author: '', date: new Date().toISOString().slice(0,10), url: '', quote: '' }),
+    '+ Add press article'
+  ));
+  root.appendChild(wrap);
+}
+
+// -------- Render: JOBS --------
+function renderJobs() {
+  const root = $('jobs-content');
+  root.innerHTML = '';
+  const data = state.jobs.content;
+  data.jobs = data.jobs || [];
+
+  // Get available locations for the multiselect
+  const locOptions = state.locations.loaded ? (state.locations.content.locations || []).map(l => ({ slug: l.slug, name: l.short || l.name })) : [];
+
+  const intro = document.createElement('div'); intro.className = 'panel';
+  intro.innerHTML = `<div class="panel-body"><h2 style="margin:0 0 6px;font-size:15px">Job postings</h2><p style="margin:0;color:var(--muted);font-size:13.5px">Each posting renders as its own page at /jobs/[slug]/ and is listed on /careers/. ${locOptions.length === 0 ? '<br><em style="color:var(--err)">Tip: open the Locations tab once first so the location picker has options.</em>' : ''}</p></div>`;
+  root.appendChild(intro);
+
+  const wrap = document.createElement('section'); wrap.className = 'panel';
+  wrap.innerHTML = '<div class="panel-body"></div>';
+  const body = wrap.querySelector('.panel-body');
+
+  body.appendChild(repeater(
+    data.jobs,
+    (it) => {
+      const box = document.createElement('div'); box.style.display = 'grid'; box.style.gap = '10px';
+      let slugInput;
+      const slugField = (() => {
+        const w = document.createElement('div'); w.className = 'fld';
+        w.innerHTML = `<label>URL slug (auto from title)</label><input type="text" value="${esc(it.slug || '')}"><div class="help">Becomes /jobs/[slug]/. Edit to override auto-generation.</div>`;
+        slugInput = w.querySelector('input');
+        slugInput.addEventListener('input', () => { it.slug = slugify(slugInput.value); it.__slugLocked = true; refreshSaveBar(); });
+        return w;
+      })();
+      const titleField = textField('Job title', it.title, v => {
+        it.title = v;
+        if (!it.__slugLocked) {
+          it.slug = slugify(v);
+          if (slugInput) slugInput.value = it.slug || '';
+        }
+        refreshSaveBar();
+      });
+      box.appendChild(row2(titleField, slugField));
+      box.appendChild(row2(
+        textField('Type', it.type, v => { it.type = v; refreshSaveBar(); }, 'e.g. "Full-Time", "Part-Time"'),
+        textField('Pay', it.pay, v => { it.pay = v; refreshSaveBar(); }, 'e.g. "$18-$22/hr + tips"'),
+      ));
+      // Location multiselect
+      const lw = document.createElement('div'); lw.className = 'fld';
+      lw.innerHTML = '<label>Locations this role is open at</label><div class="help">Tap to toggle each location.</div>';
+      const lrow = document.createElement('div'); lrow.className = 'chip-row';
+      it.locations = it.locations || [];
+      locOptions.forEach(opt => {
+        const c = document.createElement('span'); c.className = 'chip';
+        c.style.cursor = 'pointer';
+        c.style.opacity = it.locations.includes(opt.slug) ? '1' : '0.45';
+        c.textContent = opt.name;
+        c.onclick = () => {
+          const i = it.locations.indexOf(opt.slug);
+          if (i === -1) it.locations.push(opt.slug); else it.locations.splice(i, 1);
+          c.style.opacity = it.locations.includes(opt.slug) ? '1' : '0.45';
+          refreshSaveBar();
+        };
+        lrow.appendChild(c);
+      });
+      lw.appendChild(lrow);
+      box.appendChild(lw);
+      box.appendChild(textField('Summary', it.summary, v => { it.summary = v; refreshSaveBar(); }, 'One-line role summary.'));
+      box.appendChild(textField('Description', it.description, v => { it.description = v; refreshSaveBar(); }, 'Full role description (paragraph form).', 'textarea'));
+      // Responsibilities
+      if (Array.isArray(it.responsibilities)) {
+        const rw = document.createElement('div'); rw.className = 'fld';
+        rw.innerHTML = '<label>Responsibilities</label>';
+        rw.appendChild(chipArray(it.responsibilities, 'Add responsibility…'));
+        box.appendChild(rw);
+      }
+      // Requirements
+      if (Array.isArray(it.requirements)) {
+        const rw = document.createElement('div'); rw.className = 'fld';
+        rw.innerHTML = '<label>Requirements</label>';
+        rw.appendChild(chipArray(it.requirements, 'Add requirement…'));
+        box.appendChild(rw);
+      }
+      return box;
+    },
+    () => ({ slug: '', title: '', type: 'Full-Time', pay: '', locations: [], summary: '', description: '', responsibilities: [], requirements: [] }),
+    '+ Add job posting'
+  ));
+  root.appendChild(wrap);
+}
+
+// -------- Render: MENU --------
+function renderMenu() {
+  const root = $('menu-content');
+  root.innerHTML = '';
+  const data = state.menu.content;
+  data.categories = data.categories || [];
+
+  const intro = document.createElement('div'); intro.className = 'panel';
+  intro.innerHTML = `<div class="panel-body"><h2 style="margin:0 0 6px;font-size:15px">Menu editor</h2><p style="margin:0;color:var(--muted);font-size:13.5px">Categories and items render at /menu/ and feed the homepage gallery. Each item supports an optional image. Slug is auto-generated from the name.</p></div>`;
+  root.appendChild(intro);
+
+  data.categories.forEach((cat, ci) => {
+    const p = document.createElement('section'); p.className = 'panel panel-collapsed';
+    p.innerHTML = `
+      <div class="panel-head">
+        <h2>${esc(cat.name)} <span class="hint" style="margin-left:8px;font-weight:400">${(cat.items || []).length} items</span></h2>
+        <span class="chevron">▸</span>
+      </div>
+      <div class="panel-body"></div>
+    `;
+    p.querySelector('.panel-head').addEventListener('click', () => p.classList.toggle('open'));
+    const body = p.querySelector('.panel-body');
+
+    body.appendChild(textField('Category name', cat.name, v => {
+      cat.name = v;
+      p.querySelector('.panel-head h2').firstChild.textContent = v + ' ';
+      refreshSaveBar();
+    }));
+    if (cat.note !== undefined) body.appendChild(textField('Category note (optional)', cat.note, v => { cat.note = v; refreshSaveBar(); }));
+
+    cat.items = cat.items || [];
+    const itemsWrap = document.createElement('div'); itemsWrap.className = 'fld';
+    itemsWrap.innerHTML = '<label>Items</label>';
+    itemsWrap.appendChild(repeater(
+      cat.items,
+      (it) => {
+        const box = document.createElement('div'); box.style.display = 'grid'; box.style.gap = '10px';
+        box.appendChild(row2(
+          textField('Name', it.name, v => { it.name = v; if (!it.__slugLocked && it.slug !== undefined) it.slug = slugify(v); refreshSaveBar(); }),
+          textField('Price', it.price, v => { it.price = v; refreshSaveBar(); }, 'e.g. "$1.39", "$8.99", or leave blank'),
+        ));
+        box.appendChild(textField('Description', it.description, v => { it.description = v; refreshSaveBar(); }, '', 'textarea'));
+        if (it.image !== undefined || true) {
+          box.appendChild(imageField('Photo (optional)', it.image || '', v => { it.image = v; refreshSaveBar(); }));
+        }
+        return box;
+      },
+      () => ({ name: '', price: '', description: '', image: '' }),
+      '+ Add menu item'
+    ));
+    body.appendChild(itemsWrap);
+
+    // Delete category
+    const delRow = document.createElement('div');
+    delRow.style.display = 'flex'; delRow.style.justifyContent = 'flex-end'; delRow.style.marginTop = '8px';
+    const delBtn = document.createElement('button');
+    delBtn.className = 'btn-ghost'; delBtn.style.fontSize = '12px';
+    delBtn.textContent = 'Delete category';
+    delBtn.onclick = () => {
+      if (!confirm(`Delete category "${cat.name}" and all ${cat.items.length} items?`)) return;
+      data.categories.splice(ci, 1);
+      renderMenu(); refreshSaveBar();
+    };
+    delRow.appendChild(delBtn);
+    body.appendChild(delRow);
+
+    root.appendChild(p);
+  });
+
+  // Add category button
+  const addRow = document.createElement('div');
+  addRow.style.marginTop = '14px';
+  const addBtn = document.createElement('button');
+  addBtn.className = 'btn-primary';
+  addBtn.textContent = '+ Add category';
+  addBtn.onclick = () => {
+    const name = prompt('New category name:');
+    if (!name) return;
+    data.categories.push({ name: name.trim(), items: [] });
+    renderMenu(); refreshSaveBar();
+  };
+  addRow.appendChild(addBtn);
+  root.appendChild(addRow);
+}
+
 // -------- UI helpers --------
 function panel(title, hint, fields) {
   const p = document.createElement('section'); p.className = 'panel';
@@ -712,10 +1089,73 @@ function row2(a, b) {
   return r;
 }
 
+// Generic chip-array editor for string lists (e.g. ticker lines, eligibility rules, benefits)
+// Mutates the supplied array in place; calls refreshSaveBar() automatically.
+function chipArray(arr, placeholder) {
+  const wrap = document.createElement('div');
+  function r() {
+    wrap.innerHTML = '';
+    const row = document.createElement('div'); row.className = 'chip-row';
+    arr.forEach((txt, i) => {
+      const c = document.createElement('span'); c.className = 'chip';
+      c.innerHTML = `${esc(txt)} <button title="Remove">×</button>`;
+      c.querySelector('button').onclick = () => { arr.splice(i, 1); r(); refreshSaveBar(); };
+      row.appendChild(c);
+    });
+    wrap.appendChild(row);
+    const add = document.createElement('div'); add.className = 'chip-add';
+    add.innerHTML = `<input type="text" placeholder="${esc(placeholder || 'Add…')}"><button>Add</button>`;
+    const inp = add.querySelector('input');
+    const doAdd = () => {
+      const v = inp.value.trim();
+      if (!v) return;
+      arr.push(v); r(); refreshSaveBar();
+    };
+    add.querySelector('button').onclick = doAdd;
+    inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); doAdd(); } });
+    wrap.appendChild(add);
+  }
+  r();
+  return wrap;
+}
+
+// Generic repeater for arrays of objects. `arr` is mutated in place.
+// itemRender(obj, index, removeFn) returns a DOM node for one item.
+// makeNew() returns a fresh blank object to add to the array.
+function repeater(arr, itemRender, makeNew, addLabel) {
+  const wrap = document.createElement('div');
+  function r() {
+    wrap.innerHTML = '';
+    arr.forEach((obj, i) => {
+      const item = document.createElement('div'); item.className = 'list-item';
+      const head = document.createElement('div'); head.className = 'list-item-head';
+      head.innerHTML = `<h3>${esc(obj.__label || `#${i + 1}`)}</h3>`;
+      const remove = document.createElement('button');
+      remove.className = 'btn-ghost'; remove.style.fontSize = '12px'; remove.textContent = 'Remove';
+      remove.onclick = () => { if (confirm('Remove this item?')) { arr.splice(i, 1); r(); refreshSaveBar(); } };
+      head.appendChild(remove);
+      item.appendChild(head);
+      const onRelabel = (s) => { obj.__label = s; head.querySelector('h3').textContent = s || `#${i + 1}`; };
+      item.appendChild(itemRender(obj, i, onRelabel));
+      wrap.appendChild(item);
+    });
+    const add = document.createElement('button');
+    add.className = 'btn-ghost'; add.style.marginTop = '12px';
+    add.textContent = addLabel || '+ Add';
+    add.onclick = () => { arr.push(makeNew()); r(); refreshSaveBar(); };
+    wrap.appendChild(add);
+  }
+  r();
+  return wrap;
+}
+
 function render(file) {
   if (file === 'site') renderSite();
   else if (file === 'locations') renderLocations();
+  else if (file === 'menu') renderMenu();
   else if (file === 'posts') renderPosts();
+  else if (file === 'press') renderPress();
+  else if (file === 'jobs') renderJobs();
   refreshSaveBar();
 }
 
@@ -724,7 +1164,7 @@ async function saveAll() {
   const btn = $('save-btn');
   btn.disabled = true;
   const msg = $('commit-msg').value.trim();
-  const files = ['site', 'locations', 'posts'].filter(f => dirty(f));
+  const files = FILES.filter(f => dirty(f));
   let saved = 0;
   try {
     for (const file of files) {
@@ -762,7 +1202,7 @@ async function saveAll() {
 $('save-btn').addEventListener('click', saveAll);
 $('discard-btn').addEventListener('click', () => {
   if (!confirm('Discard all unsaved changes?')) return;
-  ['site', 'locations', 'posts'].forEach(f => {
+  FILES.forEach(f => {
     if (state[f].loaded) state[f].content = JSON.parse(JSON.stringify(state[f].original));
   });
   render(activeTab);

@@ -1,6 +1,6 @@
 export const config = { runtime: "edge" };
 
-const ALLOWED = new Set(["site", "locations", "posts"]);
+const ALLOWED = new Set(["site", "locations", "posts", "press", "jobs", "menu", "instagram"]);
 
 export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });

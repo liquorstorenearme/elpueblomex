@@ -499,7 +499,6 @@ const footer = () => `
         <ul>
           <li><a href="${h(site.social.instagram)}" rel="noopener">Instagram</a></li>
           <li><a href="${h(site.social.facebook)}" rel="noopener">Facebook</a></li>
-          <li><a href="${h(site.social.yelp)}" rel="noopener">Yelp</a></li>
         </ul>
       </div>
     </div>

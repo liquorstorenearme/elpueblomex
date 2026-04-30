@@ -1,6 +1,6 @@
 export const config = { runtime: "edge" };
 
-const ALLOWED = new Set(["site", "locations", "posts"]);
+const ALLOWED = new Set(["site", "locations", "posts", "press", "jobs", "menu", "instagram"]);
 
 export default async function handler(req: Request): Promise<Response> {
   const url = new URL(req.url);
