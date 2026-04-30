@@ -518,6 +518,41 @@
       "source": "/order/",
       "destination": "/menu/",
       "permanent": true
+    },
+    {
+      "source": "/job-type/full-time/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/job-type/part-time/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/job-location/all-locations/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/job-location/carmel-valley/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/job-location/del-mar/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/page/:n*",
+      "destination": "/news/",
+      "permanent": true
     }
   ]
 }
