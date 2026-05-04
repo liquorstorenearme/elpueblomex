@@ -53,9 +53,17 @@ export default async function handler(req: Request): Promise<Response> {
   const date = g("date").slice(0, 40);
   const location = g("location").slice(0, 60);
   const message = g("message").slice(0, 5000);
+  const signerName = g("signer_name").slice(0, 100);
+  const signerTitle = g("signer_title").slice(0, 100);
+  const agree = g("agree") === "yes";
 
   if (!name || !email || !organization) return back("/gives-back/", req.url, { err: "missing" });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return back("/gives-back/", req.url, { err: "email" });
+  if (!signerName || !signerTitle) return back("/gives-back/", req.url, { err: "missing" });
+  if (!agree) return back("/gives-back/", req.url, { err: "agree" });
+
+  const submittedAt = new Date().toISOString();
+  const signedDate = submittedAt.slice(0, 10);
 
   const html = `<!DOCTYPE html><html><body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1b1008;max-width:720px;margin:0 auto;padding:24px;background:#faf0d8;">
   <div style="background:#fff;padding:32px 28px;border-radius:12px;border:1px solid #d84a1e;">
@@ -64,7 +72,11 @@ export default async function handler(req: Request): Promise<Response> {
     <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.55;">
       ${row("Name", name)}${row("Email", email)}${row("Phone", phone)}${row("Organization", organization)}${row("Tax ID", taxId)}${row("Requested date", date)}${row("Location", location)}${row("About the cause", message, true)}
     </table>
-    <p style="margin-top:24px;color:#6a5a4a;font-size:11px;border-top:1px solid #eee;padding-top:16px;">IP: ${esc(ip)} · ${new Date().toISOString()}</p>
+    <h3 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#d84a1e;margin:24px 0 8px;">Signed authorization</h3>
+    <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.55;">
+      ${row("Signer", signerName)}${row("Title", signerTitle)}${row("Date", signedDate)}${row("Agreed to terms", agree ? "Yes — confirmed via electronic acceptance" : "")}
+    </table>
+    <p style="margin-top:24px;color:#6a5a4a;font-size:11px;border-top:1px solid #eee;padding-top:16px;">IP: ${esc(ip)} · ${esc(submittedAt)}</p>
   </div></body></html>`;
 
   const r = await fetch("https://api.resend.com/emails", {

@@ -1417,6 +1417,19 @@ ${ticker("ticker--marigold")}
         </select>
       </label>
       <label>Tell us about your cause<textarea name="message" rows="5"></textarea></label>
+
+      <fieldset class="stack-form__sign">
+        <legend>Authorization</legend>
+        <div class="stack-form__row">
+          <label>Authorized signer name<input name="signer_name" required></label>
+          <label>Title<input name="signer_title" required placeholder="e.g. PTA President, Athletic Director"></label>
+        </div>
+        <label class="stack-form__check">
+          <input type="checkbox" name="agree" value="yes" required>
+          <span>I confirm the information above is accurate and that we agree to El Pueblo's fundraiser guidelines.</span>
+        </label>
+      </fieldset>
+
       <button class="btn btn--primary" type="submit">Submit application</button>
       <p class="stack-form__hint">We review applications in the order they're received. Please allow at least 30 days notice.</p>
     </form>
