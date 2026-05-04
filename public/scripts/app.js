@@ -28,22 +28,76 @@
     });
   }
 
-  const banner = document.getElementById('cookie-banner');
-  if (banner) {
-    const KEY = 'ep_cookie_consent';
-    let consent = null;
-    try { consent = localStorage.getItem(KEY); } catch (e) {}
-    if (!consent) {
-      banner.removeAttribute('hidden');
+  // Consent management: default-deny, honor GPC, Google Consent Mode v2.
+  // Public API: window.__epOptIn / __epOptOut / __epConsentStatus
+  // Event: 'ep-consent-changed' fires on every state change.
+  (function () {
+    const KEY = 'ep_consent_pref';
+    const ONE_YEAR = 60 * 60 * 24 * 365;
+    const GA_IDS = (window.__EP_GA_IDS || []);
+
+    function setCookie(name, value, maxAge) {
+      document.cookie = name + '=' + encodeURIComponent(value) + '; Max-Age=' + maxAge + '; Path=/; SameSite=Lax';
     }
-    banner.addEventListener('click', (e) => {
-      const accept = e.target.closest('[data-cookie-accept]');
-      const decline = e.target.closest('[data-cookie-decline]');
-      if (!accept && !decline) return;
-      try { localStorage.setItem(KEY, accept ? 'accept' : 'decline'); } catch (err) {}
-      banner.setAttribute('hidden', '');
-    });
-  }
+    function getCookie(name) {
+      return document.cookie.split('; ').reduce(function (acc, c) {
+        const i = c.indexOf('='); if (i < 0) return acc;
+        acc[c.slice(0, i)] = decodeURIComponent(c.slice(i + 1));
+        return acc;
+      }, {})[name];
+    }
+
+    function pushConsent(deny) {
+      window.dataLayer = window.dataLayer || [];
+      const fn = window.gtag || function () { window.dataLayer.push(arguments); };
+      fn('consent', 'update', {
+        ad_storage: deny ? 'denied' : 'granted',
+        analytics_storage: deny ? 'denied' : 'granted',
+        ad_user_data: deny ? 'denied' : 'granted',
+        ad_personalization: deny ? 'denied' : 'granted',
+        functionality_storage: 'granted',
+        security_storage: 'granted'
+      });
+      GA_IDS.forEach(function (id) { window['ga-disable-' + id] = !!deny; });
+    }
+
+    function broadcast(status) {
+      try { window.dispatchEvent(new CustomEvent('ep-consent-changed', { detail: { status: status } })); } catch (e) {}
+    }
+
+    function setStatus(status, persist) {
+      if (persist) setCookie(KEY, status, ONE_YEAR);
+      pushConsent(status === 'denied');
+      broadcast(status);
+    }
+
+    const GPC = (typeof navigator !== 'undefined' && navigator.globalPrivacyControl === true);
+    const saved = getCookie(KEY);
+    let initial;
+    if (GPC) initial = 'denied';
+    else if (saved === 'granted') initial = 'granted';
+    else initial = 'denied';
+    setStatus(initial, !!saved);
+
+    const banner = document.getElementById('cookie-banner');
+    if (banner && !saved && !GPC) {
+      banner.removeAttribute('hidden');
+      banner.addEventListener('click', function (e) {
+        const accept = e.target.closest('[data-cookie-accept]');
+        const decline = e.target.closest('[data-cookie-decline]');
+        if (!accept && !decline) return;
+        setStatus(accept ? 'granted' : 'denied', true);
+        banner.setAttribute('hidden', '');
+      });
+    }
+
+    window.__epOptIn = function () { setStatus('granted', true); };
+    window.__epOptOut = function () { setStatus('denied', true); };
+    window.__epConsentStatus = function () {
+      if (typeof navigator !== 'undefined' && navigator.globalPrivacyControl === true) return 'gpc';
+      return getCookie(KEY) || 'denied';
+    };
+  })();
 
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {

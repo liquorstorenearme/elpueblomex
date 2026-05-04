@@ -382,8 +382,8 @@ ${lcpImage === "/images/home/combo-plate-hero.jpg" ? `<link rel="preload" as="im
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/style.css">
-${site.seo?.ga4 ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${h(site.seo.ga4)}"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${h(site.seo.ga4)}',{anonymize_ip:true});</script>` : ""}
+${site.seo?.ga4 ? `<script>window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};window.__EP_GA_IDS=['${h(site.seo.ga4)}'];gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});gtag('js',new Date());gtag('config','${h(site.seo.ga4)}',{anonymize_ip:true});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=${h(site.seo.ga4)}"></script>` : ""}
 `;
 
 const ticker = (variant = "") => `
@@ -510,13 +510,13 @@ const footer = () => `
       <a href="/terms/">Terms</a>
       <a href="/accessibility-statement/">Accessibility</a>
       <a href="/cookie-policy/">Cookies</a>
-      <a href="/californiaconsumerprivacy/">CCPA</a>
+      <a href="/californiaconsumerprivacy/">Do Not Sell or Share</a>
     </nav>
   </div>
 </footer>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie notice" hidden>
   <div class="cookie-banner__inner">
-    <p class="cookie-banner__text">This site uses cookies to run properly and to help us understand how visitors use it. See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a>. You can accept all cookies, decline non-essential, or adjust in your browser.</p>
+    <p class="cookie-banner__text">This site uses essential cookies to run, and analytics cookies (with your permission) to understand how visitors use it. Analytics are off by default. See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a>. You can change your choice anytime on the <a href="/californiaconsumerprivacy/">Do Not Sell or Share</a> page.</p>
     <div class="cookie-banner__actions">
       <button type="button" class="cookie-banner__btn cookie-banner__btn--ghost" data-cookie-decline><span class="cookie-banner__btn-long">Decline non-essential</span><span class="cookie-banner__btn-short">Decline</span></button>
       <button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-accept><span class="cookie-banner__btn-long">Accept all</span><span class="cookie-banner__btn-short">Accept</span></button>
@@ -1872,14 +1872,14 @@ function renderPost(post) {
 }
 
 // ---------- Legal ----------
-function legalPage({ slug, title, description, sections }) {
+function legalPage({ slug, title, description, sections, prelude }) {
   const body = `
 <section class="page-head page-head--legal">
   <p class="eyebrow">Legal</p>
   <h1 class="display-sm">${h(title)}</h1>
   <p class="legal-updated">Last updated: ${new Date().toISOString().slice(0, 10)}</p>
 </section>
-
+${prelude || ""}
 <section class="section section--cream">
   <div class="section__inner legal-body">
     ${sections.map(s => `
@@ -1953,7 +1953,7 @@ const legalPages = [
         "With your consent or at your direction, for any purpose you authorize."
       ]},
       { h: "Third-party services", p: [
-        "Key third-party services that may process your data include: Google Analytics (site usage measurement; see Google's Privacy Policy), Vercel (hosting), Cloudflare (content delivery and DDoS protection), order.online (online ordering), and Gmail/Google Workspace (email for info@elpueblomex.com).",
+        "Key third-party services that may process your data include: Google Analytics 4 (site usage measurement, configured with anonymized IP and Google Consent Mode v2 — analytics are denied by default until you grant permission); Vercel (hosting); Cloudflare (content delivery and DDoS protection); Resend (transactional email delivery for our contact, catering, careers, and other forms); order.online (online ordering); and Gmail/Google Workspace (email for info@elpueblomex.com).",
         "We do not control the privacy practices of these services. Please review their policies for details about how they handle your information."
       ]},
       { h: "Cookies and tracking technologies", p: [
@@ -2014,7 +2014,7 @@ const legalPages = [
       ]},
       { h: "What are cookies and similar technologies?", p: [
         "Cookies are small text files placed on your device (computer, phone, tablet) by a website you visit. They allow the site to recognize your device on return visits and to remember preferences or actions.",
-        "Similar technologies include: local storage (browser-based storage for small pieces of data, such as your cookie-banner preference), session storage (cleared when you close the tab), pixels or tags (tiny image files that record page views), and server logs (records of requests to our servers).",
+        "Similar technologies include: cookies (small text files stored by your browser, used here for consent state and analytics state), session storage (cleared when you close the tab), pixels or tags (tiny image files that record page views), and server logs (records of requests to our servers).",
         "Cookies can be \"first-party\" (set by this Site) or \"third-party\" (set by another domain we load content from, such as Google Analytics)."
       ]},
       { h: "Categories of cookies we use", ul: [
@@ -2024,27 +2024,27 @@ const legalPages = [
         "Targeting / advertising — we do not currently use advertising cookies on this Site and do not share personal information with advertising networks for cross-context behavioral advertising."
       ]},
       { h: "Specific cookies and storage items", p: [
-        "Below is a best-effort list of the cookies, local-storage items, and third-party trackers that may be set when you visit the Site. Third-party cookies may change without notice; consult the provider for an authoritative list.",
-        "ep_cookie_consent (local storage; strictly necessary) — remembers whether you accepted or declined the cookie banner so it doesn't reappear. Stored on your device; no personal information is sent to us.",
-        "_ga, _ga_* (first-party cookies from Google Analytics; analytics) — distinguish unique visitors and sessions. See Google's documentation. Typical retention: 2 years (rotated).",
+        "Below is a best-effort list of the cookies and third-party trackers that may be set when you visit the Site. Third-party cookies may change without notice; consult the provider for an authoritative list.",
+        "ep_consent_pref (first-party cookie; strictly necessary) — stores your analytics-and-marketing consent choice (granted or denied) for one year so the cookie banner does not reappear and so analytics tools can be enabled or disabled accordingly. No personal information.",
+        "_ga, _ga_* (first-party cookies from Google Analytics 4; analytics) — distinguish unique visitors and sessions. Only set after you grant analytics consent. See Google's documentation. Typical retention: 2 years (rotated).",
         "__cf_bm, cf_clearance (set by Cloudflare; strictly necessary) — bot-mitigation and security cookies used to distinguish humans from automated traffic. Typical retention: 30 minutes to 30 days.",
         "vercel / _vercel_* (set by Vercel hosting infrastructure; strictly necessary) — routing and caching cookies used to serve the correct version of the Site."
       ]},
       { h: "Third parties that may set cookies", p: [
-        "Google Analytics (analytics) — see Google's Privacy & Terms and the Google Analytics opt-out browser add-on at tools.google.com/dlpage/gaoptout.",
+        "Google Analytics 4 (analytics) — set only after you grant consent. See Google's Privacy & Terms and the Google Analytics opt-out browser add-on at tools.google.com/dlpage/gaoptout.",
         "Cloudflare (security / performance) — see cloudflare.com/privacypolicy.",
         "Vercel (hosting) — see vercel.com/legal/privacy-policy.",
         "If you place an order, you may be redirected to order.online, which sets its own cookies under its own privacy policy."
       ]},
       { h: "Your cookie choices", p: [
-        "When you first visit the Site, a cookie banner lets you Accept all cookies or Decline non-essential cookies. Declining instructs us not to load analytics cookies for your session (strictly necessary cookies are still required for the Site to function).",
-        "You can change or withdraw your choice at any time by clearing your browser's site data for elpueblomex.com, which removes the ep_cookie_consent value and causes the banner to reappear on your next visit.",
+        "Analytics and marketing cookies are denied by default. When you first visit the Site, a cookie banner lets you Accept all cookies or Decline non-essential cookies. Declining keeps the default-deny state — no analytics cookies are loaded.",
+        "You can change or withdraw your choice at any time on our Do Not Sell or Share My Personal Information page (linked in the footer), which provides explicit Opt In and Opt Out controls and shows your current status. Your choice is saved in the ep_consent_pref cookie for one year.",
         "Most browsers allow you to refuse or delete cookies. Check your browser's documentation: Chrome (support.google.com/chrome), Firefox (support.mozilla.org), Safari (support.apple.com), Edge (support.microsoft.com). Blocking strictly necessary cookies may break parts of the Site.",
         "You can opt out of Google Analytics specifically with the browser add-on linked above."
       ]},
       { h: "Do Not Track and Global Privacy Control", p: [
         "The Site does not currently respond to Do Not Track (DNT) signals because there is no agreed industry standard for interpreting them.",
-        "We do recognize the Global Privacy Control (GPC) signal. If your browser transmits a GPC signal, we will treat it as a request to opt out of any \"sale\" or \"sharing\" of personal information under California law — even though we do not engage in sales or cross-context behavioral advertising."
+        "We do recognize the Global Privacy Control (GPC) signal. If your browser transmits a GPC signal, the Site automatically treats your visit as opted out of any \"sale\" or \"sharing\" of personal information under California law and will not load analytics cookies — even before you interact with the cookie banner."
       ]},
       { h: "Minors", p: [
         "We do not knowingly set non-essential cookies on devices we believe are used primarily by children under 13."
@@ -2199,8 +2199,36 @@ const legalPages = [
   },
   {
     slug: "californiaconsumerprivacy",
-    title: "California Consumer Privacy Notice",
-    description: "Detailed notice of California residents' rights under the CCPA, as amended by the CPRA — including how to exercise rights, verification, authorized agents, and appeals.",
+    title: "Do Not Sell or Share My Personal Information",
+    description: "California residents' opt-out controls for analytics and marketing cookies, plus the full California Consumer Privacy Act / California Privacy Rights Act notice.",
+    prelude: `
+<section class="section section--cream privacy-controls">
+  <div class="section__inner">
+    <div class="privacy-controls__card">
+      <h2>Your Privacy Controls</h2>
+      <p>Under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), California residents may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of their personal information. El Pueblo Mexican Food does <strong>not sell personal information for money</strong>. We may use analytics tools that could be considered &ldquo;sharing&rdquo; under California law.</p>
+      <p class="privacy-controls__status">Status: <strong data-consent-status>Checking&hellip;</strong></p>
+      <div class="privacy-controls__actions">
+        <button type="button" class="btn btn--ghost" onclick="window.__epOptOut&amp;&amp;__epOptOut()">Do Not Sell or Share My Personal Information</button>
+        <button type="button" class="btn btn--primary" onclick="window.__epOptIn&amp;&amp;__epOptIn()">Allow Analytics &amp; Marketing</button>
+      </div>
+      <p class="privacy-controls__gpc">We also honor <abbr title="Global Privacy Control">Global Privacy Control</abbr> (GPC) signals automatically. If your browser sends a GPC signal, you are opted out by default.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  function paint(){
+    var el = document.querySelector('[data-consent-status]');
+    if (!el) return;
+    var s = (typeof window.__epConsentStatus === 'function') ? window.__epConsentStatus() : 'denied';
+    var label = s === 'granted' ? 'Analytics &amp; marketing allowed' : (s === 'gpc' ? 'Opted out (Global Privacy Control)' : 'Opted out');
+    el.innerHTML = label;
+  }
+  document.addEventListener('DOMContentLoaded', paint);
+  window.addEventListener('ep-consent-changed', paint);
+})();
+</script>`,
     sections: [
       { p: [
         `This notice applies to California residents and supplements our general Privacy Policy. It is provided pursuant to the California Consumer Privacy Act of 2018 ("CCPA"), as amended by the California Privacy Rights Act of 2020 ("CPRA"). Terms used in this notice have the meanings given to them in those laws.`
@@ -2233,9 +2261,9 @@ const legalPages = [
       ]},
       { h: "Categories disclosed to third parties", p: [
         "In the preceding 12 months, we have disclosed the following categories to the following types of recipients for business purposes:",
-        "Identifiers and Internet activity — disclosed to our hosting, security, and analytics service providers (e.g., Vercel, Cloudflare, Google Analytics) for the purpose of operating and measuring the Site.",
+        "Identifiers and Internet activity — disclosed to our hosting, security, and analytics service providers (Vercel, Cloudflare, Google Analytics 4) for the purpose of operating and measuring the Site. Analytics disclosures occur only for visitors who have granted consent.",
+        "Customer records and identifiers — disclosed to our transactional email provider (Resend) so that contact, catering, event, fundraiser, careers, and newsletter form submissions can be delivered to our team. Resend processes the message on our behalf and forwards it to our Google Workspace inbox at info@elpueblomex.com.",
         "Commercial information — disclosed to our ordering partner (order.online) to fulfill orders you choose to place.",
-        "Professional or employment-related information — disclosed to our email provider (Google Workspace) so that we can receive and review job applications.",
         "Identifiers and customer records — disclosed in response to legal process when we are required to do so."
       ]},
       { h: "Sale or sharing of personal information", p: [
