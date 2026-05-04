@@ -169,7 +169,14 @@
       "rating": 5.0,
       "total": 3,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807",
-      "reviews": []
+      "reviews": [
+        {
+          "author": "Madison Ellering",
+          "rating": 5,
+          "text": "The food is amazing here and the prices are unbeatable!",
+          "relativeTime": "Recent"
+        }
+      ]
     },
     "del-mar": {
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
