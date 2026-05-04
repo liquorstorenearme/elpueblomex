@@ -1998,7 +1998,7 @@ const legalPages = [
       { h: "How to contact us", p: [
         `El Pueblo Mexican Food — Privacy`,
         `Email: ${site.brand.email}`,
-        `Postal: 820 Birmingham Drive, Cardiff, CA 92007 (Attn: Privacy)`,
+        `Postal: 5965 Village Way, Suite E107, San Diego, CA 92130 (Attn: Privacy)`,
         "We aim to respond to privacy inquiries within 10 business days."
       ]}
     ]
@@ -2139,7 +2139,7 @@ const legalPages = [
       ]},
       { h: "Contact", p: [
         `Questions about these Terms? Email ${site.brand.email} with "Terms of Service" in the subject line.`,
-        "Postal: 820 Birmingham Drive, Cardiff, CA 92007 (Attn: Legal)"
+        "Postal: 5965 Village Way, Suite E107, San Diego, CA 92130 (Attn: Legal)"
       ]}
     ]
   },
@@ -2285,7 +2285,7 @@ const legalPages = [
       ]},
       { h: "How to submit a request", p: [
         `Email: ${site.brand.email} with the subject "California Privacy Request" and describe the right you are exercising.`,
-        "By mail: El Pueblo Mexican Food — Privacy, 820 Birmingham Drive, Cardiff, CA 92007.",
+        "By mail: El Pueblo Mexican Food — Privacy, 5965 Village Way, Suite E107, San Diego, CA 92130.",
         "You may also contact any El Pueblo location by phone and ask to be directed to the Privacy contact."
       ]},
       { h: "Verification", p: [
@@ -2317,7 +2317,7 @@ const legalPages = [
       ]},
       { h: "Contact", p: [
         `Email: ${site.brand.email} (subject: "California Privacy")`,
-        "Postal: 820 Birmingham Drive, Cardiff, CA 92007 (Attn: Privacy)"
+        "Postal: 5965 Village Way, Suite E107, San Diego, CA 92130 (Attn: Privacy)"
       ]}
     ]
   }
