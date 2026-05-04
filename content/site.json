@@ -23,7 +23,7 @@
     "FRESH DAILY",
     "FIVE LOCATIONS",
     "CARDIFF · CARLSBAD · CARMEL VALLEY · DEL MAR",
-    "LA JOLLA OPENING SOON",
+    "NOW OPEN IN LA JOLLA",
     "FULL BARS · TEQUILA · MEZCAL",
     "EAT IN · TAKE OUT · CATERING"
   ],
@@ -32,7 +32,7 @@
       "eyebrow": "The best Mexican food in North County San Diego",
       "headline": "Fresh Mexican food.",
       "headlineAccent": "Five locations.",
-      "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla (opening soon) — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
+      "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
       "primaryCta": { "label": "Find a Location", "href": "/locations/" },
       "secondaryCta": { "label": "See the Menu", "href": "/menu/" },
       "image": "/images/home/combo-plate-hero.jpg"
@@ -164,7 +164,7 @@
   "careers": {
     "heroEyebrow": "Join the team",
     "heroHeadline": "We're hiring at every location.",
-    "heroSub": "El Pueblo is growing — five locations across North County San Diego, and La Jolla opening Spring 2026. We're always looking for energetic, reliable people to join the team. Applications are considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law. We are proud to be an Equal Opportunity Employer.",
+    "heroSub": "El Pueblo has five locations across North County San Diego — Cardiff, Carlsbad, Carmel Valley, Del Mar, and our newest in La Jolla. We're always looking for energetic, reliable people to join the team. Applications are considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law. We are proud to be an Equal Opportunity Employer.",
     "benefitsIntro": "Every full-time role comes with:",
     "benefits": [
       "Health Insurance (Medical, Dental, Vision on select roles)",
