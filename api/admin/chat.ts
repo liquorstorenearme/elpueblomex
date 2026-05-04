@@ -164,34 +164,33 @@ const TOOLS: ToolDef[] = [
     },
   },
   {
-    name: "set_menu_item_price",
+    name: "set_menu_item_description",
     description:
-      "Change the price of a single menu item. Provide the category name (case-insensitive substring match like 'fish tacos' or 'breakfast') and the item name (case-insensitive substring match like '$1.39 fish taco'). New price is a string like '$2.49' or '2.49'.",
+      "Update the description text of a single menu item. Menu items have these fields: name, description, image. There is no price field — prices on the site are hardcoded in source (the '$1.39 fish taco' is a brand tagline, not editable data). To change a description, provide the category name (case-insensitive substring like 'breakfast plates') and the item name (case-insensitive substring).",
     kind: "write",
     input_schema: {
       type: "object",
       properties: {
         category: { type: "string", description: "Category name, case-insensitive substring match." },
         item: { type: "string", description: "Item name within the category, case-insensitive substring match." },
-        price: { type: "string", description: "New price as a string. '$' prefix optional. e.g. '$2.49' or '2.49'." },
+        description: { type: "string", description: "New description text." },
       },
-      required: ["category", "item", "price"],
+      required: ["category", "item", "description"],
     },
-    handler: async ({ category, item, price }) => {
+    handler: async ({ category, item, description }) => {
       const { content } = await ghLoad("menu");
       const cats: any[] = content.categories || [];
       const cat = cats.find((c) => c.name?.toLowerCase().includes(String(category).toLowerCase()));
       if (!cat) throw new Error(`Category "${category}" not found`);
       const it = (cat.items || []).find((i: any) => i.name?.toLowerCase().includes(String(item).toLowerCase()));
       if (!it) throw new Error(`Item "${item}" not found in category "${cat.name}"`);
-      const newPrice = String(price).startsWith("$") ? String(price) : `$${price}`;
-      const before = it.price;
-      it.price = newPrice;
+      const before = it.description;
+      it.description = description;
       return {
-        summary: `Change ${cat.name} → ${it.name} price from ${before} to ${newPrice}`,
+        summary: `Update ${cat.name} → ${it.name} description`,
         file: "menu",
         newContent: content,
-        preview: { path: `${cat.name} → ${it.name} → price`, before, after: newPrice },
+        preview: { path: `${cat.name} → ${it.name} → description`, before, after: description },
       };
     },
   },
@@ -478,7 +477,23 @@ async function callAnthropic(messages: any[], system: string): Promise<any> {
 
 const SYSTEM_PROMPT = `You are an admin assistant for El Pueblo Mexican Food's website (elpueblomex.com).
 
-Your job: help managers update content. You can read and modify menu prices, location hours/phone/tag, news posts, the home ticker, and a small set of safe site fields (brand name, tagline, email, gives-back disclaimer) — using ONLY the provided tools. You CANNOT change hero copy, SEO settings, or any other field.
+Your job: help managers update content. You can:
+- Read any content file (use get_current first to verify what's actually there before changing it)
+- Update menu item descriptions (note: menu items have name/description/image — there is NO price field; prices like '$1.39' are hardcoded in source as brand taglines and cannot be changed via chat)
+- Update location phone, tag, description, SEO title/description, order URL
+- Update location hours (per-day or all 7 days)
+- Add or remove items from the home ticker
+- Add, edit, or delete news posts
+- Update brand name, tagline, contact email, and the gives-back disclaimer
+
+You CANNOT change hero copy, SEO/analytics config, or anything outside the tool list.
+
+Rules:
+- ALWAYS call get_current first to verify the current value before proposing a change.
+- Use the smallest possible tool — set_location_field for one field, not set_site_field.
+- If the user asks for something outside the tools, explain plainly what you can/can't do.
+- Be concise. After a change applies, confirm in one short sentence and stop.
+- Don't volunteer unrelated changes. Only do what was asked.
 
 Rules:
 - ALWAYS call get_current to verify a value before proposing a change. Do not assume.
