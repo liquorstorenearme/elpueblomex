@@ -99,29 +99,13 @@ interface ToolDef {
 }
 
 // --- Site.json allowlisted paths for setSiteField ---
-// Restrict to copy fields. Forbid touching SEO/GA4/structural settings.
+// Restrict to safe non-hero copy. Forbid touching hero copy (brand-critical),
+// SEO config, GA4, and structural settings.
 const SITE_FIELD_ALLOWLIST = new Set([
   "brand.name",
   "brand.tagline",
   "brand.email",
-  "home.hero.eyebrow",
-  "home.hero.headline",
-  "home.hero.headlineAccent",
-  "home.hero.sub",
-  "home.hero.primaryCta.label",
-  "home.hero.primaryCta.href",
-  "home.hero.secondaryCta.label",
-  "home.hero.secondaryCta.href",
-  "careers.heroEyebrow",
-  "careers.heroHeadline",
-  "careers.heroSub",
-  "givesBack.heroEyebrow",
-  "givesBack.heroHeadline",
-  "givesBack.heroSub",
   "givesBack.disclaimer",
-  "contact.heroEyebrow",
-  "contact.heroHeadline",
-  "contact.heroSub",
 ]);
 
 const LOCATION_FIELD_ALLOWLIST = new Set([
@@ -494,7 +478,7 @@ async function callAnthropic(messages: any[], system: string): Promise<any> {
 
 const SYSTEM_PROMPT = `You are an admin assistant for El Pueblo Mexican Food's website (elpueblomex.com).
 
-Your job: help managers update content. You can read and modify menu prices, location hours/phone/tag, news posts, the home ticker, and select hero copy fields — using ONLY the provided tools. You CANNOT make any other type of change.
+Your job: help managers update content. You can read and modify menu prices, location hours/phone/tag, news posts, the home ticker, and a small set of safe site fields (brand name, tagline, email, gives-back disclaimer) — using ONLY the provided tools. You CANNOT change hero copy, SEO settings, or any other field.
 
 Rules:
 - ALWAYS call get_current to verify a value before proposing a change. Do not assume.
