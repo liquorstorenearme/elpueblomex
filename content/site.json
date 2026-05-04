@@ -179,6 +179,10 @@
     "facebook": "https://www.facebook.com/elpueblomex/",
     "yelp": "https://www.yelp.com/biz/el-pueblo-mexican-food-encinitas"
   },
+  "orderOnline": {
+    "masterUrl": "https://order.online/business/ElPuebloMexicanFood-15024",
+    "label": "Order online"
+  },
   "seo": {
     "siteUrl": "https://elpueblomex.com",
     "twitter": "",

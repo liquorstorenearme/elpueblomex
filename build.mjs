@@ -229,7 +229,21 @@ function restaurantSchema(loc) {
     openingDate: loc.openingDate || undefined,
     parentOrganization: { "@id": ORG_ID },
     sameAs: [site.social.instagram, site.social.facebook, site.social.yelp].filter(Boolean),
-    amenityFeature: (loc.features || []).map(f => ({ "@type": "LocationFeatureSpecification", name: f, value: true }))
+    amenityFeature: (loc.features || []).map(f => ({ "@type": "LocationFeatureSpecification", name: f, value: true })),
+    potentialAction: !loc.comingSoon && site.orderOnline?.masterUrl ? {
+      "@type": "OrderAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: loc.orderOnlineUrl || site.orderOnline.masterUrl,
+        inLanguage: "en-US",
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/IOSPlatform",
+          "http://schema.org/AndroidPlatform"
+        ]
+      },
+      deliveryMethod: ["http://purl.org/goodrelations/v1#DeliveryModePickUp"]
+    } : undefined
   };
 }
 
@@ -451,7 +465,7 @@ const header = () => `
     <nav class="nav" aria-label="Primary">
       ${site.nav.map(n => `<a href="${h(n.href)}">${h(n.label)}</a>`).join("")}
     </nav>
-    <a class="btn btn--order" href="/menu/">Order</a>
+    <a class="btn btn--order" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order</a>
     <button class="nav-toggle" aria-label="Menu" aria-controls="mobile-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -467,6 +481,7 @@ const header = () => `
     </div>
     <nav aria-label="Mobile">
       ${site.nav.map(n => `<a href="${h(n.href)}">${h(n.label)}</a>`).join("")}
+      <a class="mobile-nav__order" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order online →</a>
     </nav>
   </div>
 </header>`;
@@ -820,7 +835,7 @@ function renderLocation(loc) {
       <h1 class="display">El Pueblo<br><em>${h(loc.name)}</em></h1>
       <p class="lede">${h(loc.description)}</p>
       <div class="cta-row">
-        ${loc.orderOnlineUrl ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl)}" target="_blank" rel="noopener">Order online</a>` : ""}
+        ${(loc.orderOnlineUrl || site.orderOnline.masterUrl) ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order online</a>` : ""}
         <a class="btn btn--ghost" href="${h(loc.mapsUrl)}" target="_blank" rel="noopener">Directions</a>
         ${loc.phone ? `<a class="btn btn--ghost" href="tel:${h(loc.phoneE164)}">${h(loc.phone)}</a>` : ""}
       </div>
@@ -906,7 +921,7 @@ ${loc.body?.faq?.length ? `
     <h2>Hungry, <em>${h(loc.short)}</em>?</h2>
     <p>Order pickup, browse the menu, or drop in — we're ready.</p>
     <div class="cta-row">
-      ${loc.orderOnlineUrl ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl)}" target="_blank" rel="noopener">Order from ${h(loc.short)}</a>` : `<a class="btn btn--primary" href="/menu/">See the menu</a>`}
+      <a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order from ${h(loc.short)}</a>
       <a class="btn btn--ghost" href="/locations/">Other locations</a>
     </div>
   </div>
@@ -953,8 +968,14 @@ function renderMenu() {
       <h2>$1.39 <em>Fish Taco</em></h2>
       <p>Crispy fried-to-order fillet, chipotle sauce, fresh pico, crisp cabbage on a warm corn tortilla. Our signature, unlimited, every day of the year.</p>
       <div class="cta-row">
-        ${orderLinks.map(o => `<a class="btn btn--marigold btn--sm" href="${h(o.href)}" target="_blank" rel="noopener">Order ${h(o.name)}</a>`).join("")}
+        <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order from any location →</a>
       </div>
+      <details class="menu-order-details">
+        <summary>Or order from a specific kitchen</summary>
+        <div class="cta-row cta-row--sm">
+          ${orderLinks.map(o => `<a class="btn btn--marigold btn--sm" href="${h(o.href)}" target="_blank" rel="noopener">Order ${h(o.name)}</a>`).join("")}
+        </div>
+      </details>
     </div>
   </div>
 </section>
