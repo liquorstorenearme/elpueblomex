@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>El Pueblo · Admin</title>
+<title>El Pueblo · Admin sign in</title>
 <style>
   :root {
     --cream: #faf0d8;
@@ -21,7 +21,7 @@
     min-height: 100vh; margin: 0; padding: 20px;
   }
   .login-card {
-    width: 100%; max-width: 420px;
+    width: 100%; max-width: 440px;
     background: var(--cream); color: var(--ink);
     border-radius: 12px; padding: 40px 32px 32px;
     box-shadow: 0 24px 60px rgba(0,0,0,0.35);
@@ -46,18 +46,24 @@
     color: #7a2a18; padding: 10px 14px; font-size: 13px;
     margin-bottom: 16px; border-radius: 4px;
   }
+  .login-ok {
+    background: rgba(46,125,50,0.12);
+    border-left: 3px solid #2e7d32;
+    color: #1b4d20; padding: 12px 14px; font-size: 14px;
+    margin-bottom: 16px; border-radius: 4px; line-height: 1.45;
+  }
   .login-label {
     display: block; font-size: 10px; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--muted);
     margin-bottom: 8px; font-weight: 700;
   }
-  input[type="password"] {
+  input[type="email"], input[type="password"] {
     width: 100%; padding: 13px 14px;
     border: 1.5px solid var(--hairline); background: #fff;
     font: inherit; font-size: 15px; border-radius: 6px;
     min-height: 48px; color: var(--ink); margin-bottom: 16px;
   }
-  input[type="password"]:focus { outline: 0; border-color: var(--ink); }
+  input:focus { outline: 0; border-color: var(--ink); }
   button {
     width: 100%; padding: 14px; background: var(--ink); color: var(--cream);
     border: 0; font: inherit; font-size: 13px; font-weight: 700;
@@ -65,30 +71,98 @@
     border-radius: 6px; cursor: pointer; min-height: 50px;
   }
   button:hover { background: #000; }
+  button:disabled { opacity: 0.6; cursor: not-allowed; }
   .login-foot { text-align: center; font-size: 11px; color: var(--muted); margin-top: 22px; }
+  .login-foot a { color: var(--terracotta); text-decoration: none; }
+  .login-foot a:hover { text-decoration: underline; }
+  #password-form { display: none; }
+  #password-form.show { display: block; }
+  #magic-form.hide { display: none; }
 </style>
 </head>
 <body>
 <main class="login-card">
   <h1 class="login-title">El Pueblo</h1>
-  <div class="login-sub">Admin · Authorized Access</div>
+  <div class="login-sub">Admin sign in</div>
   <div id="err" class="login-err" hidden></div>
-  <form method="POST" action="/api/admin/login/" autocomplete="off">
-    <input type="hidden" name="from" id="from" value="/edit">
-    <label class="login-label" for="password">Password</label>
-    <input type="password" id="password" name="password" autofocus required>
-    <button type="submit">Sign In</button>
+  <div id="ok" class="login-ok" hidden></div>
+
+  <form id="magic-form" autocomplete="off">
+    <label class="login-label" for="email">Your email</label>
+    <input type="email" id="email" name="email" required autofocus placeholder="you@elpueblomex.com">
+    <button type="submit" id="magic-submit">Email me a sign-in link</button>
   </form>
-  <div class="login-foot">Internal use only.</div>
+
+  <form id="password-form" method="POST" action="/api/admin/login/" autocomplete="off">
+    <input type="hidden" name="from" id="from" value="/edit">
+    <label class="login-label" for="password">Owner password</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Sign in</button>
+  </form>
+
+  <div class="login-foot">
+    <a href="#" id="toggle-mode">Use the owner password instead</a>
+  </div>
 </main>
 <script>
   var params = new URLSearchParams(location.search);
   var from = params.get('from');
   if (from && from.startsWith('/') && !from.startsWith('//')) document.getElementById('from').value = from;
   var err = params.get('err');
-  var box = document.getElementById('err');
-  if (err === '1') { box.textContent = 'Incorrect password. Try again.'; box.hidden = false; }
-  else if (err === 'locked') { box.textContent = 'Too many attempts. Wait 15 minutes.'; box.hidden = false; }
+  var errBox = document.getElementById('err');
+  if (err === '1') { errBox.textContent = 'Incorrect password. Try again.'; errBox.hidden = false; }
+  else if (err === 'locked') { errBox.textContent = 'Too many attempts. Wait 15 minutes.'; errBox.hidden = false; }
+
+  // Toggle between magic-link and password
+  var magicForm = document.getElementById('magic-form');
+  var pwForm = document.getElementById('password-form');
+  var toggle = document.getElementById('toggle-mode');
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (pwForm.classList.contains('show')) {
+      pwForm.classList.remove('show');
+      magicForm.classList.remove('hide');
+      toggle.textContent = 'Use the owner password instead';
+      document.getElementById('email').focus();
+    } else {
+      pwForm.classList.add('show');
+      magicForm.classList.add('hide');
+      toggle.textContent = 'Email me a sign-in link instead';
+      document.getElementById('password').focus();
+    }
+  });
+
+  // Magic link request
+  magicForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('magic-submit');
+    var email = document.getElementById('email').value.trim();
+    if (!email) return;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    errBox.hidden = true;
+    try {
+      var r = await fetch('/api/admin/request-link', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email }),
+      });
+      if (!r.ok) {
+        var d = await r.json().catch(function(){ return {}; });
+        throw new Error(d.error || 'Could not send the link.');
+      }
+      magicForm.style.display = 'none';
+      toggle.style.display = 'none';
+      var ok = document.getElementById('ok');
+      ok.innerHTML = '<strong>Check your email.</strong><br>If <em>' + email.replace(/[<>&]/g, '') + '</em> is on the admin list, a sign-in link is on the way. The link works once and expires in 15 minutes.';
+      ok.hidden = false;
+    } catch (err) {
+      errBox.textContent = err.message || 'Could not send the link.';
+      errBox.hidden = false;
+      btn.disabled = false;
+      btn.textContent = 'Email me a sign-in link';
+    }
+  });
 </script>
 </body>
 </html>

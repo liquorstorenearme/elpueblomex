@@ -16,6 +16,8 @@ export const config = {
     "/api/admin/history/",
     "/api/admin/revert",
     "/api/admin/revert/",
+    "/api/admin/me",
+    "/api/admin/me/",
   ],
 };
 

@@ -19,6 +19,11 @@ function slugify(s: string): string {
 
 export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
+  if ((ROLE_RANK[getRole(req)] || 0) < ROLE_RANK.manager) {
+    return new Response(JSON.stringify({ error: "Your account does not have permission to upload images." }), {
+      status: 403, headers: { "Content-Type": "application/json" },
+    });
+  }
 
   const token = process.env.GITHUB_TOKEN;
   const owner = process.env.GITHUB_OWNER || "liquorstorenearme";

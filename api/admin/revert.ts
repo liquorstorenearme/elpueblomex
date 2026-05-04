@@ -3,9 +3,28 @@ export const config = { runtime: "edge" };
 // Reverts a previously-applied commit by restoring each changed content/*.json file
 // to the parent commit's content. We don't use `git revert` on GitHub (no clean way via
 // REST Contents API) — instead we PUT each file back to its pre-commit contents.
+//
+// Owner-only — undoing other people's work is destructive enough to gate behind the
+// highest role.
+
+const ROLE_RANK: Record<string, number> = { read_only: 1, manager: 2, owner: 3 };
+function getRole(req: Request): string {
+  const cookies = req.headers.get("cookie") || "";
+  const m = cookies.match(/(?:^|;\s*)ep_admin=([^;]+)/);
+  if (!m) return "";
+  try {
+    const payload = JSON.parse(atob(m[1].split(".")[0].replace(/-/g, "+").replace(/_/g, "/")));
+    return payload.role || "owner";
+  } catch { return ""; }
+}
 
 export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
+  if ((ROLE_RANK[getRole(req)] || 0) < ROLE_RANK.owner) {
+    return new Response(JSON.stringify({ error: "Only owners can undo previous changes." }), {
+      status: 403, headers: { "Content-Type": "application/json" },
+    });
+  }
 
   const token = process.env.GITHUB_TOKEN;
   const owner = process.env.GITHUB_OWNER || "liquorstorenearme";

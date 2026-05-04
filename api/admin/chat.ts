@@ -14,6 +14,17 @@ export const config = { runtime: "edge" };
 const MODEL = "claude-sonnet-4-5";
 const MAX_TURNS = 8; // total assistant turns per request, prevents runaway tool loops
 
+const ROLE_RANK: Record<string, number> = { read_only: 1, manager: 2, owner: 3 };
+function getCookieRole(req: Request): { email: string; role: string } {
+  const cookies = req.headers.get("cookie") || "";
+  const m = cookies.match(/(?:^|;\s*)ep_admin=([^;]+)/);
+  if (!m) return { email: "", role: "" };
+  try {
+    const payload = JSON.parse(atob(m[1].split(".")[0].replace(/-/g, "+").replace(/_/g, "/")));
+    return { email: payload.email || "owner", role: payload.role || "owner" };
+  } catch { return { email: "", role: "" }; }
+}
+
 // ---------- GitHub helpers (read/write content/*.json) ----------
 
 function ghHeaders(token: string) {
@@ -526,12 +537,17 @@ export default async function handler(req: Request): Promise<Response> {
   const confirmedInput: any = body.confirmedInput;
   const userPrompt: string = body.userPrompt || "";
 
+  const { email: userEmail, role } = getCookieRole(req);
+
   // If this is a confirmation submission, the front-end has already validated the user
   // wants to apply the previously-proposed change. Execute, commit, then return.
   // We do NOT make another Anthropic call here — the UI shows a "Saved" tag with the
   // commit link, and any follow-up user message will trigger a fresh Anthropic turn
   // with the tool_result already in the message history.
   if (confirmedToolUseId && confirmedToolName && confirmedInput) {
+    if ((ROLE_RANK[role] || 0) < ROLE_RANK.manager) {
+      return json({ error: "Your account can read but not save changes." }, 403);
+    }
     const tool = TOOL_BY_NAME[confirmedToolName];
     if (!tool || tool.kind !== "write") return json({ error: "Invalid tool to confirm." }, 400);
     try {
@@ -540,7 +556,8 @@ export default async function handler(req: Request): Promise<Response> {
         return json({ error: "Tool produced no commit-able change." }, 500);
       }
       const { sha } = await ghLoad(result.file);
-      const commitMsg = `Admin chat: ${result.summary}\n\nPrompt: ${truncate(userPrompt, 200)}`;
+      const byLine = userEmail ? ` (${userEmail})` : "";
+      const commitMsg = `Admin chat${byLine}: ${result.summary}\n\nPrompt: ${truncate(userPrompt, 200)}`;
       const commit = await ghSave(result.file, result.newContent, sha, commitMsg);
       // Push the tool_result so conversation history is complete for any next turn.
       messages.push({
@@ -596,7 +613,16 @@ export default async function handler(req: Request): Promise<Response> {
           toolResults.push({ type: "tool_result", tool_use_id: tu.id, content: `Error: ${e.message || e}`, is_error: true });
         }
       } else {
-        // WRITE — pause for confirm. Compute preview without committing.
+        // WRITE — pause for confirm OR refuse if read-only.
+        if ((ROLE_RANK[role] || 0) < ROLE_RANK.manager) {
+          toolResults.push({
+            type: "tool_result",
+            tool_use_id: tu.id,
+            content: "I can read information but I cannot save changes for this account. Please ask an account with edit access.",
+            is_error: true,
+          });
+          continue;
+        }
         try {
           const preview = await tool.handler(tu.input || {});
           pendingWrite = {

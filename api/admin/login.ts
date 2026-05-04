@@ -58,8 +58,9 @@ export default async function handler(req: Request): Promise<Response> {
 
   if (!match) return Response.redirect(new URL("/admin-login/?err=1", req.url).toString(), 302);
 
+  // Password login = owner role (legacy fallback for the original admin)
   const exp = Date.now() + hours * 60 * 60 * 1000;
-  const token = await sign({ exp }, secret);
+  const token = await sign({ email: "owner@elpueblomex.com", role: "owner", exp }, secret);
   const maxAge = hours * 60 * 60;
 
   const dest = from.startsWith("/") && !from.startsWith("//") ? from : "/edit";

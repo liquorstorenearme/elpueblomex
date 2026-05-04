@@ -2,8 +2,25 @@ export const config = { runtime: "edge" };
 
 const ALLOWED = new Set(["site", "locations", "posts", "press", "jobs", "menu", "instagram"]);
 
+const ROLE_RANK: Record<string, number> = { read_only: 1, manager: 2, owner: 3 };
+
+function getRole(req: Request): string {
+  const cookies = req.headers.get("cookie") || "";
+  const m = cookies.match(/(?:^|;\s*)ep_admin=([^;]+)/);
+  if (!m) return "";
+  try {
+    const payload = JSON.parse(atob(m[1].split(".")[0].replace(/-/g, "+").replace(/_/g, "/")));
+    return payload.role || "owner";
+  } catch { return ""; }
+}
+
 export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
+  if ((ROLE_RANK[getRole(req)] || 0) < ROLE_RANK.manager) {
+    return new Response(JSON.stringify({ error: "Your account does not have permission to save changes." }), {
+      status: 403, headers: { "Content-Type": "application/json" },
+    });
+  }
 
   const token = process.env.GITHUB_TOKEN;
   const owner = process.env.GITHUB_OWNER || "liquorstorenearme";

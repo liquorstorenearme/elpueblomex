@@ -38,9 +38,14 @@
   .admin-brand { display: flex; align-items: center; gap: 10px; }
   .admin-brand strong { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
   .admin-brand span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,240,216,0.55); }
-  .admin-top-actions { display: flex; gap: 14px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+  .admin-top-actions { display: flex; gap: 14px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; align-items: center; }
   .admin-top-actions a { color: var(--cream); text-decoration: none; opacity: 0.75; }
   .admin-top-actions a:hover { opacity: 1; }
+  .admin-user { display: flex; align-items: center; gap: 8px; padding-right: 6px; border-right: 1px solid rgba(250,240,216,0.2); margin-right: 6px; }
+  .admin-user__email { font-size: 11px; letter-spacing: 0; text-transform: none; color: rgba(250,240,216,0.85); font-weight: 500; }
+  .admin-user__role { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: var(--terracotta); color: #fff; }
+  .admin-user__role--manager { background: #2a5e1e; }
+  .admin-user__role--read_only { background: #6a5a4a; }
 
   .tabs {
     display: flex; gap: 2px;
@@ -282,6 +287,7 @@
   .history-revert-btn { background: #fff; border: 1px solid #c9302c; color: #c9302c; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; flex: none; }
   .history-revert-btn:hover { background: #c9302c; color: #fff; }
   .history-revert-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  body.no-undo .history-revert-btn { display: none; }
 </style>
 </head>
 <body>
@@ -292,6 +298,10 @@
     <span>Content Editor</span>
   </div>
   <div class="admin-top-actions">
+    <span class="admin-user" id="admin-user" hidden>
+      <span class="admin-user__email" id="admin-user-email"></span>
+      <span class="admin-user__role" id="admin-user-role"></span>
+    </span>
     <a href="/" target="_blank">View Site</a>
     <a href="/api/admin/logout/">Log Out</a>
   </div>
@@ -1637,6 +1647,43 @@ window.addEventListener('beforeunload', (e) => {
 // Default tab is the chat helper — most managers will never need to leave it.
 activeTab = 'chat';
 $('chat-input').focus();
+
+// Load current user / role and adapt UI accordingly.
+const ROLE_RANK = { read_only: 1, manager: 2, owner: 3 };
+let currentUser = { email: '', role: 'owner' };
+(async function loadMe() {
+  try {
+    const r = await fetch('/api/admin/me', { credentials: 'include' });
+    if (r.ok) {
+      const me = await r.json();
+      currentUser = { email: me.email || '', role: me.role || 'owner' };
+    }
+  } catch (e) {}
+  // Show user chip in the top bar
+  if (currentUser.email) {
+    const userEl = $('admin-user');
+    $('admin-user-email').textContent = currentUser.email;
+    const roleEl = $('admin-user-role');
+    roleEl.textContent = currentUser.role.replace('_', ' ');
+    roleEl.className = 'admin-user__role admin-user__role--' + currentUser.role;
+    userEl.hidden = false;
+  }
+  // Hide UI based on role
+  const rank = ROLE_RANK[currentUser.role] || 3;
+  if (rank < ROLE_RANK.manager) {
+    // Read-only: hide save bar (form-edit save) and form tabs
+    document.querySelectorAll('.tab').forEach((t) => {
+      const slug = t.dataset.tab;
+      if (['site', 'locations', 'menu', 'posts', 'press', 'jobs'].includes(slug)) t.hidden = true;
+    });
+    const sb = document.getElementById('save-bar');
+    if (sb) sb.style.display = 'none';
+  }
+  if (rank < ROLE_RANK.owner) {
+    // Non-owner: history undo buttons hidden via CSS class on body
+    document.body.classList.add('no-undo');
+  }
+})();
 </script>
 </body>
 </html>
