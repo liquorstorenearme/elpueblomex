@@ -353,7 +353,7 @@
 
 <div class="save-bar" id="save-bar">
   <span class="dirty-tag">● Unsaved changes</span>
-  <input type="text" id="commit-msg" placeholder="Commit message (optional — e.g. 'Update hero copy')">
+  <input type="text" id="commit-msg" placeholder="Note (optional — e.g. 'Updated hours for summer')">
   <button class="btn-ghost" id="discard-btn" style="color: var(--cream); border-color: rgba(250,240,216,0.3);">Discard</button>
   <button class="btn-primary" id="save-btn">Save & Publish</button>
 </div>
@@ -630,7 +630,7 @@ async function confirmPending() {
       tag.style.background = '#ecf7e8';
       tag.style.borderColor = '#7fb86b';
       tag.style.color = '#2a5e1e';
-      tag.innerHTML = `✓ Saved. <a href="${esc(d.applied.commitUrl || '#')}" target="_blank" rel="noopener">View commit</a> — Vercel is rebuilding.`;
+      tag.textContent = `✓ Saved — your change will be live on the site in about a minute.`;
       chatThread().appendChild(tag);
       chatScroll();
     }
@@ -710,16 +710,17 @@ async function renderHistory() {
       item.className = 'history-item';
       const date = c.date ? new Date(c.date).toLocaleString() : '—';
       const isAuto = /^Auto-refresh/i.test(c.title);
+      // Strip the "Admin chat: " / "Admin: " prefix from the title for cleaner display
+      const cleanTitle = c.title.replace(/^Admin( chat)?:\s*/i, '');
       item.innerHTML = `
         <div class="history-item__main">
-          <p class="history-item__title">${esc(c.title)}</p>
+          <p class="history-item__title">${esc(cleanTitle)}</p>
           <div class="history-item__meta">
             <span>${esc(c.author)}</span>
             <span>${esc(date)}</span>
-            <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.shortSha)}</a>
           </div>
         </div>
-        ${isAuto ? '' : `<button class="history-revert-btn" data-sha="${esc(c.sha)}">Revert</button>`}
+        ${isAuto ? '' : `<button class="history-revert-btn" data-sha="${esc(c.sha)}">Undo</button>`}
       `;
       list.appendChild(item);
     }
@@ -735,9 +736,9 @@ async function renderHistory() {
 
 async function doRevert(btn) {
   const sha = btn.dataset.sha;
-  if (!confirm('Revert this commit? It will create a new commit that restores the previous state.')) return;
+  if (!confirm('Undo this change? It will restore the previous content.')) return;
   btn.disabled = true;
-  btn.textContent = 'Reverting…';
+  btn.textContent = 'Undoing…';
   try {
     const r = await fetch('/api/admin/revert', {
       method: 'POST',
@@ -749,12 +750,12 @@ async function doRevert(btn) {
       const d = await r.json().catch(() => ({}));
       throw new Error(d.error || `Revert failed (${r.status})`);
     }
-    toast('Reverted. Vercel is rebuilding.');
+    toast('Reverted. The site will update in about a minute.');
     renderHistory();
   } catch (e) {
-    toast(e.message || 'Revert failed', true);
+    toast(e.message || 'Undo failed', true);
     btn.disabled = false;
-    btn.textContent = 'Revert';
+    btn.textContent = 'Undo';
   }
 }
 
@@ -1606,7 +1607,7 @@ async function saveAll() {
       saved++;
     }
     $('commit-msg').value = '';
-    toast(`Saved ${saved} file${saved === 1 ? '' : 's'} — Vercel is rebuilding.`);
+    toast(`Saved ${saved} change${saved === 1 ? '' : 's'} — your update will be live on the site in about a minute.`);
     refreshSaveBar();
   } catch (e) {
     toast(e.message || 'Save failed', true);
