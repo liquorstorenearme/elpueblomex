@@ -1338,21 +1338,23 @@ function renderGivesBack() {
 ${ticker("ticker--marigold")}
 
 <section class="section section--cream">
-  <div class="section__inner split">
-    <div>
-      <h2 class="display-sm">Who we <span class="serif" style="color:var(--agave)">support.</span></h2>
-      <ul class="features features--check">
-        ${g.eligible.map(x => `<li>${h(x)}</li>`).join("")}
-      </ul>
+  <div class="section__inner">
+    <div class="split">
+      <div>
+        <h2 class="display-sm">Who we <span class="serif" style="color:var(--agave)">support.</span></h2>
+        <ul class="features features--check">
+          ${g.eligible.map(x => `<li>${h(x)}</li>`).join("")}
+        </ul>
+      </div>
+      <div>
+        <h2 class="display-sm">Who we <span class="serif" style="color:var(--terracotta)">can't.</span></h2>
+        <ul class="features features--x">
+          ${g.ineligible.map(x => `<li>${h(x)}</li>`).join("")}
+        </ul>
+      </div>
     </div>
-    <div>
-      <h2 class="display-sm">Who we <span class="serif" style="color:var(--terracotta)">can't.</span></h2>
-      <ul class="features features--x">
-        ${g.ineligible.map(x => `<li>${h(x)}</li>`).join("")}
-      </ul>
-    </div>
+    <p class="note note--small">${h(g.disclaimer)}</p>
   </div>
-  <p class="note note--small">${h(g.disclaimer)}</p>
 </section>
 
 <section class="section section--cream-2" id="fundraiser-request">
