@@ -163,6 +163,14 @@
         }
       ]
     },
+    "la-jolla": {
+      "placeId": "ChIJGXfa1uAD3IA3OgRSoe001Q",
+      "name": "El Pueblo Mexican Food - La Jolla",
+      "rating": 5.0,
+      "total": 3,
+      "googleUrl": "https://maps.google.com/?cid=15363165505989130807",
+      "reviews": []
+    },
     "del-mar": {
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
