@@ -382,8 +382,7 @@ ${lcpImage === "/images/home/combo-plate-hero.jpg" ? `<link rel="preload" as="im
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/style.css">
-${site.seo?.ga4 ? `<script>window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};window.__EP_GA_IDS=['${h(site.seo.ga4)}'];gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});gtag('js',new Date());gtag('config','${h(site.seo.ga4)}',{anonymize_ip:true});</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=${h(site.seo.ga4)}"></script>` : ""}
+${site.seo?.ga4 ? `<script>window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};window.__EP_GA_IDS=['${h(site.seo.ga4)}'];gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});gtag('js',new Date());gtag('config','${h(site.seo.ga4)}',{anonymize_ip:true});</script>` : ""}
 `;
 
 const ticker = (variant = "") => `
@@ -465,7 +464,7 @@ const footer = () => `
   ${sunSvg("")}
   <div class="site-footer__top">
     <div class="site-footer__brand">
-      <img class="footer-logo" src="/images/brand/logo-lockup.png" alt="${h(site.brand.name)}">
+      <img class="footer-logo" src="/images/brand/logo-lockup.png" alt="${h(site.brand.name)}" width="340" height="55" loading="lazy" decoding="async">
       <p class="footer-tagline">Home of the <strong>$1.39</strong> Fish Taco.</p>
     </div>
     <div class="site-footer__cols">

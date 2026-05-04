@@ -47,6 +47,15 @@
       }, {})[name];
     }
 
+    function loadGtag() {
+      if (window.__epGtagLoaded || !GA_IDS.length) return;
+      window.__epGtagLoaded = true;
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_IDS[0]);
+      document.head.appendChild(s);
+    }
+
     function pushConsent(deny) {
       window.dataLayer = window.dataLayer || [];
       const fn = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -59,6 +68,7 @@
         security_storage: 'granted'
       });
       GA_IDS.forEach(function (id) { window['ga-disable-' + id] = !!deny; });
+      if (!deny) loadGtag();
     }
 
     function broadcast(status) {
