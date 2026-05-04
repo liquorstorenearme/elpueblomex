@@ -941,8 +941,8 @@ function renderMenu() {
 <section class="page-head page-head--menu">
   <p class="eyebrow">The menu</p>
   <h1 class="display">Fresh&nbsp;food,<br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
-  <p class="lede">Breakfast burritos from 6am. Our famous $1.39 fish tacos all day. Full bar with beers on tap in Del Mar. Order pickup from your nearest location.</p>
-  <p class="menu-stats"><strong>${totalItems}</strong> items · <strong>${menu.categories.length}</strong> categories · <strong>4</strong> kitchens open now</p>
+  <p class="lede">Breakfast burritos from 6am. Our famous $1.39 fish tacos all day. Full bars in Del Mar and Carmel Valley — whiskey, tequila, mezcal, every classic spirit. Order pickup from your nearest location.</p>
+  <p class="menu-stats"><strong>${totalItems}</strong> items · <strong>${menu.categories.length}</strong> categories · <strong>${locations.filter(l => !l.comingSoon).length}</strong> kitchens open now</p>
 </section>
 
 <section class="menu-featured">
