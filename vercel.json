@@ -558,6 +558,226 @@
       "source": "/category/uncategorized/page/2/",
       "destination": "/news/",
       "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-in-cardiff-by-the-sea/",
+      "destination": "/locations/cardiff-by-the-sea/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-in-carlsbad/",
+      "destination": "/locations/carlsbad/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-in-carmel-valley/",
+      "destination": "/locations/carmel-valley/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-in-del-mar/",
+      "destination": "/locations/del-mar/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-in-la-jolla/",
+      "destination": "/locations/la-jolla/",
+      "permanent": true
+    },
+    {
+      "source": "/barback/",
+      "destination": "/jobs/barback/",
+      "permanent": true
+    },
+    {
+      "source": "/bartender/",
+      "destination": "/jobs/bartender/",
+      "permanent": true
+    },
+    {
+      "source": "/busser-food-runner/",
+      "destination": "/jobs/busser-food-runner/",
+      "permanent": true
+    },
+    {
+      "source": "/cashier/",
+      "destination": "/jobs/cashier/",
+      "permanent": true
+    },
+    {
+      "source": "/cook/",
+      "destination": "/jobs/cook/",
+      "permanent": true
+    },
+    {
+      "source": "/dishwasher/",
+      "destination": "/jobs/dishwasher/",
+      "permanent": true
+    },
+    {
+      "source": "/prep-cook/",
+      "destination": "/jobs/prep-cook/",
+      "permanent": true
+    },
+    {
+      "source": "/shift-leader/",
+      "destination": "/jobs/shift-leader/",
+      "permanent": true
+    },
+    {
+      "source": "/store-manager/",
+      "destination": "/jobs/store-manager/",
+      "permanent": true
+    },
+    {
+      "source": "/a-slice-of-mexico-in-la-costa/",
+      "destination": "/news/a-slice-of-mexico-in-la-costa/",
+      "permanent": true
+    },
+    {
+      "source": "/anatomy-of-a-fish-taco-a-perfect-fusion-of-flavors/",
+      "destination": "/news/anatomy-of-a-fish-taco/",
+      "permanent": true
+    },
+    {
+      "source": "/bunuelos-a-crispy-and-sweet-treat-at-el-pueblo-mexican-food/",
+      "destination": "/news/bunuelos-a-crispy-and-sweet-treat/",
+      "permanent": true
+    },
+    {
+      "source": "/delicious-fish-tacos-near-del-mar/",
+      "destination": "/news/fish-tacos-near-del-mar/",
+      "permanent": true
+    },
+    {
+      "source": "/fresh-and-authentic-mexican-food-at-el-pueblo-mex/",
+      "destination": "/news/fresh-and-authentic-mexican-food/",
+      "permanent": true
+    },
+    {
+      "source": "/the-importance-of-fresh-ingredients-in-mexican-cuisine/",
+      "destination": "/news/the-importance-of-fresh-ingredients-in-mexican-cuisine/",
+      "permanent": true
+    },
+    {
+      "source": "/2-for-10-tacos-amazing-deal-at-el-pueblo-mexican-food/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/breakfast-burrito/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-carmel-valley-location-opening-soon/",
+      "destination": "/locations/carmel-valley/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-bringing-authentic-flavors-to-carmel-valley/",
+      "destination": "/locations/carmel-valley/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-gift-cards-share-authentic-mexican-flavors/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-gives-back/",
+      "destination": "/gives-back/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-opening-fifth-location-in-la-jolla/",
+      "destination": "/locations/la-jolla/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-taste-the-essence-of-quality/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/el-pueblo-mexican-food-with-a-full-bar-in-del-mar-california/",
+      "destination": "/bars/",
+      "permanent": true
+    },
+    {
+      "source": "/enjoy-a-free-12oz-orange-juice-with-any-breakfast-item/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/jones-vs-miocic-on-november-16-2024-at-el-pueblo-mex-no-cover/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/tyson-paul-fight-on-november-15-2024-at-el-pueblo-mex-no-cover/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/voted-1-on-yelp-discover-the-best-mexican-food-in-north-san-diego-county/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/watch-ufc-307-live-at-el-pueblo-mexican-food/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/watch-ufc-310-live-at-el-pueblo-mex-no-cover/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/watch-ufc-311-makhachev-vs-tsarukyan-live/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/party-packs/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/awsm_job_openings-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/category-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/job-location-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/job-type-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/wpa-stats-type-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
     }
   ]
 }
