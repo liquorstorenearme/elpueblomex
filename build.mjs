@@ -746,7 +746,7 @@ ${ticker("ticker--terracotta")}
     { q: "Where is the nearest El Pueblo Mexican restaurant near me?", a: "El Pueblo Mexican Food has five locations across North County San Diego: Cardiff-by-the-Sea (open 24 hours), Carlsbad at La Costa Town Square, Carmel Valley, Del Mar, and La Jolla opening Spring 2026. Visit our Locations page to find the one nearest you." },
     { q: "What time do you open?", a: "Cardiff is open 24 hours. Carmel Valley and Del Mar are open 6am to midnight daily. Carlsbad is 6am to 10pm (Sun-Thu) and 6am to midnight (Fri-Sat)." },
     { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.39 Fish Taco is unlimited. Order one. Order ten. Same price." },
-    { q: "Do you have a full bar?", a: "Yes — full bars at Del Mar and Carmel Valley, with beers on tap at Del Mar, premium tequila and mezcal, and house margaritas." },
+    { q: "Do you have a full bar?", a: "Yes — real full bars at Del Mar and Carmel Valley with whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas. Beers on tap at Del Mar." },
     { q: "Do you cater?", a: "Yes. Same-day Party Packs (rolled tacos, enchiladas, quesadilla trays, make-your-own taco packs) and full-service catering with taco bars at all four open locations." }
   ];
   return layout({
@@ -1014,7 +1014,7 @@ ${ticker("ticker--agave")}
     <header class="section__head section__head--center">
       <p class="eyebrow">At the bar</p>
       <h2 class="display-sm">Full bars at <span class="serif" style="color:var(--terracotta)">Del Mar</span> &amp; <span class="serif" style="color:var(--terracotta)">Carmel Valley</span></h2>
-      <p class="lede">beers on tap at Del Mar. Premium tequila and mezcal flights. House margaritas. Ask your server for the current list — seasonal rotations are on the board.</p>
+      <p class="lede">Whiskey, bourbon, vodka, gin, rum, tequila, mezcal — every classic spirit, plus beers on tap at Del Mar, classic cocktails, wine, and fresh-pressed margaritas. Ask your server for the current list — seasonal rotations are on the board.</p>
       <div class="cta-row" style="justify-content:center;margin-top:24px;">
         <a class="btn btn--primary" href="/locations/del-mar/">Visit Del Mar</a>
         <a class="btn btn--ghost" href="/locations/carmel-valley/">Visit Carmel Valley</a>
@@ -1341,7 +1341,7 @@ ${ticker("ticker--terracotta")}
   ]);
   return layout({
     title: `Bars — ${site.brand.name} | Full Bar in Del Mar & Carmel Valley`,
-    description: "Two real full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley. Whiskey, bourbon, cocktails, beers on tap, wine, fresh-pressed margaritas, premium tequila and mezcal. Daily happy hour, heated patios, open until midnight.",
+    description: "Two real full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley. Whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, beers on tap, wine, fresh-pressed margaritas. Daily happy hour, heated patios, open until midnight.",
     canonicalPath: "/bars/",
     body,
     ogImage: "/og/bars.jpg",
@@ -1349,7 +1349,7 @@ ${ticker("ticker--terracotta")}
     schema: [
       webPageSchema({
         name: "Bars at El Pueblo Mexican Food",
-        description: "Full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley locations. Tequila, mezcal, margaritas, beers on tap, daily happy hour.",
+        description: "Full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley locations. Whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, margaritas, beers on tap, daily happy hour.",
         canonical: "/bars/"
       }),
       crumbs

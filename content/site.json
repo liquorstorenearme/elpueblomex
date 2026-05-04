@@ -48,7 +48,7 @@
     "FIVE LOCATIONS",
     "CARDIFF · CARLSBAD · CARMEL VALLEY · DEL MAR",
     "LA JOLLA OPENING SOON",
-    "FULL BARS · TEQUILA · MEZCAL",
+    "FULL BARS · WHISKEY · TEQUILA · MEZCAL · EVERY SPIRIT",
     "EAT IN · TAKE OUT · CATERING"
   ],
   "home": {
@@ -78,7 +78,7 @@
       },
       {
         "title": "Cervezas & Margs",
-        "body": "Full bars in Del Mar and Carmel Valley with beers on tap, premium tequila, and house margaritas."
+        "body": "Full bars in Del Mar and Carmel Valley — whiskey, bourbon, vodka, gin, rum, tequila, mezcal. Beers on tap at Del Mar, fresh-pressed margaritas, and every classic cocktail."
       }
     ],
     "awardCallout": {
@@ -127,7 +127,7 @@
     "heroImage": "/images/locations/del-mar-hero.jpg",
     "bullets": [
       "Heated patios at Del Mar and Carmel Valley — year-round comfort",
-      "Full bar with craft margaritas, premium tequila, mezcal, and beers on tap at Del Mar",
+      "Full bar with every classic spirit (whiskey, bourbon, vodka, gin, rum, tequila, mezcal), craft margaritas, beers on tap at Del Mar",
       "Experienced bartenders, perfectly mixed drinks",
       "Catering menus built around your group size",
       "Min. party size: 8 guests"
