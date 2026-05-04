@@ -1,0 +1,84 @@
+{
+  "savedAt": "2026-05-04",
+  "purpose": "Captured 'now open' La Jolla data while temporarily reverting the live site to 'coming soon'. Copy the 'data' object back into content/locations.json (matching by slug) and flip comingSoon:false to relaunch.",
+  "data": {
+    "slug": "la-jolla",
+    "name": "La Jolla",
+    "short": "La Jolla",
+    "tag": "Pearl Street",
+    "comingSoon": false,
+    "address": {
+      "street": "564 Pearl Street",
+      "city": "La Jolla",
+      "region": "CA",
+      "zip": "92037"
+    },
+    "phone": "(111) 111-1111",
+    "phoneE164": "+18583526357",
+    "hours": {
+      "summary": "7 days a week · 6am–midnight",
+      "mon": "6:00 AM – 12:00 AM",
+      "tue": "6:00 AM – 12:00 AM",
+      "wed": "6:00 AM – 12:00 AM",
+      "thu": "6:00 AM – 12:00 AM",
+      "fri": "6:00 AM – 12:00 AM",
+      "sat": "6:00 AM – 12:00 AM",
+      "sun": "6:00 AM – 12:00 AM"
+    },
+    "orderOnlineUrl": "",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=564+Pearl+Street+La+Jolla+CA+92037",
+    "geo": {
+      "lat": 32.8481,
+      "lon": -117.2742
+    },
+    "features": [
+      "Beer & wine",
+      "6am to midnight, 7 days",
+      "Walking distance to La Jolla Cove"
+    ],
+    "description": "Now open at 564 Pearl Street in La Jolla Village — the former Jack in the Box site. The full El Pueblo menu, beer and wine, six in the morning until midnight every day.",
+    "hero": "/images/locations/la-jolla-hero.jpg",
+    "seoTitle": "Mexican Food in La Jolla — Now Open at 564 Pearl Street | El Pueblo",
+    "seoDescription": "El Pueblo Mexican Food La Jolla — now open at 564 Pearl Street. Fish tacos, breakfast burritos, carne asada, beer & wine. 6am to midnight, 7 days a week. (858) 352-6357.",
+    "body": {
+      "sections": [
+        {
+          "h2": "Mexican Food in La Jolla — Now Open",
+          "paragraphs": [
+            "El Pueblo's fifth location is open at 564 Pearl Street in La Jolla Village. We took over the former Jack in the Box site and brought the full El Pueblo menu — the $1.39 fish taco, breakfast burritos, carne asada, enchiladas, tortas, bowls — plus beer and wine. Six in the morning until midnight, seven days a week.",
+            "We're a short walk from La Jolla Cove, Scripps Park, and the shops along Prospect and Pearl. The southernmost El Pueblo, joining Del Mar (4.5 miles north), Carmel Valley (10 miles northeast), and the original Cardiff and Carlsbad kitchens up the coast."
+          ]
+        },
+        {
+          "h2": "What to Expect",
+          "paragraphs": [
+            "The full El Pueblo menu — fish tacos, breakfast burritos, carne asada plates, enchiladas, quesadillas, chile rellenos, tortas, bowls, and kids options — all made fresh every day. Beer and wine on the menu. Order at the counter, eat in or take out. Six in the morning to midnight, every day of the week."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is El Pueblo La Jolla open?",
+          "a": "Yes. We're open at 564 Pearl Street, La Jolla, CA 92037. Hours are 6am to midnight, seven days a week."
+        },
+        {
+          "q": "Where is El Pueblo La Jolla?",
+          "a": "564 Pearl Street, La Jolla, CA 92037 — in La Jolla Village, a short walk from La Jolla Cove, Scripps Park, and the shops along Prospect Street. The former Jack in the Box site."
+        },
+        {
+          "q": "What's on the La Jolla menu?",
+          "a": "The full El Pueblo menu — $1.39 fish taco, breakfast burritos, carne asada plates, enchiladas, quesadillas, chile rellenos, tortas, bowls, and the kids menu. Beer and wine to drink."
+        },
+        {
+          "q": "Does La Jolla have a full bar?",
+          "a": "La Jolla serves beer and wine. For a full bar — whiskey, bourbon, vodka, gin, rum, tequila, mezcal, every classic cocktail — head to our Del Mar or Carmel Valley locations."
+        },
+        {
+          "q": "What are the hours at El Pueblo La Jolla?",
+          "a": "Six in the morning until midnight, seven days a week."
+        }
+      ]
+    },
+    "googlePlaceId": "ChIJGXfa1uAD3IARNzoEUqHtNNU"
+  }
+}

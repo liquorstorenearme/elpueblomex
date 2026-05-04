@@ -498,7 +498,7 @@ const footer = () => `
       <div>
         <h3>Visit</h3>
         <ul>
-          ${locations.filter(l => !l.comingSoon).map(l => `<li><a href="/locations/${h(l.slug)}/">${h(l.name)}${l.slug === "la-jolla" ? ` <span class="tag">new</span>` : ""}</a></li>`).join("")}
+          ${locations.map(l => `<li><a href="/locations/${h(l.slug)}/">${h(l.name)}${l.comingSoon ? ` <span class="tag">soon</span>` : (l.slug === "la-jolla" ? ` <span class="tag">new</span>` : "")}</a></li>`).join("")}
         </ul>
       </div>
       <div>
@@ -557,7 +557,7 @@ ${schema.map(s => jsonLd(s)).join("\n")}
 </head>
 <body class="${h(bodyClass)}">
 <a class="skip-link" href="#main">Skip to main content</a>
-${announceStrip()}
+${locations.find(l => l.slug === "la-jolla" && !l.comingSoon) ? announceStrip() : ""}
 ${ticker()}
 ${header()}
 <main id="main" tabindex="-1">${body}</main>
@@ -649,13 +649,13 @@ ${ticker("ticker--agave")}
     <header class="section__head">
       <p class="eyebrow">Find a location near you</p>
       <h2 class="display-sm">Five locations across <span class="serif" style="color:var(--terracotta)">San Diego</span></h2>
-      <p class="section__lede">Five El Pueblo locations across North County San Diego — Cardiff, Carlsbad, Carmel Valley, Del Mar, and our newest in La Jolla. Pick the one nearest you below.</p>
+      <p class="section__lede">Five El Pueblo locations across North County San Diego — Cardiff, Carlsbad, Carmel Valley, Del Mar, and La Jolla (opening Spring 2026). Pick the one nearest you below.</p>
     </header>
     <div class="locations-grid">
       <div class="grid">
         ${locations.map(l => `
-        <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""} ${l.slug === "la-jolla" ? "loc-card--new" : ""}" href="/locations/${h(l.slug)}/">
-          ${l.slug === "la-jolla" ? `<span class="loc-card__ribbon" aria-label="Newly opened">New</span>` : ""}
+        <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""} ${l.slug === "la-jolla" && !l.comingSoon ? "loc-card--new" : ""}" href="/locations/${h(l.slug)}/">
+          ${l.slug === "la-jolla" && !l.comingSoon ? `<span class="loc-card__ribbon" aria-label="Newly opened">New</span>` : ""}
           <div class="loc-card__media" style="background-image:url('${h(l.hero)}')">
             <span class="tag">${h(l.tag)}</span>
           </div>
@@ -743,7 +743,7 @@ ${posts.length ? `
 ${ticker("ticker--terracotta")}
 `;
   const faqs = [
-    { q: "Where is the nearest El Pueblo Mexican restaurant near me?", a: "El Pueblo Mexican Food has five locations across North County San Diego: Cardiff-by-the-Sea (open 24 hours), Carlsbad at La Costa Town Square, Carmel Valley, Del Mar, and La Jolla on Pearl Street. Visit our Locations page to find the one nearest you." },
+    { q: "Where is the nearest El Pueblo Mexican restaurant near me?", a: "El Pueblo Mexican Food has five locations across North County San Diego: Cardiff-by-the-Sea (open 24 hours), Carlsbad at La Costa Town Square, Carmel Valley, Del Mar, and La Jolla opening Spring 2026. Visit our Locations page to find the one nearest you." },
     { q: "What time do you open?", a: "Cardiff is open 24 hours. Carmel Valley and Del Mar are open 6am to midnight daily. Carlsbad is 6am to 10pm (Sun-Thu) and 6am to midnight (Fri-Sat)." },
     { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.39 Fish Taco is unlimited. Order one. Order ten. Same price." },
     { q: "Do you have a full bar?", a: "Yes — full bars at Del Mar and Carmel Valley, with beers on tap at Del Mar, premium tequila and mezcal, and house margaritas." },
@@ -751,7 +751,7 @@ ${ticker("ticker--terracotta")}
   ];
   return layout({
     title: `Mexican Food in San Diego — ${site.brand.name} | 5 Locations`,
-    description: "Looking for Mexican food near you? El Pueblo Mexican Food has five locations across North San Diego County — Cardiff, Carlsbad, Carmel Valley, Del Mar, and now La Jolla. Voted #1 on Yelp. Fish tacos, full bars, open late.",
+    description: "Looking for Mexican food near you? El Pueblo Mexican Food has five locations across North San Diego County — Cardiff, Carlsbad, Carmel Valley, Del Mar, and La Jolla (opening soon). Voted #1 on Yelp. Fish tacos, full bars, open late.",
     canonicalPath: "/",
     body,
     ogImage: "/og/home.jpg",
@@ -782,8 +782,8 @@ ${ticker("ticker--terracotta")}
     <div class="locations-grid">
       <div class="grid">
         ${locations.map(l => `
-        <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""} ${l.slug === "la-jolla" ? "loc-card--new" : ""}" href="/locations/${h(l.slug)}/">
-          ${l.slug === "la-jolla" ? `<span class="loc-card__ribbon" aria-label="Newly opened">New</span>` : ""}
+        <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""} ${l.slug === "la-jolla" && !l.comingSoon ? "loc-card--new" : ""}" href="/locations/${h(l.slug)}/">
+          ${l.slug === "la-jolla" && !l.comingSoon ? `<span class="loc-card__ribbon" aria-label="Newly opened">New</span>` : ""}
           <div class="loc-card__media" style="background-image:url('${h(l.hero)}')">
             <span class="tag">${h(l.tag)}</span>
           </div>
@@ -816,7 +816,7 @@ ${ticker("ticker--terracotta")}
   };
   return layout({
     title: `Locations — ${site.brand.name} | 5 in North County San Diego`,
-    description: "All five El Pueblo Mexican Food locations: Cardiff-by-the-Sea (24 hours), Carlsbad (La Costa Town Square), Carmel Valley (full bar), Del Mar (beers on tap), and La Jolla (Pearl Street, beer & wine).",
+    description: "All five El Pueblo Mexican Food locations: Cardiff-by-the-Sea (24 hours), Carlsbad (La Costa Town Square), Carmel Valley (full bar), Del Mar (beers on tap), and La Jolla (Spring 2026).",
     canonicalPath: "/locations/",
     body,
     ogImage: "/og/locations.jpg",
@@ -1500,7 +1500,7 @@ ${ticker("ticker--terracotta")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Contact", url: "/contact/" }]);
   return layout({
     title: `Contact — ${site.brand.name} | All 5 Locations + Hours`,
-    description: "Contact El Pueblo Mexican Food — addresses, phone, and hours for Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, and La Jolla. Send us a message or stop by.",
+    description: "Contact El Pueblo Mexican Food — addresses, phone, and hours for Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, and La Jolla (Spring 2026). Send us a message or stop by.",
     canonicalPath: "/contact/",
     body,
     ogImage: "/og/contact.jpg",
@@ -1565,7 +1565,7 @@ ${ticker("ticker--marigold")}
 <section class="section section--cream-2">
   <div class="cta-band">
     <h2>See the <em>$1.39</em> fish taco?</h2>
-    <p>Come taste it. Five locations across North County San Diego.</p>
+    <p>Come taste it. Four locations open now, La Jolla opening Spring 2026.</p>
     <div class="cta-row">
       <a class="btn btn--primary" href="/locations/">Find a location</a>
       <a class="btn btn--ghost" href="/menu/">See the menu</a>

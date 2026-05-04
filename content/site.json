@@ -8,14 +8,38 @@
     "awardLine": "Voted #1 on Yelp's Top Ten Restaurants in North San Diego County."
   },
   "nav": [
-    { "label": "Menu", "href": "/menu/" },
-    { "label": "Locations", "href": "/locations/" },
-    { "label": "Bars", "href": "/bars/" },
-    { "label": "Catering", "href": "/catering/" },
-    { "label": "Events", "href": "/event-space/" },
-    { "label": "Gives Back", "href": "/gives-back/" },
-    { "label": "News", "href": "/news/" },
-    { "label": "Careers", "href": "/careers/" }
+    {
+      "label": "Menu",
+      "href": "/menu/"
+    },
+    {
+      "label": "Locations",
+      "href": "/locations/"
+    },
+    {
+      "label": "Bars",
+      "href": "/bars/"
+    },
+    {
+      "label": "Catering",
+      "href": "/catering/"
+    },
+    {
+      "label": "Events",
+      "href": "/event-space/"
+    },
+    {
+      "label": "Gives Back",
+      "href": "/gives-back/"
+    },
+    {
+      "label": "News",
+      "href": "/news/"
+    },
+    {
+      "label": "Careers",
+      "href": "/careers/"
+    }
   ],
   "ticker": [
     "$1.39 FISH TACOS — UNLIMITED",
@@ -23,7 +47,7 @@
     "FRESH DAILY",
     "FIVE LOCATIONS",
     "CARDIFF · CARLSBAD · CARMEL VALLEY · DEL MAR",
-    "NOW OPEN IN LA JOLLA",
+    "LA JOLLA OPENING SOON",
     "FULL BARS · TEQUILA · MEZCAL",
     "EAT IN · TAKE OUT · CATERING"
   ],
@@ -32,15 +56,30 @@
       "eyebrow": "The best Mexican food in North County San Diego",
       "headline": "Fresh Mexican food.",
       "headlineAccent": "Five locations.",
-      "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
-      "primaryCta": { "label": "Find a Location", "href": "/locations/" },
-      "secondaryCta": { "label": "See the Menu", "href": "/menu/" },
+      "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla (opening soon) — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
+      "primaryCta": {
+        "label": "Find a Location",
+        "href": "/locations/"
+      },
+      "secondaryCta": {
+        "label": "See the Menu",
+        "href": "/menu/"
+      },
       "image": "/images/home/combo-plate-hero.jpg"
     },
     "pillars": [
-      { "title": "$1.39 Fish Tacos", "body": "Crispy, fried-to-order, chipotle sauce, fresh cabbage and pico. Order as many as you want — there is no limit." },
-      { "title": "Fresh Every Day", "body": "Locally sourced vegetables delivered every morning. Nothing sits overnight. You can taste it in every bite." },
-      { "title": "Cervezas & Margs", "body": "Full bars in Del Mar and Carmel Valley with beers on tap, premium tequila, and house margaritas." }
+      {
+        "title": "$1.39 Fish Tacos",
+        "body": "Crispy, fried-to-order, chipotle sauce, fresh cabbage and pico. Order as many as you want — there is no limit."
+      },
+      {
+        "title": "Fresh Every Day",
+        "body": "Locally sourced vegetables delivered every morning. Nothing sits overnight. You can taste it in every bite."
+      },
+      {
+        "title": "Cervezas & Margs",
+        "body": "Full bars in Del Mar and Carmel Valley with beers on tap, premium tequila, and house margaritas."
+      }
     ],
     "awardCallout": {
       "source": "Yelp",
@@ -53,11 +92,31 @@
     "heroSub": "Whether it's a boardroom lunch or a backyard party, our taco bars and party packs feed every size event. Same-day Party Packs or full catering requests — we'll make it easy.",
     "heroImage": "/images/home/fish-taco.jpg",
     "partyPacks": [
-      { "name": "Make-Your-Own Tacos Party Pack", "serves": "Makes 20 tacos", "description": "Your choice of protein, fresh tortillas, and all the fixings — guests build their own." },
-      { "name": "Rolled Tacos (50 ct)", "serves": "Serves 10-15", "description": "Crispy rolled tacos, 50 to the pack, served with guacamole and sour cream." },
-      { "name": "Enchiladas (25 ct)", "serves": "Serves 12-15", "description": "Red or green sauce, your choice of filling. Baked fresh and ready to serve." },
-      { "name": "Quesadilla Party Tray", "serves": "Serves 12", "description": "Full tray of quesadillas — cheese, chicken, or carne asada." },
-      { "name": "Chips and Salsa Full Tray", "serves": "Serves 25", "description": "Fresh-fried tortilla chips with a 32oz salsa cup." }
+      {
+        "name": "Make-Your-Own Tacos Party Pack",
+        "serves": "Makes 20 tacos",
+        "description": "Your choice of protein, fresh tortillas, and all the fixings — guests build their own."
+      },
+      {
+        "name": "Rolled Tacos (50 ct)",
+        "serves": "Serves 10-15",
+        "description": "Crispy rolled tacos, 50 to the pack, served with guacamole and sour cream."
+      },
+      {
+        "name": "Enchiladas (25 ct)",
+        "serves": "Serves 12-15",
+        "description": "Red or green sauce, your choice of filling. Baked fresh and ready to serve."
+      },
+      {
+        "name": "Quesadilla Party Tray",
+        "serves": "Serves 12",
+        "description": "Full tray of quesadillas — cheese, chicken, or carne asada."
+      },
+      {
+        "name": "Chips and Salsa Full Tray",
+        "serves": "Serves 25",
+        "description": "Fresh-fried tortilla chips with a 32oz salsa cup."
+      }
     ],
     "closingNote": "Contact us for pricing and availability. We'll confirm timing and quantities based on your location."
   },
@@ -164,7 +223,7 @@
   "careers": {
     "heroEyebrow": "Join the team",
     "heroHeadline": "We're hiring at every location.",
-    "heroSub": "El Pueblo has five locations across North County San Diego — Cardiff, Carlsbad, Carmel Valley, Del Mar, and our newest in La Jolla. We're always looking for energetic, reliable people to join the team. Applications are considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law. We are proud to be an Equal Opportunity Employer.",
+    "heroSub": "El Pueblo is growing — five locations across North County San Diego, and La Jolla opening Spring 2026. We're always looking for energetic, reliable people to join the team. Applications are considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law. We are proud to be an Equal Opportunity Employer.",
     "benefitsIntro": "Every full-time role comes with:",
     "benefits": [
       "Health Insurance (Medical, Dental, Vision on select roles)",
