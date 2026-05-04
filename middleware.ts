@@ -10,6 +10,12 @@ export const config = {
     "/api/admin/save/",
     "/api/admin/upload",
     "/api/admin/upload/",
+    "/api/admin/chat",
+    "/api/admin/chat/",
+    "/api/admin/history",
+    "/api/admin/history/",
+    "/api/admin/revert",
+    "/api/admin/revert/",
   ],
 };
 

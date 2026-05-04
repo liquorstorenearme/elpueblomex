@@ -225,6 +225,62 @@
   .panel-collapsed.open > .panel-body { display: grid; }
   .panel-collapsed .chevron { transition: transform 0.15s; color: var(--muted); }
   .panel-collapsed.open .chevron { transform: rotate(90deg); }
+
+  /* ---------- Chat tab ---------- */
+  .tab--chat { color: var(--terracotta); font-weight: 700; }
+  .chat-shell { display: flex; flex-direction: column; max-width: 880px; margin: 0 auto; min-height: 60vh; }
+  .chat-thread { flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; }
+  .chat-empty { text-align: center; padding: 40px 20px; color: var(--muted); }
+  .chat-empty h2 { font-size: 24px; color: var(--ink); margin: 0 0 8px; font-weight: 700; letter-spacing: -0.01em; }
+  .chat-empty p { font-size: 14px; max-width: 460px; margin: 0 auto 24px; line-height: 1.5; }
+  .chat-suggestions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .chat-suggest { background: #fff; border: 1px solid #e5d8b6; color: var(--ink); padding: 8px 14px; border-radius: 999px; font-size: 13px; cursor: pointer; transition: background 0.15s; }
+  .chat-suggest:hover { background: #f8eecf; }
+  .chat-msg { display: flex; gap: 12px; max-width: 100%; }
+  .chat-msg__avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--terracotta); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; flex: none; font-size: 13px; }
+  .chat-msg--user .chat-msg__avatar { background: var(--ink); }
+  .chat-msg__body { flex: 1; min-width: 0; }
+  .chat-msg__name { font-size: 12px; font-weight: 700; color: var(--muted); margin: 0 0 4px; }
+  .chat-msg__text { font-size: 14px; line-height: 1.5; color: var(--ink); white-space: pre-wrap; word-wrap: break-word; }
+  .chat-msg__text code { background: #f3e6c8; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+  .chat-tool-call { background: #fffaeb; border: 1px solid #e9d588; border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 13px; color: #6b5a1d; }
+  .chat-tool-call code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .chat-pending { background: #fffaeb; border: 2px solid var(--terracotta); border-radius: 12px; padding: 18px 20px; margin-top: 4px; }
+  .chat-pending__title { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
+  .chat-pending__title::before { content: "⚠"; color: var(--terracotta); }
+  .chat-pending__summary { font-size: 14px; color: var(--ink); margin: 0 0 14px; }
+  .chat-diff { background: #fff; border: 1px solid #e5d8b6; border-radius: 8px; overflow: hidden; margin-bottom: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+  .chat-diff__path { padding: 8px 12px; background: #f3e6c8; color: #5a4a1d; font-weight: 700; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .chat-diff__row { padding: 6px 12px; border-top: 1px solid #f0e2bd; white-space: pre-wrap; word-wrap: break-word; }
+  .chat-diff__row--before { background: #fdf0f0; color: #8b2929; }
+  .chat-diff__row--after { background: #ecf7e8; color: #2a5e1e; }
+  .chat-diff__label { font-weight: 700; margin-right: 8px; opacity: 0.6; user-select: none; }
+  .chat-pending__actions { display: flex; gap: 8px; }
+  .chat-confirm-btn { background: #2a5e1e; color: #fff; border: 0; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 13px; }
+  .chat-confirm-btn:hover { background: #1d4413; }
+  .chat-cancel-btn { background: #fff; color: var(--ink); border: 1px solid #e5d8b6; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px; }
+  .chat-cancel-btn:hover { background: #f8eecf; }
+  .chat-loading { display: flex; gap: 4px; padding: 8px 0; }
+  .chat-loading span { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); animation: chatdot 1.2s ease-in-out infinite; }
+  .chat-loading span:nth-child(2) { animation-delay: 0.2s; }
+  .chat-loading span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes chatdot { 0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); } 40% { opacity: 1; transform: scale(1); } }
+  .chat-form { border-top: 1px solid #e5d8b6; padding: 16px 24px; display: flex; gap: 10px; background: #fff; position: sticky; bottom: 0; }
+  .chat-form textarea { flex: 1; resize: none; border: 1px solid #e5d8b6; border-radius: 8px; padding: 10px 12px; font-family: inherit; font-size: 14px; line-height: 1.4; }
+  .chat-form textarea:focus { outline: 2px solid var(--terracotta); outline-offset: -1px; border-color: var(--terracotta); }
+  .chat-form button { padding: 0 22px; align-self: stretch; }
+
+  /* ---------- History tab ---------- */
+  .history-list { max-width: 880px; margin: 0 auto; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .history-item { background: #fff; border: 1px solid #e5d8b6; border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; }
+  .history-item__main { flex: 1; min-width: 0; }
+  .history-item__title { font-size: 14px; font-weight: 600; color: var(--ink); margin: 0 0 3px; word-wrap: break-word; }
+  .history-item__meta { font-size: 12px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+  .history-item__meta a { color: var(--muted); }
+  .history-item__meta a:hover { color: var(--ink); }
+  .history-revert-btn { background: #fff; border: 1px solid #c9302c; color: #c9302c; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; flex: none; }
+  .history-revert-btn:hover { background: #c9302c; color: #fff; }
+  .history-revert-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 </style>
 </head>
 <body>
@@ -247,6 +303,8 @@
   <button class="tab" data-tab="posts">News</button>
   <button class="tab" data-tab="press">Press</button>
   <button class="tab" data-tab="jobs">Jobs</button>
+  <button class="tab tab--chat" data-tab="chat">✨ Chat</button>
+  <button class="tab" data-tab="history">History</button>
 </nav>
 
 <main class="admin-shell">
@@ -267,6 +325,29 @@
   </div>
   <div id="tab-jobs" class="tab-panel" hidden>
     <div id="jobs-content"><div class="loading">Loading…</div></div>
+  </div>
+  <div id="tab-chat" class="tab-panel" hidden>
+    <div class="chat-shell">
+      <div id="chat-thread" class="chat-thread" aria-live="polite">
+        <div class="chat-empty">
+          <h2>Ask me to make a change.</h2>
+          <p>I can update menu prices, location hours/phone, ticker items, hero copy, and news posts. I'll show a preview before anything saves.</p>
+          <div class="chat-suggestions">
+            <button type="button" class="chat-suggest" data-prompt="What's the current fish taco price?">What's the current fish taco price?</button>
+            <button type="button" class="chat-suggest" data-prompt="Change Cardiff's phone to (760) 555-0123">Change Cardiff's phone</button>
+            <button type="button" class="chat-suggest" data-prompt="Add a ticker item: SUMMER HOURS NOW">Add a ticker item</button>
+            <button type="button" class="chat-suggest" data-prompt="Update Del Mar Sunday hours to 6am – 11pm">Update Sunday hours at Del Mar</button>
+          </div>
+        </div>
+      </div>
+      <form id="chat-form" class="chat-form">
+        <textarea id="chat-input" placeholder="Tell me what to change…" rows="2"></textarea>
+        <button type="submit" id="chat-send" class="btn-primary">Send</button>
+      </form>
+    </div>
+  </div>
+  <div id="tab-history" class="tab-panel" hidden>
+    <div id="history-content"><div class="loading">Loading…</div></div>
   </div>
 </main>
 
@@ -333,6 +414,8 @@ document.querySelectorAll('.tab').forEach(btn => {
     document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b === btn));
     document.querySelectorAll('.tab-panel').forEach(p => p.hidden = (p.id !== 'tab-' + tab));
     activeTab = tab;
+    if (tab === 'chat') return; // chat panel is self-managed
+    if (tab === 'history') { renderHistory(); return; }
     try {
       await loadFile(tab);
       render(tab);
@@ -341,6 +424,339 @@ document.querySelectorAll('.tab').forEach(btn => {
     }
   });
 });
+
+// ============== Chat ==============
+const chat = {
+  messages: [],          // Anthropic-format messages history (excluding system)
+  pending: null,         // proposed write tool call awaiting confirm
+  busy: false,
+  lastUserPrompt: '',
+};
+
+function chatThread() { return $('chat-thread'); }
+
+function chatScroll() {
+  const t = chatThread();
+  t.scrollTop = t.scrollHeight;
+}
+
+function chatRenderEmpty() {
+  chatThread().innerHTML = `
+    <div class="chat-empty">
+      <h2>Ask me to make a change.</h2>
+      <p>I can update menu prices, location hours/phone, ticker items, hero copy, and news posts. I'll show a preview before anything saves.</p>
+      <div class="chat-suggestions">
+        <button type="button" class="chat-suggest" data-prompt="What's the current fish taco price?">What's the current fish taco price?</button>
+        <button type="button" class="chat-suggest" data-prompt="Change Cardiff's phone to (760) 555-0123">Change Cardiff's phone</button>
+        <button type="button" class="chat-suggest" data-prompt="Add a ticker item: SUMMER HOURS NOW">Add a ticker item</button>
+        <button type="button" class="chat-suggest" data-prompt="Update Del Mar Sunday hours to 6am – 11pm">Update Sunday hours at Del Mar</button>
+      </div>
+    </div>`;
+  document.querySelectorAll('.chat-suggest').forEach(b => {
+    b.addEventListener('click', () => {
+      $('chat-input').value = b.dataset.prompt;
+      $('chat-input').focus();
+    });
+  });
+}
+
+function chatRenderUser(text) {
+  const empty = chatThread().querySelector('.chat-empty');
+  if (empty) empty.remove();
+  const div = document.createElement('div');
+  div.className = 'chat-msg chat-msg--user';
+  div.innerHTML = `<div class="chat-msg__avatar">You</div><div class="chat-msg__body"><p class="chat-msg__name">You</p><div class="chat-msg__text"></div></div>`;
+  div.querySelector('.chat-msg__text').textContent = text;
+  chatThread().appendChild(div);
+  chatScroll();
+}
+
+function chatRenderAssistant(blocks) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg chat-msg--assistant';
+  let html = `<div class="chat-msg__avatar">EP</div><div class="chat-msg__body"><p class="chat-msg__name">Assistant</p>`;
+  for (const b of blocks) {
+    if (b.type === 'text' && b.text) {
+      const text = document.createElement('div');
+      text.className = 'chat-msg__text';
+      text.textContent = b.text;
+      html += text.outerHTML;
+    } else if (b.type === 'tool_use') {
+      // Show a small "called X" chip but only for read tools (writes are shown via pending UI)
+      // We can't easily distinguish here so show a generic chip if name suggests read
+      if (/^get_/i.test(b.name)) {
+        html += `<div class="chat-tool-call">Looked up <code>${esc(b.name)}(${esc(JSON.stringify(b.input))})</code></div>`;
+      }
+    }
+  }
+  html += `</div>`;
+  div.innerHTML = html;
+  chatThread().appendChild(div);
+  chatScroll();
+}
+
+function chatRenderLoading() {
+  const div = document.createElement('div');
+  div.id = 'chat-loading-row';
+  div.className = 'chat-msg chat-msg--assistant';
+  div.innerHTML = `<div class="chat-msg__avatar">EP</div><div class="chat-msg__body"><div class="chat-loading"><span></span><span></span><span></span></div></div>`;
+  chatThread().appendChild(div);
+  chatScroll();
+}
+
+function chatRemoveLoading() {
+  const r = $('chat-loading-row');
+  if (r) r.remove();
+}
+
+function diffRows(beforeVal, afterVal) {
+  const fmt = (v) => {
+    if (v === null || v === undefined) return '(empty)';
+    if (typeof v === 'string') return v;
+    return JSON.stringify(v, null, 2);
+  };
+  return `
+    <div class="chat-diff__row chat-diff__row--before"><span class="chat-diff__label">−</span>${esc(fmt(beforeVal))}</div>
+    <div class="chat-diff__row chat-diff__row--after"><span class="chat-diff__label">+</span>${esc(fmt(afterVal))}</div>`;
+}
+
+function chatRenderPending(p) {
+  const div = document.createElement('div');
+  div.className = 'chat-pending';
+  div.id = 'chat-pending';
+  div.innerHTML = `
+    <h3 class="chat-pending__title">Proposed change</h3>
+    <p class="chat-pending__summary">${esc(p.summary)}</p>
+    ${p.preview ? `
+      <div class="chat-diff">
+        <div class="chat-diff__path">${esc(p.preview.path)}</div>
+        ${diffRows(p.preview.before, p.preview.after)}
+      </div>
+    ` : ''}
+    <div class="chat-pending__actions">
+      <button class="chat-confirm-btn" id="chat-confirm">Apply &amp; commit</button>
+      <button class="chat-cancel-btn" id="chat-cancel">Cancel</button>
+    </div>
+  `;
+  chatThread().appendChild(div);
+  $('chat-confirm').addEventListener('click', confirmPending);
+  $('chat-cancel').addEventListener('click', cancelPending);
+  chatScroll();
+}
+
+async function chatSend(prompt) {
+  if (chat.busy || chat.pending) return;
+  if (!prompt || !prompt.trim()) return;
+  chat.busy = true;
+  chat.lastUserPrompt = prompt;
+  // Append user message to thread + history
+  chatRenderUser(prompt);
+  chat.messages.push({ role: 'user', content: prompt });
+  $('chat-input').value = '';
+  chatRenderLoading();
+  try {
+    const r = await fetch('/api/admin/chat', {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chat.messages, userPrompt: prompt }),
+    });
+    chatRemoveLoading();
+    if (!r.ok) {
+      const d = await r.json().catch(() => ({}));
+      throw new Error(d.error || `Chat failed (${r.status})`);
+    }
+    const d = await r.json();
+    chat.messages = d.messages || chat.messages;
+    // Render the latest assistant block (last message in messages)
+    const last = chat.messages[chat.messages.length - 1];
+    if (last && last.role === 'assistant') {
+      chatRenderAssistant(Array.isArray(last.content) ? last.content : [{ type: 'text', text: last.content }]);
+    }
+    if (d.pending) {
+      chat.pending = d.pending;
+      chatRenderPending(d.pending);
+    }
+  } catch (e) {
+    chatRemoveLoading();
+    const div = document.createElement('div');
+    div.className = 'chat-msg chat-msg--assistant';
+    div.innerHTML = `<div class="chat-msg__avatar">!</div><div class="chat-msg__body"><p class="chat-msg__name">Error</p><div class="chat-msg__text" style="color:var(--err)"></div></div>`;
+    div.querySelector('.chat-msg__text').textContent = e.message || 'Something went wrong.';
+    chatThread().appendChild(div);
+  } finally {
+    chat.busy = false;
+  }
+}
+
+async function confirmPending() {
+  if (!chat.pending || chat.busy) return;
+  const p = chat.pending;
+  $('chat-confirm').disabled = true;
+  $('chat-cancel').disabled = true;
+  chat.busy = true;
+  chatRenderLoading();
+  try {
+    const r = await fetch('/api/admin/chat', {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: chat.messages,
+        confirmedToolUseId: p.toolUseId,
+        confirmedToolName: p.toolName,
+        confirmedInput: p.input,
+        userPrompt: chat.lastUserPrompt,
+      }),
+    });
+    chatRemoveLoading();
+    if (!r.ok) {
+      const d = await r.json().catch(() => ({}));
+      throw new Error(d.error || `Apply failed (${r.status})`);
+    }
+    const d = await r.json();
+    // Remove the pending card
+    const pendingEl = $('chat-pending');
+    if (pendingEl) pendingEl.remove();
+    chat.messages = d.messages || chat.messages;
+    chat.pending = null;
+    const last = chat.messages[chat.messages.length - 1];
+    if (last && last.role === 'assistant') {
+      chatRenderAssistant(Array.isArray(last.content) ? last.content : [{ type: 'text', text: last.content }]);
+    }
+    if (d.applied) {
+      const tag = document.createElement('div');
+      tag.className = 'chat-tool-call';
+      tag.style.background = '#ecf7e8';
+      tag.style.borderColor = '#7fb86b';
+      tag.style.color = '#2a5e1e';
+      tag.innerHTML = `✓ Saved. <a href="${esc(d.applied.commitUrl || '#')}" target="_blank" rel="noopener">View commit</a> — Vercel is rebuilding.`;
+      chatThread().appendChild(tag);
+      chatScroll();
+    }
+  } catch (e) {
+    chatRemoveLoading();
+    const div = document.createElement('div');
+    div.className = 'chat-msg chat-msg--assistant';
+    div.innerHTML = `<div class="chat-msg__avatar">!</div><div class="chat-msg__body"><p class="chat-msg__name">Error</p><div class="chat-msg__text" style="color:var(--err)"></div></div>`;
+    div.querySelector('.chat-msg__text').textContent = e.message || 'Apply failed.';
+    chatThread().appendChild(div);
+    $('chat-confirm').disabled = false;
+    $('chat-cancel').disabled = false;
+  } finally {
+    chat.busy = false;
+  }
+}
+
+function cancelPending() {
+  const pendingEl = $('chat-pending');
+  if (pendingEl) pendingEl.remove();
+  chat.pending = null;
+  // Append a synthetic tool_result so the model sees the change was rejected, then close that turn.
+  // Simplest: just drop the in-flight tool_use from messages and tell the user.
+  // Anthropic requires every tool_use have a tool_result. Easiest: clear the conversation.
+  // We'll keep the conversation but record the rejection as a user message.
+  const div = document.createElement('div');
+  div.className = 'chat-tool-call';
+  div.textContent = 'Cancelled. No changes were saved.';
+  chatThread().appendChild(div);
+  // Reset messages to last user message minus the unfinished assistant turn
+  // Find last user message before the unfinished assistant turn
+  for (let i = chat.messages.length - 1; i >= 0; i--) {
+    if (chat.messages[i].role === 'assistant') {
+      chat.messages = chat.messages.slice(0, i);
+      break;
+    }
+  }
+  chatScroll();
+}
+
+$('chat-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  chatSend($('chat-input').value);
+});
+$('chat-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    chatSend($('chat-input').value);
+  }
+});
+document.querySelectorAll('.chat-suggest').forEach(b => {
+  b.addEventListener('click', () => {
+    $('chat-input').value = b.dataset.prompt;
+    $('chat-input').focus();
+  });
+});
+
+// ============== History ==============
+async function renderHistory() {
+  const el = $('history-content');
+  el.innerHTML = `<div class="loading">Loading…</div>`;
+  try {
+    const r = await fetch('/api/admin/history?limit=30', { credentials: 'include' });
+    if (!r.ok) {
+      const d = await r.json().catch(() => ({}));
+      throw new Error(d.error || `History failed (${r.status})`);
+    }
+    const d = await r.json();
+    if (!d.commits || !d.commits.length) {
+      el.innerHTML = `<div class="history-list"><p style="color:var(--muted);text-align:center">No admin commits yet.</p></div>`;
+      return;
+    }
+    const list = document.createElement('div');
+    list.className = 'history-list';
+    for (const c of d.commits) {
+      const item = document.createElement('div');
+      item.className = 'history-item';
+      const date = c.date ? new Date(c.date).toLocaleString() : '—';
+      const isAuto = /^Auto-refresh/i.test(c.title);
+      item.innerHTML = `
+        <div class="history-item__main">
+          <p class="history-item__title">${esc(c.title)}</p>
+          <div class="history-item__meta">
+            <span>${esc(c.author)}</span>
+            <span>${esc(date)}</span>
+            <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.shortSha)}</a>
+          </div>
+        </div>
+        ${isAuto ? '' : `<button class="history-revert-btn" data-sha="${esc(c.sha)}">Revert</button>`}
+      `;
+      list.appendChild(item);
+    }
+    el.innerHTML = '';
+    el.appendChild(list);
+    el.querySelectorAll('.history-revert-btn').forEach(btn => {
+      btn.addEventListener('click', () => doRevert(btn));
+    });
+  } catch (e) {
+    el.innerHTML = `<div class="history-list"><p style="color:var(--err)">Error: ${esc(e.message)}</p></div>`;
+  }
+}
+
+async function doRevert(btn) {
+  const sha = btn.dataset.sha;
+  if (!confirm('Revert this commit? It will create a new commit that restores the previous state.')) return;
+  btn.disabled = true;
+  btn.textContent = 'Reverting…';
+  try {
+    const r = await fetch('/api/admin/revert', {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sha }),
+    });
+    if (!r.ok) {
+      const d = await r.json().catch(() => ({}));
+      throw new Error(d.error || `Revert failed (${r.status})`);
+    }
+    toast('Reverted. Vercel is rebuilding.');
+    renderHistory();
+  } catch (e) {
+    toast(e.message || 'Revert failed', true);
+    btn.disabled = false;
+    btn.textContent = 'Revert';
+  }
+}
 
 // -------- Image upload helper --------
 async function uploadImage(file) {
