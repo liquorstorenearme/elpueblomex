@@ -528,38 +528,41 @@ export default async function handler(req: Request): Promise<Response> {
   const userPrompt: string = body.userPrompt || "";
 
   // If this is a confirmation submission, the front-end has already validated the user
-  // wants to apply the previously-proposed change. Execute, commit, then continue conversation.
+  // wants to apply the previously-proposed change. Execute, commit, then return.
+  // We do NOT make another Anthropic call here — the UI shows a "Saved" tag with the
+  // commit link, and any follow-up user message will trigger a fresh Anthropic turn
+  // with the tool_result already in the message history.
   if (confirmedToolUseId && confirmedToolName && confirmedInput) {
     const tool = TOOL_BY_NAME[confirmedToolName];
     if (!tool || tool.kind !== "write") return json({ error: "Invalid tool to confirm." }, 400);
-    let appliedSummary: string;
-    let commitUrl: string | undefined;
     try {
       const result = await tool.handler(confirmedInput);
-      if (!result.file || result.newContent == null) throw new Error("Tool produced no commit-able change.");
+      if (!result.file || result.newContent == null) {
+        return json({ error: "Tool produced no commit-able change." }, 500);
+      }
       const { sha } = await ghLoad(result.file);
       const commitMsg = `Admin chat: ${result.summary}\n\nPrompt: ${truncate(userPrompt, 200)}`;
       const commit = await ghSave(result.file, result.newContent, sha, commitMsg);
-      appliedSummary = result.summary;
-      commitUrl = commit.url;
+      // Push the tool_result so conversation history is complete for any next turn.
+      messages.push({
+        role: "user",
+        content: [
+          {
+            type: "tool_result",
+            tool_use_id: confirmedToolUseId,
+            content: `Applied successfully. ${result.summary}. Commit: ${commit.url}`,
+          },
+        ],
+      });
+      return json({
+        messages,
+        applied: { summary: result.summary, commitUrl: commit.url, commitSha: commit.commitSha },
+      });
     } catch (e: any) {
-      return json({ error: `Apply failed: ${e.message || e}` }, 500);
+      // Surface the real error so the UI can show what went wrong.
+      const detail = e?.message || String(e);
+      return json({ error: `Apply failed: ${detail}` }, 500);
     }
-    // Add the tool_result to messages so the model can wrap up the turn naturally
-    messages.push({
-      role: "user",
-      content: [
-        {
-          type: "tool_result",
-          tool_use_id: confirmedToolUseId,
-          content: `Applied successfully. ${appliedSummary}. Commit: ${commitUrl}`,
-        },
-      ],
-    });
-    // Run final closing turn (no further tools should be needed)
-    const closing = await callAnthropic(messages, SYSTEM_PROMPT);
-    messages.push({ role: "assistant", content: closing.content });
-    return json({ messages, applied: { summary: appliedSummary, commitUrl } });
   }
 
   // Normal turn: call model, auto-execute reads, pause on writes.
