@@ -2154,7 +2154,7 @@ const legalPages = [
         `${site.brand.name} is committed to making our restaurants, website, and digital services accessible to people of all abilities, including individuals with disabilities. We believe technology should work for everyone, and we continually work to improve the accessibility of elpueblomex.com for our customers, applicants, and partners.`
       ]},
       { h: "Standards we aim to meet", p: [
-        "elpueblomex.com is designed to conform to the World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG) 2.1, Level AA — the accessibility standard most commonly referenced in U.S. regulations and court decisions, including the Americans with Disabilities Act (ADA).",
+        "elpueblomex.com is designed to conform to the World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG) 2.2, Level AA — the latest published guidelines (October 2023). WCAG 2.2 is backward-compatible with WCAG 2.1 AA, the standard most commonly referenced in U.S. regulations and court decisions, including the Americans with Disabilities Act (ADA) and the U.S. Department of Justice's 2024 Title II rule for state and local government websites.",
         "We design and build with the broader WCAG principles — Perceivable, Operable, Understandable, and Robust — as guiding goals."
       ]},
       { h: "Measures we take", p: [
