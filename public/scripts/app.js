@@ -109,6 +109,24 @@
     };
   })();
 
+  const announce = document.querySelector('[data-announce]');
+  if (announce) {
+    const KEY = 'ep_announce_dismissed';
+    const VER = 'la-jolla-2026';
+    let dismissed = null;
+    try { dismissed = localStorage.getItem(KEY); } catch (e) {}
+    if (dismissed === VER) {
+      announce.setAttribute('hidden', '');
+    }
+    const closeBtn = announce.querySelector('[data-announce-close]');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        try { localStorage.setItem(KEY, VER); } catch (e) {}
+        announce.setAttribute('hidden', '');
+      });
+    }
+  }
+
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
       if (e.isIntersecting) {

@@ -392,6 +392,18 @@ const ticker = (variant = "") => `
   </div>
 </div>`;
 
+const announceStrip = () => `
+<div class="announce-strip" role="region" aria-label="Site announcement" data-announce>
+  <a class="announce-strip__link" href="/locations/la-jolla/">
+    <span class="announce-strip__badge">New</span>
+    <span class="announce-strip__text">Now open in La Jolla — 564 Pearl Street · 6am to midnight, 7 days</span>
+    <span class="announce-strip__arrow" aria-hidden="true">→</span>
+  </a>
+  <button class="announce-strip__close" type="button" data-announce-close aria-label="Dismiss announcement">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>`;
+
 const sunSvg = (cls = "") => `
 <svg class="sun ${cls}" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <circle cx="100" cy="100" r="36" fill="currentColor"/>
@@ -531,6 +543,7 @@ ${schema.map(s => jsonLd(s)).join("\n")}
 </head>
 <body class="${h(bodyClass)}">
 <a class="skip-link" href="#main">Skip to main content</a>
+${announceStrip()}
 ${ticker()}
 ${header()}
 <main id="main" tabindex="-1">${body}</main>
@@ -627,7 +640,8 @@ ${ticker("ticker--agave")}
     <div class="locations-grid">
       <div class="grid">
         ${locations.map(l => `
-        <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""}" href="/locations/${h(l.slug)}/">
+        <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""} ${l.slug === "la-jolla" ? "loc-card--new" : ""}" href="/locations/${h(l.slug)}/">
+          ${l.slug === "la-jolla" ? `<span class="loc-card__ribbon" aria-label="Newly opened">New</span>` : ""}
           <div class="loc-card__media" style="background-image:url('${h(l.hero)}')">
             <span class="tag">${h(l.tag)}</span>
           </div>
@@ -754,7 +768,8 @@ ${ticker("ticker--terracotta")}
     <div class="locations-grid">
       <div class="grid">
         ${locations.map(l => `
-        <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""}" href="/locations/${h(l.slug)}/">
+        <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""} ${l.slug === "la-jolla" ? "loc-card--new" : ""}" href="/locations/${h(l.slug)}/">
+          ${l.slug === "la-jolla" ? `<span class="loc-card__ribbon" aria-label="Newly opened">New</span>` : ""}
           <div class="loc-card__media" style="background-image:url('${h(l.hero)}')">
             <span class="tag">${h(l.tag)}</span>
           </div>
