@@ -232,7 +232,8 @@
   .chat-thread { flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; }
   .chat-empty { text-align: center; padding: 40px 20px; color: var(--muted); }
   .chat-empty h2 { font-size: 24px; color: var(--ink); margin: 0 0 8px; font-weight: 700; letter-spacing: -0.01em; }
-  .chat-empty p { font-size: 14px; max-width: 460px; margin: 0 auto 24px; line-height: 1.5; }
+  .chat-empty p { font-size: 14px; max-width: 480px; margin: 0 auto 14px; line-height: 1.5; }
+  .chat-empty__hint { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 28px !important; }
   .chat-suggestions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
   .chat-suggest { background: #fff; border: 1px solid #e5d8b6; color: var(--ink); padding: 8px 14px; border-radius: 999px; font-size: 13px; cursor: pointer; transition: background 0.15s; }
   .chat-suggest:hover { background: #f8eecf; }
@@ -297,18 +298,18 @@
 </header>
 
 <nav class="tabs">
-  <button class="tab active" data-tab="site">Site</button>
+  <button class="tab tab--chat active" data-tab="chat">✨ Just Ask</button>
+  <button class="tab" data-tab="history">Recent Changes</button>
+  <button class="tab" data-tab="site">Site</button>
   <button class="tab" data-tab="locations">Locations</button>
   <button class="tab" data-tab="menu">Menu</button>
   <button class="tab" data-tab="posts">News</button>
   <button class="tab" data-tab="press">Press</button>
   <button class="tab" data-tab="jobs">Jobs</button>
-  <button class="tab tab--chat" data-tab="chat">✨ Chat</button>
-  <button class="tab" data-tab="history">History</button>
 </nav>
 
 <main class="admin-shell">
-  <div id="tab-site" class="tab-panel">
+  <div id="tab-site" class="tab-panel" hidden>
     <div id="site-content"><div class="loading">Loading…</div></div>
   </div>
   <div id="tab-locations" class="tab-panel" hidden>
@@ -326,22 +327,23 @@
   <div id="tab-jobs" class="tab-panel" hidden>
     <div id="jobs-content"><div class="loading">Loading…</div></div>
   </div>
-  <div id="tab-chat" class="tab-panel" hidden>
+  <div id="tab-chat" class="tab-panel">
     <div class="chat-shell">
       <div id="chat-thread" class="chat-thread" aria-live="polite">
         <div class="chat-empty">
-          <h2>Ask me to make a change.</h2>
-          <p>I can update menu prices, location hours/phone, ticker items, hero copy, and news posts. I'll show a preview before anything saves.</p>
+          <h2>Tell me what you want to change.</h2>
+          <p>I can update store hours, phone numbers, news posts, the scrolling banner, menu descriptions, and more. I'll always show you what I'm about to change and ask "yes or no" before saving.</p>
+          <p class="chat-empty__hint">Try one of these to start:</p>
           <div class="chat-suggestions">
-            <button type="button" class="chat-suggest" data-prompt="What's the current fish taco price?">What's the current fish taco price?</button>
-            <button type="button" class="chat-suggest" data-prompt="Change Cardiff's phone to (760) 555-0123">Change Cardiff's phone</button>
-            <button type="button" class="chat-suggest" data-prompt="Add a ticker item: SUMMER HOURS NOW">Add a ticker item</button>
-            <button type="button" class="chat-suggest" data-prompt="Update Del Mar Sunday hours to 6am – 11pm">Update Sunday hours at Del Mar</button>
+            <button type="button" class="chat-suggest" data-prompt="Change Cardiff's phone number to 760-555-0123">📞 Change a phone number</button>
+            <button type="button" class="chat-suggest" data-prompt="Update Del Mar's Sunday hours to 6am to 11pm">🕒 Change store hours</button>
+            <button type="button" class="chat-suggest" data-prompt="Add a banner item that says 'HAPPY HOUR DAILY 4–6PM'">📣 Add to the scrolling banner</button>
+            <button type="button" class="chat-suggest" data-prompt="Add a news post: title 'New patio at Del Mar' and a short paragraph about the new outdoor seating">📰 Write a news post</button>
           </div>
         </div>
       </div>
       <form id="chat-form" class="chat-form">
-        <textarea id="chat-input" placeholder="Tell me what to change…" rows="2"></textarea>
+        <textarea id="chat-input" placeholder="Type what you want to change…" rows="2"></textarea>
         <button type="submit" id="chat-send" class="btn-primary">Send</button>
       </form>
     </div>
@@ -443,13 +445,14 @@ function chatScroll() {
 function chatRenderEmpty() {
   chatThread().innerHTML = `
     <div class="chat-empty">
-      <h2>Ask me to make a change.</h2>
-      <p>I can update menu prices, location hours/phone, ticker items, hero copy, and news posts. I'll show a preview before anything saves.</p>
+      <h2>Tell me what you want to change.</h2>
+      <p>I can update store hours, phone numbers, news posts, the scrolling banner, menu descriptions, and more. I'll always show you what I'm about to change and ask "yes or no" before saving.</p>
+      <p class="chat-empty__hint">Try one of these to start:</p>
       <div class="chat-suggestions">
-        <button type="button" class="chat-suggest" data-prompt="What's the current fish taco price?">What's the current fish taco price?</button>
-        <button type="button" class="chat-suggest" data-prompt="Change Cardiff's phone to (760) 555-0123">Change Cardiff's phone</button>
-        <button type="button" class="chat-suggest" data-prompt="Add a ticker item: SUMMER HOURS NOW">Add a ticker item</button>
-        <button type="button" class="chat-suggest" data-prompt="Update Del Mar Sunday hours to 6am – 11pm">Update Sunday hours at Del Mar</button>
+        <button type="button" class="chat-suggest" data-prompt="Change Cardiff's phone number to 760-555-0123">📞 Change a phone number</button>
+        <button type="button" class="chat-suggest" data-prompt="Update Del Mar's Sunday hours to 6am to 11pm">🕒 Change store hours</button>
+        <button type="button" class="chat-suggest" data-prompt="Add a banner item that says 'HAPPY HOUR DAILY 4–6PM'">📣 Add to the scrolling banner</button>
+        <button type="button" class="chat-suggest" data-prompt="Add a news post: title 'New patio at Del Mar' and a short paragraph about the new outdoor seating">📰 Write a news post</button>
       </div>
     </div>`;
   document.querySelectorAll('.chat-suggest').forEach(b => {
@@ -525,7 +528,7 @@ function chatRenderPending(p) {
   div.className = 'chat-pending';
   div.id = 'chat-pending';
   div.innerHTML = `
-    <h3 class="chat-pending__title">Proposed change</h3>
+    <h3 class="chat-pending__title">Here's what I'll change</h3>
     <p class="chat-pending__summary">${esc(p.summary)}</p>
     ${p.preview ? `
       <div class="chat-diff">
@@ -534,8 +537,8 @@ function chatRenderPending(p) {
       </div>
     ` : ''}
     <div class="chat-pending__actions">
-      <button class="chat-confirm-btn" id="chat-confirm">Apply &amp; commit</button>
-      <button class="chat-cancel-btn" id="chat-cancel">Cancel</button>
+      <button class="chat-confirm-btn" id="chat-confirm">Yes, save it</button>
+      <button class="chat-cancel-btn" id="chat-cancel">No, cancel</button>
     </div>
   `;
   chatThread().appendChild(div);
@@ -1631,14 +1634,9 @@ window.addEventListener('beforeunload', (e) => {
 });
 
 // -------- Boot --------
-(async () => {
-  try {
-    await loadFile('site');
-    render('site');
-  } catch (e) {
-    $('site-content').innerHTML = `<div class="panel"><div class="panel-body"><p style="color:var(--err)">Failed to load: ${esc(e.message)}</p></div></div>`;
-  }
-})();
+// Default tab is the chat helper — most managers will never need to leave it.
+activeTab = 'chat';
+$('chat-input').focus();
 </script>
 </body>
 </html>
