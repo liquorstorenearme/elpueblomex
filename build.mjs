@@ -746,7 +746,7 @@ ${ticker("ticker--terracotta")}
     { q: "Where is the nearest El Pueblo Mexican restaurant near me?", a: "El Pueblo Mexican Food has five locations across San Diego County: Cardiff-by-the-Sea (open 24 hours), Carlsbad at La Costa Town Square, Carmel Valley, Del Mar, and La Jolla opening Spring 2026. Visit our Locations page to find the one nearest you." },
     { q: "What time do you open?", a: "Cardiff is open 24 hours. Carmel Valley and Del Mar are open 6am to midnight daily. Carlsbad is 6am to 10pm (Sun-Thu) and 6am to midnight (Fri-Sat)." },
     { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.39 Fish Taco is unlimited. Order one. Order ten. Same price." },
-    { q: "Do you have a full bar?", a: "Yes — real full bars at Del Mar and Carmel Valley with whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas. Beers on tap at Del Mar." },
+    { q: "Do you have a full bar?", a: "Yes — full bars at Del Mar and Carmel Valley with whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas. Beers on tap at Del Mar." },
     { q: "Do you cater?", a: "Yes. Same-day Party Packs (rolled tacos, enchiladas, quesadilla trays, make-your-own taco packs) and full-service catering with taco bars at all four open locations." }
   ];
   return layout({
@@ -1463,7 +1463,7 @@ ${ticker("ticker--terracotta")}
   ]);
   return layout({
     title: `Bars — ${site.brand.name} | Full Bar in Del Mar & Carmel Valley`,
-    description: "Two real full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley. Whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, beers on tap, wine, fresh-pressed margaritas. Daily happy hour, heated patios, open until midnight.",
+    description: "Two full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley. Whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, beers on tap, wine, fresh-pressed margaritas. Daily happy hour, heated patios, open until midnight.",
     canonicalPath: "/bars/",
     body,
     ogImage: "/og/bars.jpg",
