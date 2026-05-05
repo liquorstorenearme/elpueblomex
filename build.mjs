@@ -1319,7 +1319,7 @@ ${ticker("ticker--terracotta")}
 <section class="section section--cream">
   <div class="cta-band">
     <h2>Find your <em>nearest</em> bar.</h2>
-    <p>${h(b.ctaLine)} Cardiff and Carlsbad are kitchen-only — for the full bar, head to Del Mar or Carmel Valley.</p>
+    <p>${h(b.ctaLine)} For a real full bar — whiskey, bourbon, vodka, gin, rum, tequila, mezcal — head to Del Mar or Carmel Valley. Carlsbad and La Jolla serve beer and wine. Cardiff is kitchen-only.</p>
     <div class="cta-row">
       <a class="btn btn--primary" href="/locations/del-mar/">Del Mar bar</a>
       <a class="btn btn--ghost" href="/locations/carmel-valley/">Carmel Valley bar</a>
