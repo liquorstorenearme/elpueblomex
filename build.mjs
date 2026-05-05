@@ -750,7 +750,7 @@ ${ticker("ticker--terracotta")}
     { q: "Do you cater?", a: "Yes. Same-day Party Packs (rolled tacos, enchiladas, quesadilla trays, make-your-own taco packs) and full-service catering with taco bars at all four open locations." }
   ];
   return layout({
-    title: `El Pueblo Mexican Food | Mexican Restaurants in San Diego County`,
+    title: `Mexican Food Near Me, San Diego — El Pueblo Mexican Food`,
     description: "Looking for Mexican food near you? El Pueblo Mexican Food has five locations across North San Diego County — Cardiff, Carlsbad, Carmel Valley, Del Mar, and La Jolla (opening soon). Voted #1 on Yelp. Fish tacos, full bars, open late.",
     canonicalPath: "/",
     body,
