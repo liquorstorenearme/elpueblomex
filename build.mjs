@@ -226,7 +226,6 @@ function restaurantSchema(loc) {
       { "@type": "City", name: loc.address.city, containedInPlace: { "@type": "AdministrativeArea", name: "San Diego County" } }
     ],
     openingHoursSpecification: hoursSpec.length ? hoursSpec : undefined,
-    openingDate: loc.openingDate || undefined,
     parentOrganization: { "@id": ORG_ID },
     sameAs: [site.social.instagram, site.social.facebook, site.social.yelp].filter(Boolean),
     amenityFeature: (loc.features || []).map(f => ({ "@type": "LocationFeatureSpecification", name: f, value: true })),
