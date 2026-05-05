@@ -2001,7 +2001,7 @@ const legalPages = [
         "With your consent or at your direction, for any purpose you authorize."
       ]},
       { h: "Third-party services", p: [
-        "Key third-party services that may process your data include: Google Analytics 4 (site usage measurement, configured with anonymized IP and Google Consent Mode v2 — analytics are denied by default until you grant permission); Vercel (hosting); Cloudflare (content delivery and DDoS protection); Resend (transactional email delivery for our contact, catering, careers, and other forms); order.online (online ordering); and Gmail/Google Workspace (email for info@elpueblomex.com).",
+        "Key third-party services that may process your data include: Google Analytics 4 (site usage measurement, configured with anonymized IP and Google Consent Mode v2 — analytics are denied by default until you grant permission); Vercel (hosting); Cloudflare (content delivery and DDoS protection); Resend (transactional email delivery for our contact, catering, careers, and other forms); order.online (online ordering); and Gmail/Google Workspace (email for hello@elpueblomex.com).",
         "We do not control the privacy practices of these services. Please review their policies for details about how they handle your information."
       ]},
       { h: "Cookies and tracking technologies", p: [
@@ -2310,7 +2310,7 @@ const legalPages = [
       { h: "Categories disclosed to third parties", p: [
         "In the preceding 12 months, we have disclosed the following categories to the following types of recipients for business purposes:",
         "Identifiers and Internet activity — disclosed to our hosting, security, and analytics service providers (Vercel, Cloudflare, Google Analytics 4) for the purpose of operating and measuring the Site. Analytics disclosures occur only for visitors who have granted consent.",
-        "Customer records and identifiers — disclosed to our transactional email provider (Resend) so that contact, catering, event, fundraiser, careers, and newsletter form submissions can be delivered to our team. Resend processes the message on our behalf and forwards it to our Google Workspace inbox at info@elpueblomex.com.",
+        "Customer records and identifiers — disclosed to our transactional email provider (Resend) so that contact, catering, event, fundraiser, careers, and newsletter form submissions can be delivered to our team. Resend processes the message on our behalf and forwards it to our Google Workspace inbox at hello@elpueblomex.com.",
         "Commercial information — disclosed to our ordering partner (order.online) to fulfill orders you choose to place.",
         "Identifiers and customer records — disclosed in response to legal process when we are required to do so."
       ]},
