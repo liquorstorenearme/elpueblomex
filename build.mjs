@@ -465,6 +465,10 @@ const header = () => `
     <nav class="nav" aria-label="Primary">
       ${site.nav.map(n => `<a href="${h(n.href)}">${h(n.label)}</a>`).join("")}
     </nav>
+    <a class="header-hh" id="header-hh" href="/bars/#happy-hour" hidden aria-label="Happy hour is happening now">
+      <span class="header-hh__dot" aria-hidden="true"></span>
+      <span class="header-hh__label">Happy Hour Now</span>
+    </a>
     <a class="btn btn--order" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order</a>
     <button class="nav-toggle" aria-label="Menu" aria-controls="mobile-nav" aria-expanded="false">
       <span></span><span></span><span></span>
