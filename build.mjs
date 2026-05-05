@@ -1354,7 +1354,7 @@ ${b.happyHour && (b.happyHour.food?.length || b.happyHour.drinks?.length) ? `
   <div class="section__inner">
     <header class="section__head section__head--center">
       <p class="eyebrow">Happy hour</p>
-      <h2 class="display-sm">Daily <span class="serif" style="color:var(--terracotta)">happy hour.</span></h2>
+      <h2 class="display-sm">Daily <span class="serif">happy hour.</span></h2>
       ${b.happyHour.schedule ? `<p class="hh-schedule">${h(b.happyHour.schedule)}</p>` : ""}
     </header>
     <div class="hh-cols">
