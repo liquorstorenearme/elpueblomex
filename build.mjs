@@ -815,7 +815,7 @@ ${ticker("ticker--terracotta")}
     }))
   };
   return layout({
-    title: `Locations — ${site.brand.name} | 5 in San Diego County`,
+    title: `${site.brand.name} Locations — Best Mexican Food in San Diego County`,
     description: "All five El Pueblo Mexican Food locations: Cardiff-by-the-Sea (24 hours), Carlsbad (La Costa Town Square), Carmel Valley (full bar), Del Mar (beers on tap), and La Jolla (Spring 2026).",
     canonicalPath: "/locations/",
     body,
@@ -1229,7 +1229,7 @@ ${ticker("ticker--terracotta")}
 `;
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Event Space", url: "/event-space/" }]);
   return layout({
-    title: `Private Events — ${site.brand.name} | Heated Patios in San Diego`,
+    title: `Private Events & Event Space — ${site.brand.name} | Heated Patios in San Diego`,
     description: "Host your next event at El Pueblo — heated patios at Del Mar and Carmel Valley, full bar, craft margaritas, custom menus. Minimum party of 8. Request availability today.",
     canonicalPath: "/event-space/",
     body,
