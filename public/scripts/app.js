@@ -116,6 +116,10 @@
     var now = new Date();
     var hf = now.getHours() + now.getMinutes() / 60;
     var live = (hf >= 14 && hf < 19) || (hf >= 23 && hf < 24);
+    try {
+      var qs = new URLSearchParams(location.search);
+      if (qs.get('hh') === '1') live = true;
+    } catch (e) {}
     var indicators = document.querySelectorAll('[data-hh-indicator]');
     for (var i = 0; i < indicators.length; i++) {
       if (live) indicators[i].removeAttribute('hidden');

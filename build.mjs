@@ -751,7 +751,7 @@ ${ticker("ticker--terracotta")}
   ];
   return layout({
     title: `Mexican Food in San Diego | ${site.brand.name} — 5 Locations`,
-    description: "Fresh Mexican food in San Diego County. Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening soon. Voted #1 on Yelp. Fish tacos, full bars, open late.",
+    description: "Fresh Mexican food in San Diego — 5 locations. Cardiff, Carlsbad, Carmel Valley, Del Mar, La Jolla. Voted #1 on Yelp. Fish tacos, full bars.",
     canonicalPath: "/",
     body,
     ogImage: "/og/home.jpg",
@@ -815,8 +815,8 @@ ${ticker("ticker--terracotta")}
     }))
   };
   return layout({
-    title: `${site.brand.name} Locations — Best Mexican Food in San Diego County`,
-    description: "All five El Pueblo Mexican Food locations: Cardiff-by-the-Sea (24 hours), Carlsbad (La Costa Town Square), Carmel Valley (full bar), Del Mar (beers on tap), and La Jolla (Spring 2026).",
+    title: `${site.brand.name} Locations — San Diego County`,
+    description: "All 5 El Pueblo locations across San Diego County: Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, La Jolla (Spring 2026). Hours, addresses, directions.",
     canonicalPath: "/locations/",
     body,
     ogImage: "/og/locations.jpg",
@@ -1041,7 +1041,7 @@ ${ticker("ticker--marigold")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Menu", url: "/menu/" }]);
   return layout({
     title: `Menu — ${site.brand.name} | Fish Tacos, Burritos, Plates`,
-    description: "The full El Pueblo menu — breakfast burritos, $1.39 fish tacos, bowls, enchiladas, quesadillas, plates, and drinks. Order pickup from Cardiff, Carlsbad, Carmel Valley, or Del Mar.",
+    description: "The full El Pueblo menu — breakfast burritos, $1.39 fish tacos, bowls, enchiladas, quesadillas, plates. Order pickup from any San Diego location.",
     canonicalPath: "/menu/",
     body,
     ogImage: "/og/menu.jpg",
@@ -1143,7 +1143,7 @@ ${ticker("ticker--terracotta")}
   };
   return layout({
     title: `Catering — ${site.brand.name} | Taco Bars & Party Packs`,
-    description: "El Pueblo catering across San Diego County — taco bars, party packs (rolled tacos, enchiladas, quesadilla trays, make-your-own), full-service events. Request a quote from Cardiff, Carlsbad, Carmel Valley, or Del Mar.",
+    description: "El Pueblo catering across San Diego — taco bars, party packs, rolled tacos, enchiladas, quesadilla trays, full-service events. Request a quote.",
     canonicalPath: "/catering/",
     body,
     ogImage: "/og/catering.jpg",
@@ -1232,8 +1232,8 @@ ${ticker("ticker--terracotta")}
 `;
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Event Space", url: "/event-space/" }]);
   return layout({
-    title: `Private Events & Event Space — ${site.brand.name} | Heated Patios in San Diego`,
-    description: "Host your next event at El Pueblo — heated patios at Del Mar and Carmel Valley, full bar, craft margaritas, custom menus. Minimum party of 8. Request availability today.",
+    title: `Private Events & Event Space — ${site.brand.name}`,
+    description: "Host your next event at El Pueblo — heated patios at Del Mar and Carmel Valley, full bar, craft margaritas, custom menus. Min 8. Request availability.",
     canonicalPath: "/event-space/",
     body,
     ogImage: "/og/event-space.jpg",
@@ -1465,8 +1465,8 @@ ${ticker("ticker--terracotta")}
     { name: "Bars", url: "/bars/" }
   ]);
   return layout({
-    title: `Bars — ${site.brand.name} | Full Bar in Del Mar & Carmel Valley`,
-    description: "Two full bars at El Pueblo Mexican Food — Del Mar and Carmel Valley. Whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, beers on tap, wine, fresh-pressed margaritas. Daily happy hour, heated patios, open until midnight.",
+    title: `Bars — ${site.brand.name} | Del Mar & Carmel Valley`,
+    description: "Two full bars at El Pueblo — Del Mar and Carmel Valley. Whiskey, tequila, mezcal, cocktails, beers on tap, fresh margaritas. Happy hour daily.",
     canonicalPath: "/bars/",
     body,
     ogImage: "/og/bars.jpg",
@@ -1566,7 +1566,7 @@ ${ticker("ticker--terracotta")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Gives Back", url: "/gives-back/" }]);
   return layout({
     title: `Gives Back — ${site.brand.name} | Community Fundraisers`,
-    description: "El Pueblo gives back to the community. We donate 20% of net proceeds to schools, youth programs, and 501(c)(3) organizations. Apply for a fundraiser partnership.",
+    description: "El Pueblo donates 20% of net proceeds to schools, youth programs, and 501(c)(3) groups. Apply for a fundraiser partnership today.",
     canonicalPath: "/gives-back/",
     body,
     ogImage: "/og/gives-back.jpg",
@@ -1638,7 +1638,7 @@ ${ticker("ticker--terracotta")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Contact", url: "/contact/" }]);
   return layout({
     title: `Contact — ${site.brand.name} | All 5 Locations + Hours`,
-    description: "Contact El Pueblo Mexican Food — addresses, phone, and hours for Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, and La Jolla (Spring 2026). Send us a message or stop by.",
+    description: "Contact El Pueblo — addresses, phone, and hours for Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, and La Jolla (Spring 2026).",
     canonicalPath: "/contact/",
     body,
     ogImage: "/og/contact.jpg",
@@ -1795,7 +1795,7 @@ ${ticker("ticker--terracotta")}
   };
   return layout({
     title: `Careers — ${site.brand.name} | We're Hiring`,
-    description: "Join the El Pueblo team — cooks, cashiers, bartenders, shift leaders, managers. Health insurance, free meal every shift, 401(K), raises based on performance. Apply today.",
+    description: "Join the El Pueblo team — cooks, cashiers, bartenders, shift leaders, managers. Health insurance, free meal every shift, 401(K). Apply today.",
     canonicalPath: "/careers/",
     body,
     ogImage: "/og/careers.jpg",
@@ -1902,8 +1902,8 @@ ${ticker("ticker--terracotta")}
     { name: job.title, url: `/jobs/${job.slug}/` }
   ]);
   return layout({
-    title: `${job.title} — ${site.brand.name} | ${job.type}, ${job.pay}`,
-    description: `${site.brand.name} is hiring a ${job.title}. ${job.pay}. ${locs.map(l => l.name).join(", ")}. Benefits include health insurance, free meal every shift, 401(K).`,
+    title: `${job.title} (${job.pay.split('(')[0].trim()}) — ${site.brand.name}`,
+    description: `${site.brand.name} is hiring a ${job.title}. ${job.pay.split('(')[0].trim()}. Health insurance, free meal each shift, 401(K). Apply now.`,
     canonicalPath: `/jobs/${job.slug}/`,
     body,
     ogImage: "/og/careers.jpg",
@@ -2032,8 +2032,8 @@ function renderPost(post) {
     { name: post.title, url: `/news/${post.slug}/` }
   ]);
   return layout({
-    title: `${post.title} — ${site.brand.name}`,
-    description: post.excerpt,
+    title: `${post.seoTitle || post.title} — ${site.brand.name}`,
+    description: post.seoDescription || post.excerpt,
     canonicalPath: `/news/${post.slug}/`,
     body,
     ogImage: heroImg || "/og/news.jpg",
@@ -2045,7 +2045,7 @@ function renderPost(post) {
 }
 
 // ---------- Legal ----------
-function legalPage({ slug, title, description, sections, prelude }) {
+function legalPage({ slug, title, seoTitle, description, sections, prelude }) {
   const body = `
 <section class="page-head page-head--legal">
   <p class="eyebrow">Legal</p>
@@ -2066,7 +2066,7 @@ ${prelude || ""}
 `;
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: title, url: `/${slug}/` }]);
   return layout({
-    title: `${title} — ${site.brand.name}`,
+    title: `${seoTitle || title} — ${site.brand.name}`,
     description,
     canonicalPath: `/${slug}/`,
     body,
@@ -2373,7 +2373,8 @@ const legalPages = [
   {
     slug: "californiaconsumerprivacy",
     title: "Do Not Sell or Share My Personal Information",
-    description: "California residents' opt-out controls for analytics and marketing cookies, plus the full California Consumer Privacy Act / California Privacy Rights Act notice.",
+    seoTitle: "Do Not Sell My Info",
+    description: "California residents' opt-out controls for analytics and marketing cookies. Full CCPA/CPRA notice and rights.",
     prelude: `
 <section class="section section--cream privacy-controls">
   <div class="section__inner">

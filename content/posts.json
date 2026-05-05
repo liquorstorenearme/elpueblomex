@@ -3,8 +3,10 @@
     {
       "slug": "anatomy-of-a-fish-taco",
       "title": "Anatomy of a Fish Taco: A Perfect Fusion of Flavors",
+      "seoTitle": "Anatomy of a Fish Taco",
       "date": "2023-09-06",
-      "excerpt": "At the heart of a fish taco from El Pueblo lies a harmonious blend of fresh tortillas, crispy battered fish, smoky chipotle sauce, crisp cabbage, and zesty pico de gallo.",
+      "excerpt": "At the heart of an El Pueblo fish taco — fresh tortillas, crispy battered fish, smoky chipotle sauce, crisp cabbage, and zesty pico de gallo.",
+      "seoDescription": "Inside the El Pueblo fish taco — fresh tortillas, crispy battered fish, chipotle sauce, cabbage, and pico de gallo. Our $1.39 signature, every day.",
       "image": "/images/news/anatomy-of-a-fish-taco.jpg",
       "imageAlt": "The $1.39 fish taco at El Pueblo — crispy battered fish, chipotle sauce, cabbage, pico de gallo",
       "body": [
@@ -69,6 +71,7 @@
     {
       "slug": "the-importance-of-fresh-ingredients-in-mexican-cuisine",
       "title": "The Importance of Fresh Ingredients in Mexican Cuisine",
+      "seoTitle": "Fresh Ingredients in Mexican Cuisine",
       "date": "2023-09-25",
       "excerpt": "At El Pueblo, fresh ingredients are the foundation of every dish — the difference you can taste between authentic Mexican food and the imitation.",
       "image": "/images/news/fresh-ingredients.jpg",
@@ -135,6 +138,7 @@
     {
       "slug": "bunuelos-a-crispy-and-sweet-treat",
       "title": "Buñuelos: A Crispy and Sweet Treat at El Pueblo",
+      "seoTitle": "Buñuelos at El Pueblo Mexican Food",
       "date": "2023-09-12",
       "excerpt": "A fried tortilla, perfectly crispy on the outside and sprinkled with a generous coating of cinnamon and sugar — eight for $4.99.",
       "image": "/images/news/bunuelos.jpg",
@@ -290,6 +294,7 @@
     {
       "slug": "fresh-and-authentic-mexican-food",
       "title": "Fresh and Authentic Mexican Food at El Pueblo",
+      "seoTitle": "Fresh & Authentic Mexican Food",
       "date": "2023-08-15",
       "excerpt": "Traditional recipes, 100% fresh ingredients, and multiple locations across San Diego County — the authentic Mexican experience.",
       "image": "/images/news/fresh-and-authentic.jpg",
