@@ -33,6 +33,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   const resendKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.EP_CAREERS_TO || process.env.EP_TO_EMAIL || "info@elpueblomex.com";
+  const toList = toEmail.split(",").map((s) => s.trim()).filter(Boolean);
   const fromEmail = process.env.EP_FROM_EMAIL || "noreply@elpueblomex.com";
 
   const fallbackBack = (err: string, slug?: string) =>
@@ -99,7 +100,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   const body: any = {
     from: `El Pueblo Careers <${fromEmail}>`,
-    to: [toEmail],
+    to: toList,
     reply_to: email,
     subject: `Application — ${jobTitle || "Career"} — ${name}`,
     html,
