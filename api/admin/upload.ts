@@ -1,5 +1,16 @@
 export const config = { runtime: "edge" };
 
+const ROLE_RANK: Record<string, number> = { read_only: 1, manager: 2, owner: 3 };
+function getRole(req: Request): string {
+  const cookies = req.headers.get("cookie") || "";
+  const m = cookies.match(/(?:^|;\s*)ep_admin=([^;]+)/);
+  if (!m) return "";
+  try {
+    const payload = JSON.parse(atob(m[1].split(".")[0].replace(/-/g, "+").replace(/_/g, "/")));
+    return payload.role || "owner";
+  } catch { return ""; }
+}
+
 const MAX_BYTES = 8 * 1024 * 1024;
 const EXT: Record<string, string> = {
   "image/jpeg": "jpg",
