@@ -116,10 +116,10 @@
     var now = new Date();
     var hf = now.getHours() + now.getMinutes() / 60;
     var live = (hf >= 14 && hf < 19) || (hf >= 23 && hf < 24);
-    var dots = document.querySelectorAll('[data-hh-dot]');
-    for (var i = 0; i < dots.length; i++) {
-      if (live) dots[i].removeAttribute('hidden');
-      else dots[i].setAttribute('hidden', '');
+    var indicators = document.querySelectorAll('[data-hh-indicator]');
+    for (var i = 0; i < indicators.length; i++) {
+      if (live) indicators[i].removeAttribute('hidden');
+      else indicators[i].setAttribute('hidden', '');
     }
   }
   checkHH();

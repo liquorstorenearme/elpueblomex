@@ -463,7 +463,7 @@ const header = () => `
       <img src="/images/brand/logo-badge.png" alt="${h(site.brand.name)}" width="56" height="56">
     </a>
     <nav class="nav" aria-label="Primary">
-      ${site.nav.map(n => `<a href="${h(n.href)}"${n.href === "/bars/" ? ' class="nav-link-bars"' : ""}>${h(n.label)}${n.href === "/bars/" ? `<span class="nav-hh-dot" data-hh-dot hidden aria-label="Happy hour happening now"></span>` : ""}</a>`).join("")}
+      ${site.nav.map(n => `<a href="${h(n.href)}"${n.href === "/bars/" ? ' class="nav-link-bars"' : ""}>${h(n.label)}${n.href === "/bars/" ? `<span class="nav-hh-dot" data-hh-indicator hidden aria-hidden="true"></span><span class="nav-hh-label" data-hh-indicator hidden>Happy Hour Now</span>` : ""}</a>`).join("")}
     </nav>
     <a class="btn btn--order" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order</a>
     <button class="nav-toggle" aria-label="Menu" aria-controls="mobile-nav" aria-expanded="false">
@@ -480,7 +480,7 @@ const header = () => `
       </button>
     </div>
     <nav aria-label="Mobile">
-      ${site.nav.map(n => `<a href="${h(n.href)}"${n.href === "/bars/" ? ' class="nav-link-bars"' : ""}>${h(n.label)}${n.href === "/bars/" ? `<span class="nav-hh-dot" data-hh-dot hidden aria-label="Happy hour happening now"></span>` : ""}</a>`).join("")}
+      ${site.nav.map(n => `<a href="${h(n.href)}"${n.href === "/bars/" ? ' class="nav-link-bars"' : ""}>${h(n.label)}${n.href === "/bars/" ? `<span class="nav-hh-dot" data-hh-indicator hidden aria-hidden="true"></span><span class="nav-hh-label" data-hh-indicator hidden>Happy Hour Now</span>` : ""}</a>`).join("")}
       <a class="mobile-nav__order" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order online →</a>
     </nav>
   </div>
