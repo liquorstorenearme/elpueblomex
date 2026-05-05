@@ -1296,13 +1296,13 @@ ${ticker("ticker--agave")}
   </div>
 </section>
 
+${b.happyHour && b.happyHour.length ? `
 <section class="section section--wall" id="happy-hour">
   <div class="section__inner">
     <header class="section__head section__head--center">
       <p class="eyebrow">Happy hour</p>
       <h2 class="display-sm">Daily <span class="serif" style="color:var(--terracotta)">happy hour</span> at both bars.</h2>
     </header>
-    ${b.happyHour && b.happyHour.length ? `
     <div class="happy-hour-grid">
       ${b.happyHour.map(hh => `
       <div class="happy-hour-item">
@@ -1310,17 +1310,9 @@ ${ticker("ticker--agave")}
         <p class="happy-hour-item__price">${h(hh.price)}</p>
         ${hh.description ? `<p class="happy-hour-item__desc">${h(hh.description)}</p>` : ""}
       </div>`).join("")}
-    </div>` : `
-    <div class="happy-hour-placeholder">
-      <p>${h(b.happyHourPlaceholder)}</p>
-      <div class="cta-row">
-        <a class="btn btn--marigold" href="/locations/del-mar/">Del Mar location</a>
-        <a class="btn btn--ghost" href="/locations/carmel-valley/">Carmel Valley location</a>
-      </div>
     </div>
-    `}
   </div>
-</section>
+</section>` : ""}
 
 ${ticker("ticker--terracotta")}
 
