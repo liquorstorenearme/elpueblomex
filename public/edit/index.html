@@ -1333,7 +1333,7 @@ function renderJobs() {
   const locOptions = state.locations.loaded ? (state.locations.content.locations || []).map(l => ({ slug: l.slug, name: l.short || l.name })) : [];
 
   const intro = document.createElement('div'); intro.className = 'panel';
-  intro.innerHTML = `<div class="panel-body"><h2 style="margin:0 0 6px;font-size:15px">Job postings</h2><p style="margin:0;color:var(--muted);font-size:13.5px">Each posting renders as its own page at /jobs/[slug]/ and is listed on /careers/. ${locOptions.length === 0 ? '<br><em style="color:var(--err)">Tip: open the Locations tab once first so the location picker has options.</em>' : ''}</p></div>`;
+  intro.innerHTML = `<div class="panel-body"><h2 style="margin:0 0 6px;font-size:15px">Job postings</h2><p style="margin:0;color:var(--muted);font-size:13.5px">Postings appear in the live careers feed at <a href="/careers/" target="_blank">elpueblomex.com/careers/</a>. Individual postings no longer have standalone pages — applications go through the embedded careers widget. ${locOptions.length === 0 ? '<br><em style="color:var(--err)">Tip: open the Locations tab once first so the location picker has options.</em>' : ''}</p></div>`;
   root.appendChild(intro);
 
   const wrap = document.createElement('section'); wrap.className = 'panel';
@@ -1347,7 +1347,7 @@ function renderJobs() {
       let slugInput;
       const slugField = (() => {
         const w = document.createElement('div'); w.className = 'fld';
-        w.innerHTML = `<label>URL slug (auto from title)</label><input type="text" value="${esc(it.slug || '')}"><div class="help">Becomes /jobs/[slug]/. Edit to override auto-generation.</div>`;
+        w.innerHTML = `<label>URL slug (internal)</label><input type="text" value="${esc(it.slug || '')}"><div class="help">Internal identifier only — no longer becomes a public URL.</div>`;
         slugInput = w.querySelector('input');
         slugInput.addEventListener('input', () => { it.slug = slugify(slugInput.value); it.__slugLocked = true; refreshSaveBar(); });
         return w;

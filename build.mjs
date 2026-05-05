@@ -1781,17 +1781,6 @@ ${ticker("ticker--marigold")}
 ${ticker("ticker--terracotta")}
 `;
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Careers", url: "/careers/" }]);
-  const itemList = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "El Pueblo Open Positions",
-    itemListElement: jobs.map((j, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      url: `${BASE_URL}/jobs/${j.slug}/`,
-      name: j.title
-    }))
-  };
   return layout({
     title: `Careers — ${site.brand.name} | We're Hiring`,
     description: "Join the El Pueblo team — cooks, cashiers, bartenders, shift leaders, managers. Health insurance, free meal every shift, 401(K). Apply today.",
@@ -1799,117 +1788,10 @@ ${ticker("ticker--terracotta")}
     body,
     ogImage: "/og/careers.jpg",
     bodyClass: "page-careers",
-    schema: [itemList, crumbs]
+    schema: [crumbs]
   });
 }
 
-function renderJob(job) {
-  const locs = (job.locations || []).map(s => locBySlug[s]).filter(Boolean);
-  const body = `
-<section class="page-head">
-  <p class="eyebrow"><a href="/careers/">Careers</a> / ${h(job.type)}</p>
-  <h1 class="display">${h(job.title)}</h1>
-  <p class="lede">${h(job.description)}</p>
-  <dl class="job-meta">
-    <div><dt>Pay</dt><dd>${h(job.pay)}</dd></div>
-    <div><dt>Type</dt><dd>${h(job.type)}</dd></div>
-    <div><dt>Locations</dt><dd>${locs.map(l => h(l.short)).join(", ")}</dd></div>
-  </dl>
-  <div class="cta-row">
-    <a class="btn btn--primary" href="#apply">Apply now</a>
-    <a class="btn btn--ghost" href="/careers/">All openings</a>
-  </div>
-</section>
-
-${ticker("ticker--agave")}
-
-<section class="section section--cream">
-  <div class="section__inner split">
-    ${job.responsibilities?.length ? `<div>
-      <h2 class="display-xs">Responsibilities</h2>
-      <ul class="features">
-        ${job.responsibilities.map(r => `<li>${h(r)}</li>`).join("")}
-      </ul>
-    </div>` : ""}
-    ${job.requirements?.length ? `<div>
-      <h2 class="display-xs">Requirements</h2>
-      <ul class="features">
-        ${job.requirements.map(r => `<li>${h(r)}</li>`).join("")}
-      </ul>
-    </div>` : ""}
-  </div>
-  ${job.benefits?.length ? `<div class="section__inner" style="margin-top:48px;">
-    <h2 class="display-xs">Benefits</h2>
-    <ul class="benefits">
-      ${job.benefits.map(b => `<li>${h(b)}</li>`).join("")}
-    </ul>
-  </div>` : ""}
-</section>
-
-<section class="section section--cream-2" id="apply">
-  <div class="section__inner">
-    <header class="section__head section__head--center">
-      <p class="eyebrow">Application</p>
-      <h2 class="display-sm">Apply for <span class="serif" style="color:var(--terracotta)">${h(job.title)}.</span></h2>
-      <p class="lede">El Pueblo is an Equal Opportunity Employer. Applications considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law.</p>
-    </header>
-    <form class="stack-form" action="/api/employment" method="post" enctype="multipart/form-data">
-      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <input type="hidden" name="job_slug" value="${h(job.slug)}">
-      <input type="hidden" name="job_title" value="${h(job.title)}">
-      <div class="stack-form__row">
-        <label>Full name<input name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
-      </div>
-      <div class="stack-form__row">
-        <label>Phone<input type="tel" name="phone" required></label>
-        <label>City, State<input name="city" placeholder="e.g. Cardiff, CA"></label>
-      </div>
-      <label>Locations you can work
-        <select name="preferred_locations" multiple size="5">
-          ${locs.map(l => `<option value="${h(l.slug)}" selected>${h(l.name)}</option>`).join("")}
-        </select>
-      </label>
-      <label>Previous employment history<textarea name="history" rows="4" placeholder="Recent roles, dates, responsibilities..."></textarea></label>
-      <div class="stack-form__row">
-        <label>Authorized to work in the U.S.?
-          <select name="work_auth" required>
-            <option value="">Choose</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </label>
-        <label>Background check consent?
-          <select name="background_check">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </label>
-      </div>
-      <label>Resume (optional)<input type="file" name="resume" accept=".pdf,.doc,.docx"></label>
-      <label>Why El Pueblo?<textarea name="message" rows="4"></textarea></label>
-      <button class="btn btn--primary" type="submit">Submit application</button>
-    </form>
-  </div>
-</section>
-
-${ticker("ticker--terracotta")}
-`;
-  const crumbs = breadcrumbSchema([
-    { name: "Home", url: "/" },
-    { name: "Careers", url: "/careers/" },
-    { name: job.title, url: `/jobs/${job.slug}/` }
-  ]);
-  return layout({
-    title: `${job.title} (${job.pay.split('(')[0].trim()}) — ${site.brand.name}`,
-    description: `${site.brand.name} is hiring a ${job.title}. ${job.pay.split('(')[0].trim()}. Health insurance, free meal each shift, 401(K). Apply now.`,
-    canonicalPath: `/jobs/${job.slug}/`,
-    body,
-    ogImage: "/og/careers.jpg",
-    bodyClass: `page-job page-job--${job.slug}`,
-    schema: [jobPostingSchema(job), crumbs]
-  });
-}
 
 // ---------- News (index + posts) ----------
 function renderNewsIndex() {
@@ -2536,7 +2418,6 @@ function renderSitemap() {
     { loc: "/news/", priority: 0.7, changefreq: "weekly" },
     ...posts.map(p => ({ loc: `/news/${p.slug}/`, priority: 0.5, changefreq: "yearly", lastmod: p.date })),
     { loc: "/careers/", priority: 0.7, changefreq: "weekly" },
-    ...jobs.map(j => ({ loc: `/jobs/${j.slug}/`, priority: 0.6, changefreq: "weekly" })),
     { loc: "/privacy-policy/", priority: 0.3, changefreq: "yearly" },
     { loc: "/terms/", priority: 0.3, changefreq: "yearly" },
     { loc: "/accessibility-statement/", priority: 0.3, changefreq: "yearly" },
@@ -2680,11 +2561,8 @@ function build() {
   write("contact/index.html", renderContact());
   write("gallery/index.html", renderGallery());
 
-  // Careers + Jobs
+  // Careers (single page — individual job pages removed; all /jobs/* redirect to /careers/)
   write("careers/index.html", renderCareers());
-  for (const job of jobs) {
-    write(`jobs/${job.slug}/index.html`, renderJob(job));
-  }
 
   // News + Posts
   write("news/index.html", renderNewsIndex());

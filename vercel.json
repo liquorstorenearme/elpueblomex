@@ -586,47 +586,47 @@
     },
     {
       "source": "/barback/",
-      "destination": "/jobs/barback/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/bartender/",
-      "destination": "/jobs/bartender/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/busser-food-runner/",
-      "destination": "/jobs/busser-food-runner/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/cashier/",
-      "destination": "/jobs/cashier/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/cook/",
-      "destination": "/jobs/cook/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/dishwasher/",
-      "destination": "/jobs/dishwasher/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/prep-cook/",
-      "destination": "/jobs/prep-cook/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/shift-leader/",
-      "destination": "/jobs/shift-leader/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/store-manager/",
-      "destination": "/jobs/store-manager/",
+      "destination": "/careers/",
       "permanent": true
     },
     {
@@ -777,6 +777,56 @@
     {
       "source": "/wpa-stats-type-sitemap.xml",
       "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/barback/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/bartender/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/busser-food-runner/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/cashier/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/cook/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/dishwasher/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/prep-cook/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/shift-leader/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/store-manager/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/:path*",
+      "destination": "/careers/",
       "permanent": true
     }
   ]
