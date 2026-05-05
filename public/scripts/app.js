@@ -163,12 +163,12 @@
       const status = document.createElement('div');
       status.className = 'form-status ' + (sent ? 'form-status--ok' : 'form-status--err');
       const messages = {
-        config: 'Our form service is not configured yet. Please email info@elpueblomex.com.',
+        config: 'Our form service is not configured yet. Please email hello@elpueblomex.com.',
         rate: 'Too many submissions — try again in a few minutes.',
         parse: 'We could not read that submission. Please try again.',
         missing: 'Please fill in the required fields.',
         email: 'That email address looks invalid.',
-        send: 'We could not send your message. Please try again or email info@elpueblomex.com.',
+        send: 'We could not send your message. Please try again or email hello@elpueblomex.com.',
         size: 'Resume file is too large (10MB max).',
         type: 'Resume must be a PDF, DOC, DOCX, or TXT file.'
       };
