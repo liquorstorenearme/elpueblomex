@@ -750,8 +750,8 @@ ${ticker("ticker--terracotta")}
     { q: "Do you cater?", a: "Yes. Same-day Party Packs (rolled tacos, enchiladas, quesadilla trays, make-your-own taco packs) and full-service catering with taco bars at all four open locations." }
   ];
   return layout({
-    title: `El Pueblo Mexican Food | Mexican Restaurants & Catering in San Diego`,
-    description: "El Pueblo Mexican Food is a family-owned Mexican restaurant and caterer with locations across San Diego County. Plus, our famous $1.39 fish taco — unlimited, every day.",
+    title: `Mexican Food in San Diego | ${site.brand.name} — 5 Locations`,
+    description: "Fresh Mexican food in San Diego County. Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening soon. Voted #1 on Yelp. Fish tacos, full bars, open late.",
     canonicalPath: "/",
     body,
     ogImage: "/og/home.jpg",
