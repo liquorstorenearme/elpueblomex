@@ -933,26 +933,33 @@ function renderSite() {
       w.appendChild(textField('Body', p.body, v => { p.body = v; refreshSaveBar(); }, '', 'textarea'));
       barFields.push(w);
     });
-    // Happy hour menu — the headline editor for this section
-    const hhWrap = document.createElement('div'); hhWrap.className = 'fld';
-    hhWrap.innerHTML = '<label>Happy hour menu</label><div class="help">Add items, prices, and descriptions. Empty list shows the placeholder copy below.</div>';
-    b.happyHour = b.happyHour || [];
-    hhWrap.appendChild(repeater(
-      b.happyHour,
-      (it, i) => {
-        const box = document.createElement('div'); box.style.display = 'grid'; box.style.gap = '10px';
-        box.appendChild(row2(
-          textField('Name', it.name, v => { it.name = v; refreshSaveBar(); }),
-          textField('Price', it.price, v => { it.price = v; refreshSaveBar(); }, 'e.g. $5 or 2-for-$10'),
-        ));
-        box.appendChild(textField('Description (optional)', it.description, v => { it.description = v; refreshSaveBar(); }));
-        return box;
-      },
-      () => ({ name: '', price: '', description: '' }),
-      '+ Add happy hour item'
-    ));
-    barFields.push(hhWrap);
-    barFields.push(textField('Placeholder copy (when happy hour list is empty)', b.happyHourPlaceholder, v => { b.happyHourPlaceholder = v; refreshSaveBar(); }, '', 'textarea'));
+    // Happy hour menu — legacy array-style editor (kept for old data shape only).
+    // The new bar menu (cocktails / draft / bottlesCans / nonAlcoholic / wine /
+    // happyHour-as-object) lives in site.json and is edited via Just Ask for now.
+    if (Array.isArray(b.happyHour)) {
+      const hhWrap = document.createElement('div'); hhWrap.className = 'fld';
+      hhWrap.innerHTML = '<label>Happy hour menu</label><div class="help">Add items, prices, and descriptions. Empty list shows the placeholder copy below.</div>';
+      hhWrap.appendChild(repeater(
+        b.happyHour,
+        (it, i) => {
+          const box = document.createElement('div'); box.style.display = 'grid'; box.style.gap = '10px';
+          box.appendChild(row2(
+            textField('Name', it.name, v => { it.name = v; refreshSaveBar(); }),
+            textField('Price', it.price, v => { it.price = v; refreshSaveBar(); }, 'e.g. $5 or 2-for-$10'),
+          ));
+          box.appendChild(textField('Description (optional)', it.description, v => { it.description = v; refreshSaveBar(); }));
+          return box;
+        },
+        () => ({ name: '', price: '', description: '' }),
+        '+ Add happy hour item'
+      ));
+      barFields.push(hhWrap);
+      barFields.push(textField('Placeholder copy (when happy hour list is empty)', b.happyHourPlaceholder || '', v => { b.happyHourPlaceholder = v; refreshSaveBar(); }, '', 'textarea'));
+    } else {
+      const note = document.createElement('div'); note.className = 'fld';
+      note.innerHTML = '<label>Bar menu</label><div class="help">The bar menu (cocktails, draft, bottles &amp; cans, NA, wine, happy hour) uses a richer structure now. Use <strong>Just Ask</strong> to edit specific items, or edit <code>content/site.json</code> directly.</div>';
+      barFields.push(note);
+    }
     barFields.push(textField('CTA line', b.ctaLine, v => { b.ctaLine = v; refreshSaveBar(); }));
     root.appendChild(panel('Bars page', 'Editor for /bars/ — including the happy hour menu.', barFields));
   }
