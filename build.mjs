@@ -955,8 +955,11 @@ function renderMenu() {
 <section class="page-head page-head--menu">
   <p class="eyebrow">The menu</p>
   <h1 class="display">Fresh&nbsp;food,<br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
-  <p class="lede">Breakfast burritos from 6am. Our famous $1.39 fish tacos all day. Full bars in Del Mar and Carmel Valley — whiskey, tequila, mezcal, every classic spirit. Order pickup from your nearest location.</p>
-  <p class="menu-stats"><strong>${totalItems}</strong> items · <strong>${menu.categories.length}</strong> categories · <strong>${locations.filter(l => !l.comingSoon).length}</strong> kitchens open now</p>
+  <p class="lede">Breakfast burritos from 6am. $1.39 fish tacos all day. Full bars at Del Mar and Carmel Valley.</p>
+  <div class="cta-row">
+    <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order Online →</a>
+    <a class="btn btn--ghost" href="#menu-toc">Browse the menu ↓</a>
+  </div>
 </section>
 
 <section class="menu-featured">
@@ -981,7 +984,7 @@ function renderMenu() {
 
 ${ticker("ticker--agave")}
 
-<nav class="menu-toc" aria-label="Menu sections">
+<nav class="menu-toc" id="menu-toc" aria-label="Menu sections">
   <div class="menu-toc__inner">
     ${menu.categories.map(c => `<a href="#${slugify(c.name)}">${h(c.name)}</a>`).join("")}
   </div>
