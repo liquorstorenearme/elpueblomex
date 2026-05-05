@@ -1421,6 +1421,10 @@ ${b.wine?.length ? `
       ${b.wine.map(cat => `
       <div class="wine-cat">
         <h3 class="wine-cat__title">${h(cat.category)}</h3>
+        <div class="wine-cols-head">
+          <span class="wine-cols-head__label">Glass</span>
+          <span class="wine-cols-head__label">Bottle</span>
+        </div>
         <ul class="wine-list">
           ${cat.items.map(w => `
           <li class="wine-row">
@@ -1428,7 +1432,7 @@ ${b.wine?.length ? `
               <span class="wine-row__name">${h(w.name)}</span>
               ${w.region ? `<span class="wine-row__region">${h(w.region)}</span>` : ""}
             </div>
-            <div class="wine-row__price">${w.glass ? `<span>${h(w.glass)}</span>` : `<span></span>`} <span>${h(w.bottle)}</span></div>
+            <div class="wine-row__price">${w.glass ? `<span>${h(w.glass)}</span>` : `<span class="wine-row__dash">—</span>`}<span>${h(w.bottle)}</span></div>
           </li>`).join("")}
         </ul>
       </div>`).join("")}
@@ -1436,12 +1440,16 @@ ${b.wine?.length ? `
   </div>
 </section>` : ""}
 
+<aside class="bar-fullbar-note">
+  <p><strong>Full bar includes</strong> — whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and beer. Available at our Del Mar and Carmel Valley locations.</p>
+</aside>
+
 ${ticker("ticker--terracotta")}
 
 <section class="section section--cream">
   <div class="cta-band">
     <h2>Find your <em>nearest</em> bar.</h2>
-    <p>${h(b.ctaLine)} For a real full bar — whiskey, bourbon, vodka, gin, rum, tequila, mezcal — head to Del Mar or Carmel Valley. Carlsbad and La Jolla serve beer and wine. Cardiff is kitchen-only.</p>
+    <p>${h(b.ctaLine)} For a full bar — whiskey, bourbon, vodka, gin, rum, tequila, mezcal — head to Del Mar or Carmel Valley. Carlsbad and La Jolla serve beer and wine. Cardiff is kitchen-only.</p>
     <div class="cta-row">
       <a class="btn btn--primary" href="/locations/del-mar/">Del Mar bar</a>
       <a class="btn btn--ghost" href="/locations/carmel-valley/">Carmel Valley bar</a>

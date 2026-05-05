@@ -136,7 +136,7 @@
   },
   "bars": {
     "heroEyebrow": "Full bar · Cocktails · Beer · Spirits",
-    "heroHeadline": "Two real full bars in San Diego County.",
+    "heroHeadline": "Two full bars in San Diego County.",
     "heroSub": "Whiskey, bourbon, vodka, gin, rum — every classic spirit you'd expect, plus the tequila and mezcal selection you'd hope for at a Mexican kitchen. Cocktails, wine, beers on tap, and the best margaritas in San Diego County. The Del Mar and Carmel Valley bars pour everything, all served alongside the same kitchen that runs fish tacos until midnight.",
     "heroImage": "/images/bars/full-bar.jpg",
     "barLocations": [
@@ -175,8 +175,8 @@
     ],
     "pillars": [
       {
-        "title": "A Real Full Bar",
-        "body": "Whiskey, bourbon, vodka, gin, rum, tequila, mezcal — every classic spirit, plus wine by the glass. Order anything you'd order at a real bar."
+        "title": "A Full Bar",
+        "body": "Whiskey, bourbon, vodka, gin, rum, tequila, mezcal — every classic spirit, plus wine by the glass. Order anything you'd expect at a great bar."
       },
       {
         "title": "Cold Beer on Tap",
