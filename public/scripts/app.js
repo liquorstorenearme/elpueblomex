@@ -109,6 +109,22 @@
     };
   })();
 
+  // Site-wide Happy Hour live indicator — checks current local time,
+  // shows the header pill (and updates the /bars/ band if on that page)
+  // every minute. HH windows: 14:00–19:00 + 23:00–24:00 daily.
+  function checkHH() {
+    var now = new Date();
+    var hf = now.getHours() + now.getMinutes() / 60;
+    var live = (hf >= 14 && hf < 19) || (hf >= 23 && hf < 24);
+    var pill = document.getElementById('header-hh');
+    if (pill) {
+      if (live) pill.removeAttribute('hidden');
+      else pill.setAttribute('hidden', '');
+    }
+  }
+  checkHH();
+  setInterval(checkHH, 60000);
+
   const announce = document.querySelector('[data-announce]');
   if (announce) {
     const KEY = 'ep_announce_dismissed';
