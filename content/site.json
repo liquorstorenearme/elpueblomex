@@ -53,7 +53,7 @@
   ],
   "home": {
     "hero": {
-      "eyebrow": "The best Mexican food in North County San Diego",
+      "eyebrow": "The best Mexican food in San Diego",
       "headline": "Fresh Mexican food.",
       "headlineAccent": "Five locations.",
       "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla (opening soon) — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
@@ -136,8 +136,8 @@
   },
   "bars": {
     "heroEyebrow": "Full bar · Cocktails · Beer · Spirits",
-    "heroHeadline": "Two real full bars in North County.",
-    "heroSub": "Whiskey, bourbon, vodka, gin, rum — every classic spirit you'd expect, plus the tequila and mezcal selection you'd hope for at a Mexican kitchen. Cocktails, wine, beers on tap, and the best margaritas in North County. The Del Mar and Carmel Valley bars pour everything, all served alongside the same kitchen that runs fish tacos until midnight.",
+    "heroHeadline": "Two real full bars in San Diego County.",
+    "heroSub": "Whiskey, bourbon, vodka, gin, rum — every classic spirit you'd expect, plus the tequila and mezcal selection you'd hope for at a Mexican kitchen. Cocktails, wine, beers on tap, and the best margaritas in San Diego County. The Del Mar and Carmel Valley bars pour everything, all served alongside the same kitchen that runs fish tacos until midnight.",
     "heroImage": "/images/bars/full-bar.jpg",
     "barLocations": [
       {
@@ -223,7 +223,7 @@
   "careers": {
     "heroEyebrow": "Join the team",
     "heroHeadline": "We're hiring at every location.",
-    "heroSub": "El Pueblo is growing — five locations across North County San Diego, and La Jolla opening Spring 2026. We're always looking for energetic, reliable people to join the team. Applications are considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law. We are proud to be an Equal Opportunity Employer.",
+    "heroSub": "El Pueblo is growing — five locations across San Diego County, and La Jolla opening Spring 2026. We're always looking for energetic, reliable people to join the team. Applications are considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law. We are proud to be an Equal Opportunity Employer.",
     "benefitsIntro": "Every full-time role comes with:",
     "benefits": [
       "Health Insurance (Medical, Dental, Vision on select roles)",

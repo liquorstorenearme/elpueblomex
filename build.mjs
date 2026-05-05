@@ -815,7 +815,7 @@ ${ticker("ticker--terracotta")}
     }))
   };
   return layout({
-    title: `Locations — ${site.brand.name} | 5 in North County San Diego`,
+    title: `Locations — ${site.brand.name} | 5 in San Diego County`,
     description: "All five El Pueblo Mexican Food locations: Cardiff-by-the-Sea (24 hours), Carlsbad (La Costa Town Square), Carmel Valley (full bar), Del Mar (beers on tap), and La Jolla (Spring 2026).",
     canonicalPath: "/locations/",
     body,
@@ -1864,7 +1864,7 @@ ${ticker("ticker--terracotta")}
   };
   return layout({
     title: `News — ${site.brand.name} | Stories, Updates, Openings`,
-    description: "Fresh from El Pueblo's kitchens — stories, recipes, openings, and updates across our five locations in North County San Diego.",
+    description: "Fresh from El Pueblo's kitchens — stories, recipes, openings, and updates across our five locations in San Diego County.",
     canonicalPath: "/news/",
     body,
     ogImage: "/og/news.jpg",
