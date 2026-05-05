@@ -771,7 +771,7 @@ function renderLocationsIndex() {
   const body = `
 <section class="page-head">
   <p class="eyebrow">Five locations</p>
-  <h1 class="display">Find<br>El Pueblo<br><span class="serif" style="color:var(--terracotta)">near you.</span></h1>
+  <h1 class="display">Find an El Pueblo<br><span class="serif" style="color:var(--terracotta)">near you.</span></h1>
   <p class="lede">Fresh Mexican food across San Diego County — from early morning breakfast burritos in Cardiff to late-night tacos in Del Mar.</p>
 </section>
 
@@ -831,7 +831,7 @@ function renderLocation(loc) {
   <div class="location-hero__inner">
     <div class="location-hero__copy">
       <p class="eyebrow">${h(loc.tag)}</p>
-      <h1 class="display">El Pueblo<br><em>${h(loc.name)}</em></h1>
+      <h1 class="display">El Pueblo Mexican Food<br><em>${h(loc.name)}</em></h1>
       <p class="lede">${h(loc.description)}</p>
       <div class="cta-row">
         ${(loc.orderOnlineUrl || site.orderOnline.masterUrl) ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order online</a>` : ""}
