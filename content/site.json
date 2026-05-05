@@ -153,8 +153,8 @@
           "Classic cocktails, wine, and fresh-pressed margaritas",
           "Heated outdoor patio · TVs streaming UFC, fútbol & more"
         ],
-        "image": "/images/bars/del-mar-bar.jpg",
-        "imageAlt": "Cold beers on tap at the El Pueblo Del Mar bar"
+        "image": "/images/locations/del-mar-hero.jpg",
+        "imageAlt": "El Pueblo Del Mar — full bar location"
       },
       {
         "slug": "carmel-valley",
@@ -169,8 +169,8 @@
           "House margaritas, palomas, and seasonal cocktails",
           "Heated patio at The Village at Pacific Highlands Ranch"
         ],
-        "image": "/images/bars/carmel-valley-bar.jpg",
-        "imageAlt": "The bar at El Pueblo Mexican Food Carmel Valley"
+        "image": "/images/locations/carmel-valley-hero.jpg",
+        "imageAlt": "El Pueblo Carmel Valley — full bar location"
       }
     ],
     "pillars": [
@@ -187,9 +187,377 @@
         "body": "House margaritas pressed fresh — no syrupy mixes. Plus every classic cocktail done right: old fashioneds, palomas, mojitos, martinis."
       }
     ],
-    "happyHour": [],
-    "happyHourPlaceholder": "Happy hour menu coming soon. In the meantime — stop by Del Mar or Carmel Valley and ask the bartender what's pouring.",
-    "ctaLine": "Find your nearest bar."
+    "happyHour": {
+      "schedule": "2pm–7pm + 11pm–midnight, daily",
+      "food": [
+        {
+          "name": "Carne Asada Chips or Fries",
+          "price": "$7"
+        },
+        {
+          "name": "Mix & Match Tacos",
+          "price": "$9"
+        }
+      ],
+      "drinks": [
+        {
+          "name": "House Red & White Wines",
+          "price": "$5"
+        },
+        {
+          "name": "Select Draft Beers",
+          "price": "$6",
+          "note": "Modelo, Pacifico, Stone Delicious"
+        },
+        {
+          "name": "House Old Fashioned",
+          "price": "$8"
+        },
+        {
+          "name": "House Margarita (Single)",
+          "price": "$8"
+        },
+        {
+          "name": "House Margarita (Double)",
+          "price": "$13"
+        },
+        {
+          "name": "Micheladas",
+          "price": "$9"
+        },
+        {
+          "name": "Bottles of Wine",
+          "price": "20% off"
+        }
+      ]
+    },
+    "ctaLine": "Find your nearest bar.",
+    "cocktails": [
+      {
+        "name": "Paloma",
+        "price": "$12",
+        "subtitle": "Juicy, tart, & classically refreshing",
+        "ingredients": "Cazadores Reposado Tequila, Grapefruit, Organic Agave, Lime, Fever-Tree Grapefruit, Tajin Rim"
+      },
+      {
+        "name": "Spicy Gallagher",
+        "price": "$12",
+        "subtitle": "Watermelon, low-sugar, high-flavor",
+        "ingredients": "Cazadores Reposado Tequila, Lime, Agave, Fresh Watermelon, Mint, Aloe, Tajin Rim"
+      },
+      {
+        "name": "El Pueblo Ranch Water",
+        "price": "$12",
+        "subtitle": "Low-cal, bubbly, & slightly tart",
+        "ingredients": "Patrón Silver Tequila, Muddled Lime, Topo-Chico Soda"
+      },
+      {
+        "name": "Hibiscus Mule",
+        "price": "$12",
+        "subtitle": "Refreshing ginger kick",
+        "ingredients": "Grey Goose Vodka, Lime Juice, Liquid Alchemist Ginger Syrup, topped with Hibiscus Ginger Beer"
+      },
+      {
+        "name": "Oaxacan Mai-Tai",
+        "price": "$13",
+        "subtitle": "Tropical & bright, hint of smoke",
+        "ingredients": "Ilegal Mezcal, Selva Rey Coconut, Lime, Almond, Passion Fruit, Dry Curaçao, Aromatic Bitters"
+      },
+      {
+        "name": "Airplane-Mode",
+        "price": "$12",
+        "subtitle": "AKA liquid vacation",
+        "ingredients": "Havana Club Aged Rum, Lime, Pineapple Juice, Apricot Liqueur, Ubé Powder"
+      },
+      {
+        "name": "Love Island",
+        "price": "$13",
+        "subtitle": "The piña colada of love",
+        "ingredients": "Selva Rey Coconut Rum, Pineapple, Passionfruit, Strawberry, Coconut"
+      },
+      {
+        "name": "Whiskey Business",
+        "price": "$11",
+        "subtitle": "Berry — dangerous!!",
+        "ingredients": "American Whiskey, Blackberry Purée, Lemon Juice, Agave, Mint"
+      },
+      {
+        "name": "Espresso Martini",
+        "price": "$13",
+        "subtitle": "Choice of vanilla vodka or reposado tequila",
+        "ingredients": "Vanilla Grey Goose Vodka OR Cazadores Reposado, Fresh Espresso, Coffee Liqueur, Organic Agave"
+      }
+    ],
+    "draft": [
+      {
+        "name": "Modelo Especial + Negra",
+        "price": "$7"
+      },
+      {
+        "name": "Pacifico Mex Pilsner",
+        "price": "$7"
+      },
+      {
+        "name": "Buenaveza Lager",
+        "price": "$7"
+      },
+      {
+        "name": "El Pueblo Blonde",
+        "price": "$6"
+      },
+      {
+        "name": "394 Pale Ale",
+        "price": "$8"
+      },
+      {
+        "name": "Stone Hazy IPA",
+        "price": "$8"
+      },
+      {
+        "name": "Stone Delicious IPA",
+        "price": "$8"
+      },
+      {
+        "name": "Boochcraft Grapefruit",
+        "price": "$7"
+      },
+      {
+        "name": "Societe Pupil IPA",
+        "price": "$8"
+      },
+      {
+        "name": "Maui Brew Pineapple Mana",
+        "price": "$8"
+      },
+      {
+        "name": "Rotating Beer",
+        "price": "$8"
+      }
+    ],
+    "bottlesCans": [
+      {
+        "name": "Corona Extra",
+        "price": "$6"
+      },
+      {
+        "name": "Pacifico",
+        "price": "$6"
+      },
+      {
+        "name": "Coors Light",
+        "price": "$6"
+      },
+      {
+        "name": "Modelo Negra",
+        "price": "$6"
+      },
+      {
+        "name": "White Claw",
+        "price": "$7"
+      },
+      {
+        "name": "Delicious IPA",
+        "price": "$8"
+      }
+    ],
+    "nonAlcoholic": [
+      {
+        "name": "Topo Chico",
+        "price": "$3.45"
+      },
+      {
+        "name": "Mocktails",
+        "price": "$5"
+      },
+      {
+        "name": "Corona N/A",
+        "price": "$6"
+      },
+      {
+        "name": "Heineken N/A",
+        "price": "$6"
+      }
+    ],
+    "wine": [
+      {
+        "category": "Chardonnay",
+        "items": [
+          {
+            "name": "Joel Gott",
+            "region": "California",
+            "glass": "$9",
+            "bottle": "$34"
+          },
+          {
+            "name": "Sonoma Cutrer",
+            "region": "Russian River, California",
+            "glass": "$14",
+            "bottle": "$54"
+          },
+          {
+            "name": "Rombauer",
+            "region": "Carneros, California",
+            "glass": "$15",
+            "bottle": "$58"
+          },
+          {
+            "name": "Cakebread",
+            "region": "Napa Valley, California",
+            "glass": "$22",
+            "bottle": "$82"
+          }
+        ]
+      },
+      {
+        "category": "Sauvignon Blanc",
+        "items": [
+          {
+            "name": "Kim Crawford",
+            "region": "Marlborough, New Zealand",
+            "glass": "$10",
+            "bottle": "$38"
+          },
+          {
+            "name": "Rombauer SB",
+            "region": "Carneros, California",
+            "glass": "$12",
+            "bottle": "$46"
+          },
+          {
+            "name": "Illumination by Quintessa",
+            "region": "Napa Valley, California",
+            "glass": "$15",
+            "bottle": "$58"
+          }
+        ]
+      },
+      {
+        "category": "Pinot Grigio",
+        "items": [
+          {
+            "name": "Santa Margherita",
+            "region": "Alto Adige, Italy",
+            "glass": "$17",
+            "bottle": "$64"
+          }
+        ]
+      },
+      {
+        "category": "Bubbly",
+        "items": [
+          {
+            "name": "Martini & Rossi",
+            "region": "Torino, Italy · Prosecco",
+            "glass": "$7",
+            "bottle": "$26"
+          },
+          {
+            "name": "Martini & Rossi Rosé",
+            "region": "Torino, Italy · Prosecco",
+            "glass": "$7",
+            "bottle": "$26"
+          },
+          {
+            "name": "Veuve Clicquot",
+            "region": "Champagne, France",
+            "bottle": "$150"
+          },
+          {
+            "name": "Dom Pérignon",
+            "region": "Champagne, France",
+            "bottle": "$295"
+          }
+        ]
+      },
+      {
+        "category": "Cabernet",
+        "items": [
+          {
+            "name": "Joel Gott",
+            "region": "California",
+            "glass": "$10",
+            "bottle": "$38"
+          },
+          {
+            "name": "Justin",
+            "region": "Paso Robles, California",
+            "glass": "$16",
+            "bottle": "$62"
+          },
+          {
+            "name": "Daou",
+            "region": "Paso Robles, California",
+            "glass": "$18",
+            "bottle": "$70"
+          },
+          {
+            "name": "Prisoner",
+            "region": "Napa Valley, California",
+            "glass": "$20",
+            "bottle": "$78"
+          },
+          {
+            "name": "Caymus 2017",
+            "region": "Napa Valley, California",
+            "glass": "$45",
+            "bottle": "$160"
+          },
+          {
+            "name": "Opus One 2018",
+            "region": "Napa Valley, California",
+            "bottle": "$500"
+          }
+        ]
+      },
+      {
+        "category": "Pinot Noir",
+        "items": [
+          {
+            "name": "Josh",
+            "region": "California",
+            "glass": "$10",
+            "bottle": "$38"
+          },
+          {
+            "name": "Meiomi",
+            "region": "California",
+            "glass": "$12",
+            "bottle": "$46"
+          }
+        ]
+      },
+      {
+        "category": "Red Blend",
+        "items": [
+          {
+            "name": "Quintessa Red",
+            "region": "Napa Valley, California",
+            "bottle": "$285"
+          }
+        ]
+      },
+      {
+        "category": "Rosé",
+        "items": [
+          {
+            "name": "Angels Cowboys",
+            "region": "California",
+            "glass": "$10",
+            "bottle": "$38"
+          }
+        ]
+      },
+      {
+        "category": "Alta Gama (Top Shelf)",
+        "items": [
+          {
+            "name": "Ace of Spades",
+            "region": "Champagne, France",
+            "bottle": "$500"
+          }
+        ]
+      }
+    ]
   },
   "givesBack": {
     "heroEyebrow": "Giving back to our community",

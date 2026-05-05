@@ -1296,19 +1296,109 @@ ${ticker("ticker--agave")}
   </div>
 </section>
 
-${b.happyHour && b.happyHour.length ? `
+${b.cocktails && b.cocktails.length ? `
+<section class="section section--cream" id="cocktails">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Cocktails</p>
+      <h2 class="display-sm">Hand-crafted <span class="serif" style="color:var(--terracotta)">cocktails.</span></h2>
+    </header>
+    <div class="cocktail-grid">
+      ${b.cocktails.map(c => `
+      <article class="cocktail-card">
+        <div class="cocktail-card__head">
+          <h3>${h(c.name)}</h3>
+          <span class="cocktail-card__price">${h(c.price)}</span>
+        </div>
+        ${c.subtitle ? `<p class="cocktail-card__sub">${h(c.subtitle)}</p>` : ""}
+        ${c.ingredients ? `<p class="cocktail-card__body">${h(c.ingredients)}</p>` : ""}
+      </article>`).join("")}
+    </div>
+  </div>
+</section>` : ""}
+
+${b.happyHour && (b.happyHour.food?.length || b.happyHour.drinks?.length) ? `
 <section class="section section--wall" id="happy-hour">
   <div class="section__inner">
     <header class="section__head section__head--center">
       <p class="eyebrow">Happy hour</p>
-      <h2 class="display-sm">Daily <span class="serif" style="color:var(--terracotta)">happy hour</span> at both bars.</h2>
+      <h2 class="display-sm">Daily <span class="serif" style="color:var(--terracotta)">happy hour.</span></h2>
+      ${b.happyHour.schedule ? `<p class="hh-schedule">${h(b.happyHour.schedule)}</p>` : ""}
     </header>
-    <div class="happy-hour-grid">
-      ${b.happyHour.map(hh => `
-      <div class="happy-hour-item">
-        <h3>${h(hh.name)}</h3>
-        <p class="happy-hour-item__price">${h(hh.price)}</p>
-        ${hh.description ? `<p class="happy-hour-item__desc">${h(hh.description)}</p>` : ""}
+    <div class="hh-cols">
+      ${b.happyHour.food?.length ? `
+      <div class="hh-col">
+        <h3 class="hh-col__title">Food</h3>
+        <ul class="hh-list">
+          ${b.happyHour.food.map(it => `<li><span class="hh-list__name">${h(it.name)}</span><span class="hh-list__price">${h(it.price)}</span></li>`).join("")}
+        </ul>
+      </div>` : ""}
+      ${b.happyHour.drinks?.length ? `
+      <div class="hh-col">
+        <h3 class="hh-col__title">Drinks</h3>
+        <ul class="hh-list">
+          ${b.happyHour.drinks.map(it => `<li><span class="hh-list__name">${h(it.name)}${it.note ? `<span class="hh-list__note">${h(it.note)}</span>` : ""}</span><span class="hh-list__price">${h(it.price)}</span></li>`).join("")}
+        </ul>
+      </div>` : ""}
+    </div>
+  </div>
+</section>` : ""}
+
+${b.draft?.length || b.bottlesCans?.length || b.nonAlcoholic?.length ? `
+<section class="section section--cream-2" id="beer">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Beer & N/A</p>
+      <h2 class="display-sm">On <span class="serif" style="color:var(--terracotta)">tap</span> &amp; in the cooler.</h2>
+    </header>
+    <div class="beer-cols">
+      ${b.draft?.length ? `
+      <div class="beer-col">
+        <h3 class="beer-col__title">Draft</h3>
+        <ul class="hh-list">
+          ${b.draft.map(it => `<li><span class="hh-list__name">${h(it.name)}</span><span class="hh-list__price">${h(it.price)}</span></li>`).join("")}
+        </ul>
+      </div>` : ""}
+      ${b.bottlesCans?.length ? `
+      <div class="beer-col">
+        <h3 class="beer-col__title">Bottles &amp; Cans</h3>
+        <ul class="hh-list">
+          ${b.bottlesCans.map(it => `<li><span class="hh-list__name">${h(it.name)}</span><span class="hh-list__price">${h(it.price)}</span></li>`).join("")}
+        </ul>
+      </div>` : ""}
+      ${b.nonAlcoholic?.length ? `
+      <div class="beer-col">
+        <h3 class="beer-col__title">Non-alcoholic</h3>
+        <ul class="hh-list">
+          ${b.nonAlcoholic.map(it => `<li><span class="hh-list__name">${h(it.name)}</span><span class="hh-list__price">${h(it.price)}</span></li>`).join("")}
+        </ul>
+      </div>` : ""}
+    </div>
+  </div>
+</section>` : ""}
+
+${b.wine?.length ? `
+<section class="section section--cream" id="wine">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Wine list</p>
+      <h2 class="display-sm">From the <span class="serif" style="color:var(--terracotta)">wine list.</span></h2>
+      <p class="hh-schedule">By the glass / by the bottle</p>
+    </header>
+    <div class="wine-grid">
+      ${b.wine.map(cat => `
+      <div class="wine-cat">
+        <h3 class="wine-cat__title">${h(cat.category)}</h3>
+        <ul class="wine-list">
+          ${cat.items.map(w => `
+          <li class="wine-row">
+            <div class="wine-row__main">
+              <span class="wine-row__name">${h(w.name)}</span>
+              ${w.region ? `<span class="wine-row__region">${h(w.region)}</span>` : ""}
+            </div>
+            <div class="wine-row__price">${w.glass ? `<span>${h(w.glass)}</span>` : `<span></span>`} <span>${h(w.bottle)}</span></div>
+          </li>`).join("")}
+        </ul>
       </div>`).join("")}
     </div>
   </div>
