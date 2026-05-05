@@ -1357,16 +1357,16 @@ ${b.happyHour && (b.happyHour.food?.length || b.happyHour.drinks?.length) ? `
       <h2 class="display-sm">Daily <span class="serif">happy hour.</span></h2>
       ${b.happyHour.schedule ? `<p class="hh-schedule">${h(b.happyHour.schedule)}</p>` : ""}
     </header>
-    <div class="hh-cols">
+    <div class="hh-card">
       ${b.happyHour.food?.length ? `
-      <div class="hh-col">
+      <div class="hh-section">
         <h3 class="hh-col__title">Food</h3>
         <ul class="hh-list">
           ${b.happyHour.food.map(it => `<li><span class="hh-list__name">${h(it.name)}</span><span class="hh-list__price">${h(it.price)}</span></li>`).join("")}
         </ul>
       </div>` : ""}
       ${b.happyHour.drinks?.length ? `
-      <div class="hh-col">
+      <div class="hh-section">
         <h3 class="hh-col__title">Drinks</h3>
         <ul class="hh-list">
           ${b.happyHour.drinks.map(it => `<li><span class="hh-list__name">${h(it.name)}${it.note ? `<span class="hh-list__note">${h(it.note)}</span>` : ""}</span><span class="hh-list__price">${h(it.price)}</span></li>`).join("")}
