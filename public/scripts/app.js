@@ -116,10 +116,10 @@
     var now = new Date();
     var hf = now.getHours() + now.getMinutes() / 60;
     var live = (hf >= 14 && hf < 19) || (hf >= 23 && hf < 24);
-    var pill = document.getElementById('header-hh');
-    if (pill) {
-      if (live) pill.removeAttribute('hidden');
-      else pill.setAttribute('hidden', '');
+    var dots = document.querySelectorAll('[data-hh-dot]');
+    for (var i = 0; i < dots.length; i++) {
+      if (live) dots[i].removeAttribute('hidden');
+      else dots[i].setAttribute('hidden', '');
     }
   }
   checkHH();
