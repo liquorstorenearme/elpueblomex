@@ -187,7 +187,7 @@ function parseHoursToSpec(hours) {
 function restaurantSchema(loc) {
   const hoursSpec = loc.comingSoon ? [] : parseHoursToSpec(loc.hours);
   const reviews = reviewsData.locations?.[loc.slug];
-  const aggregateRating = reviews?.rating && reviews?.total
+  const aggregateRating = !loc.comingSoon && reviews?.rating && reviews?.total
     ? {
         "@type": "AggregateRating",
         ratingValue: reviews.rating,
@@ -338,7 +338,12 @@ function articleSchema(post) {
     url: `${BASE_URL}/news/${post.slug}/`,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/news/${post.slug}/` },
     author: { "@type": "Organization", name: site.brand.name, url: BASE_URL },
-    publisher: { "@id": ORG_ID },
+    publisher: {
+      "@type": "Organization",
+      name: site.brand.name,
+      url: BASE_URL,
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/images/brand/logo-lockup-light.png` }
+    },
     inLanguage: "en-US"
   };
 }
@@ -1860,7 +1865,12 @@ ${ticker("ticker--terracotta")}
     "@id": `${BASE_URL}/news/#blog`,
     name: `${site.brand.name} News`,
     url: `${BASE_URL}/news/`,
-    publisher: { "@id": ORG_ID },
+    publisher: {
+      "@type": "Organization",
+      name: site.brand.name,
+      url: BASE_URL,
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/images/brand/logo-lockup-light.png` }
+    },
     blogPost: posts.map(p => ({
       "@type": "BlogPosting",
       headline: p.title,

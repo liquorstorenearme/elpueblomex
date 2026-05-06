@@ -60,7 +60,7 @@ export default async function handler(req: Request): Promise<Response> {
   <div style="background:#fff;padding:28px 24px;border-radius:12px;border:1px solid #d84a1e;">
     <h2 style="margin:0 0 4px;font-size:20px;">New signup — ${esc(label)}</h2>
     <p style="margin:0 0 20px;color:#4a362a;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;">El Pueblo Mexican Food · elpueblomex.com</p>
-    <p style="margin:0 0 8px;font-size:15px;"><strong>Email:</strong> <a href="mailto:${esc(email)}">${esc(email)}</a></p>
+    <p style="margin:0 0 8px;font-size:15px;"><strong>Email:</strong> ${esc(email)}</p>
     ${name ? `<p style="margin:0 0 8px;font-size:15px;"><strong>Name:</strong> ${esc(name)}</p>` : ""}
     ${sourceKey ? `<p style="margin:0 0 8px;font-size:15px;"><strong>Source:</strong> ${esc(sourceKey)}</p>` : ""}
     <p style="margin-top:20px;color:#6a5a4a;font-size:11px;border-top:1px solid #eee;padding-top:12px;">IP: ${esc(ip)} · ${new Date().toISOString()}</p>
