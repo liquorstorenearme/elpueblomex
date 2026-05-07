@@ -95,6 +95,17 @@
       "permanent": true
     },
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "catering.elpueblomex.com"
+        }
+      ],
+      "destination": "https://elpueblomex.com/catering/",
+      "permanent": true
+    },
+    {
       "source": "/locations/el-pueblo-mexican-food-in-cardiff-by-the-sea/",
       "destination": "/locations/cardiff-by-the-sea/",
       "permanent": true
@@ -175,7 +186,72 @@
       "permanent": true
     },
     {
+      "source": "/latest-news/page/:n",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
       "source": "/category/:slug*",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:cat",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:cat/page/:n",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:cat/page/:n/",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:slug",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:slug/page/:n",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug/page/:n",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/page/:n",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})",
+      "destination": "/news/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/page/:n",
       "destination": "/news/",
       "permanent": true
     },
