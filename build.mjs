@@ -712,7 +712,7 @@ ${press.length ? `
 ` : ""}
 
 ${posts.length ? `
-<section class="kitchen-news">
+<section class="kitchen-news" data-nosnippet>
   <div class="kitchen-news__inner">
     <header class="section__head section__head--center">
       <p class="eyebrow">From the kitchen</p>
