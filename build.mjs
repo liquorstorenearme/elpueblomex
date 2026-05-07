@@ -773,10 +773,20 @@ ${ticker("ticker--terracotta")}
 // ---------- Locations ----------
 function renderLocationsIndex() {
   const body = `
-<section class="page-head">
-  <p class="eyebrow">Five locations</p>
-  <h1 class="display">Find an El Pueblo<br><span class="serif" style="color:var(--terracotta)">near you.</span></h1>
-  <p class="lede">Fresh Mexican food across San Diego County — from early morning breakfast burritos in Cardiff to late-night tacos in Del Mar.</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">Five locations</p>
+      <h1 class="display">Find an El Pueblo<br><span class="serif" style="color:var(--terracotta)">near you.</span></h1>
+      <p class="lede">Fresh Mexican food across San Diego County — from early morning breakfast burritos in Cardiff to late-night tacos in Del Mar.</p>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/locations/locations-hero.webp">
+        <img src="/images/locations/locations-hero.jpg" width="1622" height="1081" alt="El Pueblo entryway with a Catrina figurine on a vintage cart against a brick wall, next to the menu podium" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--terracotta")}
@@ -956,13 +966,23 @@ function renderMenu() {
   const orderLinks = locations.filter(l => l.orderOnlineUrl).map(l => ({ name: l.short, href: l.orderOnlineUrl }));
   const totalItems = menu.categories.reduce((a, c) => a + c.items.length, 0);
   const body = `
-<section class="page-head page-head--menu">
-  <p class="eyebrow">The menu</p>
-  <h1 class="display">Fresh&nbsp;food,<br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
-  <p class="lede">Breakfast burritos from 6am. $1.39 fish tacos all day. Full bars at Del Mar and Carmel Valley.</p>
-  <div class="cta-row">
-    <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order Online →</a>
-    <a class="btn btn--ghost" href="#menu-toc">Browse the menu ↓</a>
+<section class="page-head page-head--menu page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">The menu</p>
+      <h1 class="display">Fresh&nbsp;food,<br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
+      <p class="lede">Breakfast burritos from 6am. $1.39 fish tacos all day. Full bars at Del Mar and Carmel Valley.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order Online →</a>
+        <a class="btn btn--ghost" href="#menu-toc">Browse the menu ↓</a>
+      </div>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/menu/menu-hero.webp">
+        <img src="/images/menu/menu-hero.jpg" width="1600" height="900" alt="An overhead spread of El Pueblo plates — chilaquiles, huevos rancheros, quesadillas, rice, beans, and salsas" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
   </div>
 </section>
 
@@ -1058,13 +1078,23 @@ ${ticker("ticker--marigold")}
 function renderCatering() {
   const c = site.catering;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(c.heroEyebrow)}</p>
-  <h1 class="display">${h(c.heroHeadline)}<span class="serif" style="color:var(--terracotta)"></span></h1>
-  <p class="lede">${h(c.heroSub)}</p>
-  <div class="cta-row">
-    <a class="btn btn--primary" href="#catering-request">Request catering</a>
-    <a class="btn btn--ghost" href="#party-packs">See party packs</a>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(c.heroEyebrow)}</p>
+      <h1 class="display">${h(c.heroHeadline)}<span class="serif" style="color:var(--terracotta)"></span></h1>
+      <p class="lede">${h(c.heroSub)}</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="#catering-request">Request catering</a>
+        <a class="btn btn--ghost" href="#party-packs">See party packs</a>
+      </div>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/catering/party-pack-hero.webp">
+        <img src="/images/catering/party-pack-hero.jpg" width="1200" height="600" alt="El Pueblo party pack — carne asada tray with tortillas, rice, beans, pico, and guacamole" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
   </div>
 </section>
 
@@ -1160,10 +1190,24 @@ ${ticker("ticker--terracotta")}
 function renderEventSpace() {
   const e = site.events;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(e.heroEyebrow)}</p>
-  <h1 class="display">${h(e.heroHeadline)}</h1>
-  <p class="lede">${h(e.heroSub)}</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(e.heroEyebrow)}</p>
+      <h1 class="display">${h(e.heroHeadline)}</h1>
+      <p class="lede">${h(e.heroSub)}</p>
+    </div>
+    <div class="page-head__media page-head__media--double page-head__media--double-landscape">
+      <picture class="page-head__portrait page-head__portrait--a">
+        <source type="image/webp" srcset="/images/events/event-hero-1.webp">
+        <img src="/images/events/event-hero-1.jpg" width="1622" height="1081" alt="A group of friends laughing around a table loaded with tacos, burritos, nachos, and cocktails on the El Pueblo patio" loading="eager" fetchpriority="high">
+      </picture>
+      <picture class="page-head__portrait page-head__portrait--b">
+        <source type="image/webp" srcset="/images/events/event-hero-2.webp">
+        <img src="/images/events/event-hero-2.jpg" width="1622" height="1081" alt="A carne asada plate being passed across the table with rice, beans, guacamole, and chips at El Pueblo" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--agave")}
@@ -1250,10 +1294,20 @@ ${ticker("ticker--terracotta")}
 function renderBars() {
   const b = site.bars;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(b.heroEyebrow)}</p>
-  <h1 class="display">${h(b.heroHeadline)}</h1>
-  <p class="lede">${h(b.heroSub)}</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(b.heroEyebrow)}</p>
+      <h1 class="display">${h(b.heroHeadline)}</h1>
+      <p class="lede">${h(b.heroSub)}</p>
+    </div>
+    <div class="page-head__media">
+      <picture>
+        <source type="image/webp" srcset="/images/bars/bar-hero.webp">
+        <img src="/images/bars/bar-hero.jpg" width="990" height="1320" alt="Tequila bottle and salsa flight on a lazy susan with margaritas, mojito, and street tacos at El Pueblo's bar" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 <a class="hh-band" href="#happy-hour" id="hh-band" data-hh-band>
@@ -1490,11 +1544,21 @@ ${ticker("ticker--terracotta")}
 function renderGivesBack() {
   const g = site.givesBack;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(g.heroEyebrow)}</p>
-  <h1 class="display">${h(g.heroHeadline)}</h1>
-  <p class="lede">${h(g.heroSub)}</p>
-  <p class="note"><strong>${h(g.applyNote)}</strong></p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(g.heroEyebrow)}</p>
+      <h1 class="display">${h(g.heroHeadline)}</h1>
+      <p class="lede">${h(g.heroSub)}</p>
+      <p class="note"><strong>${h(g.applyNote)}</strong></p>
+    </div>
+    <div class="page-head__media">
+      <picture>
+        <source type="image/webp" srcset="/images/gives-back/gives-back-hero.webp">
+        <img src="/images/gives-back/gives-back-hero.jpg" width="1200" height="1611" alt="A hand holding up a plate of adobada mini tacos with onion, cilantro, and lime against the El Pueblo signature mural wall" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--marigold")}
@@ -1740,10 +1804,24 @@ ${ticker("ticker--terracotta")}
 function renderCareers() {
   const c = site.careers;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(c.heroEyebrow)}</p>
-  <h1 class="display">${h(c.heroHeadline)}</h1>
-  <p class="lede">${h(c.heroSub)}</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(c.heroEyebrow)}</p>
+      <h1 class="display">${h(c.heroHeadline)}</h1>
+      <p class="lede">${h(c.heroSub)}</p>
+    </div>
+    <div class="page-head__media page-head__media--double">
+      <picture class="page-head__portrait page-head__portrait--a">
+        <source type="image/webp" srcset="/images/careers/team-1.webp">
+        <img src="/images/careers/team-1.jpg" width="404" height="600" alt="El Pueblo team member smiling, arms crossed, in front of the signature Mexican-icon mural" loading="eager" fetchpriority="high">
+      </picture>
+      <picture class="page-head__portrait page-head__portrait--b">
+        <source type="image/webp" srcset="/images/careers/team-2.webp">
+        <img src="/images/careers/team-2.jpg" width="445" height="600" alt="El Pueblo team member resting against a wooden bar in front of the signature Mexican-icon mural" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--marigold")}
@@ -1827,10 +1905,20 @@ function renderNewsIndex() {
 ` : "";
 
   const body = `
-<section class="page-head">
-  <p class="eyebrow">From the kitchen</p>
-  <h1 class="display">News &amp; <span class="serif" style="color:var(--terracotta)">stories.</span></h1>
-  <p class="lede">Updates, openings, and stories from El Pueblo Mexican Food.</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">From the kitchen</p>
+      <h1 class="display">News &amp; <span class="serif" style="color:var(--terracotta)">stories.</span></h1>
+      <p class="lede">Updates, openings, and stories from El Pueblo Mexican Food.</p>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/news/news-hero.webp">
+        <img src="/images/news/news-hero.jpg" width="1200" height="800" alt="A busy El Pueblo patio scene — guests dining outside under the burritos and tacos signage" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--agave")}
