@@ -104,7 +104,7 @@ function organizationSchema() {
     logo: `${BASE_URL}/images/brand/logo-lockup-light.png`,
     email: site.brand.email,
     foundingDate: site.brand.founded,
-    sameAs: [site.social.instagram, site.social.facebook, site.social.yelp].filter(Boolean)
+    sameAs: [site.social.instagram, site.social.facebook, site.social.tiktok, site.social.yelp].filter(Boolean)
   };
 }
 
@@ -227,7 +227,7 @@ function restaurantSchema(loc) {
     ],
     openingHoursSpecification: hoursSpec.length ? hoursSpec : undefined,
     parentOrganization: { "@id": ORG_ID },
-    sameAs: [site.social.instagram, site.social.facebook, site.social.yelp].filter(Boolean),
+    sameAs: [site.social.instagram, site.social.facebook, site.social.tiktok, site.social.yelp].filter(Boolean),
     amenityFeature: (loc.features || []).map(f => ({ "@type": "LocationFeatureSpecification", name: f, value: true })),
     potentialAction: !loc.comingSoon && site.orderOnline?.masterUrl ? {
       "@type": "OrderAction",
@@ -528,6 +528,7 @@ const footer = () => `
         <ul>
           <li><a href="${h(site.social.instagram)}" rel="noopener">Instagram</a></li>
           <li><a href="${h(site.social.facebook)}" rel="noopener">Facebook</a></li>
+          <li><a href="${h(site.social.tiktok)}" rel="noopener">TikTok</a></li>
         </ul>
       </div>
     </div>
