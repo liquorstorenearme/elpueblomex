@@ -1197,12 +1197,8 @@ function renderEventSpace() {
       <h1 class="display">${h(e.heroHeadline)}</h1>
       <p class="lede">${h(e.heroSub)}</p>
     </div>
-    <div class="page-head__media page-head__media--double page-head__media--double-landscape">
-      <picture class="page-head__portrait page-head__portrait--a">
-        <source type="image/webp" srcset="/images/events/event-hero-1.webp">
-        <img src="/images/events/event-hero-1.jpg" width="1622" height="1081" alt="A group of friends laughing around a table loaded with tacos, burritos, nachos, and cocktails on the El Pueblo patio" loading="eager" fetchpriority="high">
-      </picture>
-      <picture class="page-head__portrait page-head__portrait--b">
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
         <source type="image/webp" srcset="/images/events/event-hero-2.webp">
         <img src="/images/events/event-hero-2.jpg" width="1622" height="1081" alt="A carne asada plate being passed across the table with rice, beans, guacamole, and chips at El Pueblo" loading="eager" fetchpriority="high">
       </picture>
