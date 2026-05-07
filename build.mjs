@@ -966,13 +966,23 @@ function renderMenu() {
   const orderLinks = locations.filter(l => l.orderOnlineUrl).map(l => ({ name: l.short, href: l.orderOnlineUrl }));
   const totalItems = menu.categories.reduce((a, c) => a + c.items.length, 0);
   const body = `
-<section class="page-head page-head--menu">
-  <p class="eyebrow">The menu</p>
-  <h1 class="display">Fresh&nbsp;food,<br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
-  <p class="lede">Breakfast burritos from 6am. $1.39 fish tacos all day. Full bars at Del Mar and Carmel Valley.</p>
-  <div class="cta-row">
-    <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order Online →</a>
-    <a class="btn btn--ghost" href="#menu-toc">Browse the menu ↓</a>
+<section class="page-head page-head--menu page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">The menu</p>
+      <h1 class="display">Fresh&nbsp;food,<br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
+      <p class="lede">Breakfast burritos from 6am. $1.39 fish tacos all day. Full bars at Del Mar and Carmel Valley.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order Online →</a>
+        <a class="btn btn--ghost" href="#menu-toc">Browse the menu ↓</a>
+      </div>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/menu/menu-hero.webp">
+        <img src="/images/menu/menu-hero.jpg" width="1600" height="900" alt="An overhead spread of El Pueblo plates — chilaquiles, huevos rancheros, quesadillas, rice, beans, and salsas" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
   </div>
 </section>
 
@@ -1881,20 +1891,10 @@ function renderNewsIndex() {
 ` : "";
 
   const body = `
-<section class="page-head page-head--with-media">
-  <div class="page-head__inner">
-    <div class="page-head__copy">
-      <p class="eyebrow">From the kitchen</p>
-      <h1 class="display">News &amp; <span class="serif" style="color:var(--terracotta)">stories.</span></h1>
-      <p class="lede">Updates, openings, and stories from El Pueblo Mexican Food.</p>
-    </div>
-    <div class="page-head__media">
-      <picture>
-        <source type="image/webp" srcset="/images/news/news-hero.webp">
-        <img src="/images/news/news-hero.jpg" width="1600" height="900" alt="An overhead spread of El Pueblo plates — chilaquiles, huevos rancheros, quesadillas, rice, beans, and salsas" loading="eager" fetchpriority="high">
-      </picture>
-    </div>
-  </div>
+<section class="page-head">
+  <p class="eyebrow">From the kitchen</p>
+  <h1 class="display">News &amp; <span class="serif" style="color:var(--terracotta)">stories.</span></h1>
+  <p class="lede">Updates, openings, and stories from El Pueblo Mexican Food.</p>
 </section>
 
 ${ticker("ticker--agave")}
