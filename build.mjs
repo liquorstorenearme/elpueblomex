@@ -1760,10 +1760,24 @@ ${ticker("ticker--terracotta")}
 function renderCareers() {
   const c = site.careers;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(c.heroEyebrow)}</p>
-  <h1 class="display">${h(c.heroHeadline)}</h1>
-  <p class="lede">${h(c.heroSub)}</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(c.heroEyebrow)}</p>
+      <h1 class="display">${h(c.heroHeadline)}</h1>
+      <p class="lede">${h(c.heroSub)}</p>
+    </div>
+    <div class="page-head__media page-head__media--double">
+      <picture class="page-head__portrait page-head__portrait--a">
+        <source type="image/webp" srcset="/images/careers/team-1.webp">
+        <img src="/images/careers/team-1.jpg" width="404" height="600" alt="El Pueblo team member smiling, arms crossed, in front of the signature Mexican-icon mural" loading="eager" fetchpriority="high">
+      </picture>
+      <picture class="page-head__portrait page-head__portrait--b">
+        <source type="image/webp" srcset="/images/careers/team-2.webp">
+        <img src="/images/careers/team-2.jpg" width="445" height="600" alt="El Pueblo team member resting against a wooden bar in front of the signature Mexican-icon mural" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--marigold")}
