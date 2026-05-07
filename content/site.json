@@ -95,30 +95,53 @@
       {
         "name": "Make-Your-Own Tacos Party Pack",
         "serves": "Makes 20 tacos",
+        "price": "$144",
         "description": "Your choice of protein, fresh tortillas, and all the fixings — guests build their own."
-      },
-      {
-        "name": "Rolled Tacos (50 ct)",
-        "serves": "Serves 10-15",
-        "description": "Crispy rolled tacos, 50 to the pack, served with guacamole and sour cream."
       },
       {
         "name": "Enchiladas (25 ct)",
         "serves": "Serves 12-15",
+        "price": "$129",
         "description": "Red or green sauce, your choice of filling. Baked fresh and ready to serve."
+      },
+      {
+        "name": "Rolled Tacos (50 ct)",
+        "serves": "Serves 10-15",
+        "price": "$119",
+        "description": "Crispy rolled tacos, 50 to the pack, served with guacamole and sour cream."
       },
       {
         "name": "Quesadilla Party Tray",
         "serves": "Serves 12",
+        "price": "$114",
         "description": "Full tray of quesadillas — cheese, chicken, or carne asada."
+      },
+      {
+        "name": "Side Dishes Full Tray",
+        "serves": "Serves 20",
+        "price": "$69",
+        "description": "Choose rice, beans, or sour cream. Full tray serves 20."
+      },
+      {
+        "name": "Guacamole Half Tray",
+        "serves": "Serves 12-15",
+        "price": "$69",
+        "description": "House-made guacamole — fresh avocado, lime, salt, cilantro."
+      },
+      {
+        "name": "Sour Cream Half Tray",
+        "serves": "Serves 12-15",
+        "price": "$69",
+        "description": "Half tray of sour cream for tacos, burritos, or rolled tacos."
       },
       {
         "name": "Chips and Salsa Full Tray",
         "serves": "Serves 25",
+        "price": "$59",
         "description": "Fresh-fried tortilla chips with a 32oz salsa cup."
       }
     ],
-    "closingNote": "Contact us for pricing and availability. We'll confirm timing and quantities based on your location."
+    "closingNote": "Contact us for availability and large-event coordination. We'll confirm timing and quantities based on your location."
   },
   "events": {
     "heroEyebrow": "Private events",

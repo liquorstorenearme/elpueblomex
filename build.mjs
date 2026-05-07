@@ -1109,7 +1109,10 @@ ${ticker("ticker--marigold")}
     <div class="party-grid">
       ${c.partyPacks.map(p => `
       <article class="party-card">
-        <h3>${h(p.name)}</h3>
+        <div class="party-card__head">
+          <h3>${h(p.name)}</h3>
+          ${p.price ? `<span class="party-card__price">${h(p.price)}</span>` : ""}
+        </div>
         <p class="party-card__serves"><strong>${h(p.serves)}</strong></p>
         <p>${h(p.description)}</p>
       </article>`).join("")}
@@ -1172,7 +1175,8 @@ ${ticker("ticker--terracotta")}
     offers: c.partyPacks.map(p => ({
       "@type": "Offer",
       name: p.name,
-      description: p.description
+      description: p.description,
+      ...(p.price ? { price: p.price.replace(/[^0-9.]/g, ""), priceCurrency: "USD" } : {})
     }))
   };
   return layout({
