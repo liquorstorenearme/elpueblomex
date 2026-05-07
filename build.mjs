@@ -1895,10 +1895,20 @@ function renderNewsIndex() {
 ` : "";
 
   const body = `
-<section class="page-head">
-  <p class="eyebrow">From the kitchen</p>
-  <h1 class="display">News &amp; <span class="serif" style="color:var(--terracotta)">stories.</span></h1>
-  <p class="lede">Updates, openings, and stories from El Pueblo Mexican Food.</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">From the kitchen</p>
+      <h1 class="display">News &amp; <span class="serif" style="color:var(--terracotta)">stories.</span></h1>
+      <p class="lede">Updates, openings, and stories from El Pueblo Mexican Food.</p>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/news/news-hero.webp">
+        <img src="/images/news/news-hero.jpg" width="1200" height="800" alt="A busy El Pueblo patio scene — guests dining outside under the burritos and tacos signage" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--agave")}
