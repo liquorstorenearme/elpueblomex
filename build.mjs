@@ -1544,11 +1544,21 @@ ${ticker("ticker--terracotta")}
 function renderGivesBack() {
   const g = site.givesBack;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(g.heroEyebrow)}</p>
-  <h1 class="display">${h(g.heroHeadline)}</h1>
-  <p class="lede">${h(g.heroSub)}</p>
-  <p class="note"><strong>${h(g.applyNote)}</strong></p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(g.heroEyebrow)}</p>
+      <h1 class="display">${h(g.heroHeadline)}</h1>
+      <p class="lede">${h(g.heroSub)}</p>
+      <p class="note"><strong>${h(g.applyNote)}</strong></p>
+    </div>
+    <div class="page-head__media">
+      <picture>
+        <source type="image/webp" srcset="/images/gives-back/gives-back-hero.webp">
+        <img src="/images/gives-back/gives-back-hero.jpg" width="1200" height="1611" alt="A hand holding up a plate of adobada mini tacos with onion, cilantro, and lime against the El Pueblo signature mural wall" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--marigold")}
