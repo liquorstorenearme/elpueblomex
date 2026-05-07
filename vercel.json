@@ -211,47 +211,47 @@
       "permanent": true
     },
     {
-      "source": "/tag/:slug",
+      "source": "/tag/:slug/",
       "destination": "/news/",
       "permanent": true
     },
     {
-      "source": "/tag/:slug/page/:n",
+      "source": "/tag/:slug/page/:n/",
       "destination": "/news/",
       "permanent": true
     },
     {
-      "source": "/author/:slug",
+      "source": "/author/:slug/",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/author/:slug/page/:n",
+      "source": "/author/:slug/page/:n/",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/page/:n",
+      "source": "/page/:n/",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/:year(\\d{4})",
+      "source": "/:year(\\d{4})/",
       "destination": "/news/",
       "permanent": true
     },
     {
-      "source": "/:year(\\d{4})/:month(\\d{2})",
+      "source": "/:year(\\d{4})/:month(\\d{2})/",
       "destination": "/news/",
       "permanent": true
     },
     {
-      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})",
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/",
       "destination": "/news/",
       "permanent": true
     },
     {
-      "source": "/:year(\\d{4})/page/:n",
+      "source": "/:year(\\d{4})/page/:n/",
       "destination": "/news/",
       "permanent": true
     },
