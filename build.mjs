@@ -773,10 +773,20 @@ ${ticker("ticker--terracotta")}
 // ---------- Locations ----------
 function renderLocationsIndex() {
   const body = `
-<section class="page-head">
-  <p class="eyebrow">Five locations</p>
-  <h1 class="display">Find an El Pueblo<br><span class="serif" style="color:var(--terracotta)">near you.</span></h1>
-  <p class="lede">Fresh Mexican food across San Diego County — from early morning breakfast burritos in Cardiff to late-night tacos in Del Mar.</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">Five locations</p>
+      <h1 class="display">Find an El Pueblo<br><span class="serif" style="color:var(--terracotta)">near you.</span></h1>
+      <p class="lede">Fresh Mexican food across San Diego County — from early morning breakfast burritos in Cardiff to late-night tacos in Del Mar.</p>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/locations/locations-hero.webp">
+        <img src="/images/locations/locations-hero.jpg" width="1622" height="1081" alt="El Pueblo entryway with a Catrina figurine on a vintage cart against a brick wall, next to the menu podium" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--terracotta")}
@@ -1170,10 +1180,20 @@ ${ticker("ticker--terracotta")}
 function renderEventSpace() {
   const e = site.events;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(e.heroEyebrow)}</p>
-  <h1 class="display">${h(e.heroHeadline)}</h1>
-  <p class="lede">${h(e.heroSub)}</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(e.heroEyebrow)}</p>
+      <h1 class="display">${h(e.heroHeadline)}</h1>
+      <p class="lede">${h(e.heroSub)}</p>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/events/event-hero.webp">
+        <img src="/images/events/event-hero.jpg" width="1622" height="1081" alt="A group of friends laughing around a table loaded with tacos, burritos, nachos, and cocktails on the El Pueblo patio" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--agave")}
