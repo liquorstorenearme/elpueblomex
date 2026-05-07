@@ -1058,13 +1058,23 @@ ${ticker("ticker--marigold")}
 function renderCatering() {
   const c = site.catering;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(c.heroEyebrow)}</p>
-  <h1 class="display">${h(c.heroHeadline)}<span class="serif" style="color:var(--terracotta)"></span></h1>
-  <p class="lede">${h(c.heroSub)}</p>
-  <div class="cta-row">
-    <a class="btn btn--primary" href="#catering-request">Request catering</a>
-    <a class="btn btn--ghost" href="#party-packs">See party packs</a>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(c.heroEyebrow)}</p>
+      <h1 class="display">${h(c.heroHeadline)}<span class="serif" style="color:var(--terracotta)"></span></h1>
+      <p class="lede">${h(c.heroSub)}</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="#catering-request">Request catering</a>
+        <a class="btn btn--ghost" href="#party-packs">See party packs</a>
+      </div>
+    </div>
+    <div class="page-head__media">
+      <picture>
+        <source type="image/webp" srcset="/images/catering/party-pack-hero.webp">
+        <img src="/images/catering/party-pack-hero.jpg" width="1200" height="600" alt="El Pueblo party pack — carne asada tray with tortillas, rice, beans, pico, and guacamole" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
   </div>
 </section>
 
@@ -1250,10 +1260,20 @@ ${ticker("ticker--terracotta")}
 function renderBars() {
   const b = site.bars;
   const body = `
-<section class="page-head">
-  <p class="eyebrow">${h(b.heroEyebrow)}</p>
-  <h1 class="display">${h(b.heroHeadline)}</h1>
-  <p class="lede">${h(b.heroSub)}</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(b.heroEyebrow)}</p>
+      <h1 class="display">${h(b.heroHeadline)}</h1>
+      <p class="lede">${h(b.heroSub)}</p>
+    </div>
+    <div class="page-head__media">
+      <picture>
+        <source type="image/webp" srcset="/images/bars/bar-hero.webp">
+        <img src="/images/bars/bar-hero.jpg" width="990" height="1320" alt="Tequila bottle and salsa flight on a lazy susan with margaritas, mojito, and street tacos at El Pueblo's bar" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 <a class="hh-band" href="#happy-hour" id="hh-band" data-hh-band>
@@ -1827,10 +1847,20 @@ function renderNewsIndex() {
 ` : "";
 
   const body = `
-<section class="page-head">
-  <p class="eyebrow">From the kitchen</p>
-  <h1 class="display">News &amp; <span class="serif" style="color:var(--terracotta)">stories.</span></h1>
-  <p class="lede">Updates, openings, and stories from El Pueblo Mexican Food.</p>
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">From the kitchen</p>
+      <h1 class="display">News &amp; <span class="serif" style="color:var(--terracotta)">stories.</span></h1>
+      <p class="lede">Updates, openings, and stories from El Pueblo Mexican Food.</p>
+    </div>
+    <div class="page-head__media">
+      <picture>
+        <source type="image/webp" srcset="/images/news/news-hero.webp">
+        <img src="/images/news/news-hero.jpg" width="1600" height="900" alt="An overhead spread of El Pueblo plates — chilaquiles, huevos rancheros, quesadillas, rice, beans, and salsas" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
 </section>
 
 ${ticker("ticker--agave")}
