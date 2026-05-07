@@ -1069,7 +1069,7 @@ function renderCatering() {
         <a class="btn btn--ghost" href="#party-packs">See party packs</a>
       </div>
     </div>
-    <div class="page-head__media">
+    <div class="page-head__media page-head__media--landscape">
       <picture>
         <source type="image/webp" srcset="/images/catering/party-pack-hero.webp">
         <img src="/images/catering/party-pack-hero.jpg" width="1200" height="600" alt="El Pueblo party pack — carne asada tray with tortillas, rice, beans, pico, and guacamole" loading="eager" fetchpriority="high">
