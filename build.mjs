@@ -581,7 +581,7 @@ function renderHome() {
   <div class="hero__inner">
     <div class="hero__copy">
       <p class="eyebrow">${h(hero.eyebrow)}</p>
-      <h1 class="hero__headline">${h(hero.headline)}<br><em>${h(hero.headlineAccent)}</em></h1>
+      <h1 class="hero__headline">${h(hero.headline)} <br><em>${h(hero.headlineAccent)}</em></h1>
       <p class="hero__sub">${h(hero.sub)}</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="${h(hero.primaryCta.href)}">${h(hero.primaryCta.label)}</a>
@@ -756,7 +756,7 @@ ${ticker("ticker--terracotta")}
   ];
   return layout({
     title: `Mexican Food in San Diego | ${site.brand.name} — 5 Locations`,
-    description: "Fresh Mexican food in San Diego — 5 locations. Cardiff, Carlsbad, Carmel Valley, Del Mar, La Jolla. Voted #1 on Yelp. Fish tacos, full bars.",
+    description: "Fresh Mexican food in San Diego County. Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening soon. Voted #1 on Yelp. Fish tacos, full bars, open late.",
     canonicalPath: "/",
     body,
     ogImage: "/og/home.jpg",
@@ -778,7 +778,7 @@ function renderLocationsIndex() {
   <div class="page-head__inner">
     <div class="page-head__copy">
       <p class="eyebrow">Five locations</p>
-      <h1 class="display">Find an El Pueblo<br><span class="serif" style="color:var(--terracotta)">near you.</span></h1>
+      <h1 class="display">Find an El Pueblo <br><span class="serif" style="color:var(--terracotta)">near you.</span></h1>
       <p class="lede">Fresh Mexican food across San Diego County — from early morning breakfast burritos in Cardiff to late-night tacos in Del Mar.</p>
     </div>
     <div class="page-head__media page-head__media--landscape">
@@ -830,7 +830,7 @@ ${ticker("ticker--terracotta")}
     }))
   };
   return layout({
-    title: `${site.brand.name} Locations — San Diego County`,
+    title: `${site.brand.name} Locations — Best Mexican Food in San Diego County`,
     description: "All 5 El Pueblo locations across San Diego County: Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, La Jolla (Spring 2026). Hours, addresses, directions.",
     canonicalPath: "/locations/",
     body,
@@ -846,7 +846,7 @@ function renderLocation(loc) {
   <div class="location-hero__inner">
     <div class="location-hero__copy">
       <p class="eyebrow">${h(loc.tag)}</p>
-      <h1 class="display">El Pueblo Mexican Food<br><em>${h(loc.name)}</em></h1>
+      <h1 class="display">El Pueblo Mexican Food <br><em>${h(loc.name)}</em></h1>
       <p class="lede">${h(loc.description)}</p>
       <div class="cta-row">
         ${(loc.orderOnlineUrl || site.orderOnline.masterUrl) ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order online</a>` : ""}
@@ -971,7 +971,7 @@ function renderMenu() {
   <div class="page-head__inner">
     <div class="page-head__copy">
       <p class="eyebrow">The menu</p>
-      <h1 class="display">Fresh&nbsp;food,<br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
+      <h1 class="display">Fresh&nbsp;food, <br><span class="serif" style="color:var(--terracotta)">every&nbsp;day.</span></h1>
       <p class="lede">Breakfast burritos from 6am. $1.39 fish tacos all day. Full bars at Del Mar and Carmel Valley.</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order Online →</a>
@@ -1281,7 +1281,7 @@ ${ticker("ticker--terracotta")}
 `;
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Event Space", url: "/event-space/" }]);
   return layout({
-    title: `Private Events & Event Space — ${site.brand.name}`,
+    title: `Private Events & Event Space — ${site.brand.name} | Heated Patios in San Diego`,
     description: "Host your next event at El Pueblo — heated patios at Del Mar and Carmel Valley, full bar, craft margaritas, custom menus. Min 8. Request availability.",
     canonicalPath: "/event-space/",
     body,
