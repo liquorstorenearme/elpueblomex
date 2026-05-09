@@ -837,15 +837,6 @@ ${ticker("ticker--terracotta")}
     </div>
   </div>
 </section>
-
-<section class="section section--cream">
-  <div class="section__inner">
-    <div class="locations-intro-card">
-      <p>El Pueblo Mexican Food has been serving fresh Mexican food across San Diego County since 2010. Our family of restaurants stretches from <a href="/locations/cardiff-by-the-sea/"><strong>Cardiff-by-the-Sea</strong></a> in the north — open <strong>24 hours</strong> for late-night carne asada and 6am breakfast burritos — down through <a href="/locations/carlsbad/"><strong>Carlsbad</strong></a>'s La Costa Town Square, <a href="/locations/carmel-valley/"><strong>Carmel Valley</strong></a>, and our flagship <a href="/locations/del-mar/"><strong>Del Mar</strong></a> location with its full bar and heated patio. Our fifth restaurant, in <a href="/locations/la-jolla/"><strong>La Jolla</strong></a>, opens <strong>Spring 2026</strong>.</p>
-      <p>Every location serves the same <a href="/menu/">menu</a>: $1.39 fish tacos, breakfast burritos from 6am, hand-rolled tortillas, fresh-grilled carne asada, and a full lineup of plates, bowls, quesadillas, and tortas. <a href="/bars/">Del Mar and Carmel Valley feature full bars</a> — whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas — with beers on tap at Del Mar.</p>
-    </div>
-  </div>
-</section>
 `;
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Locations", url: "/locations/" }]);
   const itemList = {
