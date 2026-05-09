@@ -809,6 +809,13 @@ function renderLocationsIndex() {
 
 ${ticker("ticker--terracotta")}
 
+<section class="section section--cream-2">
+  <div class="section__inner section__inner--narrow">
+    <p>El Pueblo Mexican Food has been serving fresh Mexican food across San Diego County since 2010. Our family of restaurants stretches from <strong>Cardiff-by-the-Sea</strong> in the north — open <strong>24 hours</strong> for late-night carne asada and 6am breakfast burritos — down through <strong>Carlsbad</strong>'s La Costa Town Square, <strong>Carmel Valley</strong>, and our flagship <strong>Del Mar</strong> location with its full bar and heated patio. Our fifth restaurant, in <strong>La Jolla</strong>, opens <strong>Spring 2026</strong>.</p>
+    <p>Every location serves the same menu: $1.39 fish tacos, breakfast burritos from 6am, hand-rolled tortillas, fresh-grilled carne asada, and a full lineup of plates, bowls, quesadillas, and tortas. Del Mar and Carmel Valley feature full bars — whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas — with beers on tap at Del Mar.</p>
+  </div>
+</section>
+
 <section class="section section--cream">
   <div class="section__inner">
     <div class="locations-grid">
@@ -858,6 +865,14 @@ ${ticker("ticker--terracotta")}
 }
 
 function renderLocation(loc) {
+  const locationPostMap = {
+    "cardiff-by-the-sea": "anatomy-of-a-fish-taco",
+    "carlsbad": "a-slice-of-mexico-in-la-costa",
+    "del-mar": "fish-tacos-near-del-mar",
+    "carmel-valley": "the-importance-of-fresh-ingredients-in-mexican-cuisine",
+    "la-jolla": "fresh-and-authentic-mexican-food"
+  };
+  const relatedPost = posts.find(p => p.slug === locationPostMap[loc.slug]);
   const body = `
 <section class="location-hero">
   <div class="location-hero__inner">
@@ -908,6 +923,7 @@ ${loc.body?.sections?.length ? `
       <h2>${h(s.h2)}</h2>
       ${s.paragraphs.map(p => `<p>${h(p)}</p>`).join("")}
     </article>`).join("")}
+    ${relatedPost ? `<p class="location-longform__more"><a href="/news/${h(relatedPost.slug)}/">Read more: ${h(relatedPost.title)} →</a></p>` : ""}
   </div>
 </section>` : ""}
 
@@ -1010,7 +1026,7 @@ function renderMenu() {
     <div class="menu-featured__copy">
       <p class="eyebrow" style="color:var(--marigold)">Home of the</p>
       <h2>$1.39 <em>Fish Taco</em></h2>
-      <p>Crispy fried-to-order fillet, chipotle sauce, fresh pico, crisp cabbage on a warm corn tortilla. Our signature, unlimited, every day of the year.</p>
+      <p>Crispy fried-to-order fillet, chipotle sauce, fresh pico, crisp cabbage on a warm corn tortilla. Our signature, unlimited, every day of the year. <a href="/news/anatomy-of-a-fish-taco/">Read about how we build it →</a></p>
       <div class="cta-row">
         <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order from any location →</a>
       </div>
@@ -2006,6 +2022,8 @@ function renderPost(post) {
     return "";
   }).join("\n");
   const heroImg = fileExists(post.image) ? post.image : null;
+  const idx = posts.findIndex(p => p.slug === post.slug);
+  const related = [posts[(idx + 1) % posts.length], posts[(idx + 2) % posts.length]].filter(Boolean);
   const body = `
 <article class="post">
   <header class="post__head">
@@ -2024,6 +2042,27 @@ function renderPost(post) {
     <a class="btn btn--primary" href="/menu/">See the menu</a>
   </footer>
 </article>
+
+${related.length ? `
+<section class="section section--cream">
+  <div class="section__inner">
+    <header class="news-section__head">
+      <p class="eyebrow">Keep reading</p>
+      <h2 class="display-sm">Related <span class="serif" style="color:var(--terracotta)">stories.</span></h2>
+    </header>
+    <div class="kitchen-news__grid">
+      ${related.map(p => `
+      <a class="news-card" href="/news/${h(p.slug)}/">
+        ${fileExists(p.image) ? `<div class="news-card__media" role="img" aria-label="${h(p.imageAlt || p.title)}" style="background-image:url('${h(p.image)}')"></div>` : ""}
+        <div class="news-card__body">
+          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }))}</p>
+          <h3 class="news-card__title">${h(p.title)}</h3>
+          <p class="news-card__excerpt">${h(p.excerpt || "")}</p>
+        </div>
+      </a>`).join("")}
+    </div>
+  </div>
+</section>` : ""}
 `;
   const crumbs = breadcrumbSchema([
     { name: "Home", url: "/" },
