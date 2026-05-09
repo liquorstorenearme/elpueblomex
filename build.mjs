@@ -45,6 +45,12 @@ function getJpegSize(filepath) {
   } catch (e) {}
   return null;
 }
+function imgSizeAttr(urlPath) {
+  if (!urlPath) return "";
+  const fp = path.join(outDir, urlPath.replace(/^\//, ""));
+  const s = getJpegSize(fp);
+  return s ? ` width="${s.width}" height="${s.height}"` : "";
+}
 const slugify = (s) => String(s).toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 const locBySlug = Object.fromEntries(locations.map(l => [l.slug, l]));
 
@@ -702,7 +708,7 @@ ${ticker("ticker--agave")}
   <div class="home-scroller__track">
     ${galleryPhotos().slice(0, 14).map(p => `
     <figure class="home-scroller__item">
-      <img src="${h(p.src)}" alt="${h(p.alt)}" loading="lazy">
+      <img src="${h(p.src)}" alt="${h(p.alt)}" loading="lazy"${p.width ? ` width="${p.width}" height="${p.height}"` : ""}>
     </figure>`).join("")}
     <a class="home-scroller__end" href="/gallery/">
       <span>See<br>all<br>photos →</span>
@@ -809,13 +815,6 @@ function renderLocationsIndex() {
 
 ${ticker("ticker--terracotta")}
 
-<section class="section section--cream-2">
-  <div class="section__inner section__inner--narrow">
-    <p>El Pueblo Mexican Food has been serving fresh Mexican food across San Diego County since 2010. Our family of restaurants stretches from <strong>Cardiff-by-the-Sea</strong> in the north — open <strong>24 hours</strong> for late-night carne asada and 6am breakfast burritos — down through <strong>Carlsbad</strong>'s La Costa Town Square, <strong>Carmel Valley</strong>, and our flagship <strong>Del Mar</strong> location with its full bar and heated patio. Our fifth restaurant, in <strong>La Jolla</strong>, opens <strong>Spring 2026</strong>.</p>
-    <p>Every location serves the same menu: $1.39 fish tacos, breakfast burritos from 6am, hand-rolled tortillas, fresh-grilled carne asada, and a full lineup of plates, bowls, quesadillas, and tortas. Del Mar and Carmel Valley feature full bars — whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas — with beers on tap at Del Mar.</p>
-  </div>
-</section>
-
 <section class="section section--cream">
   <div class="section__inner">
     <div class="locations-grid">
@@ -835,6 +834,15 @@ ${ticker("ticker--terracotta")}
           </div>
         </a>`).join("")}
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="section__inner">
+    <div class="locations-intro-card">
+      <p>El Pueblo Mexican Food has been serving fresh Mexican food across San Diego County since 2010. Our family of restaurants stretches from <a href="/locations/cardiff-by-the-sea/"><strong>Cardiff-by-the-Sea</strong></a> in the north — open <strong>24 hours</strong> for late-night carne asada and 6am breakfast burritos — down through <a href="/locations/carlsbad/"><strong>Carlsbad</strong></a>'s La Costa Town Square, <a href="/locations/carmel-valley/"><strong>Carmel Valley</strong></a>, and our flagship <a href="/locations/del-mar/"><strong>Del Mar</strong></a> location with its full bar and heated patio. Our fifth restaurant, in <a href="/locations/la-jolla/"><strong>La Jolla</strong></a>, opens <strong>Spring 2026</strong>.</p>
+      <p>Every location serves the same <a href="/menu/">menu</a>: $1.39 fish tacos, breakfast burritos from 6am, hand-rolled tortillas, fresh-grilled carne asada, and a full lineup of plates, bowls, quesadillas, and tortas. <a href="/bars/">Del Mar and Carmel Valley feature full bars</a> — whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas — with beers on tap at Del Mar.</p>
     </div>
   </div>
 </section>
@@ -887,7 +895,7 @@ function renderLocation(loc) {
       </div>
     </div>
     <div class="location-hero__media">
-      <img src="${h(loc.hero)}" alt="El Pueblo ${h(loc.name)}" loading="eager">
+      <img src="${h(loc.hero)}" alt="El Pueblo ${h(loc.name)}" loading="eager"${imgSizeAttr(loc.hero)}>
     </div>
   </div>
 </section>
@@ -2032,7 +2040,7 @@ function renderPost(post) {
     <p class="lede">${h(post.excerpt)}</p>
   </header>
   ${heroImg ? `<figure class="post__hero">
-    <img src="${h(heroImg)}" alt="${h(post.imageAlt || post.title)}" loading="eager">
+    <img src="${h(heroImg)}" alt="${h(post.imageAlt || post.title)}" loading="eager"${imgSizeAttr(heroImg)}>
   </figure>` : ""}
   <div class="post__body">
     ${bodyBlocks}
