@@ -28,6 +28,23 @@ const reviewsData = fs.existsSync(reviewsPath)
 
 const BASE_URL = site.seo?.siteUrl || "https://elpueblomex.com";
 const h = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+function getJpegSize(filepath) {
+  try {
+    const buf = fs.readFileSync(filepath);
+    if (buf[0] !== 0xFF || buf[1] !== 0xD8) return null;
+    let off = 2;
+    while (off < buf.length) {
+      if (buf[off] !== 0xFF) return null;
+      const m = buf[off + 1];
+      if (m >= 0xC0 && m <= 0xCF && m !== 0xC4 && m !== 0xC8 && m !== 0xCC) {
+        return { width: buf.readUInt16BE(off + 7), height: buf.readUInt16BE(off + 5) };
+      }
+      off += 2 + buf.readUInt16BE(off + 2);
+    }
+  } catch (e) {}
+  return null;
+}
 const slugify = (s) => String(s).toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 const locBySlug = Object.fromEntries(locations.map(l => [l.slug, l]));
 
@@ -1735,7 +1752,8 @@ function galleryPhotos() {
     const hash = crypto.createHash("md5").update(fs.readFileSync(fp)).digest("hex");
     if (seenHash.has(hash)) return;
     seenHash.add(hash);
-    out.push({ src, alt });
+    const size = getJpegSize(fp);
+    out.push({ src, alt, width: size?.width, height: size?.height });
   };
   push("/images/home/fish-taco.jpg", "The $1.39 fish taco at El Pueblo Mexican Food");
   for (const cat of menu.categories) {
@@ -1750,6 +1768,7 @@ function renderGallery() {
   const g = site.gallery;
   const photos = galleryPhotos();
   const body = `
+<nav aria-label="Breadcrumb" class="breadcrumbs"><a href="/">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Gallery</span></nav>
 <section class="page-head">
   <p class="eyebrow">${h(g.heroEyebrow)}</p>
   <h1 class="display">${h(g.heroHeadline)}</h1>
@@ -1763,7 +1782,7 @@ ${ticker("ticker--marigold")}
     <div class="gallery-grid">
       ${photos.map(p => `
       <figure class="gallery-item">
-        <img src="${h(p.src)}" alt="${h(p.alt)}" loading="lazy">
+        <img src="${h(p.src)}" alt="${h(p.alt)}" loading="lazy"${p.width ? ` width="${p.width}" height="${p.height}"` : ""}>
       </figure>`).join("")}
     </div>
   </div>
