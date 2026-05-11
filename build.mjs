@@ -779,7 +779,7 @@ ${ticker("ticker--terracotta")}
   ];
   return layout({
     title: `Mexican Food in San Diego | ${site.brand.name} — 5 Locations`,
-    description: "Fresh Mexican food in San Diego County. Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening soon. Voted #1 on Yelp. Fish tacos, full bars, open late.",
+    description: "Voted #1 on Yelp's Top Ten Mexican Restaurants — five locations across North San Diego County: Cardiff, Carlsbad, Carmel Valley, Del Mar, La Jolla.",
     canonicalPath: "/",
     body,
     ogImage: "/og/home.jpg",
