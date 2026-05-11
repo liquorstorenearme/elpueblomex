@@ -1,3 +1,5 @@
+import { looksLikeSpam } from "./_spam";
+
 export const config = { runtime: "edge" };
 
 const attempts = new Map<string, { count: number; reset: number }>();
@@ -67,6 +69,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   if (!name || !email || !phone) return fallbackBack("missing", jobSlug);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fallbackBack("email", jobSlug);
+  if (looksLikeSpam(`${history}\n${message}`, email, name)) return back(successPath, req.url, { sent: "1" });
 
   // Resume (optional)
   const resume = form.get("resume") as File | null;

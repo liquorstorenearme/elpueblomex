@@ -1,3 +1,5 @@
+import { looksLikeSpam } from "./_spam";
+
 export const config = { runtime: "edge" };
 
 const attempts = new Map<string, { count: number; reset: number }>();
@@ -53,6 +55,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   if (!email) return back(returnPath, req.url, { err: "missing" });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return back(returnPath, req.url, { err: "email" });
+  if (looksLikeSpam("", email, name)) return back(returnPath, req.url, { sent: "newsletter" });
 
   const label = sourceKey === "la-jolla" ? "La Jolla opening alerts" : "Newsletter";
 

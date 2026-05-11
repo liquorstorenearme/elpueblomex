@@ -1,3 +1,5 @@
+import { looksLikeSpam } from "./_spam";
+
 export const config = { runtime: "edge" };
 
 const attempts = new Map<string, { count: number; reset: number }>();
@@ -60,6 +62,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   if (!name || !email || !organization) return back("/gives-back/", req.url, { err: "missing" });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return back("/gives-back/", req.url, { err: "email" });
+  if (looksLikeSpam(message, email, name)) return back("/gives-back/", req.url, { sent: "1" });
   if (!signerName || !signerTitle) return back("/gives-back/", req.url, { err: "missing" });
   if (!agree) return back("/gives-back/", req.url, { err: "agree" });
 

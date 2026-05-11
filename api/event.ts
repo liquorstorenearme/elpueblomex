@@ -1,3 +1,5 @@
+import { looksLikeSpam } from "./_spam";
+
 export const config = { runtime: "edge" };
 
 const attempts = new Map<string, { count: number; reset: number }>();
@@ -58,6 +60,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   if (!name || !email) return back("/event-space/", req.url, { err: "missing" });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return back("/event-space/", req.url, { err: "email" });
+  if (looksLikeSpam(message, email, name)) return back("/event-space/", req.url, { sent: "1" });
 
   const html = `<!DOCTYPE html><html><body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1b1008;max-width:720px;margin:0 auto;padding:24px;background:#faf0d8;">
   <div style="background:#fff;padding:32px 28px;border-radius:12px;border:1px solid #d84a1e;">
