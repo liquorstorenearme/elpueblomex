@@ -1933,7 +1933,7 @@ ${ticker("ticker--terracotta")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Careers", url: "/careers/" }]);
   return layout({
     title: `Careers — ${site.brand.name} | We're Hiring`,
-    description: "Join the El Pueblo team — Team Member, Shift Lead, and Assistant General Manager positions across four San Diego County locations. Pay ranges published per California SB 1162. Health insurance, free meal every shift, 401(K). Apply today.",
+    description: "Join the El Pueblo team — Team Member, Shift Lead, and Assistant Manager positions across four San Diego County locations. Pay ranges published per California SB 1162. Health insurance, free meal every shift, 401(K). Apply today.",
     canonicalPath: "/careers/",
     body,
     ogImage: "/og/careers.jpg",
