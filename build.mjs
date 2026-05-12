@@ -1905,18 +1905,14 @@ ${ticker("ticker--marigold")}
     <div class="pay-table-wrap">
       <table class="pay-table">
         <thead>
-          <tr><th scope="col">Role</th><th scope="col">Pay range</th><th scope="col">Locations</th></tr>
+          <tr><th scope="col">Role</th><th scope="col">Pay range</th></tr>
         </thead>
         <tbody>
-          ${jobs.map(j => {
-            const locs = (j.locations || []).map(s => locBySlug[s]?.short || s);
-            const locsLabel = locs.length === 4 ? "All 4 open locations" : locs.join(", ");
-            return `<tr><td class="pay-table__role">${h(j.title)}</td><td class="pay-table__pay">${h(j.pay)}</td><td class="pay-table__locs">${h(locsLabel)}</td></tr>`;
-          }).join("")}
+          ${jobs.map(j => `<tr><td class="pay-table__role">${h(j.title)}</td><td class="pay-table__pay">${h(j.pay)}</td></tr>`).join("")}
         </tbody>
       </table>
     </div>
-    <p class="pay-table__note">Pay ranges reflect the salary or hourly wage range El Pueblo Mexican Food reasonably expects to pay for each position, as required by California Labor Code §432.3. Ranges may be revised over time; the version published at the moment you apply controls. To apply: use the portal above — select "Team Member" for any FOH or BOH role (Bartender, Barback, Cashier, Cook, Prep Cook, Dishwasher, Busser/Food Runner), or "Shift Lead" for Shift Leader.</p>
+    <p class="pay-table__note">Pay ranges reflect the salary or hourly wage range El Pueblo Mexican Food reasonably expects to pay for each position, as required by California Labor Code §432.3. Ranges may be revised over time; the version published at the moment you apply controls. Bar roles (Bartender, Barback) and Busser/Food Runner are at Del Mar and Carmel Valley only; all other roles hire at all four open locations (Cardiff, Carlsbad, Carmel Valley, Del Mar). To apply: use the portal above — select "Team Member" for any FOH or BOH role, or "Shift Lead" for Shift Leader.</p>
   </div>
 </section>
 
