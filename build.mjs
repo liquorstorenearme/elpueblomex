@@ -564,6 +564,7 @@ const footer = () => `
       <a href="/accessibility-statement/">Accessibility</a>
       <a href="/cookie-policy/">Cookies</a>
       <a href="/californiaconsumerprivacy/">Do Not Sell or Share</a>
+      <a href="/privacy-request/">Privacy Request</a>
     </nav>
   </div>
 </footer>
@@ -939,6 +940,7 @@ ${loc.comingSoon ? `
       <input type="hidden" name="source" value="${h(loc.slug)}">
       <input type="email" name="email" required placeholder="you@example.com" aria-label="Your email">
       <button class="btn btn--primary" type="submit">Notify me</button>
+      <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a>. We'll send one email when ${h(loc.short)} opens — no marketing, no sharing.</p>
     </form>
   </div>
 </section>` : ""}
@@ -1181,6 +1183,7 @@ ${ticker("ticker--marigold")}
       <label>How can we help?<textarea name="message" rows="5" placeholder="Party size, menu preferences, timing..."></textarea></label>
       <button class="btn btn--primary" type="submit">Send catering request</button>
       <p class="stack-form__hint">We'll reply within one business day.</p>
+      <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your request. We don't sell or share your information, and we don't send marketing texts — your phone number is for callbacks only.</p>
     </form>
   </div>
 </section>
@@ -1305,6 +1308,7 @@ ${ticker("ticker--agave")}
       <label>Comments<textarea name="message" rows="5" placeholder="Event type, menu preferences, dietary needs..."></textarea></label>
       <button class="btn btn--primary" type="submit">Send event request</button>
       <p class="stack-form__hint">We'll confirm within one business day.</p>
+      <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your request. We don't sell or share your information, and we don't send marketing texts — your phone number is for callbacks only.</p>
     </form>
   </div>
 </section>
@@ -1548,6 +1552,10 @@ ${ticker("ticker--terracotta")}
     </div>
   </div>
 </section>
+
+<aside class="prop65-note" role="note" aria-label="California Proposition 65 warning">
+  <p><strong>⚠ WARNING:</strong> Drinking distilled spirits, beer, coolers, wine and other alcoholic beverages may increase cancer risk, and, during pregnancy, can cause birth defects. For more information go to <a href="https://www.P65Warnings.ca.gov/alcohol" rel="external nofollow noopener" target="_blank">P65Warnings.ca.gov/alcohol</a>.</p>
+</aside>
 `;
   const crumbs = breadcrumbSchema([
     { name: "Home", url: "/" },
@@ -1656,6 +1664,7 @@ ${ticker("ticker--marigold")}
 
       <button class="btn btn--primary" type="submit">Submit application</button>
       <p class="stack-form__hint">We review applications in the order they're received. Please allow at least 30 days notice.</p>
+      <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to evaluate your fundraiser request. We don't sell or share your information.</p>
     </form>
   </div>
 </section>
@@ -1728,6 +1737,7 @@ ${ticker("ticker--agave")}
       <label>Message<textarea name="message" rows="5" required></textarea></label>
       <button class="btn btn--primary" type="submit">Send message</button>
       <p class="stack-form__hint">Or email us directly: <a href="mailto:${h(site.brand.email)}">${h(site.brand.email)}</a></p>
+      <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your message. We don't sell or share your information.</p>
     </form>
   </div>
 </section>
@@ -1866,6 +1876,9 @@ ${ticker("ticker--marigold")}
       <h2 class="display-sm">Current <span class="serif" style="color:var(--terracotta)">openings.</span></h2>
       <p class="lede">Browse current openings and apply directly below — every position, every location, in one place.</p>
     </header>
+    <aside class="careers-legal-note">
+      <p><strong>About applying.</strong> Applications are processed by El Pueblo Mexican Food. Information you submit is governed by our <a href="/privacy-policy/">Privacy Policy</a> and used only to evaluate your application and contact you about the role. We are an Equal Opportunity Employer and do not discriminate on the basis of race, color, religion, sex, age, national origin, disability, or any factor prohibited by law. If a background or consumer report is conducted for a finalist, you will receive a separate Fair Credit Reporting Act (FCRA) disclosure and written-authorization form before any check is run — we will never run a background check without that separate consent.</p>
+    </aside>
     <div class="careers-iframe-wrap">
       <iframe
         class="careers-iframe"
@@ -2298,7 +2311,11 @@ const legalPages = [
         "We are not responsible for damages, delays, or losses caused by third-party payment processors or delivery providers."
       ]},
       { h: "Gift cards", p: [
-        "Any gift cards we issue are redeemable only at El Pueblo locations or through our designated ordering partners, subject to the terms printed on the card or accompanying materials. Gift cards are not refundable, not redeemable for cash (except where required by law), and are not replaceable if lost or stolen."
+        "Any gift cards we issue are redeemable only at El Pueblo locations or through our designated ordering partners, subject to the terms printed on the card or accompanying materials.",
+        "Gift cards we issue do not expire and have no dormancy or service fees, as required by California Civil Code §§ 1749.45–1749.6.",
+        "California cash-redemption right: a gift card with a remaining balance of less than ten dollars ($10) is redeemable in cash on demand at any El Pueblo location in California, in accordance with California Civil Code § 1749.5(b)(2).",
+        "Promotional gift cards (cards distributed without consideration as part of a promotional program) may have additional terms or expiration dates printed on the card; those terms control to the extent permitted by law.",
+        "Gift cards are not refundable in exchange for the original purchase price (other than the California cash-redemption right described above), and we cannot replace lost or stolen cards unless required by law."
       ]},
       { h: "Intellectual property", p: [
         `All text, graphics, photographs, videos, logos, marks, menu descriptions, page layouts, and other content on the Site are owned by ${site.brand.name}, its licensors, or its contributors, and are protected by U.S. and international copyright, trademark, and other intellectual-property laws.`,
@@ -2529,6 +2546,70 @@ const legalPages = [
         "Postal: 5965 Village Way, Suite E107, San Diego, CA 92130 (Attn: Privacy)"
       ]}
     ]
+  },
+  {
+    slug: "privacy-request",
+    title: "Submit a Privacy Request",
+    seoTitle: "Privacy Request",
+    description: "Submit a privacy request to El Pueblo Mexican Food — access, delete, correct, or opt out of the sale or sharing of your personal information.",
+    prelude: `
+<section class="section section--cream">
+  <div class="section__inner" style="max-width:760px">
+    <p class="lede">Use this form to ask us about the personal information we hold about you, request a copy, ask us to delete or correct it, or opt out of any &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; under California law. You can also email <a href="mailto:${h(site.brand.email)}?subject=Privacy%20Request">${h(site.brand.email)}</a> with &ldquo;Privacy Request&rdquo; in the subject line.</p>
+    <p>This form is open to anyone, regardless of where you live. California residents have specific rights under the CCPA/CPRA — see our <a href="/californiaconsumerprivacy/">California Consumer Privacy notice</a> for details. We respond within 45 days (extendable by another 45 days if needed). We do not charge a fee for verifiable requests.</p>
+    <form class="stack-form" action="/api/privacy" method="post">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="stack-form__row">
+        <label>Full name<input name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+      </div>
+      <fieldset class="stack-form__fieldset">
+        <legend>What kind of request?</legend>
+        <label class="stack-form__check"><input type="radio" name="request_type" value="access" required><span>Access — send me a copy of the information you have about me.</span></label>
+        <label class="stack-form__check"><input type="radio" name="request_type" value="delete"><span>Delete — delete the information you have about me.</span></label>
+        <label class="stack-form__check"><input type="radio" name="request_type" value="correct"><span>Correct — fix inaccurate information you have about me.</span></label>
+        <label class="stack-form__check"><input type="radio" name="request_type" value="opt_out"><span>Opt out — do not sell or share my personal information.</span></label>
+        <label class="stack-form__check"><input type="radio" name="request_type" value="appeal"><span>Appeal a previous decision.</span></label>
+        <label class="stack-form__check"><input type="radio" name="request_type" value="other"><span>Other — describe below.</span></label>
+      </fieldset>
+      <label>Are you a California resident?
+        <select name="ca_resident">
+          <option value="unspecified">Prefer not to say</option>
+          <option value="yes">Yes — I am a California resident</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+      <label>Are you submitting this request on someone else's behalf?
+        <select name="authorized_agent">
+          <option value="no">No — for myself</option>
+          <option value="yes">Yes — I am an authorized agent</option>
+        </select>
+      </label>
+      <label>Details (optional but helpful)<textarea name="message" rows="5" placeholder="If we have your information through more than one channel — catering form, contact form, careers form, an in-store interaction — please describe which one. For correction requests, include what's inaccurate and what it should be."></textarea></label>
+      <p class="stack-form__hint">To verify your identity we may ask follow-up questions that match information we already have on file. Please do not include sensitive information (Social Security numbers, driver's license numbers, payment-card data) in this form.</p>
+      <button class="btn btn--primary" type="submit">Submit privacy request</button>
+      <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. The information you provide here will be used only to verify and respond to your privacy request, and will be retained as required by applicable law.</p>
+    </form>
+  </div>
+</section>
+`,
+    sections: [
+      { h: "How we handle your request", p: [
+        "We acknowledge receipt within 10 business days and substantively respond within 45 days. If we need more time we will let you know and explain why; an extension may add up to another 45 days.",
+        "We verify your identity by matching information you provide here against information we already have on file (for example, an email address you used to contact us previously). For sensitive or high-risk requests, we may ask for additional verification.",
+        "Authorized agents may submit requests on a consumer's behalf. We will request written authorization signed by the consumer and may verify the consumer's identity directly.",
+        "We do not discriminate against consumers who exercise privacy rights. Submitting a request will not affect the price or quality of service you receive."
+      ]},
+      { h: "What we will and will not do", p: [
+        "We will: confirm what categories of personal information we hold about you; provide a portable copy of your information where required by law; delete or correct information unless an exception applies (for example, we must keep certain records for tax or legal reasons); and honor opt-out requests for any \"sale\" or \"sharing\" as defined under California law.",
+        "We will not: charge a fee for verifiable consumer requests; require you to create an account to submit a request; sell or share your personal information for cross-context behavioral advertising (we do not engage in this in any case)."
+      ]},
+      { h: "Other ways to reach us", p: [
+        `Email: ${site.brand.email} with "Privacy Request" in the subject line.`,
+        "Postal: 5965 Village Way, Suite E107, San Diego, CA 92130 (Attn: Privacy).",
+        "We provide two methods (this form and email) because California law requires businesses that interact with consumers in person to offer multiple submission channels."
+      ]}
+    ]
   }
 ];
 
@@ -2576,7 +2657,8 @@ function renderSitemap() {
     { loc: "/terms/", priority: 0.3, changefreq: "yearly" },
     { loc: "/accessibility-statement/", priority: 0.3, changefreq: "yearly" },
     { loc: "/cookie-policy/", priority: 0.3, changefreq: "yearly" },
-    { loc: "/californiaconsumerprivacy/", priority: 0.3, changefreq: "yearly" }
+    { loc: "/californiaconsumerprivacy/", priority: 0.3, changefreq: "yearly" },
+    { loc: "/privacy-request/", priority: 0.3, changefreq: "yearly" }
   ];
   const today = new Date().toISOString().slice(0, 10);
   return `<?xml version="1.0" encoding="UTF-8"?>
