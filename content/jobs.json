@@ -46,9 +46,9 @@
       "title": "Shift Lead",
       "type": "Full-time",
       "employmentType": "FULL_TIME",
-      "pay": "$26/hr ($20/hr + avg $6/hr in shared tip pool)",
-      "payMin": 20,
-      "payMax": 20,
+      "pay": "$24.75/hr + $4.50/hr in shared tip pool",
+      "payMin": 24.75,
+      "payMax": 24.75,
       "payUnit": "HOUR",
       "locations": [
         "cardiff-by-the-sea",
