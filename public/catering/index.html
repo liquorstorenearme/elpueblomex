@@ -197,12 +197,12 @@
     <form class="stack-form" action="/api/catering" method="post">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
-        <label>Name<input name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
       </div>
       <div class="stack-form__row">
-        <label>Phone<input type="tel" name="phone"></label>
-        <label>Business / Organization<input name="organization"></label>
+        <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+        <label>Business / Organization<input name="organization" autocomplete="organization"></label>
       </div>
       <label>Nearest location
         <select name="location" required>

@@ -940,7 +940,7 @@ ${loc.comingSoon ? `
     <form class="newsletter-form" action="/api/newsletter" method="post">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="source" value="${h(loc.slug)}">
-      <input type="email" name="email" required placeholder="you@example.com" aria-label="Your email">
+      <input type="email" name="email" autocomplete="email" required placeholder="you@example.com" aria-label="Your email">
       <button class="btn btn--primary" type="submit">Notify me</button>
       <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a>. We'll send one email when ${h(loc.short)} opens — no marketing, no sharing.</p>
     </form>
@@ -1178,12 +1178,12 @@ ${ticker("ticker--marigold")}
     <form class="stack-form" action="/api/catering" method="post">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
-        <label>Name<input name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
       </div>
       <div class="stack-form__row">
-        <label>Phone<input type="tel" name="phone"></label>
-        <label>Business / Organization<input name="organization"></label>
+        <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+        <label>Business / Organization<input name="organization" autocomplete="organization"></label>
       </div>
       <label>Nearest location
         <select name="location" required>
@@ -1297,12 +1297,12 @@ ${ticker("ticker--agave")}
     <form class="stack-form" action="/api/event" method="post">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
-        <label>Name<input name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
       </div>
       <div class="stack-form__row">
-        <label>Phone<input type="tel" name="phone"></label>
-        <label>Organization<input name="organization"></label>
+        <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+        <label>Organization<input name="organization" autocomplete="organization"></label>
       </div>
       <div class="stack-form__row">
         <label>Preferred location
@@ -1643,12 +1643,12 @@ ${ticker("ticker--marigold")}
     <form class="stack-form" action="/api/fundraiser" method="post">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
-        <label>Contact name<input name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
+        <label>Contact name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
       </div>
       <div class="stack-form__row">
-        <label>Phone<input type="tel" name="phone"></label>
-        <label>Organization<input name="organization" required></label>
+        <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+        <label>Organization<input name="organization" autocomplete="organization" required></label>
       </div>
       <div class="stack-form__row">
         <label>501(c)(3) / Tax ID<input name="tax_id"></label>
@@ -1737,8 +1737,8 @@ ${ticker("ticker--agave")}
     <form class="stack-form" action="/api/contact" method="post">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
-        <label>Name<input name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
       </div>
       <label>About which location?
         <select name="location">
@@ -2595,8 +2595,8 @@ const legalPages = [
     <form class="stack-form" action="/api/privacy" method="post">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
-        <label>Full name<input name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
+        <label>Full name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
       </div>
       <fieldset class="stack-form__fieldset">
         <legend>What kind of request?</legend>
