@@ -250,7 +250,7 @@ function restaurantSchema(loc) {
     ],
     openingHoursSpecification: hoursSpec.length ? hoursSpec : undefined,
     parentOrganization: { "@id": ORG_ID },
-    sameAs: [site.social.instagram, site.social.facebook, site.social.tiktok, site.social.yelp].filter(Boolean),
+    sameAs: [site.social.instagram, site.social.facebook, site.social.tiktok, loc.yelp || site.social.yelp].filter(Boolean),
     amenityFeature: (loc.features || []).map(f => ({ "@type": "LocationFeatureSpecification", name: f, value: true })),
     potentialAction: !loc.comingSoon && site.orderOnline?.masterUrl ? {
       "@type": "OrderAction",
@@ -881,9 +881,11 @@ function renderLocation(loc) {
       <h1 class="display">El Pueblo Mexican Food <br><em>${h(loc.name)}</em></h1>
       <p class="lede">${h(loc.description)}</p>
       <div class="cta-row">
-        ${(loc.orderOnlineUrl || site.orderOnline.masterUrl) ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order online</a>` : ""}
+        ${loc.comingSoon
+          ? `<a class="btn btn--primary" href="#opening-alerts">Get opening alerts</a>`
+          : ((loc.orderOnlineUrl || site.orderOnline.masterUrl) ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order online</a>` : "")}
         <a class="btn btn--ghost" href="${h(loc.mapsUrl)}" target="_blank" rel="noopener">Directions</a>
-        ${loc.phone ? `<a class="btn btn--ghost" href="tel:${h(loc.phoneE164)}">${h(loc.phone)}</a>` : ""}
+        ${loc.phone && !loc.comingSoon ? `<a class="btn btn--ghost" href="tel:${h(loc.phoneE164)}">${h(loc.phone)}</a>` : ""}
       </div>
     </div>
     <div class="location-hero__media">
@@ -966,12 +968,19 @@ ${loc.body?.faq?.length ? `
 
 <section class="section section--cream">
   <div class="cta-band">
+    ${loc.comingSoon ? `
+    <h2>Opening soon in <em>${h(loc.short)}</em>.</h2>
+    <p>We'll send a single note the moment we open — no marketing, no sharing.</p>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="#opening-alerts">Get opening alerts</a>
+      <a class="btn btn--ghost" href="/locations/">Other locations</a>
+    </div>` : `
     <h2>Hungry, <em>${h(loc.short)}</em>?</h2>
     <p>Order pickup, browse the menu, or drop in — we're ready.</p>
     <div class="cta-row">
       <a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order from ${h(loc.short)}</a>
       <a class="btn btn--ghost" href="/locations/">Other locations</a>
-    </div>
+    </div>`}
   </div>
 </section>
 
@@ -1068,6 +1077,9 @@ ${ticker("ticker--agave")}
         </li>`).join("")}
       </ul>
     </section>`).join("")}
+    <aside class="menu-advisory" role="note" aria-label="Consumer advisory">
+      <p><strong>Consumer advisory:</strong> Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions. Please inform your server of any food allergies.</p>
+    </aside>
   </div>
 </section>
 
@@ -1931,6 +1943,7 @@ ${ticker("ticker--marigold")}
 ${ticker("ticker--terracotta")}
 `;
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Careers", url: "/careers/" }]);
+  const jobPostings = jobs.map(jobPostingSchema);
   return layout({
     title: `Careers — ${site.brand.name} | We're Hiring`,
     description: "Join the El Pueblo team — Team Member, Shift Lead, and Assistant Manager positions across four San Diego County locations. Pay ranges published per California SB 1162. Health insurance, free meal every shift, 401(K). Apply today.",
@@ -1938,7 +1951,7 @@ ${ticker("ticker--terracotta")}
     body,
     ogImage: "/og/careers.jpg",
     bodyClass: "page-careers",
-    schema: [crumbs]
+    schema: [crumbs, ...jobPostings]
   });
 }
 
@@ -2310,6 +2323,7 @@ const legalPages = [
       ]},
       { h: "Eligibility", p: [
         "You must be at least 13 years old to use the Site. If you are between 13 and 17, you may use the Site only with the involvement of a parent or guardian. You must be 18 or older to submit a job application, sign a catering contract, or enter into any payment transaction.",
+        "You must be 21 years of age or older to purchase or consume alcoholic beverages at any El Pueblo location. We card. Service is at the sole discretion of our team and applicable California Alcoholic Beverage Control (ABC) rules.",
         "You are responsible for complying with all laws that apply to you in your location."
       ]},
       { h: "Account and use of the Site", p: [
@@ -2427,7 +2441,7 @@ const legalPages = [
         "We aim to include accessibility checks in every significant update to the Site."
       ]},
       { h: "Accessibility at our restaurants", p: [
-        "Our physical locations are designed to welcome guests of all abilities. Every dining location offers counter-service ordering with staff available to assist, ADA-compliant parking where available, and accessible routes from the parking area to the dining area. Our Cardiff, Del Mar, and Carmel Valley locations have accessible restrooms.",
+        "Our physical locations are designed to welcome guests of all abilities. Every dining location offers counter-service ordering with staff available to assist, ADA-compliant parking where available, and accessible routes from the parking area to the dining area. Accessibility features vary by location; if you require an accessible restroom or have other specific accessibility needs, please call the location in advance and our team will confirm what's available.",
         "If you plan to visit and have a specific accessibility concern, please call the location in advance — our teams are happy to prepare."
       ]},
       { h: "Feedback and assistance", p: [
@@ -2436,7 +2450,7 @@ const legalPages = [
         "If you need immediate help, you may call any of our restaurants directly; phone numbers and hours are listed on the Locations page."
       ]},
       { h: "Formal complaints", p: [
-        "If your feedback is not addressed to your satisfaction, you may file a complaint under the Americans with Disabilities Act with the U.S. Department of Justice Civil Rights Division (www.ada.gov) or, for California residents, with the California Department of Fair Employment and Housing."
+        "If your feedback is not addressed to your satisfaction, you may file a complaint under the Americans with Disabilities Act with the U.S. Department of Justice Civil Rights Division (www.ada.gov) or, for California residents, with the California Civil Rights Department (calcivilrights.ca.gov)."
       ]},
       { h: "Changes to this Statement", p: [
         "We may update this Accessibility Statement as our practices evolve. The \"Last updated\" date above reflects the most recent revision."

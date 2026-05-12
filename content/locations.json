@@ -14,6 +14,7 @@
       },
       "phone": "(760) 230-1771",
       "phoneE164": "+17602301771",
+      "yelp": "https://www.yelp.com/biz/el-pueblo-mexican-food-cardiff-cardiff",
       "hours": {
         "mon": "Open 24 hours",
         "tue": "Open 24 hours",
@@ -100,6 +101,7 @@
       },
       "phone": "(760) 487-5820",
       "phoneE164": "+17604875820",
+      "yelp": "https://www.yelp.com/biz/el-pueblo-mexican-food-carlsbad",
       "hours": {
         "mon": "6:00 AM – 10:00 PM",
         "tue": "6:00 AM – 10:00 PM",
@@ -187,6 +189,7 @@
       },
       "phone": "(858) 925-7129",
       "phoneE164": "+18589257129",
+      "yelp": "https://www.yelp.com/biz/el-pueblo-mexican-food-and-bar-carmel-valley-san-diego",
       "hours": {
         "mon": "6:00 AM – 12:00 AM",
         "tue": "6:00 AM – 12:00 AM",
@@ -276,6 +279,7 @@
       },
       "phone": "(858) 523-9834",
       "phoneE164": "+18585239834",
+      "yelp": "https://www.yelp.com/biz/el-pueblo-mexican-food-and-bar-del-mar-del-mar",
       "hours": {
         "mon": "6:00 AM – 12:00 AM",
         "tue": "6:00 AM – 12:00 AM",
@@ -365,6 +369,7 @@
       },
       "phone": "",
       "phoneE164": "",
+      "yelp": "https://www.yelp.com/biz/el-pueblo-mexican-food-la-jolla",
       "hours": {
         "summary": "Opening Spring 2026"
       },
@@ -376,7 +381,7 @@
       },
       "features": [
         "Opening Spring 2026",
-        "Beer & wine"
+        "Beer & wine planned (pending ABC license)"
       ],
       "description": "Our fifth location is coming to La Jolla's Pearl Street in Spring 2026. Sign up below to hear the moment we open the doors.",
       "hero": "/images/locations/la-jolla-hero.jpg",
