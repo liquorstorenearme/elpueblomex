@@ -8,7 +8,10 @@
       "pay": "$22.85/hr ($16.85/hr + avg $6/hr in tips)",
       "payMin": 16.85,
       "payMax": 22.85,
-      "locations": ["carmel-valley", "del-mar"],
+      "locations": [
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "We are looking for an enthusiastic bartender to provide an excellent guest drinking experience. Good bartenders will be able to create classic and innovative drinks exceeding customers' needs and expectations. Compensation includes salary and tips.",
       "responsibilities": [
         "Prepare alcohol or non-alcohol beverages for bar and restaurant patrons",
@@ -29,17 +32,26 @@
         "Ability to keep the bar organized, stocked, and clean",
         "Relevant training certificate"
       ],
-      "benefits": ["Health Insurance", "One free meal during your shift", "Sick Pay", "Raises based on work performance", "401(K)"]
+      "benefits": [
+        "Health Insurance",
+        "One free meal during your shift",
+        "Sick Pay",
+        "Raises based on work performance",
+        "401(K)"
+      ]
     },
     {
       "slug": "barback",
       "title": "Barback",
       "type": "Full-time",
       "employmentType": "FULL_TIME",
-      "pay": "$19.25/hr",
+      "pay": "$25.25/hr ($19.25/hr + avg $6/hr in tips)",
       "payMin": 19.25,
-      "payMax": 19.25,
-      "locations": ["carmel-valley", "del-mar"],
+      "payMax": 25.25,
+      "locations": [
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "Responsible for maintaining the bar's cleanliness, restocking supplies, assisting bartenders, and ensuring a smooth operational flow to provide efficient and enjoyable customer experiences.",
       "responsibilities": [
         "Maintain cleanliness and organization of the bar area",
@@ -59,17 +71,28 @@
         "Basic knowledge of bar equipment, glassware, and drink ingredients",
         "Flexible schedule, including evenings, weekends, and holidays"
       ],
-      "benefits": ["Health Insurance", "One free meal during your shift", "Sick Pay", "Raises based on work performance", "401(K)"]
+      "benefits": [
+        "Health Insurance",
+        "One free meal during your shift",
+        "Sick Pay",
+        "Raises based on work performance",
+        "401(K)"
+      ]
     },
     {
       "slug": "cashier",
       "title": "Cashier",
       "type": "Full-time / Part-time",
       "employmentType": "FULL_TIME",
-      "pay": "$19.25/hr",
+      "pay": "$19.25–$22/hr",
       "payMin": 19.25,
-      "payMax": 19.25,
-      "locations": ["cardiff-by-the-sea", "carlsbad", "carmel-valley", "del-mar"],
+      "payMax": 22,
+      "locations": [
+        "cardiff-by-the-sea",
+        "carlsbad",
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "El Pueblo is looking for energetic cashiers who want to provide excellent customer service. Cashiers are responsible for customer service, cash handling, proper food handling, ensuring orders are placed correctly and delivered quickly, cleaning, restocking, and more.",
       "responsibilities": [
         "Provide excellent customer service to all patrons",
@@ -98,17 +121,28 @@
         "Previous cashier or customer service experience is a plus",
         "POS familiarity is advantageous"
       ],
-      "benefits": ["Healthcare (Medical, Dental, Vision)", "Sick Pay", "401(K)", "Free meal every shift", "Full-time and part-time shifts available"]
+      "benefits": [
+        "Healthcare (Medical, Dental, Vision)",
+        "Sick Pay",
+        "401(K)",
+        "Free meal every shift",
+        "Full-time and part-time shifts available"
+      ]
     },
     {
       "slug": "cook",
       "title": "Cook",
       "type": "Full-time",
       "employmentType": "FULL_TIME",
-      "pay": "$22.25/hr",
+      "pay": "$22.25–$26/hr",
       "payMin": 22.25,
-      "payMax": 22.25,
-      "locations": ["cardiff-by-the-sea", "carlsbad", "carmel-valley", "del-mar"],
+      "payMax": 26,
+      "locations": [
+        "cardiff-by-the-sea",
+        "carlsbad",
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "We are a fast-paced Mexican restaurant looking for a responsible, reliable Cook.",
       "responsibilities": [
         "Prepare and cook a variety of traditional Mexican dishes",
@@ -124,18 +158,31 @@
         "Assist in training new kitchen staff",
         "Work efficiently during busy periods"
       ],
-      "requirements": ["Food Handler's Certificate"],
-      "benefits": ["Health Insurance", "One free meal during your shift", "Sick Pay", "Raises based on work performance", "401(K)"]
+      "requirements": [
+        "Food Handler's Certificate"
+      ],
+      "benefits": [
+        "Health Insurance",
+        "One free meal during your shift",
+        "Sick Pay",
+        "Raises based on work performance",
+        "401(K)"
+      ]
     },
     {
       "slug": "prep-cook",
       "title": "Prep Cook",
       "type": "Full-time",
       "employmentType": "FULL_TIME",
-      "pay": "$20.25/hr",
+      "pay": "$20.25–$23/hr",
       "payMin": 20.25,
-      "payMax": 20.25,
-      "locations": ["cardiff-by-the-sea", "carlsbad", "carmel-valley", "del-mar"],
+      "payMax": 23,
+      "locations": [
+        "cardiff-by-the-sea",
+        "carlsbad",
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "We are a fast-paced Mexican restaurant looking for a responsible, reliable Prep Cook.",
       "responsibilities": [
         "Wash and chop fresh vegetables for salsa",
@@ -149,18 +196,31 @@
         "Ensure a stock of fresh tortillas",
         "Organize and restock ingredients for the next shift"
       ],
-      "requirements": ["Food Handler's Certificate"],
-      "benefits": ["Health Insurance", "One free meal during your shift", "Sick Pay", "Raises based on work performance", "401(K)"]
+      "requirements": [
+        "Food Handler's Certificate"
+      ],
+      "benefits": [
+        "Health Insurance",
+        "One free meal during your shift",
+        "Sick Pay",
+        "Raises based on work performance",
+        "401(K)"
+      ]
     },
     {
       "slug": "dishwasher",
       "title": "Dishwasher",
       "type": "Full-time",
       "employmentType": "FULL_TIME",
-      "pay": "$19.25/hr",
+      "pay": "$19.25–$21/hr",
       "payMin": 19.25,
-      "payMax": 19.25,
-      "locations": ["cardiff-by-the-sea", "carlsbad", "carmel-valley", "del-mar"],
+      "payMax": 21,
+      "locations": [
+        "cardiff-by-the-sea",
+        "carlsbad",
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "Join our dynamic team as a Restaurant Dishwasher. You'll play a crucial role in maintaining the cleanliness and organization of our kitchen — ensuring timely cleaning and sanitization of all dishes, utensils, and kitchen equipment.",
       "responsibilities": [
         "Wash and sanitize dishes, glassware, flatware, and kitchen equipment",
@@ -182,17 +242,26 @@
         "Excellent communication and teamwork",
         "Flexibility for evenings, weekends, and holidays"
       ],
-      "benefits": ["Health Insurance", "One free meal during your shift", "Sick Pay", "Raises based on work performance", "401(K)"]
+      "benefits": [
+        "Health Insurance",
+        "One free meal during your shift",
+        "Sick Pay",
+        "Raises based on work performance",
+        "401(K)"
+      ]
     },
     {
       "slug": "busser-food-runner",
       "title": "Busser / Food Runner",
       "type": "Full-time",
       "employmentType": "FULL_TIME",
-      "pay": "$19.25/hr",
+      "pay": "$25.25/hr ($19.25/hr + avg $6/hr in tips)",
       "payMin": 19.25,
-      "payMax": 19.25,
-      "locations": ["carmel-valley", "del-mar"],
+      "payMax": 25.25,
+      "locations": [
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "Facilitate collaboration between our kitchen and wait staff. Responsibilities include setting tables, serving food orders, removing used dishes and utensils, and washing dishes. You'll ensure our guests have a high-quality dining experience by serving food in a timely, accurate manner.",
       "responsibilities": [
         "Deliver food orders from the kitchen rapidly and accurately",
@@ -213,7 +282,13 @@
         "Good oral communication",
         "Remain calm and professional under pressure"
       ],
-      "benefits": ["Health Insurance", "One free meal during your shift", "Sick Pay", "Raises based on work performance", "401(K)"]
+      "benefits": [
+        "Health Insurance",
+        "One free meal during your shift",
+        "Sick Pay",
+        "Raises based on work performance",
+        "401(K)"
+      ]
     },
     {
       "slug": "shift-leader",
@@ -223,7 +298,12 @@
       "pay": "$26/hr ($20/hr + avg $6/hr in tips)",
       "payMin": 20,
       "payMax": 26,
-      "locations": ["cardiff-by-the-sea", "carlsbad", "carmel-valley", "del-mar"],
+      "locations": [
+        "cardiff-by-the-sea",
+        "carlsbad",
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "We are a fast-paced Mexican restaurant looking for responsible, reliable Supervisors to lead our teams.",
       "responsibilities": [
         "Lead and supervise a shift of 5-7 team members: cashier/server, line cook, prep, sanitation",
@@ -239,8 +319,17 @@
         "Operate a POS system and cash register",
         "Authorized to work in the U.S."
       ],
-      "requirements": ["Food Handler's Certificate", "3-5 years of restaurant management experience"],
-      "benefits": ["Health Insurance", "One free meal during your shift", "Sick Pay", "Raises based on work performance", "401(K)"]
+      "requirements": [
+        "Food Handler's Certificate",
+        "3-5 years of restaurant management experience"
+      ],
+      "benefits": [
+        "Health Insurance",
+        "One free meal during your shift",
+        "Sick Pay",
+        "Raises based on work performance",
+        "401(K)"
+      ]
     },
     {
       "slug": "store-manager",
@@ -251,7 +340,12 @@
       "payMin": 60000,
       "payMax": 70000,
       "payUnit": "YEAR",
-      "locations": ["cardiff-by-the-sea", "carlsbad", "carmel-valley", "del-mar"],
+      "locations": [
+        "cardiff-by-the-sea",
+        "carlsbad",
+        "carmel-valley",
+        "del-mar"
+      ],
       "description": "Lead and supervise the full restaurant team — cashiers, preps, cooks, and more. Maintain a positive work environment and deliver quality customer service at every shift.",
       "responsibilities": [
         "Lead and supervise the team: Cashiers, Preps, Cooks, and more",
@@ -270,7 +364,13 @@
         "Operate a POS system and cash register",
         "Authorized to work in the U.S."
       ],
-      "benefits": ["Healthcare (Medical, Dental, Vision)", "Paid Vacation", "Paid Sick Leave", "Free Meal every shift", "401(K)"]
+      "benefits": [
+        "Healthcare (Medical, Dental, Vision)",
+        "Paid Vacation",
+        "Paid Sick Leave",
+        "Free Meal every shift",
+        "401(K)"
+      ]
     }
   ]
 }
