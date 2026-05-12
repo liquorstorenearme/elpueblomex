@@ -1869,7 +1869,28 @@ function renderCareers() {
 
 ${ticker("ticker--marigold")}
 
-<section class="section section--cream">
+<section class="section section--cream pay-transparency" id="pay-ranges">
+  <div class="section__inner">
+    <header class="section__head">
+      <p class="eyebrow">Pay transparency</p>
+      <h2 class="display-sm">Pay ranges by <span class="serif" style="color:var(--terracotta)">role.</span></h2>
+      <p class="lede">Published in compliance with California SB 1162. Actual offers within these ranges depend on experience and location. Tipped roles list the base wage; actual earnings include the shared tip pool.</p>
+    </header>
+    <div class="pay-table-wrap">
+      <table class="pay-table">
+        <thead>
+          <tr><th scope="col">Role</th><th scope="col">Pay range</th></tr>
+        </thead>
+        <tbody>
+          ${jobs.map(j => `<tr><td class="pay-table__role">${h(j.title)}</td><td class="pay-table__pay">${h(j.pay)}</td></tr>`).join("")}
+        </tbody>
+      </table>
+    </div>
+    <p class="pay-table__note">Pay ranges reflect the salary or hourly wage range El Pueblo Mexican Food reasonably expects to pay for each position, as required by California Labor Code §432.3. Ranges may be revised over time; the version published at the moment you apply controls. All four open locations participate: Cardiff-by-the-Sea, Carlsbad, Carmel Valley, Del Mar. (La Jolla opens Spring 2026.) Apply through the portal below — each listing matches a row in this table.</p>
+  </div>
+</section>
+
+<section class="section section--cream-2">
   <div class="section__inner">
     <header class="section__head">
       <p class="eyebrow">Open positions</p>
@@ -1895,28 +1916,7 @@ ${ticker("ticker--marigold")}
   </div>
 </section>
 
-<section class="section section--cream pay-transparency" id="pay-ranges">
-  <div class="section__inner">
-    <header class="section__head">
-      <p class="eyebrow">Pay transparency</p>
-      <h2 class="display-sm">Pay ranges by <span class="serif" style="color:var(--terracotta)">role.</span></h2>
-      <p class="lede">Published in compliance with California SB 1162. Actual offers within these ranges depend on experience and location. Tipped roles list the base wage; actual earnings include the shared tip pool.</p>
-    </header>
-    <div class="pay-table-wrap">
-      <table class="pay-table">
-        <thead>
-          <tr><th scope="col">Role</th><th scope="col">Pay range</th></tr>
-        </thead>
-        <tbody>
-          ${jobs.map(j => `<tr><td class="pay-table__role">${h(j.title)}</td><td class="pay-table__pay">${h(j.pay)}</td></tr>`).join("")}
-        </tbody>
-      </table>
-    </div>
-    <p class="pay-table__note">Pay ranges reflect the salary or hourly wage range El Pueblo Mexican Food reasonably expects to pay for each position, as required by California Labor Code §432.3. Ranges may be revised over time; the version published at the moment you apply controls. All four open locations participate: Cardiff-by-the-Sea, Carlsbad, Carmel Valley, Del Mar. (La Jolla opens Spring 2026.) Apply through the portal above — each listing matches a row in this table.</p>
-  </div>
-</section>
-
-<section class="section section--cream-2">
+<section class="section section--cream">
   <div class="section__inner">
     <header class="section__head section__head--center">
       <p class="eyebrow">${h(c.benefitsIntro)}</p>
