@@ -111,11 +111,11 @@
 
   // Site-wide Happy Hour live indicator — checks current local time,
   // shows the header pill (and updates the /bars/ band if on that page)
-  // every minute. HH windows: 14:00–19:00 + 23:00–24:00 daily.
+  // every minute. HH window: 14:00–19:00 daily.
   function checkHH() {
     var now = new Date();
     var hf = now.getHours() + now.getMinutes() / 60;
-    var live = (hf >= 14 && hf < 19) || (hf >= 23 && hf < 24);
+    var live = hf >= 14 && hf < 19;
     try {
       var qs = new URLSearchParams(location.search);
       if (qs.get('hh') === '1') live = true;

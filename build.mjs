@@ -1347,8 +1347,6 @@ function renderBars() {
   <span class="hh-band__sticker"><span class="hh-band__sticker-line">Daily</span><span class="hh-band__sticker-big">Happy Hour</span></span>
   <span class="hh-band__times">
     <span class="hh-band__time"><strong>2<small>pm</small></strong> – <strong>7<small>pm</small></strong></span>
-    <span class="hh-band__plus">+</span>
-    <span class="hh-band__time"><strong>11<small>pm</small></strong> – <strong>12<small>am</small></strong></span>
   </span>
   <span class="hh-band__status" id="hh-status" aria-live="polite">See deals →</span>
 </a>
@@ -1357,8 +1355,8 @@ function renderBars() {
   function check(){
     var now = new Date();
     var h = now.getHours() + now.getMinutes()/60;
-    // Happy hour windows: 14:00-19:00 and 23:00-24:00 daily
-    var live = (h >= 14 && h < 19) || (h >= 23 && h < 24);
+    // Happy hour window: 14:00-19:00 daily
+    var live = h >= 14 && h < 19;
     var status = document.getElementById('hh-status');
     var band = document.getElementById('hh-band');
     if (!status || !band) return;

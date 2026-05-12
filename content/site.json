@@ -211,7 +211,7 @@
       }
     ],
     "happyHour": {
-      "schedule": "2pm–7pm + 11pm–midnight, daily",
+      "schedule": "2pm–7pm, daily",
       "food": [
         {
           "name": "Carne Asada Chips or Fries",
