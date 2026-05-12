@@ -1912,7 +1912,7 @@ ${ticker("ticker--marigold")}
         </tbody>
       </table>
     </div>
-    <p class="pay-table__note">Pay ranges reflect the salary or hourly wage range El Pueblo Mexican Food reasonably expects to pay for each position, as required by California Labor Code §432.3. Ranges may be revised over time; the version published at the moment you apply controls. Bar roles (Bartender, Barback) and Busser/Food Runner are at Del Mar and Carmel Valley only; all other roles hire at all four open locations (Cardiff, Carlsbad, Carmel Valley, Del Mar). To apply: use the portal above — select "Team Member" for any FOH or BOH role, or "Shift Lead" for Shift Leader.</p>
+    <p class="pay-table__note">Pay ranges reflect the salary or hourly wage range El Pueblo Mexican Food reasonably expects to pay for each position, as required by California Labor Code §432.3. Ranges may be revised over time; the version published at the moment you apply controls. All four open locations participate: Cardiff-by-the-Sea, Carlsbad, Carmel Valley, Del Mar. (La Jolla opens Spring 2026.) Apply through the portal above — each listing matches a row in this table.</p>
   </div>
 </section>
 
@@ -1933,7 +1933,7 @@ ${ticker("ticker--terracotta")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Careers", url: "/careers/" }]);
   return layout({
     title: `Careers — ${site.brand.name} | We're Hiring`,
-    description: "Join the El Pueblo team — cooks, cashiers, bartenders, shift leaders, managers. Health insurance, free meal every shift, 401(K). Apply today.",
+    description: "Join the El Pueblo team — Team Member, Shift Lead, and Assistant General Manager positions across four San Diego County locations. Pay ranges published per California SB 1162. Health insurance, free meal every shift, 401(K). Apply today.",
     canonicalPath: "/careers/",
     body,
     ogImage: "/og/careers.jpg",
