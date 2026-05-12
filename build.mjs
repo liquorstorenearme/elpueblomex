@@ -2565,12 +2565,12 @@ const legalPages = [
       </div>
       <fieldset class="stack-form__fieldset">
         <legend>What kind of request?</legend>
-        <label class="stack-form__check"><input type="radio" name="request_type" value="access" required><span>Access — send me a copy of the information you have about me.</span></label>
-        <label class="stack-form__check"><input type="radio" name="request_type" value="delete"><span>Delete — delete the information you have about me.</span></label>
-        <label class="stack-form__check"><input type="radio" name="request_type" value="correct"><span>Correct — fix inaccurate information you have about me.</span></label>
-        <label class="stack-form__check"><input type="radio" name="request_type" value="opt_out"><span>Opt out — do not sell or share my personal information.</span></label>
-        <label class="stack-form__check"><input type="radio" name="request_type" value="appeal"><span>Appeal a previous decision.</span></label>
-        <label class="stack-form__check"><input type="radio" name="request_type" value="other"><span>Other — describe below.</span></label>
+        <label class="dsar-opt"><input type="radio" name="request_type" value="access" required><span>Access — send me a copy of the information you have about me.</span></label>
+        <label class="dsar-opt"><input type="radio" name="request_type" value="delete"><span>Delete — delete the information you have about me.</span></label>
+        <label class="dsar-opt"><input type="radio" name="request_type" value="correct"><span>Correct — fix inaccurate information you have about me.</span></label>
+        <label class="dsar-opt"><input type="radio" name="request_type" value="opt_out"><span>Opt out — do not sell or share my personal information.</span></label>
+        <label class="dsar-opt"><input type="radio" name="request_type" value="appeal"><span>Appeal a previous decision.</span></label>
+        <label class="dsar-opt"><input type="radio" name="request_type" value="other"><span>Other — describe below.</span></label>
       </fieldset>
       <label>Are you a California resident?
         <select name="ca_resident">
