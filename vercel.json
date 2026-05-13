@@ -908,6 +908,56 @@
       "source": "/jobs/:path*",
       "destination": "/careers/",
       "permanent": true
+    },
+    {
+      "source": "/menu/1000/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/menu/:slug/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/shop/page/:n/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/:slug/page/:n/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/:slug/feed/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
+      "source": "/job-type/:slug/feed/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/job-location/:slug/feed/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/wpa-stats-type/:slug/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wpa-stats-type/:slug/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug/feed/",
+      "destination": "/news/",
+      "permanent": true
     }
   ]
 }
