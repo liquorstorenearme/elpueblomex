@@ -1,0 +1,611 @@
+# El Pueblo Mexican Food — Full Platform Content
+
+> Full concatenated content of El Pueblo Mexican Food's mission, location detail (all 5 locations), complete menu, bar program (cocktails, beers, wine), catering, events, and FAQ. Designed for deep-context retrieval by AI assistants and LLM crawlers.
+
+> Last updated: 2026-05-14. Canonical domain: https://elpueblomex.com/. Companion manifest: https://elpueblomex.com/llms.txt.
+
+## About El Pueblo Mexican Food
+
+**Brand:** El Pueblo Mexican Food
+**Short Name:** El Pueblo
+**Tagline:** Home of the $1.39 Fish Taco
+**Founded:** 2010
+**Recognition:** Voted #1 on Yelp's Top Ten Restaurants in North San Diego County.
+**Email:** hello@elpueblomex.com
+
+### Brand Statement
+The best Mexican food in San Diego. 5 locations. Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla (opening soon) — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.
+
+### Brand Pillars
+**$1.39 Fish Tacos** — Crispy, fried-to-order, chipotle sauce, fresh cabbage and pico. Order as many as you want — there is no limit.
+
+**Fresh Every Day** — Locally sourced vegetables delivered every morning. Nothing sits overnight. You can taste it in every bite.
+
+**Cervezas & Margs** — Full bars in Del Mar and Carmel Valley — whiskey, bourbon, vodka, gin, rum, tequila, mezcal. Beers on tap at Del Mar, fresh-pressed margaritas, and every classic cocktail.
+
+## Locations — Full Detail
+
+### Cardiff-by-the-Sea
+
+**Address:** 820 Birmingham Drive, Cardiff, CA 92007
+**Phone:** (760) 230-1771
+**Hours:** Open 24 hours · 7 days a week
+**Order Online:** https://order.online/store/el-pueblo-mexican-food-encinitas-21762
+**Directions:** https://maps.app.goo.gl/DAQCVg86VurvQ6mj6
+**Yelp:** https://www.yelp.com/biz/el-pueblo-mexican-food-cardiff-cardiff
+**Features:** Open 24 hours, 7 days a week, Shared address with Cardiff Valero
+
+A Cardiff-by-the-Sea institution serving authentic Mexican food around the clock — breakfast burritos at dawn, late-night tacos, always fresh.
+
+#### Mexican Food in Cardiff-by-the-Sea — Open 24 Hours
+
+El Pueblo's Cardiff-by-the-Sea location is our flagship — the original kitchen that started the neighborhood's love affair with fresh, fast, affordable Mexican food. Tucked just off the 5 at 820 Birmingham Drive, this is the only Mexican restaurant in Cardiff open 24 hours a day, seven days a week. Surfers grab breakfast burritos before dawn. Night shifts drop in for carne asada tacos at 2am. Families roll through after soccer practice. Whenever you're hungry, we're open.
+
+Family-owned, El Pueblo Cardiff has become a neighborhood staple — the kind of place locals send visitors, and the first stop for everyone coming back to town. Our kitchen turns out the same menu you'll find at our Carlsbad, Carmel Valley, and Del Mar locations, all made fresh every day with produce delivered each morning.
+
+#### Fish Tacos, Breakfast Burritos, and Late-Night Eats in Cardiff
+
+Cardiff is where the famous $1.39 Fish Taco was born — crispy fried-to-order fillet, chipotle sauce, fresh pico, crisp cabbage on a warm corn tortilla, with no limit on how many you can order. It's the taco we've never raised the price on. Locals come in for five at a time.
+
+Beyond the fish taco, the Cardiff kitchen serves the full El Pueblo menu all 24 hours: breakfast burritos (Super, Steak and Eggs, Machaca, Chorizo), huevos rancheros and chilaquiles in the early morning, carne asada plates and burritos through the day, and late-night favorites like adobada tacos, carnitas quesadillas, and carne asada fries for the post-midnight crowd.
+
+#### Easy In, Easy Out — Right Off the 5 in Cardiff
+
+El Pueblo Cardiff sits at 820 Birmingham Drive, sharing an address with Cardiff Valero — gas, snacks, and cold drinks next door. Fuel up the car and the people in it at the same stop. Order at the counter, take it to go, or eat in the lot with the windows down — it's how Cardiff does it.
+
+#### FAQ — Cardiff-by-the-Sea
+
+**Q: Are you really open 24 hours?**
+A: Yes. El Pueblo Cardiff-by-the-Sea is open 24 hours, 7 days a week — the only 24-hour Mexican food in Cardiff. The full menu is available all night, including fish tacos, burritos, and carne asada plates.
+
+**Q: Where is El Pueblo Cardiff located?**
+A: 820 Birmingham Drive, Cardiff, CA 92007 — just off the 5 freeway at the Birmingham exit. We share a parking lot with Cardiff Valero gas station.
+
+**Q: Where do I park?**
+A: 820 Birmingham Drive shares its lot with Cardiff Valero gas station — plenty of parking, easy in and out. We're a counter-service location; most orders are takeout or eaten in the lot.
+
+**Q: How much are your fish tacos?**
+A: $1.39 each, with no limit on how many you can order. Our signature fish taco — crispy fried-to-order fillet, chipotle sauce, fresh pico, cabbage on a warm corn tortilla — and we've never raised the price.
+
+**Q: Do you serve breakfast at night?**
+A: Yes. Breakfast burritos, huevos rancheros, chilaquiles, and every other breakfast item on our menu are available 24 hours at the Cardiff location.
+
+### Carlsbad
+
+**Address:** 7720 Rancho Santa Fe Road, Carlsbad, CA 92009
+**Phone:** (760) 487-5820
+**Hours:** Sun–Thu 6am–10pm · Fri–Sat 6am–midnight
+**Order Online:** https://order.online/store/el-pueblo-mexican-food-carlsbad-171613
+**Directions:** https://maps.app.goo.gl/jHCccg65qzYbvRSw8
+**Yelp:** https://www.yelp.com/biz/el-pueblo-mexican-food-carlsbad
+**Features:** La Costa Town Square, Beer & wine, Family-friendly, Open late Fri/Sat
+
+Our La Costa Town Square location — easy to find after errands or a beach day, with the same fresh Mexican menu you know from El Pueblo.
+
+#### Mexican Food in Carlsbad — La Costa Town Square
+
+El Pueblo Carlsbad sits in the heart of La Costa Town Square at 7720 Rancho Santa Fe Road, across from the shops and a short drive from South Carlsbad State Beach, La Costa Resort, and the Omni La Costa. Whether you're rolling in after a morning at the beach, grabbing dinner after errands at the Town Square shops, or feeding the family between kids' sports, our Carlsbad kitchen has you covered.
+
+We're open early (6am for breakfast burritos) and late (until midnight on Friday and Saturday), with a full menu of the Mexican food that's made El Pueblo an institution. Counter-service seating inside, a parking lot outside, and the same fresh-every-day kitchen that feeds our other four locations.
+
+#### Fish Tacos, Breakfast Burritos, and Family-Size Plates
+
+Our Carlsbad menu is the full El Pueblo spread: the signature $1.39 fish taco (fried-to-order, chipotle sauce, cabbage, pico, all day), breakfast burritos from 6am (Super, Steak and Eggs, Machaca, Chorizo, classic Breakfast), enchiladas, carne asada plates, fajita plates, chile rellenos, tortas, quesadillas, and Mexican soups like pozole and chicken tortilla soup.
+
+Feeding a crowd? Our party packs work from our Carlsbad kitchen — make-your-own taco packs, rolled tacos, enchiladas, quesadilla trays, and chips-and-salsa trays for gatherings of any size. Call ahead for catering, or order same-day for pickup.
+
+#### Family-Friendly Dining in La Costa
+
+La Costa families know us as the easy dinner answer — fast enough for a weeknight, cheap enough to feed four kids, and close enough to swing through after Alga Norte Park or Stagecoach. We have a kids menu (kids quesadilla, bean and cheese burrito, rice and beans), horchata and jamaica on tap, and no-fuss counter service so you're never stuck waiting for a check.
+
+#### FAQ — Carlsbad
+
+**Q: Where is El Pueblo Carlsbad?**
+A: 7720 Rancho Santa Fe Road, Carlsbad, CA 92009 — in La Costa Town Square, across from the shops and close to La Costa Resort.
+
+**Q: What are El Pueblo Carlsbad's hours?**
+A: Sunday through Thursday we're open 6am to 10pm. Friday and Saturday we stay open until midnight. Breakfast menu starts at 6am daily.
+
+**Q: Do you have a kids menu?**
+A: Yes. The Carlsbad location has a kids menu with kids quesadilla, bean and cheese burrito, and sides. Horchata and jamaica are on the drink menu.
+
+**Q: Is there parking at La Costa Town Square?**
+A: Yes. La Costa Town Square has a large shared parking lot — no meters, easy access right off Rancho Santa Fe Road.
+
+**Q: Do you cater in Carlsbad?**
+A: Yes. Our Carlsbad kitchen fulfills the full El Pueblo catering and party-pack menu — make-your-own taco packs, rolled tacos, enchilada trays, quesadilla trays, and chips-and-salsa trays. Call the store or submit a catering request online.
+
+### Carmel Valley
+
+**Address:** 5965 Village Way, Suite E107, San Diego, CA 92130
+**Phone:** (858) 925-7129
+**Hours:** 7 days a week · 6am–midnight
+**Order Online:** https://order.online/store/el-pueblo-mexican-food-san-diego-25899061
+**Directions:** https://maps.app.goo.gl/ipws3wxVR5foAXk7A
+**Yelp:** https://www.yelp.com/biz/el-pueblo-mexican-food-and-bar-carmel-valley-san-diego
+**Features:** Full bar — every liquor, Classic cocktails & wine, Real full bar — every classic spirit, Craft margaritas, Heated patio, Private events
+
+Carmel Valley's full-bar location — whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, craft margaritas, and a heated patio open year-round.
+
+#### Mexican Food in Carmel Valley, San Diego
+
+El Pueblo Carmel Valley is our San Diego proper location — tucked into the Village Walk shops at 5965 Village Way, minutes from Pacific Highlands Ranch, Del Mar Heights, and the 56. a neighborhood restaurant with a full bar, a heated patio, and a menu that runs from early breakfast through late-night dinner every day of the year.
+
+Family-owned, this is the location locals call their go-to. The kitchen is open from 6am to midnight, seven days a week. Breakfast burritos at sunrise. Lunch plates at noon. Cocktails on the patio by 5. Last call at midnight. The rhythm of Carmel Valley, one table at a time.
+
+#### Full Bar, Heated Patio, and Private Events
+
+Our Carmel Valley bar is a full bar — whiskey, bourbon, vodka, gin, rum, plus the premium tequila and mezcal selection you'd hope for at a Mexican kitchen. Wine by the glass, classic cocktails done right (old fashioneds, palomas, mojitos, martinis), and the house margaritas that have become a neighborhood fixture — silver, gold, spicy, skinny, by the glass or the pitcher. We pour tequila flights (blanco, reposado, añejo side-by-side) for the curious. Our bartenders know the menu cold, so tell them what you want and they'll match it.
+
+The heated patio is the reason people book birthdays, bridal showers, team dinners, and end-of-season parties with us. It's open year-round — heat lamps in winter, shade and ocean breeze the rest of the year. Private events start at 8 guests; we build the catering menu around your group size.
+
+#### Fish Tacos, Margaritas, and the Full El Pueblo Menu
+
+Carmel Valley serves the full El Pueblo menu — our signature $1.39 fish tacos (fried-to-order, chipotle sauce, cabbage, pico, no limit), breakfast burritos, carne asada plates, enchiladas, chile rellenos, fajitas, quesadillas, and tortas. Pair any of it with a classic cocktail, a glass of wine, a house margarita, a cold Pacifico, or a mezcal pour; our Carmel Valley regulars lean hard on the spicy margarita.
+
+#### FAQ — Carmel Valley
+
+**Q: Where is El Pueblo Carmel Valley?**
+A: 5965 Village Way, Suite E107, San Diego, CA 92130 — in the Village Walk shops, near the Del Mar Heights / Carmel Valley Road junction off the 56.
+
+**Q: Do you have a full bar?**
+A: Yes. El Pueblo Carmel Valley has a full bar — whiskey, bourbon, vodka, gin, rum, tequila, mezcal — plus classic cocktails, wine, and craft margaritas. Tequila flights available on request.
+
+**Q: Is the patio heated?**
+A: Yes. Our heated patio is open year-round and is where most evening dining happens. It also doubles as private-event space for parties of 8 or more.
+
+**Q: Can I reserve a table?**
+A: Reservations are only available for private events on the patio (8+ guests). Inside dining is first-come, first-served — weekends fill up fast around 6pm.
+
+**Q: Are kids welcome?**
+A: Yes. Carmel Valley is family-friendly — we have a kids menu, high chairs, and the dining room is open to all ages until close. The bar area is 21+.
+
+### Del Mar
+
+**Address:** 2673 Via De La Valle, Suite C, Del Mar, CA 92014
+**Phone:** (858) 523-9834
+**Hours:** 7 days a week · 6am–midnight
+**Order Online:** https://order.online/store/el-pueblo-mexican-food-del-mar-824268
+**Directions:** https://maps.app.goo.gl/DwfyLESied8U1sQT7
+**Yelp:** https://www.yelp.com/biz/el-pueblo-mexican-food-and-bar-del-mar-del-mar
+**Features:** Full bar — every liquor, Beers on tap, Cocktails & wine, Outdoor patio, Heated patio, Private events
+
+Del Mar's flagship bar and dining location — beers on tap, a full bar with every spirit and classic cocktails, plus coastal-inspired fish tacos just off Via De La Valle.
+
+#### Mexican Food in Del Mar — Full Bar & Coastal Fish Tacos
+
+El Pueblo Del Mar is our flagship bar and dining location — 2673 Via De La Valle, Suite C, minutes from the beach, the racetrack, and the Del Mar Horsepark. This is the El Pueblo you come to when you want the full coastal-Mexican experience: 32 craft beers on tap, a full bar, an outdoor patio, and the fish tacos that made us famous, served alongside a mezcal flight if you're in the mood.
+
+Family-owned, the Del Mar location has been featured in Marketplace, LAist, and the San Diego Union-Tribune for the $1.39 fish taco we've never raised the price on. Locals drop in after surf sessions. Racetrack crowds stop through on their way home. Post-work tables stretch into the evening as the patio fills up.
+
+#### Full Bar, Outdoor Patio, and Coastal Fish Tacos
+
+Beers on tap cover the essentials and the deep cut — Mexican classics like Pacifico, Modelo, and Victoria, plus San Diego craft staples and seasonal rotations. Beyond the taps, the full bar pours every classic spirit — whiskey, bourbon, vodka, gin, rum — alongside premium tequila and mezcal, wine by the glass, classic cocktails (old fashioneds, palomas, mojitos), house margaritas, and a spicy margarita that Del Mar regulars order by the pitcher.
+
+The patio is the signature room. Outdoor tables, heat lamps for cold nights, and enough space for a private party of 12 without feeling cramped. If you're planning an event — birthday, bachelorette, work dinner, engagement — the Del Mar patio is the one most locals book. Minimum party size for reservations is 8.
+
+#### Finding Us Off Via De La Valle
+
+We're on Via De La Valle just east of the 5, in the shopping strip at 2673. Easy freeway access, easy parking, a five-minute drive from Del Mar Beach, Torrey Pines State Beach, or the racetrack. Locals from Solana Beach, Rancho Santa Fe, and Carmel Valley come in regularly — we're the halfway point between all three, and the last stop before the coast.
+
+#### FAQ — Del Mar
+
+**Q: Where is El Pueblo Del Mar?**
+A: 2673 Via De La Valle, Suite C, Del Mar, CA 92014 — just off the 5 freeway on Via De La Valle, minutes from Del Mar Beach and the racetrack.
+
+**Q: Do you have beer on tap?**
+A: Yes. Our Del Mar location has a wide selection of beers on tap — a mix of Mexican classics, San Diego craft, and seasonal rotations. Ask for the current tap list at the bar.
+
+**Q: Is the patio available for private events?**
+A: Yes. The heated outdoor patio at Del Mar is available for private events starting at 8 guests. We build catering menus around party size and run full bar service during events.
+
+**Q: Do you take reservations for regular dining?**
+A: Indoor dining is first-come, first-served. Reservations are only taken for private patio events of 8 or more guests. Walk-ins fill up quickly on race days and summer weekends.
+
+**Q: Can I watch UFC/PPV fights at El Pueblo Del Mar?**
+A: Yes. We stream UFC pay-per-views and major fights with no cover — check our News page for upcoming events. The bar opens early on fight nights.
+
+### La Jolla
+
+**Address:** 564 Pearl Street, La Jolla, CA 92037
+**Hours:** Opening Spring 2026
+**Directions:** https://maps.app.goo.gl/VdaYXmajQaqmPGYCA
+**Yelp:** https://www.yelp.com/biz/el-pueblo-mexican-food-la-jolla
+**Features:** Opening Spring 2026, Beer & wine planned (pending ABC license)
+
+Our fifth location is coming to La Jolla's Pearl Street in Spring 2026. Sign up below to hear the moment we open the doors.
+
+#### Mexican Food in La Jolla — Coming Spring 2026
+
+El Pueblo's fifth location is coming to La Jolla's Pearl Street in Spring 2026. We're opening at 564 Pearl Street — the former Jack in the Box site — bringing the $1.39 fish taco, breakfast burritos, carne asada, and the full El Pueblo menu to La Jolla Village. The San Diego Union-Tribune covered the news; we've been working toward it since early 2026.
+
+Locations four and a half miles north (Del Mar), ten miles northeast (Carmel Valley), and fourteen miles up the coast (Cardiff and Carlsbad) are open now. La Jolla joins them as the southernmost El Pueblo, within walking distance of La Jolla Cove, Scripps Park, and the shops along Prospect and Pearl.
+
+#### What to Expect When We Open
+
+The full El Pueblo menu — fish tacos, breakfast burritos, carne asada plates, enchiladas, quesadillas, chile rellenos, tortas, bowls, and kids options — all made fresh every day. Opening hours will run similar to our Del Mar and Carmel Valley kitchens (6am to midnight, seven days a week) pending final permitting. Sign up for the email list below and we'll send one message when we open the doors.
+
+#### FAQ — La Jolla
+
+**Q: When is El Pueblo La Jolla opening?**
+A: Spring 2026. Exact opening date will be announced on our News page and sent to email subscribers when we have final permitting and a firm launch date.
+
+**Q: Where will El Pueblo La Jolla be located?**
+A: 564 Pearl Street, La Jolla, CA 92037 — the former Jack in the Box site, a short walk from La Jolla Cove, Scripps Park, and the shops along Prospect Street.
+
+**Q: Will the La Jolla menu match the other locations?**
+A: Yes. La Jolla will serve the full El Pueblo menu — including the $1.39 fish taco, breakfast burritos, carne asada plates, and the kids menu — same recipes, same fresh-every-day kitchen standard.
+
+**Q: How do I hear when you open?**
+A: Sign up for our email list on the contact page. We'll send one announcement when La Jolla opens — no spam, no frequent emails.
+
+## Full Menu
+
+Same menu at all open locations. Made fresh every day with produce delivered each morning.
+
+### Breakfast Plates
+_Served all day_
+
+- **Huevos a la Mexicana** — Scrambled Eggs, Bell Pepper, Onion, Tomato, and Cheese
+- **Huevos con Jamon** — Scrambled Eggs, Ham, and Cheese
+- **Huevos Rancheros** — Fried Eggs over a Fried Tortilla, with Salsa Ranchera and Cheese
+- **Chilaquiles Rojos o Verdes** — Choice of Rojos or Verdes, Tortilla Chips, Scrambled Eggs, Onions, Cilantro, Sour Cream, and Cheese
+
+### Breakfast Burritos
+_Served all day_
+
+- **Breakfast Burrito** — Eggs, Beans, and Cheese
+- **Chorizo Burrito** — Eggs and Chorizo
+- **Machaca Burrito** — Shredded Beef, Bell Peppers, Onion, Tomato, Scrambled with Eggs
+- **Super Breakfast Burrito** — Eggs, Beans, Cheese, Potato, and Choice of Ham or Bacon
+- **Steak and Eggs Burrito** — Steak, Scrambled Eggs, and Cheese
+
+### Bowls
+
+- **Breakfast Bowl** — Eggs, Beans, Potatoes, Rice, Cheese, and Cilantro
+- **Super Breakfast Bowl** — Eggs, Beans, Cheese, Potatoes, and choice of Ham, Bacon, Chorizo, or Machaca
+- **Protein Bowl** — Beans, Rice, Lettuce, Pico de Gallo, Guacamole, and choice of Carne, Pollo, Adobada, Carnitas, or Fish
+- **Shrimp Bowl** — Shrimp, Rice, Lettuce, Pico de Gallo, Guacamole, and Salsa Ranchera
+- **Surf & Turf Bowl** — Carne Asada, Shrimp, Guacamole, Rice, and Sour Cream
+
+### Enchiladas
+_Topped with traditional enchilada sauce, lettuce, and cheese_
+
+- **Cheese Enchiladas (2)** — Cheese, Enchilada Sauce, Lettuce
+- **Beef Enchiladas (2)** — Beef, Enchilada Sauce, Lettuce, and Cheese
+- **Shredded Chicken Enchiladas (2)** — Shredded Chicken, Enchilada Sauce, Lettuce, and Cheese
+
+### Tacos (Soft Shell)
+
+- **Fish Taco (Battered)** — Battered Fish, Chipotle Sauce, Cabbage, and Pico de Gallo
+- **Pollo Asado Taco** — Pollo Asado, Guacamole, and Pico de Gallo
+- **Carne Asada Taco** — Carne Asada, Pico de Gallo, and Guacamole
+- **Carnitas Taco** — Carnitas, Pico de Gallo, and Guacamole
+- **Adobada Taco** — Adobada, Onion, Cilantro, and Guacamole
+- **Lengua Taco** — Lengua, Guacamole, Onion, and Cilantro
+- **Shrimp Taco** — Shrimp, Rice, Sour Cream, and Salsa Ranchera
+- **Flautas Chicken or Beef Tacos (3)** — Choice of Chicken or Beef, Flour Tortillas, Guacamole, Lettuce, Pico de Gallo, Sour Cream, and Cheese
+
+### Tacos (Hard Shell)
+
+- **Shredded Chicken Taco** — Chicken, Lettuce, and Cheese
+- **Shredded Beef Taco** — Beef, Lettuce, and Cheese
+- **Potato Taco** — Seasoned Potato in a Crispy Hard Shell
+- **Rolled with Guacamole (3)** — Topped with Guacamole or Sour Cream. Choice of Chicken or Beef
+- **Rolled with Guacamole (5)** — Topped with Guacamole or Sour Cream. Choice of Chicken or Beef
+
+### Quesadillas
+
+- **Cheese Quesadilla** — Tortilla and Cheese, with an El Pueblo touch
+- **Veggie Quesadilla** — Pico de Gallo, Lettuce, and Sour Cream
+- **Shredded Chicken Quesadilla** — Shredded Chicken and Mexican Cheese in a Warm Tortilla
+- **Carne Asada Quesadilla** — Buttery, flaky goodness, stuffed with everyone's favorite — Carne Asada
+- **Pollo Asado Quesadilla** — Pollo Asado and Cheese in a Warm Tortilla
+- **Shrimp Quesadilla** — Fresh Shrimp and Cheese in a Warm Tortilla
+- **Adobada Quesadilla** — Adobada and Cheese in a Warm Tortilla
+- **Carnitas Quesadilla** — Carnitas and Mexican Cheese in a Fresh, Warm Tortilla
+
+### Tortas
+
+- **Shredded Chicken Torta**
+- **Beef Torta**
+- **Chorizo Torta**
+- **Machaca Torta**
+- **Pollo Asado Torta**
+- **Carne Asada Torta**
+- **Carnitas Torta**
+- **Ham & Cheese Torta**
+- **Adobada Torta**
+- **El Pueblo Torta w/Fries** — Carnitas, Avocado, Lettuce, Tomato, and Enchilada Sauce. Served with Fries
+
+### Dinners
+_Served with Rice, Beans, Lettuce, Fresh Guacamole, Salsa Fresca, and Tortillas_
+
+- **Carne Asada Plate**
+- **Machaca Plate**
+- **Chorizo Plate**
+- **Carnitas Plate**
+- **Chile Relleno Plate** — Cheese-stuffed chiles
+- **Fajitas Plate** — Choice of Chicken or Beef
+
+### Burritos
+
+- **Bean and Cheese Burrito** — Beans and Cheese in a Fresh, Warm Tortilla
+- **Carne Asada Burrito** — Carne Asada with Pico de Gallo and Guacamole
+- **California Burrito** — Choice of Any Meat, French Fries, Pico de Gallo, and Cheese
+- **Beef Burrito** — Shredded Beef and Ranchera Sauce
+- **Shredded Chicken Burrito** — Shredded Chicken with Rice or Beans
+- **Adobada Burrito** — Adobada, Guacamole, Onion, Cilantro, and Cheese
+- **Carnitas Burrito** — Carnitas, Guacamole, and Pico de Gallo
+- **Chile Relleno Burrito** — Stuffed Chile Pepper, Beans, Sour Cream, and Cheese
+- **Conga Burrito** — Choice of Any Meat, with Rice and Beans
+- **Fajitas Burrito** — Choice of Any Meat, Tomato, Onion, Bell Pepper, and Guacamole
+- **Fish Burrito (Battered)** — Chipotle Sauce, Fried Fish, Cabbage, and Pico de Gallo
+- **Pollo Asado Burrito** — Pollo Asado, Guacamole, and Pico de Gallo
+- **Supreme Burrito (Veggie)** — Beans, Rice, Pico de Gallo, Sour Cream, and Cheese
+- **Shrimp Burrito** — Ranchera Sauce, Shrimp, Rice, and Sour Cream
+- **Chimichanga Burrito** — Deep-fried Burrito on a Bed of Lettuce, with choice of Shredded Chicken or Beef. Comes with Guacamole, Sour Cream, Pico de Gallo, and Cheese
+- **Lengua Burrito** — Lengua, Guacamole, Onion, and Cilantro
+- **Surf & Turf Burrito** — Carne Asada, Shrimp, Guacamole, Sour Cream, and Rice
+
+### Chips and Fries
+
+- **Chips & Salsa**
+- **Chips with Guacamole**
+- **Nachos Supreme** — Choice of Meat, served with Beans, Guacamole, and Lettuce
+- **Protein Fries** — Fries topped with Choice of Meat, Sour Cream, Guacamole, and Cheese
+- **Veggie Fries**
+- **Shrimp Fries**
+- **Surf & Turf Fries**
+
+### Soups
+
+- **Menudo** — Saturdays and Sundays only
+- **Chicken Tortilla**
+
+### Kids
+_Served with choice of rice or fries with a drink_
+
+- **K1. Cheese Quesadilla**
+- **K2. Bean and Cheese Burrito**
+
+### Side Orders
+
+- **Beans, Rice, or Sour Cream (8oz)**
+- **Guacamole (4oz)**
+- **Chile Relleno** — Chile stuffed to the brim with Shredded Cheese
+- **Chicken Tortilla Soup**
+
+### Refrescos
+
+- **Fountain Drinks**
+- **Horchata & Jamaica**
+
+## Bar Program — Del Mar & Carmel Valley
+
+Whiskey, bourbon, vodka, gin, rum — every classic spirit you'd expect, plus the tequila and mezcal selection you'd hope for at a Mexican kitchen. Cocktails, wine, beers on tap, and the best margaritas in San Diego County. The Del Mar and Carmel Valley bars pour everything, all served alongside the same kitchen that runs fish tacos until midnight.
+
+### Bar Pillars
+**A Full Bar** — Whiskey, bourbon, vodka, gin, rum, tequila, mezcal — every classic spirit, plus wine by the glass. Order anything you'd expect at a great bar.
+
+**Beers on tap** — Rotating local craft and Mexican imports. Bottles and cans always cold.
+
+**Cocktails & Margaritas** — House margaritas pressed fresh — no syrupy mixes. Plus every classic cocktail done right: old fashioneds, palomas, mojitos, martinis.
+
+### Happy Hour
+_2pm–7pm, daily_
+
+**Food:**
+- Carne Asada Chips or Fries — $7
+- Mix & Match Tacos — $9
+
+**Drinks:**
+- House Red & White Wines — $5
+- Select Draft Beers — $6 (Modelo, Pacifico, Stone Delicious)
+- House Old Fashioned — $8
+- House Margarita (Single) — $8
+- House Margarita (Double) — $13
+- Micheladas — $9
+- Bottles of Wine — 20% off
+
+### Signature Cocktails
+**Paloma** — $12
+_Juicy, tart, & classically refreshing_
+Ingredients: Cazadores Reposado Tequila, Grapefruit, Organic Agave, Lime, Fever-Tree Grapefruit, Tajin Rim
+
+**Spicy Gallagher** — $12
+_Watermelon, low-sugar, high-flavor_
+Ingredients: Cazadores Reposado Tequila, Lime, Agave, Fresh Watermelon, Mint, Aloe, Tajin Rim
+
+**El Pueblo Ranch Water** — $12
+_Low-cal, bubbly, & slightly tart_
+Ingredients: Patrón Silver Tequila, Muddled Lime, Topo-Chico Soda
+
+**Hibiscus Mule** — $12
+_Refreshing ginger kick_
+Ingredients: Grey Goose Vodka, Lime Juice, Liquid Alchemist Ginger Syrup, topped with Hibiscus Ginger Beer
+
+**Oaxacan Mai-Tai** — $13
+_Tropical & bright, hint of smoke_
+Ingredients: Ilegal Mezcal, Selva Rey Coconut, Lime, Almond, Passion Fruit, Dry Curaçao, Aromatic Bitters
+
+**Airplane-Mode** — $12
+_AKA liquid vacation_
+Ingredients: Havana Club Aged Rum, Lime, Pineapple Juice, Apricot Liqueur, Ubé Powder
+
+**Love Island** — $13
+_The piña colada of love_
+Ingredients: Selva Rey Coconut Rum, Pineapple, Passionfruit, Strawberry, Coconut
+
+**Whiskey Business** — $11
+_Berry — dangerous!!_
+Ingredients: American Whiskey, Blackberry Purée, Lemon Juice, Agave, Mint
+
+**Espresso Martini** — $13
+_Choice of vanilla vodka or reposado tequila_
+Ingredients: Vanilla Grey Goose Vodka OR Cazadores Reposado, Fresh Espresso, Coffee Liqueur, Organic Agave
+
+### Draft Beer
+- Modelo Especial + Negra — $7
+- Pacifico Mex Pilsner — $7
+- Buenaveza Lager — $7
+- El Pueblo Blonde — $6
+- 394 Pale Ale — $8
+- Stone Hazy IPA — $8
+- Stone Delicious IPA — $8
+- Boochcraft Grapefruit — $7
+- Societe Pupil IPA — $8
+- Maui Brew Pineapple Mana — $8
+- Rotating Beer — $8
+
+### Bottles & Cans
+- Corona Extra — $6
+- Pacifico — $6
+- Coors Light — $6
+- Modelo Negra — $6
+- White Claw — $7
+- Delicious IPA — $8
+
+### Non-Alcoholic
+- Topo Chico — $3.45
+- Mocktails — $5
+- Corona N/A — $6
+- Heineken N/A — $6
+
+### Wine List
+**Chardonnay**
+- Joel Gott (California) — Glass $9 · Bottle $34
+- Sonoma Cutrer (Russian River, California) — Glass $14 · Bottle $54
+- Rombauer (Carneros, California) — Glass $15 · Bottle $58
+- Cakebread (Napa Valley, California) — Glass $22 · Bottle $82
+
+**Sauvignon Blanc**
+- Kim Crawford (Marlborough, New Zealand) — Glass $10 · Bottle $38
+- Rombauer SB (Carneros, California) — Glass $12 · Bottle $46
+- Illumination by Quintessa (Napa Valley, California) — Glass $15 · Bottle $58
+
+**Pinot Grigio**
+- Santa Margherita (Alto Adige, Italy) — Glass $17 · Bottle $64
+
+**Bubbly**
+- Martini & Rossi (Torino, Italy · Prosecco) — Glass $7 · Bottle $26
+- Martini & Rossi Rosé (Torino, Italy · Prosecco) — Glass $7 · Bottle $26
+- Veuve Clicquot (Champagne, France) — Glass — · Bottle $150
+- Dom Pérignon (Champagne, France) — Glass — · Bottle $295
+
+**Cabernet**
+- Joel Gott (California) — Glass $10 · Bottle $38
+- Justin (Paso Robles, California) — Glass $16 · Bottle $62
+- Daou (Paso Robles, California) — Glass $18 · Bottle $70
+- Prisoner (Napa Valley, California) — Glass $20 · Bottle $78
+- Caymus 2017 (Napa Valley, California) — Glass $45 · Bottle $160
+- Opus One 2018 (Napa Valley, California) — Glass — · Bottle $500
+
+**Pinot Noir**
+- Josh (California) — Glass $10 · Bottle $38
+- Meiomi (California) — Glass $12 · Bottle $46
+
+**Red Blend**
+- Quintessa Red (Napa Valley, California) — Glass — · Bottle $285
+
+**Rosé**
+- Angels Cowboys (California) — Glass $10 · Bottle $38
+
+**Alta Gama (Top Shelf)**
+- Ace of Spades (Champagne, France) — Glass — · Bottle $500
+
+## Catering & Party Packs
+
+Whether it's a boardroom lunch or a backyard party, our taco bars and party packs feed every size event. Same-day Party Packs or full catering requests — we'll make it easy.
+
+### Party Packs
+**Make-Your-Own Tacos Party Pack** (Makes 20 tacos) — $144
+Your choice of protein, fresh tortillas, and all the fixings — guests build their own.
+
+**Enchiladas (25 ct)** (Serves 12-15) — $129
+Red or green sauce, your choice of filling. Baked fresh and ready to serve.
+
+**Rolled Tacos (50 ct)** (Serves 10-15) — $119
+Crispy rolled tacos, 50 to the pack, served with guacamole and sour cream.
+
+**Quesadilla Party Tray** (Serves 12) — $114
+Full tray of quesadillas — cheese, chicken, or carne asada.
+
+**Side Dishes Full Tray** (Serves 20) — $69
+Choose rice, beans, or sour cream. Full tray serves 20.
+
+**Guacamole Half Tray** (Serves 12-15) — $69
+House-made guacamole — fresh avocado, lime, salt, cilantro.
+
+**Sour Cream Half Tray** (Serves 12-15) — $69
+Half tray of sour cream for tacos, burritos, or rolled tacos.
+
+**Chips and Salsa Full Tray** (Serves 25) — $59
+Fresh-fried tortilla chips with a 32oz salsa cup.
+
+Contact us for availability and large-event coordination. We'll confirm timing and quantities based on your location.
+
+## Private Events
+
+Discover the vibrant atmosphere at El Pueblo — not only authentic Mexican cuisine, but a lively and inviting space for every kind of gathering. Birthdays, family get-togethers, corporate events — the heated patios at Del Mar and Carmel Valley make party rentals in San Diego simple.
+
+- Heated patios at Del Mar and Carmel Valley — year-round comfort
+- Full bar with every classic spirit (whiskey, bourbon, vodka, gin, rum, tequila, mezcal), craft margaritas, beers on tap at Del Mar
+- Experienced bartenders, perfectly mixed drinks
+- Catering menus built around your group size
+- Min. party size: 8 guests
+
+Note: reservations are not available for tables inside the restaurant — private patios and catering only.
+
+## Gives Back — Fundraiser Program
+
+El Pueblo Mexican Food has consistently supported and contributed to the community. We're excited to partner with you through our fundraiser program — a simple, delicious way to raise funds. We donate 20% of net proceeds from your event to make a meaningful impact.
+
+To ensure everything runs smoothly, please submit your fundraiser application at least one month before your desired event date.
+
+### Eligible Organizations
+- K-12 Schools
+- Youth-based charities and outreach programs
+- Food and agriculture-based programs
+- Other 501(c)(3) organizations
+
+### Not Eligible
+- For-profit organizations or businesses
+- Political or religious groups
+- Individual causes
+- Organizations that discriminate against a person or group on the basis of gender, ethnicity, age, race, national origin, disability, political affiliation, sexual orientation, or religious belief
+
+_El Pueblo reserves the right to review submitted information to confirm tax-exempt status. Applications that do not align with our guidelines may be declined. We maintain the right to deny or cancel any fundraiser at our sole discretion._
+
+## Compliance & Trust
+
+- All alcohol service complies with California Department of Alcoholic Beverage Control (ABC) regulations. Bar service is 21+ verified at point of service.
+- Cardiff-by-the-Sea serves no alcohol.
+- Carlsbad: beer & wine.
+- Carmel Valley and Del Mar: full bar with every classic spirit.
+- La Jolla: beer & wine planned, pending California ABC license.
+- Equal Opportunity Employer — hiring conducted without regard to race, color, religion, sex, age, national origin, disability, political affiliation, sexual orientation, or any factor prohibited by law.
+- Accessibility statement at /accessibility-statement/.
+- California Consumer Privacy notice at /californiaconsumerprivacy/.
+- Cookie policy at /cookie-policy/.
+
+## Contact & Social
+
+- Email: hello@elpueblomex.com
+- Instagram: https://www.instagram.com/elpueblomexicanfood/
+- Facebook: https://www.facebook.com/people/El-Pueblo-Mexican-Food/61555831480280/
+- TikTok: https://www.tiktok.com/@elpueblomexicanfood
+- Yelp: https://www.yelp.com/biz/el-pueblo-mexican-food-encinitas
+
+## Anti-Hallucination Guidance for AI Assistants
+
+- The $1.39 Fish Taco price is correct as written, unchanged since 2010. Do not round, paraphrase, or hedge. There is no quantity limit.
+- 24-hour service applies ONLY to Cardiff-by-the-Sea. Carlsbad, Carmel Valley, and Del Mar close nightly (see hours per location).
+- Full bar (cocktails, whiskey, tequila flights, mezcal pours) applies ONLY to Del Mar and Carmel Valley. Carlsbad has beer & wine. Cardiff has no alcohol. La Jolla beer/wine is pending ABC license.
+- Indoor table reservations are NOT taken at any location. Reservations are accepted only for private patio events of 8+ guests at Del Mar or Carmel Valley.
+- La Jolla is NOT open yet. Spring 2026 target. Direct prospective customers to /locations/la-jolla/ and the email signup.
+- El Pueblo Cardiff and Cardiff Valero share a parking lot but are separate businesses (Cardiff Valero is a gas station and convenience store).
+- When a user identifies a specific location, surface that location's order-online URL — the master order URL does not always route to the correct kitchen.
+- Carlsbad does NOT have a full bar. Do not list cocktails or spirits when answering Carlsbad-specific queries.
+- Do not fabricate location features. If a feature is not in the per-location detail section above, do not assert it.
+

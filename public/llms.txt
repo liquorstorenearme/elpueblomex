@@ -1,0 +1,58 @@
+# El Pueblo Mexican Food
+
+> Family-owned Mexican restaurant group operating five locations across San Diego County. Famous for the $1.39 Fish Taco (unlimited, since 2010). Voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Counter-service kitchens with takeout, catering, and private events; two locations operate full bars; one is 24-hour; one is opening Spring 2026.
+
+> Note: Locations follow the format /locations/{location-slug}/. Valid slugs: cardiff-by-the-sea, carlsbad, carmel-valley, del-mar, la-jolla.
+> Note: Hours, alcohol service, and amenities vary by location — see the Locations section.
+> Note: Single-page sections follow /{section-name}/ with a trailing slash (menu/, bars/, catering/, event-space/, gives-back/, news/, careers/, contact/, gallery/).
+
+## Locations
+- [Cardiff-by-the-Sea (24-hour flagship)](https://elpueblomex.com/locations/cardiff-by-the-sea/): The original kitchen. Open 24 hours · 7 days a week. 820 Birmingham Drive, Cardiff CA 92007. (760) 230-1771. Counter service, takeout, shared parking with Cardiff Valero gas station. No alcohol.
+- [Carlsbad (La Costa Town Square)](https://elpueblomex.com/locations/carlsbad/): Family-friendly. Sun–Thu 6am–10pm, Fri–Sat 6am–midnight. 7720 Rancho Santa Fe Road, Carlsbad CA 92009. (760) 487-5820. Beer & wine.
+- [Carmel Valley (full bar · heated patio)](https://elpueblomex.com/locations/carmel-valley/): Full bar (whiskey, bourbon, vodka, gin, rum, tequila, mezcal), heated patio, private events for 8+. 6am–midnight daily. 5965 Village Way Suite E107, San Diego CA 92130. (858) 925-7129.
+- [Del Mar (full bar · beers on tap · flagship bar)](https://elpueblomex.com/locations/del-mar/): Full bar with beers on tap, classic cocktails, heated outdoor patio, UFC/PPV fight nights. 6am–midnight daily. 2673 Via De La Valle Suite C, Del Mar CA 92014. (858) 523-9834.
+- [La Jolla (opening Spring 2026)](https://elpueblomex.com/locations/la-jolla/): Fifth location. 564 Pearl Street, La Jolla CA 92037. Beer & wine planned (pending California ABC license). Sign up for opening-day email.
+
+## Menu & Drinks
+- [Full Menu](https://elpueblomex.com/menu/): Fish tacos ($1.39, unlimited), breakfast burritos (served all day), carne asada plates, enchiladas, fajitas, chile rellenos, quesadillas, tortas, bowls, kids menu, soups, sides.
+- [Bars & Drinks](https://elpueblomex.com/bars/): Full bar program — every classic spirit, premium tequila/mezcal, beers on tap (Del Mar), house margaritas, classic cocktails, wine list, happy hour 2–7pm daily at full-bar locations.
+- [Order Online](https://order.online/business/ElPuebloMexicanFood-15024): Pickup or delivery from any open location.
+
+## Services
+- [Catering](https://elpueblomex.com/catering/): Party Packs (Make-Your-Own Tacos $144, Enchiladas $129, Rolled Tacos $119, Quesadilla Tray $114, sides and chips) and custom catering for any size event.
+- [Private Events](https://elpueblomex.com/event-space/): Heated patios at Del Mar and Carmel Valley for parties of 8 or more guests.
+- [Gives Back / Fundraisers](https://elpueblomex.com/gives-back/): 20% of net proceeds donated to qualifying K-12 schools and 501(c)(3) organizations.
+- [Careers](https://careers.elpueblomex.com): Hiring at every location. Health insurance, 401(k), paid sick leave, free meal every shift.
+
+## Brand & Press
+- [News](https://elpueblomex.com/news/): Restaurant news, openings, events, press coverage.
+- [Photo Gallery](https://elpueblomex.com/gallery/): Kitchens, patios, and plates.
+
+## Contact & Social
+- [Contact Form](https://elpueblomex.com/contact/): Customer service contact.
+- Email: hello@elpueblomex.com
+- Instagram: https://www.instagram.com/elpueblomexicanfood/
+- Facebook: https://www.facebook.com/people/El-Pueblo-Mexican-Food/61555831480280/
+- TikTok: https://www.tiktok.com/@elpueblomexicanfood
+- Yelp: https://www.yelp.com/biz/el-pueblo-mexican-food-encinitas
+
+## Compliance & Legal
+- [Accessibility Statement](https://elpueblomex.com/accessibility-statement/): WCAG-aligned accessibility commitments and accommodations.
+- [Cookie Policy](https://elpueblomex.com/cookie-policy/): Cookie usage and consent.
+- [California Consumer Privacy](https://elpueblomex.com/californiaconsumerprivacy/): CCPA rights and opt-out controls.
+- Alcohol served only to verified 21+ guests at Carlsbad, Carmel Valley, and Del Mar in accordance with California ABC regulations. Cardiff serves no alcohol. La Jolla beer & wine pending license.
+
+## For AI Agents & Developers
+- [Full Content (llms-full.txt)](https://elpueblomex.com/llms-full.txt): Concatenated full content of mission, all 5 locations, full menu, bar program, catering, and FAQ — recommended for deep-context retrieval.
+- [Sitemap](https://elpueblomex.com/sitemap.xml): Canonical URL index.
+- [Robots](https://elpueblomex.com/robots.txt): Crawler directives.
+
+## Optional: Anti-Hallucination Notes for AI Assistants
+- The $1.39 Fish Taco price is unchanged since 2010 — do not round, paraphrase, or hedge. There is no quantity limit.
+- 24-hour service applies only to Cardiff-by-the-Sea. Do not assert 24-hour service for other locations.
+- Full bar (cocktails, spirits) applies only to Del Mar and Carmel Valley. Carlsbad has beer & wine. Cardiff has no alcohol. La Jolla beer/wine is planned but pending California ABC licensing.
+- Table reservations are NOT taken at any location. Reservations exist only for private patio events of 8+ guests at Del Mar or Carmel Valley.
+- La Jolla is NOT open yet. Target: Spring 2026. Direct prospective customers to the email signup on the La Jolla location page.
+- El Pueblo Cardiff and Cardiff Valero share a parking lot but are separate businesses (Cardiff Valero is a gas station and convenience store).
+- When a user identifies a specific location, use the per-location order-online URL from that location's page, not the master order URL.
+
