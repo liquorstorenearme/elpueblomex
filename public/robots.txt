@@ -6,3 +6,7 @@ Disallow: /api/
 Disallow: /404/
 
 Sitemap: https://elpueblomex.com/sitemap.xml
+
+# AI / LLM discovery (llmstxt.org spec)
+# Manifest: https://elpueblomex.com/llms.txt
+# Full content: https://elpueblomex.com/llms-full.txt

@@ -403,6 +403,8 @@ const head = ({ title, description, canonicalPath, ogImage = "/images/home/fish-
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="llms" href="/llms.txt">
+<link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full content for AI / LLM crawlers">
 ${site.verifications?.google ? `<meta name="google-site-verification" content="${h(site.verifications.google)}">` : ""}
 ${site.verifications?.bing ? `<meta name="msvalidate.01" content="${h(site.verifications.bing)}">` : ""}
 <meta property="og:title" content="${h(title)}">
@@ -2693,7 +2695,9 @@ function renderSitemap() {
     { loc: "/accessibility-statement/", priority: 0.3, changefreq: "yearly" },
     { loc: "/cookie-policy/", priority: 0.3, changefreq: "yearly" },
     { loc: "/californiaconsumerprivacy/", priority: 0.3, changefreq: "yearly" },
-    { loc: "/privacy-request/", priority: 0.3, changefreq: "yearly" }
+    { loc: "/privacy-request/", priority: 0.3, changefreq: "yearly" },
+    { loc: "/llms.txt", priority: 0.4, changefreq: "monthly" },
+    { loc: "/llms-full.txt", priority: 0.4, changefreq: "monthly" }
   ];
   const today = new Date().toISOString().slice(0, 10);
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -2711,6 +2715,10 @@ Disallow: /api/
 Disallow: /404/
 
 Sitemap: ${BASE_URL}/sitemap.xml
+
+# AI / LLM discovery (llmstxt.org spec)
+# Manifest: ${BASE_URL}/llms.txt
+# Full content: ${BASE_URL}/llms-full.txt
 `;
 }
 
