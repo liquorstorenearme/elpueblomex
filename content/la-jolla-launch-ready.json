@@ -39,6 +39,14 @@
     "description": "Now open at 564 Pearl Street in La Jolla Village — the former Jack in the Box site. The full El Pueblo menu, beer and wine, six in the morning until midnight every day.",
     "hero": "/images/locations/la-jolla-hero.jpg",
     "card": "/images/locations/la-jolla-card.jpg",
+    "gallery_eyebrow": "The neighborhood",
+    "gallery_title": "A look around Pearl Street.",
+    "gallery": [
+      { "image": "/images/locations/la-jolla-gallery/coast.jpg", "alt": "La Jolla coastline looking north toward Torrey Pines" },
+      { "image": "/images/locations/la-jolla-gallery/village.jpg", "alt": "El Pueblo La Jolla storefront on Pearl Street with the Pacific Ocean in the background" },
+      { "image": "/images/locations/la-jolla-gallery/cliffs.jpg", "alt": "Wide aerial view of La Jolla Village near El Pueblo, with the ocean and bluffs in the distance" },
+      { "image": "/images/locations/la-jolla-gallery/aerial.jpg", "alt": "Aerial view of El Pueblo La Jolla from above, parking lot and surroundings" }
+    ],
     "seoTitle": "Mexican Food in La Jolla — Now Open at 564 Pearl Street | El Pueblo",
     "seoDescription": "El Pueblo Mexican Food La Jolla — now open at 564 Pearl Street. Fish tacos, breakfast burritos, carne asada, beer & wine. 6am to midnight, 7 days a week. (858) 352-6357.",
     "body": {

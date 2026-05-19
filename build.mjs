@@ -931,6 +931,26 @@ ${loc.body?.sections?.length ? `
   </div>
 </section>` : ""}
 
+${loc.gallery?.length ? `
+<section class="location-gallery">
+  <div class="location-gallery__inner">
+    <header class="location-gallery__head">
+      <p class="eyebrow">${h(loc.gallery_eyebrow || "Around the corner")}</p>
+      <h2 class="display-sm">${h(loc.gallery_title || `A look around ${loc.short}.`)}</h2>
+    </header>
+    <div class="location-gallery__grid">
+      ${loc.gallery.map(g => `
+      <figure class="gallery-tile">
+        <picture>
+          ${g.image.endsWith(".jpg") ? `<source type="image/webp" srcset="${h(g.image.replace(/\.jpg$/, ".webp"))}">` : ""}
+          <img src="${h(g.image)}" alt="${h(g.alt || "")}" loading="lazy" decoding="async">
+        </picture>
+        ${g.caption ? `<figcaption>${h(g.caption)}</figcaption>` : ""}
+      </figure>`).join("")}
+    </div>
+  </div>
+</section>` : ""}
+
 ${loc.comingSoon ? `
 <section class="section section--cream-2" id="opening-alerts">
   <div class="section__inner" style="max-width:720px;text-align:center">

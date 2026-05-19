@@ -386,6 +386,14 @@
       "description": "Our fifth location is coming to La Jolla's Pearl Street in Spring 2026. Sign up below to hear the moment we open the doors.",
       "hero": "/images/locations/la-jolla-hero.jpg",
       "card": "/images/locations/la-jolla-card.jpg",
+      "gallery_eyebrow": "The neighborhood",
+      "gallery_title": "A look around Pearl Street.",
+      "gallery": [
+        { "image": "/images/locations/la-jolla-gallery/coast.jpg", "alt": "La Jolla coastline looking north toward Torrey Pines" },
+        { "image": "/images/locations/la-jolla-gallery/village.jpg", "alt": "El Pueblo La Jolla storefront on Pearl Street with the Pacific Ocean in the background" },
+        { "image": "/images/locations/la-jolla-gallery/cliffs.jpg", "alt": "Wide aerial view of La Jolla Village near El Pueblo, with the ocean and bluffs in the distance" },
+        { "image": "/images/locations/la-jolla-gallery/aerial.jpg", "alt": "Aerial view of El Pueblo La Jolla from above, parking lot and surroundings" }
+      ],
       "seoTitle": "El Pueblo Mexican Food La Jolla — Opening Spring 2026",
       "seoDescription": "Our fifth El Pueblo opens at 564 Pearl Street, La Jolla in Spring 2026. Fish tacos, burritos, full menu. Sign up for opening-day alerts.",
       "body": {
