@@ -687,7 +687,7 @@ ${ticker("ticker--agave")}
         ${locations.map(l => `
         <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""} ${l.slug === "la-jolla" && !l.comingSoon ? "loc-card--new" : ""}" href="/locations/${h(l.slug)}/">
           ${l.slug === "la-jolla" && !l.comingSoon ? `<span class="loc-card__ribbon" aria-label="Newly opened">New</span>` : ""}
-          <div class="loc-card__media" style="background-image:url('${h(l.hero)}')">
+          <div class="loc-card__media" style="background-image:url('${h(l.card || l.hero)}')">
             <span class="tag">${h(l.tag)}</span>
           </div>
           <div class="loc-card__body">
@@ -825,7 +825,7 @@ ${ticker("ticker--terracotta")}
         ${locations.map(l => `
         <a class="loc-card ${l.comingSoon ? "loc-card--soon" : ""} ${l.slug === "la-jolla" && !l.comingSoon ? "loc-card--new" : ""}" href="/locations/${h(l.slug)}/">
           ${l.slug === "la-jolla" && !l.comingSoon ? `<span class="loc-card__ribbon" aria-label="Newly opened">New</span>` : ""}
-          <div class="loc-card__media" style="background-image:url('${h(l.hero)}')">
+          <div class="loc-card__media" style="background-image:url('${h(l.card || l.hero)}')">
             <span class="tag">${h(l.tag)}</span>
           </div>
           <div class="loc-card__body">
