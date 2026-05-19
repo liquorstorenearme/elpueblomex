@@ -17,7 +17,9 @@ const locPath = path.join(root, "content/locations.json");
 const outPath = path.join(root, "content/reviews.json");
 
 const locFile = JSON.parse(fs.readFileSync(locPath, "utf8"));
-const locations = locFile.locations.filter(l => !l.comingSoon);
+// Include open locations + coming-soon locations that already have a placeId
+// (so pre-launch listings get their reviews tracked without us trying to "discover" places that don't exist yet)
+const locations = locFile.locations.filter(l => !l.comingSoon || l.googlePlaceId);
 
 async function searchText(query, fieldMask) {
   const r = await fetch("https://places.googleapis.com/v1/places:searchText", {
