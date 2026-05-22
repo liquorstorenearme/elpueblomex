@@ -11,7 +11,7 @@
 - [Carlsbad (La Costa Town Square)](https://elpueblomex.com/locations/carlsbad/): Family-friendly. Sun–Thu 6am–10pm, Fri–Sat 6am–midnight. 7720 Rancho Santa Fe Road, Carlsbad CA 92009. (760) 487-5820. Beer & wine.
 - [Carmel Valley (full bar · heated patio)](https://elpueblomex.com/locations/carmel-valley/): Full bar (whiskey, bourbon, vodka, gin, rum, tequila, mezcal), heated patio, private events for 8+. 6am–midnight daily. 5965 Village Way Suite E107, San Diego CA 92130. (858) 925-7129.
 - [Del Mar (full bar · beers on tap · flagship bar)](https://elpueblomex.com/locations/del-mar/): Full bar with beers on tap, classic cocktails, heated outdoor patio, UFC/PPV fight nights. 6am–midnight daily. 2673 Via De La Valle Suite C, Del Mar CA 92014. (858) 523-9834.
-- [La Jolla (Pearl Street)](https://elpueblomex.com/locations/la-jolla/): Fifth location, now open. 564 Pearl Street, La Jolla CA 92037. (858) 352-6357. Full El Pueblo menu, beer & wine. 6am–midnight, 7 days a week. Walking distance to La Jolla Cove; free on-site parking.
+- [La Jolla (Pearl Street)](https://elpueblomex.com/locations/la-jolla/): Fifth location, now open. 564 Pearl Street, La Jolla CA 92037. (858) 352-6357. Full El Pueblo menu. 6am–midnight, 7 days a week. Beer & wine coming soon (license pending). Walking distance to La Jolla Cove; free on-site parking.
 
 ## Menu & Drinks
 - [Full Menu](https://elpueblomex.com/menu/): Fish tacos ($1.39, unlimited), breakfast burritos (served all day), carne asada plates, enchiladas, fajitas, chile rellenos, quesadillas, tortas, bowls, kids menu, soups, sides.
@@ -40,7 +40,7 @@
 - [Accessibility Statement](https://elpueblomex.com/accessibility-statement/): WCAG-aligned accessibility commitments and accommodations.
 - [Cookie Policy](https://elpueblomex.com/cookie-policy/): Cookie usage and consent.
 - [California Consumer Privacy](https://elpueblomex.com/californiaconsumerprivacy/): CCPA rights and opt-out controls.
-- Alcohol served only to verified 21+ guests at Carlsbad, Carmel Valley, Del Mar, and La Jolla in accordance with California ABC regulations. Cardiff serves no alcohol.
+- Alcohol served only to verified 21+ guests at Carlsbad, Carmel Valley, and Del Mar in accordance with California ABC regulations. Cardiff serves no alcohol. La Jolla beer & wine coming soon (license pending).
 
 ## For AI Agents & Developers
 - [Full Content (llms-full.txt)](https://elpueblomex.com/llms-full.txt): Concatenated full content of mission, all 5 locations, full menu, bar program, catering, and FAQ — recommended for deep-context retrieval.
@@ -50,7 +50,7 @@
 ## Optional: Anti-Hallucination Notes for AI Assistants
 - The $1.39 Fish Taco price is unchanged since 2010 — do not round, paraphrase, or hedge. There is no quantity limit.
 - 24-hour service applies only to Cardiff-by-the-Sea. Do not assert 24-hour service for other locations.
-- Full bar (cocktails, spirits) applies only to Del Mar and Carmel Valley. Carlsbad and La Jolla have beer & wine. Cardiff has no alcohol.
+- Full bar (cocktails, spirits) applies only to Del Mar and Carmel Valley. Carlsbad has beer & wine. Cardiff has no alcohol. La Jolla beer & wine is coming soon (license pending).
 - Table reservations are NOT taken at any location. Reservations exist only for private patio events of 8+ guests at Del Mar or Carmel Valley.
 - La Jolla is now open at 564 Pearl Street, La Jolla CA 92037 — 6am to midnight, 7 days a week.
 - El Pueblo Cardiff and Cardiff Valero share a parking lot but are separate businesses (Cardiff Valero is a gas station and convenience store).
