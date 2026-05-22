@@ -47,7 +47,7 @@
     "FRESH DAILY",
     "FIVE LOCATIONS",
     "CARDIFF · CARLSBAD · CARMEL VALLEY · DEL MAR",
-    "LA JOLLA OPENS MAY 21",
+    "LA JOLLA NOW OPEN",
     "FULL BARS · WHISKEY · TEQUILA · MEZCAL · EVERY SPIRIT",
     "EAT IN · TAKE OUT · CATERING"
   ],
@@ -56,7 +56,7 @@
       "eyebrow": "Family owned · since 2010",
       "headline": "The best Mexican food in San Diego.",
       "headlineAccent": "5 locations.",
-      "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla (opens May 21) — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
+      "sub": "Cardiff · Carlsbad · Carmel Valley · Del Mar · La Jolla (now open) — family-owned, voted #1 on Yelp's Top Ten Mexican Restaurants in North San Diego County. Fish tacos, breakfast burritos, carne asada, full bars.",
       "primaryCta": {
         "label": "Find a Location",
         "href": "/locations/"
@@ -614,7 +614,7 @@
   "careers": {
     "heroEyebrow": "Join the team",
     "heroHeadline": "We're hiring at every location.",
-    "heroSub": "El Pueblo is growing — five locations across San Diego County, with La Jolla opening May 21, 2026. We're always looking for energetic, reliable people to join the team. Applications are considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law. We are proud to be an Equal Opportunity Employer.",
+    "heroSub": "El Pueblo is growing — five locations across San Diego County, now including La Jolla. We're always looking for energetic, reliable people to join the team. Applications are considered without regard to race, color, religion, sex, age, national origin, or any factor prohibited by law. We are proud to be an Equal Opportunity Employer.",
     "benefitsIntro": "Every full-time role comes with:",
     "benefits": [
       "Health Insurance (Medical, Dental, Vision on select roles)",

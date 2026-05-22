@@ -252,11 +252,11 @@ function restaurantSchema(loc) {
     parentOrganization: { "@id": ORG_ID },
     sameAs: [site.social.instagram, site.social.facebook, site.social.tiktok, loc.yelp || site.social.yelp].filter(Boolean),
     amenityFeature: (loc.features || []).map(f => ({ "@type": "LocationFeatureSpecification", name: f, value: true })),
-    potentialAction: !loc.comingSoon && site.orderOnline?.masterUrl ? {
+    potentialAction: !loc.comingSoon && loc.orderOnlineUrl ? {
       "@type": "OrderAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: loc.orderOnlineUrl || site.orderOnline.masterUrl,
+        urlTemplate: loc.orderOnlineUrl,
         inLanguage: "en-US",
         actionPlatform: [
           "http://schema.org/DesktopWebPlatform",
@@ -680,7 +680,7 @@ ${ticker("ticker--agave")}
     <header class="section__head">
       <p class="eyebrow">Five locations across San Diego</p>
       <h2 class="display-sm">Find a location <span class="serif" style="color:var(--terracotta)">near you</span></h2>
-      <p class="section__lede">Cardiff, Carlsbad, Carmel Valley, Del Mar — and La Jolla opening May 21, 2026. Pick the one nearest you below.</p>
+      <p class="section__lede">Cardiff, Carlsbad, Carmel Valley, Del Mar — and now La Jolla. Pick the one nearest you below.</p>
     </header>
     <div class="locations-grid">
       <div class="grid">
@@ -774,7 +774,7 @@ ${posts.length ? `
 ${ticker("ticker--terracotta")}
 `;
   const faqs = [
-    { q: "Where is the nearest El Pueblo Mexican restaurant near me?", a: "El Pueblo Mexican Food has five locations across San Diego County: Cardiff-by-the-Sea (open 24 hours), Carlsbad at La Costa Town Square, Carmel Valley, Del Mar, and La Jolla opening May 21, 2026. Visit our Locations page to find the one nearest you." },
+    { q: "Where is the nearest El Pueblo Mexican restaurant near me?", a: "El Pueblo Mexican Food has five locations across San Diego County: Cardiff-by-the-Sea (open 24 hours), Carlsbad at La Costa Town Square, Carmel Valley, Del Mar, and La Jolla. Visit our Locations page to find the one nearest you." },
     { q: "What time do you open?", a: "Cardiff is open 24 hours. Carmel Valley and Del Mar are open 6am to midnight daily. Carlsbad is 6am to 10pm (Sun-Thu) and 6am to midnight (Fri-Sat)." },
     { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.39 Fish Taco is unlimited. Order one. Order ten. Same price." },
     { q: "Do you have a full bar?", a: "Yes — full bars at Del Mar and Carmel Valley with whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas. Beers on tap at Del Mar." },
@@ -857,7 +857,7 @@ ${ticker("ticker--terracotta")}
   };
   return layout({
     title: `${site.brand.name} Locations — Best Mexican Food in San Diego County`,
-    description: "All 5 El Pueblo locations across San Diego County: Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, La Jolla (opens May 21, 2026). Hours, addresses, directions.",
+    description: "All 5 El Pueblo locations across San Diego County: Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, La Jolla. Hours, addresses, directions.",
     canonicalPath: "/locations/",
     body,
     ogImage: "/og/locations.jpg",
@@ -885,7 +885,7 @@ function renderLocation(loc) {
       <div class="cta-row">
         ${loc.comingSoon
           ? `<a class="btn btn--primary" href="#opening-alerts">Get opening alerts</a>`
-          : ((loc.orderOnlineUrl || site.orderOnline.masterUrl) ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order online</a>` : "")}
+          : (loc.orderOnlineUrl ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl)}" target="_blank" rel="noopener">Order online</a>` : "")}
         <a class="btn btn--ghost" href="${h(loc.mapsUrl)}" target="_blank" rel="noopener">Directions</a>
         ${loc.phone && !loc.comingSoon ? `<a class="btn btn--ghost" href="tel:${h(loc.phoneE164)}">${h(loc.phone)}</a>` : ""}
       </div>
@@ -998,9 +998,9 @@ ${loc.body?.faq?.length ? `
       <a class="btn btn--ghost" href="/locations/">Other locations</a>
     </div>` : `
     <h2>Hungry, <em>${h(loc.short)}</em>?</h2>
-    <p>Order pickup, browse the menu, or drop in — we're ready.</p>
+    <p>${loc.orderOnlineUrl ? "Order pickup, browse the menu, or drop in — we're ready." : "Browse the menu or drop in — we're ready."}</p>
     <div class="cta-row">
-      <a class="btn btn--primary" href="${h(loc.orderOnlineUrl || site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order from ${h(loc.short)}</a>
+      ${loc.orderOnlineUrl ? `<a class="btn btn--primary" href="${h(loc.orderOnlineUrl)}" target="_blank" rel="noopener">Order from ${h(loc.short)}</a>` : `<a class="btn btn--primary" href="/menu/">Browse the menu</a>`}
       <a class="btn btn--ghost" href="/locations/">Other locations</a>
     </div>`}
   </div>
@@ -1781,7 +1781,7 @@ ${ticker("ticker--terracotta")}
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Contact", url: "/contact/" }]);
   return layout({
     title: `Contact — ${site.brand.name} | All 5 Locations + Hours`,
-    description: "Contact El Pueblo — addresses, phone, and hours for Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, and La Jolla (opens May 21, 2026).",
+    description: "Contact El Pueblo — addresses, phone, and hours for Cardiff (24hr), Carlsbad, Carmel Valley, Del Mar, and La Jolla.",
     canonicalPath: "/contact/",
     body,
     ogImage: "/og/contact.jpg",
@@ -1848,7 +1848,7 @@ ${ticker("ticker--marigold")}
 <section class="section section--cream-2">
   <div class="cta-band">
     <h2>See the <em>$1.39</em> fish taco?</h2>
-    <p>Come taste it. Four locations open now, La Jolla opening May 21, 2026.</p>
+    <p>Come taste it. Five locations open across San Diego County.</p>
     <div class="cta-row">
       <a class="btn btn--primary" href="/locations/">Find a location</a>
       <a class="btn btn--ghost" href="/menu/">See the menu</a>
@@ -1920,7 +1920,7 @@ ${ticker("ticker--marigold")}
         </tbody>
       </table>
     </div>
-    <p class="pay-table__note">Pay ranges reflect the salary or hourly wage range El Pueblo Mexican Food reasonably expects to pay for each position, as required by California Labor Code §432.3. Ranges may be revised over time; the version published at the moment you apply controls. All four open locations participate: Cardiff-by-the-Sea, Carlsbad, Carmel Valley, Del Mar. (La Jolla opens May 21, 2026.) Apply through the portal below — each listing matches a row in this table.</p>
+    <p class="pay-table__note">Pay ranges reflect the salary or hourly wage range El Pueblo Mexican Food reasonably expects to pay for each position, as required by California Labor Code §432.3. Ranges may be revised over time; the version published at the moment you apply controls. All five open locations participate: Cardiff-by-the-Sea, Carlsbad, Carmel Valley, Del Mar, and La Jolla. Apply through the portal below — each listing matches a row in this table.</p>
   </div>
 </section>
 
