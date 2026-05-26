@@ -61,6 +61,7 @@ async function getReviews(placeId) {
 
 const out = { fetched_at: new Date().toISOString(), locations: {} };
 let updatedLocations = false;
+let failures = 0;
 
 for (const loc of locations) {
   try {
@@ -90,8 +91,16 @@ for (const loc of locations) {
     };
     console.log(`${loc.slug}: ${d.rating} ★ · ${d.userRatingCount} reviews · ${d.reviews?.length || 0} cached`);
   } catch (err) {
+    failures++;
     console.error(`Failed ${loc.slug}:`, err.message);
   }
+}
+
+// Don't overwrite a good reviews.json with a partial/empty refresh.
+// If every location failed, exit non-zero so the workflow fails loudly instead of committing data loss.
+if (Object.keys(out.locations).length === 0) {
+  console.error(`All ${failures} location(s) failed. Refusing to write empty reviews.json.`);
+  process.exit(1);
 }
 
 fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
@@ -100,4 +109,9 @@ console.log(`Wrote ${outPath}`);
 if (updatedLocations) {
   fs.writeFileSync(locPath, JSON.stringify(locFile, null, 2));
   console.log(`Updated ${locPath} with discovered Place IDs`);
+}
+
+if (failures > 0) {
+  console.error(`${failures} location(s) failed; partial reviews.json written. Exiting non-zero.`);
+  process.exit(1);
 }
