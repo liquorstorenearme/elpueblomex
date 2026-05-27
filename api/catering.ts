@@ -1,4 +1,5 @@
 import { looksLikeSpam } from "./_spam";
+import { resolveRecipients } from "./_locations";
 
 export const config = { runtime: "edge" };
 
@@ -34,8 +35,7 @@ export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
 
   const resendKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.EP_CATERING_TO || process.env.EP_TO_EMAIL || "hello@elpueblomex.com";
-  const toList = toEmail.split(",").map((s) => s.trim()).filter(Boolean);
+  const fallbackTo = process.env.EP_CATERING_TO || process.env.EP_TO_EMAIL || "hello@elpueblomex.com";
   const fromEmail = process.env.EP_FROM_EMAIL || "noreply@elpueblomex.com";
   if (!resendKey) return back("/catering/", req.url, { err: "config" });
 
@@ -70,12 +70,15 @@ export default async function handler(req: Request): Promise<Response> {
     <p style="margin-top:24px;color:#6a5a4a;font-size:11px;border-top:1px solid #eee;padding-top:16px;">IP: ${esc(ip)} · ${new Date().toISOString()}</p>
   </div></body></html>`;
 
+  const { to: toList, cc: ccList } = resolveRecipients(location, fallbackTo);
+
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       from: `El Pueblo Catering <${fromEmail}>`,
       to: toList,
+      cc: ccList.length ? ccList : undefined,
       reply_to: email,
       subject: `Catering — ${name} — ${location}`,
       html,
