@@ -121,6 +121,24 @@
         "401(K)",
         "Performance bonus eligibility"
       ]
+    },
+    {
+      "slug": "general-manager",
+      "title": "General Manager",
+      "type": "Full-time",
+      "employmentType": "FULL_TIME",
+      "pay": "$28.22/hr",
+      "payMin": 28.22,
+      "payMax": 28.22,
+      "payUnit": "HOUR",
+      "locations": [
+        "cardiff-by-the-sea",
+        "carlsbad",
+        "carmel-valley",
+        "del-mar",
+        "la-jolla"
+      ],
+      "description": "General Managers own a single El Pueblo location end-to-end — staffing, P&L, guest experience, vendor relationships, and team development. GMs are accountable for the financial and operational performance of their restaurant. Apply through the openings portal on the careers page for current openings and full job description."
     }
   ]
 }
