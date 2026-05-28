@@ -36,7 +36,7 @@
         "Health insurance",
         "One free meal during your shift",
         "Sick pay",
-        "Raises based on performance",
+        "Bonuses based on performance",
         "401(K)",
         "Shared tip pool"
       ]
@@ -76,7 +76,7 @@
         "Health insurance",
         "One free meal during your shift",
         "Sick pay",
-        "Raises based on performance",
+        "Bonuses based on performance",
         "401(K)",
         "Shared tip pool"
       ]
@@ -117,9 +117,8 @@
         "Health insurance",
         "One free meal during your shift",
         "Sick pay + paid time off",
-        "Raises based on performance",
-        "401(K)",
-        "Performance bonus eligibility"
+        "Bonuses based on performance",
+        "401(K)"
       ]
     },
     {

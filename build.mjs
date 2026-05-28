@@ -535,7 +535,6 @@ const footer = () => `
         <h3>Menu</h3>
         <ul>
           <li><a href="/menu/">Food &amp; drink</a></li>
-          <li><a href="/catering/">Catering</a></li>
           <li><a href="/event-space/">Private events</a></li>
         </ul>
       </div>
@@ -764,10 +763,10 @@ ${posts.length ? `
 <section class="section section--wall">
   <div class="cta-band">
     <h2>Planning a <em>big</em> party?</h2>
-    <p>Taco bars, party packs, and full-service catering at all four current locations — plus heated patios for private events.</p>
+    <p>Heated patios at Del Mar and Carmel Valley for private events, birthdays, and gatherings — same menu, your group, dedicated space.</p>
     <div class="cta-row">
-      <a class="btn btn--primary" href="/catering/">Order catering</a>
-      <a class="btn btn--ghost" href="/event-space/">Book our patio</a>
+      <a class="btn btn--primary" href="/event-space/">Book our patio</a>
+      <a class="btn btn--ghost" href="/locations/">Find a location</a>
     </div>
   </div>
 </section>
@@ -778,8 +777,7 @@ ${ticker("ticker--terracotta")}
     { q: "Where is the nearest El Pueblo Mexican restaurant near me?", a: "El Pueblo Mexican Food has five locations across San Diego County: Cardiff-by-the-Sea (open 24 hours), Carlsbad at La Costa Town Square, Carmel Valley, Del Mar, and La Jolla. Visit our Locations page to find the one nearest you." },
     { q: "What time do you open?", a: "Cardiff is open 24 hours. Carmel Valley and Del Mar are open 6am to midnight daily. Carlsbad is 6am to 10pm (Sun-Thu) and 6am to midnight (Fri-Sat)." },
     { q: "Is there a limit on how many fish tacos I can order?", a: "No. The $1.39 Fish Taco is unlimited. Order one. Order ten. Same price." },
-    { q: "Do you have a full bar?", a: "Yes — full bars at Del Mar and Carmel Valley with whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas. Beers on tap at Del Mar." },
-    { q: "Do you cater?", a: "Yes. Same-day Party Packs (rolled tacos, enchiladas, quesadilla trays, make-your-own taco packs) and full-service catering with taco bars at all four open locations." }
+    { q: "Do you have a full bar?", a: "Yes — full bars at Del Mar and Carmel Valley with whiskey, bourbon, vodka, gin, rum, tequila, mezcal, classic cocktails, wine, and house margaritas. Beers on tap at Del Mar." }
   ];
   return layout({
     title: `Mexican Food in San Diego | ${site.brand.name} — 5 Locations`,
@@ -1122,7 +1120,7 @@ ${ticker("ticker--agave")}
         <p>${h(p.description)}</p>
       </article>`).join("")}
     </div>
-    <p class="party-note">For full-service catering, <a href="/catering/">request a custom catering order →</a></p>
+    <p class="party-note">Order from your nearest El Pueblo — call ahead so we can have it ready.</p>
   </div>
 </section>
 
@@ -1169,100 +1167,30 @@ ${ticker("ticker--marigold")}
 
 // ---------- Catering ----------
 function renderCatering() {
-  const c = site.catering;
   const body = `
-<section class="page-head page-head--with-media">
-  <div class="page-head__inner">
-    <div class="page-head__copy">
-      <p class="eyebrow">${h(c.heroEyebrow)}</p>
-      <h1 class="display">${h(c.heroHeadline)}<span class="serif" style="color:var(--terracotta)"></span></h1>
-      <p class="lede">${h(c.heroSub)}</p>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="#catering-request">Request catering</a>
-      </div>
-    </div>
-    <div class="page-head__media page-head__media--landscape">
-      <picture>
-        <source type="image/webp" srcset="/images/catering/party-pack-hero.webp">
-        <img src="/images/catering/party-pack-hero.jpg" width="1200" height="600" alt="El Pueblo catering tray — carne asada with tortillas, rice, beans, pico, and guacamole" loading="eager" fetchpriority="high">
-      </picture>
+<section class="page-head">
+  <div class="page-head__inner" style="text-align:center;max-width:720px;margin:0 auto;">
+    <p class="eyebrow">Catering</p>
+    <h1 class="display-sm">Catering is <span class="serif" style="color:var(--terracotta)">temporarily paused.</span></h1>
+    <p class="lede" style="margin-top:24px;">We're working through some internal logistics and have paused catering orders for the moment. Please check back soon — we'll have a refreshed lineup of options when we're back up.</p>
+    <p class="lede" style="margin-top:16px;">In the meantime, you can still <a href="/menu/">browse the full menu</a> or order pickup from your nearest El Pueblo.</p>
+    <div class="cta-row" style="justify-content:center;margin-top:32px;">
+      <a class="btn btn--primary" href="/menu/">See the menu</a>
+      <a class="btn btn--ghost" href="/locations/">Find a location</a>
     </div>
   </div>
 </section>
 
 ${ticker("ticker--marigold")}
-
-<section class="section section--cream catering-soon">
-  <div class="section__inner">
-    <header class="section__head section__head--center">
-      <p class="eyebrow">Coming soon</p>
-      <h2 class="display-sm">New catering <span class="serif" style="color:var(--terracotta)">packages</span> launching soon.</h2>
-      <p class="lede">We're putting together a refreshed lineup of full-service catering options. In the meantime, tell us what you need below and we'll work it out from there. Need same-day party trays? <a href="/menu/#party-packs">See our party packs →</a></p>
-    </header>
-  </div>
-</section>
-
-<section class="section section--cream-2" id="catering-request">
-  <div class="section__inner">
-    <header class="section__head section__head--center">
-      <p class="eyebrow">Full-service catering</p>
-      <h2 class="display-sm">Request a <span class="serif" style="color:var(--terracotta)">catering order.</span></h2>
-      <p class="lede">Tell us what you need. We'll confirm availability and pricing at your closest El Pueblo.</p>
-    </header>
-    <form class="stack-form" action="/api/catering" method="post">
-      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="stack-form__row">
-        <label>Name<input name="name" autocomplete="name" required></label>
-        <label>Email<input type="email" name="email" autocomplete="email" required></label>
-      </div>
-      <div class="stack-form__row">
-        <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
-        <label>Business / Organization<input name="organization" autocomplete="organization"></label>
-      </div>
-      <label>Nearest location
-        <select name="location" required>
-          <option value="">Choose a location</option>
-          ${locations.filter(l => !l.comingSoon).map(l => `<option value="${h(l.slug)}">${h(l.name)}</option>`).join("")}
-        </select>
-      </label>
-      <label>Date needed<input type="date" name="date"></label>
-      <label>How can we help?<textarea name="message" rows="5" placeholder="Party size, menu preferences, timing..."></textarea></label>
-      <button class="btn btn--primary" type="submit">Send catering request</button>
-      <p class="stack-form__hint">We'll reply within one business day.</p>
-      <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your request. We don't sell or share your information, and we don't send marketing texts — your phone number is for callbacks only.</p>
-    </form>
-  </div>
-</section>
-
-${ticker("ticker--terracotta")}
 `;
   const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Catering", url: "/catering/" }]);
-  const catererSchema = {
-    "@context": "https://schema.org",
-    "@type": ["FoodEstablishment", "FoodService"],
-    name: `${site.brand.name} Catering`,
-    url: `${BASE_URL}/catering/`,
-    parentOrganization: { "@id": ORG_ID },
-    areaServed: [
-      { "@type": "City", name: "Cardiff-by-the-Sea" },
-      { "@type": "City", name: "Carlsbad" },
-      { "@type": "City", name: "Del Mar" },
-      { "@type": "City", name: "San Diego" },
-      { "@type": "City", name: "Encinitas" },
-      { "@type": "City", name: "Solana Beach" },
-      { "@type": "City", name: "La Jolla" },
-      { "@type": "City", name: "Rancho Santa Fe" }
-    ],
-    servesCuisine: ["Mexican", "Tex-Mex"]
-  };
   return layout({
-    title: `Catering — ${site.brand.name} | Full-Service Mexican Catering San Diego`,
-    description: "El Pueblo catering across San Diego — full-service events, taco bars, large gatherings. New packages coming soon. Request a quote for your event.",
+    title: `Catering — ${site.brand.name}`,
+    description: "El Pueblo catering is temporarily paused while we work through some internal logistics. Please check back soon.",
     canonicalPath: "/catering/",
     body,
-    ogImage: "/og/catering.jpg",
     bodyClass: "page-catering",
-    schema: [catererSchema, crumbs]
+    schema: [crumbs]
   });
 }
 
@@ -2706,7 +2634,7 @@ ${ticker("ticker--terracotta")}
 // Auto-reloads every 5 minutes to pick up content changes from content/menu-board.json.
 
 const MENU_BOARD_CSS = `
-:root{--cream:#faf0d8;--cream-2:#f4e4bd;--ink:#1b1008;--ink-soft:#4a362a;--terracotta:#d84a1e;--terracotta-dark:#a03514;--agave:#356b3e;--marigold:#f5b72b;--font-display:"Archivo Black",system-ui,sans-serif;--font-serif:"Fraunces",serif;--font-body:"Inter",system-ui,sans-serif}
+:root{--cream:#faf0d8;--cream-2:#f4e4bd;--ink:#1b1008;--ink-soft:#4a362a;--terracotta:#d84a1e;--terracotta-dark:#a03514;--agave:#356b3e;--marigold:#f5b72b;--pink:#f06a5a;--sky:#5a9fb8;--font-display:"Archivo Black",system-ui,sans-serif;--font-serif:"Fraunces",serif;--font-body:"Inter",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0;min-width:0}
 html,body{background:#1a0e07;color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;height:100%;overflow:hidden}
 em{font-style:italic}
@@ -2743,8 +2671,19 @@ em{font-style:italic}
 .col:last-child{border-right:0}
 .section{display:flex;flex-direction:column;gap:0.3cqh}
 .col-hero{width:100%;height:9cqh;border:0.25cqh solid var(--ink);border-radius:0.9cqh;box-shadow:0.45cqh 0.45cqh 0 var(--terracotta);object-fit:cover;flex-shrink:0;margin-bottom:0.8cqh;background:var(--ink)}
-.section__title{font-family:var(--font-display);font-size:4.4cqh;line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;color:var(--ink);margin-bottom:0.1cqh}
-.section__title em{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--terracotta);text-transform:none;letter-spacing:-0.02em;display:inline-block;transform:rotate(-3deg);margin-left:0.05em}
+.section__head{display:inline-flex;align-items:baseline;gap:0.4cqw;padding:0.5cqh 1.2cqw 0.7cqh;background:var(--terracotta);color:var(--cream);border-radius:1.4cqh 1.4cqh 1.4cqh 0;align-self:flex-start;box-shadow:0.45cqh 0.45cqh 0 var(--ink);margin-bottom:0.7cqh}
+.section__title{font-family:var(--font-display);font-size:3.4cqh;line-height:0.95;letter-spacing:-0.02em;text-transform:uppercase;color:inherit;margin:0}
+.section__title em{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--marigold);text-transform:none;letter-spacing:-0.02em;display:inline-block;transform:rotate(-3deg);margin-left:0.05em}
+.section--marigold .section__head{background:var(--marigold);color:var(--ink)}
+.section--marigold .section__title em{color:var(--terracotta)}
+.section--agave .section__head{background:var(--agave);color:var(--cream)}
+.section--agave .section__title em{color:var(--marigold)}
+.section--pink .section__head{background:var(--pink);color:var(--cream)}
+.section--pink .section__title em{color:var(--marigold)}
+.section--ink .section__head{background:var(--ink);color:var(--cream)}
+.section--ink .section__title em{color:var(--marigold)}
+.section--sky .section__head{background:var(--sky);color:var(--cream)}
+.section--sky .section__title em{color:var(--marigold)}
 .section__note{font-family:var(--font-serif);font-style:italic;font-weight:500;font-size:1.55cqh;color:var(--ink-soft);line-height:1.2;margin-top:-0.15cqh;margin-bottom:0.15cqh}
 .items{list-style:none;display:flex;flex-direction:column;gap:0.3cqh}
 .item{display:flex;align-items:baseline;gap:0.4cqw;font-size:2.35cqh;line-height:1.1}
@@ -2771,7 +2710,8 @@ function mbSection(section) {
   const hero = section.heroImage
     ? `<img class="col-hero" src="${h(section.heroImage)}" alt="">`
     : "";
-  const title = `<h2 class="section__title">${section.title}</h2>`;
+  const colorCls = section.color ? ` section--${section.color}` : "";
+  const title = `<div class="section__head"><h2 class="section__title">${section.title}</h2></div>`;
   const note = section.note ? `<p class="section__note">${h(section.note)}</p>` : "";
 
   let body = "";
@@ -2794,7 +2734,7 @@ function mbSection(section) {
     ? `<div class="addons">${section.addons.map(a => `<span>+ ${h(a.name)} <strong>${h(a.price)}</strong></span>`).join("")}</div>`
     : "";
 
-  return `<section class="section">${hero}${title}${note}${body}${addons}</section>`;
+  return `<section class="section${colorCls}">${hero}${title}${note}${body}${addons}</section>`;
 }
 
 function mbFeature(feature) {

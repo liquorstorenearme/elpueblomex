@@ -141,7 +141,7 @@
             "h2": "Fish Tacos, Breakfast Burritos, and Family-Size Plates",
             "paragraphs": [
               "Our Carlsbad menu is the full El Pueblo spread: the signature $1.39 fish taco (fried-to-order, chipotle sauce, cabbage, pico, all day), breakfast burritos from 6am (Super, Steak and Eggs, Machaca, Chorizo, classic Breakfast), enchiladas, carne asada plates, fajita plates, chile rellenos, tortas, quesadillas, and Mexican soups like pozole and chicken tortilla soup.",
-              "Feeding a crowd? Our party packs work from our Carlsbad kitchen — make-your-own taco packs, rolled tacos, enchiladas, quesadilla trays, and chips-and-salsa trays for gatherings of any size. Call ahead for catering, or order same-day for pickup."
+              "Feeding a crowd? Our party packs work from our Carlsbad kitchen — make-your-own taco packs, rolled tacos, enchiladas, quesadilla trays, and chips-and-salsa trays for gatherings of any size. Call ahead so we can have it ready, or order same-day for pickup."
             ]
           },
           {
@@ -169,8 +169,8 @@
             "a": "Yes. La Costa Town Square has a large shared parking lot — no meters, easy access right off Rancho Santa Fe Road."
           },
           {
-            "q": "Do you cater in Carlsbad?",
-            "a": "Yes. Our Carlsbad kitchen fulfills the full El Pueblo catering and party-pack menu — make-your-own taco packs, rolled tacos, enchilada trays, quesadilla trays, and chips-and-salsa trays. Call the store or submit a catering request online."
+            "q": "Do you offer party packs in Carlsbad?",
+            "a": "Yes. Our Carlsbad kitchen fulfills the full El Pueblo party-pack menu — make-your-own taco packs, rolled tacos, enchilada trays, quesadilla trays, and chips-and-salsa trays. Call the store ahead to order."
           }
         ]
       }
@@ -231,7 +231,7 @@
             "h2": "Full Bar, Heated Patio, and Private Events",
             "paragraphs": [
               "Our Carmel Valley bar is a full bar — whiskey, bourbon, vodka, gin, rum, plus the premium tequila and mezcal selection you'd hope for at a Mexican kitchen. Wine by the glass, classic cocktails done right (old fashioneds, palomas, mojitos, martinis), and the house margaritas that have become a neighborhood fixture — silver, gold, spicy, skinny, by the glass or the pitcher. We pour tequila flights (blanco, reposado, añejo side-by-side) for the curious. Our bartenders know the menu cold, so tell them what you want and they'll match it.",
-              "The heated patio is the reason people book birthdays, bridal showers, team dinners, and end-of-season parties with us. It's open year-round — heat lamps in winter, shade and ocean breeze the rest of the year. Private events start at 8 guests; we build the catering menu around your group size."
+              "The heated patio is the reason people book birthdays, bridal showers, team dinners, and end-of-season parties with us. It's open year-round — heat lamps in winter, shade and ocean breeze the rest of the year. Private events start at 8 guests; we build the menu around your group size."
             ]
           },
           {
@@ -342,7 +342,7 @@
           },
           {
             "q": "Is the patio available for private events?",
-            "a": "Yes. The heated outdoor patio at Del Mar is available for private events starting at 8 guests. We build catering menus around party size and run full bar service during events."
+            "a": "Yes. The heated outdoor patio at Del Mar is available for private events starting at 8 guests. We build menus around party size and run full bar service during events."
           },
           {
             "q": "Do you take reservations for regular dining?",

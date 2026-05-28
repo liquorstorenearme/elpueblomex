@@ -21,6 +21,7 @@
         [
           {
             "title": "Breakfast",
+            "color": "marigold",
             "note": "Served all day",
             "items": [
               {"name": "Huevos a la Mexicana", "price": "13.90"},
@@ -31,6 +32,7 @@
           },
           {
             "title": "Breakfast <em>burritos</em>",
+            "color": "pink",
             "items": [
               {"name": "Breakfast", "price": "11.90"},
               {"name": "Chorizo", "price": "12.90"},
@@ -41,6 +43,7 @@
           },
           {
             "title": "Bowls",
+            "color": "agave",
             "items": [
               {"name": "Breakfast", "price": "11.40"},
               {"name": "Super Breakfast", "price": "13.40"},
@@ -53,6 +56,7 @@
         [
           {
             "title": "Burritos",
+            "color": "terracotta",
             "items": [
               {"name": "Bean & Cheese", "price": "9.90"},
               {"name": "Carne Asada", "price": "15.40"},
@@ -81,6 +85,7 @@
         [
           {
             "title": "Dinners",
+            "color": "ink",
             "note": "Rice · beans · lettuce · guac · salsa · warm tortillas",
             "numbered": true,
             "items": [
@@ -94,6 +99,7 @@
           },
           {
             "title": "Fries",
+            "color": "sky",
             "items": [
               {"name": "Veggie", "price": "15.90"},
               {"name": "Shredded Chicken", "price": "16.90"},
@@ -125,6 +131,7 @@
         [
           {
             "title": "Party <em>packs</em>",
+            "color": "marigold",
             "items": [
               {"name": "Chips & Salsa Full Tray", "price": "59"},
               {"name": "Quesadilla Party Tray", "desc": "12", "price": "114"},
@@ -138,6 +145,7 @@
           },
           {
             "title": "Quesadillas",
+            "color": "agave",
             "items": [
               {"name": "Cheese", "price": "9.90"},
               {"name": "Veggie", "price": "13.40"},
@@ -151,6 +159,7 @@
           },
           {
             "title": "Enchiladas",
+            "color": "terracotta",
             "items": [
               {"name": "Cheese", "price": "12.90"},
               {"name": "Beef", "price": "13.40"},
@@ -161,6 +170,7 @@
         [
           {
             "title": "Tacos",
+            "color": "ink",
             "subsections": [
               {
                 "pill": "Soft Shell",
@@ -189,6 +199,7 @@
           },
           {
             "title": "Soups",
+            "color": "pink",
             "items": [
               {"name": "Chicken Tortilla Soup", "desc": "32oz", "price": "11.40"},
               {"name": "Menudo Soup", "price": "13.40"}
@@ -198,6 +209,7 @@
         [
           {
             "title": "Tortas",
+            "color": "sky",
             "items": [
               {"name": "Shredded Chicken", "price": "14.40"},
               {"name": "Beef", "price": "14.40"},
@@ -213,6 +225,7 @@
           },
           {
             "title": "Side <em>Orders</em>",
+            "color": "marigold",
             "items": [
               {"name": "Beans, Rice or Sour Cream", "desc": "8oz", "price": "4.90"},
               {"name": "Guacamole", "desc": "4oz", "price": "6.90"},
@@ -224,6 +237,7 @@
           },
           {
             "title": "Kids",
+            "color": "agave",
             "note": "Served with fries & small drink",
             "kidsNumbered": true,
             "items": [
