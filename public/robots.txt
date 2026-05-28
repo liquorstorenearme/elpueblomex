@@ -4,6 +4,8 @@ Disallow: /edit/
 Disallow: /admin-login/
 Disallow: /api/
 Disallow: /404/
+Disallow: /menu-board-1/
+Disallow: /menu-board-2/
 
 Sitemap: https://elpueblomex.com/sitemap.xml
 

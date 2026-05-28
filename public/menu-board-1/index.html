@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>El Pueblo — Breakfast · Burritos · Dinners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,wght@1,500;1,700;1,900&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#faf0d8;--cream-2:#f4e4bd;--ink:#1b1008;--ink-soft:#4a362a;--terracotta:#d84a1e;--terracotta-dark:#a03514;--agave:#356b3e;--marigold:#f5b72b;--font-display:"Archivo Black",system-ui,sans-serif;--font-serif:"Fraunces",serif;--font-body:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html,body{background:#1a0e07;color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;height:100%;overflow:hidden}
+em{font-style:italic}
+.board{width:100vw;height:100vh;background:var(--cream);color:var(--ink);position:relative;overflow:hidden;display:flex;flex-direction:column;container-type:size;border:0.5cqh solid var(--ink)}
+.board::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(27,16,8,0.07) 1.2px,transparent 1.2px);background-size:24px 24px;pointer-events:none;mix-blend-mode:multiply;z-index:0}
+.board>*{position:relative;z-index:1}
+.ticker{background:var(--ink);color:var(--cream);padding:0.85cqh 1cqw;overflow:hidden;white-space:nowrap;flex-shrink:0;display:flex;justify-content:center;align-items:center}
+.ticker--terracotta{background:var(--terracotta)}
+.ticker__track{display:inline-flex;align-items:center;gap:2.4cqw;font-family:var(--font-display);font-size:2.1cqh;letter-spacing:0.14em;text-transform:uppercase}
+.ticker__dot{color:var(--marigold);font-size:2.3cqh;line-height:0}
+.award-band{background:var(--marigold);border-top:0.35cqh solid var(--ink);border-bottom:0.35cqh solid var(--ink);padding:0.35cqh 2.6cqw;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2cqw;flex-shrink:0}
+.award-band__text{font-family:var(--font-display);font-size:1.9cqh;line-height:1;text-transform:uppercase;letter-spacing:-0.01em;color:var(--ink)}
+.award-band__text em{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--terracotta);text-transform:none;letter-spacing:-0.02em;font-size:2.4cqh;display:inline-block;transform:rotate(-2deg)}
+.award-band__text--right{text-align:right}
+.brand-badge{width:7.5cqh;height:7.5cqh;object-fit:contain;image-rendering:-webkit-optimize-contrast}
+.hero-callout{margin:0.8cqh 1.8cqw 0;padding:1cqh 1.8cqw;background:var(--terracotta);color:var(--cream);border:0.35cqh solid var(--ink);border-radius:1.2cqh;box-shadow:0.5cqh 0.5cqh 0 var(--ink);display:flex;align-items:center;justify-content:space-between;gap:1.8cqw;position:relative;overflow:hidden;flex-shrink:0}
+.hero-callout::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.15) 1.4px,transparent 1.4px);background-size:14px 14px;pointer-events:none}
+.hero-callout__eyebrow{font-family:var(--font-display);font-size:1.5cqh;letter-spacing:0.3em;text-transform:uppercase;color:var(--marigold);display:block;margin-bottom:0.25cqh}
+.hero-callout__title{font-family:var(--font-display);font-size:3.6cqh;line-height:0.92;text-transform:uppercase;letter-spacing:-0.02em}
+.hero-callout__title em{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--marigold);text-transform:none;letter-spacing:-0.02em;display:inline-block;transform:rotate(-3deg)}
+.hero-callout__price{font-family:var(--font-display);font-size:7cqh;color:var(--marigold);line-height:0.9;letter-spacing:-0.04em;text-shadow:0.4cqh 0.4cqh 0 var(--ink);flex-shrink:0}
+.hero-callout__price small{font-size:0.4em;color:var(--cream);vertical-align:0.25em;text-shadow:none;margin-right:0.05em}
+.hero-callout__price-unit{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--ink);text-shadow:none;font-size:2cqh;letter-spacing:-0.02em;display:inline-block;transform:rotate(-4deg);margin-left:0.2cqw;vertical-align:0.4em}
+.hero-callout.deal-variant{background:var(--marigold)}
+.hero-callout.deal-variant .hero-callout__eyebrow{color:var(--terracotta-dark)}
+.hero-callout.deal-variant .hero-callout__title{color:var(--ink)}
+.hero-callout.deal-variant .hero-callout__title em{color:var(--terracotta)}
+.hero-callout.deal-variant .hero-callout__price{color:var(--terracotta);text-shadow:0.4cqh 0.4cqh 0 var(--ink)}
+.hero-callout.deal-variant .hero-callout__price small{color:var(--ink)}
+.hero-callout.deal-variant::before{background-image:radial-gradient(rgba(27,16,8,0.12) 1.4px,transparent 1.4px)}
+.hero-callout__media{width:13cqh;height:13cqh;border-radius:50%;border:0.35cqh solid var(--ink);box-shadow:0.5cqh 0.5cqh 0 var(--ink);object-fit:cover;flex-shrink:0;background:var(--cream)}
+.columns{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;padding:1cqh 0;min-height:0}
+.col{padding:0 1.5cqw 2.5cqh;display:flex;flex-direction:column;justify-content:space-between;gap:2cqh;border-right:0.2cqh solid var(--ink)}
+.col:last-child{border-right:0}
+.section{display:flex;flex-direction:column;gap:0.3cqh}
+.col-hero{width:100%;height:9cqh;border:0.25cqh solid var(--ink);border-radius:0.9cqh;box-shadow:0.45cqh 0.45cqh 0 var(--terracotta);object-fit:cover;flex-shrink:0;margin-bottom:0.8cqh;background:var(--ink)}
+.section__title{font-family:var(--font-display);font-size:4.4cqh;line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;color:var(--ink);margin-bottom:0.1cqh}
+.section__title em{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--terracotta);text-transform:none;letter-spacing:-0.02em;display:inline-block;transform:rotate(-3deg);margin-left:0.05em}
+.section__note{font-family:var(--font-serif);font-style:italic;font-weight:500;font-size:1.55cqh;color:var(--ink-soft);line-height:1.2;margin-top:-0.15cqh;margin-bottom:0.15cqh}
+.items{list-style:none;display:flex;flex-direction:column;gap:0.3cqh}
+.item{display:flex;align-items:baseline;gap:0.4cqw;font-size:2.35cqh;line-height:1.1}
+.item__name{font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item__name em{font-family:var(--font-serif);font-style:italic;font-weight:500;color:var(--ink-soft);font-size:0.8em;margin-left:0.2em}
+.item__num{color:var(--terracotta);font-family:var(--font-display);margin-right:0.25cqw;font-size:2.15cqh}
+.item__leader{flex:1;border-bottom:0.18cqh dotted rgba(27,16,8,0.4);transform:translateY(-0.5cqh);min-width:0.6cqw}
+.item__price{font-family:var(--font-display);font-size:2.45cqh;color:var(--terracotta-dark);letter-spacing:-0.02em;white-space:nowrap}
+.item__new{background:var(--marigold);color:var(--ink);font-family:var(--font-display);font-size:1.15cqh;letter-spacing:0.16em;padding:0.22cqh 0.55cqw;margin-right:0.5cqw;border-radius:999px;border:0.18cqh solid var(--ink);box-shadow:0.25cqh 0.25cqh 0 var(--ink);align-self:center;text-transform:uppercase}
+.subsection-pill{display:inline-block;font-family:var(--font-display);font-size:1.65cqh;letter-spacing:0.12em;text-transform:uppercase;padding:0.35cqh 0.9cqw;background:var(--ink);color:var(--cream);border:0.18cqh solid var(--ink);border-radius:999px;box-shadow:0.3cqh 0.3cqh 0 var(--terracotta);margin:0.4cqh 0 0.2cqh;align-self:flex-start}
+.addons{margin-top:0.5cqh;padding:0.6cqh 1cqw;background:var(--marigold);border:0.22cqh solid var(--ink);border-radius:0.8cqh;box-shadow:0.35cqh 0.35cqh 0 var(--ink);display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.6cqw;font-family:var(--font-display);font-size:1.6cqh;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink)}
+.addons strong{color:var(--terracotta-dark);font-size:1.95cqh;letter-spacing:-0.02em;margin-left:0.3em}
+</style>
+</head>
+<body>
+<div class="board">
+  <header class="award-band">
+    <p class="award-band__text">Family owned <em>since</em> 2010</p>
+    <img class="brand-badge" src="../images/brand/logo-badge.png" alt="El Pueblo">
+    <p class="award-band__text award-band__text--right">Home of the <em>$1.39</em> Fish Taco</p>
+  </header>
+  <div class="hero-callout deal-variant">
+    
+    <div>
+      <span class="hero-callout__eyebrow">Mix &amp; Match Deal · Min. 2 Items</span>
+      <div class="hero-callout__title">Rice <em>·</em> Beans <em>·</em> Coke <em>·</em> Tortilla Chips</div>
+    </div>
+    <div class="hero-callout__price"><small>$</small>1.50<span class="hero-callout__price-unit">each</span></div>
+  </div>
+  <div class="columns"><div class="col"><section class="section"><h2 class="section__title">Breakfast</h2><p class="section__note">Served all day</p><ul class="items"><li class="item"><span class="item__name">Huevos a la Mexicana</span><span class="item__leader"></span><span class="item__price">13.90</span></li><li class="item"><span class="item__name">Huevos con Jamón</span><span class="item__leader"></span><span class="item__price">14.40</span></li><li class="item"><span class="item__name">Huevos Rancheros</span><span class="item__leader"></span><span class="item__price">14.40</span></li><li class="item"><span class="item__name">Chilaquiles <em>rojos o verdes</em></span><span class="item__leader"></span><span class="item__price">14.40</span></li></ul></section><section class="section"><h2 class="section__title">Breakfast <em>burritos</em></h2><ul class="items"><li class="item"><span class="item__name">Breakfast</span><span class="item__leader"></span><span class="item__price">11.90</span></li><li class="item"><span class="item__name">Chorizo</span><span class="item__leader"></span><span class="item__price">12.90</span></li><li class="item"><span class="item__name">Machaca</span><span class="item__leader"></span><span class="item__price">12.90</span></li><li class="item"><span class="item__name">Super Breakfast</span><span class="item__leader"></span><span class="item__price">14.40</span></li><li class="item"><span class="item__name">Steak &amp; Eggs</span><span class="item__leader"></span><span class="item__price">14.40</span></li></ul></section><section class="section"><h2 class="section__title">Bowls</h2><ul class="items"><li class="item"><span class="item__name">Breakfast</span><span class="item__leader"></span><span class="item__price">11.40</span></li><li class="item"><span class="item__name">Super Breakfast</span><span class="item__leader"></span><span class="item__price">13.40</span></li><li class="item"><span class="item__name">Protein</span><span class="item__leader"></span><span class="item__price">16.90</span></li><li class="item"><span class="item__name">Shrimp</span><span class="item__leader"></span><span class="item__price">17.40</span></li><li class="item"><span class="item__name">Surf &amp; Turf</span><span class="item__leader"></span><span class="item__price">17.90</span></li></ul></section></div><div class="col"><section class="section"><h2 class="section__title">Burritos</h2><ul class="items"><li class="item"><span class="item__name">Bean &amp; Cheese</span><span class="item__leader"></span><span class="item__price">9.90</span></li><li class="item"><span class="item__name">Carne Asada</span><span class="item__leader"></span><span class="item__price">15.40</span></li><li class="item"><span class="item__name">California</span><span class="item__leader"></span><span class="item__price">15.40</span></li><li class="item"><span class="item__name">Beef</span><span class="item__leader"></span><span class="item__price">14.40</span></li><li class="item"><span class="item__name">Shredded Chicken</span><span class="item__leader"></span><span class="item__price">14.40</span></li><li class="item"><span class="item__name">Adobada</span><span class="item__leader"></span><span class="item__price">14.90</span></li><li class="item"><span class="item__name">Carnitas</span><span class="item__leader"></span><span class="item__price">14.90</span></li><li class="item"><span class="item__name">Chile Relleno</span><span class="item__leader"></span><span class="item__price">14.90</span></li><li class="item"><span class="item__name">Conga <em>any meat</em></span><span class="item__leader"></span><span class="item__price">14.90</span></li><li class="item"><span class="item__name">Fajitas</span><span class="item__leader"></span><span class="item__price">14.90</span></li><li class="item"><span class="item__name">Fish <em>battered</em></span><span class="item__leader"></span><span class="item__price">14.90</span></li><li class="item"><span class="item__name">Pollo Asado</span><span class="item__leader"></span><span class="item__price">14.90</span></li><li class="item"><span class="item__name">Supreme <em>veggie</em></span><span class="item__leader"></span><span class="item__price">14.90</span></li><li class="item"><span class="item__name">Shrimp</span><span class="item__leader"></span><span class="item__price">15.90</span></li><li class="item"><span class="item__name">Chimichanga</span><span class="item__leader"></span><span class="item__price">16.40</span></li><li class="item"><span class="item__name">Lengua</span><span class="item__leader"></span><span class="item__price">16.40</span></li><li class="item"><span class="item__name">Surf &amp; Turf</span><span class="item__leader"></span><span class="item__price">16.40</span></li></ul><div class="addons"><span>+ Rice &amp; Beans <strong>4.90</strong></span><span>+ Enchilada Sauce <strong>3.90</strong></span></div></section></div><div class="col"><section class="section"><h2 class="section__title">Dinners</h2><p class="section__note">Rice · beans · lettuce · guac · salsa · warm tortillas</p><ul class="items"><li class="item"><span class="item__num">1.</span><span class="item__name">Carne Asada</span><span class="item__leader"></span><span class="item__price">18.90</span></li><li class="item"><span class="item__num">2.</span><span class="item__name">Machaca</span><span class="item__leader"></span><span class="item__price">18.40</span></li><li class="item"><span class="item__num">3.</span><span class="item__name">Chorizo</span><span class="item__leader"></span><span class="item__price">18.40</span></li><li class="item"><span class="item__num">4.</span><span class="item__name">Carnitas</span><span class="item__leader"></span><span class="item__price">18.40</span></li><li class="item"><span class="item__num">5.</span><span class="item__name">Chile Relleno</span><span class="item__leader"></span><span class="item__price">18.40</span></li><li class="item"><span class="item__num">6.</span><span class="item__name">Fajitas <em>chicken or beef</em></span><span class="item__leader"></span><span class="item__price">18.40</span></li></ul></section><section class="section"><h2 class="section__title">Fries</h2><ul class="items"><li class="item"><span class="item__name">Veggie</span><span class="item__leader"></span><span class="item__price">15.90</span></li><li class="item"><span class="item__name">Shredded Chicken</span><span class="item__leader"></span><span class="item__price">16.90</span></li><li class="item"><span class="item__name">Pollo Asado</span><span class="item__leader"></span><span class="item__price">16.90</span></li><li class="item"><span class="item__name">Carnitas</span><span class="item__leader"></span><span class="item__price">16.90</span></li><li class="item"><span class="item__name">Adobada</span><span class="item__leader"></span><span class="item__price">16.90</span></li><li class="item"><span class="item__name">Carne Asada</span><span class="item__leader"></span><span class="item__price">17.40</span></li><li class="item"><span class="item__name">Shrimp</span><span class="item__leader"></span><span class="item__price">17.90</span></li><li class="item"><span class="item__name">Surf &amp; Turf</span><span class="item__leader"></span><span class="item__price">18.40</span></li></ul></section></div></div>
+  <div class="ticker ticker--terracotta">
+    <span class="ticker__track"><span>Cardiff</span><span class="ticker__dot">✦</span><span>Carlsbad</span><span class="ticker__dot">✦</span><span>Carmel Valley</span><span class="ticker__dot">✦</span><span>Del Mar</span><span class="ticker__dot">✦</span><span>La Jolla</span><span class="ticker__dot">✦</span><span>elpueblomex.com</span></span>
+  </div>
+</div>
+<script>
+  // Background refresh every 5 min — fetches latest HTML and swaps in place.
+  // No visible flash, no full page reload. Only updates if content changed.
+  async function mbRefresh() {
+    try {
+      var url = location.pathname + '?_t=' + Date.now();
+      var r = await fetch(url, { cache: 'no-store' });
+      if (!r.ok) return;
+      var html = await r.text();
+      var newBoard = new DOMParser().parseFromString(html, 'text/html').querySelector('.board');
+      var cur = document.querySelector('.board');
+      if (newBoard && cur && newBoard.innerHTML !== cur.innerHTML) {
+        cur.innerHTML = newBoard.innerHTML;
+      }
+    } catch (e) { /* network down, try again next tick */ }
+  }
+  setInterval(mbRefresh, 5 * 60 * 1000);
+</script>
+</body>
+</html>

@@ -10,6 +10,7 @@ const outDir = path.join(root, "public");
 
 const site = JSON.parse(fs.readFileSync(path.join(root, "content/site.json"), "utf8"));
 const menu = JSON.parse(fs.readFileSync(path.join(root, "content/menu.json"), "utf8"));
+const menuBoard = JSON.parse(fs.readFileSync(path.join(root, "content/menu-board.json"), "utf8"));
 const { locations } = JSON.parse(fs.readFileSync(path.join(root, "content/locations.json"), "utf8"));
 const { posts } = JSON.parse(fs.readFileSync(path.join(root, "content/posts.json"), "utf8"));
 const { jobs } = JSON.parse(fs.readFileSync(path.join(root, "content/jobs.json"), "utf8"));
@@ -1077,6 +1078,7 @@ ${ticker("ticker--agave")}
 <nav class="menu-toc" id="menu-toc" aria-label="Menu sections">
   <div class="menu-toc__inner">
     ${menu.categories.map(c => `<a href="#${slugify(c.name)}">${h(c.name)}</a>`).join("")}
+    <a href="#party-packs">Party Packs</a>
   </div>
 </nav>
 
@@ -1105,7 +1107,29 @@ ${ticker("ticker--agave")}
   </div>
 </section>
 
-<section class="section section--cream-2 menu-bar">
+<section class="section section--cream-2" id="party-packs">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Same-day options · Feeds a crowd</p>
+      <h2 class="display-sm">Party <span class="serif" style="color:var(--terracotta)">packs.</span></h2>
+      <p class="lede">Grab-and-go trays for offices, parties, and family gatherings. Order from the El Pueblo closest to you — call ahead so we can have it ready.</p>
+    </header>
+    <div class="party-grid">
+      ${site.catering.partyPacks.map(p => `
+      <article class="party-card">
+        <div class="party-card__head">
+          <h3>${h(p.name)}</h3>
+          ${p.price ? `<span class="party-card__price">${h(p.price)}</span>` : ""}
+        </div>
+        <p class="party-card__serves"><strong>${h(p.serves)}</strong></p>
+        <p>${h(p.description)}</p>
+      </article>`).join("")}
+    </div>
+    <p class="party-note">For full-service catering, <a href="/catering/">request a custom catering order →</a></p>
+  </div>
+</section>
+
+<section class="section section--cream menu-bar">
   <div class="section__inner">
     <header class="section__head section__head--center">
       <p class="eyebrow">At the bar</p>
@@ -1155,13 +1179,12 @@ function renderCatering() {
       <p class="lede">${h(c.heroSub)}</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="#catering-request">Request catering</a>
-        <a class="btn btn--ghost" href="#party-packs">See party packs</a>
       </div>
     </div>
     <div class="page-head__media page-head__media--landscape">
       <picture>
         <source type="image/webp" srcset="/images/catering/party-pack-hero.webp">
-        <img src="/images/catering/party-pack-hero.jpg" width="1200" height="600" alt="El Pueblo party pack — carne asada tray with tortillas, rice, beans, pico, and guacamole" loading="eager" fetchpriority="high">
+        <img src="/images/catering/party-pack-hero.jpg" width="1200" height="600" alt="El Pueblo catering tray — carne asada with tortillas, rice, beans, pico, and guacamole" loading="eager" fetchpriority="high">
       </picture>
     </div>
   </div>
@@ -1169,24 +1192,13 @@ function renderCatering() {
 
 ${ticker("ticker--marigold")}
 
-<section class="section section--cream" id="party-packs">
+<section class="section section--cream catering-soon">
   <div class="section__inner">
     <header class="section__head section__head--center">
-      <p class="eyebrow">Same-day options</p>
-      <h2 class="display-sm">Party <span class="serif" style="color:var(--terracotta)">packs.</span></h2>
+      <p class="eyebrow">Coming soon</p>
+      <h2 class="display-sm">New catering <span class="serif" style="color:var(--terracotta)">packages</span> launching soon.</h2>
+      <p class="lede">We're putting together a refreshed lineup of full-service catering options. In the meantime, tell us what you need below and we'll work it out from there. Need same-day party trays? <a href="/menu/#party-packs">See our party packs →</a></p>
     </header>
-    <div class="party-grid">
-      ${c.partyPacks.map(p => `
-      <article class="party-card">
-        <div class="party-card__head">
-          <h3>${h(p.name)}</h3>
-          ${p.price ? `<span class="party-card__price">${h(p.price)}</span>` : ""}
-        </div>
-        <p class="party-card__serves"><strong>${h(p.serves)}</strong></p>
-        <p>${h(p.description)}</p>
-      </article>`).join("")}
-    </div>
-    <p class="party-note">${h(c.closingNote)}</p>
   </div>
 </section>
 
@@ -1241,17 +1253,11 @@ ${ticker("ticker--terracotta")}
       { "@type": "City", name: "La Jolla" },
       { "@type": "City", name: "Rancho Santa Fe" }
     ],
-    servesCuisine: ["Mexican", "Tex-Mex"],
-    offers: c.partyPacks.map(p => ({
-      "@type": "Offer",
-      name: p.name,
-      description: p.description,
-      ...(p.price ? { price: p.price.replace(/[^0-9.]/g, ""), priceCurrency: "USD" } : {})
-    }))
+    servesCuisine: ["Mexican", "Tex-Mex"]
   };
   return layout({
-    title: `Catering — ${site.brand.name} | Taco Bars & Party Packs`,
-    description: "El Pueblo catering across San Diego — taco bars, party packs, rolled tacos, enchiladas, quesadilla trays, full-service events. Request a quote.",
+    title: `Catering — ${site.brand.name} | Full-Service Mexican Catering San Diego`,
+    description: "El Pueblo catering across San Diego — full-service events, taco bars, large gatherings. New packages coming soon. Request a quote for your event.",
     canonicalPath: "/catering/",
     body,
     ogImage: "/og/catering.jpg",
@@ -2694,6 +2700,179 @@ ${ticker("ticker--terracotta")}
   });
 }
 
+// ---------- TV Menu Boards ----------
+// Self-contained kiosk pages — NO layout wrapper, NO nav, NO footer.
+// Displayed full-screen on Raspberry Pi TVs at /menu-board-1/ and /menu-board-2/.
+// Auto-reloads every 5 minutes to pick up content changes from content/menu-board.json.
+
+const MENU_BOARD_CSS = `
+:root{--cream:#faf0d8;--cream-2:#f4e4bd;--ink:#1b1008;--ink-soft:#4a362a;--terracotta:#d84a1e;--terracotta-dark:#a03514;--agave:#356b3e;--marigold:#f5b72b;--font-display:"Archivo Black",system-ui,sans-serif;--font-serif:"Fraunces",serif;--font-body:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html,body{background:#1a0e07;color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;height:100%;overflow:hidden}
+em{font-style:italic}
+.board{width:100vw;height:100vh;background:var(--cream);color:var(--ink);position:relative;overflow:hidden;display:flex;flex-direction:column;container-type:size;border:0.5cqh solid var(--ink)}
+.board::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(27,16,8,0.07) 1.2px,transparent 1.2px);background-size:24px 24px;pointer-events:none;mix-blend-mode:multiply;z-index:0}
+.board>*{position:relative;z-index:1}
+.ticker{background:var(--ink);color:var(--cream);padding:0.85cqh 1cqw;overflow:hidden;white-space:nowrap;flex-shrink:0;display:flex;justify-content:center;align-items:center}
+.ticker--terracotta{background:var(--terracotta)}
+.ticker__track{display:inline-flex;align-items:center;gap:2.4cqw;font-family:var(--font-display);font-size:2.1cqh;letter-spacing:0.14em;text-transform:uppercase}
+.ticker__dot{color:var(--marigold);font-size:2.3cqh;line-height:0}
+.award-band{background:var(--marigold);border-top:0.35cqh solid var(--ink);border-bottom:0.35cqh solid var(--ink);padding:0.35cqh 2.6cqw;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2cqw;flex-shrink:0}
+.award-band__text{font-family:var(--font-display);font-size:1.9cqh;line-height:1;text-transform:uppercase;letter-spacing:-0.01em;color:var(--ink)}
+.award-band__text em{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--terracotta);text-transform:none;letter-spacing:-0.02em;font-size:2.4cqh;display:inline-block;transform:rotate(-2deg)}
+.award-band__text--right{text-align:right}
+.brand-badge{width:7.5cqh;height:7.5cqh;object-fit:contain;image-rendering:-webkit-optimize-contrast}
+.hero-callout{margin:0.8cqh 1.8cqw 0;padding:1cqh 1.8cqw;background:var(--terracotta);color:var(--cream);border:0.35cqh solid var(--ink);border-radius:1.2cqh;box-shadow:0.5cqh 0.5cqh 0 var(--ink);display:flex;align-items:center;justify-content:space-between;gap:1.8cqw;position:relative;overflow:hidden;flex-shrink:0}
+.hero-callout::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.15) 1.4px,transparent 1.4px);background-size:14px 14px;pointer-events:none}
+.hero-callout__eyebrow{font-family:var(--font-display);font-size:1.5cqh;letter-spacing:0.3em;text-transform:uppercase;color:var(--marigold);display:block;margin-bottom:0.25cqh}
+.hero-callout__title{font-family:var(--font-display);font-size:3.6cqh;line-height:0.92;text-transform:uppercase;letter-spacing:-0.02em}
+.hero-callout__title em{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--marigold);text-transform:none;letter-spacing:-0.02em;display:inline-block;transform:rotate(-3deg)}
+.hero-callout__price{font-family:var(--font-display);font-size:7cqh;color:var(--marigold);line-height:0.9;letter-spacing:-0.04em;text-shadow:0.4cqh 0.4cqh 0 var(--ink);flex-shrink:0}
+.hero-callout__price small{font-size:0.4em;color:var(--cream);vertical-align:0.25em;text-shadow:none;margin-right:0.05em}
+.hero-callout__price-unit{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--ink);text-shadow:none;font-size:2cqh;letter-spacing:-0.02em;display:inline-block;transform:rotate(-4deg);margin-left:0.2cqw;vertical-align:0.4em}
+.hero-callout.deal-variant{background:var(--marigold)}
+.hero-callout.deal-variant .hero-callout__eyebrow{color:var(--terracotta-dark)}
+.hero-callout.deal-variant .hero-callout__title{color:var(--ink)}
+.hero-callout.deal-variant .hero-callout__title em{color:var(--terracotta)}
+.hero-callout.deal-variant .hero-callout__price{color:var(--terracotta);text-shadow:0.4cqh 0.4cqh 0 var(--ink)}
+.hero-callout.deal-variant .hero-callout__price small{color:var(--ink)}
+.hero-callout.deal-variant::before{background-image:radial-gradient(rgba(27,16,8,0.12) 1.4px,transparent 1.4px)}
+.hero-callout__media{width:13cqh;height:13cqh;border-radius:50%;border:0.35cqh solid var(--ink);box-shadow:0.5cqh 0.5cqh 0 var(--ink);object-fit:cover;flex-shrink:0;background:var(--cream)}
+.columns{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;padding:1cqh 0;min-height:0}
+.col{padding:0 1.5cqw 2.5cqh;display:flex;flex-direction:column;justify-content:space-between;gap:2cqh;border-right:0.2cqh solid var(--ink)}
+.col:last-child{border-right:0}
+.section{display:flex;flex-direction:column;gap:0.3cqh}
+.col-hero{width:100%;height:9cqh;border:0.25cqh solid var(--ink);border-radius:0.9cqh;box-shadow:0.45cqh 0.45cqh 0 var(--terracotta);object-fit:cover;flex-shrink:0;margin-bottom:0.8cqh;background:var(--ink)}
+.section__title{font-family:var(--font-display);font-size:4.4cqh;line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;color:var(--ink);margin-bottom:0.1cqh}
+.section__title em{font-family:var(--font-serif);font-style:italic;font-weight:700;color:var(--terracotta);text-transform:none;letter-spacing:-0.02em;display:inline-block;transform:rotate(-3deg);margin-left:0.05em}
+.section__note{font-family:var(--font-serif);font-style:italic;font-weight:500;font-size:1.55cqh;color:var(--ink-soft);line-height:1.2;margin-top:-0.15cqh;margin-bottom:0.15cqh}
+.items{list-style:none;display:flex;flex-direction:column;gap:0.3cqh}
+.item{display:flex;align-items:baseline;gap:0.4cqw;font-size:2.35cqh;line-height:1.1}
+.item__name{font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item__name em{font-family:var(--font-serif);font-style:italic;font-weight:500;color:var(--ink-soft);font-size:0.8em;margin-left:0.2em}
+.item__num{color:var(--terracotta);font-family:var(--font-display);margin-right:0.25cqw;font-size:2.15cqh}
+.item__leader{flex:1;border-bottom:0.18cqh dotted rgba(27,16,8,0.4);transform:translateY(-0.5cqh);min-width:0.6cqw}
+.item__price{font-family:var(--font-display);font-size:2.45cqh;color:var(--terracotta-dark);letter-spacing:-0.02em;white-space:nowrap}
+.item__new{background:var(--marigold);color:var(--ink);font-family:var(--font-display);font-size:1.15cqh;letter-spacing:0.16em;padding:0.22cqh 0.55cqw;margin-right:0.5cqw;border-radius:999px;border:0.18cqh solid var(--ink);box-shadow:0.25cqh 0.25cqh 0 var(--ink);align-self:center;text-transform:uppercase}
+.subsection-pill{display:inline-block;font-family:var(--font-display);font-size:1.65cqh;letter-spacing:0.12em;text-transform:uppercase;padding:0.35cqh 0.9cqw;background:var(--ink);color:var(--cream);border:0.18cqh solid var(--ink);border-radius:999px;box-shadow:0.3cqh 0.3cqh 0 var(--terracotta);margin:0.4cqh 0 0.2cqh;align-self:flex-start}
+.addons{margin-top:0.5cqh;padding:0.6cqh 1cqw;background:var(--marigold);border:0.22cqh solid var(--ink);border-radius:0.8cqh;box-shadow:0.35cqh 0.35cqh 0 var(--ink);display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.6cqw;font-family:var(--font-display);font-size:1.6cqh;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink)}
+.addons strong{color:var(--terracotta-dark);font-size:1.95cqh;letter-spacing:-0.02em;margin-left:0.3em}
+`;
+
+// Render an item row. Numbered items get a 1./2./3 or K1./K2 prefix.
+function mbItem(item, opts = {}) {
+  const numPrefix = opts.number ? `<span class="item__num">${opts.number}.</span>` : "";
+  const desc = item.desc ? ` <em>${h(item.desc)}</em>` : "";
+  const newBadge = item.badge ? `<span class="item__new">${h(item.badge)}</span>` : "";
+  return `<li class="item">${numPrefix}<span class="item__name">${h(item.name)}${desc}</span><span class="item__leader"></span>${newBadge}<span class="item__price">${h(item.price)}</span></li>`;
+}
+
+function mbSection(section) {
+  const hero = section.heroImage
+    ? `<img class="col-hero" src="${h(section.heroImage)}" alt="">`
+    : "";
+  const title = `<h2 class="section__title">${section.title}</h2>`;
+  const note = section.note ? `<p class="section__note">${h(section.note)}</p>` : "";
+
+  let body = "";
+  if (section.subsections) {
+    // Tacos (Soft Shell / Hard Shell pills)
+    body = section.subsections.map(sub => `
+      <span class="subsection-pill">${h(sub.pill)}</span>
+      <ul class="items">${sub.items.map(it => mbItem(it)).join("")}</ul>
+    `).join("");
+  } else {
+    const isNumbered = section.numbered || section.kidsNumbered;
+    const prefix = section.kidsNumbered ? "K" : "";
+    const items = section.items.map((it, idx) =>
+      mbItem(it, isNumbered ? { number: `${prefix}${idx + 1}` } : {})
+    ).join("");
+    body = `<ul class="items">${items}</ul>`;
+  }
+
+  const addons = section.addons
+    ? `<div class="addons">${section.addons.map(a => `<span>+ ${h(a.name)} <strong>${h(a.price)}</strong></span>`).join("")}</div>`
+    : "";
+
+  return `<section class="section">${hero}${title}${note}${body}${addons}</section>`;
+}
+
+function mbFeature(feature) {
+  if (!feature) return "";
+  const isDeal = feature.variant === "deal";
+  const cls = `hero-callout${isDeal ? " deal-variant" : ""}`;
+  const unit = feature.priceUnit
+    ? `<span class="hero-callout__price-unit">${h(feature.priceUnit)}</span>`
+    : "";
+  const img = feature.image
+    ? `<img class="hero-callout__media" src="${h(feature.image)}" alt="">`
+    : "";
+  return `<div class="${cls}">
+    ${img}
+    <div>
+      <span class="hero-callout__eyebrow">${h(feature.eyebrow)}</span>
+      <div class="hero-callout__title">${feature.title}</div>
+    </div>
+    <div class="hero-callout__price"><small>$</small>${h(feature.price)}${unit}</div>
+  </div>`;
+}
+
+function renderMenuBoard(board) {
+  const locTicker = menuBoard.tickerLocations
+    .map((l, i, arr) => `<span>${h(l)}</span>${i < arr.length - 1 ? '<span class="ticker__dot">✦</span>' : ""}`)
+    .join("");
+
+  const columns = board.columns.map(col =>
+    `<div class="col">${col.map(mbSection).join("")}</div>`
+  ).join("");
+
+  return `<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>El Pueblo — ${h(board.label)}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,wght@1,500;1,700;1,900&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+<style>${MENU_BOARD_CSS}</style>
+</head>
+<body>
+<div class="board">
+  <header class="award-band">
+    <p class="award-band__text">${board.header.left}</p>
+    <img class="brand-badge" src="${h(menuBoard.logo)}" alt="El Pueblo">
+    <p class="award-band__text award-band__text--right">${board.header.right}</p>
+  </header>
+  ${mbFeature(board.feature)}
+  <div class="columns">${columns}</div>
+  <div class="ticker ticker--terracotta">
+    <span class="ticker__track">${locTicker}</span>
+  </div>
+</div>
+<script>
+  // Background refresh every 5 min — fetches latest HTML and swaps in place.
+  // No visible flash, no full page reload. Only updates if content changed.
+  async function mbRefresh() {
+    try {
+      var url = location.pathname + '?_t=' + Date.now();
+      var r = await fetch(url, { cache: 'no-store' });
+      if (!r.ok) return;
+      var html = await r.text();
+      var newBoard = new DOMParser().parseFromString(html, 'text/html').querySelector('.board');
+      var cur = document.querySelector('.board');
+      if (newBoard && cur && newBoard.innerHTML !== cur.innerHTML) {
+        cur.innerHTML = newBoard.innerHTML;
+      }
+    } catch (e) { /* network down, try again next tick */ }
+  }
+  setInterval(mbRefresh, 5 * 60 * 1000);
+</script>
+</body>
+</html>`;
+}
+
 // ---------- Sitemap + Robots ----------
 function renderSitemap() {
   const urls = [
@@ -2733,6 +2912,8 @@ Disallow: /edit/
 Disallow: /admin-login/
 Disallow: /api/
 Disallow: /404/
+Disallow: /menu-board-1/
+Disallow: /menu-board-2/
 
 Sitemap: ${BASE_URL}/sitemap.xml
 
@@ -2876,6 +3057,11 @@ function build() {
 
   // 404
   write("404.html", render404());
+
+  // TV menu boards (in-store kiosk pages, noindex)
+  for (const board of menuBoard.boards) {
+    write(`${board.id}/index.html`, renderMenuBoard(board));
+  }
 
   // Sitemap + robots
   write("sitemap.xml", renderSitemap());

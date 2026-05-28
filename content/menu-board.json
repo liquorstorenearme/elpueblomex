@@ -1,0 +1,238 @@
+{
+  "_comment": "Source of truth for in-store TV menu boards at /menu-board-1/ and /menu-board-2/. Edit this file, push to git, all TVs reload within 5 minutes. HTML em tags in 'name' / 'title' / 'eyebrow' are rendered as italic serif accents.",
+  "logo": "../images/brand/logo-badge.png",
+  "tickerLocations": ["Cardiff", "Carlsbad", "Carmel Valley", "Del Mar", "La Jolla", "elpueblomex.com"],
+  "boards": [
+    {
+      "id": "menu-board-1",
+      "label": "Breakfast · Burritos · Dinners",
+      "header": {
+        "left": "Family owned <em>since</em> 2010",
+        "right": "Home of the <em>$1.39</em> Fish Taco"
+      },
+      "feature": {
+        "variant": "deal",
+        "eyebrow": "Mix & Match Deal · Min. 2 Items",
+        "title": "Rice <em>·</em> Beans <em>·</em> Coke <em>·</em> Tortilla Chips",
+        "price": "1.50",
+        "priceUnit": "each"
+      },
+      "columns": [
+        [
+          {
+            "title": "Breakfast",
+            "note": "Served all day",
+            "items": [
+              {"name": "Huevos a la Mexicana", "price": "13.90"},
+              {"name": "Huevos con Jamón", "price": "14.40"},
+              {"name": "Huevos Rancheros", "price": "14.40"},
+              {"name": "Chilaquiles", "desc": "rojos o verdes", "price": "14.40"}
+            ]
+          },
+          {
+            "title": "Breakfast <em>burritos</em>",
+            "items": [
+              {"name": "Breakfast", "price": "11.90"},
+              {"name": "Chorizo", "price": "12.90"},
+              {"name": "Machaca", "price": "12.90"},
+              {"name": "Super Breakfast", "price": "14.40"},
+              {"name": "Steak & Eggs", "price": "14.40"}
+            ]
+          },
+          {
+            "title": "Bowls",
+            "items": [
+              {"name": "Breakfast", "price": "11.40"},
+              {"name": "Super Breakfast", "price": "13.40"},
+              {"name": "Protein", "price": "16.90"},
+              {"name": "Shrimp", "price": "17.40"},
+              {"name": "Surf & Turf", "price": "17.90"}
+            ]
+          }
+        ],
+        [
+          {
+            "title": "Burritos",
+            "items": [
+              {"name": "Bean & Cheese", "price": "9.90"},
+              {"name": "Carne Asada", "price": "15.40"},
+              {"name": "California", "price": "15.40"},
+              {"name": "Beef", "price": "14.40"},
+              {"name": "Shredded Chicken", "price": "14.40"},
+              {"name": "Adobada", "price": "14.90"},
+              {"name": "Carnitas", "price": "14.90"},
+              {"name": "Chile Relleno", "price": "14.90"},
+              {"name": "Conga", "desc": "any meat", "price": "14.90"},
+              {"name": "Fajitas", "price": "14.90"},
+              {"name": "Fish", "desc": "battered", "price": "14.90"},
+              {"name": "Pollo Asado", "price": "14.90"},
+              {"name": "Supreme", "desc": "veggie", "price": "14.90"},
+              {"name": "Shrimp", "price": "15.90"},
+              {"name": "Chimichanga", "price": "16.40"},
+              {"name": "Lengua", "price": "16.40"},
+              {"name": "Surf & Turf", "price": "16.40"}
+            ],
+            "addons": [
+              {"name": "Rice & Beans", "price": "4.90"},
+              {"name": "Enchilada Sauce", "price": "3.90"}
+            ]
+          }
+        ],
+        [
+          {
+            "title": "Dinners",
+            "note": "Rice · beans · lettuce · guac · salsa · warm tortillas",
+            "numbered": true,
+            "items": [
+              {"name": "Carne Asada", "price": "18.90"},
+              {"name": "Machaca", "price": "18.40"},
+              {"name": "Chorizo", "price": "18.40"},
+              {"name": "Carnitas", "price": "18.40"},
+              {"name": "Chile Relleno", "price": "18.40"},
+              {"name": "Fajitas", "desc": "chicken or beef", "price": "18.40"}
+            ]
+          },
+          {
+            "title": "Fries",
+            "items": [
+              {"name": "Veggie", "price": "15.90"},
+              {"name": "Shredded Chicken", "price": "16.90"},
+              {"name": "Pollo Asado", "price": "16.90"},
+              {"name": "Carnitas", "price": "16.90"},
+              {"name": "Adobada", "price": "16.90"},
+              {"name": "Carne Asada", "price": "17.40"},
+              {"name": "Shrimp", "price": "17.90"},
+              {"name": "Surf & Turf", "price": "18.40"}
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "id": "menu-board-2",
+      "label": "Tacos · Tortas · Sides",
+      "header": {
+        "left": "Family owned <em>since</em> 2010",
+        "right": "Five locations · <em>North</em> County"
+      },
+      "feature": {
+        "variant": "hero",
+        "eyebrow": "House Famous · Since Day One",
+        "title": "The <em>Original</em> Battered Fish Taco",
+        "price": "1.39"
+      },
+      "columns": [
+        [
+          {
+            "title": "Party <em>packs</em>",
+            "items": [
+              {"name": "Chips & Salsa Full Tray", "price": "59"},
+              {"name": "Quesadilla Party Tray", "desc": "12", "price": "114"},
+              {"name": "Rolled Tacos", "desc": "50", "price": "119"},
+              {"name": "Enchiladas", "desc": "25", "price": "129"},
+              {"name": "Make-Your-Own Tacos", "desc": "20", "price": "144"},
+              {"name": "Side Dishes", "desc": "serves 20", "price": "69"},
+              {"name": "Guacamole", "desc": "½ tray", "price": "69"},
+              {"name": "Sour Cream", "desc": "½ tray", "price": "69"}
+            ]
+          },
+          {
+            "title": "Quesadillas",
+            "items": [
+              {"name": "Cheese", "price": "9.90"},
+              {"name": "Veggie", "price": "13.40"},
+              {"name": "Shredded Chicken", "price": "14.40"},
+              {"name": "Carne Asada", "price": "15.40"},
+              {"name": "Pollo Asado", "price": "14.90"},
+              {"name": "Shrimp", "price": "15.90"},
+              {"name": "Adobada", "price": "14.90"},
+              {"name": "Carnitas", "price": "14.90"}
+            ]
+          },
+          {
+            "title": "Enchiladas",
+            "items": [
+              {"name": "Cheese", "price": "12.90"},
+              {"name": "Beef", "price": "13.40"},
+              {"name": "Shredded Chicken", "price": "13.40"}
+            ]
+          }
+        ],
+        [
+          {
+            "title": "Tacos",
+            "subsections": [
+              {
+                "pill": "Soft Shell",
+                "items": [
+                  {"name": "Fish Taco", "desc": "battered", "price": "1.39"},
+                  {"name": "Pollo Asado", "price": "6.90"},
+                  {"name": "Carne Asada", "price": "6.90"},
+                  {"name": "Carnitas", "price": "6.90"},
+                  {"name": "Adobada", "price": "6.90"},
+                  {"name": "Lengua", "price": "7.90"},
+                  {"name": "Shrimp", "price": "7.90"},
+                  {"name": "Flautas", "desc": "chicken or beef · 3", "price": "8.90"}
+                ]
+              },
+              {
+                "pill": "Hard Shell",
+                "items": [
+                  {"name": "Potato Taco", "price": "5.40", "badge": "New"},
+                  {"name": "Shredded Chicken", "price": "6.90"},
+                  {"name": "Shredded Beef", "price": "6.90"},
+                  {"name": "Rolled with Guacamole", "desc": "3", "price": "8.90"},
+                  {"name": "Rolled with Guacamole", "desc": "5", "price": "9.90"}
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Soups",
+            "items": [
+              {"name": "Chicken Tortilla Soup", "desc": "32oz", "price": "11.40"},
+              {"name": "Menudo Soup", "price": "13.40"}
+            ]
+          }
+        ],
+        [
+          {
+            "title": "Tortas",
+            "items": [
+              {"name": "Shredded Chicken", "price": "14.40"},
+              {"name": "Beef", "price": "14.40"},
+              {"name": "Chorizo", "price": "14.40"},
+              {"name": "Machaca", "price": "14.40"},
+              {"name": "Pollo Asado", "price": "14.40"},
+              {"name": "Carne Asada", "price": "15.40"},
+              {"name": "Carnitas", "price": "14.40"},
+              {"name": "Ham & Cheese", "price": "14.40"},
+              {"name": "Adobada", "price": "14.40"},
+              {"name": "El Pueblo", "desc": "w/ Fries", "price": "16.90"}
+            ]
+          },
+          {
+            "title": "Side <em>Orders</em>",
+            "items": [
+              {"name": "Beans, Rice or Sour Cream", "desc": "8oz", "price": "4.90"},
+              {"name": "Guacamole", "desc": "4oz", "price": "6.90"},
+              {"name": "Chile Relleno", "price": "10.40"},
+              {"name": "Chips & Salsa", "desc": "8oz", "price": "6.90"},
+              {"name": "Chips & Guacamole", "price": "11.40"},
+              {"name": "Nachos Supreme", "price": "16.90"}
+            ]
+          },
+          {
+            "title": "Kids",
+            "note": "Served with fries & small drink",
+            "kidsNumbered": true,
+            "items": [
+              {"name": "Kids Quesadilla", "price": "9.90"},
+              {"name": "Bean & Cheese Burrito", "price": "9.90"}
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}
