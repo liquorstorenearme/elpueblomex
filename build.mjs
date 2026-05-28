@@ -1101,9 +1101,6 @@ ${ticker("ticker--agave")}
         </li>`).join("")}
       </ul>
     </section>`).join("")}
-    <aside class="menu-advisory" role="note" aria-label="Consumer advisory">
-      <p><strong>Consumer advisory:</strong> Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions. Please inform your server of any food allergies.</p>
-    </aside>
   </div>
 </section>
 
@@ -1150,6 +1147,9 @@ ${ticker("ticker--agave")}
     <div class="cta-row">
       ${orderLinks.map(o => `<a class="btn btn--primary" href="${h(o.href)}" target="_blank" rel="noopener">${h(o.name)}</a>`).join("")}
     </div>
+    <p role="note" aria-label="Consumer advisory" style="margin:32px auto 0;max-width:720px;font-size:12px;line-height:1.5;color:rgba(250,240,216,0.6);text-align:center;">
+      <strong>Consumer advisory:</strong> Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions. Please inform your server of any food allergies.
+    </p>
   </div>
 </section>
 
