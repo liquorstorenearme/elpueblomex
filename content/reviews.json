@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-05-27T22:55:36.807Z",
+  "fetched_at": "2026-05-28T19:35:25.367Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 1808,
+      "total": 1809,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.6,
-      "total": 1281,
+      "total": 1282,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2313,
+      "total": 2314,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,45 +221,9 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 5,
-      "total": 83,
+      "total": 93,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
-        {
-          "author": "Theo Johnson",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIttwvXrkSggjj2pihzmTvInlq6w-N6jmo3_Dg65fM3gSa_Zw=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/117961048125286333195/reviews",
-          "rating": 5,
-          "text": "Fish tacos are super good and great price. Service is great. Frankie is a great guy, super nice and friendly, he made our day.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-05-27T20:11:42.342294279Z"
-        },
-        {
-          "author": "Nick Williams",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWN2EDa8qoE8b_ZtWjzXIPKhSvW4W641DNRWaCAOarhFzEvNCk=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/108933668975996125254/reviews",
-          "rating": 5,
-          "text": "Great fish tacos for $1.39. Cant believe people are waiting in a crazy line at the Taco Stand over this place.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-05-27T19:38:47.737701587Z"
-        },
-        {
-          "author": "Kunal Shah",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIOLbbcKZJdQIwLmMvWCxcFENTaaXlBRGz-rXaKPwPEgS5IJA=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/117666236176908565762/reviews",
-          "rating": 5,
-          "text": "Fantastic cheap tacos, great service, Francisco is the goat.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-05-27T18:45:04.379826612Z"
-        },
-        {
-          "author": "Sutchin Somanathan",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLZT6Pd_aIWeoh90VQdHMc6Q_7y70cAOihsE4e-SzNjvKAfLQ=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/107152746979053075242/reviews",
-          "rating": 5,
-          "text": "Best cheap food in San Diego hands down. Francisco gave the best service.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-05-27T18:44:11.212924038Z"
-        },
         {
           "author": "Jack Wilkinson",
           "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIe3W7xWCH1TJXER4_iwK1spe6oMC5oaysRc4YAhH2f6wHL2g=s128-c0x00000000-cc-rp-mo",
@@ -268,6 +232,42 @@
           "text": "Great deal on the fish tacos.",
           "relativeTime": "in the last week",
           "publishTime": "2026-05-27T18:17:25.021670142Z"
+        },
+        {
+          "author": "Tiffany Selby",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUI9py5YYrbifWhilkmGLBYf3XdLpXeVODw17dkD1ZbpUtzOOX-dw=s128-c0x00000000-cc-rp-mo-ba2",
+          "authorUrl": "https://www.google.com/maps/contrib/109082275087003884283/reviews",
+          "rating": 5,
+          "text": "So excited this location is open! ADA parking super convenient. Great seating indoors and outdoors. Pet friendly patio! Beer license still pending but great coke products! Food is always incredible! Best carne asada in town.",
+          "relativeTime": "in the last week",
+          "publishTime": "2026-05-22T23:48:38.139826322Z"
+        },
+        {
+          "author": "Gabriel Vania",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXG27EuY_8ce_ZqKq3Qe0VLdPDBjmhTN1YxDrkFnl81NB65PjqRpw=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/110925716227976867048/reviews",
+          "rating": 4,
+          "text": "Food was good. Fish tacos def there speciality. Jet was a great dude.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-18T23:16:07.791128488Z"
+        },
+        {
+          "author": "kals payton",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUve5I0vIjpj7nSlmOFrxGwSsIfQrzAuBvixrVI-JOyLV6mWCgAyA=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/117324530060711632912/reviews",
+          "rating": 5,
+          "text": "the food was great, as well as the area. and Nona's service was amazing. she was as very attentive and made my experience awesome.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-18T22:46:05.909160050Z"
+        },
+        {
+          "author": "Michelle Shea",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjULOLkbVSMNBhf5aMQq4jh1aLYn8zpsneAmjEL3Xd5ohG4_zcvR=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/105559267204542244636/reviews",
+          "rating": 5,
+          "text": "Food was delicious. The restaurant is so clean and nice. And, they have fish tacos for $1.39!",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-18T19:23:53.549139784Z"
         }
       ]
     }
