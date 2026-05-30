@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-05-29T19:31:26.030Z",
+  "fetched_at": "2026-05-30T18:02:16.216Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 1809,
+      "total": 1811,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.6,
-      "total": 1286,
+      "total": 1292,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1287,
+      "total": 1291,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,53 +221,53 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 5,
-      "total": 103,
+      "total": 110,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
-          "author": "johannabk",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUx3ViWYAdH4RLWAuy2K9jpzX_3FSVMyQWnTJRE4d9HIC875coB=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/117688470098466804614/reviews",
+          "author": "Jess Torres",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKooIeg2mwVjbYr8I79Hj2PUCdnXOetbQehX7E2oU2RLY3C8A=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/111598281806109005507/reviews",
           "rating": 5,
-          "text": "Dude was super chill and nice. Food was so yummy and environment is welcoming!",
+          "text": "Great place",
           "relativeTime": "in the last week",
-          "publishTime": "2026-05-29T19:12:11.050194247Z"
+          "publishTime": "2026-05-30T14:41:44.680715257Z"
         },
         {
-          "author": "mira notarianni",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUmzzCYXRAb2BdxYQZr0n-Sxb0szno-mTWrGmbCZ39S5dRcFg2C=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/106069765400963795129/reviews",
-          "rating": 5,
-          "text": "Frankie  was very kind!! I had a few questions about the burritos especially if surf and turf or fajitas was better and he helped me figure out which I really wanted. And was very patient.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-05-29T19:05:48.071186676Z"
-        },
-        {
-          "author": "riley mcgann",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjU5_MKZQ8R-RiYs8f7QGiqKWfcnmBSNm6em_KEsXYorrci0jkc=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/104704095731824630729/reviews",
-          "rating": 5,
-          "text": "Good customer service, perfectly placed right next to the beach for a quick bite or sit down meal.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-05-29T18:31:44.604360133Z"
-        },
-        {
-          "author": "Miles",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUeVoET-b0dzQiZv-EurlmB26aDwfjqqFFtzrjqMNt50tCuJPk=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/100732942274156115009/reviews",
-          "rating": 5,
-          "text": "Frankie was the best cashier ever. Very helpful.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-05-29T17:58:47.517504127Z"
-        },
-        {
-          "author": "Dalila Sanchez",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWf9d8pojz6R7ZAj_uKBYNwRPUQGt4Y3svRAyNBXn4l5MiNzJg=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/101645123124479094585/reviews",
+          "author": "Dr. Mitch Hollander CEO",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVGz-jEST-hduHc12wiIj2Ccno9FkJnMMBr1tm6d3cOGPN5kxJ1lA=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/104186071764674107277/reviews",
           "rating": 4,
-          "text": "Very good service and great food.",
+          "text": "Since they just opened in La Jolla, almost everything is inexpensive and amazing. The fish tacos were huge and really inexpensive. Side dishes for $1.50. I also indulge in the amazing cheesecake, just $5. They are also open late. Great casual spot with great food and nice people.",
           "relativeTime": "in the last week",
-          "publishTime": "2026-05-29T04:58:45.422280197Z"
+          "publishTime": "2026-05-30T03:10:04.405404505Z"
+        },
+        {
+          "author": "Giorgi Garthoff",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKwPhqkVVmoCUm4BxeIliYc3XThOD7LxqpUbU6vl2m9TL6fRw=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/103716473827710094910/reviews",
+          "rating": 5,
+          "text": "Fish tacos are the best deal on the planet and amazing. Jet who works there is the nicest dude ever.",
+          "relativeTime": "in the last week",
+          "publishTime": "2026-05-29T23:09:07.550931793Z"
+        },
+        {
+          "author": "Alicia Goldinger",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWv1fH_NpvP0D5P_mdXPD2iv3-QSmFPhWoqe1HFmeSBsag55p1oGw=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/112199739496639862021/reviews",
+          "rating": 5,
+          "text": "Food was so good and the atmosphere was so nice. Had a very nice outdoor seating area and place was very very clean. Coke was crisp and salsa bar was amazing!",
+          "relativeTime": "in the last week",
+          "publishTime": "2026-05-29T22:21:40.927076544Z"
+        },
+        {
+          "author": "Colson Lynch",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWEC-95hgk01fyKRrGurBQ5-u7LaKIRveki5849T_kf1l-XmCyF=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/100134186358882162330/reviews",
+          "rating": 5,
+          "text": "Great food and excellent service",
+          "relativeTime": "in the last week",
+          "publishTime": "2026-05-29T21:45:27.924715906Z"
         }
       ]
     }
