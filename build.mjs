@@ -7,6 +7,8 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = __dirname;
 const outDir = path.join(root, "public");
+// Cache-bust app.js by content hash so CDN-cached copies can't go stale.
+const APP_JS_V = crypto.createHash("md5").update(fs.readFileSync(path.join(outDir, "scripts/app.js"))).digest("hex").slice(0, 8);
 
 const site = JSON.parse(fs.readFileSync(path.join(root, "content/site.json"), "utf8"));
 const menu = JSON.parse(fs.readFileSync(path.join(root, "content/menu.json"), "utf8"));
@@ -579,7 +581,7 @@ const footer = () => `
     </div>
   </div>
 </div>
-<script src="/scripts/app.js" defer></script>`;
+<script src="/scripts/app.js?v=${APP_JS_V}" defer></script>`;
 
 const layout = ({ title, description, canonicalPath, body, ogImage, lcpImage, bodyClass = "", schema = [] }) => `<!doctype html>
 <html lang="en-US">
