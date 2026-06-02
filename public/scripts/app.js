@@ -56,6 +56,19 @@
       document.head.appendChild(s);
     }
 
+    function loadMetaPixel() {
+      const id = window.__EP_META_PIXEL;
+      if (!id || window.__epPixelLoaded) return;
+      window.__epPixelLoaded = true;
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+        t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', id);
+      window.fbq('track', 'PageView');
+    }
+
     function pushConsent(deny) {
       window.dataLayer = window.dataLayer || [];
       const fn = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -68,7 +81,7 @@
         security_storage: 'granted'
       });
       GA_IDS.forEach(function (id) { window['ga-disable-' + id] = !!deny; });
-      if (!deny) loadGtag();
+      if (!deny) { loadGtag(); loadMetaPixel(); }
     }
 
     function broadcast(status) {
@@ -107,6 +120,49 @@
       if (typeof navigator !== 'undefined' && navigator.globalPrivacyControl === true) return 'gpc';
       return getCookie(KEY) || 'denied';
     };
+  })();
+
+  // Conversion-event tracking. gtag()/fbq() only exist after consent opt-in,
+  // so events for non-consenting visitors are simply dropped (compliant).
+  // GA4 events fire now; Google Ads conversions + Meta events activate once
+  // __EP_ADS_ID/__EP_ADS_LABELS/__EP_META_PIXEL are populated from site.json.
+  (function () {
+    function ga(name, params) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, Object.assign({ transport_type: 'beacon' }, params || {}));
+      }
+    }
+    function adsConv(key, extra) {
+      var id = window.__EP_ADS_ID, labels = window.__EP_ADS_LABELS || {};
+      if (typeof window.gtag !== 'function' || !id || !labels[key]) return;
+      window.gtag('event', 'conversion', Object.assign({ send_to: id + '/' + labels[key], transport_type: 'beacon' }, extra || {}));
+    }
+    function meta(name) {
+      if (typeof window.fbq === 'function') window.fbq('track', name);
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a') : null;
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (href.indexOf('order.online') !== -1) {
+        ga('order_click', { link_url: href, location: a.getAttribute('data-loc') || '' });
+        adsConv('order');
+        meta('InitiateCheckout');
+      } else if (href.indexOf('tel:') === 0) {
+        ga('call_click', { phone: href.replace('tel:', '') });
+        adsConv('call');
+        meta('Contact');
+      }
+    }, true);
+    document.addEventListener('submit', function (e) {
+      var f = e.target;
+      if (!f || f.tagName !== 'FORM') return;
+      var action = f.getAttribute('action') || '';
+      if (action.indexOf('/api/') !== 0) return;
+      ga('form_submit', { form_type: action.replace('/api/', '') });
+      adsConv('lead');
+      meta('Lead');
+    }, true);
   })();
 
   // Site-wide Happy Hour live indicator — checks current local time,

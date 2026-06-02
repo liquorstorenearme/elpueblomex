@@ -426,7 +426,7 @@ ${lcpImage === "/images/home/combo-plate-hero.jpg" ? `<link rel="preload" as="im
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/style.css">
-${site.seo?.ga4 ? `<script>window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};window.__EP_GA_IDS=['${h(site.seo.ga4)}'];gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});gtag('js',new Date());gtag('config','${h(site.seo.ga4)}',{anonymize_ip:true});</script>` : ""}
+${site.seo?.ga4 ? `<script>window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};window.__EP_GA_IDS=['${h(site.seo.ga4)}'];gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});gtag('js',new Date());gtag('config','${h(site.seo.ga4)}',{anonymize_ip:true});${site.seo.googleAds ? `window.__EP_ADS_ID='${h(site.seo.googleAds)}';gtag('config','${h(site.seo.googleAds)}');` : ""}${site.seo.adsLabels ? `window.__EP_ADS_LABELS=${JSON.stringify(site.seo.adsLabels)};` : ""}${site.seo.metaPixel ? `window.__EP_META_PIXEL='${h(site.seo.metaPixel)}';` : ""}</script>` : ""}
 `;
 
 const ticker = (variant = "") => `

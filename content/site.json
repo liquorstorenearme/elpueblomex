@@ -633,7 +633,10 @@
   "seo": {
     "siteUrl": "https://elpueblomex.com",
     "twitter": "",
-    "ga4": "G-H49GVXEPGY"
+    "ga4": "G-H49GVXEPGY",
+    "googleAds": "AW-11564675353",
+    "adsLabels": { "order": "pEchCIjjtLccEJniu4or", "call": "jVywCP2EtbccEJniu4or", "lead": "l4UdCPiFtbccEJniu4or" },
+    "metaPixel": ""
   },
   "verifications": {
     "google": "",
