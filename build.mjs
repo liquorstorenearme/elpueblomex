@@ -960,7 +960,7 @@ ${loc.comingSoon ? `
       <h2 class="display-sm">Be the first to <span class="serif" style="color:var(--terracotta)">know.</span></h2>
       <p class="lede">Drop your email and we'll send a single note the moment ${h(loc.short)} opens — no spam, no marketing blasts.</p>
     </header>
-    <form class="newsletter-form" action="/api/newsletter" method="post">
+    <form class="newsletter-form" action="/api/newsletter" method="post" toolname="join_el_pueblo_list" tooldescription="Join El Pueblo Mexican Food's email/SMS list for deals, news, and new-location alerts.">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="source" value="${h(loc.slug)}">
       <input type="email" name="email" autocomplete="email" required placeholder="you@example.com" aria-label="Your email">
@@ -1252,7 +1252,7 @@ ${ticker("ticker--agave")}
       <h2 class="display-sm">Book your <span class="serif" style="color:var(--terracotta)">event.</span></h2>
       <p class="lede">Tell us a little about your event — we'll reach out with availability and a menu proposal.</p>
     </header>
-    <form class="stack-form" action="/api/event" method="post">
+    <form class="stack-form" action="/api/event" method="post" toolname="submit_event_inquiry" tooldescription="Submit an inquiry to host or book a private event or large party at an El Pueblo Mexican Food location.">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
         <label>Name<input name="name" autocomplete="name" required></label>
@@ -1598,7 +1598,7 @@ ${ticker("ticker--marigold")}
       <p class="eyebrow">Apply to partner</p>
       <h2 class="display-sm">Submit a <span class="serif" style="color:var(--terracotta)">fundraiser application.</span></h2>
     </header>
-    <form class="stack-form" action="/api/fundraiser" method="post">
+    <form class="stack-form" action="/api/fundraiser" method="post" toolname="submit_fundraiser_request" tooldescription="Request an El Pueblo Mexican Food fundraiser / give-back night for a school, team, or group.">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
         <label>Contact name<input name="name" autocomplete="name" required></label>
@@ -1692,7 +1692,7 @@ ${ticker("ticker--agave")}
       <p class="eyebrow">Send a message</p>
       <h2 class="display-sm">We'd love to <span class="serif" style="color:var(--terracotta)">hear from you.</span></h2>
     </header>
-    <form class="stack-form" action="/api/contact" method="post">
+    <form class="stack-form" action="/api/contact" method="post" toolname="contact_el_pueblo" tooldescription="Send El Pueblo Mexican Food a general message, question, or feedback.">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="stack-form__row">
         <label>Name<input name="name" autocomplete="name" required></label>
