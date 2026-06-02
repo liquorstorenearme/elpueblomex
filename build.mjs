@@ -574,7 +574,7 @@ const footer = () => `
 </footer>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie notice" hidden>
   <div class="cookie-banner__inner">
-    <p class="cookie-banner__text">This site uses essential cookies to run, and analytics cookies (with your permission) to understand how visitors use it. Analytics are off by default. See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a>. You can change your choice anytime on the <a href="/californiaconsumerprivacy/">Do Not Sell or Share</a> page.</p>
+    <p class="cookie-banner__text">This site uses essential cookies to run, plus analytics and advertising cookies (with your permission) to understand how visitors use it and to measure and improve our ads. Analytics and advertising are off by default. See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a>. You can change your choice anytime on the <a href="/californiaconsumerprivacy/">Do Not Sell or Share</a> page.</p>
     <div class="cookie-banner__actions">
       <button type="button" class="cookie-banner__btn cookie-banner__btn--ghost" data-cookie-decline><span class="cookie-banner__btn-long">Decline non-essential</span><span class="cookie-banner__btn-short">Decline</span></button>
       <button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-accept><span class="cookie-banner__btn-long">Accept all</span><span class="cookie-banner__btn-short">Accept</span></button>
@@ -2158,15 +2158,15 @@ const legalPages = [
         "Most of our users are based in the United States; we process information primarily in the United States."
       ]},
       { h: "How and with whom we share information", p: [
-        "We do not sell your personal information for money, and we do not share your personal information for cross-context behavioral advertising.",
+        "We do not sell your personal information for money. We do use Google Ads conversion tracking and remarketing (and, where enabled, the Meta/Facebook Pixel) to measure ad performance and show relevant ads — which may be considered \"sharing\" for cross-context behavioral advertising under California law. These advertising technologies load only after you grant consent, and you can opt out anytime via the cookie banner, our Do Not Sell or Share page, or a Global Privacy Control (GPC) signal.",
         "We share information only with the following categories of recipients, and only to the extent needed:",
-        "Service providers and processors that help us operate the Site or business — for example: web hosting (Vercel), content delivery and security (Cloudflare), domain services, email delivery, analytics (Google), form-handling services, and ordering partners (order.online). These parties are bound by contract to use the information only for the purpose we engaged them and to protect it.",
+        "Service providers and processors that help us operate the Site or business — for example: web hosting (Vercel), content delivery and security (Cloudflare), domain services, email delivery, analytics (Google Analytics), advertising and conversion measurement (Google Ads, and the Meta/Facebook Pixel where enabled), form-handling services, and ordering partners (order.online). These parties are bound by contract to use the information only for the purpose we engaged them and to protect it.",
         "Legal and regulatory recipients when we are required to disclose information by law, court order, subpoena, or other legal process, or to protect rights, safety, or property.",
         "Business transfer recipients in the event of a merger, acquisition, financing, reorganization, bankruptcy, or sale of assets — in which case we will continue to ensure the confidentiality of your personal information and will give affected users notice before personal information becomes subject to a different privacy policy.",
         "With your consent or at your direction, for any purpose you authorize."
       ]},
       { h: "Third-party services", p: [
-        "Key third-party services that may process your data include: Google Analytics 4 (site usage measurement, configured with anonymized IP and Google Consent Mode v2 — analytics are denied by default until you grant permission); Vercel (hosting); Cloudflare (content delivery and DDoS protection); Resend (transactional email delivery for our contact, catering, careers, and other forms); order.online (online ordering); and Gmail/Google Workspace (email for hello@elpueblomex.com).",
+        "Key third-party services that may process your data include: Google Analytics 4 (site usage measurement, configured with anonymized IP and Google Consent Mode v2 — analytics are denied by default until you grant permission); Google Ads (conversion tracking and remarketing — advertising cookies and identifiers load only after you grant consent, governed by Google Consent Mode v2); the Meta/Facebook Pixel (advertising and conversion measurement, where enabled — loads only after consent); Vercel (hosting); Cloudflare (content delivery and DDoS protection); Resend (transactional email delivery for our contact, catering, careers, and other forms); order.online (online ordering); and Gmail/Google Workspace (email for hello@elpueblomex.com).",
         "We do not control the privacy practices of these services. Please review their policies for details about how they handle your information."
       ]},
       { h: "Cookies and tracking technologies", p: [
@@ -2234,17 +2234,22 @@ const legalPages = [
         "Strictly necessary — required for the Site to work (for example, remembering that you've dismissed the cookie banner, keeping form state between pages, protecting against abuse). These cannot be switched off from within the Site.",
         "Analytics / performance — help us understand which pages people visit, where they come from, and how the Site performs. Data is aggregated and used to improve the Site.",
         "Functional — remember preferences like selected location or previously viewed menu section to improve your experience.",
-        "Targeting / advertising — we do not currently use advertising cookies on this Site and do not share personal information with advertising networks for cross-context behavioral advertising."
+        "Targeting / advertising — used to measure ad performance and show you relevant ads on other sites (remarketing). We use Google Ads for this (and, where enabled, the Meta/Facebook Pixel). These cookies and identifiers are set only after you grant consent and can be withdrawn at any time."
       ]},
       { h: "Specific cookies and storage items", p: [
         "Below is a best-effort list of the cookies and third-party trackers that may be set when you visit the Site. Third-party cookies may change without notice; consult the provider for an authoritative list.",
         "ep_consent_pref (first-party cookie; strictly necessary) — stores your analytics-and-marketing consent choice (granted or denied) for one year so the cookie banner does not reappear and so analytics tools can be enabled or disabled accordingly. No personal information.",
         "_ga, _ga_* (first-party cookies from Google Analytics 4; analytics) — distinguish unique visitors and sessions. Only set after you grant analytics consent. See Google's documentation. Typical retention: 2 years (rotated).",
+        "_gcl_* (Google Ads conversion linker; advertising) — attributes ad conversions. Set only after you grant marketing consent. Typical retention: up to 90 days.",
+        "Cookies set by google.com / googleads.g.doubleclick.net (Google Ads remarketing; advertising) — used to show you relevant ads on other sites. Set only after you grant marketing consent.",
+        "_fbp (Meta/Facebook Pixel; advertising — only where the Pixel is enabled) — measures ad performance and supports remarketing. Set only after you grant marketing consent. Typical retention: 90 days.",
         "__cf_bm, cf_clearance (set by Cloudflare; strictly necessary) — bot-mitigation and security cookies used to distinguish humans from automated traffic. Typical retention: 30 minutes to 30 days.",
         "vercel / _vercel_* (set by Vercel hosting infrastructure; strictly necessary) — routing and caching cookies used to serve the correct version of the Site."
       ]},
       { h: "Third parties that may set cookies", p: [
         "Google Analytics 4 (analytics) — set only after you grant consent. See Google's Privacy & Terms and the Google Analytics opt-out browser add-on at tools.google.com/dlpage/gaoptout.",
+        "Google Ads (advertising / conversion tracking / remarketing) — set only after you grant consent. Manage ad personalization at adssettings.google.com.",
+        "Meta/Facebook Pixel (advertising — where enabled) — set only after you grant consent. Manage at facebook.com/ads/preferences.",
         "Cloudflare (security / performance) — see cloudflare.com/privacypolicy.",
         "Vercel (hosting) — see vercel.com/legal/privacy-policy.",
         "If you place an order, you may be redirected to order.online, which sets its own cookies under its own privacy policy."
@@ -2425,7 +2430,7 @@ const legalPages = [
   <div class="section__inner">
     <div class="privacy-controls__card">
       <h2>Your Privacy Controls</h2>
-      <p>Under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), California residents may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of their personal information. El Pueblo Mexican Food does <strong>not sell personal information for money</strong>. We may use analytics tools that could be considered &ldquo;sharing&rdquo; under California law.</p>
+      <p>Under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), California residents may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of their personal information. El Pueblo Mexican Food does <strong>not sell personal information for money</strong>. We do use analytics and advertising technologies &mdash; including Google Ads conversion tracking and remarketing (and the Meta/Facebook Pixel where enabled) &mdash; that may be considered a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; for cross-context behavioral advertising under California law. These load only after you opt in; you can opt out anytime using the control below or a Global Privacy Control signal.</p>
       <p class="privacy-controls__status">Status: <strong data-consent-status>Checking&hellip;</strong></p>
       <div class="privacy-controls__actions">
         <button type="button" class="btn btn--ghost" onclick="window.__epOptOut&amp;&amp;__epOptOut()">Do Not Sell or Share My Personal Information</button>
@@ -2486,7 +2491,7 @@ const legalPages = [
         "Identifiers and customer records — disclosed in response to legal process when we are required to do so."
       ]},
       { h: "Sale or sharing of personal information", p: [
-        "We do not sell personal information for monetary or other valuable consideration, and we do not share personal information for cross-context behavioral advertising, as those terms are defined under the CCPA/CPRA.",
+        "We do not sell personal information for monetary or other valuable consideration. We do use advertising and conversion technologies — Google Ads remarketing and conversion tracking, and the Meta/Facebook Pixel where enabled — that may constitute \"sharing\" for cross-context behavioral advertising as defined under the CCPA/CPRA. This occurs only after you opt in, and you may opt out at any time (see below).",
         "We do not have actual knowledge of selling or sharing personal information of consumers under 16."
       ]},
       { h: "Retention", p: [
@@ -2497,7 +2502,7 @@ const legalPages = [
         "Right to know — request that we disclose (1) the categories of personal information we have collected about you; (2) the categories of sources; (3) the business or commercial purposes; (4) the categories of third parties to whom we disclosed it; and (5) the specific pieces of personal information we have collected about you.",
         "Right to delete — request that we delete personal information we have collected from you, subject to exceptions (for example, we may retain information needed to complete a transaction, detect security incidents, comply with a legal obligation, or exercise a legal right).",
         "Right to correct — request that we correct inaccurate personal information we maintain about you.",
-        "Right to opt out of sale or sharing — we do not sell or share personal information for cross-context behavioral advertising, so there is nothing to opt out of; we honor Global Privacy Control signals as a precaution.",
+        "Right to opt out of sale or sharing — we use advertising technologies (Google Ads remarketing/conversion tracking, and the Meta/Facebook Pixel where enabled) that may be considered \"sharing\" for cross-context behavioral advertising. You can opt out at any time using the controls on our Do Not Sell or Share page, by declining marketing in the cookie banner, or via a Global Privacy Control signal, which we honor automatically.",
         "Right to limit use of sensitive personal information — because we do not use sensitive personal information for purposes beyond those permitted by default, no additional limitation is necessary.",
         "Right to data portability — receive the personal information you have provided to us in a readily usable format.",
         "Right to non-discrimination — we will not deny goods or services, charge different prices, or provide a different level of service because you exercised your rights. We are permitted to offer financial incentives tied to personal information, but we do not currently do so."
@@ -2529,7 +2534,7 @@ const legalPages = [
         "We do not knowingly collect personal information from children under 13 and do not sell or share the personal information of consumers we know to be under 16. If you are under 18 and have posted content you want removed, contact us and we will remove it."
       ]},
       { h: "Global Privacy Control", p: [
-        "We recognize the Global Privacy Control (GPC) browser signal. Although we do not sell or share personal information for cross-context behavioral advertising, a GPC signal is treated as a valid opt-out request to the fullest extent applicable."
+        "We recognize the Global Privacy Control (GPC) browser signal and treat it as a valid request to opt out of any \"sale\" or \"sharing\" of personal information (including for cross-context behavioral advertising) to the fullest extent applicable — automatically, before you interact with the cookie banner."
       ]},
       { h: "Changes to this notice", p: [
         "We will update this California Consumer Privacy Notice as our practices change or the law evolves. Material updates will be flagged on the Site. The \"Last updated\" date above reflects the current version."
@@ -2595,7 +2600,7 @@ const legalPages = [
       ]},
       { h: "What we will and will not do", p: [
         "We will: confirm what categories of personal information we hold about you; provide a portable copy of your information where required by law; delete or correct information unless an exception applies (for example, we must keep certain records for tax or legal reasons); and honor opt-out requests for any \"sale\" or \"sharing\" as defined under California law.",
-        "We will not: charge a fee for verifiable consumer requests; require you to create an account to submit a request; sell or share your personal information for cross-context behavioral advertising (we do not engage in this in any case)."
+        "We will not: charge a fee for verifiable consumer requests; require you to create an account to submit a request; or retaliate against you for exercising your privacy rights. Where we \"share\" personal information for cross-context behavioral advertising (e.g., Google Ads remarketing), you may opt out at any time and we honor that choice."
       ]},
       { h: "Other ways to reach us", p: [
         `Email: ${site.brand.email} with "Privacy Request" in the subject line.`,
