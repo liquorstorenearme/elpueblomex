@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-03T20:17:52.746Z",
+  "fetched_at": "2026-06-04T19:22:54.230Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1293,
+      "total": 1295,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2322,
+      "total": 2324,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,53 +221,53 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 152,
+      "total": 155,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
-          "author": "Mason Is riding",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVa3K4G-uBCHG_7wm9jrTwuyOAI2os_8LXxS7GzHXS5zDtfi48=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/109334504183669248810/reviews",
+          "author": "Mina Titus",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIS4ztnIAikr2FInRJrskU6GBoir9lF4ZRFXBGDDcS2JF4yMg=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/116934272479682830199/reviews",
           "rating": 5,
-          "text": "Love this place the tacos are great",
+          "text": "Food was very yummy and employees are very attentive and nice. Frankie was awesome ! Salsa bar was outstanding !",
           "relativeTime": "in the last week",
-          "publishTime": "2026-06-03T19:59:42.255451581Z"
+          "publishTime": "2026-06-01T22:24:25.300305955Z"
         },
         {
-          "author": "Simona Augyte",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLt2B1xihoT919nu3JU3-hNsypC1IjAQKxU50_e6xAj2cmF_Q=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/116117722979535774913/reviews",
+          "author": "Jack Wilkinson",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIe3W7xWCH1TJXER4_iwK1spe6oMC5oaysRc4YAhH2f6wHL2g=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/108837770654990961663/reviews",
           "rating": 5,
-          "text": "The fish tacos are the best deal in town and super yum! 😋",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-06-03T19:56:07.838551874Z"
+          "text": "Great deal on the fish tacos.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-27T18:17:25.021670142Z"
         },
         {
-          "author": "Jonathan Castrejon",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjW2Irar_FlNlvPKp3IWmiX7LJKUIP_Q16Ndll6mgx8G1CIjXTFt=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/104152355564718718820/reviews",
+          "author": "Tiffany Selby",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUI9py5YYrbifWhilkmGLBYf3XdLpXeVODw17dkD1ZbpUtzOOX-dw=s128-c0x00000000-cc-rp-mo-ba2",
+          "authorUrl": "https://www.google.com/maps/contrib/109082275087003884283/reviews",
           "rating": 5,
-          "text": "Great place, great foooooood!!!! Great people behind the POS, in the kitchen, assisting. I feel at home.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-06-03T19:28:29.340122714Z"
+          "text": "So excited this location is open! ADA parking super convenient. Great seating indoors and outdoors. Pet friendly patio! Beer license still pending but great coke products! Food is always incredible! Best carne asada in town.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-22T23:48:38.139826322Z"
         },
         {
-          "author": "Brian Cheung",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUKueyOhGQTbJnpzpBAWnP_OvPlNv3F_r9xGvG3U9-V7Vrnp8le=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/110282067323570569612/reviews",
-          "rating": 5,
-          "text": "Great place with amazing hours. First thing I got when I landed in San Diego. Appreciate y’all! Thanks, Abraham for your assistance.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-06-03T05:39:37.464018666Z"
+          "author": "Gabriel Vania",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXG27EuY_8ce_ZqKq3Qe0VLdPDBjmhTN1YxDrkFnl81NB65PjqRpw=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/110925716227976867048/reviews",
+          "rating": 4,
+          "text": "Food was good. Fish tacos def there speciality. Jet was a great dude.",
+          "relativeTime": "2 weeks ago",
+          "publishTime": "2026-05-18T23:16:07.791128488Z"
         },
         {
-          "author": "Ian Tran",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUQGTTsF_-d4HhZq2zWhC-cmO2s2XUXzJcPYy2LJ2nBqOPNM5s=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/105372950323907718478/reviews",
+          "author": "Michelle Shea",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjULOLkbVSMNBhf5aMQq4jh1aLYn8zpsneAmjEL3Xd5ohG4_zcvR=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/105559267204542244636/reviews",
           "rating": 5,
-          "text": "Christina was amazing!! Excellent service!! Wonderful hospitality!",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-06-03T05:04:11.724501162Z"
+          "text": "Food was delicious. The restaurant is so clean and nice. And, they have fish tacos for $1.39!",
+          "relativeTime": "2 weeks ago",
+          "publishTime": "2026-05-18T19:23:53.549139784Z"
         }
       ]
     }
