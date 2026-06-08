@@ -288,6 +288,29 @@
   .history-revert-btn:hover { background: #c9302c; color: #fff; }
   .history-revert-btn:disabled { opacity: 0.5; cursor: not-allowed; }
   body.no-undo .history-revert-btn { display: none; }
+
+  /* ---------- Catering bookings tab ---------- */
+  .bk-toolbar { max-width: 920px; margin: 0 auto; padding: 22px 24px 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .bk-filter { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .bk-filter select { font-size: 13px; padding: 7px 10px; border: 1px solid #e5d8b6; border-radius: 8px; background: #fff; color: var(--ink); }
+  .bk-count { font-size: 13px; color: var(--muted); }
+  .bk-toolbar .btn-ghost { margin-left: auto; }
+  .bk-list { max-width: 920px; margin: 0 auto; padding: 18px 24px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 16px; }
+  .bk-card { background: #fff; border: 1px solid #e5d8b6; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .bk-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .bk-card__date { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--terracotta); margin: 0 0 2px; }
+  .bk-card__name { font-size: 16px; font-weight: 700; color: var(--ink); margin: 0; }
+  .bk-guests { font-weight: 500; color: var(--muted); font-size: 14px; }
+  .bk-status { font-size: 12px; font-weight: 700; padding: 6px 10px; border: 2px solid; border-radius: 999px; background: #fff; cursor: pointer; flex: none; }
+  .bk-card__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; font-size: 13px; color: var(--ink); }
+  .bk-card__grid > div { display: flex; flex-direction: column; min-width: 0; }
+  .bk-card__grid span { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 1px; }
+  .bk-card__grid a { color: var(--ink); word-break: break-word; }
+  .bk-card__msg { font-size: 13px; color: var(--ink-soft, #4a362a); background: #fffdf6; border-left: 3px solid #e5d8b6; padding: 8px 12px; margin: 0; border-radius: 0 8px 8px 0; white-space: pre-wrap; }
+  .bk-card__notes { display: flex; flex-direction: column; gap: 6px; }
+  .bk-card__notes label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .bk-card__notes textarea { font: inherit; font-size: 13px; padding: 8px 10px; border: 1px solid #e5d8b6; border-radius: 8px; resize: vertical; background: #fffdf6; }
+  .bk-card__notes .btn-ghost { align-self: flex-start; }
 </style>
 </head>
 <body>
@@ -316,6 +339,7 @@
   <button class="tab" data-tab="posts">News</button>
   <button class="tab" data-tab="press">Press</button>
   <button class="tab" data-tab="jobs">Jobs</button>
+  <button class="tab" data-tab="bookings">Catering</button>
 </nav>
 
 <main class="admin-shell">
@@ -360,6 +384,9 @@
   </div>
   <div id="tab-history" class="tab-panel" hidden>
     <div id="history-content"><div class="loading">Loading…</div></div>
+  </div>
+  <div id="tab-bookings" class="tab-panel" hidden>
+    <div id="bookings-content"><div class="loading">Loading…</div></div>
   </div>
 </main>
 
@@ -428,6 +455,7 @@ document.querySelectorAll('.tab').forEach(btn => {
     activeTab = tab;
     if (tab === 'chat') return; // chat panel is self-managed
     if (tab === 'history') { renderHistory(); return; }
+    if (tab === 'bookings') { renderBookings(); return; }
     try {
       await loadFile(tab);
       render(tab);
@@ -744,6 +772,128 @@ async function renderHistory() {
     });
   } catch (e) {
     el.innerHTML = `<div class="history-list"><p style="color:var(--err)">Error: ${esc(e.message)}</p></div>`;
+  }
+}
+
+// ============== Catering bookings ==============
+const BOOKING_STATUS_COLORS = {
+  'Inquiry': '#8a6d3b',
+  'Deposit paid': '#2f6f4f',
+  'Confirmed': '#356b3e',
+  'Balance paid': '#1f5e8b',
+  'Completed': '#4a362a',
+  'Cancelled': '#a03514',
+};
+let bookingsCache = [];
+let bookingsFilter = 'all';
+let bookingStatuses = ['Inquiry','Deposit paid','Confirmed','Balance paid','Completed','Cancelled'];
+
+async function renderBookings() {
+  const el = $('bookings-content');
+  el.innerHTML = `<div class="loading">Loading…</div>`;
+  try {
+    const r = await fetch('/api/admin/bookings', { credentials: 'include' });
+    if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || `Failed (${r.status})`); }
+    const d = await r.json();
+    if (Array.isArray(d.statuses)) bookingStatuses = d.statuses;
+    if (d.error === 'KV not configured') {
+      el.innerHTML = `<div class="panel"><div class="panel-body"><p style="color:var(--muted)">Catering bookings storage isn't set up yet. Once a Vercel KV store is connected, new catering requests will show up here automatically.</p></div></div>`;
+      return;
+    }
+    bookingsCache = d.bookings || [];
+    paintBookings();
+  } catch (e) {
+    el.innerHTML = `<div class="panel"><div class="panel-body"><p style="color:var(--err)">Error: ${esc(e.message)}</p></div></div>`;
+  }
+}
+
+function paintBookings() {
+  const el = $('bookings-content');
+  const locs = [...new Set(bookingsCache.map(b => b.locationName).filter(Boolean))].sort();
+  const filtered = bookingsFilter === 'all' ? bookingsCache : bookingsCache.filter(b => b.locationName === bookingsFilter);
+
+  const head = `
+    <div class="bk-toolbar">
+      <label class="bk-filter">Location
+        <select id="bk-loc-filter">
+          <option value="all">All locations</option>
+          ${locs.map(l => `<option value="${esc(l)}" ${l === bookingsFilter ? 'selected' : ''}>${esc(l)}</option>`).join('')}
+        </select>
+      </label>
+      <span class="bk-count">${filtered.length} booking${filtered.length === 1 ? '' : 's'}</span>
+      <button class="btn-ghost" id="bk-refresh">Refresh</button>
+    </div>`;
+
+  const body = filtered.length
+    ? `<div class="bk-list">${filtered.map(bookingCard).join('')}</div>`
+    : `<p style="color:var(--muted);text-align:center;padding:32px">No catering bookings${bookingsFilter === 'all' ? ' yet' : ' for ' + esc(bookingsFilter)}.</p>`;
+
+  el.innerHTML = head + body;
+  $('bk-loc-filter').addEventListener('change', e => { bookingsFilter = e.target.value; paintBookings(); });
+  $('bk-refresh').addEventListener('click', renderBookings);
+  el.querySelectorAll('.bk-status').forEach(sel => sel.addEventListener('change', () => updateBookingField(sel.dataset.id, { status: sel.value }, sel)));
+  el.querySelectorAll('.bk-notes-save').forEach(btn => btn.addEventListener('click', () => {
+    const ta = el.querySelector('.bk-notes[data-id="' + btn.dataset.id + '"]');
+    updateBookingField(btn.dataset.id, { notes: ta.value }, btn);
+  }));
+}
+
+function bookingCard(b) {
+  const color = BOOKING_STATUS_COLORS[b.status] || '#4a362a';
+  const created = b.createdAt ? new Date(b.createdAt).toLocaleDateString() : '';
+  const evDate = b.date
+    ? new Date(b.date + 'T00:00:00').toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })
+    : 'Date TBD';
+  return `
+  <div class="bk-card">
+    <div class="bk-card__head">
+      <div>
+        <p class="bk-card__date">${esc(evDate)}</p>
+        <p class="bk-card__name">${esc(b.name)}${b.guests ? ` · <span class="bk-guests">${esc(b.guests)} guests</span>` : ''}</p>
+      </div>
+      <select class="bk-status" data-id="${esc(b.id)}" style="border-color:${color};color:${color}">
+        ${bookingStatuses.map(s => `<option ${s === b.status ? 'selected' : ''}>${esc(s)}</option>`).join('')}
+      </select>
+    </div>
+    <div class="bk-card__grid">
+      <div><span>Location</span>${esc(b.locationName || '—')}</div>
+      <div><span>Package</span>${esc(b.package || 'Not chosen')}</div>
+      <div><span>Email</span><a href="mailto:${esc(b.email)}">${esc(b.email)}</a></div>
+      <div><span>Phone</span>${b.phone ? `<a href="tel:${esc(b.phone)}">${esc(b.phone)}</a>` : '—'}</div>
+      ${b.organization ? `<div><span>Org</span>${esc(b.organization)}</div>` : ''}
+      <div><span>Requested</span>${esc(created)}</div>
+    </div>
+    ${b.message ? `<p class="bk-card__msg">${esc(b.message)}</p>` : ''}
+    <div class="bk-card__notes">
+      <label>GM notes</label>
+      <textarea class="bk-notes" data-id="${esc(b.id)}" rows="2" placeholder="Internal notes — deposit sent, delivery fee, dietary needs…">${esc(b.notes || '')}</textarea>
+      <button class="btn-ghost bk-notes-save" data-id="${esc(b.id)}">Save note</button>
+    </div>
+  </div>`;
+}
+
+async function updateBookingField(id, patch, ctl) {
+  ctl.disabled = true;
+  try {
+    const r = await fetch('/api/admin/bookings', {
+      method: 'PATCH',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, ...patch }),
+    });
+    if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || `Update failed (${r.status})`); }
+    const d = await r.json();
+    const i = bookingsCache.findIndex(x => x.id === id);
+    if (i >= 0 && d.booking) bookingsCache[i] = d.booking;
+    if (patch.status && ctl.classList.contains('bk-status')) {
+      const color = BOOKING_STATUS_COLORS[patch.status] || '#4a362a';
+      ctl.style.borderColor = color; ctl.style.color = color;
+    }
+    toast('Saved');
+  } catch (e) {
+    toast(e.message, true);
+  } finally {
+    ctl.disabled = false;
   }
 }
 

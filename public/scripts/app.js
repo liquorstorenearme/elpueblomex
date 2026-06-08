@@ -28,7 +28,11 @@
     });
   }
 
-  // Consent management: default-deny, honor GPC, Google Consent Mode v2.
+  // Consent management: region-scoped Consent Mode v2 (defaults set in <head>:
+  // EEA/UK/CH default-denied until opt-in; US/rest-of-world default-granted with
+  // opt-out). This runtime only pushes an UPDATE on an explicit signal — GPC
+  // (opt-out everywhere) or a saved choice — so it never clobbers the regional
+  // default for no-signal visitors.
   // Public API: window.__epOptIn / __epOptOut / __epConsentStatus
   // Event: 'ep-consent-changed' fires on every state change.
   (function () {
@@ -96,11 +100,15 @@
 
     const GPC = (typeof navigator !== 'undefined' && navigator.globalPrivacyControl === true);
     const saved = getCookie(KEY);
-    let initial;
-    if (GPC) initial = 'denied';
-    else if (saved === 'granted') initial = 'granted';
-    else initial = 'denied';
-    setStatus(initial, !!saved);
+    if (GPC) {
+      // GPC is an opt-out that applies everywhere — overrides the regional default.
+      setStatus('denied', false);
+    } else if (saved === 'granted' || saved === 'denied') {
+      // Honor the visitor's explicit prior choice (banner click).
+      setStatus(saved, false);
+    }
+    // No signal: leave the region-scoped Consent Mode default from <head> in place
+    // (US/rest-of-world granted, EEA/UK/CH denied). gtag.js already loaded in <head>.
 
     const banner = document.getElementById('cookie-banner');
     if (banner && !saved && !GPC) {
