@@ -8,6 +8,7 @@
     "dev": "node build.mjs && vercel dev"
   },
   "dependencies": {
-    "@vercel/edge": "^1.2.1"
+    "@vercel/edge": "^1.2.1",
+    "@vercel/kv": "^3.0.0"
   }
 }

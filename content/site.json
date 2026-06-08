@@ -139,6 +139,81 @@
     ],
     "closingNote": "Contact us for availability and large-event coordination. We'll confirm timing and quantities based on your location."
   },
+  "cateringProgram": {
+    "heroEyebrow": "Catering · All five locations",
+    "heroHeadline": "Catering for every crowd.",
+    "heroSub": "Three taco-bar packages, priced per guest, brought to your event by the El Pueblo nearest you — full setup, attended service, and teardown included. Build-your-own taco and burrito bar, every time.",
+    "intro": "Pick a package below. Every tier is a complete build-your-own taco and burrito bar with chafing dishes, serving setup, disposable serviceware, and our staff on-site to run the line. Pricing is per guest against your final confirmed headcount.",
+    "tiers": [
+      {
+        "name": "Fiesta",
+        "price": "$21",
+        "unit": "per guest",
+        "tagline": "The classic taco bar — dropped, set up, and attended.",
+        "service": "Drop, set & attended line",
+        "staff": "2 staff on-site",
+        "featured": false,
+        "includes": [
+          "Two proteins: carne asada & pollo asado",
+          "~6 oz protein per guest",
+          "Corn tortillas",
+          "Rice, beans, chips & salsa, guacamole",
+          "Toppings: onion, cilantro, lime"
+        ]
+      },
+      {
+        "name": "Celebración",
+        "price": "$28",
+        "unit": "per guest",
+        "tagline": "More protein, more toppings, and bottled drinks for the table.",
+        "service": "Attended line",
+        "staff": "2 staff on-site",
+        "featured": true,
+        "includes": [
+          "Three proteins: carne asada, pollo asado + adobada or carnitas",
+          "~7 oz protein per guest",
+          "Corn & flour tortillas",
+          "Rice, beans, chips & salsa, guacamole",
+          "Toppings: onion, cilantro, lime + queso & crema",
+          "Bottled & canned beverages"
+        ]
+      },
+      {
+        "name": "Gran Fiesta",
+        "price": "$39",
+        "unit": "per guest",
+        "tagline": "A live taquero pressing tortillas and cooking to order at your event.",
+        "service": "Live station, cooked to order",
+        "staff": "3 staff incl. live taquero",
+        "featured": false,
+        "includes": [
+          "All four proteins: carne asada, pollo asado, adobada & carnitas",
+          "~8 oz protein per guest",
+          "Corn & flour tortillas, pressed fresh on-site",
+          "Rice, beans, chips & salsa, guacamole",
+          "Toppings: onion, cilantro, lime + queso, spicy carrots & crema",
+          "Aguas frescas / horchata + bottled & canned beverages",
+          "Dessert: churros & flan"
+        ]
+      }
+    ],
+    "alwaysIncluded": [
+      "Build-your-own taco & burrito bar format",
+      "Chafing dishes, sternos & serving utensils",
+      "Disposable plates, napkins & cutlery",
+      "Full setup and teardown of our equipment",
+      "On-site staff to run the line"
+    ],
+    "policies": [
+      { "label": "Minimum", "value": "40-guest minimum per event." },
+      { "label": "Lead time", "value": "Place orders at least 96 hours (4 days) ahead. Shorter notice is subject to approval and kitchen capacity." },
+      { "label": "Deposit", "value": "50% deposit confirms your booking; the balance is due 96 hours before the event." },
+      { "label": "Cancellation", "value": "Full refund 7+ days out. Inside 7 days the deposit is retained; inside 96 hours the order is non-refundable (food is already sourced)." },
+      { "label": "Service charge", "value": "A 20% service charge applies to the food subtotal, covering on-site staff and gratuity." },
+      { "label": "Tax", "value": "California sales tax applies to the food subtotal plus service charge, at the rate for the event's county." },
+      { "label": "Delivery & travel", "value": "A distance-based travel fee is set per event by the servicing location and billed separately." }
+    ]
+  },
   "events": {
     "heroEyebrow": "Private events",
     "heroHeadline": "The heated patio is yours.",

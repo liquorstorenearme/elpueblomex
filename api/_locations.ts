@@ -6,6 +6,14 @@ export const LOCATION_EMAILS: Record<string, string> = {
   "la-jolla": "lajolla@elpueblomex.com",
 };
 
+export const LOCATION_NAMES: Record<string, string> = {
+  "cardiff-by-the-sea": "Cardiff-by-the-Sea",
+  "carlsbad": "Carlsbad",
+  "carmel-valley": "Carmel Valley",
+  "del-mar": "Del Mar",
+  "la-jolla": "La Jolla",
+};
+
 export function resolveRecipients(
   locationSlug: string,
   fallback: string,

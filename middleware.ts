@@ -18,6 +18,8 @@ export const config = {
     "/api/admin/revert/",
     "/api/admin/me",
     "/api/admin/me/",
+    "/api/admin/bookings",
+    "/api/admin/bookings/",
   ],
 };
 

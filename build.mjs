@@ -387,11 +387,11 @@ function webPageSchema({ name, description, canonical, breadcrumbId }) {
 }
 
 // ---------- Head / shared HTML ----------
-const head = ({ title, description, canonicalPath, ogImage = "/images/home/fish-taco.jpg", ogType = "website", lcpImage = null }) => `
+const head = ({ title, description, canonicalPath, ogImage = "/images/home/fish-taco.jpg", ogType = "website", lcpImage = null, noindex = false }) => `
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${h(title)}</title>
-<meta name="description" content="${h(description)}">
+<meta name="description" content="${h(description)}">${noindex ? `\n<meta name="robots" content="noindex,nofollow">` : ""}
 <meta name="theme-color" content="#faf3e4">
 <meta name="author" content="${h(site.brand.name)}">
 <meta name="geo.region" content="US-CA">
@@ -574,7 +574,7 @@ const footer = () => `
 </footer>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie notice" hidden>
   <div class="cookie-banner__inner">
-    <p class="cookie-banner__text">This site uses essential cookies to run, plus analytics and advertising cookies (with your permission) to understand how visitors use it and to measure and improve our ads. Analytics and advertising are off by default. See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a>. You can change your choice anytime on the <a href="/californiaconsumerprivacy/">Do Not Sell or Share</a> page.</p>
+    <p class="cookie-banner__text">This site uses essential cookies to run, plus analytics and advertising cookies (with your permission) to understand how visitors use it and to measure and improve our ads. In the US these are on by default and you can opt out anytime — choose Decline, use the Do Not Sell or Share page, or send a Global Privacy Control signal; in the EEA, UK, and Switzerland they load only after you opt in. See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a>. You can change your choice anytime on the <a href="/californiaconsumerprivacy/">Do Not Sell or Share</a> page.</p>
     <div class="cookie-banner__actions">
       <button type="button" class="cookie-banner__btn cookie-banner__btn--ghost" data-cookie-decline><span class="cookie-banner__btn-long">Decline non-essential</span><span class="cookie-banner__btn-short">Decline</span></button>
       <button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-accept><span class="cookie-banner__btn-long">Accept all</span><span class="cookie-banner__btn-short">Accept</span></button>
@@ -583,9 +583,9 @@ const footer = () => `
 </div>
 <script src="/scripts/app.js?v=${APP_JS_V}" defer></script>`;
 
-const layout = ({ title, description, canonicalPath, body, ogImage, lcpImage, bodyClass = "", schema = [] }) => `<!doctype html>
+const layout = ({ title, description, canonicalPath, body, ogImage, lcpImage, bodyClass = "", schema = [], noindex = false }) => `<!doctype html>
 <html lang="en-US">
-<head>${head({ title, description, canonicalPath, ogImage, lcpImage })}
+<head>${head({ title, description, canonicalPath, ogImage, lcpImage, noindex })}
 ${schema.map(s => jsonLd(s)).join("\n")}
 </head>
 <body class="${h(bodyClass)}">
@@ -733,7 +733,7 @@ ${press.length ? `
       <a class="press-card" href="${h(p.url)}" target="_blank" rel="noopener">
         <p class="press-card__outlet">${h(p.outlet)}</p>
         <p class="press-card__quote">&ldquo;${h(p.quote)}&rdquo;</p>
-        <p class="press-card__meta">${p.author ? `${h(p.author)} · ` : ""}${h(new Date(p.date).toLocaleDateString("en-US", { month: "short", year: "numeric" }))}</p>
+        <p class="press-card__meta">${p.author ? `${h(p.author)} · ` : ""}${h(new Date(p.date).toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" }))}</p>
       </a>`).join("")}
     </div>
   </div>
@@ -752,7 +752,7 @@ ${posts.length ? `
       <a class="news-card" href="/news/${h(p.slug)}/">
         ${p.image ? `<div class="news-card__media" role="img" aria-label="${h(p.imageAlt||p.title)}" style="background-image:url('${h(p.image)}')"></div>` : ""}
         <div class="news-card__body">
-          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }))}</p>
+          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }))}</p>
           <h3 class="news-card__title">${h(p.title)}</h3>
           <p class="news-card__excerpt">${h(p.excerpt || "")}</p>
         </div>
@@ -1193,6 +1193,145 @@ ${ticker("ticker--marigold")}
     body,
     bodyClass: "page-catering",
     schema: [crumbs]
+  });
+}
+
+// ---------- Catering Program (test/preview page) ----------
+function renderCateringPreview() {
+  const c = site.cateringProgram;
+  const locOptions = locations
+    .filter(l => !l.comingSoon)
+    .map(l => `<option value="${h(l.slug)}">${h(l.name)}</option>`)
+    .join("");
+  const body = `
+<section class="page-head page-head--with-media">
+  <div class="page-head__inner">
+    <div class="page-head__copy">
+      <p class="eyebrow">${h(c.heroEyebrow)}</p>
+      <h1 class="display">${h(c.heroHeadline)}</h1>
+      <p class="lede">${h(c.heroSub)}</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="#catering-request">Request catering</a>
+        <a class="btn btn--ghost" href="#packages">See packages</a>
+      </div>
+    </div>
+    <div class="page-head__media page-head__media--landscape">
+      <picture>
+        <source type="image/webp" srcset="/images/events/event-hero-2.webp">
+        <img src="/images/events/event-hero-2.jpg" width="1622" height="1081" alt="A carne asada plate being passed across the table with rice, beans, guacamole, and chips at El Pueblo" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
+</section>
+
+${ticker("ticker--marigold")}
+
+<section class="section section--cream" id="packages">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Three packages · Priced per guest</p>
+      <h2 class="display-sm">Pick your <span class="serif" style="color:var(--terracotta)">fiesta.</span></h2>
+      <p class="lede">${h(c.intro)}</p>
+    </header>
+    <div class="catering-tiers">
+      ${c.tiers.map(t => `
+      <article class="ctier ${t.featured ? "ctier--featured" : ""}">
+        ${t.featured ? `<span class="ctier__flag">Most chosen</span>` : ""}
+        <header class="ctier__head">
+          <h3 class="ctier__name">${h(t.name)}</h3>
+          <p class="ctier__price">${h(t.price)} <span>${h(t.unit)}</span></p>
+          <p class="ctier__tagline">${h(t.tagline)}</p>
+        </header>
+        <ul class="ctier__meta">
+          <li><strong>Service</strong> ${h(t.service)}</li>
+          <li><strong>Staff</strong> ${h(t.staff)}</li>
+        </ul>
+        <ul class="ctier__includes">
+          ${t.includes.map(i => `<li>${h(i)}</li>`).join("")}
+        </ul>
+        <a class="btn btn--primary ctier__cta" href="#catering-request">Request ${h(t.name)}</a>
+      </article>`).join("")}
+    </div>
+    <p class="party-note">40-guest minimum · per-guest pricing on your final confirmed headcount.</p>
+  </div>
+</section>
+
+${ticker("ticker--agave")}
+
+<section class="section section--cream-2">
+  <div class="section__inner split">
+    <div>
+      <h2 class="display-sm">In every <span class="serif" style="color:var(--terracotta)">package.</span></h2>
+      <ul class="features features--large">
+        ${c.alwaysIncluded.map(b => `<li>${h(b)}</li>`).join("")}
+      </ul>
+      <p class="note">No on-site cleanup beyond our own equipment — we set up, run the line, and break down.</p>
+    </div>
+    <div class="event-card">
+      <h3>The details</h3>
+      <dl class="catering-policies">
+        ${c.policies.map(p => `<div class="cpolicy"><dt>${h(p.label)}</dt><dd>${h(p.value)}</dd></div>`).join("")}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream" id="catering-request">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Let's plan it</p>
+      <h2 class="display-sm">Request <span class="serif" style="color:var(--terracotta)">catering.</span></h2>
+      <p class="lede">Tell us your date, headcount, and package. The El Pueblo nearest your event will follow up with a quote, delivery fee, and availability.</p>
+    </header>
+    <form class="stack-form" action="/api/catering" method="post" toolname="submit_catering_request" tooldescription="Request El Pueblo Mexican Food catering for an event — choose a package, headcount, date, and servicing location.">
+      <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="return_to" value="/catering-preview/">
+      <div class="stack-form__row">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <div class="stack-form__row">
+        <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+        <label>Organization<input name="organization" autocomplete="organization"></label>
+      </div>
+      <div class="stack-form__row">
+        <label>Nearest location
+          <select name="location" required>
+            ${locOptions}
+          </select>
+        </label>
+        <label>Package
+          <select name="package">
+            <option value="">Not sure yet</option>
+            <option value="Fiesta — $21/guest">Fiesta — $21/guest</option>
+            <option value="Celebración — $28/guest">Celebración — $28/guest</option>
+            <option value="Gran Fiesta — $39/guest">Gran Fiesta — $39/guest</option>
+          </select>
+        </label>
+      </div>
+      <div class="stack-form__row">
+        <label>Guest count<input type="number" name="guests" min="40" placeholder="Minimum 40"></label>
+        <label>Event date<input type="date" name="date"></label>
+      </div>
+      <label>Event details<textarea name="message" rows="5" placeholder="Event type, location/address, timing, dietary needs..."></textarea></label>
+      <button class="btn btn--primary" type="submit">Send catering request</button>
+      <p class="stack-form__hint">40-guest minimum · please allow at least 96 hours' notice. We'll confirm within one business day.</p>
+      <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your request. We don't sell or share your information, and we don't send marketing texts — your phone number is for callbacks only.</p>
+    </form>
+  </div>
+</section>
+
+${ticker("ticker--terracotta")}
+`;
+  const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Catering", url: "/catering-preview/" }]);
+  return layout({
+    title: `Catering (preview) — ${site.brand.name}`,
+    description: "El Pueblo catering — three per-guest taco-bar packages with setup, attended service, and teardown across all five San Diego locations.",
+    canonicalPath: "/catering-preview/",
+    body,
+    bodyClass: "page-catering-program",
+    schema: [crumbs],
+    noindex: true
   });
 }
 
@@ -1973,7 +2112,7 @@ ${pressSection}
       <a class="news-card" href="/news/${h(p.slug)}/">
         ${fileExists(p.image) ? `<div class="news-card__media" role="img" aria-label="${h(p.imageAlt || p.title)}" style="background-image:url('${h(p.image)}')"></div>` : ""}
         <div class="news-card__body">
-          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }))}</p>
+          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }))}</p>
           <h3 class="news-card__title">${h(p.title)}</h3>
           <p class="news-card__excerpt">${h(p.excerpt || "")}</p>
         </div>
@@ -2057,7 +2196,7 @@ ${related.length ? `
       <a class="news-card" href="/news/${h(p.slug)}/">
         ${fileExists(p.image) ? `<div class="news-card__media" role="img" aria-label="${h(p.imageAlt || p.title)}" style="background-image:url('${h(p.image)}')"></div>` : ""}
         <div class="news-card__body">
-          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }))}</p>
+          <p class="news-card__date">${h(new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }))}</p>
           <h3 class="news-card__title">${h(p.title)}</h3>
           <p class="news-card__excerpt">${h(p.excerpt || "")}</p>
         </div>
@@ -2158,7 +2297,7 @@ const legalPages = [
         "Most of our users are based in the United States; we process information primarily in the United States."
       ]},
       { h: "How and with whom we share information", p: [
-        "We do not sell your personal information for money. We do use Google Ads conversion tracking and remarketing (and, where enabled, the Meta/Facebook Pixel) to measure ad performance and show relevant ads — which may be considered \"sharing\" for cross-context behavioral advertising under California law. These advertising technologies load only after you grant consent, and you can opt out anytime via the cookie banner, our Do Not Sell or Share page, or a Global Privacy Control (GPC) signal.",
+        "We do not sell your personal information for money. We do use Google Ads conversion tracking and remarketing (and, where enabled, the Meta/Facebook Pixel) to measure ad performance and show relevant ads — which may be considered \"sharing\" for cross-context behavioral advertising under California law. For visitors in the United States, these advertising technologies load by default and you can opt out anytime via the cookie banner (Decline), our Do Not Sell or Share page, or a Global Privacy Control (GPC) signal; for visitors in the EEA, UK, and Switzerland they load only after you opt in.",
         "We share information only with the following categories of recipients, and only to the extent needed:",
         "Service providers and processors that help us operate the Site or business — for example: web hosting (Vercel), content delivery and security (Cloudflare), domain services, email delivery, analytics (Google Analytics), advertising and conversion measurement (Google Ads, and the Meta/Facebook Pixel where enabled), form-handling services, and ordering partners (order.online). These parties are bound by contract to use the information only for the purpose we engaged them and to protect it.",
         "Legal and regulatory recipients when we are required to disclose information by law, court order, subpoena, or other legal process, or to protect rights, safety, or property.",
@@ -2166,7 +2305,7 @@ const legalPages = [
         "With your consent or at your direction, for any purpose you authorize."
       ]},
       { h: "Third-party services", p: [
-        "Key third-party services that may process your data include: Google Analytics 4 (site usage measurement, configured with anonymized IP and Google Consent Mode v2 — analytics are denied by default until you grant permission); Google Ads (conversion tracking and remarketing — advertising cookies and identifiers load only after you grant consent, governed by Google Consent Mode v2); the Meta/Facebook Pixel (advertising and conversion measurement, where enabled — loads only after consent); Vercel (hosting); Cloudflare (content delivery and DDoS protection); Resend (transactional email delivery for our contact, catering, careers, and other forms); order.online (online ordering); and Gmail/Google Workspace (email for hello@elpueblomex.com).",
+        "Key third-party services that may process your data include: Google Analytics 4 (site usage measurement, configured with anonymized IP and Google Consent Mode v2 — in the US, active by default with opt-out; in the EEA, UK, and Switzerland, only after you opt in); Google Ads (conversion tracking and remarketing, governed by Google Consent Mode v2 — in the US, active by default with opt-out; in the EEA, UK, and Switzerland, only after you opt in); the Meta/Facebook Pixel (advertising and conversion measurement, where enabled — loads only after consent); Vercel (hosting); Cloudflare (content delivery and DDoS protection); Resend (transactional email delivery for our contact, catering, careers, and other forms); order.online (online ordering); and Gmail/Google Workspace (email for hello@elpueblomex.com).",
         "We do not control the privacy practices of these services. Please review their policies for details about how they handle your information."
       ]},
       { h: "Cookies and tracking technologies", p: [
@@ -2234,28 +2373,28 @@ const legalPages = [
         "Strictly necessary — required for the Site to work (for example, remembering that you've dismissed the cookie banner, keeping form state between pages, protecting against abuse). These cannot be switched off from within the Site.",
         "Analytics / performance — help us understand which pages people visit, where they come from, and how the Site performs. Data is aggregated and used to improve the Site.",
         "Functional — remember preferences like selected location or previously viewed menu section to improve your experience.",
-        "Targeting / advertising — used to measure ad performance and show you relevant ads on other sites (remarketing). We use Google Ads for this (and, where enabled, the Meta/Facebook Pixel). These cookies and identifiers are set only after you grant consent and can be withdrawn at any time."
+        "Targeting / advertising — used to measure ad performance and show you relevant ads on other sites (remarketing). We use Google Ads for this (and, where enabled, the Meta/Facebook Pixel). In the US, these cookies and identifiers are set by default until you opt out; in the EEA, UK, and Switzerland, only after you opt in. You can withdraw or change your choice at any time."
       ]},
       { h: "Specific cookies and storage items", p: [
         "Below is a best-effort list of the cookies and third-party trackers that may be set when you visit the Site. Third-party cookies may change without notice; consult the provider for an authoritative list.",
         "ep_consent_pref (first-party cookie; strictly necessary) — stores your analytics-and-marketing consent choice (granted or denied) for one year so the cookie banner does not reappear and so analytics tools can be enabled or disabled accordingly. No personal information.",
-        "_ga, _ga_* (first-party cookies from Google Analytics 4; analytics) — distinguish unique visitors and sessions. Only set after you grant analytics consent. See Google's documentation. Typical retention: 2 years (rotated).",
-        "_gcl_* (Google Ads conversion linker; advertising) — attributes ad conversions. Set only after you grant marketing consent. Typical retention: up to 90 days.",
-        "Cookies set by google.com / googleads.g.doubleclick.net (Google Ads remarketing; advertising) — used to show you relevant ads on other sites. Set only after you grant marketing consent.",
+        "_ga, _ga_* (first-party cookies from Google Analytics 4; analytics) — distinguish unique visitors and sessions. In the US, set by default until you opt out; in the EEA, UK, and Switzerland, only after you grant analytics consent. See Google's documentation. Typical retention: 2 years (rotated).",
+        "_gcl_* (Google Ads conversion linker; advertising) — attributes ad conversions. In the US, set by default until you opt out; in the EEA, UK, and Switzerland, only after you grant marketing consent. Typical retention: up to 90 days.",
+        "Cookies set by google.com / googleads.g.doubleclick.net (Google Ads remarketing; advertising) — used to show you relevant ads on other sites. In the US, set by default until you opt out; in the EEA, UK, and Switzerland, only after you grant marketing consent.",
         "_fbp (Meta/Facebook Pixel; advertising — only where the Pixel is enabled) — measures ad performance and supports remarketing. Set only after you grant marketing consent. Typical retention: 90 days.",
         "__cf_bm, cf_clearance (set by Cloudflare; strictly necessary) — bot-mitigation and security cookies used to distinguish humans from automated traffic. Typical retention: 30 minutes to 30 days.",
         "vercel / _vercel_* (set by Vercel hosting infrastructure; strictly necessary) — routing and caching cookies used to serve the correct version of the Site."
       ]},
       { h: "Third parties that may set cookies", p: [
-        "Google Analytics 4 (analytics) — set only after you grant consent. See Google's Privacy & Terms and the Google Analytics opt-out browser add-on at tools.google.com/dlpage/gaoptout.",
-        "Google Ads (advertising / conversion tracking / remarketing) — set only after you grant consent. Manage ad personalization at adssettings.google.com.",
+        "Google Analytics 4 (analytics) — in the US, set by default until you opt out; in the EEA, UK, and Switzerland, only after you grant consent. See Google's Privacy & Terms and the Google Analytics opt-out browser add-on at tools.google.com/dlpage/gaoptout.",
+        "Google Ads (advertising / conversion tracking / remarketing) — in the US, set by default until you opt out; in the EEA, UK, and Switzerland, only after you grant consent. Manage ad personalization at adssettings.google.com.",
         "Meta/Facebook Pixel (advertising — where enabled) — set only after you grant consent. Manage at facebook.com/ads/preferences.",
         "Cloudflare (security / performance) — see cloudflare.com/privacypolicy.",
         "Vercel (hosting) — see vercel.com/legal/privacy-policy.",
         "If you place an order, you may be redirected to order.online, which sets its own cookies under its own privacy policy."
       ]},
       { h: "Your cookie choices", p: [
-        "Analytics and marketing cookies are denied by default. When you first visit the Site, a cookie banner lets you Accept all cookies or Decline non-essential cookies. Declining keeps the default-deny state — no analytics cookies are loaded.",
+        "In the US, analytics and marketing cookies are enabled by default and you can opt out at any time; in the EEA, UK, and Switzerland they stay off until you opt in. When you first visit the Site, a cookie banner lets you Accept all cookies or Decline non-essential cookies. Choosing Decline (or sending a Global Privacy Control signal) opts you out — no analytics or advertising cookies are loaded.",
         "You can change or withdraw your choice at any time on our Do Not Sell or Share My Personal Information page (linked in the footer), which provides explicit Opt In and Opt Out controls and shows your current status. Your choice is saved in the ep_consent_pref cookie for one year.",
         "Most browsers allow you to refuse or delete cookies. Check your browser's documentation: Chrome (support.google.com/chrome), Firefox (support.mozilla.org), Safari (support.apple.com), Edge (support.microsoft.com). Blocking strictly necessary cookies may break parts of the Site.",
         "You can opt out of Google Analytics specifically with the browser add-on linked above."
@@ -2430,7 +2569,7 @@ const legalPages = [
   <div class="section__inner">
     <div class="privacy-controls__card">
       <h2>Your Privacy Controls</h2>
-      <p>Under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), California residents may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of their personal information. El Pueblo Mexican Food does <strong>not sell personal information for money</strong>. We do use analytics and advertising technologies &mdash; including Google Ads conversion tracking and remarketing (and the Meta/Facebook Pixel where enabled) &mdash; that may be considered a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; for cross-context behavioral advertising under California law. These load only after you opt in; you can opt out anytime using the control below or a Global Privacy Control signal.</p>
+      <p>Under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), California residents may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of their personal information. El Pueblo Mexican Food does <strong>not sell personal information for money</strong>. We do use analytics and advertising technologies &mdash; including Google Ads conversion tracking and remarketing (and the Meta/Facebook Pixel where enabled) &mdash; that may be considered a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; for cross-context behavioral advertising under California law. In the US these load by default and you can opt out anytime using the control below, by declining in the cookie banner, or via a Global Privacy Control signal (which we honor automatically); in the EEA, UK, and Switzerland they load only after you opt in.</p>
       <p class="privacy-controls__status">Status: <strong data-consent-status>Checking&hellip;</strong></p>
       <div class="privacy-controls__actions">
         <button type="button" class="btn btn--ghost" onclick="window.__epOptOut&amp;&amp;__epOptOut()">Do Not Sell or Share My Personal Information</button>
@@ -2485,13 +2624,13 @@ const legalPages = [
       ]},
       { h: "Categories disclosed to third parties", p: [
         "In the preceding 12 months, we have disclosed the following categories to the following types of recipients for business purposes:",
-        "Identifiers and Internet activity — disclosed to our hosting, security, and analytics service providers (Vercel, Cloudflare, Google Analytics 4) for the purpose of operating and measuring the Site. Analytics disclosures occur only for visitors who have granted consent.",
+        "Identifiers and Internet activity — disclosed to our hosting, security, and analytics service providers (Vercel, Cloudflare, Google Analytics 4) for the purpose of operating and measuring the Site. For US visitors, analytics disclosures occur by default unless you opt out; for visitors in the EEA, UK, and Switzerland, only after consent is granted.",
         "Customer records and identifiers — disclosed to our transactional email provider (Resend) so that contact, catering, event, fundraiser, careers, and newsletter form submissions can be delivered to our team. Resend processes the message on our behalf and forwards it to our Google Workspace inbox at hello@elpueblomex.com.",
         "Commercial information — disclosed to our ordering partner (order.online) to fulfill orders you choose to place.",
         "Identifiers and customer records — disclosed in response to legal process when we are required to do so."
       ]},
       { h: "Sale or sharing of personal information", p: [
-        "We do not sell personal information for monetary or other valuable consideration. We do use advertising and conversion technologies — Google Ads remarketing and conversion tracking, and the Meta/Facebook Pixel where enabled — that may constitute \"sharing\" for cross-context behavioral advertising as defined under the CCPA/CPRA. This occurs only after you opt in, and you may opt out at any time (see below).",
+        "We do not sell personal information for monetary or other valuable consideration. We do use advertising and conversion technologies — Google Ads remarketing and conversion tracking, and the Meta/Facebook Pixel where enabled — that may constitute \"sharing\" for cross-context behavioral advertising as defined under the CCPA/CPRA. In the US this occurs by default and you may opt out at any time (see below); in the EEA, UK, and Switzerland it occurs only after you opt in.",
         "We do not have actual knowledge of selling or sharing personal information of consumers under 16."
       ]},
       { h: "Retention", p: [
@@ -2982,6 +3121,7 @@ function build() {
 
   // Info pages
   write("catering/index.html", renderCatering());
+  write("catering-preview/index.html", renderCateringPreview());
   write("event-space/index.html", renderEventSpace());
   write("bars/index.html", renderBars());
   write("gives-back/index.html", renderGivesBack());
