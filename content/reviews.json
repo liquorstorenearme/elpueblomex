@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-06-08T19:21:21.381Z",
+  "fetched_at": "2026-06-09T19:12:32.502Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 1819,
+      "total": 1820,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,9 +59,18 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.6,
-      "total": 1312,
+      "total": 1313,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
+        {
+          "author": "Tori Farris",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjW6ZZhx_Uqh42xnXxMjhjNqxBTURHFjgvES8TIIWUdSMcGQKeA=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/114758775439965190588/reviews",
+          "rating": 5,
+          "text": "Quick, easy, and delicious dinner! I’ve been going here for their $1 fish tacos (now $1.39, but I think I can afford the increase) since I was a kid. Went back to visit my hometown and had to come here. Quality still as good as I remember as a kid! Iker and Jeremiah were super helpful at the cashiers. 10/10 recommend for a quick, affordable lunch or dinner.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-06-02T02:02:30.577897427Z"
+        },
         {
           "author": "Jo M",
           "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIrM22l82vXxSjnBhHaN1b8JIl-iJKz4fN4g0KimF6Kx7WG6hoU=s128-c0x00000000-cc-rp-mo-ba4",
@@ -97,15 +106,6 @@
           "text": "I got the $1.39 fish tacos. It was a large taco! They gave you a nice piece of fish wrapped in your choice of corn or flour tortilla. I ordered four tacos and after eating them I was full!",
           "relativeTime": "4 months ago",
           "publishTime": "2026-01-17T01:03:01.073803784Z"
-        },
-        {
-          "author": "Princess Smartypants",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXh9dL_d357KfBuLFt01bfd5XNcUzC9y0i6IXx7Vk1LjO0VeRQfOA=s128-c0x00000000-cc-rp-mo-ba4",
-          "authorUrl": "https://www.google.com/maps/contrib/115859949193815738466/reviews",
-          "rating": 5,
-          "text": "Wow this place is incredible.  The service was friendly, the food was delicious and the prices are great!!  The fish tacos were wonderful and the carnitas tacos!!  Highly recommend.",
-          "relativeTime": "10 months ago",
-          "publishTime": "2025-07-22T21:08:26.677694321Z"
         }
       ]
     },
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1303,
+      "total": 1304,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -124,15 +124,6 @@
           "text": "I underestimated this place. The meats were well seasoned, the taco bar was thoughtfully stocked, and the staff was warm and efficient. For the quality, it is an excellent value. The only puzzling note was the generic signage out front, which hides a spot that deserves to be known by name.",
           "relativeTime": "3 months ago",
           "publishTime": "2026-02-27T23:50:26.717831119Z"
-        },
-        {
-          "author": "Colin Anderlohr",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjU2mdoAnGQHFLFZ5RKQGnPmEAKv-mxhQUIaqf1r7RJ4Tfoji9AnYA=s128-c0x00000000-cc-rp-mo-ba4",
-          "authorUrl": "https://www.google.com/maps/contrib/104050760225289345576/reviews",
-          "rating": 5,
-          "text": "Delicious!  We started with house margs and had the Chicken Protein Bowl and the Carnitas plate.  Carnitas were so darn good.  Salsa bar had such a great bite to it!  We will be back.",
-          "relativeTime": "5 months ago",
-          "publishTime": "2025-12-15T23:02:11.433674864Z"
         },
         {
           "author": "Elavan",
@@ -160,6 +151,15 @@
           "text": "Stop by this place after work out. Felix very helpful getting our breakfast ready to go. Love the variety of fresh made sauce. nice and clean place.",
           "relativeTime": "3 months ago",
           "publishTime": "2026-02-23T16:54:07.733714614Z"
+        },
+        {
+          "author": "Alexis W",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVIWK2FL02o5z3O_RcwPUjltbLbPO77HHBR2Qo6-TTpK6i5sA7F=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/108706693072341438580/reviews",
+          "rating": 5,
+          "text": "This is my FAVORITE spot for fish tacos! They're always so fresh, crispy, and scrumptious... and only $1.29, which is an insane deal. I usually get 3-4 fish tacos and it is a filling lunch for me. I'm able to dine here safely with a peanut and tree nut allergy. There's a ton of seating (especially outdoor), which is convenient for busier times of day. It's hands down the best restaurant in PHR!",
+          "relativeTime": "10 months ago",
+          "publishTime": "2025-07-20T06:34:03.206788827Z"
         }
       ]
     },
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2329,
+      "total": 2330,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,9 +221,36 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 185,
+      "total": 198,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
+        {
+          "author": "J GIELATA",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIX9b5sx2k4hd2ATsjBxogtfEGlgzMUqenXayE1cAB9yF6hKw=s128-c0x00000000-cc-rp-mo-ba2",
+          "authorUrl": "https://www.google.com/maps/contrib/109990022920594696425/reviews",
+          "rating": 5,
+          "text": "The fish tacos are better than Rubio's. I also liked the carne asada. Go with the corn tortilla for the fish tacos. Excellent experience, I'll be back often",
+          "relativeTime": "in the last week",
+          "publishTime": "2026-06-03T03:38:57.618125282Z"
+        },
+        {
+          "author": "riley mcgann",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjU5_MKZQ8R-RiYs8f7QGiqKWfcnmBSNm6em_KEsXYorrci0jkc=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/104704095731824630729/reviews",
+          "rating": 5,
+          "text": "Good customer service, perfectly placed right next to the beach for a quick bite or sit down meal.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-29T18:31:44.604360133Z"
+        },
+        {
+          "author": "Kevin Hood",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVlEIRDbizraPMAwwhq4Kt4pcIwzT4oO5dVP7ty3NejPOTcBOs=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/100494312314669849826/reviews",
+          "rating": 5,
+          "text": "Good food and service Carlos was very helpful and respectful",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-27T01:42:36.197924844Z"
+        },
         {
           "author": "Sean Forbes",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUxxRNkNNAn4yRVeOE_mifF_67yNfoljs4GTLsKxcpAnkD8kDzg=s128-c0x00000000-cc-rp-mo",
@@ -234,40 +261,13 @@
           "publishTime": "2026-05-26T23:19:18.584320882Z"
         },
         {
-          "author": "Rachel Bilchak",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUj6hmJVkSiYpND0YCIp-3Xo5hM7hlH09KicAVJAdhRjf6DnnEvwA=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/113701449586759117178/reviews",
-          "rating": 1,
-          "text": "The actual restaurant is fine, but I pulled into the parking lot and was waiting for my friend to arrive and the security guard came over to my car TWICE within 5 minutes of waiting and told me I’d have to leave and I wasn’t allowed to wait in the car. Ruined my appetite so I couldn’t even enjoy the food. I know he’s just doing his job but that’s a great way to lose business.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-06-08T19:19:58.120420753Z"
-        },
-        {
-          "author": "Nicole Vienneau MSN, RN, NC-BC",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUAkwDfx3nWVBw7ZXp5VB-b3wfcI9UazTjTHBjgOxfdVfzMmsQT=s128-c0x00000000-cc-rp-mo-ba2",
-          "authorUrl": "https://www.google.com/maps/contrib/118091158090071629726/reviews",
+          "author": "William",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUKoH8ea_Vl0yQh-Ugq9ZpKKMIowXhX5xOOltbFiZOCVooqnnmy=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/109823416163111800718/reviews",
           "rating": 5,
-          "text": "Clean, yummy breakfasts, excellent chocolate chip cookies and cheesecakes too!  Francisco is helpful and gave us great service.",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-06-08T17:35:28.632510423Z"
-        },
-        {
-          "author": "Pascual Rojas",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLOkwaG-u4vrG3_ThVpegcNnfDdLsH-Y-94cwO3GlzoIp5KXw=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/115953324392879153955/reviews",
-          "rating": 5,
-          "text": "Cylinder and carlitos best customers\nService!!!!",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-06-08T06:53:20.040243313Z"
-        },
-        {
-          "author": "Stephen Watkins",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocL3bu2S86hs_3jCPRF0KLpwnKB85mqyVUWR5GQIX1H1noX_SQ=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/110823870618614901240/reviews",
-          "rating": 5,
-          "text": "Amazing all around! Frankie was fantastic!",
-          "relativeTime": "in the last week",
-          "publishTime": "2026-06-07T21:44:00.976356522Z"
+          "text": "Carlos and nathalie were very cool",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-27T02:13:29.194405723Z"
         }
       ]
     }
