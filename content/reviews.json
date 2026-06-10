@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-09T19:12:32.502Z",
+  "fetched_at": "2026-06-10T19:34:15.964Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -90,6 +90,15 @@
           "publishTime": "2025-09-23T17:42:50.780529796Z"
         },
         {
+          "author": "Kanna Botanika",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjU2lppqTvvFvJeC3CyMi_EiPfPoPziOyrQRf7jFrKuZNjKgFDU=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/111149672836441471908/reviews",
+          "rating": 5,
+          "text": "This is the best California burrito I have ever had. I used to love California burritos and I stopped liking them then I had one here and started liking them again now I give them every time here they’re amazing this place is mom. Thank you.",
+          "relativeTime": "a month ago",
+          "publishTime": "2026-04-22T00:28:35.281665435Z"
+        },
+        {
           "author": "Ewan",
           "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLvgMuBAx5hAUv_ifS08iyiKhO1yQNJHsT1dmnS9XgqCEpAxkE=s128-c0x00000000-cc-rp-mo",
           "authorUrl": "https://www.google.com/maps/contrib/104055910544362339266/reviews",
@@ -97,15 +106,6 @@
           "text": "I recently had a great experience at El Pueblo Mexican Restaurant. From the moment I walked in, the atmosphere felt warm and welcoming, with colorful décor and the kind of lively energy you hope for in a good Mexican spot. The food absolutely delivered the portions were generous without sacrificing quality. Everything tasted homemade, and you could tell real care went into the preparation.\n\nA big part of the experience was the outstanding service from Chris. Chris was friendly, attentive, and made sure everything came out quickly and exactly as ordered.",
           "relativeTime": "3 months ago",
           "publishTime": "2026-02-18T19:30:06.816937620Z"
-        },
-        {
-          "author": "Tom V",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXWsip7EXo5dp0w_oaHn_0tN1HxGw9A-B3jl-kf11FDDumjubeuNA=s128-c0x00000000-cc-rp-mo-ba5",
-          "authorUrl": "https://www.google.com/maps/contrib/100919355090267472383/reviews",
-          "rating": 5,
-          "text": "I got the $1.39 fish tacos. It was a large taco! They gave you a nice piece of fish wrapped in your choice of corn or flour tortilla. I ordered four tacos and after eating them I was full!",
-          "relativeTime": "4 months ago",
-          "publishTime": "2026-01-17T01:03:01.073803784Z"
         }
       ]
     },
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1304,
+      "total": 1303,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2330,
+      "total": 2333,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,17 +221,44 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 198,
+      "total": 202,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
+        {
+          "author": "Rad Train",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUIfxBvT2u3aCJDdGYam-ZFaGSxr51Wa-AQy8uVGdHX3PYJR3Q=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/108303080324597141004/reviews",
+          "rating": 1,
+          "text": "California burrito, sub par. $18 for a pinner California that just does not do it. Standard school pencil is longer and thats saying something. Taste was nothing special. Try don Carlos up the street for real authentic Mexican food and more.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-05-31T01:44:11.874712614Z"
+        },
         {
           "author": "J GIELATA",
           "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIX9b5sx2k4hd2ATsjBxogtfEGlgzMUqenXayE1cAB9yF6hKw=s128-c0x00000000-cc-rp-mo-ba2",
           "authorUrl": "https://www.google.com/maps/contrib/109990022920594696425/reviews",
           "rating": 5,
           "text": "The fish tacos are better than Rubio's. I also liked the carne asada. Go with the corn tortilla for the fish tacos. Excellent experience, I'll be back often",
-          "relativeTime": "in the last week",
+          "relativeTime": "a week ago",
           "publishTime": "2026-06-03T03:38:57.618125282Z"
+        },
+        {
+          "author": "Brian Cheung",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUKueyOhGQTbJnpzpBAWnP_OvPlNv3F_r9xGvG3U9-V7Vrnp8le=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/110282067323570569612/reviews",
+          "rating": 5,
+          "text": "Great place with amazing hours. First thing I got when I landed in San Diego. Appreciate y’all! Thanks, Abraham for your assistance.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-06-03T05:39:37.464018666Z"
+        },
+        {
+          "author": "PHINNEY COLE",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUdz2HfGpecN0o1I0nbeYtYpsm_3ssGMZqqMqv1_UqmVZnfjByq=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/117881981447856929176/reviews",
+          "rating": 5,
+          "text": "SO GOOD. I got tacos, cookies and cake! Christian, Josh and Abraham got me right. Always a pleasure at El Pueblo. GOOD PEOPLE.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-06-02T01:11:51.962939610Z"
         },
         {
           "author": "riley mcgann",
@@ -241,33 +268,6 @@
           "text": "Good customer service, perfectly placed right next to the beach for a quick bite or sit down meal.",
           "relativeTime": "a week ago",
           "publishTime": "2026-05-29T18:31:44.604360133Z"
-        },
-        {
-          "author": "Kevin Hood",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVlEIRDbizraPMAwwhq4Kt4pcIwzT4oO5dVP7ty3NejPOTcBOs=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/100494312314669849826/reviews",
-          "rating": 5,
-          "text": "Good food and service Carlos was very helpful and respectful",
-          "relativeTime": "a week ago",
-          "publishTime": "2026-05-27T01:42:36.197924844Z"
-        },
-        {
-          "author": "Sean Forbes",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUxxRNkNNAn4yRVeOE_mifF_67yNfoljs4GTLsKxcpAnkD8kDzg=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/117891030522241964294/reviews",
-          "rating": 5,
-          "text": "this restaurant is amazing and the prices are great!",
-          "relativeTime": "a week ago",
-          "publishTime": "2026-05-26T23:19:18.584320882Z"
-        },
-        {
-          "author": "William",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUKoH8ea_Vl0yQh-Ugq9ZpKKMIowXhX5xOOltbFiZOCVooqnnmy=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/109823416163111800718/reviews",
-          "rating": 5,
-          "text": "Carlos and nathalie were very cool",
-          "relativeTime": "a week ago",
-          "publishTime": "2026-05-27T02:13:29.194405723Z"
         }
       ]
     }
