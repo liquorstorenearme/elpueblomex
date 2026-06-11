@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-10T19:34:15.964Z",
+  "fetched_at": "2026-06-11T19:35:20.711Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.6,
-      "total": 1313,
+      "total": 1317,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1303,
+      "total": 1305,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2333,
+      "total": 2334,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 202,
+      "total": 215,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -232,6 +232,15 @@
           "text": "California burrito, sub par. $18 for a pinner California that just does not do it. Standard school pencil is longer and thats saying something. Taste was nothing special. Try don Carlos up the street for real authentic Mexican food and more.",
           "relativeTime": "a week ago",
           "publishTime": "2026-05-31T01:44:11.874712614Z"
+        },
+        {
+          "author": "Jose Diaz",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUUcd4Wh47F869FhxKXIwVoZ1YSFzWqXn-e0T6NQvfPxqFRrLJH=s128-c0x00000000-cc-rp-mo-ba5",
+          "authorUrl": "https://www.google.com/maps/contrib/103125969746111214456/reviews",
+          "rating": 5,
+          "text": "My 2nd time here and the food is great. I would recommend their food anytime 😊 Abraham was also great help. He helped with recommendations in picking something. To The owner, maybe a military discount in the future 🙂 Thank you again.",
+          "relativeTime": "2 weeks ago",
+          "publishTime": "2026-05-26T21:45:03.793598202Z"
         },
         {
           "author": "J GIELATA",
@@ -259,15 +268,6 @@
           "text": "SO GOOD. I got tacos, cookies and cake! Christian, Josh and Abraham got me right. Always a pleasure at El Pueblo. GOOD PEOPLE.",
           "relativeTime": "a week ago",
           "publishTime": "2026-06-02T01:11:51.962939610Z"
-        },
-        {
-          "author": "riley mcgann",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjU5_MKZQ8R-RiYs8f7QGiqKWfcnmBSNm6em_KEsXYorrci0jkc=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/104704095731824630729/reviews",
-          "rating": 5,
-          "text": "Good customer service, perfectly placed right next to the beach for a quick bite or sit down meal.",
-          "relativeTime": "a week ago",
-          "publishTime": "2026-05-29T18:31:44.604360133Z"
         }
       ]
     }
