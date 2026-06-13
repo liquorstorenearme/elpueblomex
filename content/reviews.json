@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-06-12T19:03:47.962Z",
+  "fetched_at": "2026-06-13T18:06:29.714Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 1821,
+      "total": 1824,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.6,
-      "total": 1319,
+      "total": 1320,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1308,
+      "total": 1310,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -153,13 +153,13 @@
           "publishTime": "2026-02-17T19:22:34.925564931Z"
         },
         {
-          "author": "Lisa Leung",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKPOL8o9Q8P7KZcxmYtYYVkyz_Qh7xl_ax3d5RAoQNL3CKO-w=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/109504769454024156876/reviews",
+          "author": "Amy Y",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLCHz6QMVZkDrDJw6k_zpjXMdiw-4Ctlo-DncbK-WSJ0NNcBlnW=s128-c0x00000000-cc-rp-mo-ba5",
+          "authorUrl": "https://www.google.com/maps/contrib/106296843800541593082/reviews",
           "rating": 5,
-          "text": "Fish tacos: great price AND great quality! Unbeatable value. The vibe of the restaurant is chill and awesome. The bartender guy was so sweet and attentive!",
-          "relativeTime": "10 months ago",
-          "publishTime": "2025-08-03T19:52:41.738293165Z"
+          "text": "This is now one of my favorite fish taco places. You can't beat the price AND quality. The taco portions are huge! No skimping on the fish and both the corn and flour tortillas are so good. I managed to eat 4 tacos but I could have happily stopped at 3. The pickled carrots at the salsa bar were deliciously tangy and crunchy as well as a side, it's a perfect complement to the tacos. Loved everything about this place!",
+          "relativeTime": "a year ago",
+          "publishTime": "2025-04-03T02:06:54.562393Z"
         }
       ]
     },
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2336,
+      "total": 2337,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 246,
+      "total": 267,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
