@@ -168,6 +168,26 @@
       var action = f.getAttribute('action') || '';
       if (action.indexOf('/api/') !== 0) return;
       ga('form_submit', { form_type: action.replace('/api/', '') });
+      // Enhanced conversions: hand the lead's own email/phone to gtag, which
+      // normalizes + SHA-256 hashes it client-side before sending (terms accepted
+      // account-side). Improves match-back of this lead to its originating ad click.
+      try {
+        var ud = {};
+        var em = f.querySelector('[name="email"]');
+        var ph = f.querySelector('[name="phone"]');
+        if (em && em.value) ud.email = em.value.trim().toLowerCase();
+        if (ph && ph.value) {
+          var raw = ph.value.replace(/[^\d+]/g, '');
+          if (raw && raw.charAt(0) !== '+') {
+            if (raw.length === 10) raw = '+1' + raw;
+            else if (raw.length === 11 && raw.charAt(0) === '1') raw = '+' + raw;
+          }
+          if (raw) ud.phone_number = raw;
+        }
+        if (typeof window.gtag === 'function' && (ud.email || ud.phone_number)) {
+          window.gtag('set', 'user_data', ud);
+        }
+      } catch (e2) {}
       adsConv('lead');
       meta('Lead');
     }, true);
