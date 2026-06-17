@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-06-16T20:12:07.961Z",
+  "fetched_at": "2026-06-17T19:24:42.818Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
-      "rating": 4.6,
-      "total": 1827,
+      "rating": 4.7,
+      "total": 1830,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -45,13 +45,13 @@
           "publishTime": "2026-01-26T19:45:27.087499124Z"
         },
         {
-          "author": "Suzanne Cooper",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUwaTNuuTFViceRIN-5u2cju3aAnFYGfU-zBkd0kEWHxYG0YdQ=s128-c0x00000000-cc-rp-mo-ba4",
-          "authorUrl": "https://www.google.com/maps/contrib/111575469131007869801/reviews",
+          "author": "Marcel Chambers",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVEbynpnM6wrc6ktJCGZSk0ielhawnZ_qa8B6q_nxWb1WIsPtw=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/115029596952718275197/reviews",
           "rating": 5,
-          "text": "The best fish tacos and only $1.39 each. They are delicious and the salsa bar is on point!",
+          "text": "Free fish taco today and looking forward to the andobado and carnitas quesadillas! Ripping good gas prices and a car wash while having a delicious lunch. Feels like a So Cal Sunday.",
           "relativeTime": "4 months ago",
-          "publishTime": "2026-02-01T22:28:18.164174979Z"
+          "publishTime": "2026-01-25T22:06:59.173242368Z"
         }
       ]
     },
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1316,
+      "total": 1317,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -124,6 +124,15 @@
           "text": "I underestimated this place. The meats were well seasoned, the taco bar was thoughtfully stocked, and the staff was warm and efficient. For the quality, it is an excellent value. The only puzzling note was the generic signage out front, which hides a spot that deserves to be known by name.",
           "relativeTime": "3 months ago",
           "publishTime": "2026-02-27T23:50:26.717831119Z"
+        },
+        {
+          "author": "em",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKZBG7vSpn1h_dGn5iO8wER9xVX8pRAjQXhMNC0WoEkew6t0A=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/106654231285794123583/reviews",
+          "rating": 1,
+          "text": "There was a crumpled receipt with a time stamp of like three hours ago wrapped inside my taco. Service is really bad when the guy manager isn’t there. Dine in order was packaged as a to go order and never brought out until we went to ask about our food being ready.",
+          "relativeTime": "2 weeks ago",
+          "publishTime": "2026-05-30T23:26:13.357878912Z"
         },
         {
           "author": "Andrew Barrera",
@@ -140,7 +149,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/104103065502854931641/reviews",
           "rating": 5,
           "text": "We are new to the area and have been searching for somewhere to make our \"regular\" place for date night. We definitely lucked out eating here!\n\nGiovanna made our experience so special. Our service was prompt, polite, and consistent. We never had to worry about looking for refills or extras during the meal. Her presence let us enjoy the food, atmosphere, each other's company.\n\nWould definitely recommend! We'll be back.",
-          "relativeTime": "3 months ago",
+          "relativeTime": "4 months ago",
           "publishTime": "2026-02-17T19:22:34.925564931Z"
         },
         {
@@ -151,15 +160,6 @@
           "text": "This is now one of my favorite fish taco places. You can't beat the price AND quality. The taco portions are huge! No skimping on the fish and both the corn and flour tortillas are so good. I managed to eat 4 tacos but I could have happily stopped at 3. The pickled carrots at the salsa bar were deliciously tangy and crunchy as well as a side, it's a perfect complement to the tacos. Loved everything about this place!",
           "relativeTime": "a year ago",
           "publishTime": "2025-04-03T02:06:54.562393Z"
-        },
-        {
-          "author": "Colin Anderlohr",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjU2mdoAnGQHFLFZ5RKQGnPmEAKv-mxhQUIaqf1r7RJ4Tfoji9AnYA=s128-c0x00000000-cc-rp-mo-ba4",
-          "authorUrl": "https://www.google.com/maps/contrib/104050760225289345576/reviews",
-          "rating": 5,
-          "text": "Delicious!  We started with house margs and had the Chicken Protein Bowl and the Carnitas plate.  Carnitas were so darn good.  Salsa bar had such a great bite to it!  We will be back.",
-          "relativeTime": "6 months ago",
-          "publishTime": "2025-12-15T23:02:11.433674864Z"
         }
       ]
     },
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2344,
+      "total": 2346,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -176,7 +176,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/114530402376013404665/reviews",
           "rating": 5,
           "text": "Hadn’t been here since it was the make-your-own pizza place — I can’t believe they’ve been here for 8 years now!\nWe sat at the (small) bar and totally lucked out with Joe as our bartender. He was awesome — super attentive, checked in on us (and everyone) often, and provided fast service. You can tell he really cares about the patrons. He also makes great drinks. The Paloma is one of his specialties, and I also tried the Siesta from their feature menu of the month (Jan 2026), which was really good. I was a little hesitant to try the Paloma because some places make it too tart, but his was very well balanced. Same with the Siesta — I thought it might be lime-forward and tart, but it was surprisingly smooth and balanced.\nThey have a full bar, so if you’re not into beer, there are plenty of other options. They also have an outdoor patio area, which is great for families or kids’ sports teams after a game.\nGood Mexican food without restaurant-level prices. I’d say it’s like an upscale taco shop, but better. The staff is really nice and friendly, and there are lots of regulars. They also have TVs in the bar area and show UFC fights, so check their website for details.\nIt does get really busy, which is great for the business, but they have a good system to move people along. You order at the front, and if the bar area isn’t too busy, they’ll call you over and assist with your order. They currently have happy hour every day from 2pm–7pm and again from 11pm–12am for late-night happy hour.\nGreat place to go!",
-          "relativeTime": "4 months ago",
+          "relativeTime": "5 months ago",
           "publishTime": "2026-01-17T22:38:55.495644486Z"
         },
         {
@@ -221,9 +221,36 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 297,
+      "total": 306,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
+        {
+          "author": "Chris Wood",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocI4f-fYhCaspWmLDO7KktiUDS9uqnHMP8vthaUw3tUuZTNPdg=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/106940096083774120249/reviews",
+          "rating": 5,
+          "text": "This is such a nice restaurant. The prices are great and Carlos is one of the nicest person on earth. He helped me so much with my order and I am so happy that I’m gonna be here more get that one dollar 50 Cent taco",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-06-09T20:57:30.971473170Z"
+        },
+        {
+          "author": "Rosa Rodriguez",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLAuPr3Q2jZwrbH4ZWFuSGnpYqn3JzgdksUQgzzIGeUvPyj-4A=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/113119805472748769354/reviews",
+          "rating": 5,
+          "text": "This place is a yumi, I work Prety close from the restaurant and it’s my favorite place to eat for lunch, muy rico👌Frankie gave me a very good costumer service he was very polite and friendly😊 thank you all…",
+          "relativeTime": "in the last week",
+          "publishTime": "2026-06-12T18:46:06.072901983Z"
+        },
+        {
+          "author": "Leslie Saenz",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKrhGSzIrmKFTbFgVKXu0e99AdIOYcQprbLXKBtelgruVn3HQ=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/102099588690217511428/reviews",
+          "rating": 5,
+          "text": "Do NOT miss out on the beans.  We bought some to take home.  Ate dinner here and then lunch the next day.  Where can you get 2 fish tacos, beans and a drink for $6.21.  HERE!!  The protein bowl, chicken taco and shredded beef taco were also delish!!",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-06-05T18:46:20.955132001Z"
+        },
         {
           "author": "Louis Zarour",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWrmeS8Kr9Z7YNHygcgE7qpJYDJORo70Xk9R0oKfCcZIK4UbwKTsg=s128-c0x00000000-cc-rp-mo-ba2",
@@ -241,33 +268,6 @@
           "text": "California burrito, sub par. $18 for a pinner California that just does not do it. Standard school pencil is longer and thats saying something. Taste was nothing special. Try don Carlos up the street for real authentic Mexican food and more.",
           "relativeTime": "2 weeks ago",
           "publishTime": "2026-05-31T01:44:11.874712614Z"
-        },
-        {
-          "author": "David Rendon",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIUCTl5n124bxY-h7t-JZl9me0du5DJaKGwDIS44jM0ODaJrw=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/115946940282885334571/reviews",
-          "rating": 5,
-          "text": "Ufff food was excellent, everybody was very nice and their salsas….uffff",
-          "relativeTime": "4 weeks ago",
-          "publishTime": "2026-05-19T02:27:12.440054011Z"
-        },
-        {
-          "author": "Yusef Reynolds",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjV_fEDOn_I8KdvQZB27qKuj6pCI2pwzh9Q9UJplHXzd3SeDWYU=s128-c0x00000000-cc-rp-mo-ba2",
-          "authorUrl": "https://www.google.com/maps/contrib/111101953457161820987/reviews",
-          "rating": 5,
-          "text": "⭐⭐⭐⭐⭐\n\nHad an amazing experience at El Pueblo Mexican Food & Bar. The food was fresh, flavorful, and came out fast. The staff was welcoming and made the whole atmosphere feel relaxed and friendly. Everything from the tacos to the drinks was on point, and the location in La Jolla makes it even better. Definitely one of my go-to spots now for great Mexican food and good vibes. Highly recommend!",
-          "relativeTime": "2 weeks ago",
-          "publishTime": "2026-05-27T06:07:21.800513407Z"
-        },
-        {
-          "author": "Mayo B",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUPPhYFoG_NpnSVpXpZK83f-S1X7QEqGxB6ZmRiFODhaDi0ex5p=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/113347798211223417624/reviews",
-          "rating": 5,
-          "text": "Loaded fish tacos for just $1.50 EVERY single day?! 🌮🔥\nnot just Taco Tuesdays — that’s the everyday price! And these tacos are HUGE. I usually get mine on a flour tortilla, and the fish literally stretches across the whole thing. Plus, it’s not just greasy batter either… the fish is thick, fresh, and honestly one of the best fish tacos in San Diego, especially for that price.\n\nThe service is always solid, there’s plenty of seating inside and outside. I’ve tried a few other dishes and they’re all AMAZING!!",
-          "relativeTime": "4 weeks ago",
-          "publishTime": "2026-05-19T02:42:22.274096904Z"
         }
       ]
     }
