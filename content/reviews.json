@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-23T19:08:44.913Z",
+  "fetched_at": "2026-06-24T18:50:41.103Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1349,
+      "total": 1354,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1321,
+      "total": 1322,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2354,
+      "total": 2358,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 404,
+      "total": 434,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -230,7 +230,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/106940096083774120249/reviews",
           "rating": 5,
           "text": "This is such a nice restaurant. The prices are great and Carlos is one of the nicest person on earth. He helped me so much with my order and I am so happy that I’m gonna be here more get that one dollar 50 Cent taco",
-          "relativeTime": "a week ago",
+          "relativeTime": "2 weeks ago",
           "publishTime": "2026-06-09T20:57:30.971473170Z"
         },
         {
