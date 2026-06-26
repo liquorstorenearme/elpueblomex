@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-06-25T19:04:06.846Z",
+  "fetched_at": "2026-06-26T18:50:48.342Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 1833,
+      "total": 1834,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -58,8 +58,8 @@
     "carlsbad": {
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
-      "rating": 4.7,
-      "total": 1357,
+      "rating": 4.6,
+      "total": 1358,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -212,7 +212,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/101396322124351117044/reviews",
           "rating": 4,
           "text": "You can’t beat $1.39 fish tacos.  They are the best!  The salsa bar is an added bonus!  Flour tortillas in tacos are always great!  One small ding in my order where I ordered two fish tacos and received one instead, so check your orders.",
-          "relativeTime": "3 weeks ago",
+          "relativeTime": "4 weeks ago",
           "publishTime": "2026-05-28T22:42:13.637182829Z"
         }
       ]
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 470,
+      "total": 502,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -239,7 +239,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/102099588690217511428/reviews",
           "rating": 5,
           "text": "Do NOT miss out on the beans.  We bought some to take home.  Ate dinner here and then lunch the next day.  Where can you get 2 fish tacos, beans and a drink for $6.21.  HERE!!  The protein bowl, chicken taco and shredded beef taco were also delish!!",
-          "relativeTime": "2 weeks ago",
+          "relativeTime": "3 weeks ago",
           "publishTime": "2026-06-05T18:46:20.955132001Z"
         },
         {
