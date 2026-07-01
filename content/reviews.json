@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-06-30T18:54:48.474Z",
+  "fetched_at": "2026-07-01T18:58:29.962Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 1845,
+      "total": 1846,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -16,15 +16,6 @@
           "text": "Everything was perfect since i walked in, Aylinn was a big help while i was going through the menu and the cooks (Fabian and Iracema) did an awesome job cuz it was delicious 💕",
           "relativeTime": "4 months ago",
           "publishTime": "2026-02-12T04:28:09.981135263Z"
-        },
-        {
-          "author": "Anthony Wong",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUxaN1o-Xj5pOGGQm2OmSQW1KVAAWX_qFh5k19Gn71QEjPmal8=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/111744523662406636637/reviews",
-          "rating": 5,
-          "text": "I’ve been coming here for over 10 years and even through COVID. The BEST fish tacos I’ve had from LA to SD. The fish, the hours, and not to even mention the price. You can’t beat the tacos, the quality and the service! Aylin and Noé are always serving with a smile!\n\nI’ll always be coming back and highly recommend this place for the best fish tacos in SoCal period!",
-          "relativeTime": "4 months ago",
-          "publishTime": "2026-02-12T04:10:03.602612658Z"
         },
         {
           "author": "Fabiana Marques",
@@ -52,6 +43,15 @@
           "text": "A favorite spot for sure! Love the fish tacos deal. Service is always kind and fast, and Arturo was especially helpful today. Anthony & Jeremiah too.",
           "relativeTime": "4 months ago",
           "publishTime": "2026-02-01T23:30:24.661958535Z"
+        },
+        {
+          "author": "Victor A. Rico",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWeP5eeXNLx_MayFZpGoTYJZ2TPQCgDzDpmJj7-966PzHDw38za=s128-c0x00000000-cc-rp-mo-ba4",
+          "authorUrl": "https://www.google.com/maps/contrib/108830155238935303973/reviews",
+          "rating": 5,
+          "text": "Small casual taco shop between a car wash and a gas station but with a few seats indoors and more seating in a patio area. Great food at very reasonable prices! We had fish tacos in a light batter wrapped with two full size corn tortillas garnished with traditional cabbage and creamy sauce for only $1.39 a taco!",
+          "relativeTime": "3 months ago",
+          "publishTime": "2026-03-07T15:05:26.027121341Z"
         }
       ]
     },
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1374,
+      "total": 1376,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -90,15 +90,6 @@
           "publishTime": "2026-06-02T02:02:30.577897427Z"
         },
         {
-          "author": "Jo M",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIrM22l82vXxSjnBhHaN1b8JIl-iJKz4fN4g0KimF6Kx7WG6hoU=s128-c0x00000000-cc-rp-mo-ba4",
-          "authorUrl": "https://www.google.com/maps/contrib/109762828147206392520/reviews",
-          "rating": 1,
-          "text": "I used to order from here a lot, but it’s been a while. I recently ordered fish tacos with a side of fries. The fish tacos were on point and really good. However, I was disappointed with the fries — for $4.19, the portion was very small and barely filled the container. Definitely not worth the price.",
-          "relativeTime": "5 months ago",
-          "publishTime": "2026-01-17T05:22:13.719903179Z"
-        },
-        {
           "author": "Ethan Feron",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXIWyhIkIlpNMus0_o-taHdm0VtnmGW8-xyi53Dtno6P_nyOM1Z=s128-c0x00000000-cc-rp-mo-ba5",
           "authorUrl": "https://www.google.com/maps/contrib/105935061103665565847/reviews",
@@ -106,6 +97,15 @@
           "text": "Need left handed ladles for the hot sauce - all good - went for the fish tacos as always - flour better than corn (shrugs!) Went back and got elevated to “regular” status - really nice peeps work here",
           "relativeTime": "2 months ago",
           "publishTime": "2026-04-22T20:15:48.088447673Z"
+        },
+        {
+          "author": "Kanna Botanika",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjU2lppqTvvFvJeC3CyMi_EiPfPoPziOyrQRf7jFrKuZNjKgFDU=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/111149672836441471908/reviews",
+          "rating": 5,
+          "text": "This is the best California burrito I have ever had. I used to love California burritos and I stopped liking them then I had one here and started liking them again now I give them every time here they’re amazing this place is mom. Thank you.",
+          "relativeTime": "2 months ago",
+          "publishTime": "2026-04-22T00:28:35.281665435Z"
         }
       ]
     },
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1330,
+      "total": 1331,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -135,15 +135,6 @@
           "publishTime": "2026-02-27T23:50:26.717831119Z"
         },
         {
-          "author": "em",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKZBG7vSpn1h_dGn5iO8wER9xVX8pRAjQXhMNC0WoEkew6t0A=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/106654231285794123583/reviews",
-          "rating": 1,
-          "text": "There was a crumpled receipt with a time stamp of like three hours ago wrapped inside my taco. Service is really bad when the guy manager isn’t there. Dine in order was packaged as a to go order and never brought out until we went to ask about our food being ready.",
-          "relativeTime": "a month ago",
-          "publishTime": "2026-05-30T23:26:13.357878912Z"
-        },
-        {
           "author": "Leo Adventures",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWDrBKemvMYFnd_QryrdnA7KKClNZ--tDByaVgwP2jA7P8x9b4=s128-c0x00000000-cc-rp-mo-ba3",
           "authorUrl": "https://www.google.com/maps/contrib/104453368911410729047/reviews",
@@ -160,6 +151,15 @@
           "text": "Cherry was most helpfully with ordering. Wasn’t sure what to get since it was our first time here. Recommend the fish tacos! Delicious!!!",
           "relativeTime": "4 months ago",
           "publishTime": "2026-02-20T21:17:23.173516760Z"
+        },
+        {
+          "author": "em",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKZBG7vSpn1h_dGn5iO8wER9xVX8pRAjQXhMNC0WoEkew6t0A=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/106654231285794123583/reviews",
+          "rating": 1,
+          "text": "There was a crumpled receipt with a time stamp of like three hours ago wrapped inside my taco. Service is really bad when the guy manager isn’t there. Dine in order was packaged as a to go order and never brought out until we went to ask about our food being ready.",
+          "relativeTime": "a month ago",
+          "publishTime": "2026-05-30T23:26:13.357878912Z"
         }
       ]
     },
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2367,
+      "total": 2368,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 606,
+      "total": 607,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -230,7 +230,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/106940096083774120249/reviews",
           "rating": 5,
           "text": "This is such a nice restaurant. The prices are great and Carlos is one of the nicest person on earth. He helped me so much with my order and I am so happy that I’m gonna be here more get that one dollar 50 Cent taco",
-          "relativeTime": "2 weeks ago",
+          "relativeTime": "3 weeks ago",
           "publishTime": "2026-06-09T20:57:30.971473170Z"
         },
         {
