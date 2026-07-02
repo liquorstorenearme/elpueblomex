@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-07-01T18:58:29.962Z",
+  "fetched_at": "2026-07-02T18:24:35.974Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 1846,
+      "total": 1852,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -41,7 +41,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/113915083073393752504/reviews",
           "rating": 5,
           "text": "A favorite spot for sure! Love the fish tacos deal. Service is always kind and fast, and Arturo was especially helpful today. Anthony & Jeremiah too.",
-          "relativeTime": "4 months ago",
+          "relativeTime": "5 months ago",
           "publishTime": "2026-02-01T23:30:24.661958535Z"
         },
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1376,
+      "total": 1381,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -86,7 +86,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/114758775439965190588/reviews",
           "rating": 5,
           "text": "Quick, easy, and delicious dinner! I’ve been going here for their $1 fish tacos (now $1.39, but I think I can afford the increase) since I was a kid. Went back to visit my hometown and had to come here. Quality still as good as I remember as a kid! Iker and Jeremiah were super helpful at the cashiers. 10/10 recommend for a quick, affordable lunch or dinner.",
-          "relativeTime": "4 weeks ago",
+          "relativeTime": "a month ago",
           "publishTime": "2026-06-02T02:02:30.577897427Z"
         },
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 607,
+      "total": 634,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
