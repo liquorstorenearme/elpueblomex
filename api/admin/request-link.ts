@@ -1,4 +1,11 @@
+import { rateLimit, clientIp } from "../_ratelimit";
+import { kv } from "@vercel/kv";
+
 export const config = { runtime: "edge" };
+
+function kvConfigured(): boolean {
+  return !!(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+}
 
 // PUBLIC endpoint (not in middleware matcher).
 // POST { email } -> if email is in ADMIN_USERS allowlist, sends a magic-link
@@ -32,8 +39,9 @@ function b64url(s: string): string {
   return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
 
-async function makeMagicToken(email: string, role: string, secret: string): Promise<string> {
-  const payload = { email, role, exp: Date.now() + TOKEN_TTL_MS, kind: "magic" };
+async function makeMagicToken(email: string, role: string, secret: string, jti?: string): Promise<string> {
+  const payload: Record<string, unknown> = { email, role, exp: Date.now() + TOKEN_TTL_MS, kind: "magic" };
+  if (jti) payload.jti = jti;
   const payloadB64 = b64url(JSON.stringify(payload));
   const sig = await hmacSign(payloadB64, secret);
   return `${payloadB64}.${sig}`;
@@ -62,6 +70,13 @@ export default async function handler(req: Request): Promise<Response> {
   if (!secret) return json({ error: "Server not configured." }, 500);
   if (!resendKey) return json({ error: "Email service not configured." }, 500);
 
+  // Per-IP throttle, checked before the allowlist lookup so it applies uniformly
+  // and can't be used to probe which emails are valid.
+  const ip = clientIp(req);
+  if ((await rateLimit("magiclink:ip", ip, 10, 15 * 60)).limited) {
+    return json({ error: "Too many requests. Try again in a few minutes." }, 429);
+  }
+
   let body: any;
   try { body = await req.json(); } catch { return json({ error: "Invalid request." }, 400); }
   const email = String(body?.email || "").trim().toLowerCase();
@@ -75,7 +90,25 @@ export default async function handler(req: Request): Promise<Response> {
     return json({ ok: true });
   }
 
-  const token = await makeMagicToken(user.email, user.role, secret);
+  // Per-email cap: prevents mail-bombing a real admin inbox / burning Resend quota.
+  // On trip we silently return the same 200 as the unknown-email path (no enumeration
+  // leak, no email sent).
+  if ((await rateLimit("magiclink:email", user.email, 3, 15 * 60)).limited) {
+    return json({ ok: true });
+  }
+
+  // Single-use nonce: store a jti in KV (TTL = token lifetime). verify-link deletes
+  // it on first use, so the link can't be replayed within its 15-min window. If KV is
+  // unavailable the token carries no jti and falls back to the (replayable) prior behavior.
+  let jti: string | undefined;
+  if (kvConfigured()) {
+    try {
+      jti = crypto.randomUUID();
+      await kv.set(`ml:jti:${jti}`, 1, { ex: Math.ceil(TOKEN_TTL_MS / 1000) });
+    } catch { jti = undefined; }
+  }
+
+  const token = await makeMagicToken(user.email, user.role, secret, jti);
   const url = new URL(req.url);
   const origin = url.origin;
   const link = `${origin}/api/admin/verify-link?token=${encodeURIComponent(token)}`;

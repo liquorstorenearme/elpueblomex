@@ -14,7 +14,7 @@ function getRole(req: Request): string {
   if (!m) return "";
   try {
     const payload = JSON.parse(atob(m[1].split(".")[0].replace(/-/g, "+").replace(/_/g, "/")));
-    return payload.role || "owner";
+    return payload.role || "read_only";
   } catch { return ""; }
 }
 

@@ -29,8 +29,8 @@ export default async function handler(req: Request): Promise<Response> {
     },
   );
   if (!r.ok) {
-    const text = await r.text();
-    return new Response(JSON.stringify({ error: "GitHub fetch failed", status: r.status, detail: text }), { status: 502 });
+    console.error("load: GitHub fetch failed", r.status, await r.text());
+    return new Response(JSON.stringify({ error: "Could not load content." }), { status: 502 });
   }
   const data: any = await r.json();
   const decoded = atob(data.content.replace(/\n/g, ""));

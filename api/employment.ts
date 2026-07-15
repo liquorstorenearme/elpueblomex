@@ -1,17 +1,10 @@
 import { looksLikeSpam } from "./_spam";
+import { rateLimit, clientIp } from "./_ratelimit";
 
 export const config = { runtime: "edge" };
 
-const attempts = new Map<string, { count: number; reset: number }>();
-const RL_WINDOW_MS = 10 * 60 * 1000;
+const RL_WINDOW_S = 10 * 60;
 const RL_MAX = 3;
-function ratelimited(ip: string): boolean {
-  const now = Date.now();
-  const rec = attempts.get(ip);
-  if (!rec || rec.reset < now) { attempts.set(ip, { count: 1, reset: now + RL_WINDOW_MS }); return false; }
-  rec.count += 1;
-  return rec.count > RL_MAX;
-}
 
 const esc = (s: string) =>
   String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -43,8 +36,8 @@ export default async function handler(req: Request): Promise<Response> {
 
   if (!resendKey) return fallbackBack("config");
 
-  const ip = (req.headers.get("x-forwarded-for") || "unknown").split(",")[0].trim();
-  if (ratelimited(ip)) return fallbackBack("rate");
+  const ip = clientIp(req);
+  if ((await rateLimit("form:employment", ip, RL_MAX, RL_WINDOW_S)).limited) return fallbackBack("rate");
 
   let form: FormData;
   try { form = await req.formData(); } catch { return fallbackBack("parse"); }

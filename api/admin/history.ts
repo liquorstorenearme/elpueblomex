@@ -27,7 +27,7 @@ export default async function handler(req: Request): Promise<Response> {
       },
     },
   );
-  if (!r.ok) return json({ error: "GitHub list commits failed", status: r.status, detail: await r.text() }, 502);
+  if (!r.ok) { console.error("history: GitHub list commits failed", r.status, await r.text()); return json({ error: "Could not load history." }, 502); }
   const commits: any[] = await r.json();
 
   const filtered = commits

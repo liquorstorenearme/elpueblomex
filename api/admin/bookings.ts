@@ -8,7 +8,19 @@ import {
 
 export const config = { runtime: "edge" };
 
-// Access is gated by middleware.ts (HMAC-signed ep_admin cookie).
+// Access is gated by middleware.ts (HMAC-signed ep_admin cookie). Reads are allowed
+// for any signed-in role; writes (status/notes) require manager or owner.
+
+const ROLE_RANK: Record<string, number> = { read_only: 1, manager: 2, owner: 3 };
+function getRole(req: Request): string {
+  const cookies = req.headers.get("cookie") || "";
+  const m = cookies.match(/(?:^|;\s*)ep_admin=([^;]+)/);
+  if (!m) return "";
+  try {
+    const payload = JSON.parse(atob(m[1].split(".")[0].replace(/-/g, "+").replace(/_/g, "/")));
+    return payload.role || "read_only";
+  } catch { return ""; }
+}
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
@@ -31,6 +43,9 @@ export default async function handler(req: Request): Promise<Response> {
   }
 
   if (req.method === "PATCH" || req.method === "POST") {
+    if ((ROLE_RANK[getRole(req)] || 0) < ROLE_RANK.manager) {
+      return json({ error: "Your account can view bookings but not change them." }, 403);
+    }
     let body: any;
     try { body = await req.json(); } catch { return json({ error: "Bad JSON" }, 400); }
     const id = String(body?.id || "").trim();

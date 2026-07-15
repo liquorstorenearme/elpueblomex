@@ -2,19 +2,12 @@ import { looksLikeSpam } from "./_spam";
 import { resolveRecipients, LOCATION_NAMES } from "./_locations";
 import { buildIcs, toBase64 } from "./_ics";
 import { saveBooking, kvConfigured, type Booking } from "./_bookings";
+import { rateLimit, clientIp } from "./_ratelimit";
 
 export const config = { runtime: "edge" };
 
-const attempts = new Map<string, { count: number; reset: number }>();
-const RL_WINDOW_MS = 5 * 60 * 1000;
+const RL_WINDOW_S = 5 * 60;
 const RL_MAX = 5;
-function ratelimited(ip: string): boolean {
-  const now = Date.now();
-  const rec = attempts.get(ip);
-  if (!rec || rec.reset < now) { attempts.set(ip, { count: 1, reset: now + RL_WINDOW_MS }); return false; }
-  rec.count += 1;
-  return rec.count > RL_MAX;
-}
 
 const esc = (s: string) =>
   String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -46,14 +39,14 @@ export default async function handler(req: Request): Promise<Response> {
   const fallbackTo = process.env.EP_CATERING_TO || process.env.EP_TO_EMAIL || "hello@elpueblomex.com";
   const fromEmail = process.env.EP_FROM_EMAIL || "noreply@elpueblomex.com";
 
-  const ip = (req.headers.get("x-forwarded-for") || "unknown").split(",")[0].trim();
+  const ip = clientIp(req);
 
   let form: FormData;
   try { form = await req.formData(); } catch { return back("/catering/", req.url, { err: "parse" }); }
   const g = (k: string) => String(form.get(k) || "").trim();
   const ret = safeReturn(g("return_to"));
 
-  if (ratelimited(ip)) return back(ret, req.url, { err: "rate" });
+  if ((await rateLimit("form:catering", ip, RL_MAX, RL_WINDOW_S)).limited) return back(ret, req.url, { err: "rate" });
   if (g("website")) return back(ret, req.url, { sent: "1" });
 
   const name = g("name").slice(0, 100);

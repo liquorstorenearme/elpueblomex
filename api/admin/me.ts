@@ -19,7 +19,7 @@ export default async function handler(req: Request): Promise<Response> {
     }
     return json({
       email: payload.email || "owner",
-      role: payload.role || "owner",
+      role: payload.role || "read_only",
     });
   } catch {
     return json({ error: "Bad cookie" }, 401);

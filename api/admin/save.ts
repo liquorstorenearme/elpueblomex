@@ -10,7 +10,7 @@ function getRole(req: Request): string {
   if (!m) return "";
   try {
     const payload = JSON.parse(atob(m[1].split(".")[0].replace(/-/g, "+").replace(/_/g, "/")));
-    return payload.role || "owner";
+    return payload.role || "read_only";
   } catch { return ""; }
 }
 
@@ -97,8 +97,8 @@ export default async function handler(req: Request): Promise<Response> {
   );
 
   if (!put.ok) {
-    const detail = await put.text();
-    return new Response(JSON.stringify({ error: "GitHub write failed", status: put.status, detail }), { status: 502 });
+    console.error("save: GitHub write failed", put.status, await put.text());
+    return new Response(JSON.stringify({ error: "Could not save changes." }), { status: 502 });
   }
   const result: any = await put.json();
   return new Response(JSON.stringify({

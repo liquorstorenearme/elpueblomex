@@ -1,3 +1,5 @@
+import { rateLimit, clientIp } from "../_ratelimit";
+
 export const config = { runtime: "edge" };
 
 const encoder = new TextEncoder();
@@ -20,19 +22,8 @@ async function sign(payload: object, secret: string): Promise<string> {
   return `${payloadB64}.${b64url(new Uint8Array(sig))}`;
 }
 
-const attempts = new Map<string, { count: number; reset: number }>();
-const RL_WINDOW_MS = 15 * 60 * 1000;
+const RL_WINDOW_S = 15 * 60;
 const RL_MAX = 8;
-function ratelimited(ip: string): boolean {
-  const now = Date.now();
-  const rec = attempts.get(ip);
-  if (!rec || rec.reset < now) {
-    attempts.set(ip, { count: 1, reset: now + RL_WINDOW_MS });
-    return false;
-  }
-  rec.count += 1;
-  return rec.count > RL_MAX;
-}
 
 export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
@@ -43,8 +34,10 @@ export default async function handler(req: Request): Promise<Response> {
 
   if (!password || !secret) return new Response("Server not configured", { status: 500 });
 
-  const ip = (req.headers.get("x-forwarded-for") || "unknown").split(",")[0].trim();
-  if (ratelimited(ip)) return Response.redirect(new URL("/admin-login/?err=locked", req.url).toString(), 302);
+  const ip = clientIp(req);
+  if ((await rateLimit("login", ip, RL_MAX, RL_WINDOW_S)).limited) {
+    return Response.redirect(new URL("/admin-login/?err=locked", req.url).toString(), 302);
+  }
 
   const form = await req.formData();
   const submitted = String(form.get("password") || "");

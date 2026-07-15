@@ -1,3 +1,5 @@
+import { kv } from "@vercel/kv";
+
 export const config = { runtime: "edge" };
 
 // PUBLIC endpoint (not in middleware matcher).
@@ -6,6 +8,10 @@ export const config = { runtime: "edge" };
 
 const SESSION_TTL_HOURS_DEFAULT = 24;
 const encoder = new TextEncoder();
+
+function kvConfigured(): boolean {
+  return !!(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+}
 
 async function verifyHmac(payloadB64: string, sigB64: string, secret: string): Promise<boolean> {
   try {
@@ -70,6 +76,24 @@ export default async function handler(req: Request): Promise<Response> {
   }
   if (typeof payload.email !== "string" || typeof payload.role !== "string") {
     return errorPage("Invalid sign-in link.");
+  }
+
+  // Single-use enforcement: consume the jti stored at send time. `kv.del` returns the
+  // number of keys removed — 1 means this is the first use, 0 means it was already used
+  // or expired, so reject. Tokens minted while KV was unavailable carry no jti and skip
+  // this check. On a KV error we fail open (allow) to avoid locking out a real admin.
+  if (typeof payload.jti === "string") {
+    if (!kvConfigured()) {
+      return errorPage("Server not configured.");
+    }
+    try {
+      const consumed = await kv.del(`ml:jti:${payload.jti}`);
+      if (!consumed) {
+        return errorPage("This sign-in link has already been used or has expired. Request a new one.");
+      }
+    } catch {
+      // KV unreachable — allow rather than lock out.
+    }
   }
 
   // Mint the session cookie

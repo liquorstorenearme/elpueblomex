@@ -21,7 +21,7 @@ function getCookieRole(req: Request): { email: string; role: string } {
   if (!m) return { email: "", role: "" };
   try {
     const payload = JSON.parse(atob(m[1].split(".")[0].replace(/-/g, "+").replace(/_/g, "/")));
-    return { email: payload.email || "owner", role: payload.role || "owner" };
+    return { email: payload.email || "owner", role: payload.role || "read_only" };
   } catch { return { email: "", role: "" }; }
 }
 
