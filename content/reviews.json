@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-20T18:51:17.726Z",
+  "fetched_at": "2026-07-21T18:15:18.508Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -23,8 +23,17 @@
           "authorUrl": "https://www.google.com/maps/contrib/109403843432237865235/reviews",
           "rating": 1,
           "text": "Paid $22 for this burrito and chips and honestly it was one of the worst takeout experiences I’ve had. The burrito was poorly rolled, falling apart, had way too much tortilla and barely any filling inside. The food had no flavor or seasoning at all and was honestly terrible.\n\nI called asking for a refund and they told me they would not refund my money unless I drove back there with the receipt. The problem is this was a to-go order and by the time I opened the food, I was already 20 minutes away on the freeway, so going back was not realistic.\n\nI also asked if there was a number or email where I could send photos and make a complaint, and they basically told me there was nothing they could do and that I could leave a bad Google review if I wanted.\n\nTerrible customer service, overpriced food, and horrible quality. I will literally never go back there again and I do not recommend this place to anyone.",
-          "relativeTime": "a month ago",
+          "relativeTime": "2 months ago",
           "publishTime": "2026-05-22T02:31:47.554162948Z"
+        },
+        {
+          "author": "Eric",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLfJ_zdBvXe_1hP1HuINYepUZxh7zd-kQnnez8citS6WkozhQ=s128-c0x00000000-cc-rp-mo-ba2",
+          "authorUrl": "https://www.google.com/maps/contrib/116032176934136660597/reviews",
+          "rating": 5,
+          "text": "Definitely don’t judge this place being on the side of a gas station. It is part of a small chain in the SD area and the food is great…and 24/7? Even better. Was staying at the hotel next door and saw how busy it was, and I can see why. Got enchiladas, chips and guac and tacos. The chips are soooo good, freshly made, worth paying for. $7 for the small guac is a little steep though. Salsas are excellent. Definitely would recommend.",
+          "relativeTime": "3 weeks ago",
+          "publishTime": "2026-06-26T06:26:41.462334624Z"
         },
         {
           "author": "Marcel Chambers",
@@ -43,15 +52,6 @@
           "text": "A favorite spot for sure! Love the fish tacos deal. Service is always kind and fast, and Arturo was especially helpful today. Anthony & Jeremiah too.",
           "relativeTime": "5 months ago",
           "publishTime": "2026-02-01T23:30:24.661958535Z"
-        },
-        {
-          "author": "Matthew Mills",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocJSAZj1nnhyqxEw0sPFKMAVPCkZep2cl-P8SlOQnsLcD9RB2g=s128-c0x00000000-cc-rp-mo-ba2",
-          "authorUrl": "https://www.google.com/maps/contrib/104855834252599935685/reviews",
-          "rating": 5,
-          "text": "A great spot for quick tacos. The fish tacos are only $1.39, taste great, and are very filling. I usually get those every time because it is such a great deal but I also got a carne asada taco and it did not disappoint. It was crowded and parking was hard but those are good signs when you want great food. I got three tacos and left full. I ate one fish taco before I took the picture because I was hungry.",
-          "relativeTime": "8 months ago",
-          "publishTime": "2025-11-19T21:17:17.103418080Z"
         }
       ]
     },
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1432,
+      "total": 1433,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -95,7 +95,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/111149672836441471908/reviews",
           "rating": 5,
           "text": "This is the best California burrito I have ever had. I used to love California burritos and I stopped liking them then I had one here and started liking them again now I give them every time here they’re amazing this place is mom. Thank you.",
-          "relativeTime": "2 months ago",
+          "relativeTime": "3 months ago",
           "publishTime": "2026-04-22T00:28:35.281665435Z"
         },
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2397,
+      "total": 2399,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1005,
+      "total": 1027,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -239,7 +239,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/109120455534988103616/reviews",
           "rating": 5,
           "text": "The food was very good! The service was quick and friendly which we appreciated because we had two leave groups together. The tacos were excellent and good size. The chimichanga was huge! Thank you Joey, Francisco, and Cristina!",
-          "relativeTime": "a week ago",
+          "relativeTime": "2 weeks ago",
           "publishTime": "2026-07-06T20:56:09.133364114Z"
         },
         {
@@ -248,7 +248,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/112706140973484149904/reviews",
           "rating": 5,
           "text": "This place is on point! You know you’re in for a good meal when the pollo is awesome and let me tell you the chicken was superb! Full of flavor and the portions are huge!! The carne asada is top notch, the guacamole was fresh and I don’t know where they get their sour cream from, but it was good! The real chefs kiss is the service; friendly faces, super friendly and helpful: Joshua, Natalia and Francisco are the real reason I’ll be coming back! (And maybe for the pico too)",
-          "relativeTime": "a week ago",
+          "relativeTime": "2 weeks ago",
           "publishTime": "2026-07-07T03:19:07.282373756Z"
         },
         {
