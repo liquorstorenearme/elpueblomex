@@ -1,13 +1,22 @@
 {
-  "fetched_at": "2026-07-21T18:15:18.508Z",
+  "fetched_at": "2026-07-22T18:06:52.731Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 1887,
+      "total": 1888,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
+        {
+          "author": "Danny L",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUie4gCOcOjZFs6fyV4OFdOy6KuwUmFckazIte40tFeST9WdCc=s128-c0x00000000-cc-rp-mo-ba4",
+          "authorUrl": "https://www.google.com/maps/contrib/105542369386060597238/reviews",
+          "rating": 5,
+          "text": "I can’t believe you can still find fish tacos for just $1.39 each in California!\n\nNot only are they affordable, but they’re also absolutely delicious. The ingredients are fresh, the fish is perfectly seasoned, and every bite is packed with flavor. The tacos taste authentic, and the quality easily exceeds the price.\n\nThe food comes out quickly, the service is efficient, and the value is simply unbeatable. If you’re looking for great tacos without breaking the bank, this place is definitely worth a visit!",
+          "relativeTime": "a month ago",
+          "publishTime": "2026-06-17T02:18:40.600074380Z"
+        },
         {
           "author": "Jason Novik",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWIrniFEMpU9lOr3e2ItgK6UcRHolkU7DT-fR_UQeMQHLDJj3LH=s128-c0x00000000-cc-rp-mo-ba3",
@@ -16,6 +25,15 @@
           "text": "$1.39 fish tacos. Places like this should be cherished! Honest restaurant with amazing prices and quality customer service. Cannot beat it! People that actually care about their food and work, and don’t just drive up prices to meet a certain quota.",
           "relativeTime": "2 weeks ago",
           "publishTime": "2026-07-05T02:30:38.998628169Z"
+        },
+        {
+          "author": "Tyler Estes",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXX_Mpqt5sYpVERm2g4_LlsUyVa756yYVK42Mm5uzaY-VwP1BuVJQ=s128-c0x00000000-cc-rp-mo-ba4",
+          "authorUrl": "https://www.google.com/maps/contrib/106082824158787961227/reviews",
+          "rating": 5,
+          "text": "The Fish Tacos are amazing!\n\nWe are here as a family last about 6 years ago. Our friends brought us here and I fell in love with  their food. Feeding a family of 7 plus friends is not a low cost endeavor anymore, but at $1.39 per fish taco we ate till we were all satisfied!!",
+          "relativeTime": "4 months ago",
+          "publishTime": "2026-03-16T00:10:08.733897842Z"
         },
         {
           "author": "Fabiana Marques",
@@ -27,31 +45,13 @@
           "publishTime": "2026-05-22T02:31:47.554162948Z"
         },
         {
-          "author": "Eric",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLfJ_zdBvXe_1hP1HuINYepUZxh7zd-kQnnez8citS6WkozhQ=s128-c0x00000000-cc-rp-mo-ba2",
-          "authorUrl": "https://www.google.com/maps/contrib/116032176934136660597/reviews",
+          "author": "Genelle Castro",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVJeTrQhsJMbubuVgazKHvDLRMhjq3laDghgOpST9KlgYbZ9fwFpA=s128-c0x00000000-cc-rp-mo-ba2",
+          "authorUrl": "https://www.google.com/maps/contrib/114946564551329627633/reviews",
           "rating": 5,
-          "text": "Definitely don’t judge this place being on the side of a gas station. It is part of a small chain in the SD area and the food is great…and 24/7? Even better. Was staying at the hotel next door and saw how busy it was, and I can see why. Got enchiladas, chips and guac and tacos. The chips are soooo good, freshly made, worth paying for. $7 for the small guac is a little steep though. Salsas are excellent. Definitely would recommend.",
-          "relativeTime": "3 weeks ago",
-          "publishTime": "2026-06-26T06:26:41.462334624Z"
-        },
-        {
-          "author": "Marcel Chambers",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVEbynpnM6wrc6ktJCGZSk0ielhawnZ_qa8B6q_nxWb1WIsPtw=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/115029596952718275197/reviews",
-          "rating": 5,
-          "text": "Free fish taco today and looking forward to the andobado and carnitas quesadillas! Ripping good gas prices and a car wash while having a delicious lunch. Feels like a So Cal Sunday.",
-          "relativeTime": "5 months ago",
-          "publishTime": "2026-01-25T22:06:59.173242368Z"
-        },
-        {
-          "author": "Bryce Kreiser",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXo0g9ByY1V2xqWrvhAFHtt7yNGeYkdPuBB1r7YIiyoa_nRQSBelA=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/113915083073393752504/reviews",
-          "rating": 5,
-          "text": "A favorite spot for sure! Love the fish tacos deal. Service is always kind and fast, and Arturo was especially helpful today. Anthony & Jeremiah too.",
-          "relativeTime": "5 months ago",
-          "publishTime": "2026-02-01T23:30:24.661958535Z"
+          "text": "We absolutely loved this place! We ended up here from a local's suggestion and I'm so glad. My husband was on the hunt for some delicious fish tacos and we found them here! And the price was the cherry on top. I got the lengua which a lot of places don't have so I was so excited. Everything came out amazing and the young lady working the register was so friendly. If we are in the area again we will definitely be back!",
+          "relativeTime": "2 weeks ago",
+          "publishTime": "2026-07-07T04:53:48.933645593Z"
         }
       ]
     },
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1433,
+      "total": 1439,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -86,7 +86,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/105935061103665565847/reviews",
           "rating": 5,
           "text": "Need left handed ladles for the hot sauce - all good - went for the fish tacos as always - flour better than corn (shrugs!) Went back and got elevated to “regular” status - really nice peeps work here",
-          "relativeTime": "2 months ago",
+          "relativeTime": "3 months ago",
           "publishTime": "2026-04-22T20:15:48.088447673Z"
         },
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1373,
+      "total": 1376,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -153,13 +153,13 @@
           "publishTime": "2026-02-27T23:50:26.717831119Z"
         },
         {
-          "author": "Leo Adventures",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWDrBKemvMYFnd_QryrdnA7KKClNZ--tDByaVgwP2jA7P8x9b4=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/104453368911410729047/reviews",
+          "author": "Doneka Clark",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjURsCMkVgsRV5ZOivAl1p-o956jPe5vCVXp7_KoAQLPdWyRS3q1=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/110963173079165415530/reviews",
           "rating": 5,
-          "text": "Food was delicious and inexpensive. You order your meal at the kiosk then have a seat. The fish tacos were suspiciously cheap with 3 tacos coming in at under $5. However they were amazingly tasty and bigger than expected. The photo is of El Pueblo Torta. It was okay but regretted not choosing another Torta.",
+          "text": "Chicken tacos/ flour tortilla rice and beans\nChicken fajitas/flour tortillas rice and beans\nShirley temple & double Margarita with nothing on the rim.\n\nStaff very helpful with ordering. The gentleman asked if I wanted to do order with a person or use kiosk. You order and can pick your own seat. Dine outside around the fire pit watching the game. Great atmosphere and the staff is so friendly and helpful. Will definitely dine here again.",
           "relativeTime": "3 months ago",
-          "publishTime": "2026-04-17T04:21:58.599312424Z"
+          "publishTime": "2026-04-02T04:26:08.118899692Z"
         }
       ]
     },
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2399,
+      "total": 2400,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1027,
+      "total": 1045,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -252,6 +252,15 @@
           "publishTime": "2026-07-07T03:19:07.282373756Z"
         },
         {
+          "author": "Andrew F",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocI_VaWO4ndXZodfHO05SPot0t5ItO2Bg_b8csg-k5q7-PmXCw=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/114818789626590648955/reviews",
+          "rating": 5,
+          "text": "Great food, great people. Very grateful that this place opened up. Francisco, Natalia, and Eli rule! They are amazing. Shout out to the cooks as well",
+          "relativeTime": "3 weeks ago",
+          "publishTime": "2026-06-30T03:54:32.147070909Z"
+        },
+        {
           "author": "Verónica Pérez-Canabal",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjW6FOQVPMAFGxMzNv0rSEY4zLfMjV--1pVR4B8WyySw25CVzBQ=s128-c0x00000000-cc-rp-mo",
           "authorUrl": "https://www.google.com/maps/contrib/115577642758359097411/reviews",
@@ -259,15 +268,6 @@
           "text": "The fish tacos were really good!!! Good price point for the area. Definitely one of our new spots. The service and attention was top!",
           "relativeTime": "2 weeks ago",
           "publishTime": "2026-07-02T03:51:06.224317057Z"
-        },
-        {
-          "author": "Rad Train",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUIfxBvT2u3aCJDdGYam-ZFaGSxr51Wa-AQy8uVGdHX3PYJR3Q=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/108303080324597141004/reviews",
-          "rating": 1,
-          "text": "California burrito, sub par. $18 for a pinner California that just does not do it. Standard school pencil is longer and thats saying something. Taste was nothing special. Try don Carlos up the street for real authentic Mexican food and more.",
-          "relativeTime": "a month ago",
-          "publishTime": "2026-05-31T01:44:11.874712614Z"
         }
       ]
     }
