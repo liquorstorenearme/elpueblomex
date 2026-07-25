@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-07-24T18:16:22.839Z",
+  "fetched_at": "2026-07-25T17:57:12.327Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 1894,
+      "total": 1897,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2401,
+      "total": 2402,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -219,9 +219,9 @@
     },
     "la-jolla": {
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
-      "name": "El Pueblo Mexican Food - La Jolla",
+      "name": "El Pueblo Mexican Food - Del Mar",
       "rating": 4.9,
-      "total": 1094,
+      "total": 1111,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
