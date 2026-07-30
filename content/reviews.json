@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-07-29T18:05:27.377Z",
+  "fetched_at": "2026-07-30T18:13:50.039Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 1901,
+      "total": 1906,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1455,
+      "total": 1458,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1385,
+      "total": 1389,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -122,7 +122,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/115930390835869042579/reviews",
           "rating": 4,
           "text": "Delicious food! Just could get pricy and you have to order on a screen.\n\nSounds like people for for the fish tacos I'll need to try that next time. They sound like a deal\n\nFood 5/5\n-California Burrito: it was delicious (5/5) the ingredients taste fresh and you can tell it's quality! Although one burrito came out to be $20!\n-Salsa Bar: The salsas taste amazing! They have fresh salsa and they pair very well with the food!\n\nService 3/5\n-This is where there is room for improvement. You need to order yourself on a tablet. There was no one to take an order when I went in. Also when ordering it's not very clear to what is included in the burrito when you're clicking to order. When you order it's helpful if someone is there for recommendations and clarifications.\n\nAmbiance 5/5\n-This place is well designed and in an upscale beautiful area. The inside is designed, beautiful interior with TVs if you wanted to watch sports\n\nOverall delicious food, just wish they had people taking order and just be mindful of the price point. It has quality food and is Recommended!",
-          "relativeTime": "a month ago",
+          "relativeTime": "2 months ago",
           "publishTime": "2026-05-31T05:08:59.309485811Z"
         },
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2406,
+      "total": 2407,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -203,7 +203,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/104142877032106336382/reviews",
           "rating": 5,
           "text": "A gem near the coast with great food at great prices! Our go to for fish tacos and flautas, the best we’ve had in San Diego yet! They have other great items on the menu as well and the Dessert case always has some delicious surprises for those who love to end on a sweet note, like me! 😋",
-          "relativeTime": "3 months ago",
+          "relativeTime": "4 months ago",
           "publishTime": "2026-04-01T02:46:31.046309677Z"
         },
         {
@@ -219,9 +219,9 @@
     },
     "la-jolla": {
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
-      "name": "El Pueblo Mexican Food - Del Mar",
+      "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1213,
+      "total": 1214,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -257,7 +257,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/115577642758359097411/reviews",
           "rating": 5,
           "text": "The fish tacos were really good!!! Good price point for the area. Definitely one of our new spots. The service and attention was top!",
-          "relativeTime": "3 weeks ago",
+          "relativeTime": "4 weeks ago",
           "publishTime": "2026-07-02T03:51:06.224317057Z"
         },
         {
@@ -266,7 +266,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/108303080324597141004/reviews",
           "rating": 1,
           "text": "California burrito, sub par. $18 for a pinner California that just does not do it. Standard school pencil is longer and thats saying something. Taste was nothing special. Try don Carlos up the street for real authentic Mexican food and more.",
-          "relativeTime": "a month ago",
+          "relativeTime": "2 months ago",
           "publishTime": "2026-05-31T01:44:11.874712614Z"
         }
       ]
