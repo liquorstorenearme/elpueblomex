@@ -21,8 +21,8 @@
     "_routing": "Every 1-3\u2605 notification \u2192 the location's managerEmail + everyone in lowStarGlobal. 1\u2605 immediate, 2-3\u2605 daily digest."
   },
   "throttle": {
-    "_comment": "Posting a burst of replies is a spam signal. Cap per run.",
-    "maxRepliesPerRun": 15,
+    "_comment": "Cap = 5 x 4 locations so no location starves (La Jolla got 0 on run 1 at cap 15). Anti-burst only.",
+    "maxRepliesPerRun": 20,
     "backlogPerLocationPerRun": 5
   },
   "locations": [
