@@ -93,7 +93,14 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(500, { "Content-Type": "text/plain" }).end(String(e));
     console.error(e.message);
   } finally {
-    server.close();
+    // server.close() alone only stops NEW connections — the browser holds a
+    // keep-alive socket open, so node hangs until you manually close the tab.
+    // Drop live sockets and exit explicitly so the script always returns.
+    res.on("finish", () => {
+      server.closeAllConnections?.();
+      server.close(() => process.exit(0));
+      setTimeout(() => process.exit(0), 1000).unref();
+    });
   }
 });
 

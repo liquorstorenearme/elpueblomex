@@ -1,0 +1,49 @@
+name: Review replies
+
+on:
+  schedule:
+    - cron: "0 16 * * *"   # daily ~9am PT
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: review-replies
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Draft and publish replies
+        env:
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/review-replies.mjs --apply
+
+      - name: Send notifications
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          if [ -n "$RESEND_API_KEY" ]; then
+            node scripts/review-notify.mjs --digest
+          else
+            echo "RESEND_API_KEY not set — emails skipped, queue preserved"
+          fi
+
+      # State MUST persist or the runner forgets what it sent (replies dedupe
+      # via the live API, but the notification queue would be lost).
+      - name: Commit state
+        run: |
+          git config user.name "el-pueblo-bot"
+          git config user.email "noreply@elpueblomex.com"
+          git add content/review-state.json content/review-notifications.json
+          git diff --staged --quiet || (git commit -m "Review replies: state update" && git push)
