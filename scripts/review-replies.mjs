@@ -73,6 +73,7 @@ ${s <= 2 ? `- CRITICAL: assert NOTHING. Do not explain what happened, do not def
 - Do not read ambiguous wording as praise. If the review is short and unclear ("a different experience"), stay neutral and do not invent a positive interpretation.
 - If the review is ambiguous or mixed, do NOT add a forward dish suggestion — selling to someone with a complaint reads as not listening.
 - Proofread: no grammar slips ("a awesome"), no double spaces.
+- Vary how you name dishes across replies — natural everyday names, not stiff menu titles.
 ${recent.length ? `\nANTI-REPETITION — these are replies you just wrote for other reviews. Do NOT reuse their closing line, their opening, or the dish/attribute they suggest. Vary what you recommend; the fish tacos are not the only thing on the menu:\n${recent.map(r => `- "${r}"`).join("\n")}` : ""}
 
 Return ONLY JSON:
