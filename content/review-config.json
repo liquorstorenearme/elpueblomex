@@ -12,7 +12,7 @@
     "recipients": [
       "(per-location managerEmail is used automatically)"
     ],
-    "from": "reviews@elpueblomex.com",
+    "from": "reviews@send.elpueblomex.com",
     "digestHourPT": 8,
     "lowStarGlobal": [
       "nony@elpueblomex.com",
