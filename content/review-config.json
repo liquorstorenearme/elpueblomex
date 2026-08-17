@@ -1,0 +1,115 @@
+{
+  "_comment": "Config for scripts/review-replies.mjs. Location + account IDs verified live 2026-08-17.",
+  "notify": {
+    "_comment": "Scott is supplying the management list. Add addresses here \u2014 nothing else needs changing.",
+    "immediateStars": [
+      1
+    ],
+    "digestStars": [
+      2,
+      3
+    ],
+    "recipients": [
+      "(per-location managerEmail is used automatically)"
+    ],
+    "from": "reviews@elpueblomex.com",
+    "digestHourPT": 8,
+    "lowStarGlobal": [
+      "nony@elpueblomex.com",
+      "marciano@elpueblomex.com"
+    ],
+    "_routing": "Every 1-3\u2605 notification \u2192 the location's managerEmail + everyone in lowStarGlobal. 1\u2605 immediate, 2-3\u2605 daily digest."
+  },
+  "throttle": {
+    "_comment": "Posting a burst of replies is a spam signal. Cap per run.",
+    "maxRepliesPerRun": 15,
+    "backlogPerLocationPerRun": 5
+  },
+  "locations": [
+    {
+      "slug": "carlsbad",
+      "name": "Carlsbad",
+      "city": "Carlsbad",
+      "account": "accounts/107556498414456817580",
+      "location": "locations/10328738512596809280",
+      "enabled": true,
+      "phase": 1,
+      "fullBar": false,
+      "onlineOrdering": true,
+      "managerEmail": "carlsbad@elpueblomex.com",
+      "mode": "reply"
+    },
+    {
+      "slug": "del-mar",
+      "name": "Del Mar",
+      "city": "Del Mar",
+      "account": "accounts/107556498414456817580",
+      "location": "locations/7240440297771033418",
+      "enabled": true,
+      "phase": 2,
+      "fullBar": true,
+      "onlineOrdering": true,
+      "managerEmail": "delmar@elpueblomex.com",
+      "mode": "reply"
+    },
+    {
+      "slug": "carmel-valley",
+      "name": "Carmel Valley",
+      "city": "San Diego",
+      "account": "accounts/107556498414456817580",
+      "location": "locations/1189929405054644351",
+      "enabled": true,
+      "phase": 2,
+      "fullBar": true,
+      "onlineOrdering": true,
+      "managerEmail": "carmelvalley@elpueblomex.com",
+      "mode": "reply"
+    },
+    {
+      "slug": "la-jolla",
+      "name": "La Jolla",
+      "city": "La Jolla",
+      "account": "accounts/102408089622182212349",
+      "location": "locations/14836919300882504669",
+      "enabled": true,
+      "phase": 2,
+      "fullBar": false,
+      "onlineOrdering": false,
+      "constraints": [
+        "NEVER mention beer, wine, cocktails, margaritas or a bar at this location",
+        "NEVER suggest online ordering \u2014 not available here yet"
+      ],
+      "managerEmail": "lajolla@elpueblomex.com",
+      "mode": "reply"
+    },
+    {
+      "slug": "cardiff",
+      "name": "Cardiff",
+      "city": "Encinitas",
+      "account": "accounts/107556498414456817580",
+      "location": "locations/14071145588987116045",
+      "enabled": true,
+      "phase": 99,
+      "fullBar": false,
+      "onlineOrdering": true,
+      "_disabled_reason": "Something is ALREADY auto-replying here (50/50 replied, sub-24h, formulaic). Do not automate over it until we know what it is.",
+      "managerEmail": "cardiff@elpueblomex.com",
+      "mode": "notify-only",
+      "_mode_reason": "Replies handled elsewhere; notifications only."
+    }
+  ],
+  "sharedFacts": [
+    "Fish tacos (The Original Battered Fish Taco) are the signature item",
+    "Breakfast burritos served all day",
+    "California burritos",
+    "Carne asada fries (also veggie, shrimp, surf & turf fries)",
+    "Quesadillas (carne asada, shrimp, adobada, carnitas and more)",
+    "Carnitas \u2014 tacos, burritos, tortas or plates",
+    "Enchiladas",
+    "Tortas",
+    "Horchata and jamaica aguas frescas",
+    "Menudo on Saturdays and Sundays only",
+    "Self-serve salsa bar \u2014 a condiment station with salsas and pickled vegetables. It is NOT seating and NOT a place to sit.",
+    "Free on-site parking lot at every location"
+  ]
+}
