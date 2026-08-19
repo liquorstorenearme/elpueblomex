@@ -1,0 +1,36 @@
+{
+  "_comment": "Per-location forward-suggestion pools, weighted by MEASURED POS sales (14-day pull 2026-08-19). Only POS-verified, reply-safe names. Fish tacos are the runaway #1 seller at every location (~15-20x the #2 item) but their weight is deliberately capped — variation on the profile page beats accuracy of proportion. suggestRate = fraction of eligible 4-5★ replies that carry ANY forward dish suggestion; cooldown = how many suggestions must pass at a location before the same dish may repeat. Refresh weights occasionally from the POS item ranks.",
+  "suggestRate": 0.3,
+  "cooldown": 3,
+  "pools": {
+    "carlsbad": [
+      { "dish": "the fish tacos", "w": 3 },
+      { "dish": "the california burrito", "w": 2 },
+      { "dish": "the carne asada burrito", "w": 2 },
+      { "dish": "a breakfast burrito (we serve them all day)", "w": 2 },
+      { "dish": "the carne asada fries", "w": 2 },
+      { "dish": "the rolled tacos", "w": 1 }
+    ],
+    "del-mar": [
+      { "dish": "the fish tacos", "w": 3 },
+      { "dish": "the california burrito", "w": 2 },
+      { "dish": "the carne asada burrito", "w": 2 },
+      { "dish": "a margarita from the full bar", "w": 2 },
+      { "dish": "a breakfast burrito (we serve them all day)", "w": 1 }
+    ],
+    "carmel-valley": [
+      { "dish": "the fish tacos", "w": 3 },
+      { "dish": "the california burrito", "w": 2 },
+      { "dish": "the carne asada burrito", "w": 2 },
+      { "dish": "a margarita from the full bar", "w": 2 },
+      { "dish": "a breakfast burrito (we serve them all day)", "w": 1 }
+    ],
+    "la-jolla": [
+      { "dish": "the fish tacos", "w": 3 },
+      { "dish": "the california burrito", "w": 2 },
+      { "dish": "the shrimp tacos", "w": 2 },
+      { "dish": "the carne asada burrito", "w": 2 },
+      { "dish": "chips and guacamole", "w": 1 }
+    ]
+  }
+}

@@ -18,6 +18,38 @@ const statePath = path.join(root, "content/review-state.json");
 const state = fs.existsSync(statePath)
   ? JSON.parse(fs.readFileSync(statePath, "utf8"))
   : { replied: {}, notified: {}, lastRun: null };
+state.suggest ||= {}; // per-location dish-suggestion cooldown (survives across runs)
+state.recent ||= {};  // per-location recent reply texts (cross-run anti-repetition)
+
+const dishCfgPath = path.join(root, "content/dish-suggestions.json");
+const dishCfg = fs.existsSync(dishCfgPath) ? JSON.parse(fs.readFileSync(dishCfgPath, "utf8")) : null;
+
+// Any dish vocabulary a reviewer might use — if the review itself mentions food,
+// the reply ECHOES it and gets no forward suggestion (selling past a customer
+// who already told you what they ate reads as not listening).
+const DISH_WORDS = /taco|burrito|quesadilla|nacho|carnitas|enchilada|menudo|torta|fries|margarita|guac|horchata|rolled|ceviche|salsa/i;
+
+// Variation engine: CODE, not the model, decides whether a reply may carry a
+// forward dish suggestion and which dish it is — the model only weaves it in.
+// suggestRate caps how often a sales line appears at all; the per-location
+// cooldown stops the same dish repeating down the profile page. Weights come
+// from measured POS sales.
+function pickSuggestion(loc, review) {
+  if (!dishCfg || stars(review) < 4) return null;
+  if (DISH_WORDS.test(review.comment || "")) return null; // echo mode
+  const pool = dishCfg.pools[loc.slug];
+  if (!pool?.length) return null;
+  if (Math.random() >= (dishCfg.suggestRate ?? 0.3)) return null;
+  const st = (state.suggest[loc.slug] ||= { recentDishes: [] });
+  const eligible = pool.filter(p => !st.recentDishes.includes(p.dish));
+  const pickFrom = eligible.length ? eligible : pool;
+  const total = pickFrom.reduce((a, p) => a + p.w, 0);
+  let r = Math.random() * total, chosen = pickFrom[pickFrom.length - 1];
+  for (const p of pickFrom) { r -= p.w; if (r <= 0) { chosen = p; break; } }
+  st.recentDishes.push(chosen.dish);
+  while (st.recentDishes.length > (dishCfg.cooldown ?? 3)) st.recentDishes.shift();
+  return chosen.dish;
+}
 
 const argv = process.argv.slice(2);
 const APPLY = argv.includes("--apply");
@@ -39,10 +71,10 @@ function anthropicKey() {
 // ── the reply framework, as a prompt ────────────────────────────────────────
 // Keyword budget scales INVERSELY with star rating; 1-2 star replies must
 // assert nothing at all, which is what makes auto-publishing them safe.
-function buildPrompt(loc, review, recent = []) {
+function buildPrompt(loc, review, recent = [], suggestion = null) {
   const s = stars(review);
   const facts = [...cfg.sharedFacts];
-  if (loc.fullBar) facts.push("Full bar — call it 'the full bar' only; do NOT name any specific drink or cocktail (none are verified)");
+  if (loc.fullBar) facts.push("Full bar — you may say 'the full bar' or mention margaritas (a POS-verified top seller); do NOT name any other specific drink or cocktail");
   const constraints = loc.constraints || [];
 
   return `You write Google review replies for El Pueblo Mexican Food, a 5-location San Diego County Mexican restaurant. You are replying as the restaurant.
@@ -54,16 +86,19 @@ REVIEW (${s} stars) by ${review.reviewer?.displayName || "a guest"}:
 """${review.comment || "(no text — rating only)"}"""
 
 RULES:
-- Reply in the language the review is written in (Spanish review → Spanish reply). Rating-only reviews get English.
+- Reply in the language the review is written in (Spanish review → Spanish reply). Rating-only reviews get English. In Spanish, use gender-neutral phrasing (e.g. "esperamos verte pronto") — never guess the reviewer's gender.
+- BANNED phrases (overused): "a favorite among our regulars" / "fan favorite" / "free parking waiting out front". Say such things a different way each time, or not at all.
 - Sound like a real person at this restaurant. Vary your opening; never start with "Thank you for your review".
 - Keyword budget by rating — ${s} stars means: ${
-    s >= 4 ? "include 3-4 natural entities (the location name, any staff the reviewer named, the dish they mentioned, and at most one service attribute or forward invitation)."
+    s >= 4 ? (suggestion
+      ? `include 3-4 natural entities (the location name, any staff the reviewer named, the dish they mentioned). You may ALSO suggest exactly ONE dish and it must be this one: ${suggestion}. Weave it in naturally in your own words — vary the framing, never reuse a suggestion phrasing that appears in the recent-replies list — or drop it entirely if it doesn't fit. NEVER suggest any other dish.`
+      : "include 3-4 natural entities (the location name, any staff the reviewer named, the dish THEY mentioned, a service attribute like the patio/free parking/salsa bar, an occasion like family dinner or beach day, or a nearby landmark). Do NOT suggest or introduce any dish the reviewer did not mention themselves.")
     : s === 3 ? "include the location name, and you MAY echo a dish the reviewer themselves praised. Do NOT introduce any dish, attribute or invitation they did not raise."
     : "include ZERO entities. No location, no dish, no attributes."
   }
 ${s <= 2 ? `- CRITICAL: assert NOTHING. Do not explain what happened, do not defend, do not guess at causes, do not promise specific remedies. Apologize, say you want to make it right, and give a contact route. A reply that makes no claims cannot make a wrong one.` : ""}
 - Never use the phrase "near me". Never call yourself the best. Mention the business name at most once.
-- The restaurant is "El Pueblo" — always "El Pueblo Del Mar", "El Pueblo Carlsbad", or "our Del Mar location". NEVER "Del Pueblo" — that is a misspelling of the brand.
+- The restaurant name is exactly "El Pueblo" (e.g. "El Pueblo Del Mar", "our Del Mar location"). Write it correctly the first time; never write a correction, aside, or "wait—" into the reply itself.
 - If the reviewer named staff, echo their names — that matters more than any keyword.
 - If the reviewer mentioned a landmark or neighbourhood, use it.
 - Never name a competitor, even if the reviewer does.
@@ -72,16 +107,17 @@ ${s <= 2 ? `- CRITICAL: assert NOTHING. Do not explain what happened, do not def
 - NEVER offer, promise or imply anything free, discounted or comped — no "let us treat you", no "next one's on us", no vouchers. You have no authority to give anything away.
 - The reviewer's display name may not be a real first name. Use it only if it reads like one; otherwise address them without a name rather than writing something absurd.
 - Do not read ambiguous wording as praise. If the review is short and unclear ("a different experience"), stay neutral and do not invent a positive interpretation.
+- Do not attribute to the reviewer anything they did not actually say — never thank them for praising the price, speed, or anything else that is not in their words.
 - If the review is ambiguous or mixed, do NOT add a forward dish suggestion — selling to someone with a complaint reads as not listening.
 - Proofread: no grammar slips ("a awesome"), no double spaces.
 - Vary how you name dishes across replies — natural everyday names, not stiff menu titles.
-${recent.length ? `\nANTI-REPETITION — these are replies you just wrote for other reviews. Do NOT reuse their closing line, their opening, or the dish/attribute they suggest. Vary what you recommend; the fish tacos are not the only thing on the menu:\n${recent.map(r => `- "${r}"`).join("\n")}` : ""}
+${recent.length ? `\nANTI-REPETITION — these are replies you just wrote for other reviews. Do NOT reuse their closing line, their opening, their sales phrasing, or the dish/service attribute they mention (if one of them plugs free parking, you talk about something else). Vary sentence count too — some replies should be a single short sentence:\n${recent.map(r => `- "${r}"`).join("\n")}` : ""}
 
 Return ONLY JSON:
 {"sentiment":"positive|mixed|negative","theme":"food quality|order accuracy|wait time|service|price|cleanliness|other","staff":["names the reviewer mentioned"],"reply":"the reply text"}`;
 }
 
-async function draft(loc, review, recent = []) {
+async function draft(loc, review, recent = [], suggestion = null) {
   const r = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -92,7 +128,7 @@ async function draft(loc, review, recent = []) {
     body: JSON.stringify({
       model: "claude-sonnet-5",
       max_tokens: 700,
-      messages: [{ role: "user", content: buildPrompt(loc, review, recent) }],
+      messages: [{ role: "user", content: buildPrompt(loc, review, recent, suggestion) }],
     }),
   });
   if (!r.ok) throw new Error(`anthropic ${r.status}: ${(await r.text()).slice(0, 200)}`);
@@ -168,12 +204,18 @@ for (const loc of locations) {
 
   console.log(`── ${loc.name}: ${reviews.length} fetched, ${reviews.filter(r => !isReplied(r)).length} unreplied, handling ${pending.length}`);
 
+  // Cross-run anti-repetition: within-run window alone resets every day, which
+  // is how the taco clustering happened — seed with this location's last
+  // posted replies from previous runs too.
+  const locRecent = state.recent[loc.slug] || [];
+
   for (const review of pending) {
     if (posted >= limit) { console.log(`   (run cap ${limit} reached)`); break; }
     const id = reviewIdOf(review);
     const s = stars(review);
+    const suggestion = pickSuggestion(loc, review);
     let d;
-    try { d = await draft(loc, review, recentReplies.slice(-6)); }
+    try { d = await draft(loc, review, [...locRecent.slice(-4), ...recentReplies.slice(-6)], suggestion); }
     catch (e) { console.log(`   ⚠ ${id}: ${e.message}`); continue; }
 
     console.log(`\n   [${s}★] ${review.reviewer?.displayName || "?"}  (${d.sentiment}/${d.theme}${d.staff?.length ? `, staff: ${d.staff.join(", ")}` : ""})`);
@@ -188,13 +230,26 @@ for (const loc of locations) {
       continue;
     }
 
-    // Brand-name gate: deterministic, runs on every reply. Known mangles are
-    // auto-corrected; any remaining "Pueblo" not preceded by "El " is an
-    // unknown mangle — skip rather than post it (review stays unreplied and
-    // retries next run). Posted twice as "Del Pueblo Del Mar" before this gate.
-    d.reply = d.reply.replace(/\bDel Pueblo\b/g, "El Pueblo").replace(/\bEl Peublo\b/gi, "El Pueblo");
-    if (/(?<!El )Pueblo/.test(d.reply)) {
-      console.log(`   ⚠ ${id}: brand-name gate — unrecognized "Pueblo" usage, skipped: ${d.reply.slice(0, 120)}`);
+    // Brand-name gate: deterministic, runs on every reply. Any "Pueblo" not
+    // preceded by "El ", and any narrated self-correction, SKIPS the reply for
+    // next-run retry. Do NOT auto-correct in place — QA showed the model can
+    // write "our Del Pueblo team - wait, El Pueblo Del Mar team!" and an
+    // auto-fix would launder that incoherence straight onto the public profile.
+    if (/(?<!El )Pueblo/.test(d.reply) || /\bwait[,— -]/i.test(d.reply) || /I mean\b/i.test(d.reply)) {
+      console.log(`   ⚠ ${id}: brand-name gate — mangle or narrated correction, skipped: ${d.reply.slice(0, 120)}`);
+      continue;
+    }
+
+    // Introduced-dish gate: a dish may appear in the reply only if the REVIEWER
+    // mentioned it or it is the code-chosen suggestion. Measured 8/19: the model
+    // introduced tacos unprompted in 37 of 118 posted replies (47% taco rate) —
+    // this gate makes freelancing impossible rather than discouraged.
+    const introduced = (d.reply.match(new RegExp(DISH_WORDS.source, "gi")) || [])
+      .filter(w => !(review.comment || "").toLowerCase().includes(w.toLowerCase()) &&
+                   !(suggestion || "").toLowerCase().includes(w.toLowerCase()) &&
+                   !/salsa/i.test(w)); // "salsa bar" is a service attribute, not a dish
+    if (introduced.length) {
+      console.log(`   ⚠ ${id}: introduced-dish gate — model added "${introduced.join('/')}" uninvited, skipped for retry`);
       continue;
     }
 
@@ -205,6 +260,8 @@ for (const loc of locations) {
       try {
         await putReply(token, loc.account, loc.location, id, d.reply);
         state.replied[id] = { at: new Date().toISOString(), location: loc.slug, stars: s };
+        (state.recent[loc.slug] ||= []).push(d.reply);
+        while (state.recent[loc.slug].length > 8) state.recent[loc.slug].shift();
         console.log("   ✓ published");
       } catch (e) {
         console.log(`   ⚠ ${id}: publish failed — ${e.message.slice(0, 160)}`);
