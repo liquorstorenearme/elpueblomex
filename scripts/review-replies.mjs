@@ -63,6 +63,7 @@ RULES:
   }
 ${s <= 2 ? `- CRITICAL: assert NOTHING. Do not explain what happened, do not defend, do not guess at causes, do not promise specific remedies. Apologize, say you want to make it right, and give a contact route. A reply that makes no claims cannot make a wrong one.` : ""}
 - Never use the phrase "near me". Never call yourself the best. Mention the business name at most once.
+- The restaurant is "El Pueblo" — always "El Pueblo Del Mar", "El Pueblo Carlsbad", or "our Del Mar location". NEVER "Del Pueblo" — that is a misspelling of the brand.
 - If the reviewer named staff, echo their names — that matters more than any keyword.
 - If the reviewer mentioned a landmark or neighbourhood, use it.
 - Never name a competitor, even if the reviewer does.
@@ -184,6 +185,16 @@ for (const loc of locations) {
     // Sanity-gate the model output before it can reach a public profile.
     if (typeof d.reply !== "string" || d.reply.trim().length < 20 || d.reply.length > 1500) {
       console.log(`   ⚠ ${id}: reply failed sanity check (${d.reply?.length ?? 0} chars) — skipped`);
+      continue;
+    }
+
+    // Brand-name gate: deterministic, runs on every reply. Known mangles are
+    // auto-corrected; any remaining "Pueblo" not preceded by "El " is an
+    // unknown mangle — skip rather than post it (review stays unreplied and
+    // retries next run). Posted twice as "Del Pueblo Del Mar" before this gate.
+    d.reply = d.reply.replace(/\bDel Pueblo\b/g, "El Pueblo").replace(/\bEl Peublo\b/gi, "El Pueblo");
+    if (/(?<!El )Pueblo/.test(d.reply)) {
+      console.log(`   ⚠ ${id}: brand-name gate — unrecognized "Pueblo" usage, skipped: ${d.reply.slice(0, 120)}`);
       continue;
     }
 
