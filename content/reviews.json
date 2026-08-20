@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-08-19T17:24:22.325Z",
+  "fetched_at": "2026-08-20T17:26:39.343Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 1942,
+      "total": 1944,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1502,
+      "total": 1504,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2433,
+      "total": 2435,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -185,7 +185,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/112842216103810372647/reviews",
           "rating": 5,
           "text": "Top notch! We tried to come in during lunch time and they had a 40 minute wait so we came back the next day a little earlier and I'm very glad we did. The fish tacos are a great deal!",
-          "relativeTime": "a week ago",
+          "relativeTime": "2 weeks ago",
           "publishTime": "2026-08-05T17:47:07.811386600Z"
         },
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1326,
+      "total": 1341,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -248,7 +248,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/114648237993516051198/reviews",
           "rating": 5,
           "text": "Good service.. good food.. thanks to Jushua he was so helpful and patient while taking the orders 😅",
-          "relativeTime": "4 weeks ago",
+          "relativeTime": "a month ago",
           "publishTime": "2026-07-21T04:47:50.793627647Z"
         },
         {
