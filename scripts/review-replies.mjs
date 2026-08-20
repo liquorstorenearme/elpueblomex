@@ -235,7 +235,7 @@ for (const loc of locations) {
     // next-run retry. Do NOT auto-correct in place — QA showed the model can
     // write "our Del Pueblo team - wait, El Pueblo Del Mar team!" and an
     // auto-fix would launder that incoherence straight onto the public profile.
-    if (/(?<!El )Pueblo/.test(d.reply) || /\bwait[,— -]/i.test(d.reply) || /I mean\b/i.test(d.reply)) {
+    if (/(?<!El )Pueblo/.test(d.reply) || /\bwait\s*[,—]/i.test(d.reply) || /I mean\b/i.test(d.reply)) {
       console.log(`   ⚠ ${id}: brand-name gate — mangle or narrated correction, skipped: ${d.reply.slice(0, 120)}`);
       continue;
     }
