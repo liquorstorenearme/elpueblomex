@@ -169,7 +169,12 @@ const notifications = [];
 const recentReplies = []; // rolling window fed back to the model so replies do not converge
 
 for (const loc of locations) {
-  const reviews = await listReviews(token, loc.account, loc.location, { max: 200 });
+  // Reply-mode locations fetch deep: the newest-200 window was a silent stall
+  // waiting to happen — full-history count 2026-08-20 found ~4,970 unreplied
+  // across the four reply locations, most of them older than any 200-window.
+  // Notify-only (Cardiff) stays shallow: it only scans for FRESH low stars.
+  const fetchMax = loc.mode === "notify-only" ? 200 : 2500;
+  const reviews = await listReviews(token, loc.account, loc.location, { max: fetchMax });
 
   if (loc.mode === "notify-only") {
     // Never post here (another system replies) — but low stars must still reach
