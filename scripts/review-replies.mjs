@@ -20,6 +20,7 @@ const state = fs.existsSync(statePath)
   : { replied: {}, notified: {}, lastRun: null };
 state.suggest ||= {}; // per-location dish-suggestion cooldown (survives across runs)
 state.recent ||= {};  // per-location recent reply texts (cross-run anti-repetition)
+state.locPhrase ||= {}; // per-location location-wording rotation (cross-run)
 
 const dishCfgPath = path.join(root, "content/dish-suggestions.json");
 const dishCfg = fs.existsSync(dishCfgPath) ? JSON.parse(fs.readFileSync(dishCfgPath, "utf8")) : null;
@@ -51,12 +52,42 @@ function pickSuggestion(loc, review) {
   return chosen.dish;
 }
 
+// Location-wording engine: the location mention is REQUIRED content, and
+// required content + prompt-level "vary it" always converges (measured
+// 2026-08-21: 83 of 97 published replies used "our {city} spot/location" —
+// La Jolla hit 23/25 "our La Jolla spot"). So CODE picks the exact wording,
+// rotating with a cooldown, exactly like the dish engine.
+const LOC_TEMPLATES = [
+  c => `here in ${c}`,
+  c => `at our ${c} location`,
+  c => `at El Pueblo ${c}`,
+  c => `the ${c} team`,
+  c => `our ${c} crew`,
+  c => `next time you're in ${c}`,
+  c => `the ${c} location`,
+  c => `our ${c} spot`,
+];
+function pickLocPhrase(loc) {
+  const st = (state.locPhrase[loc.slug] ||= { recent: [] });
+  const eligible = LOC_TEMPLATES.map((_, i) => i).filter(i => !st.recent.includes(i));
+  const pickFrom = eligible.length ? eligible : LOC_TEMPLATES.map((_, i) => i);
+  const i = pickFrom[Math.floor(Math.random() * pickFrom.length)];
+  st.recent.push(i);
+  while (st.recent.length > 4) st.recent.shift();
+  return LOC_TEMPLATES[i](loc.city);
+}
+
 const argv = process.argv.slice(2);
 const APPLY = argv.includes("--apply");
 const only = argv.includes("--location") ? argv[argv.indexOf("--location") + 1] : null;
 const limitArg = argv.includes("--limit") ? Number(argv[argv.indexOf("--limit") + 1]) : NaN;
 // A bare/typo'd --limit must fall back to the throttle, never disable it (NaN comparisons are always false).
 const limit = Number.isFinite(limitArg) && limitArg > 0 ? limitArg : cfg.throttle.maxRepliesPerRun;
+// --redo-template-since <iso>: repair mode. Instead of unreplied reviews, target
+// reviews WE replied to since <iso> whose live reply uses the convergent
+// "our {city} spot/location" template, and re-draft them in place (putReply on
+// an already-replied review updates it). Same engine, same gates.
+const redoSince = argv.includes("--redo-template-since") ? argv[argv.indexOf("--redo-template-since") + 1] : null;
 
 function anthropicKey() {
   if (process.env.ANTHROPIC_API_KEY) return process.env.ANTHROPIC_API_KEY;
@@ -71,7 +102,7 @@ function anthropicKey() {
 // ── the reply framework, as a prompt ────────────────────────────────────────
 // Keyword budget scales INVERSELY with star rating; 1-2 star replies must
 // assert nothing at all, which is what makes auto-publishing them safe.
-function buildPrompt(loc, review, recent = [], suggestion = null) {
+function buildPrompt(loc, review, recent = [], suggestion = null, locPhrase = null) {
   const s = stars(review);
   const facts = [...cfg.sharedFacts];
   if (loc.fullBar) facts.push("Full bar — you may say 'the full bar' or mention margaritas (a POS-verified top seller); do NOT name any other specific drink or cocktail");
@@ -91,13 +122,14 @@ RULES:
 - Sound like a real person at this restaurant. Vary your opening; never start with "Thank you for your review".
 - Keyword budget by rating — ${s} stars means: ${
     s >= 4 ? (suggestion
-      ? `include 3-4 natural entities (the location name, any staff the reviewer named, the dish they mentioned). You may ALSO suggest exactly ONE dish and it must be this one: ${suggestion}. Weave it in naturally in your own words — vary the framing, never reuse a suggestion phrasing that appears in the recent-replies list — or drop it entirely if it doesn't fit. NEVER suggest any other dish.`
-      : "include 3-4 natural entities (the location name, any staff the reviewer named, the dish THEY mentioned, a service attribute like the patio/free parking/salsa bar, an occasion like family dinner or beach day, or a nearby landmark). Do NOT suggest or introduce any dish the reviewer did not mention themselves.")
-    : s === 3 ? "include the location name, and you MAY echo a dish the reviewer themselves praised. Do NOT introduce any dish, attribute or invitation they did not raise."
+      ? `include 3-4 natural entities (the location — worded EXACTLY as: "${locPhrase}" — any staff the reviewer named, the dish they mentioned). You may ALSO suggest exactly ONE dish and it must be this one: ${suggestion}. Weave it in naturally in your own words — vary the framing, never reuse a suggestion phrasing that appears in the recent-replies list — or drop it entirely if it doesn't fit. NEVER suggest any other dish.`
+      : `include 3-4 natural entities (the location — worded EXACTLY as: "${locPhrase}" — any staff the reviewer named, the dish THEY mentioned, a service attribute like the patio/free parking/salsa bar, an occasion like family dinner or beach day, or a nearby landmark). Do NOT suggest or introduce any dish the reviewer did not mention themselves.`)
+    : s === 3 ? `include the location, worded EXACTLY as: "${locPhrase}", and you MAY echo a dish the reviewer themselves praised. Do NOT introduce any dish, attribute or invitation they did not raise.`
     : "include ZERO entities. No location, no dish, no attributes."
   }
 ${s <= 2 ? `- CRITICAL: assert NOTHING. Do not explain what happened, do not defend, do not guess at causes, do not promise specific remedies. Apologize, say you want to make it right, and give a contact route. A reply that makes no claims cannot make a wrong one.` : ""}
 - Never use the phrase "near me". Never call yourself the best. Mention the business name at most once.
+- Use the given location wording exactly once; do NOT write any other location construction (no "our ${loc.city} spot", no "our ${loc.city} location") unless it IS the given wording. If it genuinely doesn't fit the sentence, use just "${loc.city}" alone instead.
 - The restaurant name is exactly "El Pueblo" (e.g. "El Pueblo Del Mar", "our Del Mar location"). Write it correctly the first time; never write a correction, aside, or "wait—" into the reply itself.
 - If the reviewer named staff, echo their names — that matters more than any keyword.
 - If the reviewer mentioned a landmark or neighbourhood, use it.
@@ -117,7 +149,7 @@ Return ONLY JSON:
 {"sentiment":"positive|mixed|negative","theme":"food quality|order accuracy|wait time|service|price|cleanliness|other","staff":["names the reviewer mentioned"],"reply":"the reply text"}`;
 }
 
-async function draft(loc, review, recent = [], suggestion = null) {
+async function draft(loc, review, recent = [], suggestion = null, locPhrase = null) {
   const r = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -128,7 +160,7 @@ async function draft(loc, review, recent = [], suggestion = null) {
     body: JSON.stringify({
       model: "claude-sonnet-5",
       max_tokens: 700,
-      messages: [{ role: "user", content: buildPrompt(loc, review, recent, suggestion) }],
+      messages: [{ role: "user", content: buildPrompt(loc, review, recent, suggestion, locPhrase) }],
     }),
   });
   if (!r.ok) throw new Error(`anthropic ${r.status}: ${(await r.text()).slice(0, 200)}`);
@@ -202,12 +234,18 @@ for (const loc of locations) {
     continue;
   }
 
-  const pending = reviews
-    .filter(r => !isReplied(r) && !state.replied[reviewIdOf(r)])
-    .sort((a, b) => String(b.createTime).localeCompare(String(a.createTime)))
-    .slice(0, cfg.throttle.backlogPerLocationPerRun);
+  const redoRe = new RegExp(`our\\s+${loc.city}\\s+(spot|location|team|crew)`, "i");
+  const pending = redoSince
+    ? reviews.filter(r => {
+        const st = state.replied[reviewIdOf(r)];
+        return st && st.at >= redoSince && r.reviewReply && redoRe.test(r.reviewReply.comment || "");
+      }).slice(0, cfg.throttle.backlogPerLocationPerRun)
+    : reviews
+        .filter(r => !isReplied(r) && !state.replied[reviewIdOf(r)])
+        .sort((a, b) => String(b.createTime).localeCompare(String(a.createTime)))
+        .slice(0, cfg.throttle.backlogPerLocationPerRun);
 
-  console.log(`── ${loc.name}: ${reviews.length} fetched, ${reviews.filter(r => !isReplied(r)).length} unreplied, handling ${pending.length}`);
+  console.log(`── ${loc.name}: ${reviews.length} fetched, ${redoSince ? `${pending.length} template replies to redo` : `${reviews.filter(r => !isReplied(r)).length} unreplied, handling ${pending.length}`}`);
 
   // Cross-run anti-repetition: within-run window alone resets every day, which
   // is how the taco clustering happened — seed with this location's last
@@ -219,8 +257,9 @@ for (const loc of locations) {
     const id = reviewIdOf(review);
     const s = stars(review);
     const suggestion = pickSuggestion(loc, review);
+    const locPhrase = s >= 3 ? pickLocPhrase(loc) : null;
     let d;
-    try { d = await draft(loc, review, [...locRecent.slice(-4), ...recentReplies.slice(-6)], suggestion); }
+    try { d = await draft(loc, review, [...locRecent.slice(-4), ...recentReplies.slice(-6)], suggestion, locPhrase); }
     catch (e) { console.log(`   ⚠ ${id}: ${e.message}`); continue; }
 
     console.log(`\n   [${s}★] ${review.reviewer?.displayName || "?"}  (${d.sentiment}/${d.theme}${d.staff?.length ? `, staff: ${d.staff.join(", ")}` : ""})`);
@@ -242,6 +281,15 @@ for (const loc of locations) {
     // auto-fix would launder that incoherence straight onto the public profile.
     if (/(?<!El )Pueblo/.test(d.reply) || /\bwait\s*[,—]/i.test(d.reply) || /I mean\b/i.test(d.reply)) {
       console.log(`   ⚠ ${id}: brand-name gate — mangle or narrated correction, skipped: ${d.reply.slice(0, 120)}`);
+      continue;
+    }
+
+    // Location-template gate: the convergent constructions may appear only when
+    // they ARE the assigned wording. Deterministic — recurrence is impossible,
+    // not just discouraged.
+    const locTemplate = new RegExp(`our\\s+${loc.city}\\s+(spot|location)`, "i");
+    if (locPhrase && locTemplate.test(d.reply) && !d.reply.toLowerCase().includes(locPhrase.toLowerCase())) {
+      console.log(`   ⚠ ${id}: location-template gate — used "our ${loc.city} spot/location" instead of assigned wording, skipped for retry`);
       continue;
     }
 
@@ -276,7 +324,7 @@ for (const loc of locations) {
     // Queue the management notification only once the reply has definitively
     // posted (or in dry run, where nothing persists anyway) — never email
     // management about a reply that failed to publish.
-    if ((cfg.notify.immediateStars.includes(s) || cfg.notify.digestStars.includes(s)) && isFresh(review.createTime)) {
+    if (!redoSince && (cfg.notify.immediateStars.includes(s) || cfg.notify.digestStars.includes(s)) && isFresh(review.createTime)) {
       notifications.push({
         urgency: urgencyFor(s),
         location: loc.name, managerEmail: loc.managerEmail, stars: s, id,
