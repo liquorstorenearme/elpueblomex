@@ -30,6 +30,32 @@ const dishCfg = fs.existsSync(dishCfgPath) ? JSON.parse(fs.readFileSync(dishCfgP
 // who already told you what they ate reads as not listening).
 const DISH_WORDS = /taco|burrito|quesadilla|nacho|carnitas|enchilada|menudo|torta|fries|margarita|guac|horchata|rolled|ceviche|salsa/i;
 
+// True when a and b are within Damerau-Levenshtein distance 1: equal, one
+// substitution, one insertion/deletion, or one ADJACENT TRANSPOSITION. The
+// transposition case is not optional garnish — both real reviewer typos that
+// motivated this ("gauc"→guac, "fires"→fries) are swaps, which plain
+// Levenshtein scores as distance 2.
+function damerau1(a, b) {
+  if (a === b) return true;
+  const la = a.length, lb = b.length;
+  if (Math.abs(la - lb) > 1) return false;
+  if (la === lb) {
+    const diffs = [];
+    for (let i = 0; i < la; i++) if (a[i] !== b[i]) { diffs.push(i); if (diffs.length > 2) return false; }
+    if (diffs.length === 1) return true; // one substitution
+    return diffs.length === 2 && diffs[1] === diffs[0] + 1 &&
+           a[diffs[0]] === b[diffs[1]] && a[diffs[1]] === b[diffs[0]]; // adjacent swap
+  }
+  const [s, l] = la < lb ? [a, b] : [b, a]; // one insertion/deletion
+  let i = 0, j = 0, skipped = false;
+  while (i < s.length) {
+    if (s[i] === l[j]) { i++; j++; }
+    else if (!skipped) { skipped = true; j++; }
+    else return false;
+  }
+  return true;
+}
+
 // Variation engine: CODE, not the model, decides whether a reply may carry a
 // forward dish suggestion and which dish it is — the model only weaves it in.
 // suggestRate caps how often a sales line appears at all; the per-location
@@ -138,6 +164,7 @@ ${s <= 2 ? `- CRITICAL: assert NOTHING. Do not explain what happened, do not def
 - Do NOT invent facts not in the TRUE FACTS list. Do not infer amenities from a word in a fact (a "salsa bar" is not seating).
 - NEVER offer, promise or imply anything free, discounted or comped — no "let us treat you", no "next one's on us", no vouchers. You have no authority to give anything away.
 - The reviewer's display name may not be a real first name. Use it only if it reads like one; otherwise address them without a name rather than writing something absurd.
+- You are speaking TO the reviewer, ABOUT the staff. Never open by addressing a staff member the reviewer praised ("Nate, you rock!" when Nate is the employee) — the reviewer is the audience; the staff member is not reading this.
 - Do not read ambiguous wording as praise. If the review is short and unclear ("a different experience"), stay neutral and do not invent a positive interpretation.
 - Do not attribute to the reviewer anything they did not actually say — never thank them for praising the price, speed, or anything else that is not in their words.
 - If the review is ambiguous or mixed, do NOT add a forward dish suggestion — selling to someone with a complaint reads as not listening.
@@ -159,7 +186,12 @@ async function draft(loc, review, recent = [], suggestion = null, locPhrase = nu
     },
     body: JSON.stringify({
       model: "claude-sonnet-5",
-      max_tokens: 700,
+      // Sonnet 5 runs ADAPTIVE THINKING by default when `thinking` is omitted —
+      // on a hard review it can spend the whole cap thinking and return zero
+      // text blocks ("no text block, stop_reason=max_tokens, types=[thinking]",
+      // seen 2x on 8/24). max_tokens is a ceiling, not a spend: replies bill
+      // ~400 tokens either way, so headroom here costs nothing.
+      max_tokens: 4000,
       messages: [{ role: "user", content: buildPrompt(loc, review, recent, suggestion, locPhrase) }],
     }),
   });
@@ -297,8 +329,19 @@ for (const loc of locations) {
     // mentioned it or it is the code-chosen suggestion. Measured 8/19: the model
     // introduced tacos unprompted in 37 of 118 posted replies (47% taco rate) —
     // this gate makes freelancing impossible rather than discouraged.
+    // Reviewer typos must count as mentions ("gauc", "fires the most" — both real
+    // 8/24 cases, both adjacent-letter swaps): exact-substring matching re-blocks
+    // the same correct reply every run, forever, because the typo is permanent.
+    const reviewWords = (review.comment || "").toLowerCase().split(/[^a-záéíóúñü]+/).filter(Boolean);
+    const reviewerSaid = w => {
+      const lw = w.toLowerCase();
+      if ((review.comment || "").toLowerCase().includes(lw)) return true;
+      if (lw.length < 4) return false; // fuzzy on short words over-matches
+      return reviewWords.some(rw =>
+        damerau1(rw, lw) || damerau1(rw.replace(/s$/, ""), lw) || damerau1(rw, lw.replace(/s$/, "")));
+    };
     const introduced = (d.reply.match(new RegExp(DISH_WORDS.source, "gi")) || [])
-      .filter(w => !(review.comment || "").toLowerCase().includes(w.toLowerCase()) &&
+      .filter(w => !reviewerSaid(w) &&
                    !(suggestion || "").toLowerCase().includes(w.toLowerCase()) &&
                    !/salsa/i.test(w)); // "salsa bar" is a service attribute, not a dish
     if (introduced.length) {
@@ -317,7 +360,7 @@ for (const loc of locations) {
         while (state.recent[loc.slug].length > 8) state.recent[loc.slug].shift();
         console.log("   ✓ published");
       } catch (e) {
-        console.log(`   ⚠ ${id}: publish failed — ${e.message.slice(0, 160)}`);
+        console.log(`   ⚠ ${id}: publish failed — ${e.message.slice(0, 240)}`);
         continue; // unreplied on Google → retried next run; notification stays queued only if posted
       }
     }

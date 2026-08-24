@@ -62,7 +62,9 @@ async function api(token, url, init = {}) {
     ...init,
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json", ...(init.headers || {}) },
   });
-  if (!r.ok) throw new Error(`${init.method || "GET"} ${url.replace(/\?.*/, "")} → ${r.status}: ${(await r.text()).slice(0, 300)}`);
+  // Status + body must survive the caller's log truncation — a full v4 URL is
+  // ~200 chars and used to push the actual failure reason past the cutoff.
+  if (!r.ok) throw new Error(`${init.method || "GET"} /${url.replace(/\?.*/, "").split("/").pop()} → ${r.status}: ${(await r.text()).slice(0, 300)}`);
   return r.json();
 }
 
