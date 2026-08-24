@@ -25,6 +25,28 @@ state.locPhrase ||= {}; // per-location location-wording rotation (cross-run)
 const dishCfgPath = path.join(root, "content/dish-suggestions.json");
 const dishCfg = fs.existsSync(dishCfgPath) ? JSON.parse(fs.readFileSync(dishCfgPath, "utf8")) : null;
 
+// Menu-drift check: every pool dish should still be findable on the live menu
+// (content/menu.json). WARN-ONLY — pools are human-curated, and colloquial
+// names legitimately differ from menu titles ("carne asada fries" = the menu's
+// "Protein Fries"), so a human decides; automation only surfaces the drift.
+{
+  const menuPath = path.join(root, "content/menu.json");
+  if (dishCfg && fs.existsSync(menuPath)) {
+    const menuNames = JSON.parse(fs.readFileSync(menuPath, "utf8")).categories
+      .flatMap(c => c.items.map(i => i.name.toLowerCase()));
+    for (const [slug, pool] of Object.entries(dishCfg.pools)) {
+      for (const e of pool) {
+        if (/margarita|guacamole/i.test(e.dish)) continue; // bar/side items, POS-verified separately
+        const tokens = e.dish.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(the|a)\s+/, "")
+          .split(/\s+/).filter(w => w && !["and", "from", "full", "bar", "we", "serve", "them", "all", "day"].includes(w))
+          .map(w => w.replace(/s$/, ""));
+        const found = menuNames.some(n => tokens.every(t => n.includes(t)));
+        if (!found) console.log(`⚠ MENU-DRIFT [${slug}]: pool dish "${e.dish}" not found on content/menu.json — verify it's still served (colloquial names are OK if intentional)`);
+      }
+    }
+  }
+}
+
 // Any dish vocabulary a reviewer might use — if the review itself mentions food,
 // the reply ECHOES it and gets no forward suggestion (selling past a customer
 // who already told you what they ate reads as not listening).
@@ -165,6 +187,7 @@ ${s <= 2 ? `- CRITICAL: assert NOTHING. Do not explain what happened, do not def
 - NEVER offer, promise or imply anything free, discounted or comped — no "let us treat you", no "next one's on us", no vouchers. You have no authority to give anything away.
 - The reviewer's display name may not be a real first name. Use it only if it reads like one; otherwise address them without a name rather than writing something absurd.
 - You are speaking TO the reviewer, ABOUT the staff. Never open by addressing a staff member the reviewer praised ("Nate, you rock!" when Nate is the employee) — the reviewer is the audience; the staff member is not reading this.
+- Never state, repeat, or confirm a price — not even one the reviewer mentions. Prices change and reviews disagree with each other; an owner reply affirming a wrong or stale price is a real problem. Praise the value without the number.
 - Do not read ambiguous wording as praise. If the review is short and unclear ("a different experience"), stay neutral and do not invent a positive interpretation.
 - Do not attribute to the reviewer anything they did not actually say — never thank them for praising the price, speed, or anything else that is not in their words.
 - If the review is ambiguous or mixed, do NOT add a forward dish suggestion — selling to someone with a complaint reads as not listening.
@@ -316,6 +339,23 @@ for (const loc of locations) {
       continue;
     }
 
+    // NO generic phrase-convergence BLOCKING gate — considered and REJECTED
+    // 2026-08-24. Replayed against the 8/24 run's real replies, a "shares a
+    // 4-gram with 3+ recent replies" gate would have blocked 78 of 97 drafts:
+    // the tripwires are natural courtesy closers ("hope to see you", "thanks
+    // for the five stars") that healthy replies legitimately repeat. Template
+    // collapse is instead surfaced by the post-run convergence audit below and
+    // handled with targeted deterministic gates like the two that follow.
+
+    // Price gate: deterministic, like the brand gate — prompt rules alone don't
+    // hold. A reply must never carry a price, even one echoed from the reviewer
+    // (QA 8/24: "That $1.50 taco deal" — reviews disagree $1/$1.39/$1.50, and a
+    // stale price in an owner reply reads as a promise).
+    if (/[$]\s*\d|\b\d+(?:[.,]\d{2})?\s*(?:dollars|bucks|dlls)\b/i.test(d.reply)) {
+      console.log(`   ⚠ ${id}: price gate — reply states a price, skipped for retry: ${d.reply.slice(0, 120)}`);
+      continue;
+    }
+
     // Location-template gate: the convergent constructions may appear only when
     // they ARE the assigned wording. Deterministic — recurrence is impossible,
     // not just discouraged.
@@ -357,7 +397,7 @@ for (const loc of locations) {
         await putReply(token, loc.account, loc.location, id, d.reply);
         state.replied[id] = { at: new Date().toISOString(), location: loc.slug, stars: s };
         (state.recent[loc.slug] ||= []).push(d.reply);
-        while (state.recent[loc.slug].length > 8) state.recent[loc.slug].shift();
+        while (state.recent[loc.slug].length > 12) state.recent[loc.slug].shift();
         console.log("   ✓ published");
       } catch (e) {
         console.log(`   ⚠ ${id}: publish failed — ${e.message.slice(0, 240)}`);
@@ -378,6 +418,33 @@ for (const loc of locations) {
       });
     }
     posted++;
+  }
+}
+
+// Post-run convergence audit: measure phrase clustering across everything this
+// run drafted. REPORT-ONLY — a blocking version was replayed against the 8/24
+// run and would have gated 78/97 drafts on courtesy closers ("hope to see
+// you", "thanks for the five stars"), which healthy replies legitimately
+// repeat. The 🚨 fires only on CONTENT phrases (dish/brand/location tokens):
+// both real collapses were content phrases (taco 47% on 8/19, "our La Jolla
+// spot" 83% on 8/21); courtesy phrases report quietly for trend-watching.
+if (recentReplies.length >= 8) {
+  const contentTokens = new RegExp(
+    `${DISH_WORDS.source}|pueblo|${cfg.locations.flatMap(l => [l.name, l.city]).map(s => s.toLowerCase().split(/\s+/)).flat().filter(w => w.length > 3).join("|")}`, "i");
+  const freq = {};
+  for (const r of recentReplies) {
+    const w = r.toLowerCase().replace(/[^a-z0-9áéíóúñü\s]/g, " ").split(/\s+/).filter(Boolean);
+    const seen = new Set();
+    for (let i = 0; i + 4 <= w.length; i++) seen.add(w.slice(i, i + 4).join(" "));
+    for (const g of seen) freq[g] = (freq[g] || 0) + 1;
+  }
+  const top = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 5).filter(([, n]) => n > 1);
+  if (top.length) {
+    console.log(`\nConvergence audit (${recentReplies.length} replies this run) — most-shared 4-word phrases:`);
+    for (const [g, n] of top) {
+      const pct = Math.round(100 * n / recentReplies.length);
+      console.log(`   ${pct >= 25 && contentTokens.test(g) ? "🚨" : "  "} ${n}x (${pct}%) "${g}"`);
+    }
   }
 }
 
