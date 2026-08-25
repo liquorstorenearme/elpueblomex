@@ -3880,36 +3880,37 @@
     "AbFvOqlnVgoca5G6WIfYBhC7g86Hg6chr6LpcZwxw8uH7eUvhMqvKKHdvKUKwovQkaaMH8pTVvTBuw": "backlog-skipped",
     "AbFvOqlc048TJYJOTxd9b2Mwi7mHKxV0s69WDm_gVU6duw5q-OkiNkRaI5Tpa5HXbEzgHkeDwQLk": "backlog-skipped",
     "AbFvOqnP1mxPJ4splqUCslZlBdzldVSf-rOLs0kM1x79C2ZAsaEffCi_2Nafb16CkKV6h0P5sODKIQ": "backlog-skipped",
-    "AbFvOqmNyNt-w9elEVkKLeHQZPs4AMnnbPz7GhoEvqKiFb71q1aGDvuxq08WB2IFz-6IaycRnyz83w": "backlog-skipped"
+    "AbFvOqmNyNt-w9elEVkKLeHQZPs4AMnnbPz7GhoEvqKiFb71q1aGDvuxq08WB2IFz-6IaycRnyz83w": "backlog-skipped",
+    "AbFvOqkie-uTGZRaO7esSz85wYNsaY1_qp-JxgB-HhtbvgiU7RJxslQjgtbJdYS1X6hcloTFz6fNLg": "2026-08-25T16:39:58.115Z"
   },
-  "lastRun": "2026-08-24T16:46:46.253Z",
+  "lastRun": "2026-08-25T16:39:58.116Z",
   "suggest": {
     "carlsbad": {
       "recentDishes": [
         "a breakfast burrito (we serve them all day)",
         "the fish tacos",
-        "the carne asada fries"
+        "the california burrito"
       ]
     },
     "del-mar": {
       "recentDishes": [
-        "the carne asada burrito",
-        "the fish tacos",
-        "a breakfast burrito (we serve them all day)"
+        "a margarita from the full bar",
+        "the california burrito",
+        "the carne asada burrito"
       ]
     },
     "carmel-valley": {
       "recentDishes": [
-        "the fish tacos",
         "a margarita from the full bar",
-        "the california burrito"
+        "the california burrito",
+        "the carne asada burrito"
       ]
     },
     "la-jolla": {
       "recentDishes": [
-        "the shrimp tacos",
-        "the carne asada burrito",
-        "the california burrito"
+        "the fish tacos",
+        "chips and guacamole",
+        "the shrimp tacos"
       ]
     }
   },
@@ -3958,34 +3959,34 @@
   "locPhrase": {
     "carlsbad": {
       "recent": [
-        4,
+        7,
         5,
-        1,
-        0
+        2,
+        3
       ]
     },
     "del-mar": {
       "recent": [
+        0,
         5,
-        1,
-        4,
+        3,
         6
       ]
     },
     "la-jolla": {
       "recent": [
-        6,
         5,
-        7,
+        1,
+        6,
         4
       ]
     },
     "carmel-valley": {
       "recent": [
-        0,
+        5,
         4,
         2,
-        3
+        1
       ]
     }
   }
