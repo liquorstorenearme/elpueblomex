@@ -3883,20 +3883,20 @@
     "AbFvOqmNyNt-w9elEVkKLeHQZPs4AMnnbPz7GhoEvqKiFb71q1aGDvuxq08WB2IFz-6IaycRnyz83w": "backlog-skipped",
     "AbFvOqkie-uTGZRaO7esSz85wYNsaY1_qp-JxgB-HhtbvgiU7RJxslQjgtbJdYS1X6hcloTFz6fNLg": "2026-08-25T16:39:58.115Z"
   },
-  "lastRun": "2026-08-25T16:39:58.116Z",
+  "lastRun": "2026-08-26T16:50:24.038Z",
   "suggest": {
     "carlsbad": {
       "recentDishes": [
+        "the carne asada fries",
         "a breakfast burrito (we serve them all day)",
-        "the fish tacos",
-        "the california burrito"
+        "the fish tacos"
       ]
     },
     "del-mar": {
       "recentDishes": [
-        "a margarita from the full bar",
-        "the california burrito",
-        "the carne asada burrito"
+        "a breakfast burrito (we serve them all day)",
+        "the fish tacos",
+        "a margarita from the full bar"
       ]
     },
     "carmel-valley": {
@@ -3908,9 +3908,9 @@
     },
     "la-jolla": {
       "recentDishes": [
-        "the fish tacos",
         "chips and guacamole",
-        "the shrimp tacos"
+        "the shrimp tacos",
+        "the california burrito"
       ]
     }
   },
@@ -3959,34 +3959,34 @@
   "locPhrase": {
     "carlsbad": {
       "recent": [
+        3,
         7,
-        5,
-        2,
-        3
+        6,
+        5
       ]
     },
     "del-mar": {
       "recent": [
-        0,
-        5,
         3,
-        6
+        4,
+        2,
+        1
       ]
     },
     "la-jolla": {
       "recent": [
-        5,
+        3,
+        2,
         1,
-        6,
-        4
+        0
       ]
     },
     "carmel-valley": {
       "recent": [
-        5,
-        4,
+        6,
+        3,
         2,
-        1
+        5
       ]
     }
   }
