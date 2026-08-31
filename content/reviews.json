@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-08-30T19:38:18.073Z",
+  "fetched_at": "2026-08-31T21:44:02.647Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 1952,
+      "total": 1953,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -104,7 +104,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/114758775439965190588/reviews",
           "rating": 5,
           "text": "Quick, easy, and delicious dinner! I’ve been going here for their $1 fish tacos (now $1.39, but I think I can afford the increase) since I was a kid. Went back to visit my hometown and had to come here. Quality still as good as I remember as a kid! Iker and Jeremiah were super helpful at the cashiers. 10/10 recommend for a quick, affordable lunch or dinner.",
-          "relativeTime": "2 months ago",
+          "relativeTime": "3 months ago",
           "publishTime": "2026-06-02T02:02:30.577897427Z"
         }
       ]
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1452,
+      "total": 1454,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2446,
+      "total": 2449,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1454,
+      "total": 1457,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -266,7 +266,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/115577642758359097411/reviews",
           "rating": 5,
           "text": "The fish tacos were really good!!! Good price point for the area. Definitely one of our new spots. The service and attention was top!",
-          "relativeTime": "a month ago",
+          "relativeTime": "2 months ago",
           "publishTime": "2026-07-02T03:51:06.224317057Z"
         }
       ]
