@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-09-12T18:57:03.949Z",
+  "fetched_at": "2026-09-13T19:11:27.012Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 1970,
+      "total": 1972,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1585,
+      "total": 1587,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1465,
+      "total": 1469,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1533,
+      "total": 1541,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -261,13 +261,13 @@
           "publishTime": "2026-07-27T01:30:05.783103186Z"
         },
         {
-          "author": "Verónica Pérez-Canabal",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjW6FOQVPMAFGxMzNv0rSEY4zLfMjV--1pVR4B8WyySw25CVzBQ=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/115577642758359097411/reviews",
+          "author": "blondie",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocJHNegIxm8S52BuyekJuwoqY3-CUkjjrUu1p0BbUEyAMhxbNg=s128-c0x00000000-cc-rp-mo-ba4",
+          "authorUrl": "https://www.google.com/maps/contrib/115200244325292558823/reviews",
           "rating": 5,
-          "text": "The fish tacos were really good!!! Good price point for the area. Definitely one of our new spots. The service and attention was top!",
-          "relativeTime": "2 months ago",
-          "publishTime": "2026-07-02T03:51:06.224317057Z"
+          "text": "good prices without skimping on quality.\ntheir tacos are SOO good. and huge.\n\nwould really recommend the fish tacos or the 2 for 10 and the 1.50 side special.\n\nwill be coming back !!",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-09-06T01:28:07.366949854Z"
         }
       ]
     }
