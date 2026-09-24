@@ -1252,30 +1252,6 @@ ${ticker("ticker--agave")}
   </div>
 </section>
 
-<section class="section section--cream-2" id="party-packs">
-  <div class="section__inner">
-    <header class="section__head section__head--center">
-      <p class="eyebrow">Under 40 guests · Short notice</p>
-      <h2 class="display-sm">Or grab a <span class="serif" style="color:var(--terracotta)">party pack.</span></h2>
-      <p class="lede">Smaller group, or need it tomorrow? Our grab-and-go trays feed a crowd with no minimum and no lead time — order from your nearest El Pueblo and call ahead.</p>
-    </header>
-    <div class="party-grid">
-      ${site.catering.partyPacks.slice(0, 4).map(p => `
-      <article class="party-card">
-        <div class="party-card__head">
-          <h3>${h(p.name)}</h3>
-          ${p.price ? `<span class="party-card__price">${h(p.price)}</span>` : ""}
-        </div>
-        <p class="party-card__serves"><strong>${h(p.serves)}</strong></p>
-        <p>${h(p.description)}</p>
-      </article>`).join("")}
-    </div>
-    <div class="cta-row" style="justify-content:center;margin-top:32px;">
-      <a class="btn btn--ghost" href="/menu/#party-packs">See all ${site.catering.partyPacks.length} party packs</a>
-    </div>
-  </div>
-</section>
-
 <section class="section section--cream" id="catering-request">
   <div class="section__inner">
     <header class="section__head section__head--center">
