@@ -155,7 +155,7 @@
         "featured": false,
         "includes": [
           "Proteins: choose 1 or both — carne asada, pollo asado",
-          "~6 oz protein per guest",
+          "Two tacos per guest",
           "Corn & flour tortillas",
           "Rice & beans",
           "The bar: salsa quebrada, salsa verde & salsa naranja, shredded cheese, sour cream, guacamole, onion, cilantro, lime"
@@ -171,7 +171,7 @@
         "featured": true,
         "includes": [
           "Proteins: choose any 2 — adobada, carne asada, pollo asado",
-          "~6.5 oz protein per guest",
+          "Two tacos per guest",
           "Corn & flour tortillas",
           "Rice, beans, chips & salsa",
           "The bar: salsa quebrada, salsa verde & salsa naranja, shredded cheese, sour cream, guacamole, onion, cilantro, lime",
@@ -188,7 +188,7 @@
         "featured": false,
         "includes": [
           "Proteins: choose any 2 — adobada, carne asada, pollo asado",
-          "~7 oz protein per guest",
+          "Two tacos per guest",
           "Corn & flour tortillas",
           "Rice, beans, chips & salsa",
           "The bar: salsa quebrada, salsa verde & salsa naranja, shredded cheese, sour cream, guacamole, onion, cilantro, lime",
