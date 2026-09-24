@@ -1187,8 +1187,7 @@ function renderCatering() {
       <h1 class="display">${h(c.heroHeadline)}</h1>
       <p class="lede">${h(c.heroSub)}</p>
       <div class="cta-row">
-        <a class="btn btn--primary" href="#catering-request">Request catering</a>
-        <a class="btn btn--ghost" href="#packages">See packages</a>
+        <a class="btn btn--primary" href="#packages">See packages</a>
       </div>
     </div>
     <div class="page-head__media page-head__media--landscape">
