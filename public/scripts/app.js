@@ -255,6 +255,7 @@
         rate: 'Too many submissions — try again in a few minutes.',
         parse: 'We could not read that submission. Please try again.',
         missing: 'Please fill in the required fields.',
+        guests: 'Catering has a 40-guest minimum. Please enter a guest count of 40 or more.',
         email: 'That email address looks invalid.',
         send: 'We could not send your message. Please try again or email hello@elpueblomex.com.',
         size: 'Resume file is too large (10MB max).',

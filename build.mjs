@@ -537,6 +537,7 @@ const footer = () => `
         <h3>Menu</h3>
         <ul>
           <li><a href="/menu/">Food &amp; drink</a></li>
+          <li><a href="/catering/">Catering</a></li>
           <li><a href="/event-space/">Private events</a></li>
         </ul>
       </div>
@@ -1290,14 +1291,14 @@ ${ticker("ticker--agave")}
         <label>Email<input type="email" name="email" autocomplete="email" required></label>
       </div>
       <div class="stack-form__row">
-        <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
-        <label>Organization<input name="organization" autocomplete="organization"></label>
+        <label>Phone<input type="tel" name="phone" autocomplete="tel" required></label>
+        <label>Organization<input name="organization" autocomplete="organization" required></label>
       </div>
       <div class="stack-form__row">
         <label>Event location<input name="event_location" autocomplete="street-address" placeholder="Address or city of the event" required></label>
         <label>Package
-          <select name="package">
-            <option value="">Not sure yet</option>
+          <select name="package" required>
+            <option value="">Choose a package</option>
             <option value="Fiesta — $21/guest">Fiesta — $21/guest</option>
             <option value="Celebración — $28/guest">Celebración — $28/guest</option>
             <option value="Gran Fiesta — $39/guest">Gran Fiesta — $39/guest</option>
@@ -1305,16 +1306,16 @@ ${ticker("ticker--agave")}
         </label>
       </div>
       <div class="stack-form__row">
-        <label>Guest count<input type="number" name="guests" min="40" placeholder="Minimum 40"></label>
-        <label>Event date<input type="date" name="date"></label>
+        <label>Guest count<input type="number" name="guests" min="40" step="1" placeholder="Minimum 40" required></label>
+        <label>Event date<input type="date" name="date" required></label>
       </div>
       <div class="stack-form__row">
-        <label>Serving start time<input type="time" name="start_time"></label>
+        <label>Serving start time<input type="time" name="start_time" required></label>
         <p class="stack-form__hint" style="align-self:end;margin:0;">Every package is a 2-hour serving window from your start time — book 6:00 pm and we serve 6:00–8:00 pm.</p>
       </div>
-      <label>Event details<textarea name="message" rows="5" placeholder="Event type, venue details, dietary needs..."></textarea></label>
+      <label>Event details<textarea name="message" rows="5" placeholder="Event type, venue details, dietary needs..." required></textarea></label>
       <button class="btn btn--primary" type="submit">Send catering request</button>
-      <p class="stack-form__hint">40-guest minimum · please allow at least 96 hours' notice. We'll confirm within one business day.</p>
+      <p class="stack-form__hint">All fields required · 40-guest minimum · please allow at least 96 hours' notice. We'll confirm within one business day.</p>
       <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your request. We don't sell or share your information, and we don't send marketing texts — your phone number is for callbacks only.</p>
     </form>
   </div>

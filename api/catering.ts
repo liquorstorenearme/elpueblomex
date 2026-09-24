@@ -75,7 +75,11 @@ export default async function handler(req: Request): Promise<Response> {
   const date = g("date").slice(0, 40);
   const message = g("message").slice(0, 5000);
 
-  if (!name || !email || !eventLocation) return back(ret, req.url, { err: "missing" });
+  if (!name || !email || !phone || !organization || !eventLocation || !pkg || !guests || !date || !startTime || !message) {
+    return back(ret, req.url, { err: "missing" });
+  }
+  const guestCount = Number(guests);
+  if (!Number.isInteger(guestCount) || guestCount < 40) return back(ret, req.url, { err: "guests" });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return back(ret, req.url, { err: "email" });
   if (looksLikeSpam(message, email, name)) return back(ret, req.url, { sent: "1" });
 
