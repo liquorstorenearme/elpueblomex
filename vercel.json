@@ -326,27 +326,27 @@
     },
     {
       "source": "/product/make-your-own-tacos-party-pack/",
-      "destination": "/catering/#party-packs",
+      "destination": "/menu/#party-packs",
       "permanent": true
     },
     {
       "source": "/product/rolled-tacos-50/",
-      "destination": "/catering/#party-packs",
+      "destination": "/menu/#party-packs",
       "permanent": true
     },
     {
       "source": "/product/enchiladas/",
-      "destination": "/catering/#party-packs",
+      "destination": "/menu/#party-packs",
       "permanent": true
     },
     {
       "source": "/product/quesadilla-party-tray-serves-12/",
-      "destination": "/catering/#party-packs",
+      "destination": "/menu/#party-packs",
       "permanent": true
     },
     {
       "source": "/product/chips-and-salsa-full-tray/",
-      "destination": "/catering/#party-packs",
+      "destination": "/menu/#party-packs",
       "permanent": true
     },
     {
@@ -381,12 +381,12 @@
     },
     {
       "source": "/product-category/party-packs/",
-      "destination": "/catering/#party-packs",
+      "destination": "/menu/#party-packs",
       "permanent": true
     },
     {
       "source": "/product-category/party-packs/page/:n*",
-      "destination": "/catering/#party-packs",
+      "destination": "/menu/#party-packs",
       "permanent": true
     },
     {

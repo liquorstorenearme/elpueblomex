@@ -1123,6 +1123,13 @@ ${ticker("ticker--agave")}
       </article>`).join("")}
     </div>
     <p class="party-note">Order from your nearest El Pueblo — call ahead so we can have it ready.</p>
+    <div class="event-card" style="margin-top:40px;text-align:center;">
+      <h3>Feeding 40 or more?</h3>
+      <p>Our full-service catering packages come with staff, setup, an attended taco bar, and teardown — priced per guest.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:20px;">
+        <a class="btn btn--primary" href="/catering/">See catering packages</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1240,6 +1247,30 @@ ${ticker("ticker--agave")}
       <dl class="catering-policies">
         ${c.policies.map(p => `<div class="cpolicy"><dt>${h(p.label)}</dt><dd>${h(p.value)}</dd></div>`).join("")}
       </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream-2" id="party-packs">
+  <div class="section__inner">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Under 40 guests · Short notice</p>
+      <h2 class="display-sm">Or grab a <span class="serif" style="color:var(--terracotta)">party pack.</span></h2>
+      <p class="lede">Smaller group, or need it tomorrow? Our grab-and-go trays feed a crowd with no minimum and no lead time — order from your nearest El Pueblo and call ahead.</p>
+    </header>
+    <div class="party-grid">
+      ${site.catering.partyPacks.slice(0, 4).map(p => `
+      <article class="party-card">
+        <div class="party-card__head">
+          <h3>${h(p.name)}</h3>
+          ${p.price ? `<span class="party-card__price">${h(p.price)}</span>` : ""}
+        </div>
+        <p class="party-card__serves"><strong>${h(p.serves)}</strong></p>
+        <p>${h(p.description)}</p>
+      </article>`).join("")}
+    </div>
+    <div class="cta-row" style="justify-content:center;margin-top:32px;">
+      <a class="btn btn--ghost" href="/menu/#party-packs">See all ${site.catering.partyPacks.length} party packs</a>
     </div>
   </div>
 </section>
