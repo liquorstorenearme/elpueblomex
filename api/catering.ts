@@ -13,8 +13,7 @@ const esc = (s: string) =>
   String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 // Only allow redirecting back to known catering pages (no open redirect).
-function safeReturn(raw: string): string {
-  if (raw === "/catering-preview/" || raw === "/catering/") return raw;
+function safeReturn(_raw: string): string {
   return "/catering/";
 }
 

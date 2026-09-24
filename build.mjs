@@ -1168,36 +1168,8 @@ ${ticker("ticker--marigold")}
 }
 
 // ---------- Catering ----------
+// ---------- Catering ----------
 function renderCatering() {
-  const body = `
-<section class="page-head">
-  <div class="page-head__inner" style="text-align:center;max-width:720px;margin:0 auto;">
-    <p class="eyebrow">Catering</p>
-    <h1 class="display-sm">Catering is <span class="serif" style="color:var(--terracotta)">temporarily paused.</span></h1>
-    <p class="lede" style="margin-top:24px;">We're working through some internal logistics and have paused catering orders for the moment. Please check back soon — we'll have a refreshed lineup of options when we're back up.</p>
-    <p class="lede" style="margin-top:16px;">In the meantime, you can still <a href="/menu/">browse the full menu</a> or order pickup from your nearest El Pueblo.</p>
-    <div class="cta-row" style="justify-content:center;margin-top:32px;">
-      <a class="btn btn--primary" href="/menu/">See the menu</a>
-      <a class="btn btn--ghost" href="/locations/">Find a location</a>
-    </div>
-  </div>
-</section>
-
-${ticker("ticker--marigold")}
-`;
-  const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Catering", url: "/catering/" }]);
-  return layout({
-    title: `Catering — ${site.brand.name}`,
-    description: "El Pueblo catering is temporarily paused while we work through some internal logistics. Please check back soon.",
-    canonicalPath: "/catering/",
-    body,
-    bodyClass: "page-catering",
-    schema: [crumbs]
-  });
-}
-
-// ---------- Catering Program (test/preview page) ----------
-function renderCateringPreview() {
   const c = site.cateringProgram;
   const body = `
 <section class="page-head page-head--with-media">
@@ -1281,7 +1253,7 @@ ${ticker("ticker--agave")}
     </header>
     <form class="stack-form" action="/api/catering" method="post" toolname="submit_catering_request" tooldescription="Request El Pueblo Mexican Food catering for an event — give the event location, date, start time, headcount, and package.">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <input type="hidden" name="return_to" value="/catering-preview/">
+      <input type="hidden" name="return_to" value="/catering/">
       <div class="stack-form__row">
         <label>Name<input name="name" autocomplete="name" required></label>
         <label>Email<input type="email" name="email" autocomplete="email" required></label>
@@ -1319,15 +1291,14 @@ ${ticker("ticker--agave")}
 
 ${ticker("ticker--terracotta")}
 `;
-  const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Catering", url: "/catering-preview/" }]);
+  const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Catering", url: "/catering/" }]);
   return layout({
-    title: `Catering (preview) — ${site.brand.name}`,
+    title: `Catering — ${site.brand.name}`,
     description: "El Pueblo catering — three per-guest taco-bar packages with setup, attended service, and teardown across all five San Diego locations.",
-    canonicalPath: "/catering-preview/",
+    canonicalPath: "/catering/",
     body,
-    bodyClass: "page-catering-program",
-    schema: [crumbs],
-    noindex: true
+    bodyClass: "page-catering page-catering-program",
+    schema: [crumbs]
   });
 }
 
@@ -3117,7 +3088,6 @@ function build() {
 
   // Info pages
   write("catering/index.html", renderCatering());
-  write("catering-preview/index.html", renderCateringPreview());
   write("event-space/index.html", renderEventSpace());
   write("bars/index.html", renderBars());
   write("gives-back/index.html", renderGivesBack());

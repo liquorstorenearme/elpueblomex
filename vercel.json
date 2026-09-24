@@ -160,6 +160,11 @@
       "permanent": true
     },
     {
+      "source": "/catering-preview/",
+      "destination": "/catering/",
+      "permanent": true
+    },
+    {
       "source": "/order-catering/",
       "destination": "/catering/",
       "permanent": true
