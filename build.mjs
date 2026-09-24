@@ -1278,7 +1278,7 @@ ${ticker("ticker--agave")}
         <label>Event date<input type="date" name="date"></label>
       </div>
       <div class="stack-form__row">
-        <label>Serving start time<input type="time" name="start_time" step="900"></label>
+        <label>Serving start time<input type="time" name="start_time"></label>
         <p class="stack-form__hint" style="align-self:end;margin:0;">Every package is a 2-hour serving window from your start time — book 6:00 pm and we serve 6:00–8:00 pm.</p>
       </div>
       <label>Event details<textarea name="message" rows="5" placeholder="Event type, venue details, dietary needs..."></textarea></label>

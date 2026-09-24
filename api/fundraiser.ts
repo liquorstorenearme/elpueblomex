@@ -1,5 +1,6 @@
 import { looksLikeSpam } from "./_spam";
 import { resolveRecipients } from "./_locations";
+import { FORM_TO } from "./_recipients";
 import { rateLimit, clientIp } from "./_ratelimit";
 
 export const config = { runtime: "edge" };
@@ -28,7 +29,7 @@ export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
 
   const resendKey = process.env.RESEND_API_KEY;
-  const fallbackTo = process.env.EP_FUNDRAISER_TO || process.env.EP_TO_EMAIL || "hello@elpueblomex.com";
+  const fallbackTo = FORM_TO;
   const fromEmail = process.env.EP_FROM_EMAIL || "noreply@elpueblomex.com";
   if (!resendKey) return back("/gives-back/", req.url, { err: "config" });
 

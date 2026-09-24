@@ -1,4 +1,5 @@
 import { looksLikeSpam } from "./_spam";
+import { FORM_TO } from "./_recipients";
 import { resolveRecipients, LOCATION_NAMES } from "./_locations";
 import { buildIcs, toBase64 } from "./_ics";
 import { saveBooking, kvConfigured, type Booking } from "./_bookings";
@@ -48,7 +49,7 @@ export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
 
   const resendKey = process.env.RESEND_API_KEY;
-  const fallbackTo = process.env.EP_CATERING_TO || process.env.EP_TO_EMAIL || "hello@elpueblomex.com";
+  const fallbackTo = FORM_TO;
   const fromEmail = process.env.EP_FROM_EMAIL || "noreply@elpueblomex.com";
 
   const ip = clientIp(req);
