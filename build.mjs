@@ -1199,10 +1199,6 @@ ${ticker("ticker--marigold")}
 // ---------- Catering Program (test/preview page) ----------
 function renderCateringPreview() {
   const c = site.cateringProgram;
-  const locOptions = locations
-    .filter(l => !l.comingSoon)
-    .map(l => `<option value="${h(l.slug)}">${h(l.name)}</option>`)
-    .join("");
   const body = `
 <section class="page-head page-head--with-media">
   <div class="page-head__inner">
@@ -1236,7 +1232,7 @@ ${ticker("ticker--marigold")}
     <div class="catering-tiers">
       ${c.tiers.map(t => `
       <article class="ctier ${t.featured ? "ctier--featured" : ""}">
-        ${t.featured ? `<span class="ctier__flag">Most chosen</span>` : ""}
+        ${t.featured ? `<span class="ctier__flag">Most popular</span>` : ""}
         <header class="ctier__head">
           <h3 class="ctier__name">${h(t.name)}</h3>
           <p class="ctier__price">${h(t.price)} <span>${h(t.unit)}</span></p>
@@ -1252,7 +1248,7 @@ ${ticker("ticker--marigold")}
         <a class="btn btn--primary ctier__cta" href="#catering-request">Request ${h(t.name)}</a>
       </article>`).join("")}
     </div>
-    <p class="party-note">40-guest minimum · per-guest pricing on your final confirmed headcount.</p>
+    <p class="party-note">40-guest minimum · per-guest pricing on your final confirmed headcount · every package includes a 2-hour serving window.</p>
   </div>
 </section>
 
@@ -1281,9 +1277,9 @@ ${ticker("ticker--agave")}
     <header class="section__head section__head--center">
       <p class="eyebrow">Let's plan it</p>
       <h2 class="display-sm">Request <span class="serif" style="color:var(--terracotta)">catering.</span></h2>
-      <p class="lede">Tell us your date, headcount, and package. The El Pueblo nearest your event will follow up with a quote, delivery fee, and availability.</p>
+      <p class="lede">Tell us where and when, your headcount, and a package. We'll follow up with a quote, travel fee, and availability.</p>
     </header>
-    <form class="stack-form" action="/api/catering" method="post" toolname="submit_catering_request" tooldescription="Request El Pueblo Mexican Food catering for an event — choose a package, headcount, date, and servicing location.">
+    <form class="stack-form" action="/api/catering" method="post" toolname="submit_catering_request" tooldescription="Request El Pueblo Mexican Food catering for an event — give the event location, date, start time, headcount, and package.">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="return_to" value="/catering-preview/">
       <div class="stack-form__row">
@@ -1295,11 +1291,7 @@ ${ticker("ticker--agave")}
         <label>Organization<input name="organization" autocomplete="organization"></label>
       </div>
       <div class="stack-form__row">
-        <label>Nearest location
-          <select name="location" required>
-            ${locOptions}
-          </select>
-        </label>
+        <label>Event location<input name="event_location" autocomplete="street-address" placeholder="Address or city of the event" required></label>
         <label>Package
           <select name="package">
             <option value="">Not sure yet</option>
@@ -1313,7 +1305,11 @@ ${ticker("ticker--agave")}
         <label>Guest count<input type="number" name="guests" min="40" placeholder="Minimum 40"></label>
         <label>Event date<input type="date" name="date"></label>
       </div>
-      <label>Event details<textarea name="message" rows="5" placeholder="Event type, location/address, timing, dietary needs..."></textarea></label>
+      <div class="stack-form__row">
+        <label>Serving start time<input type="time" name="start_time" step="900"></label>
+        <p class="stack-form__hint" style="align-self:end;margin:0;">Every package is a 2-hour serving window from your start time — book 6:00 pm and we serve 6:00–8:00 pm.</p>
+      </div>
+      <label>Event details<textarea name="message" rows="5" placeholder="Event type, venue details, dietary needs..."></textarea></label>
       <button class="btn btn--primary" type="submit">Send catering request</button>
       <p class="stack-form__hint">40-guest minimum · please allow at least 96 hours' notice. We'll confirm within one business day.</p>
       <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your request. We don't sell or share your information, and we don't send marketing texts — your phone number is for callbacks only.</p>

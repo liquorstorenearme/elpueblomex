@@ -24,6 +24,19 @@ function back(path: string, url: string, params: Record<string, string> = {}): R
   return Response.redirect(u.toString(), 302);
 }
 
+// "18:00" -> "6:00 pm – 8:00 pm" (every package is a 2-hour serving window from the booked start).
+function formatWindow(hhmm: string): string {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(hhmm);
+  if (!m) return "";
+  const start = Number(m[1]) * 60 + Number(m[2]);
+  const fmt = (mins: number) => {
+    const h24 = Math.floor(mins / 60) % 24, mm = mins % 60;
+    const h12 = h24 % 12 || 12;
+    return `${h12}:${String(mm).padStart(2, "0")} ${h24 < 12 ? "am" : "pm"}`;
+  };
+  return `${fmt(start)} – ${fmt(start + 120)} (2-hour window)`;
+}
+
 function row(label: string, value: string, multiline = false): string {
   if (!value) return "";
   const val = multiline
@@ -53,17 +66,20 @@ export default async function handler(req: Request): Promise<Response> {
   const email = g("email").slice(0, 150);
   const phone = g("phone").slice(0, 40);
   const organization = g("organization").slice(0, 150);
-  const location = g("location").slice(0, 60);
+  const location = g("location").slice(0, 60); // legacy El Pueblo slug (no longer on the form)
+  const eventLocation = g("event_location").slice(0, 200);
+  const startTime = g("start_time").slice(0, 10);
+  const servingWindow = formatWindow(startTime);
   const pkg = g("package").slice(0, 80);
   const guests = g("guests").slice(0, 20);
   const date = g("date").slice(0, 40);
   const message = g("message").slice(0, 5000);
 
-  if (!name || !email || !location) return back(ret, req.url, { err: "missing" });
+  if (!name || !email || !eventLocation) return back(ret, req.url, { err: "missing" });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return back(ret, req.url, { err: "email" });
   if (looksLikeSpam(message, email, name)) return back(ret, req.url, { sent: "1" });
 
-  const locationName = LOCATION_NAMES[location] || location;
+  const locationName = LOCATION_NAMES[location] || eventLocation;
 
   // 1) Persist the booking (non-fatal — never lose a lead if KV is down/unset).
   const booking: Booking = {
@@ -95,7 +111,7 @@ export default async function handler(req: Request): Promise<Response> {
     <h2 style="margin:0 0 4px;font-size:22px;">New catering request</h2>
     <p style="margin:0 0 24px;color:#4a362a;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;">El Pueblo Mexican Food · elpueblomex.com</p>
     <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.55;">
-      ${row("Name", name)}${row("Email", email)}${row("Phone", phone)}${row("Organization", organization)}${row("Location", locationName)}${row("Package", pkg)}${row("Guests", guests)}${row("Event date", date)}${row("Details", message, true)}
+      ${row("Name", name)}${row("Email", email)}${row("Phone", phone)}${row("Organization", organization)}${row("Event location", eventLocation)}${row("Package", pkg)}${row("Guests", guests)}${row("Event date", date)}${row("Serving window", servingWindow)}${row("Details", message, true)}
     </table>
     <p style="margin:24px 0 0;color:#4a362a;font-size:13px;">Next steps: confirm availability &amp; the 2-events/day cap, set the delivery fee &amp; county tax, then send the 50% deposit invoice in Toast. Update the booking status in the <strong>Catering</strong> tab of the admin.</p>
     <p style="margin-top:24px;color:#6a5a4a;font-size:11px;border-top:1px solid #eee;padding-top:16px;">Booking ${esc(booking.id)} · IP: ${esc(ip)} · ${new Date().toISOString()}</p>
@@ -105,9 +121,9 @@ export default async function handler(req: Request): Promise<Response> {
 
   const ics = buildIcs({
     uid: booking.id,
-    summary: `Catering — ${name}${pkg ? ` (${pkg})` : ""} — ${locationName}`,
-    description: `${guests ? guests + " guests · " : ""}${pkg || "Package TBD"}\nContact: ${name} · ${phone || email}\nServicing location: ${locationName}\n${message}`,
-    location: locationName,
+    summary: `Catering — ${name}${pkg ? ` (${pkg})` : ""} — ${eventLocation}`,
+    description: `${guests ? guests + " guests · " : ""}${pkg || "Package TBD"}${servingWindow ? ` · Serving ${servingWindow}` : ""}\nContact: ${name} · ${phone || email}\nEvent location: ${eventLocation}\n${message}`,
+    location: eventLocation,
     date,
   });
 
@@ -123,7 +139,7 @@ export default async function handler(req: Request): Promise<Response> {
       to: toList,
       cc: ccList.length ? ccList : undefined,
       reply_to: email,
-      subject: `Catering — ${name} — ${locationName}${guests ? ` (${guests} guests)` : ""}`,
+      subject: `Catering — ${name} — ${eventLocation}${guests ? ` (${guests} guests)` : ""}`,
       html,
       attachments,
     }),
