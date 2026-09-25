@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-09-24T20:15:50.973Z",
+  "fetched_at": "2026-09-25T20:15:06.461Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 1989,
+      "total": 1991,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -23,7 +23,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/111805529318095427104/reviews",
           "rating": 5,
           "text": "The food is delicious. There are about 5–6 tables inside and roughly 10 outside, so it feels spacious. It's located right off the freeway exit and inside a gas station. Since there aren't many restaurants around, it usually gets busy during mealtimes, and you'll have to wait quite a while for your order. If you don't want to wait, I'd recommend ordering online.",
-          "relativeTime": "2 weeks ago",
+          "relativeTime": "3 weeks ago",
           "publishTime": "2026-09-04T19:26:36.102317562Z"
         },
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1608,
+      "total": 1620,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1475,
+      "total": 1478,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2476,
+      "total": 2478,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1599,
+      "total": 1635,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -257,7 +257,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/107800760185577061434/reviews",
           "rating": 5,
           "text": "Carlos is the man. Great service from the start. Good vibes. Fish tacos and carne asada tacos were fantastic and well priced! Kids loved the kids meal options. Turtle cheesecake was delicious.",
-          "relativeTime": "a month ago",
+          "relativeTime": "2 months ago",
           "publishTime": "2026-07-27T01:30:05.783103186Z"
         },
         {
