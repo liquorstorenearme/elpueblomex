@@ -15574,15 +15574,16 @@
     "AbFvOqkie-uTGZRaO7esSz85wYNsaY1_qp-JxgB-HhtbvgiU7RJxslQjgtbJdYS1X6hcloTFz6fNLg": "2026-08-25T16:39:58.115Z",
     "AbFvOqnNPGitLDDtBw0tE5VHBK8L5700VwIxNqqA6ArCsEEFdgW_OeivbV8hX6IBjjSS_OrvwaeP": "2026-09-07T19:47:01.991Z",
     "AbFvOqmkcqfDPzNVLrAUSYlZAmcrrShybjABS1y3JU7LU-bXxSVTAZaav1BueCsYybC22eHei677": "2026-09-07T19:47:01.992Z",
-    "AbFvOqleitxwQr22Apac1Fd0GO0AI_322tZql5YEx22VbfTZ9sp3Gmc6xVcpdHdKI-CVlKaFn_RCHw": "2026-09-24T19:58:45.783Z"
+    "AbFvOqleitxwQr22Apac1Fd0GO0AI_322tZql5YEx22VbfTZ9sp3Gmc6xVcpdHdKI-CVlKaFn_RCHw": "2026-09-24T19:58:45.783Z",
+    "AbFvOql20Jd_Yu7JjxfhIz-Yl3aLvopJBdQ7gIPh5_nHUcco2PXANqWLUY6NyvtI8VmE2nXvEafi_Q": "2026-09-27T19:37:15.635Z"
   },
-  "lastRun": "2026-09-26T19:05:52.473Z",
+  "lastRun": "2026-09-27T19:37:15.636Z",
   "suggest": {
     "carlsbad": {
       "recentDishes": [
         "the fish tacos",
         "the california burrito",
-        "a breakfast burrito (we serve them all day)"
+        "the carne asada fries"
       ]
     },
     "del-mar": {
@@ -15601,9 +15602,9 @@
     },
     "la-jolla": {
       "recentDishes": [
+        "the carne asada burrito",
         "chips and guacamole",
-        "the california burrito",
-        "the shrimp tacos"
+        "the california burrito"
       ]
     }
   },
@@ -15668,34 +15669,34 @@
   "locPhrase": {
     "carlsbad": {
       "recent": [
+        3,
+        5,
         6,
-        2,
-        1,
-        3
+        4
       ]
     },
     "del-mar": {
       "recent": [
-        0,
-        6,
+        3,
         2,
-        1
+        1,
+        4
       ]
     },
     "la-jolla": {
       "recent": [
-        7,
-        0,
-        4,
-        5
+        5,
+        6,
+        3,
+        1
       ]
     },
     "carmel-valley": {
       "recent": [
         4,
-        3,
+        1,
         2,
-        1
+        6
       ]
     }
   }
