@@ -1186,6 +1186,7 @@ function renderCatering() {
       <p class="eyebrow">${h(c.heroEyebrow)}</p>
       <h1 class="display">${h(c.heroHeadline)}</h1>
       <p class="lede">${h(c.heroSub)}</p>
+      <p class="lead-notice">Book at least 2 weeks ahead</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="#packages">See packages</a>
       </div>
@@ -1227,7 +1228,7 @@ ${ticker("ticker--marigold")}
         <a class="btn btn--primary ctier__cta" href="#catering-request">Request ${h(t.name)}</a>
       </article>`).join("")}
     </div>
-    <p class="party-note">40-guest minimum · per-guest pricing on your final confirmed headcount · every package includes a 2-hour serving window.</p>
+    <p class="party-note">Book at least 2 weeks ahead · 40-guest minimum · per-guest pricing on your final confirmed headcount · every package includes a 2-hour serving window.</p>
   </div>
 </section>
 
@@ -1257,6 +1258,7 @@ ${ticker("ticker--agave")}
       <p class="eyebrow">Let's plan it</p>
       <h2 class="display-sm">Request <span class="serif" style="color:var(--terracotta)">catering.</span></h2>
       <p class="lede">Tell us where and when, your headcount, and a package. We'll follow up with a quote, travel fee, and availability.</p>
+      <p class="lead-notice">Events must be booked at least 2 weeks in advance</p>
     </header>
     <form class="stack-form" action="/api/catering" method="post" toolname="submit_catering_request" tooldescription="Request El Pueblo Mexican Food catering for an event — give the event location, date, start time, headcount, and package.">
       <input class="stack-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1282,7 +1284,7 @@ ${ticker("ticker--agave")}
       </div>
       <div class="stack-form__row">
         <label>Guest count<input type="number" name="guests" min="40" step="1" placeholder="Minimum 40" required></label>
-        <label>Event date<input type="date" name="date" data-min-lead-days="14" required></label>
+        <label>Event date (2+ weeks out)<input type="date" name="date" data-min-lead-days="14" required></label>
       </div>
       <div class="stack-form__row">
         <label>Serving start time<input type="time" name="start_time" required></label>
