@@ -210,7 +210,7 @@
     ],
     "policies": [
       { "label": "Minimum", "value": "40-guest minimum per event." },
-      { "label": "Lead time", "value": "Place orders at least 96 hours (4 days) ahead. Shorter notice is subject to approval and kitchen capacity." },
+      { "label": "Lead time", "value": "Book at least 2 weeks (14 days) before your event." },
       { "label": "Serving window", "value": "Every package includes a 2-hour serving window from your booked start time — book 6 pm and we serve 6–8 pm. Setup happens before your start time; teardown after." },
       { "label": "Deposit", "value": "50% deposit confirms your booking; the balance is due 96 hours before the event." },
       { "label": "Cancellation", "value": "Full refund 7+ days out. Inside 7 days the deposit is retained; inside 96 hours the order is non-refundable (food is already sourced)." },

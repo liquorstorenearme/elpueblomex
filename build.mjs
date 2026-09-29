@@ -1282,7 +1282,7 @@ ${ticker("ticker--agave")}
       </div>
       <div class="stack-form__row">
         <label>Guest count<input type="number" name="guests" min="40" step="1" placeholder="Minimum 40" required></label>
-        <label>Event date<input type="date" name="date" required></label>
+        <label>Event date<input type="date" name="date" data-min-lead-days="14" required></label>
       </div>
       <div class="stack-form__row">
         <label>Serving start time<input type="time" name="start_time" required></label>
@@ -1290,7 +1290,7 @@ ${ticker("ticker--agave")}
       </div>
       <label>Event details<textarea name="message" rows="5" placeholder="Event type, venue details, dietary needs..." required></textarea></label>
       <button class="btn btn--primary" type="submit">Send catering request</button>
-      <p class="stack-form__hint">All fields required · 40-guest minimum · please allow at least 96 hours' notice. We'll confirm within one business day.</p>
+      <p class="stack-form__hint">All fields required · 40-guest minimum · events must be booked at least 2 weeks in advance. We'll confirm within one business day.</p>
       <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your request. We don't sell or share your information, and we don't send marketing texts — your phone number is for callbacks only.</p>
     </form>
   </div>

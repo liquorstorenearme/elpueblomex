@@ -241,6 +241,14 @@
   }, { rootMargin: '0px 0px -10% 0px' });
   document.querySelectorAll('.fade-in').forEach((el) => io.observe(el));
 
+  // Earliest bookable date (e.g. catering = 14 days out); the server enforces the same rule.
+  document.querySelectorAll('input[type="date"][data-min-lead-days]').forEach((input) => {
+    const d = new Date();
+    d.setDate(d.getDate() + Number(input.dataset.minLeadDays));
+    const pad = (n) => String(n).padStart(2, '0');
+    input.min = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  });
+
   const params = new URLSearchParams(location.search);
   const sent = params.get('sent');
   const err = params.get('err');
@@ -256,6 +264,7 @@
         parse: 'We could not read that submission. Please try again.',
         missing: 'Please fill in the required fields.',
         guests: 'Catering has a 40-guest minimum. Please enter a guest count of 40 or more.',
+        date: 'Catering needs at least 2 weeks\' notice. Please choose an event date 14 or more days out.',
         email: 'That email address looks invalid.',
         send: 'We could not send your message. Please try again or email hello@elpueblomex.com.',
         size: 'Resume file is too large (10MB max).',

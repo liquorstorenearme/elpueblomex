@@ -9,6 +9,7 @@ export const config = { runtime: "edge" };
 
 const RL_WINDOW_S = 5 * 60;
 const RL_MAX = 5;
+const MIN_LEAD_DAYS = 14;
 
 const esc = (s: string) =>
   String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -81,6 +82,11 @@ export default async function handler(req: Request): Promise<Response> {
   const guestCount = Number(guests);
   if (!Number.isInteger(guestCount) || guestCount < 40) return back(ret, req.url, { err: "guests" });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return back(ret, req.url, { err: "email" });
+  // 2-week minimum notice, counted from today in Pacific time.
+  const todayPT = new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" });
+  const earliest = new Date(`${todayPT}T00:00:00Z`);
+  earliest.setUTCDate(earliest.getUTCDate() + MIN_LEAD_DAYS);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date < earliest.toISOString().slice(0, 10)) return back(ret, req.url, { err: "date" });
   if (looksLikeSpam(message, email, name)) return back(ret, req.url, { sent: "1" });
 
   const locationName = LOCATION_NAMES[location] || eventLocation;

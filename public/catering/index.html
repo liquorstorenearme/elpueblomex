@@ -201,7 +201,7 @@
     <div class="event-card">
       <h3>The details</h3>
       <dl class="catering-policies">
-        <div class="cpolicy"><dt>Minimum</dt><dd>40-guest minimum per event.</dd></div><div class="cpolicy"><dt>Lead time</dt><dd>Place orders at least 96 hours (4 days) ahead. Shorter notice is subject to approval and kitchen capacity.</dd></div><div class="cpolicy"><dt>Serving window</dt><dd>Every package includes a 2-hour serving window from your booked start time — book 6 pm and we serve 6–8 pm. Setup happens before your start time; teardown after.</dd></div><div class="cpolicy"><dt>Deposit</dt><dd>50% deposit confirms your booking; the balance is due 96 hours before the event.</dd></div><div class="cpolicy"><dt>Cancellation</dt><dd>Full refund 7+ days out. Inside 7 days the deposit is retained; inside 96 hours the order is non-refundable (food is already sourced).</dd></div><div class="cpolicy"><dt>Tax</dt><dd>California sales tax applies to the food subtotal, at the rate for the event's county.</dd></div><div class="cpolicy"><dt>Delivery &amp; travel</dt><dd>A distance-based travel fee is set per event by the servicing location and billed separately.</dd></div>
+        <div class="cpolicy"><dt>Minimum</dt><dd>40-guest minimum per event.</dd></div><div class="cpolicy"><dt>Lead time</dt><dd>Book at least 2 weeks (14 days) before your event.</dd></div><div class="cpolicy"><dt>Serving window</dt><dd>Every package includes a 2-hour serving window from your booked start time — book 6 pm and we serve 6–8 pm. Setup happens before your start time; teardown after.</dd></div><div class="cpolicy"><dt>Deposit</dt><dd>50% deposit confirms your booking; the balance is due 96 hours before the event.</dd></div><div class="cpolicy"><dt>Cancellation</dt><dd>Full refund 7+ days out. Inside 7 days the deposit is retained; inside 96 hours the order is non-refundable (food is already sourced).</dd></div><div class="cpolicy"><dt>Tax</dt><dd>California sales tax applies to the food subtotal, at the rate for the event's county.</dd></div><div class="cpolicy"><dt>Delivery &amp; travel</dt><dd>A distance-based travel fee is set per event by the servicing location and billed separately.</dd></div>
       </dl>
     </div>
   </div>
@@ -238,7 +238,7 @@
       </div>
       <div class="stack-form__row">
         <label>Guest count<input type="number" name="guests" min="40" step="1" placeholder="Minimum 40" required></label>
-        <label>Event date<input type="date" name="date" required></label>
+        <label>Event date<input type="date" name="date" data-min-lead-days="14" required></label>
       </div>
       <div class="stack-form__row">
         <label>Serving start time<input type="time" name="start_time" required></label>
@@ -246,7 +246,7 @@
       </div>
       <label>Event details<textarea name="message" rows="5" placeholder="Event type, venue details, dietary needs..." required></textarea></label>
       <button class="btn btn--primary" type="submit">Send catering request</button>
-      <p class="stack-form__hint">All fields required · 40-guest minimum · please allow at least 96 hours' notice. We'll confirm within one business day.</p>
+      <p class="stack-form__hint">All fields required · 40-guest minimum · events must be booked at least 2 weeks in advance. We'll confirm within one business day.</p>
       <p class="stack-form__legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms</a>. We use the info you provide only to respond to your request. We don't sell or share your information, and we don't send marketing texts — your phone number is for callbacks only.</p>
     </form>
   </div>
@@ -336,6 +336,6 @@
     </div>
   </div>
 </div>
-<script src="/scripts/app.js?v=5b9020c0" defer></script>
+<script src="/scripts/app.js?v=10df621f" defer></script>
 </body>
 </html>
