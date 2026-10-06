@@ -18982,34 +18982,34 @@
     "AbFvOqleitxwQr22Apac1Fd0GO0AI_322tZql5YEx22VbfTZ9sp3Gmc6xVcpdHdKI-CVlKaFn_RCHw": "2026-09-24T19:58:45.783Z",
     "AbFvOql20Jd_Yu7JjxfhIz-Yl3aLvopJBdQ7gIPh5_nHUcco2PXANqWLUY6NyvtI8VmE2nXvEafi_Q": "2026-09-27T19:37:15.635Z"
   },
-  "lastRun": "2026-10-05T22:26:43.273Z",
+  "lastRun": "2026-10-06T20:50:26.368Z",
   "suggest": {
     "carlsbad": {
       "recentDishes": [
+        "the carne asada fries",
         "the carne asada burrito",
-        "the california burrito",
-        "a breakfast burrito (we serve them all day)"
+        "the california burrito"
       ]
     },
     "del-mar": {
       "recentDishes": [
-        "the fish tacos",
-        "a breakfast burrito (we serve them all day)",
-        "a margarita from the full bar"
+        "a margarita from the full bar",
+        "the carne asada burrito",
+        "the california burrito"
       ]
     },
     "carmel-valley": {
       "recentDishes": [
-        "the california burrito",
-        "a margarita from the full bar",
-        "the carne asada burrito"
+        "a breakfast burrito (we serve them all day)",
+        "the carne asada burrito",
+        "a margarita from the full bar"
       ]
     },
     "la-jolla": {
       "recentDishes": [
-        "the carne asada burrito",
+        "chips and guacamole",
         "the california burrito",
-        "chips and guacamole"
+        "the carne asada burrito"
       ]
     }
   },
@@ -19074,34 +19074,34 @@
   "locPhrase": {
     "carlsbad": {
       "recent": [
-        4,
-        0,
-        5,
-        6
+        6,
+        1,
+        3,
+        7
       ]
     },
     "del-mar": {
       "recent": [
-        1,
         2,
-        3,
-        6
+        7,
+        1,
+        5
       ]
     },
     "la-jolla": {
       "recent": [
-        2,
-        1,
-        3,
+        5,
+        0,
+        4,
         6
       ]
     },
     "carmel-valley": {
       "recent": [
-        3,
         4,
-        5,
-        0
+        1,
+        0,
+        6
       ]
     }
   }
