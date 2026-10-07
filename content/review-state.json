@@ -18982,34 +18982,34 @@
     "AbFvOqleitxwQr22Apac1Fd0GO0AI_322tZql5YEx22VbfTZ9sp3Gmc6xVcpdHdKI-CVlKaFn_RCHw": "2026-09-24T19:58:45.783Z",
     "AbFvOql20Jd_Yu7JjxfhIz-Yl3aLvopJBdQ7gIPh5_nHUcco2PXANqWLUY6NyvtI8VmE2nXvEafi_Q": "2026-09-27T19:37:15.635Z"
   },
-  "lastRun": "2026-10-06T20:50:26.368Z",
+  "lastRun": "2026-10-07T21:04:56.088Z",
   "suggest": {
     "carlsbad": {
       "recentDishes": [
-        "the carne asada fries",
-        "the carne asada burrito",
-        "the california burrito"
+        "the california burrito",
+        "a breakfast burrito (we serve them all day)",
+        "the fish tacos"
       ]
     },
     "del-mar": {
       "recentDishes": [
-        "a margarita from the full bar",
-        "the carne asada burrito",
-        "the california burrito"
+        "a breakfast burrito (we serve them all day)",
+        "the california burrito",
+        "the fish tacos"
       ]
     },
     "carmel-valley": {
       "recentDishes": [
-        "a breakfast burrito (we serve them all day)",
-        "the carne asada burrito",
-        "a margarita from the full bar"
+        "a margarita from the full bar",
+        "the california burrito",
+        "the carne asada burrito"
       ]
     },
     "la-jolla": {
       "recentDishes": [
-        "chips and guacamole",
-        "the california burrito",
-        "the carne asada burrito"
+        "the shrimp tacos",
+        "the fish tacos",
+        "the california burrito"
       ]
     }
   },
@@ -19074,32 +19074,32 @@
   "locPhrase": {
     "carlsbad": {
       "recent": [
+        4,
         6,
-        1,
-        3,
-        7
+        5,
+        3
       ]
     },
     "del-mar": {
       "recent": [
-        2,
-        7,
         1,
-        5
+        5,
+        4,
+        7
       ]
     },
     "la-jolla": {
       "recent": [
-        5,
-        0,
-        4,
-        6
+        7,
+        3,
+        1,
+        2
       ]
     },
     "carmel-valley": {
       "recent": [
-        4,
-        1,
+        5,
+        7,
         0,
         6
       ]
