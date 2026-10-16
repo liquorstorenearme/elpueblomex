@@ -11,6 +11,10 @@ const outDir = path.join(root, "public");
 const APP_JS_V = crypto.createHash("md5").update(fs.readFileSync(path.join(outDir, "scripts/app.js"))).digest("hex").slice(0, 8);
 
 const site = JSON.parse(fs.readFileSync(path.join(root, "content/site.json"), "utf8"));
+// Catering on/off switch: content/site.json → "cateringPaused". While paused, the nav/footer/menu
+// links are hidden and /catering/ shows a paused notice (URL kept live for SEO + relaunch).
+const CATERING_PAUSED = site.cateringPaused === true;
+if (CATERING_PAUSED) site.nav = site.nav.filter(n => n.href !== "/catering/");
 const menu = JSON.parse(fs.readFileSync(path.join(root, "content/menu.json"), "utf8"));
 const menuBoard = JSON.parse(fs.readFileSync(path.join(root, "content/menu-board.json"), "utf8"));
 const { locations } = JSON.parse(fs.readFileSync(path.join(root, "content/locations.json"), "utf8"));
@@ -537,7 +541,7 @@ const footer = () => `
         <h3>Menu</h3>
         <ul>
           <li><a href="/menu/">Food &amp; drink</a></li>
-          <li><a href="/catering/">Catering</a></li>
+          ${CATERING_PAUSED ? "" : `<li><a href="/catering/">Catering</a></li>`}
           <li><a href="/event-space/">Private events</a></li>
         </ul>
       </div>
@@ -1124,13 +1128,13 @@ ${ticker("ticker--agave")}
       </article>`).join("")}
     </div>
     <p class="party-note">Order from your nearest El Pueblo — call ahead so we can have it ready.</p>
-    <div class="event-card" style="margin-top:40px;text-align:center;">
+    ${CATERING_PAUSED ? "" : `<div class="event-card" style="margin-top:40px;text-align:center;">
       <h3>Feeding 40 or more?</h3>
       <p>Our full-service catering packages come with staff, setup, an attended taco bar, and teardown — priced per guest.</p>
       <div class="cta-row" style="justify-content:center;margin-top:20px;">
         <a class="btn btn--primary" href="/catering/">See catering packages</a>
       </div>
-    </div>
+    </div>`}
   </div>
 </section>
 
@@ -1176,8 +1180,36 @@ ${ticker("ticker--marigold")}
 }
 
 // ---------- Catering ----------
-// ---------- Catering ----------
+function renderCateringPaused() {
+  const body = `
+<section class="page-head">
+  <div class="page-head__inner" style="text-align:center;max-width:720px;margin:0 auto;">
+    <p class="eyebrow">Catering</p>
+    <h1 class="display-sm">Catering is <span class="serif" style="color:var(--terracotta)">temporarily paused.</span></h1>
+    <p class="lede" style="margin-top:24px;">We're working through some internal logistics and have paused catering orders for the moment. Please check back soon.</p>
+    <p class="lede" style="margin-top:16px;">In the meantime, you can still <a href="/menu/">browse the full menu</a> or order pickup from your nearest El Pueblo.</p>
+    <div class="cta-row" style="justify-content:center;margin-top:32px;">
+      <a class="btn btn--primary" href="/menu/">See the menu</a>
+      <a class="btn btn--ghost" href="/locations/">Find a location</a>
+    </div>
+  </div>
+</section>
+
+${ticker("ticker--terracotta")}
+`;
+  const crumbs = breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Catering", url: "/catering/" }]);
+  return layout({
+    title: `Catering — ${site.brand.name}`,
+    description: "El Pueblo catering is temporarily paused while we work through some internal logistics. Please check back soon.",
+    canonicalPath: "/catering/",
+    body,
+    bodyClass: "page-catering",
+    schema: [crumbs]
+  });
+}
+
 function renderCatering() {
+  if (CATERING_PAUSED) return renderCateringPaused();
   const c = site.cateringProgram;
   const body = `
 <section class="page-head page-head--with-media">
