@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-26T17:09:56.492Z",
+  "fetched_at": "2026-10-27T17:07:39.321Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -18,6 +18,15 @@
           "publishTime": "2026-06-17T02:18:40.600074380Z"
         },
         {
+          "author": "Buck Chavarria",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocJnXowKCJc22fDP4KYgOntE_iemtiHMUvTmrRcnJt2BK4HckQ=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/103488241512195756345/reviews",
+          "rating": 5,
+          "text": "I love that there is still a place in Southern California where you can grab some awesome cheap  eat s after surfing and still has the best salsa and  carrots for free like it used to be!!\nStay classic!\nFish tacos and the service is always friendly!!\nGreat job whoever’s responsible for this!!!",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-10-17T22:37:37.494171247Z"
+        },
+        {
           "author": "F Erdogan",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVL5S5m9iuwqUNj35VsQ5sCo77fNdXP_4akOUrMGM8Q_Idzs9mn=s128-c0x00000000-cc-rp-mo-ba4",
           "authorUrl": "https://www.google.com/maps/contrib/111805529318095427104/reviews",
@@ -27,6 +36,15 @@
           "publishTime": "2026-09-04T19:26:36.102317562Z"
         },
         {
+          "author": "Doug Guevara",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVMlL-D7YOAgT7ub35yr_P2ABhwuZ6yYdgR_sbhPhlTZjPwsEkCxg=s128-c0x00000000-cc-rp-mo-ba2",
+          "authorUrl": "https://www.google.com/maps/contrib/102241502734137841054/reviews",
+          "rating": 5,
+          "text": "This place has the best fish tacos and super cheap. Ashley is always so nice here as well.",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-10-15T03:12:14.361620541Z"
+        },
+        {
           "author": "Steve Morales",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXJQfiCFdN2h87KuXawDg-I_hYrG2_PNs7OUrJxv1cILsvRmZm52w=s128-c0x00000000-cc-rp-mo-ba5",
           "authorUrl": "https://www.google.com/maps/contrib/100025884758656069553/reviews",
@@ -34,24 +52,6 @@
           "text": "$1.39 for an Awesome Fish Taco ! Had to check out it to see if it was True ! Yup .. it's True . Got to go and get your fill . The taco has 2 fresh tortillas, the fish is battered to a light and crispy crust . Cabbage and tomatoes with a nice creamy sauce. Add fresh salsa Verde or rojo from the salsa bar. Can't Beat this Deal !!",
           "relativeTime": "5 months ago",
           "publishTime": "2026-05-09T00:06:37.288754842Z"
-        },
-        {
-          "author": "Je S",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXPchHxV_qtFBHT63BYBwo9m1xGSKLlzB9TWz3tz6HUZGz61h83=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/114312321720409157782/reviews",
-          "rating": 5,
-          "text": "Love their fish tacos and for the price, you can’t beat the deal. Great service by Arturo. The only bad thing is the lack of parking",
-          "relativeTime": "3 months ago",
-          "publishTime": "2026-07-08T18:39:03.357645778Z"
-        },
-        {
-          "author": "Jason Novik",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWIrniFEMpU9lOr3e2ItgK6UcRHolkU7DT-fR_UQeMQHLDJj3LH=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/102220138012139654138/reviews",
-          "rating": 5,
-          "text": "$1.39 fish tacos. Places like this should be cherished! Honest restaurant with amazing prices and quality customer service. Cannot beat it! People that actually care about their food and work, and don’t just drive up prices to meet a certain quota.",
-          "relativeTime": "3 months ago",
-          "publishTime": "2026-07-05T02:30:38.998628169Z"
         }
       ]
     },
@@ -90,6 +90,15 @@
           "publishTime": "2026-08-09T01:00:03.363194733Z"
         },
         {
+          "author": "Lauren Rivelli",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXMIZE39P3o5Ir5z0cs-AYFD-e2XUi0q1bFkmUh0lOEUGSYRbU=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/111420397848663477180/reviews",
+          "rating": 4,
+          "text": "Just ran by here for some carry out with my kid. They have great deals on alcohol and tacos. Carne asada burrito is solid, and the kids burrito is a good size. Will come back to try some more items. You get a free cookie for leaving a review ☺️",
+          "relativeTime": "a week ago",
+          "publishTime": "2026-10-19T01:31:07.133457690Z"
+        },
+        {
           "author": "Joseph Yancey",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXeD7ugllM9T1uaNLH13DXZfJWmvxKeio1c0iVkS_jV2iT6qDpytQ=s128-c0x00000000-cc-rp-mo-ba5",
           "authorUrl": "https://www.google.com/maps/contrib/103675167337342749223/reviews",
@@ -97,15 +106,6 @@
           "text": "Been here a couple times, the food is always great. Fajitas plate never lets me down here, so that's usually all I get. Beatriz was great at greeting me and helping me get my late night food. Really like that they are open super late Fridays and Saturdays nights.",
           "relativeTime": "a week ago",
           "publishTime": "2026-10-18T05:39:49.684786857Z"
-        },
-        {
-          "author": "Benjamin smith",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocJC4ZRr_XKRhH8n7ctVPdWXntL8UHCQBa2dUJKbkJsgADvi8Q=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/114391398044533181867/reviews",
-          "rating": 5,
-          "text": "Julio Chris and Juy were very helpful and kind. They offered great service, great food, at an even better price. I go here for lunch about twice a week during school, and because the wait is nonexistent, I am able to eat in a small time period, with no trouble.",
-          "relativeTime": "a month ago",
-          "publishTime": "2026-09-07T20:19:10.645857645Z"
         }
       ]
     },
@@ -189,6 +189,15 @@
           "publishTime": "2026-08-31T02:14:44.681037531Z"
         },
         {
+          "author": "Ana Fernandez",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXWZ0ahvPCPoNQI0Ca0pp4VfWke2I1HjLvUt-kGg2sVaRwxr35y=s128-c0x00000000-cc-rp-mo-ba2",
+          "authorUrl": "https://www.google.com/maps/contrib/100657211732439835516/reviews",
+          "rating": 2,
+          "text": "Cool spot! Cool locals! I ordered a torta de carnitas (should’ve order what the local said; fish tacos). Pinche torta looked great but when I took a piece of the carnitas out estavan mas frias que mis nalgas. Totally ruined the vibes. Carnitas should NOT be cold or crunchyx they are not chicharones. Needs to be hot and juicy and tender. Once I brought it up to the server he took the torta BACK and prob threw it on the grill instead of warming the up so it came back smelling like burnt carnitas. 0/10 on the food. The locals tried to convinced me to come back and try the fish tacos… maybe next time… for sure no carnitas tho $15 to the trash. Still sad about this tbh. Todo lo demas was good.",
+          "relativeTime": "3 weeks ago",
+          "publishTime": "2026-10-03T13:23:22.373416433Z"
+        },
+        {
           "author": "Tania McDonald",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXhvcxsNtMUS-bfg1SjK2sIrcwPI3br646wG7vDOhYqOvgv0UE=s128-c0x00000000-cc-rp-mo",
           "authorUrl": "https://www.google.com/maps/contrib/104142877032106336382/reviews",
@@ -205,15 +214,6 @@
           "text": "This place has the BEST tacos I’ve ever eaten. Oh my word. Often carne asada is dry and chewy—not the case here.  The meat is charred to perfection and is so tender and juicy. My husband had carnitas and it was golden crisp on the outside, moist on the inside, just like it should be.\n\nTopped with guacamole and the works, paired with super soft fresh corn tortillas, and doused with flavorful salsa that packs a punch… Two large tacos that fill you up for only $10… It really doesn’t get any better than this!!! 😍",
           "relativeTime": "3 months ago",
           "publishTime": "2026-07-04T03:41:27.155685968Z"
-        },
-        {
-          "author": "P Corral",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKig8LjDe5gf9XeeUsitf_xjQ_Ysg2Ix7SgGtmchpgJaKeRaQ=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/109468874188056417057/reviews",
-          "rating": 1,
-          "text": "Terrible customer service. Long wait for food. Long wait for drinks. The only good thing were the fish tacos with good size portion and a great price. Menudo soup was poor. Micheladas are not good; posted at $8 and bartender girl charged me $10 each. No napkings available and had to ask several times. Awful service from cashier and bartender girl. Not recommended!",
-          "relativeTime": "4 months ago",
-          "publishTime": "2026-06-14T01:11:40.987108079Z"
         }
       ]
     },
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1867,
+      "total": 1869,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -261,13 +261,13 @@
           "publishTime": "2026-07-27T01:30:05.783103186Z"
         },
         {
-          "author": "Kristopher The Panda",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjX-FULV1PjOaIcDCqgW7V8x7uH5yaecOhtE_FHer7cuX4x9_ffSRw=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/105291817952846483176/reviews",
+          "author": "Verónica Pérez-Canabal",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXzdALuLjI5X-JoUiHdk5yIpCer8fFXp0B-dWbW7yKmZUoox851=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/115577642758359097411/reviews",
           "rating": 5,
-          "text": "⭐⭐⭐⭐⭐\n\nIf you’re looking for amazing Mexican food and outstanding customer service, make sure to stop by El Pueblo Mexican Food. I came in about 20 minutes before closing, and instead of feeling rushed, I was welcomed with kindness and genuine hospitality. The staff went above and beyond to make sure I had a great experience, which says a lot about how they treat their customers.\n\nThe food was delicious, fresh, and exactly what I was craving. What really stood out was how accommodating and friendly everyone was, even at the end of a long day.\n\nA special shoutout to Misael for the excellent service and positive attitude. If you’re stopping by, go see Misael—he’ll take great care of you!\n\nHighly recommend this spot. Great food, great people, and an all-around fantastic experience. I’ll definitely be back! 🌮🔥👏",
-          "relativeTime": "4 months ago",
-          "publishTime": "2026-06-24T06:59:16.688421866Z"
+          "text": "The fish tacos were really good!!! Good price point for the area. Definitely one of our new spots. The service and attention was top!",
+          "relativeTime": "3 months ago",
+          "publishTime": "2026-07-02T03:51:06.224317057Z"
         }
       ]
     }
