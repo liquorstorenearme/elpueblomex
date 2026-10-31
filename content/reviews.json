@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-30T17:06:24.457Z",
+  "fetched_at": "2026-10-31T17:05:16.141Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1733,
+      "total": 1736,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1514,
+      "total": 1515,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2509,
+      "total": 2510,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -180,21 +180,12 @@
           "publishTime": "2026-04-18T17:44:32.756031818Z"
         },
         {
-          "author": "Chelsea Mills",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjX3TrHzvhBfvQ9dhdPJockpzGTbjkcrm6W9t9jH6PJUQ2ks8yJJIg=s128-c0x00000000-cc-rp-mo-ba4",
-          "authorUrl": "https://www.google.com/maps/contrib/101237116912122063643/reviews",
-          "rating": 5,
-          "text": "Had an incredible experience at El Pueblo Mexican Food & Bar in Del Mar! Sitting at the bar was the highlight – the bartender, Joe, was hands down the most attentive, skilled, & genuinely kind bartender I’ve had. Watching him masterfully craft each drink was a treat. I ordered the Paloma, which was not only delicious but (as you can see here) photograph-worthy. They also have a fantastic selection of top-shelf liquors. I got the chips & guacamole/salsa combo to snack on, & everything was fresh and flavorful. (Shhhh.. the quality here far exceeds the price!)\n\nHighly recommend stopping in – and definitely try to catch one of Joe’s shifts for an exceptional experience!",
-          "relativeTime": "2 months ago",
-          "publishTime": "2026-08-31T02:14:44.681037531Z"
-        },
-        {
           "author": "Ana Fernandez",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXWZ0ahvPCPoNQI0Ca0pp4VfWke2I1HjLvUt-kGg2sVaRwxr35y=s128-c0x00000000-cc-rp-mo-ba2",
           "authorUrl": "https://www.google.com/maps/contrib/100657211732439835516/reviews",
           "rating": 2,
           "text": "Cool spot! Cool locals! I ordered a torta de carnitas (should’ve order what the local said; fish tacos). Pinche torta looked great but when I took a piece of the carnitas out estavan mas frias que mis nalgas. Totally ruined the vibes. Carnitas should NOT be cold or crunchyx they are not chicharones. Needs to be hot and juicy and tender. Once I brought it up to the server he took the torta BACK and prob threw it on the grill instead of warming the up so it came back smelling like burnt carnitas. 0/10 on the food. The locals tried to convinced me to come back and try the fish tacos… maybe next time… for sure no carnitas tho $15 to the trash. Still sad about this tbh. Todo lo demas was good.",
-          "relativeTime": "3 weeks ago",
+          "relativeTime": "4 weeks ago",
           "publishTime": "2026-10-03T13:23:22.373416433Z"
         },
         {
@@ -214,6 +205,15 @@
           "text": "This place has the BEST tacos I’ve ever eaten. Oh my word. Often carne asada is dry and chewy—not the case here.  The meat is charred to perfection and is so tender and juicy. My husband had carnitas and it was golden crisp on the outside, moist on the inside, just like it should be.\n\nTopped with guacamole and the works, paired with super soft fresh corn tortillas, and doused with flavorful salsa that packs a punch… Two large tacos that fill you up for only $10… It really doesn’t get any better than this!!! 😍",
           "relativeTime": "3 months ago",
           "publishTime": "2026-07-04T03:41:27.155685968Z"
+        },
+        {
+          "author": "P Corral",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKig8LjDe5gf9XeeUsitf_xjQ_Ysg2Ix7SgGtmchpgJaKeRaQ=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/109468874188056417057/reviews",
+          "rating": 1,
+          "text": "Terrible customer service. Long wait for food. Long wait for drinks. The only good thing were the fish tacos with good size portion and a great price. Menudo soup was poor. Micheladas are not good; posted at $8 and bartender girl charged me $10 each. No napkings available and had to ask several times. Awful service from cashier and bartender girl. Not recommended!",
+          "relativeTime": "4 months ago",
+          "publishTime": "2026-06-14T01:11:40.987108079Z"
         }
       ]
     },
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1881,
+      "total": 1883,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
