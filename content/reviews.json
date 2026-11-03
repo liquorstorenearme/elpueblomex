@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-11-02T17:05:52.287Z",
+  "fetched_at": "2026-11-03T17:06:09.294Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 2018,
+      "total": 2019,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1516,
+      "total": 1514,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1889,
+      "total": 1891,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -248,7 +248,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/102787796487224175472/reviews",
           "rating": 5,
           "text": "Really good food for the price! Got the fish, carne asada, and adobada tacos. Clean space and nice salsa bar. Cristina, Joshua, and Shelsy helped us out. Service was great!",
-          "relativeTime": "4 weeks ago",
+          "relativeTime": "a month ago",
           "publishTime": "2026-10-03T18:57:26.979740788Z"
         },
         {
