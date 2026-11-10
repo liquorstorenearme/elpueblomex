@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-11-09T17:06:41.727Z",
+  "fetched_at": "2026-11-10T17:05:45.876Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
-      "rating": 4.6,
-      "total": 2022,
+      "rating": 4.7,
+      "total": 2023,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -45,13 +45,13 @@
           "publishTime": "2026-08-02T21:24:29.595107235Z"
         },
         {
-          "author": "Doug Guevara",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVMlL-D7YOAgT7ub35yr_P2ABhwuZ6yYdgR_sbhPhlTZjPwsEkCxg=s128-c0x00000000-cc-rp-mo-ba2",
-          "authorUrl": "https://www.google.com/maps/contrib/102241502734137841054/reviews",
+          "author": "Steve Morales",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXJQfiCFdN2h87KuXawDg-I_hYrG2_PNs7OUrJxv1cILsvRmZm52w=s128-c0x00000000-cc-rp-mo-ba5",
+          "authorUrl": "https://www.google.com/maps/contrib/100025884758656069553/reviews",
           "rating": 5,
-          "text": "This place has the best fish tacos and super cheap. Ashley is always so nice here as well.",
-          "relativeTime": "3 weeks ago",
-          "publishTime": "2026-10-15T03:12:14.361620541Z"
+          "text": "$1.39 for an Awesome Fish Taco ! Had to check out it to see if it was True ! Yup .. it's True . Got to go and get your fill . The taco has 2 fresh tortillas, the fish is battered to a light and crispy crust . Cabbage and tomatoes with a nice creamy sauce. Add fresh salsa Verde or rojo from the salsa bar. Can't Beat this Deal !!",
+          "relativeTime": "6 months ago",
+          "publishTime": "2026-05-09T00:06:37.288754842Z"
         }
       ]
     },
@@ -63,15 +63,6 @@
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
-          "author": "Jane Chang Bright",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWHHC0aMPt-vfxCW6vXb2GI1HESzZdTDAO8ADBQZMlzTRG6HkouKA=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/113701134107210495640/reviews",
-          "rating": 5,
-          "text": "Dude. I would give 10 stars if I could! This place was highly recommended by a friend so we came the next time we were down this way. $1.39 fish tacos and there's no limit!!! The best fish tacos I've had, hands down! They need to open one closer to me!! The Paloma was really tasty, too! We will definitely be back!",
-          "relativeTime": "5 months ago",
-          "publishTime": "2026-05-23T22:06:28.121766443Z"
-        },
-        {
           "author": "son",
           "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocLUl4QKwW6s5gEflhuFkjt2fsmSWWGlK9sMz6zZntJJSS5lPg=s128-c0x00000000-cc-rp-mo",
           "authorUrl": "https://www.google.com/maps/contrib/110013629400238169285/reviews",
@@ -81,13 +72,13 @@
           "publishTime": "2026-07-27T21:13:39.034113406Z"
         },
         {
-          "author": "Nekaiya Wilson",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWBY0BYxEcNgrlRvApvL7U_6De-9MbGrRypXuoalzJYjXq7WIA=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/112016656685798284613/reviews",
+          "author": "Jane Chang Bright",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWHHC0aMPt-vfxCW6vXb2GI1HESzZdTDAO8ADBQZMlzTRG6HkouKA=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/113701134107210495640/reviews",
           "rating": 5,
-          "text": "El Pueblo is truly a gem! The prices are amazing, the customer service is always warm and welcoming, and the food comes out incredibly fast. You really can’t beat the turnaround time or the value. Misael and J are both so kind, professional, and attentive—they make the experience even better every time we visit!",
+          "text": "Dude. I would give 10 stars if I could! This place was highly recommended by a friend so we came the next time we were down this way. $1.39 fish tacos and there's no limit!!! The best fish tacos I've had, hands down! They need to open one closer to me!! The Paloma was really tasty, too! We will definitely be back!",
           "relativeTime": "5 months ago",
-          "publishTime": "2026-05-24T02:04:39.886713389Z"
+          "publishTime": "2026-05-23T22:06:28.121766443Z"
         },
         {
           "author": "Valanka Fernandes",
@@ -97,6 +88,15 @@
           "text": "Good joint for grabbing Mexican food. They have variety of tacos, burrito etc. I took the adobada and shrimp taco.",
           "relativeTime": "2 weeks ago",
           "publishTime": "2026-10-23T21:49:40.859293993Z"
+        },
+        {
+          "author": "Nekaiya Wilson",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWBY0BYxEcNgrlRvApvL7U_6De-9MbGrRypXuoalzJYjXq7WIA=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/112016656685798284613/reviews",
+          "rating": 5,
+          "text": "El Pueblo is truly a gem! The prices are amazing, the customer service is always warm and welcoming, and the food comes out incredibly fast. You really can’t beat the turnaround time or the value. Misael and J are both so kind, professional, and attentive—they make the experience even better every time we visit!",
+          "relativeTime": "5 months ago",
+          "publishTime": "2026-05-24T02:04:39.886713389Z"
         },
         {
           "author": "Nelly Jacobo",
@@ -140,8 +140,17 @@
           "authorUrl": "https://www.google.com/maps/contrib/104824225708523745604/reviews",
           "rating": 4,
           "text": "Stopped by for lunch round 2pm and it was about 1/3 full.  Ordered food on the stand-alone kiosk and customized the order with extra protein and sauces.  Food came out in about 15min, but I couldn't see all the add-ons we paid for, which was odd.  The food was not as hot as I would've expected if it was just made fresh.  The flavor and presentation was good and the atmosphere is very casual and mainly focused on the huge bar in the middle of the restaurant. I recommend this place, but probably not get any add-ons next time and insist that the food comes out \"very hot\"!",
-          "relativeTime": "4 months ago",
+          "relativeTime": "5 months ago",
           "publishTime": "2026-06-13T01:40:59.851983316Z"
+        },
+        {
+          "author": "sholeh ja",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWu9Cnyx5eT2GVzKShN9t-QR2u-BK3aUOVGAPMQrDrbrh3Njotz=s128-c0x00000000-cc-rp-mo-ba6",
+          "authorUrl": "https://www.google.com/maps/contrib/116690250271826454453/reviews",
+          "rating": 3,
+          "text": "Westernized Mexican food, not so authentic. I’ve had much better Mexican cuisine in SD. Not recommending this restaurant if you are in search of real Mexican food. The bar and the outdoor seating area were the highlights.",
+          "relativeTime": "2 months ago",
+          "publishTime": "2026-08-22T06:41:44.003543717Z"
         },
         {
           "author": "Amol Birje",
@@ -151,15 +160,6 @@
           "text": "El Pueblo Mexican Food & Bar in Carmel Valley was outstanding! The food was fresh, flavorful, and authentic, with something on the menu for everyone. The fish tacos and margaritas were especially delicious. The service was friendly, attentive, and made us feel right at home. The atmosphere was lively yet relaxed—perfect for a family dinner, date night, or catching up with friends. We’ll definitely be coming back. Highly recommend this local gem!",
           "relativeTime": "5 months ago",
           "publishTime": "2026-06-12T04:46:50.019860150Z"
-        },
-        {
-          "author": "Brandon Nolte",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXtoI3lwUCA8iBkLYqFo-PJFi8nZL1hASn6zauNOtNn1h7iNciedg=s128-c0x00000000-cc-rp-mo-ba5",
-          "authorUrl": "https://www.google.com/maps/contrib/117325078274548669984/reviews",
-          "rating": 4,
-          "text": "I underestimated this place. The meats were well seasoned, the taco bar was thoughtfully stocked, and the staff was warm and efficient. For the quality, it is an excellent value. The only puzzling note was the generic signage out front, which hides a spot that deserves to be known by name.",
-          "relativeTime": "8 months ago",
-          "publishTime": "2026-02-27T23:50:26.717831119Z"
         }
       ]
     },
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2522,
+      "total": 2523,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -180,6 +180,15 @@
           "publishTime": "2026-04-18T17:44:32.756031818Z"
         },
         {
+          "author": "Kelly Hernandez",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUONZXFaWptW7GHbiVBMdetNPYsbn95NXQZolDABMw-SA-2-SoA=s128-c0x00000000-cc-rp-mo-ba5",
+          "authorUrl": "https://www.google.com/maps/contrib/107524744899649180762/reviews",
+          "rating": 4,
+          "text": "Well this was a great place ro visit for some really good food. We went because we say the $1.39 fish taco deals. It brought us in, but the whole restaurant was beautiful. Its set up for a quick order and then you can select a seat or wait for a to go order , in which we did. They have a very nice salsa bar along with a cute little bar where you can get happy hour deals and some fun sounding drinks. Next time we will enjoy there snd get $7 carne asads fries. Yes!!  We got several fish tacos, a potato taco, rice beans and a cali burrito. The cali didnt come with guacamole,  so we ordered it to be ordered. That's the only reason I was a little disappointed. We paid for the add of the guacamole and didn't get it. Wait time was a bit over 1/2 hour. But they were very busy. Overall though tjis was a good fiest visit. We look forward to coming again sometime.",
+          "relativeTime": "3 months ago",
+          "publishTime": "2026-07-27T07:50:19.903480799Z"
+        },
+        {
           "author": "Ana Fernandez",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXWZ0ahvPCPoNQI0Ca0pp4VfWke2I1HjLvUt-kGg2sVaRwxr35y=s128-c0x00000000-cc-rp-mo-ba2",
           "authorUrl": "https://www.google.com/maps/contrib/100657211732439835516/reviews",
@@ -189,24 +198,6 @@
           "publishTime": "2026-10-03T13:23:22.373416433Z"
         },
         {
-          "author": "Seabreeze HOA",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocKkVNUv7jecBq6NHWUhMxhosh_EIC-7qYBvyCQ9arq47cRolA=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/100790096086246738662/reviews",
-          "rating": 5,
-          "text": "This place has the BEST tacos I’ve ever eaten. Oh my word. Often carne asada is dry and chewy—not the case here.  The meat is charred to perfection and is so tender and juicy. My husband had carnitas and it was golden crisp on the outside, moist on the inside, just like it should be.\n\nTopped with guacamole and the works, paired with super soft fresh corn tortillas, and doused with flavorful salsa that packs a punch… Two large tacos that fill you up for only $10… It really doesn’t get any better than this!!! 😍",
-          "relativeTime": "4 months ago",
-          "publishTime": "2026-07-04T03:41:27.155685968Z"
-        },
-        {
-          "author": "E M",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWsYUkJclVLaOEnSmNqR9GDoMtsUjpZTWb123D2fRmu_nvG4TNGVA=s128-c0x00000000-cc-rp-mo-ba5",
-          "authorUrl": "https://www.google.com/maps/contrib/101044666034704418280/reviews",
-          "rating": 5,
-          "text": "1st time here and will be returning for sure! The fish tacos were amazing and the best price in town! Only $1.39 per fish taco! Unbelievable!  I ordered 3 and made it a combo by adding side or rice and beans. All under $10!  They have a salsa bar and a nice selection of drinks. Including horchata and Jamaica water! There's indoor seating. And covered patio.seating as well . Its right off.  Location is also convenient close to the 5 fwy!",
-          "relativeTime": "8 months ago",
-          "publishTime": "2026-02-28T08:12:59.883300713Z"
-        },
-        {
           "author": "Chelsea Mills",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjX3TrHzvhBfvQ9dhdPJockpzGTbjkcrm6W9t9jH6PJUQ2ks8yJJIg=s128-c0x00000000-cc-rp-mo-ba4",
           "authorUrl": "https://www.google.com/maps/contrib/101237116912122063643/reviews",
@@ -214,6 +205,15 @@
           "text": "Had an incredible experience at El Pueblo Mexican Food & Bar in Del Mar! Sitting at the bar was the highlight – the bartender, Joe, was hands down the most attentive, skilled, & genuinely kind bartender I’ve had. Watching him masterfully craft each drink was a treat. I ordered the Paloma, which was not only delicious but (as you can see here) photograph-worthy. They also have a fantastic selection of top-shelf liquors. I got the chips & guacamole/salsa combo to snack on, & everything was fresh and flavorful. (Shhhh.. the quality here far exceeds the price!)\n\nHighly recommend stopping in – and definitely try to catch one of Joe’s shifts for an exceptional experience!",
           "relativeTime": "2 months ago",
           "publishTime": "2026-08-31T02:14:44.681037531Z"
+        },
+        {
+          "author": "Goosehunter82",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUKgFHzH9xWzO-wyF_HsGCkyanx0VuQfb_tjlaYS2bcstUsCWSmbg=s128-c0x00000000-cc-rp-mo-ba5",
+          "authorUrl": "https://www.google.com/maps/contrib/112842216103810372647/reviews",
+          "rating": 5,
+          "text": "Top notch! We tried to come in during lunch time and they had a 40 minute wait so we came back the next day a little earlier and I'm very glad we did. The fish tacos are a great deal!",
+          "relativeTime": "3 months ago",
+          "publishTime": "2026-08-05T17:47:07.811386600Z"
         }
       ]
     },
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1917,
+      "total": 1919,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -243,15 +243,6 @@
           "publishTime": "2026-10-03T18:57:26.979740788Z"
         },
         {
-          "author": "Keegan Kemp",
-          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIWryjzR9Enyun4VDMPaevaQY10Hcg4DJYJXLRfecF2vor03g=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/107800760185577061434/reviews",
-          "rating": 5,
-          "text": "Carlos is the man. Great service from the start. Good vibes. Fish tacos and carne asada tacos were fantastic and well priced! Kids loved the kids meal options. Turtle cheesecake was delicious.",
-          "relativeTime": "3 months ago",
-          "publishTime": "2026-07-27T01:30:05.783103186Z"
-        },
-        {
           "author": "Valerie Palacios",
           "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocJC_bSy34VDUgMuxkgzA5ILti6dCkTlpAMkbcOBSFLdme42Ag=s128-c0x00000000-cc-rp-mo-ba3",
           "authorUrl": "https://www.google.com/maps/contrib/117874905268190086173/reviews",
@@ -268,6 +259,15 @@
           "text": "The fish tacos are $1.39!! That’s everyday too. Can’t beat the price. I got 3 fish tacos (asked for one tortilla as they come with a double tortilla) The tortillas were soft and seemed freshly made, though I don’t know this for sure. The fish was battered and tasted good as well, the chipotle sauce on the tacos is what really made the taco come together. They also have a salsa bar with different fresh made salsas (I like the green salsa) and spicy carrots with jalapeño’s.",
           "relativeTime": "3 weeks ago",
           "publishTime": "2026-10-19T00:28:52.009145559Z"
+        },
+        {
+          "author": "Destiny L.P",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVi66i5PxLOiBuuy29ijWOl6ptPu6iHQKRfqWRpXquwDZXDutR1nA=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/113406679652904952569/reviews",
+          "rating": 5,
+          "text": "This place was so good!!! This is now one of my favorite Mexican food spots. I just moved out here to San Diego and I enjoyed going to La Jolla beach and then here for dinner. I ordered the Carne Asada Fries and they were a 10/10. They were amazing and mouth watering. Excellent customer service and nice atmosphere. I would personally like to thank whoever made my fries and let them know how well they did.",
+          "relativeTime": "a month ago",
+          "publishTime": "2026-09-29T03:13:47.911923065Z"
         }
       ]
     }
