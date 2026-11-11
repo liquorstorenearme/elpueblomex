@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T17:05:45.876Z",
+  "fetched_at": "2026-11-11T17:06:14.542Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -167,18 +167,9 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2523,
+      "total": 2524,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
-        {
-          "author": "Karina Covarrubias",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVoIcGYmcKj1ND_SrBPatKvWq5ogm3P_fKi1MqXumJaKJ8qNyDcbg=s128-c0x00000000-cc-rp-mo",
-          "authorUrl": "https://www.google.com/maps/contrib/116838482993789297178/reviews",
-          "rating": 5,
-          "text": "As soon as I walked in, I could tell this place takes pride in what they do. It was super clean, organized, and just had a really good vibe. Everything looked fresh and well put together, which made me feel comfortable right away. The customer service was amazing,she explained the menu so clearly, was super sweet, and very professional the whole time. You can tell she actually cares about the customers. The food was sooo good, fresh, and full of flavor. Honestly, everything about the experience was on point. I’ll definitely be coming back and recommending this spot to others!",
-          "relativeTime": "6 months ago",
-          "publishTime": "2026-04-18T17:44:32.756031818Z"
-        },
         {
           "author": "Kelly Hernandez",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUONZXFaWptW7GHbiVBMdetNPYsbn95NXQZolDABMw-SA-2-SoA=s128-c0x00000000-cc-rp-mo-ba5",
@@ -214,6 +205,15 @@
           "text": "Top notch! We tried to come in during lunch time and they had a 40 minute wait so we came back the next day a little earlier and I'm very glad we did. The fish tacos are a great deal!",
           "relativeTime": "3 months ago",
           "publishTime": "2026-08-05T17:47:07.811386600Z"
+        },
+        {
+          "author": "גלדיס חלבלי",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVkWkgwYDSA-oQHM2RHWhCjEx-m0fCA5kqx1_r14nka0-LKbgT7uQ=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/116827617851935463637/reviews",
+          "rating": 2,
+          "text": "We were a little disappointed, especially considering the high Google rating. The food was pretty average overall and lacked seasoning and flavor. The meat wasn’t particularly good, and the chips and salsa were also underwhelming.\n\nThe atmosphere was nice and the service was fine, but for almost $40 per person, we expected better quality and more flavorful food.\n\nUnfortunately, it just didn’t live up to our expectations and probably isn’t a place we would return to.",
+          "relativeTime": "a month ago",
+          "publishTime": "2026-09-25T05:11:51.128702898Z"
         }
       ]
     },
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1919,
+      "total": 1924,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
