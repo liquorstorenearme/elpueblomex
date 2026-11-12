@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-11T17:06:14.542Z",
+  "fetched_at": "2026-11-12T17:05:55.257Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -36,6 +36,15 @@
           "publishTime": "2026-09-04T19:26:36.102317562Z"
         },
         {
+          "author": "Sergey Shepelev",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVgT6ijL6ZcN_OCxe1DIXny4FbHzqtK66CAXBDESoB1ivbcciOM=s128-c0x00000000-cc-rp-mo-ba3",
+          "authorUrl": "https://www.google.com/maps/contrib/105917116599835369951/reviews",
+          "rating": 5,
+          "text": "If you’re driving on I-5, do yourself a favor and stop at El Pueblo Mexican Food on Birmingham Drive (Exit 40). The food is always fresh, the service is fast, and the prices are great.\n\nThe famous fish tacos are absolutely incredible—crispy, flavorful, and easily some of the best I’ve ever had. They’re loaded with fresh cabbage, pico de gallo, and a delicious chipotle sauce that makes every bite perfect. I can see why they’re so popular!\n\nWhether you’re passing through or live nearby, this place is definitely worth a stop. I’ll be coming back every time I’m in the area! 🌮🙌",
+          "relativeTime": "3 months ago",
+          "publishTime": "2026-08-09T14:06:34.826225754Z"
+        },
+        {
           "author": "Erin Kelley",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjV9p9l1fGLWkFUfvQjDoCM22eMrOBLKkH5zxxH6NJE1c0pXfgNb=s128-c0x00000000-cc-rp-mo-ba6",
           "authorUrl": "https://www.google.com/maps/contrib/116888271504189073402/reviews",
@@ -43,15 +52,6 @@
           "text": "My initial experience here for takeout Mexican was just average. I tried one of their \"famous\" fish tacos, which seemed quickly thrown together and was kind of bland. It featured a decent-sized piece of flaky fish and a good tortilla, but it wasn't spectacular.\n\nMy bean burrito was basic, but very large. The salsa bar is a nice touch.\n\nConveniently located right off the I-5 freeway next to a gas station and car wash, with some decent outdoor seating available.",
           "relativeTime": "3 months ago",
           "publishTime": "2026-08-02T21:24:29.595107235Z"
-        },
-        {
-          "author": "Steve Morales",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXJQfiCFdN2h87KuXawDg-I_hYrG2_PNs7OUrJxv1cILsvRmZm52w=s128-c0x00000000-cc-rp-mo-ba5",
-          "authorUrl": "https://www.google.com/maps/contrib/100025884758656069553/reviews",
-          "rating": 5,
-          "text": "$1.39 for an Awesome Fish Taco ! Had to check out it to see if it was True ! Yup .. it's True . Got to go and get your fill . The taco has 2 fresh tortillas, the fish is battered to a light and crispy crust . Cabbage and tomatoes with a nice creamy sauce. Add fresh salsa Verde or rojo from the salsa bar. Can't Beat this Deal !!",
-          "relativeTime": "6 months ago",
-          "publishTime": "2026-05-09T00:06:37.288754842Z"
         }
       ]
     },
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1924,
+      "total": 1926,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -252,15 +252,6 @@
           "publishTime": "2026-08-17T23:30:44.016312318Z"
         },
         {
-          "author": "Vett",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUu8V2Jm4-00shDoG34YXV9fK_Tv1ZAK3g1wu70tPiHu_HXpiA=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/107485507850012072860/reviews",
-          "rating": 4,
-          "text": "The fish tacos are $1.39!! That’s everyday too. Can’t beat the price. I got 3 fish tacos (asked for one tortilla as they come with a double tortilla) The tortillas were soft and seemed freshly made, though I don’t know this for sure. The fish was battered and tasted good as well, the chipotle sauce on the tacos is what really made the taco come together. They also have a salsa bar with different fresh made salsas (I like the green salsa) and spicy carrots with jalapeño’s.",
-          "relativeTime": "3 weeks ago",
-          "publishTime": "2026-10-19T00:28:52.009145559Z"
-        },
-        {
           "author": "Destiny L.P",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVi66i5PxLOiBuuy29ijWOl6ptPu6iHQKRfqWRpXquwDZXDutR1nA=s128-c0x00000000-cc-rp-mo-ba3",
           "authorUrl": "https://www.google.com/maps/contrib/113406679652904952569/reviews",
@@ -268,6 +259,15 @@
           "text": "This place was so good!!! This is now one of my favorite Mexican food spots. I just moved out here to San Diego and I enjoyed going to La Jolla beach and then here for dinner. I ordered the Carne Asada Fries and they were a 10/10. They were amazing and mouth watering. Excellent customer service and nice atmosphere. I would personally like to thank whoever made my fries and let them know how well they did.",
           "relativeTime": "a month ago",
           "publishTime": "2026-09-29T03:13:47.911923065Z"
+        },
+        {
+          "author": "Jezabel Sanchez",
+          "profilePhoto": "https://lh3.googleusercontent.com/a/ACg8ocIayTIUMcvuzmYBcWEBzKlgnbZDy5HY1ywGfjy9PUWfC_Sqog=s128-c0x00000000-cc-rp-mo",
+          "authorUrl": "https://www.google.com/maps/contrib/106421139461246775112/reviews",
+          "rating": 5,
+          "text": "Great food, great price and service was great ! The worker Mikayla was super nice, super fun and made our experience better !🫶🏻",
+          "relativeTime": "2 months ago",
+          "publishTime": "2026-08-20T05:51:53.877521566Z"
         }
       ]
     }
