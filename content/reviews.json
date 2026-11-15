@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-14T17:05:06.298Z",
+  "fetched_at": "2026-11-15T17:04:55.734Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
@@ -14,7 +14,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/103488241512195756345/reviews",
           "rating": 5,
           "text": "I love that there is still a place in Southern California where you can grab some awesome cheap  eat s after surfing and still has the best salsa and  carrots for free like it used to be!!\nStay classic!\nFish tacos and the service is always friendly!!\nGreat job whoever’s responsible for this!!!",
-          "relativeTime": "3 weeks ago",
+          "relativeTime": "4 weeks ago",
           "publishTime": "2026-10-17T22:37:37.494171247Z"
         },
         {
@@ -167,9 +167,18 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2524,
+      "total": 2526,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
+        {
+          "author": "TM",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjX35uu8fEVYC5m3JL9YhQ9HpzVu0pvqY8VM9roJ51hLV2PRHlA=s128-c0x00000000-cc-rp-mo-ba4",
+          "authorUrl": "https://www.google.com/maps/contrib/107022318870129318429/reviews",
+          "rating": 5,
+          "text": "Had a great experience at El Pueblo Mexican Food & Bar in Del Mar! The food was delicious, and everything we tried was full of flavor. The California burrito was excellent, the enchiladas were awesome, and the carne asada tacos were definitely a highlight. The carnitas tacos were good as well, and the fish tacos were a great option too.\n\nThey also have a great variety of salsas, which made the meal even better and gave us plenty of options to try. The service was super fast, and everything came out quickly without sacrificing the quality of the food. The staff was friendly, and the overall experience was smooth and enjoyable.\n\nOverall, a great spot for Mexican food in Del Mar with generous options, flavorful dishes, plenty of salsa choices, and quick service. Definitely worth checking out if you’re in the area!",
+          "relativeTime": "3 weeks ago",
+          "publishTime": "2026-10-21T03:54:12.719019524Z"
+        },
         {
           "author": "Kelly Hernandez",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUONZXFaWptW7GHbiVBMdetNPYsbn95NXQZolDABMw-SA-2-SoA=s128-c0x00000000-cc-rp-mo-ba5",
@@ -205,15 +214,6 @@
           "text": "Top notch! We tried to come in during lunch time and they had a 40 minute wait so we came back the next day a little earlier and I'm very glad we did. The fish tacos are a great deal!",
           "relativeTime": "3 months ago",
           "publishTime": "2026-08-05T17:47:07.811386600Z"
-        },
-        {
-          "author": "גלדיס חלבלי",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjVkWkgwYDSA-oQHM2RHWhCjEx-m0fCA5kqx1_r14nka0-LKbgT7uQ=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/116827617851935463637/reviews",
-          "rating": 2,
-          "text": "We were a little disappointed, especially considering the high Google rating. The food was pretty average overall and lacked seasoning and flavor. The meat wasn’t particularly good, and the chips and salsa were also underwhelming.\n\nThe atmosphere was nice and the service was fine, but for almost $40 per person, we expected better quality and more flavorful food.\n\nUnfortunately, it just didn’t live up to our expectations and probably isn’t a place we would return to.",
-          "relativeTime": "a month ago",
-          "publishTime": "2026-09-25T05:11:51.128702898Z"
         }
       ]
     },
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1928,
+      "total": 1929,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
