@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-11-15T17:04:55.734Z",
+  "fetched_at": "2026-11-16T17:06:13.303Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 2025,
+      "total": 2026,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1528,
+      "total": 1529,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2526,
+      "total": 2527,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1929,
+      "total": 1931,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -239,7 +239,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/117874905268190086173/reviews",
           "rating": 5,
           "text": "Joshua and Carlos were very friendly hosts. The restaurant was super clean and inviting. They were playing some great music as well. Very delicious food, The chicken on the tacos was so tender and they a great deal on fish tacos. $1.39 WOW. If you stop by, dont miss out on their cheesecakes as well. DELICIOUS!!",
-          "relativeTime": "2 months ago",
+          "relativeTime": "3 months ago",
           "publishTime": "2026-08-17T23:30:44.016312318Z"
         },
         {
