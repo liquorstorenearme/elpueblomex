@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-11-17T17:06:58.703Z",
+  "fetched_at": "2026-11-18T17:06:16.559Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.6,
-      "total": 2031,
+      "total": 2032,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1750,
+      "total": 1751,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -81,15 +81,6 @@
           "publishTime": "2026-05-23T22:06:28.121766443Z"
         },
         {
-          "author": "Valanka Fernandes",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXc0XPTEFxxO1IDw8vIAdBIOIfJ0e6POolC7tQXVsaWRgP7f4KOJg=s128-c0x00000000-cc-rp-mo-ba5",
-          "authorUrl": "https://www.google.com/maps/contrib/117690145330446984255/reviews",
-          "rating": 4,
-          "text": "Good joint for grabbing Mexican food. They have variety of tacos, burrito etc. I took the adobada and shrimp taco.",
-          "relativeTime": "3 weeks ago",
-          "publishTime": "2026-10-23T21:49:40.859293993Z"
-        },
-        {
           "author": "Nekaiya Wilson",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjWBY0BYxEcNgrlRvApvL7U_6De-9MbGrRypXuoalzJYjXq7WIA=s128-c0x00000000-cc-rp-mo",
           "authorUrl": "https://www.google.com/maps/contrib/112016656685798284613/reviews",
@@ -97,6 +88,15 @@
           "text": "El Pueblo is truly a gem! The prices are amazing, the customer service is always warm and welcoming, and the food comes out incredibly fast. You really can’t beat the turnaround time or the value. Misael and J are both so kind, professional, and attentive—they make the experience even better every time we visit!",
           "relativeTime": "5 months ago",
           "publishTime": "2026-05-24T02:04:39.886713389Z"
+        },
+        {
+          "author": "Valanka Fernandes",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjXc0XPTEFxxO1IDw8vIAdBIOIfJ0e6POolC7tQXVsaWRgP7f4KOJg=s128-c0x00000000-cc-rp-mo-ba5",
+          "authorUrl": "https://www.google.com/maps/contrib/117690145330446984255/reviews",
+          "rating": 4,
+          "text": "Good joint for grabbing Mexican food. They have variety of tacos, burrito etc. I took the adobada and shrimp taco.",
+          "relativeTime": "3 weeks ago",
+          "publishTime": "2026-10-23T21:49:40.859293993Z"
         },
         {
           "author": "Nelly Jacobo",
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1532,
+      "total": 1535,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -176,7 +176,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/107022318870129318429/reviews",
           "rating": 5,
           "text": "Had a great experience at El Pueblo Mexican Food & Bar in Del Mar! The food was delicious, and everything we tried was full of flavor. The California burrito was excellent, the enchiladas were awesome, and the carne asada tacos were definitely a highlight. The carnitas tacos were good as well, and the fish tacos were a great option too.\n\nThey also have a great variety of salsas, which made the meal even better and gave us plenty of options to try. The service was super fast, and everything came out quickly without sacrificing the quality of the food. The staff was friendly, and the overall experience was smooth and enjoyable.\n\nOverall, a great spot for Mexican food in Del Mar with generous options, flavorful dishes, plenty of salsa choices, and quick service. Definitely worth checking out if you’re in the area!",
-          "relativeTime": "3 weeks ago",
+          "relativeTime": "4 weeks ago",
           "publishTime": "2026-10-21T03:54:12.719019524Z"
         },
         {
@@ -221,7 +221,7 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1932,
+      "total": 1933,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -257,7 +257,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/106421139461246775112/reviews",
           "rating": 5,
           "text": "Great food, great price and service was great ! The worker Mikayla was super nice, super fun and made our experience better !🫶🏻",
-          "relativeTime": "2 months ago",
+          "relativeTime": "3 months ago",
           "publishTime": "2026-08-20T05:51:53.877521566Z"
         },
         {
