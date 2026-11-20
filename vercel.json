@@ -99,7 +99,7 @@
       "permanent": true
     },
     {
-      "source": "/news/:path*",
+      "source": "/news/(.*)",
       "destination": "/",
       "permanent": false
     },
