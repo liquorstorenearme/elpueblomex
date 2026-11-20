@@ -491,7 +491,7 @@
     },
     {
       "source": "/2023/09/12/bunuelos-a-crispy-and-sweet-treat-at-el-pueblo-mexican-food/",
-      "destination": "/news/bunuelos-a-crispy-and-sweet-treat/",
+      "destination": "/news/",
       "permanent": true
     },
     {
@@ -726,7 +726,7 @@
     },
     {
       "source": "/bunuelos-a-crispy-and-sweet-treat-at-el-pueblo-mexican-food/",
-      "destination": "/news/bunuelos-a-crispy-and-sweet-treat/",
+      "destination": "/news/",
       "permanent": true
     },
     {
