@@ -15,10 +15,15 @@ const site = JSON.parse(fs.readFileSync(path.join(root, "content/site.json"), "u
 // links are hidden and /catering/ shows a paused notice (URL kept live for SEO + relaunch).
 const CATERING_PAUSED = site.cateringPaused === true;
 if (CATERING_PAUSED) site.nav = site.nav.filter(n => n.href !== "/catering/");
+// Blog on/off switch: content/site.json → "blogPaused". While paused, no /news/ pages are built,
+// all News links/cards are hidden, and vercel.json sends /news/* to the homepage (temporary redirect).
+const BLOG_PAUSED = site.blogPaused === true;
+if (BLOG_PAUSED) site.nav = site.nav.filter(n => n.href !== "/news/");
 const menu = JSON.parse(fs.readFileSync(path.join(root, "content/menu.json"), "utf8"));
 const menuBoard = JSON.parse(fs.readFileSync(path.join(root, "content/menu-board.json"), "utf8"));
 const { locations } = JSON.parse(fs.readFileSync(path.join(root, "content/locations.json"), "utf8"));
-const { posts } = JSON.parse(fs.readFileSync(path.join(root, "content/posts.json"), "utf8"));
+let { posts } = JSON.parse(fs.readFileSync(path.join(root, "content/posts.json"), "utf8"));
+if (BLOG_PAUSED) posts = [];
 const { jobs } = JSON.parse(fs.readFileSync(path.join(root, "content/jobs.json"), "utf8"));
 const pressPath = path.join(root, "content/press.json");
 const { press = [] } = fs.existsSync(pressPath)
@@ -549,7 +554,7 @@ const footer = () => `
         <h3>About</h3>
         <ul>
           <li><a href="/gives-back/">Gives back</a></li>
-          <li><a href="/news/">News</a></li>
+          ${BLOG_PAUSED ? "" : `<li><a href="/news/">News</a></li>`}
           <li><a href="/careers/">Careers</a></li>
           <li><a href="/gallery/">Gallery</a></li>
           <li><a href="/contact/">Contact</a></li>
@@ -1064,7 +1069,7 @@ function renderMenu() {
     <div class="menu-featured__copy">
       <p class="eyebrow" style="color:var(--marigold)">Home of the</p>
       <h2>$1.39 <em>Fish Taco</em></h2>
-      <p>Crispy fried-to-order fillet, chipotle sauce, fresh pico, crisp cabbage on a warm corn tortilla. Our signature, unlimited, every day of the year. <a href="/news/anatomy-of-a-fish-taco/">Read about how we build it →</a></p>
+      <p>Crispy fried-to-order fillet, chipotle sauce, fresh pico, crisp cabbage on a warm corn tortilla. Our signature, unlimited, every day of the year. ${BLOG_PAUSED ? "" : `<a href="/news/anatomy-of-a-fish-taco/">Read about how we build it →</a>`}</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="${h(site.orderOnline.masterUrl)}" target="_blank" rel="noopener">Order from any location →</a>
       </div>
@@ -2980,7 +2985,7 @@ function renderSitemap() {
     { loc: "/gives-back/", priority: 0.6, changefreq: "monthly" },
     { loc: "/gallery/", priority: 0.5, changefreq: "monthly" },
     { loc: "/contact/", priority: 0.7, changefreq: "monthly" },
-    { loc: "/news/", priority: 0.7, changefreq: "weekly" },
+    ...(BLOG_PAUSED ? [] : [{ loc: "/news/", priority: 0.7, changefreq: "weekly" }]),
     ...posts.map(p => ({ loc: `/news/${p.slug}/`, priority: 0.5, changefreq: "yearly", lastmod: p.date })),
     { loc: "/careers/", priority: 0.7, changefreq: "weekly" },
     { loc: "/privacy-policy/", priority: 0.3, changefreq: "yearly" },
@@ -3139,8 +3144,8 @@ function build() {
   write("careers/index.html", renderCareers());
 
   // News + Posts
-  write("news/index.html", renderNewsIndex());
-  for (const post of posts) {
+  if (!BLOG_PAUSED) write("news/index.html", renderNewsIndex());
+  for (const post of (BLOG_PAUSED ? [] : posts)) {
     write(`news/${post.slug}/index.html`, renderPost(post));
   }
 
