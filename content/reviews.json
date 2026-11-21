@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-11-20T17:05:15.128Z",
+  "fetched_at": "2026-11-21T17:05:20.266Z",
   "locations": {
     "cardiff-by-the-sea": {
       "placeId": "ChIJ-83jugsN3IARsMJat5-cv6c",
       "name": "El Pueblo Mexican Food - Cardiff",
       "rating": 4.7,
-      "total": 2036,
+      "total": 2037,
       "googleUrl": "https://maps.google.com/?cid=12087552134675612336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -59,7 +59,7 @@
       "placeId": "ChIJdw-_Zw4L3IAR01-3k7omP04",
       "name": "El Pueblo Mexican Food - Carlsbad",
       "rating": 4.7,
-      "total": 1751,
+      "total": 1752,
       "googleUrl": "https://maps.google.com/?cid=5638267841275191251&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -95,7 +95,7 @@
           "authorUrl": "https://www.google.com/maps/contrib/117690145330446984255/reviews",
           "rating": 4,
           "text": "Good joint for grabbing Mexican food. They have variety of tacos, burrito etc. I took the adobada and shrimp taco.",
-          "relativeTime": "3 weeks ago",
+          "relativeTime": "4 weeks ago",
           "publishTime": "2026-10-23T21:49:40.859293993Z"
         },
         {
@@ -113,7 +113,7 @@
       "placeId": "ChIJp_33wbgJ3IARqR-3nQO0Jng",
       "name": "El Pueblo Mexican Food & Bar - Carmel Valley",
       "rating": 4.8,
-      "total": 1537,
+      "total": 1538,
       "googleUrl": "https://maps.google.com/?cid=8657805261290282921&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -167,7 +167,7 @@
       "placeId": "ChIJ7_uw68EJ3IARHoyxJdxqUyo",
       "name": "El Pueblo Mexican Food & Bar - Del Mar",
       "rating": 4.7,
-      "total": 2529,
+      "total": 2531,
       "googleUrl": "https://maps.google.com/?cid=3049898866417699870&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
         {
@@ -221,9 +221,18 @@
       "placeId": "ChIJGXfa1uAD3IARNzoEUqHtNNU",
       "name": "El Pueblo Mexican Food - La Jolla",
       "rating": 4.9,
-      "total": 1941,
+      "total": 1943,
       "googleUrl": "https://maps.google.com/?cid=15363165505989130807&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
       "reviews": [
+        {
+          "author": "Cris Rodriguez",
+          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUugbloRV7iP2b8WLxGPRmMlqc2B-kMnf_n_bynIiT33j3fKuv3sg=s128-c0x00000000-cc-rp-mo-ba4",
+          "authorUrl": "https://www.google.com/maps/contrib/100652829309988026245/reviews",
+          "rating": 5,
+          "text": "Quick service, amazing food and chill atmosphere. Not to mention it’s across the bus stop and the $5drinks and affordable/fire fish tacos. 10/10 will come back. Honorable mention- the hot sauce bar 🔥🤘. Thank you.",
+          "relativeTime": "in the last week",
+          "publishTime": "2026-11-16T04:41:15.654914198Z"
+        },
         {
           "author": "MT",
           "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjUnoD3x0dlOSXJVh3tmI2qCuCgTe1k-GWTjYBygCNZMkEoayus=s128-c0x00000000-cc-rp-mo",
@@ -259,15 +268,6 @@
           "text": "Great food, great price and service was great ! The worker Mikayla was super nice, super fun and made our experience better !🫶🏻",
           "relativeTime": "3 months ago",
           "publishTime": "2026-08-20T05:51:53.877521566Z"
-        },
-        {
-          "author": "Kristopher The Panda",
-          "profilePhoto": "https://lh3.googleusercontent.com/a-/ALV-UjX-FULV1PjOaIcDCqgW7V8x7uH5yaecOhtE_FHer7cuX4x9_ffSRw=s128-c0x00000000-cc-rp-mo-ba3",
-          "authorUrl": "https://www.google.com/maps/contrib/105291817952846483176/reviews",
-          "rating": 5,
-          "text": "⭐⭐⭐⭐⭐\n\nIf you’re looking for amazing Mexican food and outstanding customer service, make sure to stop by El Pueblo Mexican Food. I came in about 20 minutes before closing, and instead of feeling rushed, I was welcomed with kindness and genuine hospitality. The staff went above and beyond to make sure I had a great experience, which says a lot about how they treat their customers.\n\nThe food was delicious, fresh, and exactly what I was craving. What really stood out was how accommodating and friendly everyone was, even at the end of a long day.\n\nA special shoutout to Misael for the excellent service and positive attitude. If you’re stopping by, go see Misael—he’ll take great care of you!\n\nHighly recommend this spot. Great food, great people, and an all-around fantastic experience. I’ll definitely be back! 🌮🔥👏",
-          "relativeTime": "4 months ago",
-          "publishTime": "2026-06-24T06:59:16.688421866Z"
         }
       ]
     }
