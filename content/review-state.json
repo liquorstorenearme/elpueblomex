@@ -30035,9 +30035,10 @@
     "AbFvOqnfIzpxW01mEv5p1kzYZ8YYDda2h_gRSR2x-2GZ-dSREAXSikERuilm1638rdDKEet2R76Wfw": "2026-10-18T18:31:55.632Z",
     "AbFvOqk0cW9AuMxm0PDsJAbmH8dV1hpKaMT4AbFySJwsiYjFiCKyesrJ0UWXyU6bBoGPcyWznRDl": "2026-10-18T18:31:55.632Z",
     "AbFvOqma-026C080qeHbSXWcic-LzlgWYj95XjqBGMifyE20DPa-Vb7GIGQ6OGbFOAG-Dm3TJ0Lfqw": "2026-11-04T16:14:39.840Z",
-    "AbFvOqkp-j_xQMYPCFW10dI0HairKk8qTkh3qyNYswPM4_P6pP1TMwmqt_objS7elB7yUTZTFc4WsQ": "2026-11-14T16:12:26.145Z"
+    "AbFvOqkp-j_xQMYPCFW10dI0HairKk8qTkh3qyNYswPM4_P6pP1TMwmqt_objS7elB7yUTZTFc4WsQ": "2026-11-14T16:12:26.145Z",
+    "AbFvOqn-UOh8pdF7QPkdR8jKHwVmeGk1f6tyQ5YptKTl-LJovWXfTO-hu4w-cVSsmaPM4-qHs9eW0Q": "2026-11-22T16:09:56.403Z"
   },
-  "lastRun": "2026-11-21T16:09:40.553Z",
+  "lastRun": "2026-11-22T16:09:56.403Z",
   "suggest": {
     "carlsbad": {
       "recentDishes": [
@@ -30048,22 +30049,22 @@
     },
     "del-mar": {
       "recentDishes": [
-        "the fish tacos",
-        "a margarita from the full bar",
-        "the california burrito"
+        "the carne asada burrito",
+        "the california burrito",
+        "a margarita from the full bar"
       ]
     },
     "carmel-valley": {
       "recentDishes": [
-        "the california burrito",
         "a breakfast burrito (we serve them all day)",
-        "the fish tacos"
+        "the fish tacos",
+        "a margarita from the full bar"
       ]
     },
     "la-jolla": {
       "recentDishes": [
-        "the california burrito",
         "the fish tacos",
+        "chips and guacamole",
         "the carne asada burrito"
       ]
     }
@@ -30129,34 +30130,34 @@
   "locPhrase": {
     "carlsbad": {
       "recent": [
-        2,
-        5,
         4,
-        1
+        1,
+        6,
+        7
       ]
     },
     "del-mar": {
       "recent": [
-        5,
-        2,
-        1,
-        4
+        7,
+        4,
+        0,
+        5
       ]
     },
     "la-jolla": {
       "recent": [
-        6,
-        1,
+        2,
+        0,
         4,
         3
       ]
     },
     "carmel-valley": {
       "recent": [
-        4,
-        1,
-        0,
-        6
+        7,
+        2,
+        3,
+        4
       ]
     }
   }
