@@ -30038,7 +30038,7 @@
     "AbFvOqkp-j_xQMYPCFW10dI0HairKk8qTkh3qyNYswPM4_P6pP1TMwmqt_objS7elB7yUTZTFc4WsQ": "2026-11-14T16:12:26.145Z",
     "AbFvOqn-UOh8pdF7QPkdR8jKHwVmeGk1f6tyQ5YptKTl-LJovWXfTO-hu4w-cVSsmaPM4-qHs9eW0Q": "2026-11-22T16:09:56.403Z"
   },
-  "lastRun": "2026-11-22T16:09:56.403Z",
+  "lastRun": "2026-11-23T16:10:11.044Z",
   "suggest": {
     "carlsbad": {
       "recentDishes": [
@@ -30049,8 +30049,8 @@
     },
     "del-mar": {
       "recentDishes": [
-        "the carne asada burrito",
         "the california burrito",
+        "the fish tacos",
         "a margarita from the full bar"
       ]
     },
@@ -30063,9 +30063,9 @@
     },
     "la-jolla": {
       "recentDishes": [
-        "the fish tacos",
         "chips and guacamole",
-        "the carne asada burrito"
+        "the fish tacos",
+        "the california burrito"
       ]
     }
   },
@@ -30130,34 +30130,34 @@
   "locPhrase": {
     "carlsbad": {
       "recent": [
-        4,
-        1,
-        6,
-        7
+        7,
+        0,
+        2,
+        3
       ]
     },
     "del-mar": {
       "recent": [
-        7,
-        4,
-        0,
-        5
+        5,
+        6,
+        1,
+        4
       ]
     },
     "la-jolla": {
       "recent": [
-        2,
         0,
         4,
+        5,
         3
       ]
     },
     "carmel-valley": {
       "recent": [
-        7,
-        2,
-        3,
-        4
+        0,
+        5,
+        1,
+        3
       ]
     }
   }
